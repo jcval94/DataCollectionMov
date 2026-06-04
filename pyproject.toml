@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mov-historico-api"
+version = "0.1.0"
+description = "Genera historicos versionados a partir de las tablas producidas por Get_Datos_API.ipynb."
+requires-python = ">=3.11"
+dependencies = [
+  "nbformat>=5.10",
+  "pandas>=2.2",
+  "pyyaml>=6.0",
+  "requests>=2.32",
+  "openpyxl>=3.1",
+  "gtfs-realtime-bindings>=2.0",
+  "python-dotenv>=1.0",
+  "folium>=0.16",
+  "tqdm>=4.66",
+  "beautifulsoup4>=4.12",
+  "numpy>=1.26",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

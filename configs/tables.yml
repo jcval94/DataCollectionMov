@@ -1,0 +1,330 @@
+default_cadence: monthly
+default_format: csv
+timezone: America/Mexico_City
+
+cadence_policy:
+  every_2_hours_weekdays:
+    description: "Datos de vida corta; capturas moderadas en horario operativo de lunes a viernes."
+  hourly_weekdays:
+    description: "Datos realtime donde una captura cada hora es suficiente para historico operativo."
+  daily_weekdays:
+    description: "APIs con costo o cuota; captura diaria en hora pico laboral."
+  daily:
+    description: "Snapshot diario."
+  weekly:
+    description: "Catalogos que pueden cambiar sin aviso, pero no minuto a minuto."
+  monthly:
+    description: "Catalogos estables, historicos mensuales o capas contextuales."
+  quarterly:
+    description: "Capas manuales o de muy baja variacion."
+
+tables:
+  metrobus_vehicle_positions:
+    cadence: hourly_weekdays
+    source: "Metrobús CDMX GTFS-Realtime urlRealTime"
+    owner: "Movilidad universitaria"
+    description: "Posicion realtime de unidades de Metrobus."
+    primary_key: ["_snapshot_id", "entity_id"]
+    columns:
+      entity_id: {meaning: "Identificador de entidad GTFS-Realtime.", example: "vehicle_123"}
+      trip_id: {meaning: "Identificador del viaje GTFS asociado.", example: "trip_456"}
+      route_id: {meaning: "Identificador de ruta GTFS.", example: "1"}
+      vehicle_id: {meaning: "Identificador de unidad.", example: "1234"}
+      latitude: {meaning: "Latitud reportada por la unidad.", example: "19.4326"}
+      longitude: {meaning: "Longitud reportada por la unidad.", example: "-99.1332"}
+      speed_kmh: {meaning: "Velocidad estimada en kilometros por hora.", example: "24.5"}
+      timestamp_cdmx: {meaning: "Hora del reporte convertida a America/Mexico_City.", example: "2026-06-04 08:15:00-06:00"}
+
+  metrobus_trip_updates:
+    cadence: hourly_weekdays
+    source: "Metrobús CDMX GTFS-Realtime urlRealTime"
+    owner: "Movilidad universitaria"
+    description: "Actualizaciones realtime de viajes, paradas, llegadas y salidas."
+    primary_key: ["_snapshot_id", "entity_id", "trip_id", "stop_sequence"]
+    columns:
+      trip_id: {meaning: "Viaje GTFS actualizado.", example: "trip_456"}
+      route_id: {meaning: "Ruta asociada al viaje.", example: "1"}
+      stop_id: {meaning: "Parada asociada al update.", example: "1001"}
+      arrival_delay_sec: {meaning: "Retraso de llegada en segundos.", example: "120"}
+      departure_delay_sec: {meaning: "Retraso de salida en segundos.", example: "90"}
+      arrival_time_cdmx: {meaning: "Hora estimada de llegada convertida a CDMX.", example: "2026-06-04 08:20:00-06:00"}
+
+  metrobus_alerts:
+    cadence: hourly_weekdays
+    source: "Metrobús CDMX GTFS-Realtime urlRealTime"
+    owner: "Movilidad universitaria"
+    description: "Alertas de servicio publicadas en el feed realtime."
+    primary_key: ["_snapshot_id", "entity_id"]
+    columns:
+      cause: {meaning: "Causa GTFS-Realtime de la alerta.", example: "CONSTRUCTION"}
+      effect: {meaning: "Efecto de la alerta sobre el servicio.", example: "DETOUR"}
+      header_text: {meaning: "Titulo o encabezado de alerta.", example: "[es] Servicio modificado"}
+      description_text: {meaning: "Descripcion amplia de la alerta.", example: "[es] Cierre temporal"}
+
+  metrobus_vehicle_positions_enriched:
+    cadence: hourly_weekdays
+    source: "Metrobús realtime unido con GTFS estatico routes/stops"
+    owner: "Movilidad universitaria"
+    description: "Posiciones de unidades enriquecidas con nombres de ruta y parada."
+    primary_key: ["_snapshot_id", "entity_id"]
+    columns:
+      route_short_name: {meaning: "Nombre corto de ruta proveniente de routes.txt.", example: "L1"}
+      route_long_name: {meaning: "Nombre largo de ruta.", example: "Indios Verdes - El Caminero"}
+      stop_name: {meaning: "Nombre de parada asociada.", example: "Buenavista"}
+
+  metrobus_gtfs_static_agency:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Agencias del feed GTFS estatico."
+  metrobus_gtfs_static_routes:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Catalogo de rutas de Metrobus."
+    primary_key: ["route_id"]
+  metrobus_gtfs_static_stops:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Catalogo de paradas y estaciones de Metrobus."
+    primary_key: ["stop_id"]
+  metrobus_gtfs_static_trips:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Viajes programados del feed GTFS."
+  metrobus_gtfs_static_stop_times:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Horarios programados por viaje y parada."
+  metrobus_gtfs_static_calendar:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Calendario base de servicio."
+  metrobus_gtfs_static_calendar_dates:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Excepciones de calendario de servicio."
+  metrobus_gtfs_static_shapes:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Geometrias de rutas GTFS."
+  metrobus_gtfs_static_frequencies:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Frecuencias programadas si el feed las publica."
+  metrobus_gtfs_static_feed_info:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Metadatos del feed GTFS."
+  metrobus_gtfs_static_transfers:
+    cadence: weekly
+    source: "Metrobús CDMX GTFS estatico urlStatic"
+    owner: "Movilidad universitaria"
+    description: "Reglas de transferencia GTFS, si existen."
+
+  tomtom_cdmx_incidents:
+    cadence: every_2_hours_weekdays
+    source: "TomTom Traffic Incident Details v5"
+    owner: "Movilidad universitaria"
+    description: "Incidentes actuales de trafico dentro del bounding box de CDMX."
+    primary_key: ["_snapshot_id", "incident_id"]
+    columns:
+      incident_id: {meaning: "Identificador de incidente reportado por TomTom.", example: "123456"}
+      icon_category_desc: {meaning: "Categoria legible del incidente.", example: "Jam"}
+      delay_seconds: {meaning: "Retraso estimado en segundos.", example: "420"}
+      length_meters: {meaning: "Longitud vial afectada.", example: "850"}
+      from: {meaning: "Inicio textual del tramo afectado.", example: "Av. Insurgentes"}
+      to: {meaning: "Fin textual del tramo afectado.", example: "Eje 5 Sur"}
+      last_report_time: {meaning: "Ultimo reporte del incidente segun TomTom.", example: "2026-06-04T13:30:00Z"}
+
+  tomtom_cdmx_flow:
+    cadence: every_2_hours_weekdays
+    source: "TomTom Flow Segment Data"
+    owner: "Movilidad universitaria"
+    description: "Flujo de trafico en puntos estrategicos de CDMX."
+    primary_key: ["_snapshot_id", "point_name"]
+    columns:
+      point_name: {meaning: "Punto estrategico consultado.", example: "Universidad - CU"}
+      current_speed_kmph: {meaning: "Velocidad actual estimada.", example: "24"}
+      free_flow_speed_kmph: {meaning: "Velocidad esperada sin trafico.", example: "45"}
+      speed_ratio: {meaning: "current_speed_kmph / free_flow_speed_kmph.", example: "0.53"}
+      congestion_index: {meaning: "Indice heuristico 1 - speed_ratio.", example: "0.47"}
+      delay_seconds: {meaning: "Diferencia entre tiempo actual y tiempo libre.", example: "120"}
+      traffic_status: {meaning: "Clasificacion heuristica de congestion.", example: "Congestion media"}
+
+  ecobici_gbfs_feed_urls:
+    cadence: monthly
+    source: "ECOBICI GBFS index"
+    owner: "Movilidad universitaria"
+    description: "URLs de feeds GBFS disponibles."
+  ecobici_gbfs_station_information:
+    cadence: monthly
+    source: "ECOBICI GBFS station_information"
+    owner: "Movilidad universitaria"
+    description: "Catalogo de cicloestaciones, ubicacion y capacidad."
+    primary_key: ["station_id"]
+  ecobici_gbfs_station_status:
+    cadence: every_2_hours_weekdays
+    source: "ECOBICI GBFS station_status"
+    owner: "Movilidad universitaria"
+    description: "Disponibilidad realtime por cicloestacion."
+    primary_key: ["_snapshot_id", "station_id"]
+  ecobici_realtime_stations:
+    cadence: every_2_hours_weekdays
+    source: "ECOBICI GBFS station_information + station_status"
+    owner: "Movilidad universitaria"
+    description: "Tabla unificada de cicloestaciones con disponibilidad actual."
+    primary_key: ["_snapshot_id", "station_id"]
+    columns:
+      station_id: {meaning: "Identificador de cicloestacion.", example: "271"}
+      station_name: {meaning: "Nombre de cicloestacion.", example: "271 Reforma"}
+      capacity: {meaning: "Capacidad total aproximada.", example: "20"}
+      num_bikes_available: {meaning: "Bicicletas disponibles.", example: "8"}
+      num_docks_available: {meaning: "Espacios libres para devolver bicicleta.", example: "12"}
+      bike_availability_pct: {meaning: "Proporcion de bicicletas disponibles.", example: "0.4"}
+      dock_availability_pct: {meaning: "Proporcion de espacios disponibles.", example: "0.6"}
+
+  ecobici_historical_links:
+    cadence: monthly
+    source: "ECOBICI datos abiertos"
+    owner: "Movilidad universitaria"
+    description: "Links mensuales detectados para historicos ECOBICI."
+  ecobici_historico_raw:
+    cadence: monthly
+    source: "ECOBICI datos abiertos historicos mensuales"
+    owner: "Movilidad universitaria"
+    description: "Viajes historicos mensuales tal como se publican."
+  ecobici_historico_normalizado:
+    cadence: monthly
+    source: "ECOBICI historico raw normalizado"
+    owner: "Movilidad universitaria"
+    description: "Viajes historicos con nombres estandarizados y campos temporales derivados."
+    columns:
+      bike_id: {meaning: "Identificador de bicicleta.", example: "12345"}
+      user_gender: {meaning: "Genero reportado por usuario si existe.", example: "M"}
+      user_age: {meaning: "Edad reportada por usuario si existe.", example: "27"}
+      start_station_id: {meaning: "Cicloestacion de retiro.", example: "271"}
+      end_station_id: {meaning: "Cicloestacion de arribo.", example: "112"}
+      started_at: {meaning: "Timestamp de inicio de viaje.", example: "2025-01-15 08:30:00"}
+      ended_at: {meaning: "Timestamp de fin de viaje.", example: "2025-01-15 08:44:00"}
+      duration_minutes: {meaning: "Duracion del viaje en minutos.", example: "14"}
+  ecobici_summary_trips_by_hour:
+    cadence: monthly
+    source: "Derivado de ecobici_historico_normalizado"
+    owner: "Movilidad universitaria"
+    description: "Conteo de viajes por hora de inicio."
+  ecobici_summary_trips_by_date:
+    cadence: monthly
+    source: "Derivado de ecobici_historico_normalizado"
+    owner: "Movilidad universitaria"
+    description: "Conteo de viajes por fecha."
+  ecobici_summary_top_start_stations:
+    cadence: monthly
+    source: "Derivado de ecobici_historico_normalizado"
+    owner: "Movilidad universitaria"
+    description: "Top estaciones de origen por volumen mensual."
+  ecobici_summary_top_end_stations:
+    cadence: monthly
+    source: "Derivado de ecobici_historico_normalizado"
+    owner: "Movilidad universitaria"
+    description: "Top estaciones de destino por volumen mensual."
+  ecobici_summary_top_od_flows:
+    cadence: monthly
+    source: "Derivado de ecobici_historico_normalizado"
+    owner: "Movilidad universitaria"
+    description: "Top flujos origen-destino ECOBICI."
+  ecobici_summary_duration_stats:
+    cadence: monthly
+    source: "Derivado de ecobici_historico_normalizado"
+    owner: "Movilidad universitaria"
+    description: "Estadisticos de duracion de viajes."
+  ecobici_metadata_columns:
+    cadence: monthly
+    source: "Metadatos generados"
+    owner: "Movilidad universitaria"
+    description: "Perfil de columnas de tablas ECOBICI."
+  ecobici_dataset_summary:
+    cadence: monthly
+    source: "Metadatos generados"
+    owner: "Movilidad universitaria"
+    description: "Resumen general de tablas ECOBICI."
+  ecobici_datetime_summary:
+    cadence: monthly
+    source: "Metadatos generados"
+    owner: "Movilidad universitaria"
+    description: "Rangos temporales de tablas ECOBICI."
+  ecobici_numeric_summary:
+    cadence: monthly
+    source: "Metadatos generados"
+    owner: "Movilidad universitaria"
+    description: "Estadisticos numericos de tablas ECOBICI."
+
+  campus_cdmx_base:
+    cadence: quarterly
+    source: "Catalogo manual del repositorio"
+    owner: "Movilidad universitaria"
+    description: "Campus estrategicos CDMX usados como puntos de analisis."
+  denue_cdmx_sector_61_servicios_educativos:
+    cadence: monthly
+    source: "INEGI DENUE API sector SCIAN 61"
+    owner: "Movilidad universitaria"
+    description: "Universo de establecimientos educativos de CDMX."
+  denue_cdmx_educacion_superior_universitaria:
+    cadence: monthly
+    source: "Derivado de DENUE sector 61"
+    owner: "Movilidad universitaria"
+    description: "Subconjunto estimado de educacion superior/universitaria."
+  denue_establecimientos_alrededor_campus:
+    cadence: monthly
+    source: "INEGI DENUE API Buscar por punto"
+    owner: "Movilidad universitaria"
+    description: "Establecimientos educativos alrededor de campus y radios 500/1000/2000 m."
+  denue_resumen_zonas_universitarias:
+    cadence: monthly
+    source: "Derivado de DENUE alrededor de campus"
+    owner: "Movilidad universitaria"
+    description: "Resumen por campus y radio con score de concentracion educativa."
+  denue_resumen_por_nivel_educativo:
+    cadence: monthly
+    source: "Derivado de DENUE alrededor de campus"
+    owner: "Movilidad universitaria"
+    description: "Conteo por nivel educativo estimado, campus y radio."
+  denue_metadata_reporte:
+    cadence: monthly
+    source: "Metadatos generados"
+    owner: "Movilidad universitaria"
+    description: "Perfil de columnas de tablas DENUE."
+
+  routes_api_ejemplo_ruta:
+    cadence: daily_weekdays
+    source: "Google Maps Platform Routes API computeRoutes"
+    owner: "Movilidad universitaria"
+    description: "Ruta ejemplo Metro Universidad a Rectoria UNAM."
+  routes_api_comparacion_modos:
+    cadence: daily_weekdays
+    source: "Google Maps Platform Routes API computeRoutes"
+    owner: "Movilidad universitaria"
+    description: "Comparacion multimodal para un par origen-destino."
+  routes_api_drive_pairs:
+    cadence: daily_weekdays
+    source: "Google Maps Platform Routes API computeRoutes"
+    owner: "Movilidad universitaria"
+    description: "Rutas DRIVE para varios origenes hacia zonas universitarias."
+  routes_api_matriz:
+    cadence: daily_weekdays
+    source: "Google Maps Platform Routes API computeRouteMatrix"
+    owner: "Movilidad universitaria"
+    description: "Matriz origen-destino con trafico hacia universidades."
+  routes_api_score:
+    cadence: daily_weekdays
+    source: "Derivado de routes_api_matriz"
+    owner: "Movilidad universitaria"
+    description: "Score relativo de criticidad por par origen-destino."

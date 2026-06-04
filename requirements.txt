@@ -1,0 +1,11 @@
+nbformat>=5.10
+pandas>=2.2
+pyyaml>=6.0
+requests>=2.32
+openpyxl>=3.1
+gtfs-realtime-bindings>=2.0
+python-dotenv>=1.0
+folium>=0.16
+tqdm>=4.66
+beautifulsoup4>=4.12
+numpy>=1.26
