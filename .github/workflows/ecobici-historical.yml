@@ -1,0 +1,51 @@
+name: ECOBICI historical
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_month:
+        description: "Mes inicial YYYY-MM; vacio usa ultimo mes detectado"
+        required: false
+      end_month:
+        description: "Mes final YYYY-MM; vacio usa start_month o ultimo mes detectado"
+        required: false
+  schedule:
+    - cron: "15 10 6 * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ecobici-historical
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Extraer historico ECOBICI
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.start_month }}" ]; then ARGS="$ARGS --start-month ${{ inputs.start_month }}"; fi
+          if [ -n "${{ inputs.end_month }}" ]; then ARGS="$ARGS --end-month ${{ inputs.end_month }}"; fi
+          python -m historico_api source ecobici_historical --config configs/tables.yml $ARGS
+      - run: python -m historico_api docs --config configs/tables.yml
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs configs README.md
+          if git diff --cached --quiet; then echo "Sin cambios."; exit 0; fi
+          git commit -m "Actualiza historico ECOBICI"
+          git pull --rebase
+          git push
