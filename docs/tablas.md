@@ -656,17 +656,34 @@ No existe snapshot actual para esta tabla.
 - **Descripcion:** Flujo de trafico en puntos estrategicos de CDMX.
 - **Llave primaria sugerida:** `_snapshot_id, point_name`
 
-No existe snapshot actual para esta tabla.
-
 | Columna | Tipo inferido | Significado | Ejemplo |
 | --- | --- | --- | --- |
-| `point_name` | `pendiente` | Punto estrategico consultado. | `Universidad - CU` |
-| `current_speed_kmph` | `pendiente` | Velocidad actual estimada. | `24` |
-| `free_flow_speed_kmph` | `pendiente` | Velocidad esperada sin trafico. | `45` |
-| `speed_ratio` | `pendiente` | current_speed_kmph / free_flow_speed_kmph. | `0.53` |
-| `congestion_index` | `pendiente` | Indice heuristico 1 - speed_ratio. | `0.47` |
-| `delay_seconds` | `pendiente` | Diferencia entre tiempo actual y tiempo libre. | `120` |
-| `traffic_status` | `pendiente` | Clasificacion heuristica de congestion. | `Congestion media` |
+| `_source_system` | `str` | Pendiente de documentar | `tomtom` |
+| `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_flow` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:42:05Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T014202Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-06-05T01:42:02.539228` |
+| `point_name` | `str` | Punto estrategico consultado. | `Universidad - CU` |
+| `input_lat` | `float64` | Pendiente de documentar | `19.432608` |
+| `input_lon` | `float64` | Pendiente de documentar | `-99.133209` |
+| `segment_lat` | `float64` | Pendiente de documentar | `19.43135715602765` |
+| `segment_lon` | `float64` | Pendiente de documentar | `-99.13658297600612` |
+| `frc` | `str` | Pendiente de documentar | `FRC5` |
+| `current_speed_kmph` | `int64` | Velocidad actual estimada. | `24` |
+| `free_flow_speed_kmph` | `int64` | Velocidad esperada sin trafico. | `45` |
+| `speed_ratio` | `float64` | current_speed_kmph / free_flow_speed_kmph. | `0.53` |
+| `congestion_index` | `float64` | Indice heuristico 1 - speed_ratio. | `0.47` |
+| `current_travel_time_seconds` | `int64` | Pendiente de documentar | `887` |
+| `free_flow_travel_time_seconds` | `int64` | Pendiente de documentar | `514` |
+| `delay_seconds` | `int64` | Diferencia entre tiempo actual y tiempo libre. | `120` |
+| `delay_ratio` | `float64` | Pendiente de documentar | `1.7256809338521402` |
+| `confidence` | `float64` | Pendiente de documentar | `1.0` |
+| `road_closure` | `bool` | Pendiente de documentar | `False` |
+| `status_code` | `int64` | Pendiente de documentar | `200` |
+| `error` | `float64` | Pendiente de documentar | `` |
+| `raw_response` | `str` | Pendiente de documentar | `{"flowSegmentData": {"frc": "FRC5", "currentSpeed": 11, "freeFlowSpeed": 19, "currentTravelTime": 887, "freeFlowTravelTi` |
+| `traffic_status` | `str` | Clasificacion heuristica de congestion. | `Congestion media` |
 
 ## `tomtom_cdmx_incidents`
 
@@ -677,14 +694,34 @@ No existe snapshot actual para esta tabla.
 - **Descripcion:** Incidentes actuales de trafico dentro del bounding box de CDMX.
 - **Llave primaria sugerida:** `_snapshot_id, incident_id`
 
-No existe snapshot actual para esta tabla.
-
 | Columna | Tipo inferido | Significado | Ejemplo |
 | --- | --- | --- | --- |
-| `incident_id` | `pendiente` | Identificador de incidente reportado por TomTom. | `123456` |
-| `icon_category_desc` | `pendiente` | Categoria legible del incidente. | `Jam` |
-| `delay_seconds` | `pendiente` | Retraso estimado en segundos. | `420` |
-| `length_meters` | `pendiente` | Longitud vial afectada. | `850` |
-| `from` | `pendiente` | Inicio textual del tramo afectado. | `Av. Insurgentes` |
-| `to` | `pendiente` | Fin textual del tramo afectado. | `Eje 5 Sur` |
-| `last_report_time` | `pendiente` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
+| `_source_system` | `str` | Pendiente de documentar | `tomtom` |
+| `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_incidents` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:42:05Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T014202Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-06-05T01:42:02.440850` |
+| `incident_id` | `str` | Identificador de incidente reportado por TomTom. | `123456` |
+| `incident_type` | `str` | Pendiente de documentar | `Feature` |
+| `geometry_type` | `str` | Pendiente de documentar | `LineString` |
+| `lat` | `float64` | Pendiente de documentar | `19.360753359` |
+| `lon` | `float64` | Pendiente de documentar | `-99.3530761356` |
+| `icon_category` | `int64` | Pendiente de documentar | `6` |
+| `icon_category_desc` | `str` | Categoria legible del incidente. | `Jam` |
+| `magnitude_of_delay` | `int64` | Pendiente de documentar | `3` |
+| `delay_seconds` | `float64` | Retraso estimado en segundos. | `420` |
+| `length_meters` | `float64` | Longitud vial afectada. | `850` |
+| `from` | `str` | Inicio textual del tramo afectado. | `Av. Insurgentes` |
+| `to` | `str` | Fin textual del tramo afectado. | `Eje 5 Sur` |
+| `road_numbers` | `str` | Pendiente de documentar | `MEX-134` |
+| `time_validity` | `str` | Pendiente de documentar | `present` |
+| `probability` | `str` | Pendiente de documentar | `certain` |
+| `number_of_reports` | `float64` | Pendiente de documentar | `` |
+| `start_time` | `str` | Pendiente de documentar | `2026-06-05T01:27:30Z` |
+| `end_time` | `str` | Pendiente de documentar | `2026-06-05T02:00:30Z` |
+| `last_report_time` | `float64` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
+| `event_descriptions` | `str` | Pendiente de documentar | `Tráfico parado` |
+| `event_codes` | `str` | Pendiente de documentar | `101` |
+| `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3551535065, 19.3591292251], [-99.355134731, 19.3591440131], [-99.3550180549,` |
+| `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-13f3ec6a-4ca6-44e3-a453-bf78cdebb43e-TTL24441700920027000", "iconCategory": 6, "magnitudeOfDelay": 3, "start` |
