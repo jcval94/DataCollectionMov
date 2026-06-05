@@ -1,0 +1,6 @@
+_source_system,_source_table,_extracted_at_utc,_snapshot_date,_snapshot_id,feed_name,url
+ecobici,ecobici_gbfs_feed_urls,2026-06-05T01:37:34Z,2026-06-05,20260605T013733Z,free_bike_status,https://gbfs.mex.lyftbikes.com/gbfs/en/free_bike_status.json
+ecobici,ecobici_gbfs_feed_urls,2026-06-05T01:37:34Z,2026-06-05,20260605T013733Z,station_information,https://gbfs.mex.lyftbikes.com/gbfs/en/station_information.json
+ecobici,ecobici_gbfs_feed_urls,2026-06-05T01:37:34Z,2026-06-05,20260605T013733Z,station_status,https://gbfs.mex.lyftbikes.com/gbfs/en/station_status.json
+ecobici,ecobici_gbfs_feed_urls,2026-06-05T01:37:34Z,2026-06-05,20260605T013733Z,system_alerts,https://gbfs.mex.lyftbikes.com/gbfs/en/system_alerts.json
+ecobici,ecobici_gbfs_feed_urls,2026-06-05T01:37:34Z,2026-06-05,20260605T013733Z,system_information,https://gbfs.mex.lyftbikes.com/gbfs/en/system_information.json

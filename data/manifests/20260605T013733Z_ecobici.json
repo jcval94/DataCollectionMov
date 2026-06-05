@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-05T01:37:34Z",
+  "source": "ecobici",
+  "snapshot_id": "20260605T013733Z",
+  "snapshot_date": "2026-06-05",
+  "tables": [
+    {
+      "table": "ecobici_gbfs_feed_urls",
+      "source": "ecobici",
+      "snapshot_id": "20260605T013733Z",
+      "snapshot_date": "2026-06-05",
+      "rows": 5,
+      "columns": 7,
+      "cadence": "monthly",
+      "current_path": "data/current/ecobici_gbfs_feed_urls.csv",
+      "snapshot_path": "data/history/ecobici_gbfs_feed_urls/20260605T013733Z.csv"
+    },
+    {
+      "table": "ecobici_gbfs_station_information",
+      "source": "ecobici",
+      "snapshot_id": "20260605T013733Z",
+      "snapshot_date": "2026-06-05",
+      "rows": 677,
+      "columns": 17,
+      "cadence": "monthly",
+      "current_path": "data/current/ecobici_gbfs_station_information.csv",
+      "snapshot_path": "data/history/ecobici_gbfs_station_information/20260605T013733Z.csv"
+    }
+  ]
+}

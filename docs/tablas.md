@@ -1,258 +1,575 @@
-# Diccionario de tablas
+# Documentacion de tablas
 
-La fuente de verdad operativa es `configs/tables.yml`. Este documento explica el uso de las tablas y las columnas principales. Cuando existan snapshots, `python -m historico_api docs --config configs/tables.yml` complementara tipos inferidos y ejemplos reales desde `data/current`.
+Este archivo se regenera a partir de `configs/tables.yml` y de los CSV en `data/current`.
+Complete en el catalogo los significados de columnas cuando el valor aparezca como pendiente.
 
-## Convenciones
+## `campus_cdmx_base`
 
-Cada tabla historizada incluye:
+- **Estado:** activa
+- **Periodicidad:** `quarterly`
+- **Fuente:** Catalogo manual del repositorio
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Campus estrategicos CDMX usados como puntos de analisis.
 
-| Columna | Significado |
-| --- | --- |
-| `_snapshot_id` | Identificador unico de corrida en UTC. |
-| `_snapshot_date` | Fecha logica de snapshot. |
-| `_extracted_at_utc` | Momento UTC de escritura. |
-| `_source_table` | Nombre canonico de tabla. |
-| `_source_system` | Fuente del extractor. |
+No existe snapshot actual para esta tabla.
 
-## Metrobús realtime
+## `denue_cdmx_educacion_superior_universitaria`
 
-### `metrobus_vehicle_positions`
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de DENUE sector 61
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Subconjunto estimado de educacion superior/universitaria.
 
-Una fila por vehiculo reportado en GTFS-Realtime.
+No existe snapshot actual para esta tabla.
 
-| Columna | Significado |
-| --- | --- |
-| `entity_id` | Identificador de entidad GTFS-Realtime. |
-| `trip_id` | Viaje GTFS asociado. |
-| `route_id` | Ruta GTFS asociada. |
-| `direction_id` | Sentido del viaje, si el feed lo entrega. |
-| `vehicle_id` | Identificador de unidad. |
-| `vehicle_label` | Etiqueta publica o interna de unidad. |
-| `latitude`, `longitude` | Coordenadas reportadas. |
-| `bearing` | Rumbo de la unidad. |
-| `speed_mps`, `speed_kmh` | Velocidad reportada. |
-| `stop_id` | Parada actual o proxima. |
-| `current_status` | Estado GTFS de parada. |
-| `timestamp_raw`, `timestamp_cdmx` | Timestamp original y convertido a CDMX. |
-| `congestion_level`, `occupancy_status` | Estado de congestion/ocupacion si el feed lo entrega. |
+## `denue_cdmx_sector_61_servicios_educativos`
 
-### `metrobus_trip_updates`
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** INEGI DENUE API sector SCIAN 61
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Universo de establecimientos educativos de CDMX.
 
-Una fila por viaje-parada actualizada.
+No existe snapshot actual para esta tabla.
 
-| Columna | Significado |
-| --- | --- |
-| `entity_id` | Entidad GTFS-Realtime. |
-| `trip_id`, `route_id`, `direction_id` | Identificacion del viaje. |
-| `vehicle_id`, `vehicle_label` | Vehiculo asociado. |
-| `stop_sequence`, `stop_id` | Parada dentro del viaje. |
-| `arrival_delay_sec`, `departure_delay_sec` | Retraso de llegada/salida en segundos. |
-| `arrival_time_raw`, `departure_time_raw` | Timestamp original. |
-| `arrival_time_cdmx`, `departure_time_cdmx` | Hora convertida a CDMX. |
+## `denue_establecimientos_alrededor_campus`
 
-### `metrobus_alerts`
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** INEGI DENUE API Buscar por punto
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Establecimientos educativos alrededor de campus y radios 500/1000/2000 m.
 
-Una fila por alerta de servicio.
+No existe snapshot actual para esta tabla.
 
-| Columna | Significado |
-| --- | --- |
-| `entity_id` | Entidad de alerta. |
-| `cause` | Causa GTFS-Realtime. |
-| `effect` | Efecto en servicio. |
-| `header_text` | Encabezado multilenguaje. |
-| `description_text` | Descripcion multilenguaje. |
-| `url` | URL informativa si existe. |
+## `denue_metadata_reporte`
 
-### `metrobus_vehicle_positions_enriched`
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Metadatos generados
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Perfil de columnas de tablas DENUE.
 
-Extiende `metrobus_vehicle_positions` con columnas de `routes.txt` y `stops.txt`.
+No existe snapshot actual para esta tabla.
 
-| Columna | Significado |
-| --- | --- |
-| `route_short_name`, `route_long_name` | Nombres de ruta. |
-| `route_color`, `route_text_color` | Colores GTFS de ruta. |
-| `stop_name`, `stop_lat`, `stop_lon` | Nombre y ubicacion de parada. |
+## `denue_resumen_por_nivel_educativo`
 
-## Metrobús GTFS estatico
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de DENUE alrededor de campus
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Conteo por nivel educativo estimado, campus y radio.
 
-Las tablas `metrobus_gtfs_static_*` preservan los archivos `.txt` publicados en el ZIP GTFS estatico. Las mas relevantes son:
+No existe snapshot actual para esta tabla.
 
-| Tabla | Uso |
-| --- | --- |
-| `metrobus_gtfs_static_routes` | Catalogo de rutas; llave `route_id`. |
-| `metrobus_gtfs_static_stops` | Catalogo de paradas; llave `stop_id`. |
-| `metrobus_gtfs_static_trips` | Viajes programados; llave `trip_id`. |
-| `metrobus_gtfs_static_stop_times` | Secuencia y horarios por viaje-parada. |
-| `metrobus_gtfs_static_calendar` | Dias de servicio por `service_id`. |
-| `metrobus_gtfs_static_calendar_dates` | Excepciones de calendario. |
-| `metrobus_gtfs_static_shapes` | Geometrias de ruta por `shape_id`. |
+## `denue_resumen_zonas_universitarias`
 
-## TomTom
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de DENUE alrededor de campus
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Resumen por campus y radio con score de concentracion educativa.
 
-### `tomtom_cdmx_incidents`
+No existe snapshot actual para esta tabla.
 
-Una fila por incidente vial dentro del bounding box de CDMX.
+## `ecobici_dataset_summary`
 
-| Columna | Significado |
-| --- | --- |
-| `extraction_timestamp` | Momento UTC de consulta a TomTom. |
-| `incident_id` | Identificador del incidente. |
-| `incident_type`, `geometry_type` | Tipo de entidad y geometria. |
-| `lat`, `lon` | Punto representativo del incidente. |
-| `icon_category`, `icon_category_desc` | Categoria numerica y legible. |
-| `magnitude_of_delay`, `delay_seconds` | Severidad/retraso estimado. |
-| `length_meters` | Longitud afectada. |
-| `from`, `to`, `road_numbers` | Tramo vial afectado. |
-| `start_time`, `end_time`, `last_report_time` | Temporalidad del incidente. |
-| `event_descriptions`, `event_codes` | Eventos reportados. |
-| `raw_geometry`, `raw_properties` | JSON crudo para auditoria. |
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Metadatos generados
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Resumen general de tablas ECOBICI.
 
-### `tomtom_cdmx_flow`
+No existe snapshot actual para esta tabla.
 
-Una fila por punto estrategico de flujo.
+## `ecobici_datetime_summary`
 
-| Columna | Significado |
-| --- | --- |
-| `point_name` | Punto consultado. |
-| `input_lat`, `input_lon` | Coordenada solicitada. |
-| `segment_lat`, `segment_lon` | Coordenada representativa del segmento devuelto. |
-| `current_speed_kmph` | Velocidad actual. |
-| `free_flow_speed_kmph` | Velocidad libre. |
-| `speed_ratio` | Velocidad actual / velocidad libre. |
-| `congestion_index` | `1 - speed_ratio`. |
-| `current_travel_time_seconds`, `free_flow_travel_time_seconds` | Tiempo actual y libre. |
-| `delay_seconds`, `delay_ratio` | Demora absoluta y relativa. |
-| `confidence` | Confianza del dato TomTom. |
-| `road_closure` | Indicador de cierre vial. |
-| `traffic_status` | Clasificacion heuristica. |
-| `raw_response` | JSON crudo para auditoria. |
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Metadatos generados
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Rangos temporales de tablas ECOBICI.
 
-## ECOBICI
+No existe snapshot actual para esta tabla.
 
-### `ecobici_gbfs_feed_urls`
+## `ecobici_gbfs_feed_urls`
 
-Feeds publicados por el indice GBFS.
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** ECOBICI GBFS index
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** URLs de feeds GBFS disponibles.
 
-| Columna | Significado |
-| --- | --- |
-| `feed_name` | Nombre de feed GBFS. |
-| `url` | URL del feed. |
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `ecobici` |
+| `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_feed_urls` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:37:34Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T013733Z` |
+| `feed_name` | `str` | Pendiente de documentar | `free_bike_status` |
+| `url` | `str` | Pendiente de documentar | `https://gbfs.mex.lyftbikes.com/gbfs/en/free_bike_status.json` |
 
-### `ecobici_gbfs_station_information`
+## `ecobici_gbfs_station_information`
 
-Catalogo de cicloestaciones.
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** ECOBICI GBFS station_information
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Catalogo de cicloestaciones, ubicacion y capacidad.
+- **Llave primaria sugerida:** `station_id`
 
-| Columna | Significado |
-| --- | --- |
-| `station_id` | Identificador de cicloestacion. |
-| `station_name` | Nombre publico. |
-| `lat`, `lon` | Ubicacion. |
-| `capacity` | Capacidad aproximada. |
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `ecobici` |
+| `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_station_information` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:37:34Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T013733Z` |
+| `station_id` | `int64` | Pendiente de documentar | `1` |
+| `external_id` | `str` | Pendiente de documentar | `e961269c-34c4-4b70-8e30-a51aa95a8429` |
+| `station_name` | `str` | Pendiente de documentar | `CE-710 Molino del Rey - Glorieta de la Lealtad` |
+| `short_name` | `int64` | Pendiente de documentar | `710` |
+| `lat` | `float64` | Pendiente de documentar | `19.416795` |
+| `lon` | `float64` | Pendiente de documentar | `-99.192508` |
+| `rental_methods` | `str` | Pendiente de documentar | `['KEY', 'CREDITCARD']` |
+| `capacity` | `int64` | Pendiente de documentar | `39` |
+| `electric_bike_surcharge_waiver` | `bool` | Pendiente de documentar | `False` |
+| `is_charging` | `bool` | Pendiente de documentar | `False` |
+| `eightd_has_key_dispenser` | `bool` | Pendiente de documentar | `False` |
+| `has_kiosk` | `bool` | Pendiente de documentar | `True` |
 
-### `ecobici_gbfs_station_status`
+## `ecobici_gbfs_station_status`
 
-Estado realtime de cicloestaciones.
+- **Estado:** activa
+- **Periodicidad:** `every_2_hours_weekdays`
+- **Fuente:** ECOBICI GBFS station_status
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Disponibilidad realtime por cicloestacion.
+- **Llave primaria sugerida:** `_snapshot_id, station_id`
 
-| Columna | Significado |
-| --- | --- |
-| `station_id` | Identificador de cicloestacion. |
-| `num_bikes_available` | Bicicletas disponibles. |
-| `num_docks_available` | Espacios disponibles. |
-| `num_bikes_disabled`, `num_docks_disabled` | Bicis/espacios deshabilitados. |
-| `is_installed`, `is_renting`, `is_returning` | Estado operativo. |
-| `last_reported`, `last_reported_datetime` | Ultimo reporte original y convertido. |
+No existe snapshot actual para esta tabla.
 
-### `ecobici_realtime_stations`
+## `ecobici_historical_links`
 
-Union de informacion y estado realtime.
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** ECOBICI datos abiertos
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Links mensuales detectados para historicos ECOBICI.
 
-| Columna | Significado |
-| --- | --- |
-| `station_id`, `station_name`, `lat`, `lon`, `capacity` | Identidad y ubicacion. |
-| `num_bikes_available`, `num_docks_available` | Disponibilidad actual. |
-| `bike_availability_pct`, `dock_availability_pct` | Disponibilidad relativa 0-1. |
+No existe snapshot actual para esta tabla.
 
-### Historicos ECOBICI
+## `ecobici_historico_normalizado`
 
-| Tabla | Grano | Uso |
-| --- | --- | --- |
-| `ecobici_historical_links` | Un mes publicado. | Auditar disponibilidad de historicos. |
-| `ecobici_historico_raw` | Un viaje historico sin normalizar. | Reproducibilidad frente al archivo original. |
-| `ecobici_historico_normalizado` | Un viaje historico normalizado. | Analisis de demanda y patrones. |
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** ECOBICI historico raw normalizado
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Viajes historicos con nombres estandarizados y campos temporales derivados.
 
-Columnas clave de `ecobici_historico_normalizado`:
+No existe snapshot actual para esta tabla.
 
-| Columna | Significado |
-| --- | --- |
-| `bike_id` | Bicicleta usada. |
-| `user_gender`, `user_age` | Variables declaradas por usuario, si existen. |
-| `start_station_id`, `end_station_id` | Estaciones de retiro y arribo. |
-| `start_date`, `start_time`, `end_date`, `end_time` | Fecha/hora original. |
-| `started_at`, `ended_at` | Timestamps normalizados. |
-| `duration_minutes` | Duracion calculada. |
-| `start_hour`, `start_date_only`, `start_weekday` | Variables temporales derivadas. |
-| `_month`, `_source_url`, `_source_file` | Mes y archivo de origen. |
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `bike_id` | `pendiente` | Identificador de bicicleta. | `12345` |
+| `user_gender` | `pendiente` | Genero reportado por usuario si existe. | `M` |
+| `user_age` | `pendiente` | Edad reportada por usuario si existe. | `27` |
+| `start_station_id` | `pendiente` | Cicloestacion de retiro. | `271` |
+| `end_station_id` | `pendiente` | Cicloestacion de arribo. | `112` |
+| `started_at` | `pendiente` | Timestamp de inicio de viaje. | `2025-01-15 08:30:00` |
+| `ended_at` | `pendiente` | Timestamp de fin de viaje. | `2025-01-15 08:44:00` |
+| `duration_minutes` | `pendiente` | Duracion del viaje en minutos. | `14` |
 
-Resumenes derivados:
+## `ecobici_historico_raw`
 
-| Tabla | Uso |
-| --- | --- |
-| `ecobici_summary_trips_by_hour` | Viajes por hora de inicio. |
-| `ecobici_summary_trips_by_date` | Viajes por fecha. |
-| `ecobici_summary_top_start_stations` | Ranking de estaciones de retiro. |
-| `ecobici_summary_top_end_stations` | Ranking de estaciones de arribo. |
-| `ecobici_summary_top_od_flows` | Pares origen-destino mas frecuentes. |
-| `ecobici_summary_duration_stats` | Estadisticos de duracion. |
-| `ecobici_metadata_columns`, `ecobici_dataset_summary`, `ecobici_datetime_summary`, `ecobici_numeric_summary` | Metadatos y perfilado. |
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** ECOBICI datos abiertos historicos mensuales
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Viajes historicos mensuales tal como se publican.
 
-## DENUE/INEGI
+No existe snapshot actual para esta tabla.
 
-| Tabla | Grano | Uso |
-| --- | --- | --- |
-| `campus_cdmx_base` | Un campus estrategico. | Coordenadas base. |
-| `denue_cdmx_sector_61_servicios_educativos` | Un establecimiento educativo. | Universo educativo de CDMX. |
-| `denue_cdmx_educacion_superior_universitaria` | Establecimiento superior estimado. | Subset universitario. |
-| `denue_establecimientos_alrededor_campus` | Establecimiento-campus-radio. | Presion educativa local. |
-| `denue_resumen_zonas_universitarias` | Campus-radio. | Score de concentracion educativa. |
-| `denue_resumen_por_nivel_educativo` | Campus-radio-nivel. | Distribucion por nivel educativo. |
-| `denue_metadata_reporte` | Columna perfilada. | Metadatos de tablas DENUE. |
+## `ecobici_metadata_columns`
 
-Columnas clave DENUE:
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Metadatos generados
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Perfil de columnas de tablas ECOBICI.
 
-| Columna | Significado |
-| --- | --- |
-| `id_establecimiento`, `clee` | Identificadores DENUE. |
-| `nombre`, `razon_social`, `clase_actividad` | Identidad y actividad economica. |
-| `estrato` | Rango de personal ocupado. |
-| `calle`, `colonia`, `cp`, `ubicacion` | Direccion. |
-| `latitud`, `longitud` | Coordenadas. |
-| `nivel_educativo_estimado` | Clasificacion heuristica. |
-| `flag_universidad`, `flag_media_superior`, `flag_educacion_basica` | Flags derivados. |
-| `campus_id`, `radio_m`, `distancia_campus_m` | Relacion con campus. |
-| `score_concentracion_educativa_0_100` | Score relativo por campus-radio. |
+No existe snapshot actual para esta tabla.
 
-## Google Routes API
+## `ecobici_numeric_summary`
 
-| Tabla | Grano | Uso |
-| --- | --- | --- |
-| `routes_api_ejemplo_ruta` | Una ruta ejemplo. | Validacion de ruta y mapa. |
-| `routes_api_comparacion_modos` | Un modo de transporte. | Comparacion DRIVE/WALK/BICYCLE/TRANSIT. |
-| `routes_api_drive_pairs` | Un par origen-destino DRIVE. | Accesos vehiculares a campus. |
-| `routes_api_matriz` | Un elemento de matriz OD. | Accesibilidad y congestion. |
-| `routes_api_score` | Un elemento OD con score. | Priorizacion de criticidad. |
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Metadatos generados
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Estadisticos numericos de tablas ECOBICI.
 
-Columnas clave:
+No existe snapshot actual para esta tabla.
 
-| Columna | Significado |
-| --- | --- |
-| `query_timestamp` | Momento UTC de consulta. |
-| `origin`, `destination` | Par origen-destino. |
-| `travel_mode` | Modo solicitado. |
-| `route_found` | Indica si Google devolvio ruta. |
-| `distance_meters` | Distancia estimada. |
-| `duration_seconds`, `duration_minutes` | Duracion con condiciones actuales. |
-| `static_duration_seconds`, `static_duration_minutes` | Duracion base. |
-| `delay_seconds`, `delay_minutes` | Diferencia actual vs base. |
-| `traffic_delay_pct` | Retraso relativo porcentual. |
-| `encoded_polyline` | Geometria codificada para mapas. |
-| `criticality_score_0_100`, `criticality_level` | Score relativo de criticidad. |
+## `ecobici_realtime_stations`
+
+- **Estado:** activa
+- **Periodicidad:** `every_2_hours_weekdays`
+- **Fuente:** ECOBICI GBFS station_information + station_status
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Tabla unificada de cicloestaciones con disponibilidad actual.
+- **Llave primaria sugerida:** `_snapshot_id, station_id`
+
+No existe snapshot actual para esta tabla.
+
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `station_id` | `pendiente` | Identificador de cicloestacion. | `271` |
+| `station_name` | `pendiente` | Nombre de cicloestacion. | `271 Reforma` |
+| `capacity` | `pendiente` | Capacidad total aproximada. | `20` |
+| `num_bikes_available` | `pendiente` | Bicicletas disponibles. | `8` |
+| `num_docks_available` | `pendiente` | Espacios libres para devolver bicicleta. | `12` |
+| `bike_availability_pct` | `pendiente` | Proporcion de bicicletas disponibles. | `0.4` |
+| `dock_availability_pct` | `pendiente` | Proporcion de espacios disponibles. | `0.6` |
+
+## `ecobici_summary_duration_stats`
+
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de ecobici_historico_normalizado
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Estadisticos de duracion de viajes.
+
+No existe snapshot actual para esta tabla.
+
+## `ecobici_summary_top_end_stations`
+
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de ecobici_historico_normalizado
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Top estaciones de destino por volumen mensual.
+
+No existe snapshot actual para esta tabla.
+
+## `ecobici_summary_top_od_flows`
+
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de ecobici_historico_normalizado
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Top flujos origen-destino ECOBICI.
+
+No existe snapshot actual para esta tabla.
+
+## `ecobici_summary_top_start_stations`
+
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de ecobici_historico_normalizado
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Top estaciones de origen por volumen mensual.
+
+No existe snapshot actual para esta tabla.
+
+## `ecobici_summary_trips_by_date`
+
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de ecobici_historico_normalizado
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Conteo de viajes por fecha.
+
+No existe snapshot actual para esta tabla.
+
+## `ecobici_summary_trips_by_hour`
+
+- **Estado:** activa
+- **Periodicidad:** `monthly`
+- **Fuente:** Derivado de ecobici_historico_normalizado
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Conteo de viajes por hora de inicio.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_alerts`
+
+- **Estado:** activa
+- **Periodicidad:** `hourly_weekdays`
+- **Fuente:** Metrobús CDMX GTFS-Realtime urlRealTime
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Alertas de servicio publicadas en el feed realtime.
+- **Llave primaria sugerida:** `_snapshot_id, entity_id`
+
+No existe snapshot actual para esta tabla.
+
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `cause` | `pendiente` | Causa GTFS-Realtime de la alerta. | `CONSTRUCTION` |
+| `effect` | `pendiente` | Efecto de la alerta sobre el servicio. | `DETOUR` |
+| `header_text` | `pendiente` | Titulo o encabezado de alerta. | `[es] Servicio modificado` |
+| `description_text` | `pendiente` | Descripcion amplia de la alerta. | `[es] Cierre temporal` |
+
+## `metrobus_gtfs_static_agency`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Agencias del feed GTFS estatico.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_calendar`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Calendario base de servicio.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_calendar_dates`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Excepciones de calendario de servicio.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_feed_info`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Metadatos del feed GTFS.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_frequencies`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Frecuencias programadas si el feed las publica.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_routes`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Catalogo de rutas de Metrobus.
+- **Llave primaria sugerida:** `route_id`
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_shapes`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Geometrias de rutas GTFS.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_stop_times`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Horarios programados por viaje y parada.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_stops`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Catalogo de paradas y estaciones de Metrobus.
+- **Llave primaria sugerida:** `stop_id`
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_transfers`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Reglas de transferencia GTFS, si existen.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_gtfs_static_trips`
+
+- **Estado:** activa
+- **Periodicidad:** `weekly`
+- **Fuente:** Metrobús CDMX GTFS estatico urlStatic
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Viajes programados del feed GTFS.
+
+No existe snapshot actual para esta tabla.
+
+## `metrobus_trip_updates`
+
+- **Estado:** activa
+- **Periodicidad:** `hourly_weekdays`
+- **Fuente:** Metrobús CDMX GTFS-Realtime urlRealTime
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Actualizaciones realtime de viajes, paradas, llegadas y salidas.
+- **Llave primaria sugerida:** `_snapshot_id, entity_id, trip_id, stop_sequence`
+
+No existe snapshot actual para esta tabla.
+
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `trip_id` | `pendiente` | Viaje GTFS actualizado. | `trip_456` |
+| `route_id` | `pendiente` | Ruta asociada al viaje. | `1` |
+| `stop_id` | `pendiente` | Parada asociada al update. | `1001` |
+| `arrival_delay_sec` | `pendiente` | Retraso de llegada en segundos. | `120` |
+| `departure_delay_sec` | `pendiente` | Retraso de salida en segundos. | `90` |
+| `arrival_time_cdmx` | `pendiente` | Hora estimada de llegada convertida a CDMX. | `2026-06-04 08:20:00-06:00` |
+
+## `metrobus_vehicle_positions`
+
+- **Estado:** activa
+- **Periodicidad:** `hourly_weekdays`
+- **Fuente:** Metrobús CDMX GTFS-Realtime urlRealTime
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Posicion realtime de unidades de Metrobus.
+- **Llave primaria sugerida:** `_snapshot_id, entity_id`
+
+No existe snapshot actual para esta tabla.
+
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `entity_id` | `pendiente` | Identificador de entidad GTFS-Realtime. | `vehicle_123` |
+| `trip_id` | `pendiente` | Identificador del viaje GTFS asociado. | `trip_456` |
+| `route_id` | `pendiente` | Identificador de ruta GTFS. | `1` |
+| `vehicle_id` | `pendiente` | Identificador de unidad. | `1234` |
+| `latitude` | `pendiente` | Latitud reportada por la unidad. | `19.4326` |
+| `longitude` | `pendiente` | Longitud reportada por la unidad. | `-99.1332` |
+| `speed_kmh` | `pendiente` | Velocidad estimada en kilometros por hora. | `24.5` |
+| `timestamp_cdmx` | `pendiente` | Hora del reporte convertida a America/Mexico_City. | `2026-06-04 08:15:00-06:00` |
+
+## `metrobus_vehicle_positions_enriched`
+
+- **Estado:** activa
+- **Periodicidad:** `hourly_weekdays`
+- **Fuente:** Metrobús realtime unido con GTFS estatico routes/stops
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Posiciones de unidades enriquecidas con nombres de ruta y parada.
+- **Llave primaria sugerida:** `_snapshot_id, entity_id`
+
+No existe snapshot actual para esta tabla.
+
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `route_short_name` | `pendiente` | Nombre corto de ruta proveniente de routes.txt. | `L1` |
+| `route_long_name` | `pendiente` | Nombre largo de ruta. | `Indios Verdes - El Caminero` |
+| `stop_name` | `pendiente` | Nombre de parada asociada. | `Buenavista` |
+
+## `routes_api_comparacion_modos`
+
+- **Estado:** activa
+- **Periodicidad:** `daily_weekdays`
+- **Fuente:** Google Maps Platform Routes API computeRoutes
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Comparacion multimodal para un par origen-destino.
+
+No existe snapshot actual para esta tabla.
+
+## `routes_api_drive_pairs`
+
+- **Estado:** activa
+- **Periodicidad:** `daily_weekdays`
+- **Fuente:** Google Maps Platform Routes API computeRoutes
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Rutas DRIVE para varios origenes hacia zonas universitarias.
+
+No existe snapshot actual para esta tabla.
+
+## `routes_api_ejemplo_ruta`
+
+- **Estado:** activa
+- **Periodicidad:** `daily_weekdays`
+- **Fuente:** Google Maps Platform Routes API computeRoutes
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Ruta ejemplo Metro Universidad a Rectoria UNAM.
+
+No existe snapshot actual para esta tabla.
+
+## `routes_api_matriz`
+
+- **Estado:** activa
+- **Periodicidad:** `daily_weekdays`
+- **Fuente:** Google Maps Platform Routes API computeRouteMatrix
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Matriz origen-destino con trafico hacia universidades.
+
+No existe snapshot actual para esta tabla.
+
+## `routes_api_score`
+
+- **Estado:** activa
+- **Periodicidad:** `daily_weekdays`
+- **Fuente:** Derivado de routes_api_matriz
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Score relativo de criticidad por par origen-destino.
+
+No existe snapshot actual para esta tabla.
+
+## `tomtom_cdmx_flow`
+
+- **Estado:** activa
+- **Periodicidad:** `every_2_hours_weekdays`
+- **Fuente:** TomTom Flow Segment Data
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Flujo de trafico en puntos estrategicos de CDMX.
+- **Llave primaria sugerida:** `_snapshot_id, point_name`
+
+No existe snapshot actual para esta tabla.
+
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `point_name` | `pendiente` | Punto estrategico consultado. | `Universidad - CU` |
+| `current_speed_kmph` | `pendiente` | Velocidad actual estimada. | `24` |
+| `free_flow_speed_kmph` | `pendiente` | Velocidad esperada sin trafico. | `45` |
+| `speed_ratio` | `pendiente` | current_speed_kmph / free_flow_speed_kmph. | `0.53` |
+| `congestion_index` | `pendiente` | Indice heuristico 1 - speed_ratio. | `0.47` |
+| `delay_seconds` | `pendiente` | Diferencia entre tiempo actual y tiempo libre. | `120` |
+| `traffic_status` | `pendiente` | Clasificacion heuristica de congestion. | `Congestion media` |
+
+## `tomtom_cdmx_incidents`
+
+- **Estado:** activa
+- **Periodicidad:** `every_2_hours_weekdays`
+- **Fuente:** TomTom Traffic Incident Details v5
+- **Responsable:** Movilidad universitaria
+- **Descripcion:** Incidentes actuales de trafico dentro del bounding box de CDMX.
+- **Llave primaria sugerida:** `_snapshot_id, incident_id`
+
+No existe snapshot actual para esta tabla.
+
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `incident_id` | `pendiente` | Identificador de incidente reportado por TomTom. | `123456` |
+| `icon_category_desc` | `pendiente` | Categoria legible del incidente. | `Jam` |
+| `delay_seconds` | `pendiente` | Retraso estimado en segundos. | `420` |
+| `length_meters` | `pendiente` | Longitud vial afectada. | `850` |
+| `from` | `pendiente` | Inicio textual del tramo afectado. | `Av. Insurgentes` |
+| `to` | `pendiente` | Fin textual del tramo afectado. | `Eje 5 Sur` |
+| `last_report_time` | `pendiente` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
