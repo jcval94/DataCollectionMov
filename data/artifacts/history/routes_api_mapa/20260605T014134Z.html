@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_531b9cde2309161aefebdc0a58edf6a5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_531b9cde2309161aefebdc0a58edf6a5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_531b9cde2309161aefebdc0a58edf6a5 = L.map(
+                "map_531b9cde2309161aefebdc0a58edf6a5",
+                {
+                    center: [19.328297499999998, -99.181023],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8e81327565f6ca5efa53c589ad35a2ff = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8e81327565f6ca5efa53c589ad35a2ff.addTo(map_531b9cde2309161aefebdc0a58edf6a5);
+        
+    
+            var marker_2a691126899c54508f36086a8fb3c63c = L.marker(
+                [19.324353, -99.17477],
+                {
+}
+            ).addTo(map_531b9cde2309161aefebdc0a58edf6a5);
+        
+    
+            marker_2a691126899c54508f36086a8fb3c63c.bindTooltip(
+                `<div>
+                     Origen: Metro Universidad
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b09f4025991a57e90ddb8f98edcce6c7 = L.marker(
+                [19.332242, -99.187276],
+                {
+}
+            ).addTo(map_531b9cde2309161aefebdc0a58edf6a5);
+        
+    
+            marker_b09f4025991a57e90ddb8f98edcce6c7.bindTooltip(
+                `<div>
+                     Destino: Rectoria UNAM
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5b48818b6178fc8650afc63655058aa9 = L.polyline(
+                [[19.32439, -99.17485], [19.324830000000002, -99.1748], [19.325650000000003, -99.17479], [19.326400000000003, -99.17475], [19.32729, -99.17479], [19.327990000000003, -99.17486000000001], [19.32855, -99.17497], [19.328770000000002, -99.17505000000001], [19.3289, -99.17514000000001], [19.32974, -99.17597], [19.33106, -99.17682], [19.33113, -99.17691], [19.33164, -99.17843], [19.3317, -99.17854000000001], [19.33238, -99.17843], [19.332430000000002, -99.17855], [19.332420000000003, -99.17876000000001], [19.331860000000002, -99.17883], [19.33183, -99.17887], [19.33163, -99.179], [19.33143, -99.17917000000001], [19.331000000000003, -99.17966000000001], [19.330920000000003, -99.17981], [19.33087, -99.17994], [19.330840000000002, -99.18016000000001], [19.330820000000003, -99.18148000000001], [19.33079, -99.18242000000001], [19.330730000000003, -99.18349], [19.3307, -99.18463000000001], [19.33071, -99.18528], [19.33038, -99.18827], [19.33049, -99.18827], [19.330540000000003, -99.18813], [19.3306, -99.18811000000001], [19.33096, -99.18813], [19.33105, -99.18815000000001], [19.33115, -99.18813], [19.331280000000003, -99.18816000000001]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_531b9cde2309161aefebdc0a58edf6a5);
+        
+</script>
+</html>

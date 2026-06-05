@@ -490,7 +490,29 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Comparacion multimodal para un par origen-destino.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `google_routes` |
+| `_source_table` | `str` | Pendiente de documentar | `routes_api_comparacion_modos` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:41:38Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T014134Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-05T01:41:34.288377` |
+| `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
+| `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
+| `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
+| `route_found` | `bool` | Pendiente de documentar | `True` |
+| `distance_meters` | `int64` | Pendiente de documentar | `2330` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `382.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `426.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.366666666666666` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.1` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-44.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.7333333333333333` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-10.328638497652587` |
+| `encoded_polyline` | `str` | Pendiente de documentar | `mh}tBxai\|QwAIcDAuCGqDFkCLoBTk@NYPgDdDgGhDMPeBnHKTgCUIV@h@nBLDFf@Xf@`@tA`BN\HXDj@BfGDzDJtEDbFA`C`AtQU?I[KCgABQBSCYD` |
+| `description` | `str` | Pendiente de documentar | `Investigación Científica y Escolar` |
+| `route_labels` | `str` | Pendiente de documentar | `DEFAULT_ROUTE` |
 
 ## `routes_api_drive_pairs`
 
@@ -500,7 +522,29 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Rutas DRIVE para varios origenes hacia zonas universitarias.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `google_routes` |
+| `_source_table` | `str` | Pendiente de documentar | `routes_api_drive_pairs` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:41:38Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T014134Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-05T01:41:35.571967` |
+| `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
+| `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
+| `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
+| `route_found` | `bool` | Pendiente de documentar | `True` |
+| `distance_meters` | `int64` | Pendiente de documentar | `2330` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `382.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `426.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.366666666666666` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.1` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-44.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.7333333333333333` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-10.328638497652587` |
+| `encoded_polyline` | `str` | Pendiente de documentar | `mh}tBxai\|QwAIcDAuCGqDFkCLoBTk@NYPgDdDgGhDMPeBnHKTgCUIV@h@nBLDFf@Xf@`@tA`BN\HXDj@BfGDzDJtEDbFA`C`AtQU?I[KCgABQBSCYD` |
+| `description` | `str` | Pendiente de documentar | `Investigación Científica y Escolar` |
+| `route_labels` | `str` | Pendiente de documentar | `DEFAULT_ROUTE` |
 
 ## `routes_api_ejemplo_ruta`
 
@@ -510,7 +554,29 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Ruta ejemplo Metro Universidad a Rectoria UNAM.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `google_routes` |
+| `_source_table` | `str` | Pendiente de documentar | `routes_api_ejemplo_ruta` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:41:38Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T014134Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-05T01:41:34.183802` |
+| `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
+| `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
+| `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
+| `route_found` | `bool` | Pendiente de documentar | `True` |
+| `distance_meters` | `int64` | Pendiente de documentar | `2330` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `382.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `426.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.366666666666666` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.1` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-44.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.7333333333333333` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-10.328638497652587` |
+| `encoded_polyline` | `str` | Pendiente de documentar | `mh}tBxai\|QwAIcDAuCGqDFkCLoBTk@NYPgDdDgGhDMPeBnHKTgCUIV@h@nBLDFf@Xf@`@tA`BN\HXDj@BfGDzDJtEDbFA`C`AtQU?I[KCgABQBSCYD` |
+| `description` | `str` | Pendiente de documentar | `Investigación Científica y Escolar` |
+| `route_labels` | `str` | Pendiente de documentar | `DEFAULT_ROUTE` |
 
 ## `routes_api_matriz`
 
@@ -520,7 +586,29 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Matriz origen-destino con trafico hacia universidades.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `google_routes` |
+| `_source_table` | `str` | Pendiente de documentar | `routes_api_matriz` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:41:38Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T014134Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-05T01:41:38.134950` |
+| `origin_index` | `int64` | Pendiente de documentar | `0` |
+| `destination_index` | `int64` | Pendiente de documentar | `0` |
+| `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
+| `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
+| `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
+| `status` | `str` | Pendiente de documentar | `{}` |
+| `condition` | `str` | Pendiente de documentar | `ROUTE_EXISTS` |
+| `distance_meters` | `int64` | Pendiente de documentar | `2330` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `382.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `427.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.366666666666666` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.116666666666666` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-45.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.75` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-10.53864168618267` |
 
 ## `routes_api_score`
 
@@ -530,7 +618,34 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Score relativo de criticidad por par origen-destino.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `google_routes` |
+| `_source_table` | `str` | Pendiente de documentar | `routes_api_score` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-05T01:41:38Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-05` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260605T014134Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-05T01:41:38.134950` |
+| `origin_index` | `int64` | Pendiente de documentar | `0` |
+| `destination_index` | `int64` | Pendiente de documentar | `0` |
+| `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
+| `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
+| `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
+| `status` | `str` | Pendiente de documentar | `{}` |
+| `condition` | `str` | Pendiente de documentar | `ROUTE_EXISTS` |
+| `distance_meters` | `int64` | Pendiente de documentar | `2330` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `382.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `427.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.366666666666666` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.116666666666666` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-45.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.75` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-10.53864168618267` |
+| `duration_score` | `float64` | Pendiente de documentar | `0.0245694022289766` |
+| `delay_score` | `float64` | Pendiente de documentar | `0.0047225501770956` |
+| `traffic_pct_score` | `float64` | Pendiente de documentar | `0.0308425277845878` |
+| `criticality_score_0_100` | `float64` | Pendiente de documentar | `1.887762912194056` |
+| `criticality_level` | `str` | Pendiente de documentar | `Baja` |
 
 ## `tomtom_cdmx_flow`
 
