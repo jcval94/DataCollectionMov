@@ -1,0 +1,703 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13136000000002,
+            19.47481
+          ],
+          [
+            -99.13175000000001,
+            19.47494
+          ],
+          [
+            -99.13181,
+            19.474950000000003
+          ],
+          [
+            -99.13243000000001,
+            19.47334
+          ],
+          [
+            -99.13245,
+            19.47322
+          ],
+          [
+            -99.13231,
+            19.47321
+          ],
+          [
+            -99.13113000000001,
+            19.47278
+          ],
+          [
+            -99.13148000000001,
+            19.471700000000002
+          ],
+          [
+            -99.13091000000001,
+            19.471480000000003
+          ],
+          [
+            -99.12875000000001,
+            19.470730000000003
+          ],
+          [
+            -99.12753000000001,
+            19.471510000000002
+          ],
+          [
+            -99.12585000000001,
+            19.470940000000002
+          ],
+          [
+            -99.12586,
+            19.470850000000002
+          ],
+          [
+            -99.12580000000001,
+            19.47078
+          ],
+          [
+            -99.12572,
+            19.47077
+          ],
+          [
+            -99.12569,
+            19.47078
+          ],
+          [
+            -99.12406000000001,
+            19.468570000000003
+          ],
+          [
+            -99.12377000000001,
+            19.468200000000003
+          ],
+          [
+            -99.12335,
+            19.469240000000003
+          ],
+          [
+            -99.12243000000001,
+            19.47164
+          ],
+          [
+            -99.12233,
+            19.47164
+          ],
+          [
+            -99.12225000000001,
+            19.471610000000002
+          ],
+          [
+            -99.12204000000001,
+            19.472150000000003
+          ],
+          [
+            -99.12185000000001,
+            19.47212
+          ],
+          [
+            -99.12181000000001,
+            19.472140000000003
+          ],
+          [
+            -99.12167000000001,
+            19.47182
+          ],
+          [
+            -99.1217,
+            19.47171
+          ],
+          [
+            -99.12154000000001,
+            19.471670000000003
+          ],
+          [
+            -99.1213,
+            19.471580000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "07840_robo_a_negocio_1",
+        "codigo_postal": "07840",
+        "crime_type": "Robo a negocio",
+        "centroid_id": 1,
+        "centroid_lat": 19.4718334,
+        "centroid_lon": -99.1212019,
+        "n_events": 1301,
+        "resolver_unit_id": "osm_node_1677057517",
+        "resolver_name": "Oficina de Policia \"SSPDF GAM 6 Tepeyac\"",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4746457,
+        "resolver_lon": -99.1314248,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2170.0,
+        "duration_seconds": 489.0,
+        "duration_minutes": 8.15,
+        "static_duration_seconds": 538.0,
+        "delay_seconds": -49.0,
+        "encoded_polyline": "qtzuB~q`|QYlAAJ`IzBVB@[tAkFvEdAj@qBtCoL{CsFpBoIP@LK@OAExLeIhAy@oEsA_NwD?SDOkBi@De@CG~@[TDF_@Po@",
+        "route_description": "Calz de Guadalupe",
+        "generated_at_utc": "2026-06-06T17:36:12+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15204000000001,
+            19.45354
+          ],
+          [
+            -99.15230000000001,
+            19.452160000000003
+          ],
+          [
+            -99.15231000000001,
+            19.452
+          ],
+          [
+            -99.15228,
+            19.45191
+          ],
+          [
+            -99.15256000000001,
+            19.45054
+          ],
+          [
+            -99.15301000000001,
+            19.44807
+          ],
+          [
+            -99.15633000000001,
+            19.44864
+          ],
+          [
+            -99.15734,
+            19.443160000000002
+          ],
+          [
+            -99.15573,
+            19.442890000000002
+          ],
+          [
+            -99.15237,
+            19.44235
+          ],
+          [
+            -99.15236,
+            19.44253
+          ],
+          [
+            -99.15444000000001,
+            19.442890000000002
+          ],
+          [
+            -99.1543,
+            19.443440000000002
+          ],
+          [
+            -99.15410000000001,
+            19.44393
+          ],
+          [
+            -99.15365000000001,
+            19.443830000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06350_robo_a_negocio_2",
+        "codigo_postal": "06350",
+        "crime_type": "Robo a negocio",
+        "centroid_id": 2,
+        "centroid_lat": 19.4435198,
+        "centroid_lon": -99.1536359,
+        "n_events": 711,
+        "resolver_unit_id": "osm_node_4878881532",
+        "resolver_name": "Policia Auxiliar",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4535805,
+        "resolver_lon": -99.1523035,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2531.0,
+        "duration_seconds": 677.0,
+        "duration_minutes": 11.283333333333333,
+        "static_duration_seconds": 658.0,
+        "delay_seconds": 19.0,
+        "encoded_polyline": "sovuBfsd|QrGr@^@PEpGv@lNxAqBvSfa@hEt@aIjB_Tc@AgA~KmB[aBg@RyA",
+        "route_description": "Dr. Atl",
+        "generated_at_utc": "2026-06-06T17:36:13+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.09698,
+            19.37677
+          ],
+          [
+            -99.09675000000001,
+            19.37713
+          ],
+          [
+            -99.0965,
+            19.37763
+          ],
+          [
+            -99.09558000000001,
+            19.379340000000003
+          ],
+          [
+            -99.09537,
+            19.379700000000003
+          ],
+          [
+            -99.09478000000001,
+            19.38062
+          ],
+          [
+            -99.09434,
+            19.38137
+          ],
+          [
+            -99.09279000000001,
+            19.38378
+          ],
+          [
+            -99.09258000000001,
+            19.38371
+          ],
+          [
+            -99.09192,
+            19.38361
+          ],
+          [
+            -99.09099,
+            19.38342
+          ],
+          [
+            -99.09006000000001,
+            19.383280000000003
+          ],
+          [
+            -99.08973,
+            19.383290000000002
+          ],
+          [
+            -99.08842000000001,
+            19.383020000000002
+          ],
+          [
+            -99.08806000000001,
+            19.38293
+          ],
+          [
+            -99.08799,
+            19.38294
+          ],
+          [
+            -99.08703000000001,
+            19.38266
+          ],
+          [
+            -99.08489,
+            19.38223
+          ],
+          [
+            -99.08311,
+            19.381890000000002
+          ],
+          [
+            -99.08163,
+            19.381580000000003
+          ],
+          [
+            -99.08127,
+            19.38145
+          ],
+          [
+            -99.08102000000001,
+            19.381330000000002
+          ],
+          [
+            -99.08083,
+            19.38127
+          ],
+          [
+            -99.08067000000001,
+            19.38128
+          ],
+          [
+            -99.08056,
+            19.381320000000002
+          ],
+          [
+            -99.0797,
+            19.381860000000003
+          ],
+          [
+            -99.07951000000001,
+            19.38204
+          ],
+          [
+            -99.07933000000001,
+            19.382150000000003
+          ],
+          [
+            -99.07924000000001,
+            19.3822
+          ],
+          [
+            -99.07915000000001,
+            19.38221
+          ],
+          [
+            -99.07849,
+            19.382420000000003
+          ],
+          [
+            -99.07856000000001,
+            19.382630000000002
+          ],
+          [
+            -99.07941000000001,
+            19.382350000000002
+          ],
+          [
+            -99.07962,
+            19.382250000000003
+          ],
+          [
+            -99.07987000000001,
+            19.382070000000002
+          ],
+          [
+            -99.08014000000001,
+            19.382050000000003
+          ],
+          [
+            -99.08027000000001,
+            19.38203
+          ],
+          [
+            -99.08038,
+            19.381870000000003
+          ],
+          [
+            -99.08040000000001,
+            19.381960000000003
+          ],
+          [
+            -99.08037,
+            19.382250000000003
+          ],
+          [
+            -99.08032000000001,
+            19.382440000000003
+          ],
+          [
+            -99.08014000000001,
+            19.382420000000003
+          ],
+          [
+            -99.08015,
+            19.382360000000002
+          ],
+          [
+            -99.07982000000001,
+            19.38231
+          ],
+          [
+            -99.07957,
+            19.38239
+          ],
+          [
+            -99.07919000000001,
+            19.382550000000002
+          ],
+          [
+            -99.07900000000001,
+            19.382620000000003
+          ],
+          [
+            -99.07884000000001,
+            19.382720000000003
+          ],
+          [
+            -99.0788,
+            19.382800000000003
+          ],
+          [
+            -99.07873000000001,
+            19.38315
+          ],
+          [
+            -99.07841,
+            19.38312
+          ],
+          [
+            -99.07832,
+            19.383650000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "09020_robo_a_negocio_1",
+        "codigo_postal": "09020",
+        "crime_type": "Robo a negocio",
+        "centroid_id": 1,
+        "centroid_lat": 19.383654,
+        "centroid_lon": -99.0783818,
+        "n_events": 675,
+        "resolver_unit_id": "osm_node_5899997186",
+        "resolver_name": "Policía",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3767411,
+        "resolver_lon": -99.0969283,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 3087.0,
+        "duration_seconds": 610.0,
+        "duration_minutes": 10.166666666666666,
+        "static_duration_seconds": 623.0,
+        "delay_seconds": -13.0,
+        "encoded_polyline": "yoguBb{y{QgAm@cBq@uIwDgAi@wDuBuCwAaNuHLi@RcCd@yDZyDAaAt@eGPgAAMv@_EtAkLbAcJ|@gHXgAVq@Je@A_@GUkBkDc@e@Uc@IQAQi@cCi@Lv@hDRh@b@p@Bt@BX^TQBy@Ee@IBc@J@HaAOq@_@kAMe@S_@OGeAMD_AiBQ",
+        "route_description": "Canal Río Churubusco/Eje 4 Ote y Av. Canal de Tezontle",
+        "generated_at_utc": "2026-06-06T17:36:16+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15204000000001,
+            19.45354
+          ],
+          [
+            -99.15230000000001,
+            19.452160000000003
+          ],
+          [
+            -99.15231000000001,
+            19.452
+          ],
+          [
+            -99.15228,
+            19.45191
+          ],
+          [
+            -99.15256000000001,
+            19.45054
+          ],
+          [
+            -99.15301000000001,
+            19.44807
+          ],
+          [
+            -99.15633000000001,
+            19.44864
+          ],
+          [
+            -99.15734,
+            19.443160000000002
+          ],
+          [
+            -99.15573,
+            19.442890000000002
+          ],
+          [
+            -99.15237,
+            19.44235
+          ],
+          [
+            -99.15213000000001,
+            19.44516
+          ],
+          [
+            -99.1521,
+            19.44536
+          ],
+          [
+            -99.15201,
+            19.44556
+          ],
+          [
+            -99.15187,
+            19.445710000000002
+          ],
+          [
+            -99.15162000000001,
+            19.445860000000003
+          ],
+          [
+            -99.15153000000001,
+            19.44594
+          ],
+          [
+            -99.15147,
+            19.44603
+          ],
+          [
+            -99.15135000000001,
+            19.44601
+          ],
+          [
+            -99.15135000000001,
+            19.44613
+          ],
+          [
+            -99.15140000000001,
+            19.44621
+          ],
+          [
+            -99.15149000000001,
+            19.446250000000003
+          ],
+          [
+            -99.15219,
+            19.4464
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06350_robo_a_negocio_1",
+        "codigo_postal": "06350",
+        "crime_type": "Robo a negocio",
+        "centroid_id": 1,
+        "centroid_lat": 19.4471609,
+        "centroid_lon": -99.1520164,
+        "n_events": 657,
+        "resolver_unit_id": "osm_node_4878881532",
+        "resolver_name": "Policia Auxiliar",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4535805,
+        "resolver_lon": -99.1523035,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2680.0,
+        "duration_seconds": 652.0,
+        "duration_minutes": 10.866666666666667,
+        "static_duration_seconds": 667.0,
+        "delay_seconds": -15.0,
+        "encoded_polyline": "sovuBfsd|QrGr@^@PEpGv@lNxAqBvSfa@hEt@aIjB_TqPo@g@Eg@Q][]q@OQQKBWW?OHGP]jC",
+        "route_description": "Dr. Atl",
+        "generated_at_utc": "2026-06-06T17:36:17+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15817000000001,
+            19.412190000000002
+          ],
+          [
+            -99.15907000000001,
+            19.412000000000003
+          ],
+          [
+            -99.15974000000001,
+            19.41188
+          ],
+          [
+            -99.16253,
+            19.411330000000003
+          ],
+          [
+            -99.16309000000001,
+            19.41347
+          ],
+          [
+            -99.16335000000001,
+            19.41448
+          ],
+          [
+            -99.16342,
+            19.41465
+          ],
+          [
+            -99.16421000000001,
+            19.41768
+          ],
+          [
+            -99.16444000000001,
+            19.418570000000003
+          ],
+          [
+            -99.16452000000001,
+            19.41889
+          ],
+          [
+            -99.16724,
+            19.418280000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_robo_a_negocio_2",
+        "codigo_postal": "06700",
+        "crime_type": "Robo a negocio",
+        "centroid_id": 2,
+        "centroid_lat": 19.418127,
+        "centroid_lon": -99.1671997,
+        "n_events": 630,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1772.0,
+        "duration_seconds": 579.0,
+        "duration_minutes": 9.65,
+        "static_duration_seconds": 532.0,
+        "delay_seconds": 47.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eC_BVd@rDVdClBlPkLnBiEr@a@L}Q|CqDl@_ANxB~O",
+        "route_description": "Coahuila y Monterrey/Eje 2 Pte",
+        "generated_at_utc": "2026-06-06T17:36:18+00:00"
+      }
+    }
+  ]
+}

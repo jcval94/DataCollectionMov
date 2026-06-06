@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_10c3188a2e0110db2c3a3edfd2172334 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Rutas atendidas por Salud / emergencia medica</strong><br>
+      19 rutas / 13,472 eventos / 19 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_10c3188a2e0110db2c3a3edfd2172334" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_10c3188a2e0110db2c3a3edfd2172334 = L.map(
+                "map_10c3188a2e0110db2c3a3edfd2172334",
+                {
+                    center: [19.414785405263157, -99.15052840000001],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+
+            
+
+        
+    
+            var tile_layer_ffdc579be109315807ccc032d873a778 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ffdc579be109315807ccc032d873a778.addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            var marker_cluster_c4985212b072e9fe44c923c4b660f35a = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_9311501471be1c5fb80b11229e85b54f = L.marker(
+                [19.4442171, -99.1354083],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_f9f1212c9d2aaf2bc953852e5efcb61f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b9db4bb5274ddf22feeb33d910d572f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e0dea549cd069a2372f2b9595006471 = $(`<div id="html_0e0dea549cd069a2372f2b9595006471" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro de Salud Dr. D. Orvañanos<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_2b9db4bb5274ddf22feeb33d910d572f.setContent(html_0e0dea549cd069a2372f2b9595006471);
+            
+        
+
+        marker_9311501471be1c5fb80b11229e85b54f.bindPopup(popup_2b9db4bb5274ddf22feeb33d910d572f)
+        ;
+
+        
+    
+    
+            marker_9311501471be1c5fb80b11229e85b54f.bindTooltip(
+                `<div>
+                     Centro de Salud Dr. D. Orvañanos (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9311501471be1c5fb80b11229e85b54f.setIcon(icon_f9f1212c9d2aaf2bc953852e5efcb61f);
+            
+    
+            var marker_a906ec26ce4a0c2e531e52bccb891fff = L.marker(
+                [19.4520667, -99.1130365],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_8c17c9b4177e46820783d8e426cc0dd9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25034acbe58e0812f438a047b3890d0f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b7dd6a8993ca6792ccf9d4a5a2b7736 = $(`<div id="html_9b7dd6a8993ca6792ccf9d4a5a2b7736" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Hospital Materno Infantil Inguarán<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_25034acbe58e0812f438a047b3890d0f.setContent(html_9b7dd6a8993ca6792ccf9d4a5a2b7736);
+            
+        
+
+        marker_a906ec26ce4a0c2e531e52bccb891fff.bindPopup(popup_25034acbe58e0812f438a047b3890d0f)
+        ;
+
+        
+    
+    
+            marker_a906ec26ce4a0c2e531e52bccb891fff.bindTooltip(
+                `<div>
+                     Hospital Materno Infantil Inguarán (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a906ec26ce4a0c2e531e52bccb891fff.setIcon(icon_8c17c9b4177e46820783d8e426cc0dd9);
+            
+    
+            var marker_2badecf60917ab94d613da118c8f6cf3 = L.marker(
+                [19.4153725, -99.1550669],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_6fe07eee54c0cd9e5c375e81c3dcb39c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_84c396c0ba47cd84a1163abddc10553f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e03782e9d83a2acf13c5d69b26ced1ee = $(`<div id="html_e03782e9d83a2acf13c5d69b26ced1ee" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Hospital Punto Médico<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_84c396c0ba47cd84a1163abddc10553f.setContent(html_e03782e9d83a2acf13c5d69b26ced1ee);
+            
+        
+
+        marker_2badecf60917ab94d613da118c8f6cf3.bindPopup(popup_84c396c0ba47cd84a1163abddc10553f)
+        ;
+
+        
+    
+    
+            marker_2badecf60917ab94d613da118c8f6cf3.bindTooltip(
+                `<div>
+                     Hospital Punto Médico (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2badecf60917ab94d613da118c8f6cf3.setIcon(icon_6fe07eee54c0cd9e5c375e81c3dcb39c);
+            
+    
+            var marker_15320c6777382890e811c99a80cee24e = L.marker(
+                [19.4225708, -99.1418319],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_79d8491f9a1db060e547aeabf000ce95 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c212d03e7dd7793c816cfe9081c55a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_969e38eb19a05db4b8d7c7ac16a35364 = $(`<div id="html_969e38eb19a05db4b8d7c7ac16a35364" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_2c212d03e7dd7793c816cfe9081c55a3.setContent(html_969e38eb19a05db4b8d7c7ac16a35364);
+            
+        
+
+        marker_15320c6777382890e811c99a80cee24e.bindPopup(popup_2c212d03e7dd7793c816cfe9081c55a3)
+        ;
+
+        
+    
+    
+            marker_15320c6777382890e811c99a80cee24e.bindTooltip(
+                `<div>
+                     Instituto Oftalmologia (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_15320c6777382890e811c99a80cee24e.setIcon(icon_79d8491f9a1db060e547aeabf000ce95);
+            
+    
+            var marker_8d9fc5f3dc37dcd4597ccad2e051ca4d = L.marker(
+                [19.4183686, -99.1716807],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_e563046f6cf204bdd1f2b207a4b6ee47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c39c170e69196210c9f156cf1d2c18d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_470a71272f7e9e359cc20c1754b7661e = $(`<div id="html_470a71272f7e9e359cc20c1754b7661e" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro Hospitalario Sanatorio Durango<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_7c39c170e69196210c9f156cf1d2c18d.setContent(html_470a71272f7e9e359cc20c1754b7661e);
+            
+        
+
+        marker_8d9fc5f3dc37dcd4597ccad2e051ca4d.bindPopup(popup_7c39c170e69196210c9f156cf1d2c18d)
+        ;
+
+        
+    
+    
+            marker_8d9fc5f3dc37dcd4597ccad2e051ca4d.bindTooltip(
+                `<div>
+                     Centro Hospitalario Sanatorio Durango (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d9fc5f3dc37dcd4597ccad2e051ca4d.setIcon(icon_e563046f6cf204bdd1f2b207a4b6ee47);
+            
+    
+            var marker_2236c36008dfef3c3020ded71396cf93 = L.marker(
+                [19.4340558, -99.1655405],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_bdff1f6b20234ff44ed6b691b4d9503e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbfa1409c39be2eb9391a415bad20217 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5fdb7495f8ce41cbd72022b66e3f235f = $(`<div id="html_5fdb7495f8ce41cbd72022b66e3f235f" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Imss Villalonguin<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_dbfa1409c39be2eb9391a415bad20217.setContent(html_5fdb7495f8ce41cbd72022b66e3f235f);
+            
+        
+
+        marker_2236c36008dfef3c3020ded71396cf93.bindPopup(popup_dbfa1409c39be2eb9391a415bad20217)
+        ;
+
+        
+    
+    
+            marker_2236c36008dfef3c3020ded71396cf93.bindTooltip(
+                `<div>
+                     Imss Villalonguin (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2236c36008dfef3c3020ded71396cf93.setIcon(icon_bdff1f6b20234ff44ed6b691b4d9503e);
+            
+    
+            var marker_0268cdc81cfe8d40c22f04558393199c = L.marker(
+                [19.4288082, -99.1336905],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_0d1f3ea07ae96a00506e8f3720a483d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_518cf845938a185e87863f5ed655a9ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_23e710a67e6809d3d0056ee4b3433b4a = $(`<div id="html_23e710a67e6809d3d0056ee4b3433b4a" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Hospital de Jesus<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_518cf845938a185e87863f5ed655a9ba.setContent(html_23e710a67e6809d3d0056ee4b3433b4a);
+            
+        
+
+        marker_0268cdc81cfe8d40c22f04558393199c.bindPopup(popup_518cf845938a185e87863f5ed655a9ba)
+        ;
+
+        
+    
+    
+            marker_0268cdc81cfe8d40c22f04558393199c.bindTooltip(
+                `<div>
+                     Hospital de Jesus (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0268cdc81cfe8d40c22f04558393199c.setIcon(icon_0d1f3ea07ae96a00506e8f3720a483d6);
+            
+    
+            var marker_44a443404e0a22534b430f032976ad3e = L.marker(
+                [19.33267, -99.1775931],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_d9412fda02540d13842eccba0d09e46a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9cbcdf03877dde3d02ab5b378d981bca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44662623f3c595a0280073ddbb38cc1b = $(`<div id="html_44662623f3c595a0280073ddbb38cc1b" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro de Salud T.I Copilco el Alto<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_9cbcdf03877dde3d02ab5b378d981bca.setContent(html_44662623f3c595a0280073ddbb38cc1b);
+            
+        
+
+        marker_44a443404e0a22534b430f032976ad3e.bindPopup(popup_9cbcdf03877dde3d02ab5b378d981bca)
+        ;
+
+        
+    
+    
+            marker_44a443404e0a22534b430f032976ad3e.bindTooltip(
+                `<div>
+                     Centro de Salud T.I Copilco el Alto (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44a443404e0a22534b430f032976ad3e.setIcon(icon_d9412fda02540d13842eccba0d09e46a);
+            
+    
+            var marker_74bd3173fa241ce005008861dc01963c = L.marker(
+                [19.4091815, -99.1528235],
+                {
+}
+            ).addTo(marker_cluster_c4985212b072e9fe44c923c4b660f35a);
+        
+    
+            var icon_4532c38c4b611a0db791082934900a7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01d9c3131d6aaa8ffd48fb30abbb74b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4346519b3bc00249f519094519fc78a1 = $(`<div id="html_4346519b3bc00249f519094519fc78a1" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro Medico Nacional Siglo XXI<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_01d9c3131d6aaa8ffd48fb30abbb74b1.setContent(html_4346519b3bc00249f519094519fc78a1);
+            
+        
+
+        marker_74bd3173fa241ce005008861dc01963c.bindPopup(popup_01d9c3131d6aaa8ffd48fb30abbb74b1)
+        ;
+
+        
+    
+    
+            marker_74bd3173fa241ce005008861dc01963c.bindTooltip(
+                `<div>
+                     Centro Medico Nacional Siglo XXI (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_74bd3173fa241ce005008861dc01963c.setIcon(icon_4532c38c4b611a0db791082934900a7f);
+            
+    
+            marker_cluster_c4985212b072e9fe44c923c4b660f35a.addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            var poly_line_dfa85c92771a5f25b1fbee4ab495155c = L.polyline(
+                [[19.418290000000002, -99.1718], [19.41864, -99.17206], [19.419520000000002, -99.16806000000001], [19.419790000000003, -99.16690000000001], [19.41974, -99.16669], [19.41963, -99.16655000000002], [19.41958, -99.16639], [19.419590000000003, -99.16624], [19.41965, -99.16608000000001], [19.419780000000003, -99.16595000000001], [19.41991, -99.16589], [19.42014, -99.16592000000001], [19.420250000000003, -99.16597], [19.42032, -99.16594], [19.42061, -99.16567], [19.421100000000003, -99.16527], [19.42124, -99.16513], [19.42264, -99.16551000000001], [19.42322, -99.1657], [19.42339, -99.16577000000001], [19.42352, -99.16579], [19.424400000000002, -99.16626000000001], [19.42537, -99.16421000000001], [19.42611, -99.16458000000002], [19.42605, -99.16470000000001], [19.425590000000003, -99.16447000000001], [19.42554, -99.16456000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.7735924528226414}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_8c2a8f549c44371328d8726368066cfd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be620c5e7d50e9605ed06f3b532b7bbe = $(`<div id="html_be620c5e7d50e9605ed06f3b532b7bbe" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06600<br><b>Eventos:</b> 89<br><b>Unidad:</b> Centro Hospitalario Sanatorio Durango<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.7<br><b>Duracion min:</b> 14.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_8c2a8f549c44371328d8726368066cfd.setContent(html_be620c5e7d50e9605ed06f3b532b7bbe);
+            
+        
+
+        poly_line_dfa85c92771a5f25b1fbee4ab495155c.bindPopup(popup_8c2a8f549c44371328d8726368066cfd)
+        ;
+
+        
+    
+    
+            poly_line_dfa85c92771a5f25b1fbee4ab495155c.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06600 -> Centro Hospitalario Sanatorio Durango
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bd7c20de70af7c19ea0c12c10c2a77d = L.circleMarker(
+                [19.4255123, -99.1645435],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.241100628920335, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_9bd7c20de70af7c19ea0c12c10c2a77d.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06600 (89 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_305ad66403939d0d451e052d8de5b243 = L.polyline(
+                [[19.4223, -99.14182000000001], [19.422310000000003, -99.14154], [19.421390000000002, -99.14164000000001], [19.42162, -99.14421], [19.42192, -99.14708], [19.422030000000003, -99.1483], [19.42265, -99.14817000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.7094473981982814}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_5e99f8f7f53618c3d8194625da8144e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2f2359bda50b717ae4c10f11587a319 = $(`<div id="html_c2f2359bda50b717ae4c10f11587a319" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06720<br><b>Eventos:</b> 86<br><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.91<br><b>Duracion min:</b> 3.9<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_5e99f8f7f53618c3d8194625da8144e5.setContent(html_c2f2359bda50b717ae4c10f11587a319);
+            
+        
+
+        poly_line_305ad66403939d0d451e052d8de5b243.bindPopup(popup_5e99f8f7f53618c3d8194625da8144e5)
+        ;
+
+        
+    
+    
+            poly_line_305ad66403939d0d451e052d8de5b243.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 -> Instituto Oftalmologia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_708d9f279335093d076c4ab6c593c035 = L.circleMarker(
+                [19.422607, -99.1479305],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.152010275275391, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_708d9f279335093d076c4ab6c593c035.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 (86 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dd1d8dd56daa85ae19898f6d6cde5137 = L.polyline(
+                [[19.42883, -99.13388], [19.429260000000003, -99.13382000000001], [19.429080000000003, -99.13260000000001], [19.42605, -99.13303]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.2}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_bfba4c294efccd1c0a2500c7bcb0d0e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2b549d0f3c7386ac8b7e0b889085d5c = $(`<div id="html_e2b549d0f3c7386ac8b7e0b889085d5c" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06090<br><b>Eventos:</b> 64<br><b>Unidad:</b> Hospital de Jesus<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.52<br><b>Duracion min:</b> 3.0<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_bfba4c294efccd1c0a2500c7bcb0d0e0.setContent(html_e2b549d0f3c7386ac8b7e0b889085d5c);
+            
+        
+
+        poly_line_dd1d8dd56daa85ae19898f6d6cde5137.bindPopup(popup_bfba4c294efccd1c0a2500c7bcb0d0e0)
+        ;
+
+        
+    
+    
+            poly_line_dd1d8dd56daa85ae19898f6d6cde5137.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06090 -> Hospital de Jesus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa8409c9d884767bcafab610ec18f187 = L.circleMarker(
+                [19.4260636, -99.1331063],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.444444444444445, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_fa8409c9d884767bcafab610ec18f187.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06090 (64 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0518c3846fc373bbcf4816eb8389912d = L.polyline(
+                [[19.409080000000003, -99.15298000000001], [19.4095, -99.1533], [19.40969, -99.15328000000001], [19.41016, -99.15321], [19.41025, -99.15322], [19.41015, -99.15257000000001], [19.41009, -99.15192], [19.410050000000002, -99.15178], [19.409940000000002, -99.1508], [19.41129, -99.15052000000001], [19.41241, -99.1503], [19.412360000000003, -99.14977], [19.412460000000003, -99.14976000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.0199337741083}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_7b43eefd9d49a0cb305790ca62733219 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5aa007dbfba4c1cb07a987e38a32c535 = $(`<div id="html_5aa007dbfba4c1cb07a987e38a32c535" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06720<br><b>Eventos:</b> 57<br><b>Unidad:</b> Centro Medico Nacional Siglo XXI<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.74<br><b>Duracion min:</b> 3.0<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_7b43eefd9d49a0cb305790ca62733219.setContent(html_5aa007dbfba4c1cb07a987e38a32c535);
+            
+        
+
+        poly_line_0518c3846fc373bbcf4816eb8389912d.bindPopup(popup_7b43eefd9d49a0cb305790ca62733219)
+        ;
+
+        
+    
+    
+            poly_line_0518c3846fc373bbcf4816eb8389912d.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 -> Centro Medico Nacional Siglo XXI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bdde50af00918910b349f09a5173754e = L.circleMarker(
+                [19.4124621, -99.149754],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.194352464039305, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_bdde50af00918910b349f09a5173754e.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 (57 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6b14f322cf74c19b579fab44435b3df1 = L.polyline(
+                [[19.45242, -99.11295000000001], [19.452370000000002, -99.11274], [19.45307, -99.11258000000001], [19.45205, -99.10922000000001], [19.45156, -99.10940000000001], [19.451300000000003, -99.10958000000001], [19.45089, -99.10991000000001], [19.450580000000002, -99.11019], [19.450280000000003, -99.11032], [19.449170000000002, -99.11058000000001], [19.44891, -99.11066000000001], [19.449810000000003, -99.11481], [19.45126, -99.12142000000001], [19.448330000000002, -99.12135], [19.447930000000003, -99.12135], [19.447080000000003, -99.12133000000001], [19.44734, -99.12311000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.6532998322843198}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_eb98af10b1d370dc987cddac03d61dce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a8a31c5286b41e665070fe604419bdd1 = $(`<div id="html_a8a31c5286b41e665070fe604419bdd1" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 15270<br><b>Eventos:</b> 44<br><b>Unidad:</b> Hospital Materno Infantil Inguarán<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 2.67<br><b>Duracion min:</b> 7.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_eb98af10b1d370dc987cddac03d61dce.setContent(html_a8a31c5286b41e665070fe604419bdd1);
+            
+        
+
+        poly_line_6b14f322cf74c19b579fab44435b3df1.bindPopup(popup_eb98af10b1d370dc987cddac03d61dce)
+        ;
+
+        
+    
+    
+            poly_line_6b14f322cf74c19b579fab44435b3df1.bindTooltip(
+                `<div>
+                     Homicidio CP 15270 -> Hospital Materno Infantil Inguarán
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b201b355bcab4164fe210933091216f = L.circleMarker(
+                [19.4472731, -99.1231182],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.685138655950444, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_6b201b355bcab4164fe210933091216f.bindTooltip(
+                `<div>
+                     Homicidio CP 15270 (44 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_bd62ebc3fac393ae0a668c0f55be5870 = L.polyline(
+                [[19.4154, -99.15495000000001], [19.41505, -99.15486000000001], [19.415100000000002, -99.15445000000001], [19.41484, -99.15111], [19.414800000000003, -99.15085], [19.414620000000003, -99.14837000000001], [19.412850000000002, -99.14869]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_08e41c81f425d5fa06449e517e145681 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e800f8bebbf34cb4f0e948d77814917 = $(`<div id="html_3e800f8bebbf34cb4f0e948d77814917" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 06720<br><b>Eventos:</b> 36<br><b>Unidad:</b> Hospital Punto Médico<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.92<br><b>Duracion min:</b> 3.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_08e41c81f425d5fa06449e517e145681.setContent(html_3e800f8bebbf34cb4f0e948d77814917);
+            
+        
+
+        poly_line_bd62ebc3fac393ae0a668c0f55be5870.bindPopup(popup_08e41c81f425d5fa06449e517e145681)
+        ;
+
+        
+    
+    
+            poly_line_bd62ebc3fac393ae0a668c0f55be5870.bindTooltip(
+                `<div>
+                     Homicidio CP 06720 -> Hospital Punto Médico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2132ba60c27475d1e4f4c92fcc831afe = L.circleMarker(
+                [19.4128966, -99.1489969],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.333333333333333, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_2132ba60c27475d1e4f4c92fcc831afe.bindTooltip(
+                `<div>
+                     Homicidio CP 06720 (36 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0e4f472c932e02404352b8f4ba1e8ddb = L.polyline(
+                [[19.444380000000002, -99.13539], [19.444360000000003, -99.13517], [19.44548, -99.13504], [19.447190000000003, -99.13484000000001], [19.44759, -99.13478], [19.44762, -99.13453000000001], [19.44769, -99.13435000000001], [19.447770000000002, -99.13424], [19.44773, -99.13407000000001], [19.447560000000003, -99.13262], [19.448220000000003, -99.13247000000001], [19.449370000000002, -99.13210000000001], [19.44977, -99.13195], [19.449460000000002, -99.13108000000001], [19.44914, -99.13009000000001], [19.448790000000002, -99.12878], [19.4492, -99.12870000000001], [19.449160000000003, -99.12842]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.3664319132398464}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_c463266e086120c2af3b82b4e50bdb7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b78826e46130055c4c2e96f802d424f = $(`<div id="html_3b78826e46130055c4c2e96f802d424f" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 06200<br><b>Eventos:</b> 35<br><b>Unidad:</b> Centro de Salud Dr. D. Orvañanos<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.3<br><b>Duracion min:</b> 5.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_c463266e086120c2af3b82b4e50bdb7e.setContent(html_3b78826e46130055c4c2e96f802d424f);
+            
+        
+
+        poly_line_0e4f472c932e02404352b8f4ba1e8ddb.bindPopup(popup_c463266e086120c2af3b82b4e50bdb7e)
+        ;
+
+        
+    
+    
+            poly_line_0e4f472c932e02404352b8f4ba1e8ddb.bindTooltip(
+                `<div>
+                     Homicidio CP 06200 -> Centro de Salud Dr. D. Orvañanos
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_559ba189820d34fc82bfc50ba8115bd1 = L.circleMarker(
+                [19.4491525, -99.1284365],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2867109906108976, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_559ba189820d34fc82bfc50ba8115bd1.bindTooltip(
+                `<div>
+                     Homicidio CP 06200 (35 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f127fbd69e62f08184841e7288ba4c23 = L.polyline(
+                [[19.4154, -99.15495000000001], [19.41505, -99.15486000000001], [19.415100000000002, -99.15445000000001], [19.41484, -99.15111], [19.414800000000003, -99.15085], [19.414620000000003, -99.14837000000001], [19.41354, -99.14856], [19.413590000000003, -99.14948000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.20966987850401}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_8e7060e702f666e9500cc4e56b17a6fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_85defdc9a16dab7828b9bcebca600a5f = $(`<div id="html_85defdc9a16dab7828b9bcebca600a5f" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Lesiones<br><b>CP:</b> 06720<br><b>Eventos:</b> 241<br><b>Unidad:</b> Hospital Punto Médico<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.94<br><b>Duracion min:</b> 3.7<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_8e7060e702f666e9500cc4e56b17a6fe.setContent(html_85defdc9a16dab7828b9bcebca600a5f);
+            
+        
+
+        poly_line_f127fbd69e62f08184841e7288ba4c23.bindPopup(popup_8e7060e702f666e9500cc4e56b17a6fe)
+        ;
+
+        
+    
+    
+            poly_line_f127fbd69e62f08184841e7288ba4c23.bindTooltip(
+                `<div>
+                     Lesiones CP 06720 -> Hospital Punto Médico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a582a764d5acc14a8d4b32300b2a8520 = L.circleMarker(
+                [19.4136888, -99.1494729],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.624541497922236, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_a582a764d5acc14a8d4b32300b2a8520.bindTooltip(
+                `<div>
+                     Lesiones CP 06720 (241 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0dad63e999a5ee1cc1f6355fa968ece8 = L.polyline(
+                [[19.4341, -99.16567], [19.4343, -99.16560000000001], [19.43436, -99.16567], [19.43449, -99.16599000000001], [19.43372, -99.1662], [19.433570000000003, -99.16619000000001], [19.431810000000002, -99.16527], [19.43175, -99.16525000000001], [19.42995, -99.16430000000001], [19.42932, -99.16396], [19.42904, -99.16394000000001], [19.42894, -99.164], [19.428800000000003, -99.16401], [19.428690000000003, -99.16396], [19.428610000000003, -99.16389000000001], [19.42856, -99.16378], [19.42855, -99.16367000000001], [19.42839, -99.16347], [19.42714, -99.16282000000001], [19.42623, -99.16475000000001], [19.42556, -99.16613000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 5.585696017507576}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_ad120fac786070d41ba2d38bde63127a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec6b944e4bb105b5310e8fdd46d73b3f = $(`<div id="html_ec6b944e4bb105b5310e8fdd46d73b3f" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Lesiones<br><b>CP:</b> 06600<br><b>Eventos:</b> 195<br><b>Unidad:</b> Imss Villalonguin<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.39<br><b>Duracion min:</b> 8.7<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_ad120fac786070d41ba2d38bde63127a.setContent(html_ec6b944e4bb105b5310e8fdd46d73b3f);
+            
+        
+
+        poly_line_0dad63e999a5ee1cc1f6355fa968ece8.bindPopup(popup_ad120fac786070d41ba2d38bde63127a)
+        ;
+
+        
+    
+    
+            poly_line_0dad63e999a5ee1cc1f6355fa968ece8.bindTooltip(
+                `<div>
+                     Lesiones CP 06600 -> Imss Villalonguin
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_839c4086166de627115b55b44bb63982 = L.circleMarker(
+                [19.4251689, -99.1659207],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.7579111354271895, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_839c4086166de627115b55b44bb63982.bindTooltip(
+                `<div>
+                     Lesiones CP 06600 (195 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1ac5923a6fbb29d2632727c585b7442e = L.polyline(
+                [[19.4223, -99.14182000000001], [19.422310000000003, -99.14154], [19.421390000000002, -99.14164000000001], [19.42162, -99.14421], [19.42192, -99.14708], [19.422030000000003, -99.1483], [19.422900000000002, -99.14812], [19.42284, -99.14743000000001], [19.422870000000003, -99.14741000000001], [19.42312, -99.14738000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 5.513619500836088}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_0f50bb0ce842506a67bd5a2ce042ad8c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_158781b7a29b76a0267b4fe27401c561 = $(`<div id="html_158781b7a29b76a0267b4fe27401c561" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Lesiones<br><b>CP:</b> 06720<br><b>Eventos:</b> 190<br><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.04<br><b>Duracion min:</b> 4.1<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_0f50bb0ce842506a67bd5a2ce042ad8c.setContent(html_158781b7a29b76a0267b4fe27401c561);
+            
+        
+
+        poly_line_1ac5923a6fbb29d2632727c585b7442e.bindPopup(popup_0f50bb0ce842506a67bd5a2ce042ad8c)
+        ;
+
+        
+    
+    
+            poly_line_1ac5923a6fbb29d2632727c585b7442e.bindTooltip(
+                `<div>
+                     Lesiones CP 06720 -> Instituto Oftalmologia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3114a99ef3d00ead580e220e9ea3ea59 = L.circleMarker(
+                [19.4232519, -99.1476468],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.657804862272345, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_3114a99ef3d00ead580e220e9ea3ea59.bindTooltip(
+                `<div>
+                     Lesiones CP 06720 (190 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fa19222befb30005c4a520a71190ae7e = L.polyline(
+                [[19.418290000000002, -99.1718], [19.41864, -99.17206], [19.419520000000002, -99.16806000000001], [19.419790000000003, -99.16690000000001], [19.41974, -99.16669], [19.41963, -99.16655000000002], [19.419600000000003, -99.16649000000001], [19.4185, -99.16623000000001], [19.41816, -99.16778000000001], [19.41826, -99.16781], [19.419040000000003, -99.16711000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 5.4258639865002145}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_56cbd98da11d0248b1b406b357103e87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_727f3ead03c7445d0e5fb84db5151937 = $(`<div id="html_727f3ead03c7445d0e5fb84db5151937" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Lesiones<br><b>CP:</b> 06700<br><b>Eventos:</b> 184<br><b>Unidad:</b> Centro Hospitalario Sanatorio Durango<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.07<br><b>Duracion min:</b> 6.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_56cbd98da11d0248b1b406b357103e87.setContent(html_727f3ead03c7445d0e5fb84db5151937);
+            
+        
+
+        poly_line_fa19222befb30005c4a520a71190ae7e.bindPopup(popup_56cbd98da11d0248b1b406b357103e87)
+        ;
+
+        
+    
+    
+            poly_line_fa19222befb30005c4a520a71190ae7e.bindTooltip(
+                `<div>
+                     Lesiones CP 06700 -> Centro Hospitalario Sanatorio Durango
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07d6e48d346aa680f9da4792685091c9 = L.circleMarker(
+                [19.4188747, -99.166903],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.53592220347252, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_07d6e48d346aa680f9da4792685091c9.bindTooltip(
+                `<div>
+                     Lesiones CP 06700 (184 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_aa86cdc0c1e049d0760b538717a80c64 = L.polyline(
+                [[19.4223, -99.14182000000001], [19.422310000000003, -99.14154], [19.421390000000002, -99.14164000000001], [19.42162, -99.14421], [19.42192, -99.14708], [19.422030000000003, -99.1483], [19.4235, -99.14799000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_593c65fceeeeab5b6e789814e57fba69 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eca80fba63ade390b5f68a786ad72d79 = $(`<div id="html_eca80fba63ade390b5f68a786ad72d79" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros incidentes<br><b>CP:</b> 06720<br><b>Eventos:</b> 4733<br><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.0<br><b>Duracion min:</b> 4.2<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_593c65fceeeeab5b6e789814e57fba69.setContent(html_eca80fba63ade390b5f68a786ad72d79);
+            
+        
+
+        poly_line_aa86cdc0c1e049d0760b538717a80c64.bindPopup(popup_593c65fceeeeab5b6e789814e57fba69)
+        ;
+
+        
+    
+    
+            poly_line_aa86cdc0c1e049d0760b538717a80c64.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06720 -> Instituto Oftalmologia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55bcff1fef01393f0bad062b8c3cfb49 = L.circleMarker(
+                [19.4235394, -99.1482086],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_55bcff1fef01393f0bad062b8c3cfb49.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06720 (4733 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dacf965453111bb421645e006b9ba964 = L.polyline(
+                [[19.42883, -99.13388], [19.430100000000003, -99.13371000000001], [19.4312, -99.14134000000001], [19.43178, -99.14533], [19.43305, -99.14510000000001], [19.434890000000003, -99.14478000000001], [19.4344, -99.14186000000001], [19.43412, -99.14189]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_4ec024f77b1904362a620ed925eccdf9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_55f05f4aac8e1939f3adb0ac4876f6ff = $(`<div id="html_55f05f4aac8e1939f3adb0ac4876f6ff" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros incidentes<br><b>CP:</b> 06050<br><b>Eventos:</b> 1915<br><b>Unidad:</b> Hospital de Jesus<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 2.07<br><b>Duracion min:</b> 16.4<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_4ec024f77b1904362a620ed925eccdf9.setContent(html_55f05f4aac8e1939f3adb0ac4876f6ff);
+            
+        
+
+        poly_line_dacf965453111bb421645e006b9ba964.bindPopup(popup_4ec024f77b1904362a620ed925eccdf9)
+        ;
+
+        
+    
+    
+            poly_line_dacf965453111bb421645e006b9ba964.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06050 -> Hospital de Jesus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea9bf58395e92ccfc4039ea446897de2 = L.circleMarker(
+                [19.4341369, -99.1420229],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_ea9bf58395e92ccfc4039ea446897de2.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06050 (1915 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0536fae7d99079a68464821e1cbf4398 = L.polyline(
+                [[19.4223, -99.14182000000001], [19.422310000000003, -99.14154], [19.421390000000002, -99.14164000000001], [19.42162, -99.14421], [19.42191, -99.14699], [19.42247, -99.1469], [19.423740000000002, -99.14667000000001], [19.42394, -99.14668], [19.425600000000003, -99.14641], [19.42668, -99.14621000000001], [19.427100000000003, -99.14614], [19.427280000000003, -99.14614], [19.4278, -99.14604000000001], [19.429350000000003, -99.14577000000001], [19.43305, -99.14510000000001], [19.43446, -99.14485]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_02f582c0f5dfa85054c40a9b66b642ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0163c5eeb8b1df22a556bbe6df8722e1 = $(`<div id="html_0163c5eeb8b1df22a556bbe6df8722e1" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros incidentes<br><b>CP:</b> 06050<br><b>Eventos:</b> 1582<br><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 2.11<br><b>Duracion min:</b> 13.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_02f582c0f5dfa85054c40a9b66b642ee.setContent(html_0163c5eeb8b1df22a556bbe6df8722e1);
+            
+        
+
+        poly_line_0536fae7d99079a68464821e1cbf4398.bindPopup(popup_02f582c0f5dfa85054c40a9b66b642ee)
+        ;
+
+        
+    
+    
+            poly_line_0536fae7d99079a68464821e1cbf4398.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06050 -> Instituto Oftalmologia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1a5227d93eed887d8867bec7b521b1f = L.circleMarker(
+                [19.4344557, -99.1448049],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_b1a5227d93eed887d8867bec7b521b1f.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06050 (1582 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_21696dc6cdfc3358a4b51479b63a18ae = L.polyline(
+                [[19.418290000000002, -99.1718], [19.41864, -99.17206], [19.419520000000002, -99.16806000000001], [19.419790000000003, -99.16690000000001], [19.41974, -99.16669], [19.41963, -99.16655000000002], [19.419600000000003, -99.16649000000001], [19.4185, -99.16623000000001], [19.41834, -99.16696]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_84ae24e4a614eb0f3cc63d5f5cf4713d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3b3ff5867985bbc674f481e627ac876 = $(`<div id="html_d3b3ff5867985bbc674f481e627ac876" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros incidentes<br><b>CP:</b> 06700<br><b>Eventos:</b> 1488<br><b>Unidad:</b> Centro Hospitalario Sanatorio Durango<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.86<br><b>Duracion min:</b> 5.4<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_84ae24e4a614eb0f3cc63d5f5cf4713d.setContent(html_d3b3ff5867985bbc674f481e627ac876);
+            
+        
+
+        poly_line_21696dc6cdfc3358a4b51479b63a18ae.bindPopup(popup_84ae24e4a614eb0f3cc63d5f5cf4713d)
+        ;
+
+        
+    
+    
+            poly_line_21696dc6cdfc3358a4b51479b63a18ae.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06700 -> Centro Hospitalario Sanatorio Durango
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca44d11606fffb48ddf8a7c1f36f8f29 = L.circleMarker(
+                [19.4181087, -99.1669035],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_ca44d11606fffb48ddf8a7c1f36f8f29.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06700 (1488 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8786514710ca02d259d2d394e32687cd = L.polyline(
+                [[19.4154, -99.15495000000001], [19.41505, -99.15486000000001], [19.415100000000002, -99.15445000000001], [19.41504, -99.15369000000001], [19.4159, -99.15359000000001], [19.415580000000002, -99.14922000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_6bb2e7e5ff7851e7c021334f6a916afa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_223b310b6111b3573954275d30749caf = $(`<div id="html_223b310b6111b3573954275d30749caf" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros incidentes<br><b>CP:</b> 06720<br><b>Eventos:</b> 1270<br><b>Unidad:</b> Hospital Punto Médico<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.72<br><b>Duracion min:</b> 2.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_6bb2e7e5ff7851e7c021334f6a916afa.setContent(html_223b310b6111b3573954275d30749caf);
+            
+        
+
+        poly_line_8786514710ca02d259d2d394e32687cd.bindPopup(popup_6bb2e7e5ff7851e7c021334f6a916afa)
+        ;
+
+        
+    
+    
+            poly_line_8786514710ca02d259d2d394e32687cd.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06720 -> Hospital Punto Médico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a95ee3d77b67b680623df057c3a38c57 = L.circleMarker(
+                [19.415479, -99.1492271],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_a95ee3d77b67b680623df057c3a38c57.bindTooltip(
+                `<div>
+                     Otros incidentes CP 06720 (1270 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e7ab6a509920ef21ed6982dde665f7c0 = L.polyline(
+                [[19.33263, -99.17766], [19.33236, -99.17748], [19.332160000000002, -99.17729000000001], [19.3323, -99.17716000000001], [19.33247, -99.17679000000001], [19.33238, -99.17666000000001], [19.33227, -99.17638000000001], [19.332220000000003, -99.17619], [19.33217, -99.17594000000001], [19.33211, -99.17578], [19.331960000000002, -99.1756], [19.331870000000002, -99.17551], [19.33153, -99.17510000000001], [19.331750000000003, -99.17494], [19.33191, -99.17478000000001], [19.332240000000002, -99.17439], [19.332610000000003, -99.17421], [19.33264, -99.17417], [19.332710000000002, -99.17386], [19.332790000000003, -99.17309], [19.33282, -99.17275000000001], [19.3324, -99.17133000000001], [19.33146, -99.16828000000001], [19.331030000000002, -99.16681000000001], [19.33192, -99.16650000000001], [19.33191, -99.16643]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_bede97462de8cfbb73a1053b339f235b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0aacddbcd60a1e70bcb26f4989105f46 = $(`<div id="html_0aacddbcd60a1e70bcb26f4989105f46" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 04369<br><b>Eventos:</b> 478<br><b>Unidad:</b> Centro de Salud T.I Copilco el Alto<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.42<br><b>Duracion min:</b> 7.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_bede97462de8cfbb73a1053b339f235b.setContent(html_0aacddbcd60a1e70bcb26f4989105f46);
+            
+        
+
+        poly_line_e7ab6a509920ef21ed6982dde665f7c0.bindPopup(popup_bede97462de8cfbb73a1053b339f235b)
+        ;
+
+        
+    
+    
+            poly_line_e7ab6a509920ef21ed6982dde665f7c0.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 -> Centro de Salud T.I Copilco el Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b459ece400f47f968545086750da08d = L.circleMarker(
+                [19.3318923, -99.166435],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_7b459ece400f47f968545086750da08d.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 (478 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9b2419fd62a9a6a976ecf3cb91de0192 = L.polyline(
+                [[19.33263, -99.17766], [19.33236, -99.17748], [19.332160000000002, -99.17729000000001], [19.3323, -99.17716000000001], [19.33247, -99.17679000000001], [19.33238, -99.17666000000001], [19.33227, -99.17638000000001], [19.332220000000003, -99.17619], [19.33217, -99.17594000000001], [19.33211, -99.17578], [19.331960000000002, -99.1756], [19.331870000000002, -99.17551], [19.33153, -99.17510000000001], [19.331390000000003, -99.17507], [19.331010000000003, -99.17514000000001], [19.33095, -99.17498], [19.33071, -99.17464000000001], [19.33052, -99.17455000000001], [19.33031, -99.17449], [19.33042, -99.17395], [19.330470000000002, -99.17365000000001], [19.32956, -99.17354], [19.3293, -99.17354], [19.328760000000003, -99.17358], [19.3287, -99.17345], [19.32872, -99.17334000000001], [19.32874, -99.17330000000001], [19.32919, -99.17332], [19.32958, -99.17337], [19.32964, -99.17282], [19.32965, -99.17250000000001], [19.32963, -99.17238], [19.329420000000002, -99.17174000000001], [19.32949, -99.17172000000001], [19.32917, -99.17072], [19.329060000000002, -99.17035000000001], [19.32898, -99.17011000000001], [19.328860000000002, -99.16969], [19.32702, -99.17035000000001], [19.3261, -99.17067], [19.325400000000002, -99.17095], [19.325200000000002, -99.17053000000001], [19.32442, -99.16909000000001], [19.324050000000003, -99.16839], [19.323410000000003, -99.16861]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_5b7d51e24d2aee1d9dc2b2eb2d2999a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7a21192db175a9a240a97212ebb8ebd = $(`<div id="html_e7a21192db175a9a240a97212ebb8ebd" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 04369<br><b>Eventos:</b> 404<br><b>Unidad:</b> Centro de Salud T.I Copilco el Alto<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 2.11<br><b>Duracion min:</b> 8.9<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_5b7d51e24d2aee1d9dc2b2eb2d2999a3.setContent(html_e7a21192db175a9a240a97212ebb8ebd);
+            
+        
+
+        poly_line_9b2419fd62a9a6a976ecf3cb91de0192.bindPopup(popup_5b7d51e24d2aee1d9dc2b2eb2d2999a3)
+        ;
+
+        
+    
+    
+            poly_line_9b2419fd62a9a6a976ecf3cb91de0192.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 -> Centro de Salud T.I Copilco el Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a78e48a0a7553a31ea354eb7c05dd2a5 = L.circleMarker(
+                [19.3233642, -99.1684602],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_a78e48a0a7553a31ea354eb7c05dd2a5.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 (404 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_825ccd560b3d49245aef54d5aeb35df0 = L.polyline(
+                [[19.4223, -99.14182000000001], [19.422310000000003, -99.14154], [19.421390000000002, -99.14164000000001], [19.42162, -99.14421], [19.42192, -99.14708], [19.422030000000003, -99.1483], [19.422990000000002, -99.14810000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+        var popup_8439f885e44ebc14bf8d5fc1886a83ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3926ac7227b0adea1a43ae8f86600c6a = $(`<div id="html_3926ac7227b0adea1a43ae8f86600c6a" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 06720<br><b>Eventos:</b> 381<br><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.94<br><b>Duracion min:</b> 4.2<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_8439f885e44ebc14bf8d5fc1886a83ac.setContent(html_3926ac7227b0adea1a43ae8f86600c6a);
+            
+        
+
+        poly_line_825ccd560b3d49245aef54d5aeb35df0.bindPopup(popup_8439f885e44ebc14bf8d5fc1886a83ac)
+        ;
+
+        
+    
+    
+            poly_line_825ccd560b3d49245aef54d5aeb35df0.bindTooltip(
+                `<div>
+                     Violencia familiar CP 06720 -> Instituto Oftalmologia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_526fa46f4e0b7c6d3818dd3f58575718 = L.circleMarker(
+                [19.422995, -99.1481481],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.84401183107952, "stroke": true, "weight": 1}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+        
+    
+            circle_marker_526fa46f4e0b7c6d3818dd3f58575718.bindTooltip(
+                `<div>
+                     Violencia familiar CP 06720 (381 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_ab211c3267a3f54a93423413ecfd1700_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_ffdc579be109315807ccc032d873a778,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_c4985212b072e9fe44c923c4b660f35a,
+                },
+            };
+            let layer_control_ab211c3267a3f54a93423413ecfd1700 = L.control.layers(
+                layer_control_ab211c3267a3f54a93423413ecfd1700_layers.base_layers,
+                layer_control_ab211c3267a3f54a93423413ecfd1700_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_10c3188a2e0110db2c3a3edfd2172334);
+
+        
+</script>
+</html>

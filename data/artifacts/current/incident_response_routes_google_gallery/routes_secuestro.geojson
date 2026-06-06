@@ -1,0 +1,439 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15618,
+            19.41179
+          ],
+          [
+            -99.15495000000001,
+            19.411800000000003
+          ],
+          [
+            -99.15487,
+            19.41184
+          ],
+          [
+            -99.15312,
+            19.41159
+          ],
+          [
+            -99.15054,
+            19.4112
+          ],
+          [
+            -99.14982,
+            19.414730000000002
+          ],
+          [
+            -99.14964,
+            19.41561
+          ],
+          [
+            -99.14931000000001,
+            19.4172
+          ],
+          [
+            -99.14919,
+            19.41778
+          ],
+          [
+            -99.14892,
+            19.41907
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_secuestro_1",
+        "codigo_postal": "06720",
+        "crime_type": "Secuestro",
+        "centroid_id": 1,
+        "centroid_lat": 19.4190636,
+        "centroid_lon": -99.1488712,
+        "n_events": 25,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1777.0,
+        "duration_seconds": 421.0,
+        "duration_minutes": 7.016666666666667,
+        "static_duration_seconds": 466.0,
+        "delay_seconds": -45.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCOuJAuFGOp@}IlAcOaUoCoDc@}HaAsBWaGu@",
+        "route_description": "C. Dr.Márquez y Dr. Jimenez",
+        "generated_at_utc": "2026-06-06T17:36:38+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15817000000001,
+            19.412190000000002
+          ],
+          [
+            -99.15907000000001,
+            19.412000000000003
+          ],
+          [
+            -99.15974000000001,
+            19.41188
+          ],
+          [
+            -99.16253,
+            19.411330000000003
+          ],
+          [
+            -99.16309000000001,
+            19.41347
+          ],
+          [
+            -99.16335000000001,
+            19.41448
+          ],
+          [
+            -99.16342,
+            19.41465
+          ],
+          [
+            -99.16421000000001,
+            19.41768
+          ],
+          [
+            -99.16441,
+            19.418480000000002
+          ],
+          [
+            -99.16428,
+            19.418940000000003
+          ],
+          [
+            -99.16293,
+            19.41926
+          ],
+          [
+            -99.16265000000001,
+            19.418080000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_secuestro_1",
+        "codigo_postal": "06700",
+        "crime_type": "Secuestro",
+        "centroid_id": 1,
+        "centroid_lat": 19.4180762,
+        "centroid_lon": -99.1626735,
+        "n_events": 24,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1766.0,
+        "duration_seconds": 564.0,
+        "duration_minutes": 9.4,
+        "static_duration_seconds": 556.0,
+        "delay_seconds": 8.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eC_BVd@rDVdClBlPkLnBiEr@a@L}Q|C_Df@{AY_AmGjFw@",
+        "route_description": "Coahuila y Monterrey/Eje 2 Pte",
+        "generated_at_utc": "2026-06-06T17:36:39+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13972000000001,
+            19.452620000000003
+          ],
+          [
+            -99.13986000000001,
+            19.452520000000003
+          ],
+          [
+            -99.14069,
+            19.45229
+          ],
+          [
+            -99.14086,
+            19.45232
+          ],
+          [
+            -99.141,
+            19.45238
+          ],
+          [
+            -99.14110000000001,
+            19.45248
+          ],
+          [
+            -99.14118,
+            19.4526
+          ],
+          [
+            -99.14126,
+            19.452240000000003
+          ],
+          [
+            -99.14116000000001,
+            19.451900000000002
+          ],
+          [
+            -99.14119000000001,
+            19.451700000000002
+          ],
+          [
+            -99.14127,
+            19.45135
+          ],
+          [
+            -99.14129000000001,
+            19.45109
+          ],
+          [
+            -99.14167,
+            19.44923
+          ],
+          [
+            -99.14178000000001,
+            19.44867
+          ],
+          [
+            -99.14206000000001,
+            19.44731
+          ],
+          [
+            -99.14241000000001,
+            19.445330000000002
+          ],
+          [
+            -99.14296,
+            19.445420000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06300_secuestro_1",
+        "codigo_postal": "06300",
+        "crime_type": "Secuestro",
+        "centroid_id": 1,
+        "centroid_lat": 19.4451793,
+        "centroid_lon": -99.1430063,
+        "n_events": 23,
+        "resolver_unit_id": "osm_node_4070639592",
+        "resolver_name": "Módulo SSP La Pera",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4525276,
+        "resolver_lon": -99.1396332,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1056.0,
+        "duration_seconds": 273.0,
+        "duration_minutes": 4.55,
+        "static_duration_seconds": 295.0,
+        "delay_seconds": -22.0,
+        "encoded_polyline": "{ivuBffb|QRZl@dDE`@KZSRWNfANbASf@DdANr@BrJjAnBTnGv@jKdAQlB",
+        "route_description": "Lerdo",
+        "generated_at_utc": "2026-06-06T17:36:40+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15254,
+            19.481240000000003
+          ],
+          [
+            -99.15280000000001,
+            19.48138
+          ],
+          [
+            -99.15289000000001,
+            19.481430000000003
+          ],
+          [
+            -99.15301000000001,
+            19.48139
+          ],
+          [
+            -99.15449000000001,
+            19.481830000000002
+          ],
+          [
+            -99.15475,
+            19.481060000000003
+          ],
+          [
+            -99.15506,
+            19.480230000000002
+          ],
+          [
+            -99.15573,
+            19.47615
+          ],
+          [
+            -99.15618,
+            19.473650000000003
+          ],
+          [
+            -99.15794000000001,
+            19.473730000000003
+          ],
+          [
+            -99.15838000000001,
+            19.47118
+          ],
+          [
+            -99.15834000000001,
+            19.471130000000002
+          ],
+          [
+            -99.15839000000001,
+            19.470920000000003
+          ],
+          [
+            -99.15852000000001,
+            19.46995
+          ],
+          [
+            -99.15909,
+            19.470080000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "02950_secuestro_1",
+        "codigo_postal": "02950",
+        "crime_type": "Secuestro",
+        "centroid_id": 1,
+        "centroid_lat": 19.4701668,
+        "centroid_lon": -99.1590716,
+        "n_events": 20,
+        "resolver_unit_id": "osm_node_6296180484",
+        "resolver_name": "Modulo de Policía Coltongo",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4813359,
+        "resolver_lon": -99.1524861,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1822.0,
+        "duration_seconds": 427.0,
+        "duration_minutes": 7.116666666666666,
+        "static_duration_seconds": 448.0,
+        "delay_seconds": -21.0,
+        "encoded_polyline": "w|{uBjvd|Q[r@IPFVwAfHxCr@dD|@nXdCrNxAO~I|NvAHGh@H`EXYpB",
+        "route_description": "C. 10",
+        "generated_at_utc": "2026-06-06T17:36:42+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06347000000001,
+            19.390600000000003
+          ],
+          [
+            -99.06297,
+            19.3929
+          ],
+          [
+            -99.07180000000001,
+            19.394360000000002
+          ],
+          [
+            -99.07199000000001,
+            19.39355
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_secuestro_1",
+        "codigo_postal": "08500",
+        "crime_type": "Secuestro",
+        "centroid_id": 1,
+        "centroid_lat": 19.393573,
+        "centroid_lon": -99.0720819,
+        "n_events": 18,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1335.0,
+        "duration_seconds": 288.0,
+        "duration_minutes": 4.8,
+        "static_duration_seconds": 320.0,
+        "delay_seconds": -32.0,
+        "encoded_polyline": "qejuBlks{Q[GDo@kMcBcHdv@`Dd@",
+        "route_description": "Sur 16",
+        "generated_at_utc": "2026-06-06T17:36:43+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rutas de atencion por incidente</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    html, body { height: 100%; margin: 0; font-family: Arial, sans-serif; color: #172033; }
+    .app { display: grid; grid-template-rows: auto 1fr; height: 100%; }
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(260px, 430px) minmax(220px, 360px) 1fr;
+      gap: 12px;
+      align-items: end;
+      padding: 12px 14px;
+      border-bottom: 1px solid #d8dee8;
+      background: #ffffff;
+      box-shadow: 0 1px 5px rgba(15, 23, 42, .08);
+      z-index: 2;
+    }
+    label { display: grid; gap: 5px; font-size: 12px; font-weight: 700; color: #334155; }
+    select {
+      height: 38px;
+      border: 1px solid #b9c3d3;
+      border-radius: 6px;
+      padding: 0 10px;
+      background: #fff;
+      font-size: 14px;
+      color: #172033;
+    }
+    .stats { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .chip {
+      border: 1px solid #d8dee8;
+      background: #f8fafc;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    #map { min-height: 0; }
+    .legend {
+      position: absolute;
+      right: 14px;
+      bottom: 18px;
+      z-index: 500;
+      background: rgba(255,255,255,.95);
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 12px;
+      box-shadow: 0 2px 10px rgba(15,23,42,.14);
+      line-height: 1.5;
+    }
+    .swatch { display: inline-block; width: 18px; height: 8px; margin-right: 6px; border-radius: 8px; }
+    @media (max-width: 860px) {
+      .toolbar { grid-template-columns: 1fr; }
+      .stats { align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="toolbar">
+      <label>
+        Escenario
+        <select id="scenarioSelect"></select>
+      </label>
+      <label id="cpControl">
+        Codigo postal
+        <select id="cpSelect"></select>
+      </label>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div id="map"></div>
+  </div>
+  <div class="legend">
+    <div><span class="swatch" style="background:#60a5fa"></span>Menor volumen</div>
+    <div><span class="swatch" style="background:#f59e0b"></span>Volumen medio</div>
+    <div><span class="swatch" style="background:#ef4444"></span>Volumen alto</div>
+    <div><span class="swatch" style="background:#7f1d1d"></span>Mayor volumen</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    window.APP_DATA = <?!= JSON.stringify(APP_DATA) ?>;
+
+    const map = L.map('map', { preferCanvas: true }).setView([19.4326, -99.1332], 11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    const layers = {
+      routes: L.layerGroup().addTo(map),
+      markers: L.layerGroup().addTo(map),
+      cp: L.layerGroup().addTo(map)
+    };
+
+    const scenarioSelect = document.getElementById('scenarioSelect');
+    const cpSelect = document.getElementById('cpSelect');
+    const cpControl = document.getElementById('cpControl');
+    const stats = document.getElementById('stats');
+
+    const scenarioLabels = {
+      fire: 'Escenario bomberos / protección civil',
+      health: 'Salud / emergencia medica 19 rutas, 13,472 eventos',
+      security: 'Seguridad / vigilancia 61 rutas, 26,504 eventos'
+    };
+
+    Object.entries(scenarioLabels).forEach(([value, label]) => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = label;
+      scenarioSelect.appendChild(option);
+    });
+
+    APP_DATA.securityCpOptions.forEach((cp) => {
+      const option = document.createElement('option');
+      option.value = cp.cp;
+      option.textContent = `${cp.cp} - ${cp.centroids} centroides, ${cp.events.toLocaleString('es-MX')} eventos`;
+      cpSelect.appendChild(option);
+    });
+
+    scenarioSelect.addEventListener('change', renderScenario);
+    cpSelect.addEventListener('change', renderSecurityCp);
+    renderScenario();
+
+    function renderScenario() {
+      clearLayers();
+      const key = scenarioSelect.value;
+      const routes = APP_DATA.scenarios[key] || [];
+      cpControl.style.display = key === 'security' ? 'grid' : 'none';
+      drawScenarioRoutes(routes, key);
+      updateStats(routes, key);
+      if (key === 'security') renderSecurityCp();
+    }
+
+    function renderSecurityCp() {
+      layers.cp.clearLayers();
+      if (scenarioSelect.value !== 'security') return;
+      const cp = cpSelect.value;
+      google.script.run
+        .withSuccessHandler(drawSecurityCp)
+        .withFailureHandler((err) => {
+          console.warn(err);
+          google.script.run.withSuccessHandler(drawSecurityCpCentroidsOnly).getSecurityPostalCentroids(cp);
+        })
+        .getSecurityPostalRoute(cp);
+    }
+
+    function drawScenarioRoutes(routes, key) {
+      const maxEvents = Math.max(...routes.map((r) => r.events), 1);
+      const bounds = [];
+      routes.forEach((route) => {
+        const line = route.encodedPolyline ? decodePolyline(route.encodedPolyline) : [route.origin, route.destination];
+        const color = key === 'security' ? eventColor(route.events, maxEvents) : categoryColor(route.category);
+        L.polyline(line, {
+          color,
+          weight: key === 'security' ? 4 + 5 * route.events / maxEvents : 4,
+          opacity: .78
+        }).bindPopup(routePopup(route)).addTo(layers.routes);
+        L.circleMarker(route.destination, {
+          radius: 5 + 8 * route.events / maxEvents,
+          color,
+          fillColor: color,
+          fillOpacity: .82,
+          weight: 1
+        }).bindTooltip(`${route.type} CP ${route.cp}: ${route.events} eventos`).addTo(layers.markers);
+        L.marker(route.origin).bindTooltip(route.unit).addTo(layers.markers);
+        bounds.push(...line);
+      });
+      fitBounds(bounds);
+    }
+
+    function drawSecurityCp(payload) {
+      const points = payload.orderedCentroids || [];
+      drawSecurityCentroidSequence(payload.cp, points);
+      (payload.segments || []).forEach((segment) => {
+        if (!segment.encodedPolyline) return;
+        L.polyline(decodePolyline(segment.encodedPolyline), {
+          color: '#1e3a8a',
+          weight: 7,
+          opacity: .28,
+          dashArray: '9 7'
+        }).bindTooltip('Ruta vial Apps Script / Google Maps').addTo(layers.cp);
+      });
+    }
+
+    function drawSecurityCpCentroidsOnly(payload) {
+      drawSecurityCentroidSequence(payload.cp, payload.centroids || []);
+    }
+
+    function drawSecurityCentroidSequence(cp, points) {
+      if (!points.length) return;
+      const maxEvents = Math.max(...points.map((p) => p.events), 1);
+      const bounds = [];
+      for (let i = 0; i < points.length - 1; i++) {
+        const start = [points[i].lat, points[i].lng];
+        const end = [points[i + 1].lat, points[i + 1].lng];
+        const color = eventColor(points[i + 1].events, maxEvents);
+        L.polyline([start, end], {
+          color,
+          weight: 3 + 7 * points[i + 1].events / maxEvents,
+          opacity: .9
+        }).bindTooltip(`CP ${cp}: ${points[i + 1].events} eventos`).addTo(layers.cp);
+        bounds.push(start, end);
+      }
+      points.forEach((point) => {
+        const color = eventColor(point.events, maxEvents);
+        L.circleMarker([point.lat, point.lng], {
+          radius: 4 + 10 * point.events / maxEvents,
+          color: '#111827',
+          fillColor: color,
+          fillOpacity: .9,
+          weight: 1
+        }).bindPopup(`<b>CP ${cp}</b><br>${escapeHtml(point.type)}<br>${point.events} eventos`).addTo(layers.cp);
+      });
+      fitBounds(bounds.length ? bounds : points.map((p) => [p.lat, p.lng]));
+    }
+
+    function updateStats(routes, key) {
+      const events = routes.reduce((sum, route) => sum + route.events, 0);
+      const avg = routes.length ? routes.reduce((sum, route) => sum + route.durationMin, 0) / routes.length : 0;
+      stats.innerHTML = [
+        `<span class="chip">${routes.length.toLocaleString('es-MX')} rutas Google</span>`,
+        `<span class="chip">${events.toLocaleString('es-MX')} eventos representados</span>`,
+        `<span class="chip">${avg.toFixed(1)} min promedio</span>`,
+        key === 'security' ? `<span class="chip">CP con trazado por centroides</span>` : ''
+      ].join('');
+    }
+
+    function clearLayers() {
+      layers.routes.clearLayers();
+      layers.markers.clearLayers();
+      layers.cp.clearLayers();
+    }
+
+    function fitBounds(points) {
+      if (!points.length) return;
+      map.fitBounds(L.latLngBounds(points), { padding: [26, 26], maxZoom: 15 });
+    }
+
+    function routePopup(route) {
+      return `<b>${escapeHtml(route.type)}</b><br>` +
+        `CP ${escapeHtml(route.cp)}<br>` +
+        `${route.events.toLocaleString('es-MX')} eventos<br>` +
+        `${escapeHtml(route.unit)}<br>` +
+        `${route.durationMin.toFixed(1)} min / ${route.distanceKm.toFixed(2)} km`;
+    }
+
+    function categoryColor(category) {
+      return { fire_station: '#dc2626', hospital: '#059669', police: '#2563eb' }[category] || '#7c3aed';
+    }
+
+    function eventColor(value, maxValue) {
+      const ratio = maxValue ? value / maxValue : 0;
+      if (ratio >= .78) return '#7f1d1d';
+      if (ratio >= .52) return '#ef4444';
+      if (ratio >= .28) return '#f59e0b';
+      return '#60a5fa';
+    }
+
+    function decodePolyline(encoded) {
+      let index = 0, lat = 0, lng = 0, coordinates = [];
+      while (index < encoded.length) {
+        let b, shift = 0, result = 0;
+        do {
+          b = encoded.charCodeAt(index++) - 63;
+          result |= (b & 0x1f) << shift;
+          shift += 5;
+        } while (b >= 0x20);
+        lat += (result & 1) ? ~(result >> 1) : (result >> 1);
+        shift = 0;
+        result = 0;
+        do {
+          b = encoded.charCodeAt(index++) - 63;
+          result |= (b & 0x1f) << shift;
+          shift += 5;
+        } while (b >= 0x20);
+        lng += (result & 1) ? ~(result >> 1) : (result >> 1);
+        coordinates.push([lat / 1e5, lng / 1e5]);
+      }
+      return coordinates;
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[char]));
+    }
+  </script>
+</body>
+</html>

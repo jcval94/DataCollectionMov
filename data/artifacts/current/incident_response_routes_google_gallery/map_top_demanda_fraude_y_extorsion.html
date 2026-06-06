@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ed9c0e43fc7c190025500c0c2bb43923 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Top demanda: Fraude y extorsión</strong><br>
+      5 rutas / 5,644 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_ed9c0e43fc7c190025500c0c2bb43923" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ed9c0e43fc7c190025500c0c2bb43923 = L.map(
+                "map_ed9c0e43fc7c190025500c0c2bb43923",
+                {
+                    center: [19.41641686, -99.15745356],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+
+            
+
+        
+    
+            var tile_layer_cb61e9c4ccefe1f11c54d9962eb9b3a4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cb61e9c4ccefe1f11c54d9962eb9b3a4.addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+            var marker_cluster_9d7b3d0af64f471ab4d8f6e600b750bd = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_1f9cbdd01fd541de4f504583e1bac713 = L.marker(
+                [19.3956112, -99.1690504],
+                {
+}
+            ).addTo(marker_cluster_9d7b3d0af64f471ab4d8f6e600b750bd);
+        
+    
+            var icon_f0b934d8cab5909e18d534f8705ff053 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d36746d528e851bb5e213160e455104b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_630712969b8c0616a6c7b11787ff35b3 = $(`<div id="html_630712969b8c0616a6c7b11787ff35b3" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_d36746d528e851bb5e213160e455104b.setContent(html_630712969b8c0616a6c7b11787ff35b3);
+            
+        
+
+        marker_1f9cbdd01fd541de4f504583e1bac713.bindPopup(popup_d36746d528e851bb5e213160e455104b)
+        ;
+
+        
+    
+    
+            marker_1f9cbdd01fd541de4f504583e1bac713.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f9cbdd01fd541de4f504583e1bac713.setIcon(icon_f0b934d8cab5909e18d534f8705ff053);
+            
+    
+            var marker_556f51a19f911e194ae73758549706b3 = L.marker(
+                [19.4117187, -99.1589261],
+                {
+}
+            ).addTo(marker_cluster_9d7b3d0af64f471ab4d8f6e600b750bd);
+        
+    
+            var icon_336152adbcfc9250c6233dee59d8a279 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9eaef6fed1c9d03fd139829aa20cc835 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9054d6c4f1fe9a0fd721a301a6d78cd = $(`<div id="html_b9054d6c4f1fe9a0fd721a301a6d78cd" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_9eaef6fed1c9d03fd139829aa20cc835.setContent(html_b9054d6c4f1fe9a0fd721a301a6d78cd);
+            
+        
+
+        marker_556f51a19f911e194ae73758549706b3.bindPopup(popup_9eaef6fed1c9d03fd139829aa20cc835)
+        ;
+
+        
+    
+    
+            marker_556f51a19f911e194ae73758549706b3.bindTooltip(
+                `<div>
+                     Estación de policía Roma (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_556f51a19f911e194ae73758549706b3.setIcon(icon_336152adbcfc9250c6233dee59d8a279);
+            
+    
+            var marker_44d55b860070fe8361561326b4a4d220 = L.marker(
+                [19.4333514, -99.1719654],
+                {
+}
+            ).addTo(marker_cluster_9d7b3d0af64f471ab4d8f6e600b750bd);
+        
+    
+            var icon_85bea47947d101ffe2361cf43019b78d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a07cd840f0d6ee4b610c90752c4e52fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c5287281f37fe524bd6761d6b344304 = $(`<div id="html_2c5287281f37fe524bd6761d6b344304" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_a07cd840f0d6ee4b610c90752c4e52fe.setContent(html_2c5287281f37fe524bd6761d6b344304);
+            
+        
+
+        marker_44d55b860070fe8361561326b4a4d220.bindPopup(popup_a07cd840f0d6ee4b610c90752c4e52fe)
+        ;
+
+        
+    
+    
+            marker_44d55b860070fe8361561326b4a4d220.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44d55b860070fe8361561326b4a4d220.setIcon(icon_85bea47947d101ffe2361cf43019b78d);
+            
+    
+            marker_cluster_9d7b3d0af64f471ab4d8f6e600b750bd.addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+            var poly_line_6b0acff2103849dd84c860e56e2a03df = L.polyline(
+                [[19.41176, -99.15891], [19.411710000000003, -99.15872], [19.411710000000003, -99.15805], [19.413200000000003, -99.15843000000001], [19.41431, -99.15871000000001], [19.414460000000002, -99.15790000000001], [19.414620000000003, -99.15699000000001], [19.41507, -99.15474], [19.415100000000002, -99.15445000000001], [19.419680000000003, -99.15408000000001], [19.42079, -99.15398], [19.42257, -99.15386000000001], [19.42219, -99.14992000000001], [19.421770000000002, -99.15], [19.42106, -99.15016000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+        var popup_50158585c5f35fb565f4e364243e431b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d40a9795a813f0f59933b701739d9f83 = $(`<div id="html_d40a9795a813f0f59933b701739d9f83" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Fraude y extorsión<br><b>CP:</b> 06720<br><b>Eventos:</b> 2214<br><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.22<br><b>Duracion min:</b> 9.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_50158585c5f35fb565f4e364243e431b.setContent(html_d40a9795a813f0f59933b701739d9f83);
+            
+        
+
+        poly_line_6b0acff2103849dd84c860e56e2a03df.bindPopup(popup_50158585c5f35fb565f4e364243e431b)
+        ;
+
+        
+    
+    
+            poly_line_6b0acff2103849dd84c860e56e2a03df.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06720 -> Estación de policía Roma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddd757af06fbd6612de42639ecfeeb5f = L.circleMarker(
+                [19.4210234, -99.1499486],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+            circle_marker_ddd757af06fbd6612de42639ecfeeb5f.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06720 (2214 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fab95efcc370ed383db5d3d309284e1f = L.polyline(
+                [[19.41176, -99.15891], [19.411710000000003, -99.15872], [19.411710000000003, -99.15805], [19.413200000000003, -99.15843000000001], [19.41512, -99.15891], [19.4155, -99.15682000000001], [19.415640000000003, -99.15618], [19.415850000000002, -99.15505], [19.415960000000002, -99.15449000000001], [19.41561, -99.14964], [19.4172, -99.14931000000001], [19.41778, -99.14919], [19.4207, -99.14859000000001], [19.42086, -99.14854000000001], [19.421310000000002, -99.14846000000001], [19.423840000000002, -99.14792000000001], [19.42436, -99.14776]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+        var popup_7133a39defbaba31ebe8611e4a232677 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dfe41f135fa62c75717da57d33c2fa5c = $(`<div id="html_dfe41f135fa62c75717da57d33c2fa5c" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Fraude y extorsión<br><b>CP:</b> 06720<br><b>Eventos:</b> 1419<br><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.46<br><b>Duracion min:</b> 11.2<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_7133a39defbaba31ebe8611e4a232677.setContent(html_dfe41f135fa62c75717da57d33c2fa5c);
+            
+        
+
+        poly_line_fab95efcc370ed383db5d3d309284e1f.bindPopup(popup_7133a39defbaba31ebe8611e4a232677)
+        ;
+
+        
+    
+    
+            poly_line_fab95efcc370ed383db5d3d309284e1f.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06720 -> Estación de policía Roma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e8220a2c4b4159b3b2ac7a493ed6be8f = L.circleMarker(
+                [19.4243287, -99.1476236],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+            circle_marker_e8220a2c4b4159b3b2ac7a493ed6be8f.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06720 (1419 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_16e08a99a07bc108d3ce9cab90854047 = L.polyline(
+                [[19.41176, -99.15891], [19.411710000000003, -99.15872], [19.411710000000003, -99.15805], [19.413200000000003, -99.15843000000001], [19.41431, -99.15871000000001], [19.414460000000002, -99.15790000000001], [19.414620000000003, -99.15699000000001], [19.41507, -99.15474], [19.415100000000002, -99.15445000000001], [19.416860000000003, -99.15431000000001], [19.41675, -99.15285000000002], [19.41675, -99.15267000000001], [19.41639, -99.14862000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+        var popup_089396c52270afce23f6e177bc81bba6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c84ff1804d471ea1a725f509b8f1183a = $(`<div id="html_c84ff1804d471ea1a725f509b8f1183a" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Fraude y extorsión<br><b>CP:</b> 06720<br><b>Eventos:</b> 710<br><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.64<br><b>Duracion min:</b> 6.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_089396c52270afce23f6e177bc81bba6.setContent(html_c84ff1804d471ea1a725f509b8f1183a);
+            
+        
+
+        poly_line_16e08a99a07bc108d3ce9cab90854047.bindPopup(popup_089396c52270afce23f6e177bc81bba6)
+        ;
+
+        
+    
+    
+            poly_line_16e08a99a07bc108d3ce9cab90854047.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06720 -> Estación de policía Roma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56a3bc150982eeca66f7d1589b7d6912 = L.circleMarker(
+                [19.4168186, -99.1485756],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+            circle_marker_56a3bc150982eeca66f7d1589b7d6912.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06720 (710 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0df3388dae59a863ea87e9a3da4c2464 = L.polyline(
+                [[19.433300000000003, -99.17188], [19.43248, -99.17242], [19.43239, -99.17247], [19.43193, -99.17281000000001], [19.431350000000002, -99.1731], [19.43084, -99.17333], [19.42969, -99.1739], [19.42959, -99.17398000000001], [19.42943, -99.17360000000001], [19.429350000000003, -99.17349], [19.4292, -99.17340000000002], [19.42902, -99.17336], [19.428590000000003, -99.17337], [19.4284, -99.17334000000001], [19.428, -99.17316000000001], [19.42774, -99.173], [19.425600000000003, -99.17188], [19.425500000000003, -99.1718], [19.42538, -99.17163000000001], [19.425340000000002, -99.17160000000001], [19.42529, -99.17149], [19.42521, -99.17143000000002], [19.42508, -99.17143000000002], [19.425030000000003, -99.17146000000001], [19.42472, -99.17136], [19.424660000000003, -99.17134000000001], [19.42482, -99.17117], [19.424930000000003, -99.17108], [19.42502, -99.17096000000001], [19.426280000000002, -99.16823000000001], [19.426280000000002, -99.16816000000001], [19.426190000000002, -99.16792000000001], [19.425, -99.16732], [19.4249, -99.16755]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+        var popup_939948289a2c56a5d6c87a3a01fcc92c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4a0dd26a85a26c4cb29eab54b3c2877 = $(`<div id="html_b4a0dd26a85a26c4cb29eab54b3c2877" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Fraude y extorsión<br><b>CP:</b> 06600<br><b>Eventos:</b> 662<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.7<br><b>Duracion min:</b> 14.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_939948289a2c56a5d6c87a3a01fcc92c.setContent(html_b4a0dd26a85a26c4cb29eab54b3c2877);
+            
+        
+
+        poly_line_0df3388dae59a863ea87e9a3da4c2464.bindPopup(popup_939948289a2c56a5d6c87a3a01fcc92c)
+        ;
+
+        
+    
+    
+            poly_line_0df3388dae59a863ea87e9a3da4c2464.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06600 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68e2ff67e7c9b4ff467e2e7d3c2296d1 = L.circleMarker(
+                [19.4250592, -99.1676324],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+            circle_marker_68e2ff67e7c9b4ff467e2e7d3c2296d1.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 06600 (662 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0dbd2f32f262398dc3a2e9437a98ce61 = L.polyline(
+                [[19.39552, -99.16907], [19.395560000000003, -99.16928000000001], [19.395880000000002, -99.17058], [19.3926, -99.17164000000001], [19.392480000000003, -99.17169000000001], [19.393310000000003, -99.17544000000001], [19.393440000000002, -99.17563000000001], [19.393530000000002, -99.17574], [19.394540000000003, -99.17509000000001], [19.395090000000003, -99.17475], [19.395030000000002, -99.17456000000001], [19.3948, -99.1735]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+        var popup_2101fd5be505d505c7f233eca5c1482e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f81f37bd3c6ca16d5f8edb4aa1e0cd42 = $(`<div id="html_f81f37bd3c6ca16d5f8edb4aa1e0cd42" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Fraude y extorsión<br><b>CP:</b> 03810<br><b>Eventos:</b> 639<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.34<br><b>Duracion min:</b> 5.3<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_2101fd5be505d505c7f233eca5c1482e.setContent(html_f81f37bd3c6ca16d5f8edb4aa1e0cd42);
+            
+        
+
+        poly_line_0dbd2f32f262398dc3a2e9437a98ce61.bindPopup(popup_2101fd5be505d505c7f233eca5c1482e)
+        ;
+
+        
+    
+    
+            poly_line_0dbd2f32f262398dc3a2e9437a98ce61.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 03810 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_568763d80ae105cf2b7b44bfed60abbf = L.circleMarker(
+                [19.3948544, -99.1734876],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+        
+    
+            circle_marker_568763d80ae105cf2b7b44bfed60abbf.bindTooltip(
+                `<div>
+                     Fraude y extorsión CP 03810 (639 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_58dd68c291b219646c7401fad69f731a_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_cb61e9c4ccefe1f11c54d9962eb9b3a4,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_9d7b3d0af64f471ab4d8f6e600b750bd,
+                },
+            };
+            let layer_control_58dd68c291b219646c7401fad69f731a = L.control.layers(
+                layer_control_58dd68c291b219646c7401fad69f731a_layers.base_layers,
+                layer_control_58dd68c291b219646c7401fad69f731a_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_ed9c0e43fc7c190025500c0c2bb43923);
+
+        
+</script>
+</html>

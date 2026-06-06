@@ -1,0 +1,223 @@
+{
+  "generated_at_utc": "2026-06-06T17:17:22+00:00",
+  "routes": 23160,
+  "response_units": 300,
+  "crime_types": 16,
+  "summary_by_type": [
+    {
+      "crime_type": "Amenazas",
+      "centroids": 1554,
+      "events": 37025,
+      "avg_distance_km": 2.372,
+      "avg_duration_min": 5.08,
+      "route_sources": {
+        "fallback_haversine_direct": 1554
+      },
+      "resolver_categories": {
+        "police": 1554
+      }
+    },
+    {
+      "crime_type": "Daño a la propiedad",
+      "centroids": 1559,
+      "events": 37296,
+      "avg_distance_km": 2.209,
+      "avg_duration_min": 4.73,
+      "route_sources": {
+        "fallback_haversine_direct": 1559
+      },
+      "resolver_categories": {
+        "police": 1465,
+        "fire_station": 94
+      }
+    },
+    {
+      "crime_type": "Delitos sexuales",
+      "centroids": 1085,
+      "events": 10283,
+      "avg_distance_km": 1.383,
+      "avg_duration_min": 2.96,
+      "route_sources": {
+        "fallback_haversine_direct": 1085
+      },
+      "resolver_categories": {
+        "hospital": 696,
+        "police": 389
+      }
+    },
+    {
+      "crime_type": "Fraude y extorsión",
+      "centroids": 1531,
+      "events": 51914,
+      "avg_distance_km": 2.228,
+      "avg_duration_min": 4.77,
+      "route_sources": {
+        "fallback_haversine_direct": 1531
+      },
+      "resolver_categories": {
+        "police": 1531
+      }
+    },
+    {
+      "crime_type": "Homicidio",
+      "centroids": 954,
+      "events": 6022,
+      "avg_distance_km": 1.405,
+      "avg_duration_min": 3.01,
+      "route_sources": {
+        "fallback_haversine_direct": 954
+      },
+      "resolver_categories": {
+        "hospital": 599,
+        "police": 355
+      }
+    },
+    {
+      "crime_type": "Lesiones",
+      "centroids": 1437,
+      "events": 31273,
+      "avg_distance_km": 1.345,
+      "avg_duration_min": 2.88,
+      "route_sources": {
+        "fallback_haversine_direct": 1437
+      },
+      "resolver_categories": {
+        "hospital": 903,
+        "police": 534
+      }
+    },
+    {
+      "crime_type": "Narcomenudeo",
+      "centroids": 1033,
+      "events": 12529,
+      "avg_distance_km": 2.281,
+      "avg_duration_min": 4.89,
+      "route_sources": {
+        "fallback_haversine_direct": 1033
+      },
+      "resolver_categories": {
+        "police": 1033
+      }
+    },
+    {
+      "crime_type": "Otros incidentes",
+      "centroids": 2081,
+      "events": 155052,
+      "avg_distance_km": 1.34,
+      "avg_duration_min": 2.87,
+      "route_sources": {
+        "fallback_haversine_direct": 2081
+      },
+      "resolver_categories": {
+        "hospital": 1268,
+        "police": 771,
+        "fire_station": 42
+      }
+    },
+    {
+      "crime_type": "Otros robos",
+      "centroids": 1779,
+      "events": 75909,
+      "avg_distance_km": 2.239,
+      "avg_duration_min": 4.8,
+      "route_sources": {
+        "fallback_haversine_direct": 1779
+      },
+      "resolver_categories": {
+        "police": 1779
+      }
+    },
+    {
+      "crime_type": "Robo a casa habitación",
+      "centroids": 1372,
+      "events": 23624,
+      "avg_distance_km": 2.384,
+      "avg_duration_min": 5.11,
+      "route_sources": {
+        "fallback_haversine_direct": 1372
+      },
+      "resolver_categories": {
+        "police": 1372
+      }
+    },
+    {
+      "crime_type": "Robo a negocio",
+      "centroids": 1520,
+      "events": 62736,
+      "avg_distance_km": 2.186,
+      "avg_duration_min": 4.68,
+      "route_sources": {
+        "fallback_haversine_direct": 1520
+      },
+      "resolver_categories": {
+        "police": 1520
+      }
+    },
+    {
+      "crime_type": "Robo a transeúnte",
+      "centroids": 1744,
+      "events": 80434,
+      "avg_distance_km": 2.28,
+      "avg_duration_min": 4.89,
+      "route_sources": {
+        "fallback_haversine_direct": 1744
+      },
+      "resolver_categories": {
+        "police": 1744
+      }
+    },
+    {
+      "crime_type": "Robo de vehículo",
+      "centroids": 1929,
+      "events": 107922,
+      "avg_distance_km": 2.268,
+      "avg_duration_min": 4.86,
+      "route_sources": {
+        "fallback_haversine_direct": 1929
+      },
+      "resolver_categories": {
+        "police": 1929
+      }
+    },
+    {
+      "crime_type": "Robo en transporte",
+      "centroids": 1018,
+      "events": 14951,
+      "avg_distance_km": 2.143,
+      "avg_duration_min": 4.59,
+      "route_sources": {
+        "fallback_haversine_direct": 1018
+      },
+      "resolver_categories": {
+        "police": 1018
+      }
+    },
+    {
+      "crime_type": "Secuestro",
+      "centroids": 694,
+      "events": 2209,
+      "avg_distance_km": 2.253,
+      "avg_duration_min": 4.83,
+      "route_sources": {
+        "fallback_haversine_direct": 694
+      },
+      "resolver_categories": {
+        "police": 694
+      }
+    },
+    {
+      "crime_type": "Violencia familiar",
+      "centroids": 1870,
+      "events": 68339,
+      "avg_distance_km": 1.418,
+      "avg_duration_min": 3.04,
+      "route_sources": {
+        "fallback_haversine_direct": 1870
+      },
+      "resolver_categories": {
+        "hospital": 1194,
+        "police": 676
+      }
+    }
+  ]
+}

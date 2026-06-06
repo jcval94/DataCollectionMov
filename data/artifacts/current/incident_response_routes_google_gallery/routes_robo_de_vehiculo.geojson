@@ -1,0 +1,399 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15843000000001,
+            19.413200000000003
+          ],
+          [
+            -99.15912,
+            19.415950000000002
+          ],
+          [
+            -99.15892000000001,
+            19.41598
+          ],
+          [
+            -99.15915000000001,
+            19.41692
+          ],
+          [
+            -99.15934000000001,
+            19.416880000000003
+          ],
+          [
+            -99.15950000000001,
+            19.417530000000003
+          ],
+          [
+            -99.15905000000001,
+            19.417620000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_robo_de_vehiculo_1",
+        "codigo_postal": "06700",
+        "crime_type": "Robo de vehículo",
+        "centroid_id": 1,
+        "centroid_lat": 19.4174454,
+        "centroid_lon": -99.1590177,
+        "n_events": 977,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 846.0,
+        "duration_seconds": 301.0,
+        "duration_minutes": 5.016666666666667,
+        "static_duration_seconds": 280.0,
+        "delay_seconds": 21.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCiHjAePhCEg@{Dl@Fd@aC^QyA",
+        "route_description": "C. Orizaba",
+        "generated_at_utc": "2026-06-06T17:36:26+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06347000000001,
+            19.390600000000003
+          ],
+          [
+            -99.06354,
+            19.39028
+          ],
+          [
+            -99.06666000000001,
+            19.390810000000002
+          ],
+          [
+            -99.06637,
+            19.39217
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_robo_de_vehiculo_1",
+        "codigo_postal": "08500",
+        "crime_type": "Robo de vehículo",
+        "centroid_id": 1,
+        "centroid_lat": 19.3921582,
+        "centroid_lon": -99.0663029,
+        "n_events": 719,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 563.0,
+        "duration_seconds": 156.0,
+        "duration_minutes": 2.6,
+        "static_duration_seconds": 141.0,
+        "delay_seconds": 15.0,
+        "encoded_polyline": "qejuBlks{Q[GDo@~@LiBnRoGy@",
+        "route_description": "Sur 20 y C. 5 Sur 16",
+        "generated_at_utc": "2026-06-06T17:36:27+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14794,
+            19.40115
+          ],
+          [
+            -99.14839,
+            19.39542
+          ],
+          [
+            -99.14845000000001,
+            19.39532
+          ],
+          [
+            -99.14897,
+            19.394720000000003
+          ],
+          [
+            -99.15101000000001,
+            19.39252
+          ],
+          [
+            -99.15110000000001,
+            19.392560000000003
+          ],
+          [
+            -99.15125,
+            19.3926
+          ],
+          [
+            -99.15137000000001,
+            19.392590000000002
+          ],
+          [
+            -99.15156,
+            19.392490000000002
+          ],
+          [
+            -99.15162000000001,
+            19.39244
+          ],
+          [
+            -99.15169,
+            19.392300000000002
+          ],
+          [
+            -99.15174,
+            19.3917
+          ],
+          [
+            -99.15169,
+            19.391530000000003
+          ],
+          [
+            -99.15165,
+            19.391450000000003
+          ],
+          [
+            -99.15155000000001,
+            19.391370000000002
+          ],
+          [
+            -99.15136000000001,
+            19.39131
+          ],
+          [
+            -99.15168000000001,
+            19.38861
+          ],
+          [
+            -99.15110000000001,
+            19.388520000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "03023_robo_de_vehiculo_1",
+        "codigo_postal": "03023",
+        "crime_type": "Robo de vehículo",
+        "centroid_id": 1,
+        "centroid_lat": 19.3886484,
+        "centroid_lon": -99.1510785,
+        "n_events": 648,
+        "resolver_unit_id": "osm_node_3779138327",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4011561,
+        "resolver_lon": -99.1480055,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1645.0,
+        "duration_seconds": 337.0,
+        "duration_minutes": 5.616666666666666,
+        "static_duration_seconds": 327.0,
+        "delay_seconds": 10.0,
+        "encoded_polyline": "ehluBryc|Qxb@xARJvBfBvLvKGPG\\@VRd@HJZLvBH`@INGNSJe@zO~@PsB",
+        "route_description": "Zempoala y Av. Universidad",
+        "generated_at_utc": "2026-06-06T17:36:28+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14794,
+            19.40115
+          ],
+          [
+            -99.14797000000002,
+            19.400750000000002
+          ],
+          [
+            -99.14891000000001,
+            19.400190000000002
+          ],
+          [
+            -99.14948000000001,
+            19.39987
+          ],
+          [
+            -99.15086000000001,
+            19.399060000000002
+          ],
+          [
+            -99.15097000000002,
+            19.39901
+          ],
+          [
+            -99.15184,
+            19.398490000000002
+          ],
+          [
+            -99.15222000000001,
+            19.398290000000003
+          ],
+          [
+            -99.15288000000001,
+            19.398320000000002
+          ],
+          [
+            -99.1559,
+            19.39834
+          ],
+          [
+            -99.15667,
+            19.398390000000003
+          ],
+          [
+            -99.15668000000001,
+            19.39827
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "03020_robo_de_vehiculo_1",
+        "codigo_postal": "03020",
+        "crime_type": "Robo de vehículo",
+        "centroid_id": 1,
+        "centroid_lat": 19.398242,
+        "centroid_lon": -99.1566987,
+        "n_events": 602,
+        "resolver_unit_id": "osm_node_3779138327",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4011561,
+        "resolver_lon": -99.1480055,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1049.0,
+        "duration_seconds": 325.0,
+        "duration_minutes": 5.416666666666667,
+        "static_duration_seconds": 271.0,
+        "delay_seconds": 54.0,
+        "encoded_polyline": "ehluBryc|QnADnBzD~@pB`DrGHTfBlDf@jAEbCCzQIxCV@",
+        "route_description": "Diag. San Antonio y La Morena",
+        "generated_at_utc": "2026-06-06T17:36:30+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06347000000001,
+            19.390600000000003
+          ],
+          [
+            -99.0626,
+            19.394620000000003
+          ],
+          [
+            -99.06239000000001,
+            19.39563
+          ],
+          [
+            -99.069,
+            19.396710000000002
+          ],
+          [
+            -99.07137,
+            19.397100000000002
+          ],
+          [
+            -99.07246,
+            19.397270000000002
+          ],
+          [
+            -99.07531,
+            19.397740000000002
+          ],
+          [
+            -99.07516000000001,
+            19.398390000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_robo_de_vehiculo_2",
+        "codigo_postal": "08500",
+        "crime_type": "Robo de vehículo",
+        "centroid_id": 2,
+        "centroid_lat": 19.3984567,
+        "centroid_lon": -99.0754986,
+        "n_events": 591,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2061.0,
+        "duration_seconds": 472.0,
+        "duration_minutes": 7.866666666666666,
+        "static_duration_seconds": 467.0,
+        "delay_seconds": 5.0,
+        "encoded_polyline": "qejuBlks{Q[GDo@cXmDiEi@wEhh@mAxMa@xE}AxPaC]",
+        "route_description": "Ote. 257 y Av Sur 12",
+        "generated_at_utc": "2026-06-06T17:36:31+00:00"
+      }
+    }
+  ]
+}

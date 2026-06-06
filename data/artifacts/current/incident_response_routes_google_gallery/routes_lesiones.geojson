@@ -1,0 +1,439 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15495000000001,
+            19.4154
+          ],
+          [
+            -99.15486000000001,
+            19.41505
+          ],
+          [
+            -99.15445000000001,
+            19.415100000000002
+          ],
+          [
+            -99.15111,
+            19.41484
+          ],
+          [
+            -99.15085,
+            19.414800000000003
+          ],
+          [
+            -99.14837000000001,
+            19.414620000000003
+          ],
+          [
+            -99.14856,
+            19.41354
+          ],
+          [
+            -99.14948000000001,
+            19.413590000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_lesiones_2",
+        "codigo_postal": "06720",
+        "crime_type": "Lesiones",
+        "centroid_id": 2,
+        "centroid_lat": 19.4136888,
+        "centroid_lon": -99.1494729,
+        "n_events": 241,
+        "resolver_unit_id": "osm_node_2278973453",
+        "resolver_name": "Hospital Punto Médico",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4153725,
+        "resolver_lon": -99.1550669,
+        "allowed_resolver_categories": "hospital,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 942.0,
+        "duration_seconds": 220.0,
+        "duration_minutes": 3.6666666666666665,
+        "static_duration_seconds": 213.0,
+        "delay_seconds": 7.0,
+        "encoded_polyline": "gaouBlee|QdAQIqAr@{SFs@b@oNvEd@IvD",
+        "route_description": "Dr. Balmis/Eje 2A Sur",
+        "generated_at_utc": "2026-06-06T17:35:32+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.16567,
+            19.4341
+          ],
+          [
+            -99.16560000000001,
+            19.4343
+          ],
+          [
+            -99.16567,
+            19.43436
+          ],
+          [
+            -99.16599000000001,
+            19.43449
+          ],
+          [
+            -99.1662,
+            19.43372
+          ],
+          [
+            -99.16619000000001,
+            19.433570000000003
+          ],
+          [
+            -99.16527,
+            19.431810000000002
+          ],
+          [
+            -99.16525000000001,
+            19.43175
+          ],
+          [
+            -99.16430000000001,
+            19.42995
+          ],
+          [
+            -99.16396,
+            19.42932
+          ],
+          [
+            -99.16394000000001,
+            19.42904
+          ],
+          [
+            -99.164,
+            19.42894
+          ],
+          [
+            -99.16401,
+            19.428800000000003
+          ],
+          [
+            -99.16396,
+            19.428690000000003
+          ],
+          [
+            -99.16389000000001,
+            19.428610000000003
+          ],
+          [
+            -99.16378,
+            19.42856
+          ],
+          [
+            -99.16367000000001,
+            19.42855
+          ],
+          [
+            -99.16347,
+            19.42839
+          ],
+          [
+            -99.16282000000001,
+            19.42714
+          ],
+          [
+            -99.16475000000001,
+            19.42623
+          ],
+          [
+            -99.16613000000001,
+            19.42556
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06600_lesiones_1",
+        "codigo_postal": "06600",
+        "crime_type": "Lesiones",
+        "centroid_id": 1,
+        "centroid_lat": 19.4251689,
+        "centroid_lon": -99.1659207,
+        "n_events": 195,
+        "resolver_unit_id": "osm_node_9709777177",
+        "resolver_name": "Imss Villalonguin",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4340558,
+        "resolver_lon": -99.1655405,
+        "allowed_resolver_categories": "hospital,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1385.0,
+        "duration_seconds": 520.0,
+        "duration_minutes": 8.666666666666666,
+        "static_duration_seconds": 374.0,
+        "delay_seconds": 146.0,
+        "encoded_polyline": "cvruBlhg|Qg@MKLY~@xCh@\\A~IwDJCfJ}D|BcAv@CRJZ@TINMHU@U^g@xFaCtD`KdCrG",
+        "route_description": "Rio Rhin y Hamburgo",
+        "generated_at_utc": "2026-06-06T17:35:33+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14182000000001,
+            19.4223
+          ],
+          [
+            -99.14154,
+            19.422310000000003
+          ],
+          [
+            -99.14164000000001,
+            19.421390000000002
+          ],
+          [
+            -99.14421,
+            19.42162
+          ],
+          [
+            -99.14708,
+            19.42192
+          ],
+          [
+            -99.1483,
+            19.422030000000003
+          ],
+          [
+            -99.14812,
+            19.422900000000002
+          ],
+          [
+            -99.14743000000001,
+            19.42284
+          ],
+          [
+            -99.14741000000001,
+            19.422870000000003
+          ],
+          [
+            -99.14738000000001,
+            19.42312
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_lesiones_1",
+        "codigo_postal": "06720",
+        "crime_type": "Lesiones",
+        "centroid_id": 1,
+        "centroid_lat": 19.4232519,
+        "centroid_lon": -99.1476468,
+        "n_events": 190,
+        "resolver_unit_id": "osm_node_4425468090",
+        "resolver_name": "Instituto Oftalmologia",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4225708,
+        "resolver_lon": -99.1418319,
+        "allowed_resolver_categories": "hospital,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1037.0,
+        "duration_seconds": 244.0,
+        "duration_minutes": 4.066666666666666,
+        "static_duration_seconds": 272.0,
+        "delay_seconds": -28.0,
+        "encoded_polyline": "klpuBjsb|QAw@vDRm@`O{@|PUrFmDc@JiCECq@E",
+        "route_description": "C. Dr. Liceaga",
+        "generated_at_utc": "2026-06-06T17:35:34+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.1718,
+            19.418290000000002
+          ],
+          [
+            -99.17206,
+            19.41864
+          ],
+          [
+            -99.16806000000001,
+            19.419520000000002
+          ],
+          [
+            -99.16690000000001,
+            19.419790000000003
+          ],
+          [
+            -99.16669,
+            19.41974
+          ],
+          [
+            -99.16655000000002,
+            19.41963
+          ],
+          [
+            -99.16649000000001,
+            19.419600000000003
+          ],
+          [
+            -99.16623000000001,
+            19.4185
+          ],
+          [
+            -99.16778000000001,
+            19.41816
+          ],
+          [
+            -99.16781,
+            19.41826
+          ],
+          [
+            -99.16711000000001,
+            19.419040000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_lesiones_1",
+        "codigo_postal": "06700",
+        "crime_type": "Lesiones",
+        "centroid_id": 1,
+        "centroid_lat": 19.4188747,
+        "centroid_lon": -99.166903,
+        "n_events": 184,
+        "resolver_unit_id": "osm_node_5280393723",
+        "resolver_name": "Centro Hospitalario Sanatorio Durango",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4183686,
+        "resolver_lon": -99.1716807,
+        "allowed_resolver_categories": "hospital,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1071.0,
+        "duration_seconds": 411.0,
+        "duration_minutes": 6.85,
+        "static_duration_seconds": 289.0,
+        "delay_seconds": 122.0,
+        "encoded_polyline": "isouBvnh|QeAr@oD_Xu@gFHi@T[DKzEs@bAtHSD{CkC",
+        "route_description": "Durango",
+        "generated_at_utc": "2026-06-06T17:35:36+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13972000000001,
+            19.452620000000003
+          ],
+          [
+            -99.13986000000001,
+            19.452520000000003
+          ],
+          [
+            -99.14069,
+            19.45229
+          ],
+          [
+            -99.14086,
+            19.45232
+          ],
+          [
+            -99.141,
+            19.45238
+          ],
+          [
+            -99.14110000000001,
+            19.45248
+          ],
+          [
+            -99.14118,
+            19.4526
+          ],
+          [
+            -99.14126,
+            19.452240000000003
+          ],
+          [
+            -99.14116000000001,
+            19.451900000000002
+          ],
+          [
+            -99.14119000000001,
+            19.451700000000002
+          ],
+          [
+            -99.14127,
+            19.45135
+          ],
+          [
+            -99.14129000000001,
+            19.45109
+          ],
+          [
+            -99.14167,
+            19.44923
+          ],
+          [
+            -99.14178000000001,
+            19.44867
+          ],
+          [
+            -99.14206000000001,
+            19.44731
+          ],
+          [
+            -99.14217000000001,
+            19.446740000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06300_lesiones_1",
+        "codigo_postal": "06300",
+        "crime_type": "Lesiones",
+        "centroid_id": 1,
+        "centroid_lat": 19.4467594,
+        "centroid_lon": -99.1422681,
+        "n_events": 148,
+        "resolver_unit_id": "osm_node_4070639592",
+        "resolver_name": "Módulo SSP La Pera",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4525276,
+        "resolver_lon": -99.1396332,
+        "allowed_resolver_categories": "hospital,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 838.0,
+        "duration_seconds": 218.0,
+        "duration_minutes": 3.6333333333333333,
+        "static_duration_seconds": 240.0,
+        "delay_seconds": -22.0,
+        "encoded_polyline": "{ivuBffb|QRZl@dDE`@KZSRWNfANbASf@DdANr@BrJjAnBTnGv@pBT",
+        "route_description": "Lerdo",
+        "generated_at_utc": "2026-06-06T17:35:38+00:00"
+      }
+    }
+  ]
+}

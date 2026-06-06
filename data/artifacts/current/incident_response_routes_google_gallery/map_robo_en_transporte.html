@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_96f65faafecc11d475b2016114a4aba8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Robo en transporte</strong><br>
+      5 rutas / 1,598 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_96f65faafecc11d475b2016114a4aba8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_96f65faafecc11d475b2016114a4aba8 = L.map(
+                "map_96f65faafecc11d475b2016114a4aba8",
+                {
+                    center: [19.422646, -99.13422987999999],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_96f65faafecc11d475b2016114a4aba8);
+
+            
+
+        
+    
+            var tile_layer_cceff6c93933dc4ce6ed60fc49e3c25a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cceff6c93933dc4ce6ed60fc49e3c25a.addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+            var marker_cluster_723c674a0d6423c27d9ac8d1698857a6 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_4c3e7a4ae1476b71c92d8e28db6a15e7 = L.marker(
+                [19.3938131, -99.178017],
+                {
+}
+            ).addTo(marker_cluster_723c674a0d6423c27d9ac8d1698857a6);
+        
+    
+            var icon_b74c9cf7a05ccca0b0ed15118bbbbfe7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bdf63dd1513c3cd93731cd33823b96f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e75f6d9cccdb936924453163e359c1e3 = $(`<div id="html_e75f6d9cccdb936924453163e359c1e3" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_bdf63dd1513c3cd93731cd33823b96f7.setContent(html_e75f6d9cccdb936924453163e359c1e3);
+            
+        
+
+        marker_4c3e7a4ae1476b71c92d8e28db6a15e7.bindPopup(popup_bdf63dd1513c3cd93731cd33823b96f7)
+        ;
+
+        
+    
+    
+            marker_4c3e7a4ae1476b71c92d8e28db6a15e7.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4c3e7a4ae1476b71c92d8e28db6a15e7.setIcon(icon_b74c9cf7a05ccca0b0ed15118bbbbfe7);
+            
+    
+            var marker_a7ebfa982a3c34704b5dcd9f0b9160fd = L.marker(
+                [19.4525276, -99.1396332],
+                {
+}
+            ).addTo(marker_cluster_723c674a0d6423c27d9ac8d1698857a6);
+        
+    
+            var icon_355fedc0a3489beef76724d0539d4731 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e843ef2f0f18675cd38d9d151587e78 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1aba66bd5dfb5c2a8ede3e1d69cdf851 = $(`<div id="html_1aba66bd5dfb5c2a8ede3e1d69cdf851" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_9e843ef2f0f18675cd38d9d151587e78.setContent(html_1aba66bd5dfb5c2a8ede3e1d69cdf851);
+            
+        
+
+        marker_a7ebfa982a3c34704b5dcd9f0b9160fd.bindPopup(popup_9e843ef2f0f18675cd38d9d151587e78)
+        ;
+
+        
+    
+    
+            marker_a7ebfa982a3c34704b5dcd9f0b9160fd.bindTooltip(
+                `<div>
+                     Módulo SSP La Pera (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a7ebfa982a3c34704b5dcd9f0b9160fd.setIcon(icon_355fedc0a3489beef76724d0539d4731);
+            
+    
+            var marker_d9d495c32a1adb666ee2aa235e379c67 = L.marker(
+                [19.4364751, -99.1314879],
+                {
+}
+            ).addTo(marker_cluster_723c674a0d6423c27d9ac8d1698857a6);
+        
+    
+            var icon_0f1c4b8dd75fde3ef6dd665d7613c510 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_88bcbf78654ecb428716b964ea0597db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_055e0864270e46366c65c2467ec420be = $(`<div id="html_055e0864270e46366c65c2467ec420be" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_88bcbf78654ecb428716b964ea0597db.setContent(html_055e0864270e46366c65c2467ec420be);
+            
+        
+
+        marker_d9d495c32a1adb666ee2aa235e379c67.bindPopup(popup_88bcbf78654ecb428716b964ea0597db)
+        ;
+
+        
+    
+    
+            marker_d9d495c32a1adb666ee2aa235e379c67.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d9d495c32a1adb666ee2aa235e379c67.setIcon(icon_0f1c4b8dd75fde3ef6dd665d7613c510);
+            
+    
+            var marker_063b48fbe91bca840cf22bff8935d3ef = L.marker(
+                [19.4201186, -99.0831441],
+                {
+}
+            ).addTo(marker_cluster_723c674a0d6423c27d9ac8d1698857a6);
+        
+    
+            var icon_0c5c873422dd73ca3a83de62f10738c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38fd07504ddd33f6d3a13c6ae44c1c0f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e6c07ca0d5ccd0f42fe3ebc39feed73 = $(`<div id="html_2e6c07ca0d5ccd0f42fe3ebc39feed73" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Módulo Judicial<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_38fd07504ddd33f6d3a13c6ae44c1c0f.setContent(html_2e6c07ca0d5ccd0f42fe3ebc39feed73);
+            
+        
+
+        marker_063b48fbe91bca840cf22bff8935d3ef.bindPopup(popup_38fd07504ddd33f6d3a13c6ae44c1c0f)
+        ;
+
+        
+    
+    
+            marker_063b48fbe91bca840cf22bff8935d3ef.bindTooltip(
+                `<div>
+                     Módulo Judicial (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_063b48fbe91bca840cf22bff8935d3ef.setIcon(icon_0c5c873422dd73ca3a83de62f10738c5);
+            
+    
+            var marker_c84815e4807274d60a087d4df1f1c82e = L.marker(
+                [19.4201464, -99.1140589],
+                {
+}
+            ).addTo(marker_cluster_723c674a0d6423c27d9ac8d1698857a6);
+        
+    
+            var icon_1bd37c8dbaeebede47ae64fc37c853a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f342deccdb476d271de15df28763ccd8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38bac66a3c351c43b0033a08b769109e = $(`<div id="html_38bac66a3c351c43b0033a08b769109e" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Estacion de policia Vigilante<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_f342deccdb476d271de15df28763ccd8.setContent(html_38bac66a3c351c43b0033a08b769109e);
+            
+        
+
+        marker_c84815e4807274d60a087d4df1f1c82e.bindPopup(popup_f342deccdb476d271de15df28763ccd8)
+        ;
+
+        
+    
+    
+            marker_c84815e4807274d60a087d4df1f1c82e.bindTooltip(
+                `<div>
+                     Estacion de policia Vigilante (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c84815e4807274d60a087d4df1f1c82e.setIcon(icon_1bd37c8dbaeebede47ae64fc37c853a1);
+            
+    
+            marker_cluster_723c674a0d6423c27d9ac8d1698857a6.addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+            var poly_line_9c70f80f6d60fb5fdf59605a12ea3718 = L.polyline(
+                [[19.42029, -99.11402000000001], [19.42002, -99.11300000000001], [19.419900000000002, -99.11261], [19.420250000000003, -99.11248], [19.421020000000002, -99.11544], [19.42198, -99.11890000000001], [19.42197, -99.11896], [19.42192, -99.11905], [19.42201, -99.11939000000001], [19.42227, -99.12031], [19.422320000000003, -99.12054], [19.42256, -99.12270000000001], [19.42285, -99.12527000000001], [19.42293, -99.12607000000001], [19.42321, -99.1281], [19.423270000000002, -99.12828], [19.424970000000002, -99.12813000000001], [19.425900000000002, -99.12804000000001], [19.42605, -99.12885000000001], [19.426170000000003, -99.12984], [19.426250000000003, -99.13002], [19.42624, -99.13031000000001], [19.426170000000003, -99.13051], [19.425880000000003, -99.13102], [19.42577, -99.13132], [19.42576, -99.13141], [19.425880000000003, -99.13289]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+        var popup_1d04c6d934179125e6588310622c9fcf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50db5805a16a3ba81d9d22f6a1250738 = $(`<div id="html_50db5805a16a3ba81d9d22f6a1250738" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo en transporte<br><b>CP:</b> 06090<br><b>Eventos:</b> 487<br><b>Unidad:</b> Estacion de policia Vigilante<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.71<br><b>Duracion min:</b> 15.2<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_1d04c6d934179125e6588310622c9fcf.setContent(html_50db5805a16a3ba81d9d22f6a1250738);
+            
+        
+
+        poly_line_9c70f80f6d60fb5fdf59605a12ea3718.bindPopup(popup_1d04c6d934179125e6588310622c9fcf)
+        ;
+
+        
+    
+    
+            poly_line_9c70f80f6d60fb5fdf59605a12ea3718.bindTooltip(
+                `<div>
+                     Robo en transporte CP 06090 -> Estacion de policia Vigilante
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39de0b433cf61b90793801d25b21e81b = L.circleMarker(
+                [19.425744, -99.1329029],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+            circle_marker_39de0b433cf61b90793801d25b21e81b.bindTooltip(
+                `<div>
+                     Robo en transporte CP 06090 (487 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f1b41520e8b42badd3b64bb1de5511bd = L.polyline(
+                [[19.452620000000003, -99.13972000000001], [19.452520000000003, -99.13986000000001], [19.45229, -99.14069], [19.45232, -99.14086], [19.45238, -99.141], [19.45248, -99.14110000000001], [19.4526, -99.14118], [19.452240000000003, -99.14126], [19.451900000000002, -99.14116000000001], [19.451700000000002, -99.14119000000001], [19.45135, -99.14127], [19.45109, -99.14129000000001], [19.44923, -99.14167], [19.44867, -99.14178000000001], [19.44731, -99.14206000000001], [19.445330000000002, -99.14241000000001], [19.44168, -99.14302], [19.44116, -99.14313000000001], [19.44116, -99.14328], [19.44113, -99.14343000000001], [19.441000000000003, -99.14364], [19.44086, -99.14377], [19.44066, -99.14386], [19.44048, -99.14388000000001], [19.44022, -99.14385000000001], [19.43985, -99.14422], [19.439120000000003, -99.14503], [19.43769, -99.14659], [19.437510000000003, -99.14682], [19.43756, -99.14705000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+        var popup_6fb4ed837bd16dfb4543a74c1882758b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79faeb8ec7e42681fa1d794ff2c3c939 = $(`<div id="html_79faeb8ec7e42681fa1d794ff2c3c939" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo en transporte<br><b>CP:</b> 06300<br><b>Eventos:</b> 312<br><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.08<br><b>Duracion min:</b> 14.4<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_6fb4ed837bd16dfb4543a74c1882758b.setContent(html_79faeb8ec7e42681fa1d794ff2c3c939);
+            
+        
+
+        poly_line_f1b41520e8b42badd3b64bb1de5511bd.bindPopup(popup_6fb4ed837bd16dfb4543a74c1882758b)
+        ;
+
+        
+    
+    
+            poly_line_f1b41520e8b42badd3b64bb1de5511bd.bindTooltip(
+                `<div>
+                     Robo en transporte CP 06300 -> Módulo SSP La Pera
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23d5acb301746ca209487cb01660d7ed = L.circleMarker(
+                [19.4376634, -99.1470289],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.813067629253164, "stroke": true, "weight": 1}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+            circle_marker_23d5acb301746ca209487cb01660d7ed.bindTooltip(
+                `<div>
+                     Robo en transporte CP 06300 (312 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3028e7df0d25be0462be519407948b3b = L.polyline(
+                [[19.42014, -99.08317000000001], [19.42067, -99.08285000000001], [19.42105, -99.08256000000002], [19.420520000000003, -99.08167], [19.42029, -99.08138000000001], [19.420060000000003, -99.08116000000001], [19.419700000000002, -99.08090000000001], [19.41901, -99.08049000000001], [19.418770000000002, -99.08028], [19.418490000000002, -99.07992], [19.417340000000003, -99.07831], [19.41591, -99.07587000000001], [19.41578, -99.07568], [19.41523, -99.07493000000001], [19.41488, -99.07437], [19.414460000000002, -99.07361], [19.414340000000003, -99.07331], [19.414240000000003, -99.07267], [19.413880000000002, -99.07036000000001], [19.413610000000002, -99.06865], [19.41344, -99.06727000000001], [19.41344, -99.06702000000001], [19.41357, -99.06684000000001], [19.41365, -99.06681], [19.413780000000003, -99.06684000000001], [19.41385, -99.06689000000001], [19.41423, -99.06968], [19.41437, -99.07071], [19.41441, -99.07111], [19.41495, -99.07102]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+        var popup_4e1b69f289a3f1a6d2350f6e1cc059c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1925b3ca831664ff9573136e1ea1ec77 = $(`<div id="html_1925b3ca831664ff9573136e1ea1ec77" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo en transporte<br><b>CP:</b> 08100<br><b>Eventos:</b> 300<br><b>Unidad:</b> Módulo Judicial<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.59<br><b>Duracion min:</b> 6.2<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_4e1b69f289a3f1a6d2350f6e1cc059c8.setContent(html_1925b3ca831664ff9573136e1ea1ec77);
+            
+        
+
+        poly_line_3028e7df0d25be0462be519407948b3b.bindPopup(popup_4e1b69f289a3f1a6d2350f6e1cc059c8)
+        ;
+
+        
+    
+    
+            poly_line_3028e7df0d25be0462be519407948b3b.bindTooltip(
+                `<div>
+                     Robo en transporte CP 08100 -> Módulo Judicial
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b480c605a51bdbf794201ca9195531ae = L.circleMarker(
+                [19.4149655, -99.0711658],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.622504486493764, "stroke": true, "weight": 1}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+            circle_marker_b480c605a51bdbf794201ca9195531ae.bindTooltip(
+                `<div>
+                     Robo en transporte CP 08100 (300 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e917a5b3fffde6b915e9a4bba29183e6 = L.polyline(
+                [[19.43655, -99.13148000000001], [19.436850000000003, -99.13366], [19.43694, -99.13452000000001], [19.436980000000002, -99.13473], [19.43466, -99.13504], [19.43411, -99.13511000000001], [19.433970000000002, -99.13403000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.374950980203691}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+        var popup_43ab360c9a7873dd47848748537a4977 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f59cb32f5f6543625da10e0431397a56 = $(`<div id="html_f59cb32f5f6543625da10e0431397a56" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo en transporte<br><b>CP:</b> 06060<br><b>Eventos:</b> 254<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 0.78<br><b>Duracion min:</b> 5.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_43ab360c9a7873dd47848748537a4977.setContent(html_f59cb32f5f6543625da10e0431397a56);
+            
+        
+
+        poly_line_e917a5b3fffde6b915e9a4bba29183e6.bindPopup(popup_43ab360c9a7873dd47848748537a4977)
+        ;
+
+        
+    
+    
+            poly_line_e917a5b3fffde6b915e9a4bba29183e6.bindTooltip(
+                `<div>
+                     Robo en transporte CP 06060 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6fbc7665f225b3e3e3538441a5253a4c = L.circleMarker(
+                [19.4327145, -99.1327014],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.854098583616237, "stroke": true, "weight": 1}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+            circle_marker_6fbc7665f225b3e3e3538441a5253a4c.bindTooltip(
+                `<div>
+                     Robo en transporte CP 06060 (254 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_bcc548451b65d456135f7ed91ff5371f = L.polyline(
+                [[19.39386, -99.17801000000001], [19.393890000000003, -99.17816], [19.39448, -99.18007000000001], [19.39457, -99.18012], [19.39488, -99.18036000000001], [19.395110000000003, -99.18077000000001], [19.395220000000002, -99.18093], [19.395570000000003, -99.18125], [19.39579, -99.18144000000001], [19.397280000000002, -99.18252000000001], [19.39804, -99.18311000000001], [19.40001, -99.18484000000001], [19.400070000000003, -99.18491], [19.40012, -99.18524000000001], [19.4002, -99.18543000000001], [19.400350000000003, -99.18560000000001], [19.400750000000002, -99.18585], [19.400820000000003, -99.18589000000001], [19.400850000000002, -99.18594], [19.401590000000002, -99.18636000000001], [19.40172, -99.18647000000001], [19.402710000000003, -99.18703000000001], [19.40296, -99.18703000000001], [19.403090000000002, -99.18697], [19.40343, -99.18678000000001], [19.40358, -99.18676], [19.40368, -99.18679], [19.403760000000002, -99.18686000000001], [19.40388, -99.18709000000001], [19.403910000000003, -99.18906000000001], [19.403830000000003, -99.18920000000001], [19.4037, -99.18927000000001], [19.403550000000003, -99.18927000000001], [19.403270000000003, -99.18933000000001], [19.403190000000002, -99.18937000000001], [19.40237, -99.18943], [19.40231, -99.18845], [19.402320000000003, -99.18817000000001], [19.40227, -99.18805], [19.402250000000002, -99.18772000000001], [19.402140000000003, -99.18762000000001], [19.40203, -99.18757000000001], [19.401940000000003, -99.18757000000001], [19.40184, -99.18761], [19.4007, -99.18826000000001], [19.40068, -99.18818], [19.4018, -99.18752], [19.4021, -99.18733]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.260990336999411}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+        var popup_c112039f756aed97060b4e8725863a26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38e6410c840ec327ef1960cc1faced0d = $(`<div id="html_38e6410c840ec327ef1960cc1faced0d" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo en transporte<br><b>CP:</b> 11870<br><b>Eventos:</b> 245<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.53<br><b>Duracion min:</b> 13.7<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_c112039f756aed97060b4e8725863a26.setContent(html_38e6410c840ec327ef1960cc1faced0d);
+            
+        
+
+        poly_line_bcc548451b65d456135f7ed91ff5371f.bindPopup(popup_c112039f756aed97060b4e8725863a26)
+        ;
+
+        
+    
+    
+            poly_line_bcc548451b65d456135f7ed91ff5371f.bindTooltip(
+                `<div>
+                     Robo en transporte CP 11870 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f98848582cdf6c82ee4e6470651eaf4e = L.circleMarker(
+                [19.4021426, -99.1873504],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.695819912499182, "stroke": true, "weight": 1}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+        
+    
+            circle_marker_f98848582cdf6c82ee4e6470651eaf4e.bindTooltip(
+                `<div>
+                     Robo en transporte CP 11870 (245 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_00385027b48110bfdbf513b264694e7d_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_cceff6c93933dc4ce6ed60fc49e3c25a,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_723c674a0d6423c27d9ac8d1698857a6,
+                },
+            };
+            let layer_control_00385027b48110bfdbf513b264694e7d = L.control.layers(
+                layer_control_00385027b48110bfdbf513b264694e7d_layers.base_layers,
+                layer_control_00385027b48110bfdbf513b264694e7d_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_96f65faafecc11d475b2016114a4aba8);
+
+        
+</script>
+</html>

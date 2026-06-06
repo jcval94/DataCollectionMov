@@ -1,0 +1,543 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06613,
+            19.39104
+          ],
+          [
+            -99.06593000000001,
+            19.391930000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_violencia_familiar_1",
+        "codigo_postal": "08500",
+        "crime_type": "Violencia familiar",
+        "centroid_id": 1,
+        "centroid_lat": 19.3919323,
+        "centroid_lon": -99.065998,
+        "n_events": 479,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 375.0,
+        "duration_seconds": 93.0,
+        "duration_minutes": 1.55,
+        "static_duration_seconds": 106.0,
+        "delay_seconds": -13.0,
+        "encoded_polyline": "qejuBlks{Q[GqAbNqDg@",
+        "route_description": "Sur 20 y Ote. 253/Eje 6 Ote",
+        "generated_at_utc": "2026-06-06T17:36:44+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.17766,
+            19.33263
+          ],
+          [
+            -99.17748,
+            19.33236
+          ],
+          [
+            -99.17729000000001,
+            19.332160000000002
+          ],
+          [
+            -99.17716000000001,
+            19.3323
+          ],
+          [
+            -99.17679000000001,
+            19.33247
+          ],
+          [
+            -99.17666000000001,
+            19.33238
+          ],
+          [
+            -99.17638000000001,
+            19.33227
+          ],
+          [
+            -99.17619,
+            19.332220000000003
+          ],
+          [
+            -99.17594000000001,
+            19.33217
+          ],
+          [
+            -99.17578,
+            19.33211
+          ],
+          [
+            -99.1756,
+            19.331960000000002
+          ],
+          [
+            -99.17551,
+            19.331870000000002
+          ],
+          [
+            -99.17510000000001,
+            19.33153
+          ],
+          [
+            -99.17494,
+            19.331750000000003
+          ],
+          [
+            -99.17478000000001,
+            19.33191
+          ],
+          [
+            -99.17439,
+            19.332240000000002
+          ],
+          [
+            -99.17421,
+            19.332610000000003
+          ],
+          [
+            -99.17417,
+            19.33264
+          ],
+          [
+            -99.17386,
+            19.332710000000002
+          ],
+          [
+            -99.17309,
+            19.332790000000003
+          ],
+          [
+            -99.17275000000001,
+            19.33282
+          ],
+          [
+            -99.17133000000001,
+            19.3324
+          ],
+          [
+            -99.16828000000001,
+            19.33146
+          ],
+          [
+            -99.16681000000001,
+            19.331030000000002
+          ],
+          [
+            -99.16650000000001,
+            19.33192
+          ],
+          [
+            -99.16643,
+            19.33191
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "04369_violencia_familiar_2",
+        "codigo_postal": "04369",
+        "crime_type": "Violencia familiar",
+        "centroid_id": 2,
+        "centroid_lat": 19.3318923,
+        "centroid_lon": -99.166435,
+        "n_events": 478,
+        "resolver_unit_id": "osm_node_11788866069",
+        "resolver_name": "Centro de Salud T.I Copilco el Alto",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.33267,
+        "resolver_lon": -99.1775931,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1416.0,
+        "duration_seconds": 448.0,
+        "duration_minutes": 7.466666666666667,
+        "static_duration_seconds": 430.0,
+        "delay_seconds": 18.0,
+        "encoded_polyline": "}{~tBjsi|Qt@c@f@e@[Ya@iAPYTw@He@Hq@J_@\\c@PQbAqAk@_@_@_@aAmAiAc@EGM}@OyCEcArA{GzDaRtAeHqD}@@M",
+        "route_description": "Av. Escuinapa",
+        "generated_at_utc": "2026-06-06T17:36:46+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06347000000001,
+            19.390600000000003
+          ],
+          [
+            -99.0626,
+            19.394620000000003
+          ],
+          [
+            -99.06239000000001,
+            19.39563
+          ],
+          [
+            -99.069,
+            19.396710000000002
+          ],
+          [
+            -99.07137,
+            19.397100000000002
+          ],
+          [
+            -99.07246,
+            19.397270000000002
+          ],
+          [
+            -99.07531,
+            19.397740000000002
+          ],
+          [
+            -99.07549,
+            19.396970000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_violencia_familiar_2",
+        "codigo_postal": "08500",
+        "crime_type": "Violencia familiar",
+        "centroid_id": 2,
+        "centroid_lat": 19.3969733,
+        "centroid_lon": -99.0754842,
+        "n_events": 450,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2076.0,
+        "duration_seconds": 476.0,
+        "duration_minutes": 7.933333333333334,
+        "static_duration_seconds": 473.0,
+        "delay_seconds": 3.0,
+        "encoded_polyline": "qejuBlks{Q[GDo@cXmDiEi@wEhh@mAxMa@xE}AxPxCb@",
+        "route_description": "Ote. 257 y Av Sur 12",
+        "generated_at_utc": "2026-06-06T17:36:46+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.17766,
+            19.33263
+          ],
+          [
+            -99.17748,
+            19.33236
+          ],
+          [
+            -99.17729000000001,
+            19.332160000000002
+          ],
+          [
+            -99.17716000000001,
+            19.3323
+          ],
+          [
+            -99.17679000000001,
+            19.33247
+          ],
+          [
+            -99.17666000000001,
+            19.33238
+          ],
+          [
+            -99.17638000000001,
+            19.33227
+          ],
+          [
+            -99.17619,
+            19.332220000000003
+          ],
+          [
+            -99.17594000000001,
+            19.33217
+          ],
+          [
+            -99.17578,
+            19.33211
+          ],
+          [
+            -99.1756,
+            19.331960000000002
+          ],
+          [
+            -99.17551,
+            19.331870000000002
+          ],
+          [
+            -99.17510000000001,
+            19.33153
+          ],
+          [
+            -99.17507,
+            19.331390000000003
+          ],
+          [
+            -99.17514000000001,
+            19.331010000000003
+          ],
+          [
+            -99.17498,
+            19.33095
+          ],
+          [
+            -99.17464000000001,
+            19.33071
+          ],
+          [
+            -99.17455000000001,
+            19.33052
+          ],
+          [
+            -99.17449,
+            19.33031
+          ],
+          [
+            -99.17395,
+            19.33042
+          ],
+          [
+            -99.17365000000001,
+            19.330470000000002
+          ],
+          [
+            -99.17354,
+            19.32956
+          ],
+          [
+            -99.17354,
+            19.3293
+          ],
+          [
+            -99.17358,
+            19.328760000000003
+          ],
+          [
+            -99.17345,
+            19.3287
+          ],
+          [
+            -99.17334000000001,
+            19.32872
+          ],
+          [
+            -99.17330000000001,
+            19.32874
+          ],
+          [
+            -99.17332,
+            19.32919
+          ],
+          [
+            -99.17337,
+            19.32958
+          ],
+          [
+            -99.17282,
+            19.32964
+          ],
+          [
+            -99.17250000000001,
+            19.32965
+          ],
+          [
+            -99.17238,
+            19.32963
+          ],
+          [
+            -99.17174000000001,
+            19.329420000000002
+          ],
+          [
+            -99.17172000000001,
+            19.32949
+          ],
+          [
+            -99.17072,
+            19.32917
+          ],
+          [
+            -99.17035000000001,
+            19.329060000000002
+          ],
+          [
+            -99.17011000000001,
+            19.32898
+          ],
+          [
+            -99.16969,
+            19.328860000000002
+          ],
+          [
+            -99.17035000000001,
+            19.32702
+          ],
+          [
+            -99.17067,
+            19.3261
+          ],
+          [
+            -99.17095,
+            19.325400000000002
+          ],
+          [
+            -99.17053000000001,
+            19.325200000000002
+          ],
+          [
+            -99.16909000000001,
+            19.32442
+          ],
+          [
+            -99.16839,
+            19.324050000000003
+          ],
+          [
+            -99.16861,
+            19.323410000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "04369_violencia_familiar_1",
+        "codigo_postal": "04369",
+        "crime_type": "Violencia familiar",
+        "centroid_id": 1,
+        "centroid_lat": 19.3233642,
+        "centroid_lon": -99.1684602,
+        "n_events": 404,
+        "resolver_unit_id": "osm_node_11788866069",
+        "resolver_name": "Centro de Salud T.I Copilco el Alto",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.33267,
+        "resolver_lon": -99.1775931,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2113.0,
+        "duration_seconds": 534.0,
+        "duration_minutes": 8.9,
+        "static_duration_seconds": 562.0,
+        "delay_seconds": -28.0,
+        "encoded_polyline": "}{~tBjsi|Qt@c@f@e@[Ya@iAPYTw@He@Hq@J_@\\c@PQbAqAZEjALJ_@n@cAd@Qh@KUkBI{@tDUr@?jBFJYCUCGyABmAHKmBA_ABWh@_CMC~@gETiANo@VsAnJbCvD~@jCv@f@sAzC_HhAkC~Bj@",
+        "route_description": "Copal",
+        "generated_at_utc": "2026-06-06T17:36:48+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14182000000001,
+            19.4223
+          ],
+          [
+            -99.14154,
+            19.422310000000003
+          ],
+          [
+            -99.14164000000001,
+            19.421390000000002
+          ],
+          [
+            -99.14421,
+            19.42162
+          ],
+          [
+            -99.14708,
+            19.42192
+          ],
+          [
+            -99.1483,
+            19.422030000000003
+          ],
+          [
+            -99.14810000000001,
+            19.422990000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_violencia_familiar_2",
+        "codigo_postal": "06720",
+        "crime_type": "Violencia familiar",
+        "centroid_id": 2,
+        "centroid_lat": 19.422995,
+        "centroid_lon": -99.1481481,
+        "n_events": 381,
+        "resolver_unit_id": "osm_node_4425468090",
+        "resolver_name": "Instituto Oftalmologia",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4225708,
+        "resolver_lon": -99.1418319,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 942.0,
+        "duration_seconds": 249.0,
+        "duration_minutes": 4.15,
+        "static_duration_seconds": 263.0,
+        "delay_seconds": -14.0,
+        "encoded_polyline": "klpuBjsb|QAw@vDRm@`O{@|PUrF_Eg@",
+        "route_description": "C. Dr. Liceaga",
+        "generated_at_utc": "2026-06-06T17:36:49+00:00"
+      }
+    }
+  ]
+}

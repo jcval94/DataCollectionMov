@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ce1b1bb5e432dedc0daf21211c0f7270 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Top demanda: Violencia familiar</strong><br>
+      5 rutas / 2,192 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_ce1b1bb5e432dedc0daf21211c0f7270" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ce1b1bb5e432dedc0daf21211c0f7270 = L.map(
+                "map_ce1b1bb5e432dedc0daf21211c0f7270",
+                {
+                    center: [19.37343142, -99.1249051],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+
+            
+
+        
+    
+            var tile_layer_19a063fbf9736ac5df45dd0d020bc576 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_19a063fbf9736ac5df45dd0d020bc576.addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+            var marker_cluster_bec413289edb6a4ee25ec813a913d72d = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_def38f218625d85d073a0b62b48fd666 = L.marker(
+                [19.3904466, -99.0637351],
+                {
+}
+            ).addTo(marker_cluster_bec413289edb6a4ee25ec813a913d72d);
+        
+    
+            var icon_6bdbbafa34c2c0e62b871b32fa3bf560 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8690021b7a19408cf223ed0a32c0f531 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7bce55ff49bc5e394fa284b1fd7fd91e = $(`<div id="html_7bce55ff49bc5e394fa284b1fd7fd91e" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_8690021b7a19408cf223ed0a32c0f531.setContent(html_7bce55ff49bc5e394fa284b1fd7fd91e);
+            
+        
+
+        marker_def38f218625d85d073a0b62b48fd666.bindPopup(popup_8690021b7a19408cf223ed0a32c0f531)
+        ;
+
+        
+    
+    
+            marker_def38f218625d85d073a0b62b48fd666.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_def38f218625d85d073a0b62b48fd666.setIcon(icon_6bdbbafa34c2c0e62b871b32fa3bf560);
+            
+    
+            var marker_2c0a6246641c7fa310bd92b09727916f = L.marker(
+                [19.4225708, -99.1418319],
+                {
+}
+            ).addTo(marker_cluster_bec413289edb6a4ee25ec813a913d72d);
+        
+    
+            var icon_4852b586874abcfc19edef94e4b104cb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2b151662537776d4f00df29c27bce81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56ed54f08771d5ddc991946ea3066a55 = $(`<div id="html_56ed54f08771d5ddc991946ea3066a55" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_e2b151662537776d4f00df29c27bce81.setContent(html_56ed54f08771d5ddc991946ea3066a55);
+            
+        
+
+        marker_2c0a6246641c7fa310bd92b09727916f.bindPopup(popup_e2b151662537776d4f00df29c27bce81)
+        ;
+
+        
+    
+    
+            marker_2c0a6246641c7fa310bd92b09727916f.bindTooltip(
+                `<div>
+                     Instituto Oftalmologia (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2c0a6246641c7fa310bd92b09727916f.setIcon(icon_4852b586874abcfc19edef94e4b104cb);
+            
+    
+            var marker_64ba150e553780248f1a00e5db9a5ed8 = L.marker(
+                [19.33267, -99.1775931],
+                {
+}
+            ).addTo(marker_cluster_bec413289edb6a4ee25ec813a913d72d);
+        
+    
+            var icon_94796553cd7df959d1aea694c868ffca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a9237fa8ac83c6c883edc87d9949c41 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_326344a4c85fe8b2f8ac3c6470ac06df = $(`<div id="html_326344a4c85fe8b2f8ac3c6470ac06df" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro de Salud T.I Copilco el Alto<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_4a9237fa8ac83c6c883edc87d9949c41.setContent(html_326344a4c85fe8b2f8ac3c6470ac06df);
+            
+        
+
+        marker_64ba150e553780248f1a00e5db9a5ed8.bindPopup(popup_4a9237fa8ac83c6c883edc87d9949c41)
+        ;
+
+        
+    
+    
+            marker_64ba150e553780248f1a00e5db9a5ed8.bindTooltip(
+                `<div>
+                     Centro de Salud T.I Copilco el Alto (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64ba150e553780248f1a00e5db9a5ed8.setIcon(icon_94796553cd7df959d1aea694c868ffca);
+            
+    
+            marker_cluster_bec413289edb6a4ee25ec813a913d72d.addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+            var poly_line_14a78a934a079c11b72b946ee9229b4d = L.polyline(
+                [[19.390490000000003, -99.06375000000001], [19.39063, -99.06371000000001], [19.39104, -99.06613], [19.391930000000002, -99.06593000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+        var popup_0d5eb4fd14d93161aab04740b77196ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b8182e348309950010625d7ec10de9f = $(`<div id="html_7b8182e348309950010625d7ec10de9f" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 08500<br><b>Eventos:</b> 479<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 0.38<br><b>Duracion min:</b> 1.6<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_0d5eb4fd14d93161aab04740b77196ef.setContent(html_7b8182e348309950010625d7ec10de9f);
+            
+        
+
+        poly_line_14a78a934a079c11b72b946ee9229b4d.bindPopup(popup_0d5eb4fd14d93161aab04740b77196ef)
+        ;
+
+        
+    
+    
+            poly_line_14a78a934a079c11b72b946ee9229b4d.bindTooltip(
+                `<div>
+                     Violencia familiar CP 08500 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae776475dc90a7ca9959e1228f469a3c = L.circleMarker(
+                [19.3919323, -99.065998],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+            circle_marker_ae776475dc90a7ca9959e1228f469a3c.bindTooltip(
+                `<div>
+                     Violencia familiar CP 08500 (479 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f0047c57260900c8e8f702277e9a7e8e = L.polyline(
+                [[19.33263, -99.17766], [19.33236, -99.17748], [19.332160000000002, -99.17729000000001], [19.3323, -99.17716000000001], [19.33247, -99.17679000000001], [19.33238, -99.17666000000001], [19.33227, -99.17638000000001], [19.332220000000003, -99.17619], [19.33217, -99.17594000000001], [19.33211, -99.17578], [19.331960000000002, -99.1756], [19.331870000000002, -99.17551], [19.33153, -99.17510000000001], [19.331750000000003, -99.17494], [19.33191, -99.17478000000001], [19.332240000000002, -99.17439], [19.332610000000003, -99.17421], [19.33264, -99.17417], [19.332710000000002, -99.17386], [19.332790000000003, -99.17309], [19.33282, -99.17275000000001], [19.3324, -99.17133000000001], [19.33146, -99.16828000000001], [19.331030000000002, -99.16681000000001], [19.33192, -99.16650000000001], [19.33191, -99.16643]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+        var popup_2b5f2874b6da91bd29e41ddfebedfa7b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6dd303206e543690b64f3e0240798e80 = $(`<div id="html_6dd303206e543690b64f3e0240798e80" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 04369<br><b>Eventos:</b> 478<br><b>Unidad:</b> Centro de Salud T.I Copilco el Alto<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.42<br><b>Duracion min:</b> 7.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_2b5f2874b6da91bd29e41ddfebedfa7b.setContent(html_6dd303206e543690b64f3e0240798e80);
+            
+        
+
+        poly_line_f0047c57260900c8e8f702277e9a7e8e.bindPopup(popup_2b5f2874b6da91bd29e41ddfebedfa7b)
+        ;
+
+        
+    
+    
+            poly_line_f0047c57260900c8e8f702277e9a7e8e.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 -> Centro de Salud T.I Copilco el Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fb7aead1e913187dc0e23db7278f70b = L.circleMarker(
+                [19.3318923, -99.166435],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+            circle_marker_3fb7aead1e913187dc0e23db7278f70b.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 (478 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3a40a41a128e4f60e12837c945ccfb12 = L.polyline(
+                [[19.390490000000003, -99.06375000000001], [19.39063, -99.06371000000001], [19.390600000000003, -99.06347000000001], [19.394620000000003, -99.0626], [19.39563, -99.06239000000001], [19.396710000000002, -99.069], [19.397100000000002, -99.07137], [19.397270000000002, -99.07246], [19.397740000000002, -99.07531], [19.396970000000003, -99.07549]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+        var popup_f1fdd611558322c28bd6d2bcef475f51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f34a58301673810381cab613cf3b05d = $(`<div id="html_1f34a58301673810381cab613cf3b05d" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 08500<br><b>Eventos:</b> 450<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.08<br><b>Duracion min:</b> 7.9<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_f1fdd611558322c28bd6d2bcef475f51.setContent(html_1f34a58301673810381cab613cf3b05d);
+            
+        
+
+        poly_line_3a40a41a128e4f60e12837c945ccfb12.bindPopup(popup_f1fdd611558322c28bd6d2bcef475f51)
+        ;
+
+        
+    
+    
+            poly_line_3a40a41a128e4f60e12837c945ccfb12.bindTooltip(
+                `<div>
+                     Violencia familiar CP 08500 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e4ec760a69090074cccfe6d56ecdc6af = L.circleMarker(
+                [19.3969733, -99.0754842],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+            circle_marker_e4ec760a69090074cccfe6d56ecdc6af.bindTooltip(
+                `<div>
+                     Violencia familiar CP 08500 (450 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_78d3813e764e1b50b3b37a781682f2e4 = L.polyline(
+                [[19.33263, -99.17766], [19.33236, -99.17748], [19.332160000000002, -99.17729000000001], [19.3323, -99.17716000000001], [19.33247, -99.17679000000001], [19.33238, -99.17666000000001], [19.33227, -99.17638000000001], [19.332220000000003, -99.17619], [19.33217, -99.17594000000001], [19.33211, -99.17578], [19.331960000000002, -99.1756], [19.331870000000002, -99.17551], [19.33153, -99.17510000000001], [19.331390000000003, -99.17507], [19.331010000000003, -99.17514000000001], [19.33095, -99.17498], [19.33071, -99.17464000000001], [19.33052, -99.17455000000001], [19.33031, -99.17449], [19.33042, -99.17395], [19.330470000000002, -99.17365000000001], [19.32956, -99.17354], [19.3293, -99.17354], [19.328760000000003, -99.17358], [19.3287, -99.17345], [19.32872, -99.17334000000001], [19.32874, -99.17330000000001], [19.32919, -99.17332], [19.32958, -99.17337], [19.32964, -99.17282], [19.32965, -99.17250000000001], [19.32963, -99.17238], [19.329420000000002, -99.17174000000001], [19.32949, -99.17172000000001], [19.32917, -99.17072], [19.329060000000002, -99.17035000000001], [19.32898, -99.17011000000001], [19.328860000000002, -99.16969], [19.32702, -99.17035000000001], [19.3261, -99.17067], [19.325400000000002, -99.17095], [19.325200000000002, -99.17053000000001], [19.32442, -99.16909000000001], [19.324050000000003, -99.16839], [19.323410000000003, -99.16861]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+        var popup_17d2091898d902159f955fda3d50d0c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96ec5292d4472c8fe9b0a4d530e6675e = $(`<div id="html_96ec5292d4472c8fe9b0a4d530e6675e" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 04369<br><b>Eventos:</b> 404<br><b>Unidad:</b> Centro de Salud T.I Copilco el Alto<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 2.11<br><b>Duracion min:</b> 8.9<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_17d2091898d902159f955fda3d50d0c6.setContent(html_96ec5292d4472c8fe9b0a4d530e6675e);
+            
+        
+
+        poly_line_78d3813e764e1b50b3b37a781682f2e4.bindPopup(popup_17d2091898d902159f955fda3d50d0c6)
+        ;
+
+        
+    
+    
+            poly_line_78d3813e764e1b50b3b37a781682f2e4.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 -> Centro de Salud T.I Copilco el Alto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fea86b9fb9142294960936b689f6f07 = L.circleMarker(
+                [19.3233642, -99.1684602],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+            circle_marker_4fea86b9fb9142294960936b689f6f07.bindTooltip(
+                `<div>
+                     Violencia familiar CP 04369 (404 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d95cda38b719ae297d391a6a7fde9b32 = L.polyline(
+                [[19.4223, -99.14182000000001], [19.422310000000003, -99.14154], [19.421390000000002, -99.14164000000001], [19.42162, -99.14421], [19.42192, -99.14708], [19.422030000000003, -99.1483], [19.422990000000002, -99.14810000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+        var popup_8913fc8a919267f5ffd42e68c8dd0acc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20310c6f82d0f78cfb0226c800e6c1aa = $(`<div id="html_20310c6f82d0f78cfb0226c800e6c1aa" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Violencia familiar<br><b>CP:</b> 06720<br><b>Eventos:</b> 381<br><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.94<br><b>Duracion min:</b> 4.2<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_8913fc8a919267f5ffd42e68c8dd0acc.setContent(html_20310c6f82d0f78cfb0226c800e6c1aa);
+            
+        
+
+        poly_line_d95cda38b719ae297d391a6a7fde9b32.bindPopup(popup_8913fc8a919267f5ffd42e68c8dd0acc)
+        ;
+
+        
+    
+    
+            poly_line_d95cda38b719ae297d391a6a7fde9b32.bindTooltip(
+                `<div>
+                     Violencia familiar CP 06720 -> Instituto Oftalmologia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9b7bfff790729e68c3338954cc13f7a = L.circleMarker(
+                [19.422995, -99.1481481],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.84401183107952, "stroke": true, "weight": 1}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+        
+    
+            circle_marker_c9b7bfff790729e68c3338954cc13f7a.bindTooltip(
+                `<div>
+                     Violencia familiar CP 06720 (381 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_c548fae9f60a9f029c4f2f87b770e5a8_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_19a063fbf9736ac5df45dd0d020bc576,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_bec413289edb6a4ee25ec813a913d72d,
+                },
+            };
+            let layer_control_c548fae9f60a9f029c4f2f87b770e5a8 = L.control.layers(
+                layer_control_c548fae9f60a9f029c4f2f87b770e5a8_layers.base_layers,
+                layer_control_c548fae9f60a9f029c4f2f87b770e5a8_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_ce1b1bb5e432dedc0daf21211c0f7270);
+
+        
+</script>
+</html>

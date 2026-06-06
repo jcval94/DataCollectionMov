@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8ab6885a4b5fe0626f357e6c62f79ab1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Top demanda: Delitos sexuales</strong><br>
+      5 rutas / 376 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_8ab6885a4b5fe0626f357e6c62f79ab1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8ab6885a4b5fe0626f357e6c62f79ab1 = L.map(
+                "map_8ab6885a4b5fe0626f357e6c62f79ab1",
+                {
+                    center: [19.42624594, -99.14811856000001],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+
+            
+
+        
+    
+            var tile_layer_a64aa4ec15f59f36cd2e12379cdc8bae = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a64aa4ec15f59f36cd2e12379cdc8bae.addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+            var marker_cluster_b3a9f175611c3c9028706176f8dc0e4d = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_e8eca3bd40f285d478d3b3a5b726b079 = L.marker(
+                [19.4525276, -99.1396332],
+                {
+}
+            ).addTo(marker_cluster_b3a9f175611c3c9028706176f8dc0e4d);
+        
+    
+            var icon_679a87b556ebba7ae717749c01cbdc43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_939cb019926e974545b9b429dc54a895 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a6b5821e71dc91a6848e075696034516 = $(`<div id="html_a6b5821e71dc91a6848e075696034516" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_939cb019926e974545b9b429dc54a895.setContent(html_a6b5821e71dc91a6848e075696034516);
+            
+        
+
+        marker_e8eca3bd40f285d478d3b3a5b726b079.bindPopup(popup_939cb019926e974545b9b429dc54a895)
+        ;
+
+        
+    
+    
+            marker_e8eca3bd40f285d478d3b3a5b726b079.bindTooltip(
+                `<div>
+                     Módulo SSP La Pera (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e8eca3bd40f285d478d3b3a5b726b079.setIcon(icon_679a87b556ebba7ae717749c01cbdc43);
+            
+    
+            var marker_ca1c4a3ac720cedd82f58de5d74630a5 = L.marker(
+                [19.4225708, -99.1418319],
+                {
+}
+            ).addTo(marker_cluster_b3a9f175611c3c9028706176f8dc0e4d);
+        
+    
+            var icon_b335f1cd62aaeb6a6de669f32365b884 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78f7bf6349185da21fe50c0685f86625 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb7a7034bae6f35f93da5e1170d717fe = $(`<div id="html_fb7a7034bae6f35f93da5e1170d717fe" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_78f7bf6349185da21fe50c0685f86625.setContent(html_fb7a7034bae6f35f93da5e1170d717fe);
+            
+        
+
+        marker_ca1c4a3ac720cedd82f58de5d74630a5.bindPopup(popup_78f7bf6349185da21fe50c0685f86625)
+        ;
+
+        
+    
+    
+            marker_ca1c4a3ac720cedd82f58de5d74630a5.bindTooltip(
+                `<div>
+                     Instituto Oftalmologia (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca1c4a3ac720cedd82f58de5d74630a5.setIcon(icon_b335f1cd62aaeb6a6de669f32365b884);
+            
+    
+            var marker_0d773f34aae9b8579b19626439686bc2 = L.marker(
+                [19.4183686, -99.1716807],
+                {
+}
+            ).addTo(marker_cluster_b3a9f175611c3c9028706176f8dc0e4d);
+        
+    
+            var icon_66248b62e023d15fa38ce62203322930 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_80da9daabda1fb344c80c910fa6c40df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d9d22cd6634ef644af90337e9b7b0a4 = $(`<div id="html_8d9d22cd6634ef644af90337e9b7b0a4" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro Hospitalario Sanatorio Durango<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_80da9daabda1fb344c80c910fa6c40df.setContent(html_8d9d22cd6634ef644af90337e9b7b0a4);
+            
+        
+
+        marker_0d773f34aae9b8579b19626439686bc2.bindPopup(popup_80da9daabda1fb344c80c910fa6c40df)
+        ;
+
+        
+    
+    
+            marker_0d773f34aae9b8579b19626439686bc2.bindTooltip(
+                `<div>
+                     Centro Hospitalario Sanatorio Durango (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0d773f34aae9b8579b19626439686bc2.setIcon(icon_66248b62e023d15fa38ce62203322930);
+            
+    
+            var marker_5eab642293f85d5e4cdd2e3948874428 = L.marker(
+                [19.4288082, -99.1336905],
+                {
+}
+            ).addTo(marker_cluster_b3a9f175611c3c9028706176f8dc0e4d);
+        
+    
+            var icon_f0a44ed20e185f33d2d9981ce88d0f8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5ff3a92970c7bdecac3931c8172345ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fcd41d6f65d62812027353c4839b2123 = $(`<div id="html_fcd41d6f65d62812027353c4839b2123" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Hospital de Jesus<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_5ff3a92970c7bdecac3931c8172345ea.setContent(html_fcd41d6f65d62812027353c4839b2123);
+            
+        
+
+        marker_5eab642293f85d5e4cdd2e3948874428.bindPopup(popup_5ff3a92970c7bdecac3931c8172345ea)
+        ;
+
+        
+    
+    
+            marker_5eab642293f85d5e4cdd2e3948874428.bindTooltip(
+                `<div>
+                     Hospital de Jesus (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5eab642293f85d5e4cdd2e3948874428.setIcon(icon_f0a44ed20e185f33d2d9981ce88d0f8b);
+            
+    
+            var marker_bed359f06e9bbcccd973e2e224c28058 = L.marker(
+                [19.4091815, -99.1528235],
+                {
+}
+            ).addTo(marker_cluster_b3a9f175611c3c9028706176f8dc0e4d);
+        
+    
+            var icon_bb0300e63c29f9d29b4622c3e38ad2d8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_abfb9804ac45ad6b1d429711bc9cc9a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e011f9e74c431b7a80052b99254512d8 = $(`<div id="html_e011f9e74c431b7a80052b99254512d8" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro Medico Nacional Siglo XXI<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_abfb9804ac45ad6b1d429711bc9cc9a9.setContent(html_e011f9e74c431b7a80052b99254512d8);
+            
+        
+
+        marker_bed359f06e9bbcccd973e2e224c28058.bindPopup(popup_abfb9804ac45ad6b1d429711bc9cc9a9)
+        ;
+
+        
+    
+    
+            marker_bed359f06e9bbcccd973e2e224c28058.bindTooltip(
+                `<div>
+                     Centro Medico Nacional Siglo XXI (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bed359f06e9bbcccd973e2e224c28058.setIcon(icon_bb0300e63c29f9d29b4622c3e38ad2d8);
+            
+    
+            marker_cluster_b3a9f175611c3c9028706176f8dc0e4d.addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+            var poly_line_e55c0bc9fabd495c5b5222a79b286d8c = L.polyline(
+                [[19.418290000000002, -99.1718], [19.41864, -99.17206], [19.419520000000002, -99.16806000000001], [19.419790000000003, -99.16690000000001], [19.41974, -99.16669], [19.41963, -99.16655000000002], [19.41958, -99.16639], [19.419590000000003, -99.16624], [19.41965, -99.16608000000001], [19.419780000000003, -99.16595000000001], [19.41991, -99.16589], [19.42014, -99.16592000000001], [19.420250000000003, -99.16597], [19.42032, -99.16594], [19.42061, -99.16567], [19.421100000000003, -99.16527], [19.42124, -99.16513], [19.42264, -99.16551000000001], [19.42322, -99.1657], [19.42339, -99.16577000000001], [19.42352, -99.16579], [19.424400000000002, -99.16626000000001], [19.42537, -99.16421000000001], [19.42611, -99.16458000000002], [19.42605, -99.16470000000001], [19.425590000000003, -99.16447000000001], [19.42554, -99.16456000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.7735924528226414}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+        var popup_0d02afe5fedb1523871601b9f8f5e995 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5305380f5503475333f88ceb1cac83be = $(`<div id="html_5305380f5503475333f88ceb1cac83be" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06600<br><b>Eventos:</b> 89<br><b>Unidad:</b> Centro Hospitalario Sanatorio Durango<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.7<br><b>Duracion min:</b> 14.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_0d02afe5fedb1523871601b9f8f5e995.setContent(html_5305380f5503475333f88ceb1cac83be);
+            
+        
+
+        poly_line_e55c0bc9fabd495c5b5222a79b286d8c.bindPopup(popup_0d02afe5fedb1523871601b9f8f5e995)
+        ;
+
+        
+    
+    
+            poly_line_e55c0bc9fabd495c5b5222a79b286d8c.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06600 -> Centro Hospitalario Sanatorio Durango
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f639f9ee2c1c11bd8ff368c88e71179e = L.circleMarker(
+                [19.4255123, -99.1645435],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.241100628920335, "stroke": true, "weight": 1}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+            circle_marker_f639f9ee2c1c11bd8ff368c88e71179e.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06600 (89 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c26837b000b5326f763a8c1392e2c969 = L.polyline(
+                [[19.4223, -99.14182000000001], [19.422310000000003, -99.14154], [19.421390000000002, -99.14164000000001], [19.42162, -99.14421], [19.42192, -99.14708], [19.422030000000003, -99.1483], [19.42265, -99.14817000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.7094473981982814}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+        var popup_63c2dd86107355630006b3cc463139d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_385bbf543abf081114a3c57e9417db2d = $(`<div id="html_385bbf543abf081114a3c57e9417db2d" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06720<br><b>Eventos:</b> 86<br><b>Unidad:</b> Instituto Oftalmologia<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.91<br><b>Duracion min:</b> 3.9<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_63c2dd86107355630006b3cc463139d8.setContent(html_385bbf543abf081114a3c57e9417db2d);
+            
+        
+
+        poly_line_c26837b000b5326f763a8c1392e2c969.bindPopup(popup_63c2dd86107355630006b3cc463139d8)
+        ;
+
+        
+    
+    
+            poly_line_c26837b000b5326f763a8c1392e2c969.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 -> Instituto Oftalmologia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d00b84726ec6962d7727f50bf1883bc = L.circleMarker(
+                [19.422607, -99.1479305],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.152010275275391, "stroke": true, "weight": 1}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+            circle_marker_3d00b84726ec6962d7727f50bf1883bc.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 (86 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ca8154f1c29aa16e1e1495e16cb89000 = L.polyline(
+                [[19.452620000000003, -99.13972000000001], [19.452520000000003, -99.13986000000001], [19.45229, -99.14069], [19.45232, -99.14086], [19.45238, -99.141], [19.45248, -99.14110000000001], [19.4526, -99.14118], [19.452240000000003, -99.14126], [19.451900000000002, -99.14116000000001], [19.451700000000002, -99.14119000000001], [19.45135, -99.14127], [19.45109, -99.14129000000001], [19.44923, -99.14167], [19.44867, -99.14178000000001], [19.44731, -99.14206000000001], [19.445330000000002, -99.14241000000001], [19.442580000000003, -99.14287], [19.44304, -99.14557], [19.444580000000002, -99.14523000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.577708763999664}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+        var popup_1b6f3afa3a43dde91f75767c8997429c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_100d35cf15b22bad580ebe4daf31e0cf = $(`<div id="html_100d35cf15b22bad580ebe4daf31e0cf" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06300<br><b>Eventos:</b> 80<br><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.77<br><b>Duracion min:</b> 8.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_1b6f3afa3a43dde91f75767c8997429c.setContent(html_100d35cf15b22bad580ebe4daf31e0cf);
+            
+        
+
+        poly_line_ca8154f1c29aa16e1e1495e16cb89000.bindPopup(popup_1b6f3afa3a43dde91f75767c8997429c)
+        ;
+
+        
+    
+    
+            poly_line_ca8154f1c29aa16e1e1495e16cb89000.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06300 -> Módulo SSP La Pera
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a34ac4fa1d099d89f59c830e0d5e0a20 = L.circleMarker(
+                [19.4445847, -99.1452585],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.969039949999533, "stroke": true, "weight": 1}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+            circle_marker_a34ac4fa1d099d89f59c830e0d5e0a20.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06300 (80 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_961e5d4e87e299d22f3ac55901a2b47c = L.polyline(
+                [[19.42883, -99.13388], [19.429260000000003, -99.13382000000001], [19.429080000000003, -99.13260000000001], [19.42605, -99.13303]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.2}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+        var popup_59d308eccee640c0d9f6f6be37edd714 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73c7d55a78f2c73d061c3b9899d57a9d = $(`<div id="html_73c7d55a78f2c73d061c3b9899d57a9d" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06090<br><b>Eventos:</b> 64<br><b>Unidad:</b> Hospital de Jesus<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.52<br><b>Duracion min:</b> 3.0<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_59d308eccee640c0d9f6f6be37edd714.setContent(html_73c7d55a78f2c73d061c3b9899d57a9d);
+            
+        
+
+        poly_line_961e5d4e87e299d22f3ac55901a2b47c.bindPopup(popup_59d308eccee640c0d9f6f6be37edd714)
+        ;
+
+        
+    
+    
+            poly_line_961e5d4e87e299d22f3ac55901a2b47c.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06090 -> Hospital de Jesus
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66c87bba2e9e6841ee1e857945d0fe5f = L.circleMarker(
+                [19.4260636, -99.1331063],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.444444444444445, "stroke": true, "weight": 1}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+            circle_marker_66c87bba2e9e6841ee1e857945d0fe5f.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06090 (64 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c2f1be8044245b8a425264eac59b81e8 = L.polyline(
+                [[19.409080000000003, -99.15298000000001], [19.4095, -99.1533], [19.40969, -99.15328000000001], [19.41016, -99.15321], [19.41025, -99.15322], [19.41015, -99.15257000000001], [19.41009, -99.15192], [19.410050000000002, -99.15178], [19.409940000000002, -99.1508], [19.41129, -99.15052000000001], [19.41241, -99.1503], [19.412360000000003, -99.14977], [19.412460000000003, -99.14976000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.0199337741083}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+        var popup_8c2b3944678eacadb7dc7f1f42604ed5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_789d79becb1c8895216bf8149a95b5b7 = $(`<div id="html_789d79becb1c8895216bf8149a95b5b7" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Delitos sexuales<br><b>CP:</b> 06720<br><b>Eventos:</b> 57<br><b>Unidad:</b> Centro Medico Nacional Siglo XXI<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.74<br><b>Duracion min:</b> 3.0<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_8c2b3944678eacadb7dc7f1f42604ed5.setContent(html_789d79becb1c8895216bf8149a95b5b7);
+            
+        
+
+        poly_line_c2f1be8044245b8a425264eac59b81e8.bindPopup(popup_8c2b3944678eacadb7dc7f1f42604ed5)
+        ;
+
+        
+    
+    
+            poly_line_c2f1be8044245b8a425264eac59b81e8.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 -> Centro Medico Nacional Siglo XXI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_308181e944a192ebecfa8f0b789a5c16 = L.circleMarker(
+                [19.4124621, -99.149754],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.194352464039305, "stroke": true, "weight": 1}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+        
+    
+            circle_marker_308181e944a192ebecfa8f0b789a5c16.bindTooltip(
+                `<div>
+                     Delitos sexuales CP 06720 (57 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_6077bd8b142b0a83fc11458c72b1fc47_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_a64aa4ec15f59f36cd2e12379cdc8bae,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_b3a9f175611c3c9028706176f8dc0e4d,
+                },
+            };
+            let layer_control_6077bd8b142b0a83fc11458c72b1fc47 = L.control.layers(
+                layer_control_6077bd8b142b0a83fc11458c72b1fc47_layers.base_layers,
+                layer_control_6077bd8b142b0a83fc11458c72b1fc47_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_8ab6885a4b5fe0626f357e6c62f79ab1);
+
+        
+</script>
+</html>

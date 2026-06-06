@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_751fc9838db0498535b9623523352fab {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Otros robos</strong><br>
+      5 rutas / 2,944 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_751fc9838db0498535b9623523352fab" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_751fc9838db0498535b9623523352fab = L.map(
+                "map_751fc9838db0498535b9623523352fab",
+                {
+                    center: [19.42635016, -99.15798124],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_751fc9838db0498535b9623523352fab);
+
+            
+
+        
+    
+            var tile_layer_f86a614f6fef08f891c78591cc578ee8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f86a614f6fef08f891c78591cc578ee8.addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+            var marker_cluster_30dd067714898b6969f699fbc752f841 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_8a86323c21e257102c9f456b35dfa9f4 = L.marker(
+                [19.4535805, -99.1523035],
+                {
+}
+            ).addTo(marker_cluster_30dd067714898b6969f699fbc752f841);
+        
+    
+            var icon_660c47dccef1451a7feb3cce847251ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a02077fb1df1e560998a87a1f231c06e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c277c7c2b020a525ed38b6cada5370df = $(`<div id="html_c277c7c2b020a525ed38b6cada5370df" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Policia Auxiliar<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_a02077fb1df1e560998a87a1f231c06e.setContent(html_c277c7c2b020a525ed38b6cada5370df);
+            
+        
+
+        marker_8a86323c21e257102c9f456b35dfa9f4.bindPopup(popup_a02077fb1df1e560998a87a1f231c06e)
+        ;
+
+        
+    
+    
+            marker_8a86323c21e257102c9f456b35dfa9f4.bindTooltip(
+                `<div>
+                     Policia Auxiliar (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8a86323c21e257102c9f456b35dfa9f4.setIcon(icon_660c47dccef1451a7feb3cce847251ad);
+            
+    
+            var marker_8a527465fdcfd6a62ecd0ee24d394351 = L.marker(
+                [19.4117187, -99.1589261],
+                {
+}
+            ).addTo(marker_cluster_30dd067714898b6969f699fbc752f841);
+        
+    
+            var icon_f60bb1c8d6145a2b1fe0d63c3c4d0328 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e643726b6b32896c887ed8ae8ba227c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e61d5313a1ff65faba391d064cc7833 = $(`<div id="html_9e61d5313a1ff65faba391d064cc7833" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_e643726b6b32896c887ed8ae8ba227c8.setContent(html_9e61d5313a1ff65faba391d064cc7833);
+            
+        
+
+        marker_8a527465fdcfd6a62ecd0ee24d394351.bindPopup(popup_e643726b6b32896c887ed8ae8ba227c8)
+        ;
+
+        
+    
+    
+            marker_8a527465fdcfd6a62ecd0ee24d394351.bindTooltip(
+                `<div>
+                     Estación de policía Roma (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8a527465fdcfd6a62ecd0ee24d394351.setIcon(icon_f60bb1c8d6145a2b1fe0d63c3c4d0328);
+            
+    
+            var marker_70359e52f59b4e5848b8dce132e765e1 = L.marker(
+                [19.4333514, -99.1719654],
+                {
+}
+            ).addTo(marker_cluster_30dd067714898b6969f699fbc752f841);
+        
+    
+            var icon_7d807f4ab4c54a2440ba9cca69b8d1cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_382f97717af9195b4c6268b200d7918a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_17e438ada49ad28cbfce67b69fcbcd42 = $(`<div id="html_17e438ada49ad28cbfce67b69fcbcd42" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_382f97717af9195b4c6268b200d7918a.setContent(html_17e438ada49ad28cbfce67b69fcbcd42);
+            
+        
+
+        marker_70359e52f59b4e5848b8dce132e765e1.bindPopup(popup_382f97717af9195b4c6268b200d7918a)
+        ;
+
+        
+    
+    
+            marker_70359e52f59b4e5848b8dce132e765e1.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_70359e52f59b4e5848b8dce132e765e1.setIcon(icon_7d807f4ab4c54a2440ba9cca69b8d1cc);
+            
+    
+            marker_cluster_30dd067714898b6969f699fbc752f841.addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+            var poly_line_d0dfe3194f2dc2bac7d10cc335faab1d = L.polyline(
+                [[19.41176, -99.15891], [19.411710000000003, -99.15872], [19.411710000000003, -99.15805], [19.412190000000002, -99.15817000000001], [19.412000000000003, -99.15907000000001], [19.41188, -99.15974000000001], [19.411330000000003, -99.16253], [19.41347, -99.16309000000001], [19.41448, -99.16335000000001], [19.41465, -99.16342], [19.41768, -99.16421000000001], [19.418570000000003, -99.16444000000001], [19.41889, -99.16452000000001], [19.4185, -99.16623000000001], [19.418390000000002, -99.1662]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+        var popup_53af04e10d2329dea7e0fa9490fd8ad0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bee012cb7f145efa9c8040a89c0ec808 = $(`<div id="html_bee012cb7f145efa9c8040a89c0ec808" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros robos<br><b>CP:</b> 06700<br><b>Eventos:</b> 804<br><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.68<br><b>Duracion min:</b> 8.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_53af04e10d2329dea7e0fa9490fd8ad0.setContent(html_bee012cb7f145efa9c8040a89c0ec808);
+            
+        
+
+        poly_line_d0dfe3194f2dc2bac7d10cc335faab1d.bindPopup(popup_53af04e10d2329dea7e0fa9490fd8ad0)
+        ;
+
+        
+    
+    
+            poly_line_d0dfe3194f2dc2bac7d10cc335faab1d.bindTooltip(
+                `<div>
+                     Otros robos CP 06700 -> Estación de policía Roma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_431911e862b890ac56045dc9bf46b330 = L.circleMarker(
+                [19.4184103, -99.1661011],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+            circle_marker_431911e862b890ac56045dc9bf46b330.bindTooltip(
+                `<div>
+                     Otros robos CP 06700 (804 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_21f9a520b55b361831fd48e0878a4cdd = L.polyline(
+                [[19.433300000000003, -99.17188], [19.43248, -99.17242], [19.43239, -99.17247], [19.43193, -99.17281000000001], [19.431350000000002, -99.1731], [19.43084, -99.17333], [19.42969, -99.1739], [19.42959, -99.17398000000001], [19.42943, -99.17360000000001], [19.429350000000003, -99.17349], [19.4292, -99.17340000000002], [19.42902, -99.17336], [19.428590000000003, -99.17337], [19.4284, -99.17334000000001], [19.428, -99.17316000000001], [19.42774, -99.173], [19.425600000000003, -99.17188], [19.425500000000003, -99.1718], [19.42538, -99.17163000000001], [19.425340000000002, -99.17160000000001], [19.42529, -99.17149], [19.42521, -99.17143000000002], [19.42508, -99.17143000000002], [19.425030000000003, -99.17146000000001], [19.42472, -99.17136], [19.424660000000003, -99.17134000000001], [19.42482, -99.17117], [19.424930000000003, -99.17108], [19.42502, -99.17096000000001], [19.426280000000002, -99.16823000000001], [19.426280000000002, -99.16816000000001], [19.426190000000002, -99.16792000000001], [19.426150000000003, -99.16767], [19.426180000000002, -99.16748000000001], [19.42624, -99.16733], [19.4263, -99.16722000000001], [19.426450000000003, -99.16703000000001], [19.426620000000003, -99.16690000000001], [19.42699, -99.16676000000001], [19.427090000000003, -99.16654000000001], [19.42726, -99.16616], [19.425900000000002, -99.16544], [19.42556, -99.16615]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+        var popup_f4659ff1ebe9d30402cccbdfd9d54c1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d32c8e48296c1033f7a1521239555b0 = $(`<div id="html_3d32c8e48296c1033f7a1521239555b0" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros robos<br><b>CP:</b> 06600<br><b>Eventos:</b> 571<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.02<br><b>Duracion min:</b> 17.1<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_f4659ff1ebe9d30402cccbdfd9d54c1b.setContent(html_3d32c8e48296c1033f7a1521239555b0);
+            
+        
+
+        poly_line_21f9a520b55b361831fd48e0878a4cdd.bindPopup(popup_f4659ff1ebe9d30402cccbdfd9d54c1b)
+        ;
+
+        
+    
+    
+            poly_line_21f9a520b55b361831fd48e0878a4cdd.bindTooltip(
+                `<div>
+                     Otros robos CP 06600 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ff61a4c5c8cc42210b05d520dbef0b9 = L.circleMarker(
+                [19.4253322, -99.1660146],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+            circle_marker_5ff61a4c5c8cc42210b05d520dbef0b9.bindTooltip(
+                `<div>
+                     Otros robos CP 06600 (571 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8693110da06552c56e22c15432864335 = L.polyline(
+                [[19.41176, -99.15891], [19.411710000000003, -99.15872], [19.411710000000003, -99.15805], [19.413200000000003, -99.15843000000001], [19.415950000000002, -99.15912], [19.41598, -99.15892000000001], [19.41692, -99.15915000000001], [19.416880000000003, -99.15934000000001], [19.418190000000003, -99.15968000000001], [19.41844, -99.15842], [19.418570000000003, -99.15782000000002]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+        var popup_99fb78c969cf80a22e7c305fad79da96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac4d20be92c35b5d06e33ef60d0576ba = $(`<div id="html_ac4d20be92c35b5d06e33ef60d0576ba" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros robos<br><b>CP:</b> 06700<br><b>Eventos:</b> 529<br><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.07<br><b>Duracion min:</b> 6.3<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_99fb78c969cf80a22e7c305fad79da96.setContent(html_ac4d20be92c35b5d06e33ef60d0576ba);
+            
+        
+
+        poly_line_8693110da06552c56e22c15432864335.bindPopup(popup_99fb78c969cf80a22e7c305fad79da96)
+        ;
+
+        
+    
+    
+            poly_line_8693110da06552c56e22c15432864335.bindTooltip(
+                `<div>
+                     Otros robos CP 06700 -> Estación de policía Roma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5bdddadd89d047371ed9378c7bdbc7cc = L.circleMarker(
+                [19.4182815, -99.1577576],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+            circle_marker_5bdddadd89d047371ed9378c7bdbc7cc.bindTooltip(
+                `<div>
+                     Otros robos CP 06700 (529 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_283abe8506067425f7ec3a5b8e4d69c8 = L.polyline(
+                [[19.41176, -99.15891], [19.411710000000003, -99.15872], [19.411710000000003, -99.15805], [19.41179, -99.15618], [19.411800000000003, -99.15495000000001], [19.41184, -99.15487], [19.41159, -99.15312], [19.4112, -99.15054], [19.414730000000002, -99.14982], [19.41561, -99.14964], [19.4172, -99.14931000000001], [19.41778, -99.14919], [19.4207, -99.14859000000001], [19.42086, -99.14854000000001], [19.421310000000002, -99.14846000000001], [19.42277, -99.14815]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+        var popup_97ad1653cfca55425698846536cb59b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79eb13e5ec457ffedd47c5570dfda10f = $(`<div id="html_79eb13e5ec457ffedd47c5570dfda10f" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros robos<br><b>CP:</b> 06720<br><b>Eventos:</b> 522<br><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.2<br><b>Duracion min:</b> 8.7<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_97ad1653cfca55425698846536cb59b1.setContent(html_79eb13e5ec457ffedd47c5570dfda10f);
+            
+        
+
+        poly_line_283abe8506067425f7ec3a5b8e4d69c8.bindPopup(popup_97ad1653cfca55425698846536cb59b1)
+        ;
+
+        
+    
+    
+            poly_line_283abe8506067425f7ec3a5b8e4d69c8.bindTooltip(
+                `<div>
+                     Otros robos CP 06720 -> Estación de policía Roma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a00de14a91027e4b904ee6041887a324 = L.circleMarker(
+                [19.4227805, -99.1481938],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+            circle_marker_a00de14a91027e4b904ee6041887a324.bindTooltip(
+                `<div>
+                     Otros robos CP 06720 (522 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a9859fe7c48c6091b945fd214c839a0c = L.polyline(
+                [[19.45354, -99.15204000000001], [19.452160000000003, -99.15230000000001], [19.452, -99.15231000000001], [19.45191, -99.15228], [19.45054, -99.15256000000001], [19.44807, -99.15301000000001], [19.44864, -99.15633000000001], [19.443160000000002, -99.15734], [19.442890000000002, -99.15573], [19.44235, -99.15237], [19.44516, -99.15213000000001], [19.44536, -99.1521], [19.44556, -99.15201], [19.445710000000002, -99.15187], [19.445860000000003, -99.15162000000001], [19.44594, -99.15153000000001], [19.44603, -99.15147], [19.44601, -99.15135000000001], [19.44613, -99.15135000000001], [19.44621, -99.15140000000001], [19.446250000000003, -99.15149000000001], [19.446360000000002, -99.15197]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+        var popup_cc866527b61f983706ca37d470184c21 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8291662a89ec161271cdc9418df263c2 = $(`<div id="html_8291662a89ec161271cdc9418df263c2" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Otros robos<br><b>CP:</b> 06350<br><b>Eventos:</b> 518<br><b>Unidad:</b> Policia Auxiliar<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.66<br><b>Duracion min:</b> 10.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_cc866527b61f983706ca37d470184c21.setContent(html_8291662a89ec161271cdc9418df263c2);
+            
+        
+
+        poly_line_a9859fe7c48c6091b945fd214c839a0c.bindPopup(popup_cc866527b61f983706ca37d470184c21)
+        ;
+
+        
+    
+    
+            poly_line_a9859fe7c48c6091b945fd214c839a0c.bindTooltip(
+                `<div>
+                     Otros robos CP 06350 -> Policia Auxiliar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7273c7e2b248e389241f775b5a58083f = L.circleMarker(
+                [19.4469463, -99.1518391],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+        
+    
+            circle_marker_7273c7e2b248e389241f775b5a58083f.bindTooltip(
+                `<div>
+                     Otros robos CP 06350 (518 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_bcad506271bd9ead707792818dffeca8_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_f86a614f6fef08f891c78591cc578ee8,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_30dd067714898b6969f699fbc752f841,
+                },
+            };
+            let layer_control_bcad506271bd9ead707792818dffeca8 = L.control.layers(
+                layer_control_bcad506271bd9ead707792818dffeca8_layers.base_layers,
+                layer_control_bcad506271bd9ead707792818dffeca8_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_751fc9838db0498535b9623523352fab);
+
+        
+</script>
+</html>

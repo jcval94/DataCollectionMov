@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_38428556520c1cd61b946f35bfbf4377 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Top demanda: Robo a casa habitación</strong><br>
+      5 rutas / 719 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_38428556520c1cd61b946f35bfbf4377" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_38428556520c1cd61b946f35bfbf4377 = L.map(
+                "map_38428556520c1cd61b946f35bfbf4377",
+                {
+                    center: [19.396400900000003, -99.13860726],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_38428556520c1cd61b946f35bfbf4377);
+
+            
+
+        
+    
+            var tile_layer_fb56b3a14232d0e6b17510c75013947f = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fb56b3a14232d0e6b17510c75013947f.addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+            var marker_cluster_77eb8ea629fc942f42e688be92ce9b27 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_5fcf6a29d2e9895d5e1d8e09875799a5 = L.marker(
+                [19.3956112, -99.1690504],
+                {
+}
+            ).addTo(marker_cluster_77eb8ea629fc942f42e688be92ce9b27);
+        
+    
+            var icon_5a130c589affa91810829581ef0cbc83 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b7025e7221b8cdb88632fb9b342376c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69aa8dd66aa8bef2f201a8165c795961 = $(`<div id="html_69aa8dd66aa8bef2f201a8165c795961" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_1b7025e7221b8cdb88632fb9b342376c.setContent(html_69aa8dd66aa8bef2f201a8165c795961);
+            
+        
+
+        marker_5fcf6a29d2e9895d5e1d8e09875799a5.bindPopup(popup_1b7025e7221b8cdb88632fb9b342376c)
+        ;
+
+        
+    
+    
+            marker_5fcf6a29d2e9895d5e1d8e09875799a5.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5fcf6a29d2e9895d5e1d8e09875799a5.setIcon(icon_5a130c589affa91810829581ef0cbc83);
+            
+    
+            var marker_00036707d1248294cbcf7c0e09f1dba5 = L.marker(
+                [19.3904466, -99.0637351],
+                {
+}
+            ).addTo(marker_cluster_77eb8ea629fc942f42e688be92ce9b27);
+        
+    
+            var icon_d238242868141d11fff5d436bf894277 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3952ad50f058a65e51eda4c8b327ff0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e513d725b2b4130b7d39a8c22ba8a60 = $(`<div id="html_7e513d725b2b4130b7d39a8c22ba8a60" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_3952ad50f058a65e51eda4c8b327ff0b.setContent(html_7e513d725b2b4130b7d39a8c22ba8a60);
+            
+        
+
+        marker_00036707d1248294cbcf7c0e09f1dba5.bindPopup(popup_3952ad50f058a65e51eda4c8b327ff0b)
+        ;
+
+        
+    
+    
+            marker_00036707d1248294cbcf7c0e09f1dba5.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_00036707d1248294cbcf7c0e09f1dba5.setIcon(icon_d238242868141d11fff5d436bf894277);
+            
+    
+            var marker_b409230aff389040cd1a4d36a64dd904 = L.marker(
+                [19.4011561, -99.1480055],
+                {
+}
+            ).addTo(marker_cluster_77eb8ea629fc942f42e688be92ce9b27);
+        
+    
+            var icon_7df1c797af658048b91c128ac923afc9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_836f49216769b74a1a03676e263cb6d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e845538fb192451f71f535731957b11b = $(`<div id="html_e845538fb192451f71f535731957b11b" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_836f49216769b74a1a03676e263cb6d7.setContent(html_e845538fb192451f71f535731957b11b);
+            
+        
+
+        marker_b409230aff389040cd1a4d36a64dd904.bindPopup(popup_836f49216769b74a1a03676e263cb6d7)
+        ;
+
+        
+    
+    
+            marker_b409230aff389040cd1a4d36a64dd904.bindTooltip(
+                `<div>
+                     Seguridad / vigilancia (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b409230aff389040cd1a4d36a64dd904.setIcon(icon_7df1c797af658048b91c128ac923afc9);
+            
+    
+            var marker_2d6afbdc660bf2b9a739707b06ae800e = L.marker(
+                [19.4117187, -99.1589261],
+                {
+}
+            ).addTo(marker_cluster_77eb8ea629fc942f42e688be92ce9b27);
+        
+    
+            var icon_1fa4d8755045a2d1c5a8067a8eeb14ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22334ff015559ddcc77786e090628c9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6130aa2b1f35866cd10eef78370f9753 = $(`<div id="html_6130aa2b1f35866cd10eef78370f9753" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_22334ff015559ddcc77786e090628c9e.setContent(html_6130aa2b1f35866cd10eef78370f9753);
+            
+        
+
+        marker_2d6afbdc660bf2b9a739707b06ae800e.bindPopup(popup_22334ff015559ddcc77786e090628c9e)
+        ;
+
+        
+    
+    
+            marker_2d6afbdc660bf2b9a739707b06ae800e.bindTooltip(
+                `<div>
+                     Estación de policía Roma (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2d6afbdc660bf2b9a739707b06ae800e.setIcon(icon_1fa4d8755045a2d1c5a8067a8eeb14ba);
+            
+    
+            marker_cluster_77eb8ea629fc942f42e688be92ce9b27.addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+            var poly_line_8e4ff89e7237baaf20b59d68eca5479a = L.polyline(
+                [[19.41176, -99.15891], [19.411710000000003, -99.15872], [19.411710000000003, -99.15805], [19.413200000000003, -99.15843000000001], [19.415950000000002, -99.15912], [19.41598, -99.15892000000001], [19.41692, -99.15915000000001], [19.416880000000003, -99.15934000000001], [19.41714, -99.1594]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.0}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+        var popup_0e3afbff4501621528baed2d3c064d1c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7aafb79f4ee9f9d52a9d8a7569c31f44 = $(`<div id="html_7aafb79f4ee9f9d52a9d8a7569c31f44" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo a casa habitación<br><b>CP:</b> 06700<br><b>Eventos:</b> 225<br><b>Unidad:</b> Estación de policía Roma<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 0.75<br><b>Duracion min:</b> 4.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_0e3afbff4501621528baed2d3c064d1c.setContent(html_7aafb79f4ee9f9d52a9d8a7569c31f44);
+            
+        
+
+        poly_line_8e4ff89e7237baaf20b59d68eca5479a.bindPopup(popup_0e3afbff4501621528baed2d3c064d1c)
+        ;
+
+        
+    
+    
+            poly_line_8e4ff89e7237baaf20b59d68eca5479a.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 06700 -> Estación de policía Roma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7750079af4e3a8ecffc68e2a7154fa90 = L.circleMarker(
+                [19.4171446, -99.159368],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.333333333333334, "stroke": true, "weight": 1}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+            circle_marker_7750079af4e3a8ecffc68e2a7154fa90.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 06700 (225 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d8ecedf8cc9cbb6e1e7604cc689a6444 = L.polyline(
+                [[19.390490000000003, -99.06375000000001], [19.39063, -99.06371000000001], [19.390600000000003, -99.06347000000001], [19.39028, -99.06354], [19.390890000000002, -99.06710000000001], [19.391910000000003, -99.06687000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 4.6475800154489}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+        var popup_d6a9cfcce8cebec21eab3f4965c00365 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_351f7c6a024fe5603aa350535b189a55 = $(`<div id="html_351f7c6a024fe5603aa350535b189a55" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo a casa habitación<br><b>CP:</b> 08500<br><b>Eventos:</b> 135<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 0.57<br><b>Duracion min:</b> 2.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_d6a9cfcce8cebec21eab3f4965c00365.setContent(html_351f7c6a024fe5603aa350535b189a55);
+            
+        
+
+        poly_line_d8ecedf8cc9cbb6e1e7604cc689a6444.bindPopup(popup_d6a9cfcce8cebec21eab3f4965c00365)
+        ;
+
+        
+    
+    
+            poly_line_d8ecedf8cc9cbb6e1e7604cc689a6444.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 08500 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31b83edd84173e1aabd619f01dfa55ad = L.circleMarker(
+                [19.3918903, -99.0667464],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.454972243679028, "stroke": true, "weight": 1}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+            circle_marker_31b83edd84173e1aabd619f01dfa55ad.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 08500 (135 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ce823abb006aac8935d5a2a7b386d9d1 = L.polyline(
+                [[19.40115, -99.14794], [19.39542, -99.14839], [19.39532, -99.14845000000001], [19.394720000000003, -99.14897], [19.39252, -99.15101000000001], [19.392560000000003, -99.15110000000001], [19.3926, -99.15125], [19.392590000000002, -99.15137000000001], [19.392490000000002, -99.15156], [19.39244, -99.15162000000001], [19.392300000000002, -99.15169], [19.3917, -99.15174], [19.391530000000003, -99.15169], [19.391450000000003, -99.15165], [19.391370000000002, -99.15155000000001], [19.39131, -99.15136000000001], [19.38861, -99.15168000000001], [19.388560000000002, -99.15137000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 4.525483399593904}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+        var popup_8bf7f49743d7de886037c17991ae777f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_944b1d9105fa12392f4dce31bc0b6585 = $(`<div id="html_944b1d9105fa12392f4dce31bc0b6585" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo a casa habitación<br><b>CP:</b> 03023<br><b>Eventos:</b> 128<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.62<br><b>Duracion min:</b> 5.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_8bf7f49743d7de886037c17991ae777f.setContent(html_944b1d9105fa12392f4dce31bc0b6585);
+            
+        
+
+        poly_line_ce823abb006aac8935d5a2a7b386d9d1.bindPopup(popup_8bf7f49743d7de886037c17991ae777f)
+        ;
+
+        
+    
+    
+            poly_line_ce823abb006aac8935d5a2a7b386d9d1.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 03023 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52cb21882091ec4f1e7e1148f9cd3b7a = L.circleMarker(
+                [19.3886899, -99.1513451],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.285393610547089, "stroke": true, "weight": 1}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+            circle_marker_52cb21882091ec4f1e7e1148f9cd3b7a.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 03023 (128 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_81c220b8ded151d20cdaae4df2ece39c = L.polyline(
+                [[19.39552, -99.16907], [19.395560000000003, -99.16928000000001], [19.395760000000003, -99.17007000000001], [19.39705, -99.16975000000001], [19.397100000000002, -99.16969], [19.39712, -99.16965], [19.396630000000002, -99.16952], [19.396310000000003, -99.16939], [19.395970000000002, -99.16918000000001], [19.39533, -99.16864000000001], [19.3948, -99.16816000000001], [19.39461, -99.16798000000001], [19.391430000000003, -99.16517], [19.390960000000003, -99.16473], [19.39075, -99.16456000000001], [19.389460000000003, -99.16343], [19.388910000000003, -99.16295000000001], [19.38885, -99.16270000000002], [19.38876, -99.16237000000001], [19.38822, -99.16001000000001], [19.38822, -99.15996000000001], [19.387890000000002, -99.15849000000001], [19.386760000000002, -99.15876000000002], [19.38673, -99.15867000000001], [19.38772, -99.15842]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 4.308131845707603}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+        var popup_4f2135ee3738515395fcede0a3664d2b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26c7feb08e52a8f95c102fba178a9f0c = $(`<div id="html_26c7feb08e52a8f95c102fba178a9f0c" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo a casa habitación<br><b>CP:</b> 03020<br><b>Eventos:</b> 116<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.16<br><b>Duracion min:</b> 9.2<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_4f2135ee3738515395fcede0a3664d2b.setContent(html_26c7feb08e52a8f95c102fba178a9f0c);
+            
+        
+
+        poly_line_81c220b8ded151d20cdaae4df2ece39c.bindPopup(popup_4f2135ee3738515395fcede0a3664d2b)
+        ;
+
+        
+    
+    
+            poly_line_81c220b8ded151d20cdaae4df2ece39c.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 03020 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba1ef40b3f7a571be82920b9c3c734d0 = L.circleMarker(
+                [19.3876936, -99.1582889],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.983516452371671, "stroke": true, "weight": 1}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+            circle_marker_ba1ef40b3f7a571be82920b9c3c734d0.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 03020 (116 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_936d9560ca53bcd42a9fe3c04408a692 = L.polyline(
+                [[19.40115, -99.14794], [19.400750000000002, -99.14797000000002], [19.400190000000002, -99.14891000000001], [19.39987, -99.14948000000001], [19.399060000000002, -99.15086000000001], [19.39901, -99.15097000000002], [19.398490000000002, -99.15184], [19.398290000000003, -99.15222000000001], [19.398320000000002, -99.15288000000001], [19.39834, -99.1559], [19.398490000000002, -99.15805], [19.396120000000003, -99.15822000000001], [19.39607, -99.15754000000001], [19.396600000000003, -99.15750000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 4.2895221179054435}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+        var popup_c7aa9fb8bc4158fa6bcfb8d5a154aeb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e71858f0ae83f71b084821c267bfbb81 = $(`<div id="html_e71858f0ae83f71b084821c267bfbb81" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Robo a casa habitación<br><b>CP:</b> 03020<br><b>Eventos:</b> 115<br><b>Unidad:</b> Seguridad / vigilancia<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.57<br><b>Duracion min:</b> 7.9<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_c7aa9fb8bc4158fa6bcfb8d5a154aeb0.setContent(html_e71858f0ae83f71b084821c267bfbb81);
+            
+        
+
+        poly_line_936d9560ca53bcd42a9fe3c04408a692.bindPopup(popup_c7aa9fb8bc4158fa6bcfb8d5a154aeb0)
+        ;
+
+        
+    
+    
+            poly_line_936d9560ca53bcd42a9fe3c04408a692.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 03020 -> Seguridad / vigilancia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef5d3f244202896ea38533ed90ce735c = L.circleMarker(
+                [19.3965861, -99.1572879],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.957669608202004, "stroke": true, "weight": 1}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+        
+    
+            circle_marker_ef5d3f244202896ea38533ed90ce735c.bindTooltip(
+                `<div>
+                     Robo a casa habitación CP 03020 (115 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_90bc4b3d8b6a814e6a515e2bfb6afa8f_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_fb56b3a14232d0e6b17510c75013947f,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_77eb8ea629fc942f42e688be92ce9b27,
+                },
+            };
+            let layer_control_90bc4b3d8b6a814e6a515e2bfb6afa8f = L.control.layers(
+                layer_control_90bc4b3d8b6a814e6a515e2bfb6afa8f_layers.base_layers,
+                layer_control_90bc4b3d8b6a814e6a515e2bfb6afa8f_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_38428556520c1cd61b946f35bfbf4377);
+
+        
+</script>
+</html>

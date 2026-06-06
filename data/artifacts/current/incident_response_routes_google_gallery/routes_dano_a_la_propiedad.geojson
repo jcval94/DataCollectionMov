@@ -1,0 +1,495 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15817000000001,
+            19.412190000000002
+          ],
+          [
+            -99.15907000000001,
+            19.412000000000003
+          ],
+          [
+            -99.15974000000001,
+            19.41188
+          ],
+          [
+            -99.16253,
+            19.411330000000003
+          ],
+          [
+            -99.16309000000001,
+            19.41347
+          ],
+          [
+            -99.16335000000001,
+            19.41448
+          ],
+          [
+            -99.16342,
+            19.41465
+          ],
+          [
+            -99.16421000000001,
+            19.41768
+          ],
+          [
+            -99.16444000000001,
+            19.418570000000003
+          ],
+          [
+            -99.16452000000001,
+            19.41889
+          ],
+          [
+            -99.16623000000001,
+            19.4185
+          ],
+          [
+            -99.16614000000001,
+            19.41815
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_dano_a_la_propiedad_2",
+        "codigo_postal": "06700",
+        "crime_type": "Daño a la propiedad",
+        "centroid_id": 2,
+        "centroid_lat": 19.4181083,
+        "centroid_lon": -99.1663273,
+        "n_events": 231,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "fire_station,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1704.0,
+        "duration_seconds": 550.0,
+        "duration_minutes": 9.166666666666666,
+        "static_duration_seconds": 520.0,
+        "delay_seconds": 30.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eC_BVd@rDVdClBlPkLnBiEr@a@L}Q|CqDl@_ANlAtIdAQ",
+        "route_description": "Coahuila y Monterrey/Eje 2 Pte",
+        "generated_at_utc": "2026-06-06T17:35:04+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06347000000001,
+            19.390600000000003
+          ],
+          [
+            -99.06354,
+            19.39028
+          ],
+          [
+            -99.06795000000001,
+            19.39103
+          ],
+          [
+            -99.06766,
+            19.39225
+          ],
+          [
+            -99.06782000000001,
+            19.392280000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_dano_a_la_propiedad_2",
+        "codigo_postal": "08500",
+        "crime_type": "Daño a la propiedad",
+        "centroid_id": 2,
+        "centroid_lat": 19.3922709,
+        "centroid_lon": -99.0678374,
+        "n_events": 205,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "fire_station,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 702.0,
+        "duration_seconds": 170.0,
+        "duration_minutes": 2.8333333333333335,
+        "static_duration_seconds": 169.0,
+        "delay_seconds": 1.0,
+        "encoded_polyline": "qejuBlks{Q[GDo@~@LuCpZsFy@E^",
+        "route_description": "Sur 20",
+        "generated_at_utc": "2026-06-06T17:35:05+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15204000000001,
+            19.45354
+          ],
+          [
+            -99.15230000000001,
+            19.452160000000003
+          ],
+          [
+            -99.15231000000001,
+            19.452
+          ],
+          [
+            -99.15228,
+            19.45191
+          ],
+          [
+            -99.15256000000001,
+            19.45054
+          ],
+          [
+            -99.15311000000001,
+            19.44753
+          ],
+          [
+            -99.15311000000001,
+            19.44741
+          ],
+          [
+            -99.1534,
+            19.44592
+          ],
+          [
+            -99.15366,
+            19.445300000000003
+          ],
+          [
+            -99.15402,
+            19.444490000000002
+          ],
+          [
+            -99.1577,
+            19.44509
+          ],
+          [
+            -99.15847000000001,
+            19.44526
+          ],
+          [
+            -99.15899,
+            19.443430000000003
+          ],
+          [
+            -99.15804000000001,
+            19.443270000000002
+          ],
+          [
+            -99.15793000000001,
+            19.443820000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06400_dano_a_la_propiedad_2",
+        "codigo_postal": "06400",
+        "crime_type": "Daño a la propiedad",
+        "centroid_id": 2,
+        "centroid_lat": 19.4438577,
+        "centroid_lon": -99.158119,
+        "n_events": 198,
+        "resolver_unit_id": "osm_node_4878881532",
+        "resolver_name": "Policia Auxiliar",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4535805,
+        "resolver_lon": -99.1523035,
+        "allowed_resolver_categories": "fire_station,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1883.0,
+        "duration_seconds": 432.0,
+        "duration_minutes": 7.2,
+        "static_duration_seconds": 461.0,
+        "delay_seconds": -29.0,
+        "encoded_polyline": "sovuBfsd|QrGr@^@PEpGv@xQlBV?hHx@zBr@`DfAwB~Ua@xClJfB^}DmBU",
+        "route_description": "Insurgentes Nte. y C. Sor Juana Ines de la Cruz",
+        "generated_at_utc": "2026-06-06T17:35:07+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15843000000001,
+            19.413200000000003
+          ],
+          [
+            -99.15871000000001,
+            19.41431
+          ],
+          [
+            -99.15790000000001,
+            19.414460000000002
+          ],
+          [
+            -99.15699000000001,
+            19.414620000000003
+          ],
+          [
+            -99.15635,
+            19.41475
+          ],
+          [
+            -99.15739,
+            19.418860000000002
+          ],
+          [
+            -99.15791,
+            19.418750000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_dano_a_la_propiedad_1",
+        "codigo_postal": "06700",
+        "crime_type": "Daño a la propiedad",
+        "centroid_id": 1,
+        "centroid_lat": 19.4186836,
+        "centroid_lon": -99.1578929,
+        "n_events": 176,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "fire_station,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1165.0,
+        "duration_seconds": 363.0,
+        "duration_minutes": 6.05,
+        "static_duration_seconds": 332.0,
+        "delay_seconds": 31.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCiHjA}Ev@]aD_@uDY_CuXnETfB",
+        "route_description": "C. Orizaba y Mérida",
+        "generated_at_utc": "2026-06-06T17:35:08+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13972000000001,
+            19.452620000000003
+          ],
+          [
+            -99.13986000000001,
+            19.452520000000003
+          ],
+          [
+            -99.14069,
+            19.45229
+          ],
+          [
+            -99.14086,
+            19.45232
+          ],
+          [
+            -99.141,
+            19.45238
+          ],
+          [
+            -99.14110000000001,
+            19.45248
+          ],
+          [
+            -99.14118,
+            19.4526
+          ],
+          [
+            -99.14126,
+            19.452240000000003
+          ],
+          [
+            -99.14116000000001,
+            19.451900000000002
+          ],
+          [
+            -99.14119000000001,
+            19.451700000000002
+          ],
+          [
+            -99.14127,
+            19.45135
+          ],
+          [
+            -99.14129000000001,
+            19.45109
+          ],
+          [
+            -99.14167,
+            19.44923
+          ],
+          [
+            -99.14178000000001,
+            19.44867
+          ],
+          [
+            -99.14206000000001,
+            19.44731
+          ],
+          [
+            -99.14241000000001,
+            19.445330000000002
+          ],
+          [
+            -99.14302,
+            19.44168
+          ],
+          [
+            -99.14313000000001,
+            19.44116
+          ],
+          [
+            -99.14328,
+            19.44116
+          ],
+          [
+            -99.14343000000001,
+            19.44113
+          ],
+          [
+            -99.14364,
+            19.441000000000003
+          ],
+          [
+            -99.14377,
+            19.44086
+          ],
+          [
+            -99.14386,
+            19.44066
+          ],
+          [
+            -99.14388000000001,
+            19.44048
+          ],
+          [
+            -99.14385000000001,
+            19.44022
+          ],
+          [
+            -99.14422,
+            19.43985
+          ],
+          [
+            -99.14483000000001,
+            19.439300000000003
+          ],
+          [
+            -99.14498,
+            19.439390000000003
+          ],
+          [
+            -99.14484,
+            19.43955
+          ],
+          [
+            -99.1448,
+            19.43962
+          ],
+          [
+            -99.14451000000001,
+            19.441000000000003
+          ],
+          [
+            -99.14449,
+            19.44104
+          ],
+          [
+            -99.14445,
+            19.441260000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06300_dano_a_la_propiedad_1",
+        "codigo_postal": "06300",
+        "crime_type": "Daño a la propiedad",
+        "centroid_id": 1,
+        "centroid_lat": 19.4412496,
+        "centroid_lon": -99.1443671,
+        "n_events": 170,
+        "resolver_unit_id": "osm_node_4070639592",
+        "resolver_name": "Módulo SSP La Pera",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4525276,
+        "resolver_lon": -99.1396332,
+        "allowed_resolver_categories": "fire_station,police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2002.0,
+        "duration_seconds": 716.0,
+        "duration_minutes": 11.933333333333334,
+        "static_duration_seconds": 562.0,
+        "delay_seconds": 154.0,
+        "encoded_polyline": "{ivuBffb|QRZl@dDE`@KZSRWNfANbASf@DdANr@BrJjAnBTnGv@jKdAxUxBfBT?\\D\\Xh@ZXf@Pb@Br@EhAhAlBxBQ\\_@[MGsGy@GCk@G",
+        "route_description": "Lerdo",
+        "generated_at_utc": "2026-06-06T17:35:09+00:00"
+      }
+    }
+  ]
+}

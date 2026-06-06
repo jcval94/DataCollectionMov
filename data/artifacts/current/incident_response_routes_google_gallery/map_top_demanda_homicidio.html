@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_062f78890558483c60cf87bcd12e4d70 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Top demanda: Homicidio</strong><br>
+      5 rutas / 204 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_062f78890558483c60cf87bcd12e4d70" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_062f78890558483c60cf87bcd12e4d70 = L.map(
+                "map_062f78890558483c60cf87bcd12e4d70",
+                {
+                    center: [19.37593638, -99.12715352000001],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_062f78890558483c60cf87bcd12e4d70);
+
+            
+
+        
+    
+            var tile_layer_83923f60094da33a9d5df2e1323bb69b = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_83923f60094da33a9d5df2e1323bb69b.addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+            var marker_cluster_4a32329769398a7dcbbece09a1ae6f62 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_af06bf6ff93a551d70940443cdca3d03 = L.marker(
+                [19.4442171, -99.1354083],
+                {
+}
+            ).addTo(marker_cluster_4a32329769398a7dcbbece09a1ae6f62);
+        
+    
+            var icon_dbdd4b1b9113faedc95a74959f093a1f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_90b8fd28c88a7c4c1e6606881f01e4c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e04502d4989624075829daa99f82a01 = $(`<div id="html_6e04502d4989624075829daa99f82a01" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Centro de Salud Dr. D. Orvañanos<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_90b8fd28c88a7c4c1e6606881f01e4c8.setContent(html_6e04502d4989624075829daa99f82a01);
+            
+        
+
+        marker_af06bf6ff93a551d70940443cdca3d03.bindPopup(popup_90b8fd28c88a7c4c1e6606881f01e4c8)
+        ;
+
+        
+    
+    
+            marker_af06bf6ff93a551d70940443cdca3d03.bindTooltip(
+                `<div>
+                     Centro de Salud Dr. D. Orvañanos (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_af06bf6ff93a551d70940443cdca3d03.setIcon(icon_dbdd4b1b9113faedc95a74959f093a1f);
+            
+    
+            var marker_03e090e7b19d495ce7fec58797a54f63 = L.marker(
+                [19.2347073, -99.1203903],
+                {
+}
+            ).addTo(marker_cluster_4a32329769398a7dcbbece09a1ae6f62);
+        
+    
+            var icon_a75bce5c7ddccc814a6472ca771436c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a7ff30214300c02523a281d3bd42d4cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a133d8cda2fe7c008d60b37b8c6fb362 = $(`<div id="html_a133d8cda2fe7c008d60b37b8c6fb362" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Agrupamiento a caballo<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_a7ff30214300c02523a281d3bd42d4cb.setContent(html_a133d8cda2fe7c008d60b37b8c6fb362);
+            
+        
+
+        marker_03e090e7b19d495ce7fec58797a54f63.bindPopup(popup_a7ff30214300c02523a281d3bd42d4cb)
+        ;
+
+        
+    
+    
+            marker_03e090e7b19d495ce7fec58797a54f63.bindTooltip(
+                `<div>
+                     Agrupamiento a caballo (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03e090e7b19d495ce7fec58797a54f63.setIcon(icon_a75bce5c7ddccc814a6472ca771436c9);
+            
+    
+            var marker_ea5111f40767c639a14f659bfe8a2f07 = L.marker(
+                [19.4520667, -99.1130365],
+                {
+}
+            ).addTo(marker_cluster_4a32329769398a7dcbbece09a1ae6f62);
+        
+    
+            var icon_882d8b783608cff89b68be32cd979fef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e49b4a9ce4c95145c0d748480b7e5a55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_755b519464c85c936eb4f03f2bedef46 = $(`<div id="html_755b519464c85c936eb4f03f2bedef46" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Hospital Materno Infantil Inguarán<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_e49b4a9ce4c95145c0d748480b7e5a55.setContent(html_755b519464c85c936eb4f03f2bedef46);
+            
+        
+
+        marker_ea5111f40767c639a14f659bfe8a2f07.bindPopup(popup_e49b4a9ce4c95145c0d748480b7e5a55)
+        ;
+
+        
+    
+    
+            marker_ea5111f40767c639a14f659bfe8a2f07.bindTooltip(
+                `<div>
+                     Hospital Materno Infantil Inguarán (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea5111f40767c639a14f659bfe8a2f07.setIcon(icon_882d8b783608cff89b68be32cd979fef);
+            
+    
+            var marker_f7cb75ac30d02b9183fc5bfbd58e07e1 = L.marker(
+                [19.4153725, -99.1550669],
+                {
+}
+            ).addTo(marker_cluster_4a32329769398a7dcbbece09a1ae6f62);
+        
+    
+            var icon_9b38a87bbe9329b6fc2b0f38d3515c00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "plus",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fda6110ce4a67eef537f0869133123a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6bee9b6d1b414a36c0581c94c7e683af = $(`<div id="html_6bee9b6d1b414a36c0581c94c7e683af" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Hospital Punto Médico<br><b>Categoria:</b> Salud / emergencia medica<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_fda6110ce4a67eef537f0869133123a3.setContent(html_6bee9b6d1b414a36c0581c94c7e683af);
+            
+        
+
+        marker_f7cb75ac30d02b9183fc5bfbd58e07e1.bindPopup(popup_fda6110ce4a67eef537f0869133123a3)
+        ;
+
+        
+    
+    
+            marker_f7cb75ac30d02b9183fc5bfbd58e07e1.bindTooltip(
+                `<div>
+                     Hospital Punto Médico (Salud / emergencia medica)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f7cb75ac30d02b9183fc5bfbd58e07e1.setIcon(icon_9b38a87bbe9329b6fc2b0f38d3515c00);
+            
+    
+            var marker_ab243cfaf4ca284acd987c7f8eecce43 = L.marker(
+                [19.3767411, -99.0969283],
+                {
+}
+            ).addTo(marker_cluster_4a32329769398a7dcbbece09a1ae6f62);
+        
+    
+            var icon_9807ab89d95a1804ec2f9af249b8e587 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b8585c225fc1308d60fe9114cb552ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f95a6c69fd0b93561d07c1f47a270d62 = $(`<div id="html_f95a6c69fd0b93561d07c1f47a270d62" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Policía<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_8b8585c225fc1308d60fe9114cb552ac.setContent(html_f95a6c69fd0b93561d07c1f47a270d62);
+            
+        
+
+        marker_ab243cfaf4ca284acd987c7f8eecce43.bindPopup(popup_8b8585c225fc1308d60fe9114cb552ac)
+        ;
+
+        
+    
+    
+            marker_ab243cfaf4ca284acd987c7f8eecce43.bindTooltip(
+                `<div>
+                     Policía (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ab243cfaf4ca284acd987c7f8eecce43.setIcon(icon_9807ab89d95a1804ec2f9af249b8e587);
+            
+    
+            marker_cluster_4a32329769398a7dcbbece09a1ae6f62.addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+            var poly_line_0fda6b34feafeba2e5077851aebcdac8 = L.polyline(
+                [[19.23479, -99.12039000000001], [19.234740000000002, -99.12132000000001], [19.231930000000002, -99.12076], [19.22979, -99.12031], [19.22791, -99.11993000000001], [19.227, -99.11972000000002], [19.226940000000003, -99.11970000000001], [19.226460000000003, -99.11999], [19.22584, -99.12044], [19.22566, -99.12058], [19.224990000000002, -99.12117], [19.224320000000002, -99.12178], [19.22391, -99.12204000000001], [19.220360000000003, -99.12368000000001], [19.219820000000002, -99.12393], [19.21922, -99.12425], [19.21899, -99.12441000000001], [19.21833, -99.12503000000001], [19.21528, -99.12803000000001], [19.21499, -99.12824], [19.2147, -99.12839000000001], [19.21453, -99.12843000000001], [19.214380000000002, -99.12843000000001], [19.21422, -99.12841], [19.21404, -99.12836000000001], [19.213520000000003, -99.12809000000001], [19.21336, -99.12809000000001], [19.21312, -99.12817000000001], [19.212960000000002, -99.12825000000001], [19.21256, -99.12854000000002], [19.211930000000002, -99.12894000000001], [19.210780000000003, -99.12974000000001], [19.21007, -99.13026], [19.209560000000003, -99.13069], [19.209300000000002, -99.13100000000001], [19.20918, -99.13128], [19.209130000000002, -99.1315], [19.209120000000002, -99.13176000000001], [19.20917, -99.13198000000001], [19.209280000000003, -99.13220000000001], [19.20944, -99.13237000000001], [19.20991, -99.13277000000001], [19.210030000000003, -99.13292000000001], [19.21009, -99.13307], [19.2101, -99.13316], [19.210050000000003, -99.13329], [19.209970000000002, -99.13338], [19.20982, -99.13344000000001], [19.20965, -99.13345000000001], [19.209310000000002, -99.13341000000001], [19.20917, -99.13342000000002], [19.20896, -99.13354000000001], [19.20862, -99.13379], [19.207890000000003, -99.13418000000001], [19.20763, -99.13434000000001], [19.20737, -99.13453000000001], [19.207140000000003, -99.13462000000001], [19.206770000000002, -99.13488000000001], [19.206290000000003, -99.13526], [19.20615, -99.13535], [19.205730000000003, -99.13553], [19.20548, -99.13558], [19.20454, -99.13562], [19.204240000000002, -99.13562], [19.204030000000003, -99.13564000000001], [19.203750000000003, -99.13570000000001], [19.20354, -99.13581], [19.20336, -99.13602], [19.203280000000003, -99.13624000000002], [19.20323, -99.13648], [19.20289, -99.13634], [19.20278, -99.13633000000002], [19.20221, -99.13638], [19.20186, -99.13647], [19.201410000000003, -99.13665], [19.20109, -99.13685000000001], [19.19998, -99.13770000000001], [19.199740000000002, -99.13786], [19.19957, -99.13804], [19.199430000000003, -99.13833000000001], [19.199330000000003, -99.13859000000001], [19.199170000000002, -99.13913000000001], [19.199150000000003, -99.13938], [19.19921, -99.13959000000001], [19.19939, -99.13990000000001], [19.199530000000003, -99.14022000000001], [19.1996, -99.14080000000001], [19.19961, -99.14177000000001], [19.19958, -99.14273000000001], [19.198990000000002, -99.14357000000001], [19.198590000000003, -99.14409], [19.198420000000002, -99.14437000000001], [19.19829, -99.14447000000001], [19.19801, -99.14483000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.8284271247461903}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+        var popup_00b12e5fa3cf828848542518587b7106 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a2e4371154bc3d118e966c72f6a2fdd = $(`<div id="html_9a2e4371154bc3d118e966c72f6a2fdd" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 14500<br><b>Eventos:</b> 50<br><b>Unidad:</b> Agrupamiento a caballo<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 5.76<br><b>Duracion min:</b> 22.6<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_00b12e5fa3cf828848542518587b7106.setContent(html_9a2e4371154bc3d118e966c72f6a2fdd);
+            
+        
+
+        poly_line_0fda6b34feafeba2e5077851aebcdac8.bindPopup(popup_00b12e5fa3cf828848542518587b7106)
+        ;
+
+        
+    
+    
+            poly_line_0fda6b34feafeba2e5077851aebcdac8.bindTooltip(
+                `<div>
+                     Homicidio CP 14500 -> Agrupamiento a caballo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbf65403a9a84dd4b57abdbf91e47da2 = L.circleMarker(
+                [19.1979538, -99.1447849],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.928371006591931, "stroke": true, "weight": 1}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+            circle_marker_dbf65403a9a84dd4b57abdbf91e47da2.bindTooltip(
+                `<div>
+                     Homicidio CP 14500 (50 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9ab72ed92457f29e3e8d48d32facf478 = L.polyline(
+                [[19.45242, -99.11295000000001], [19.452370000000002, -99.11274], [19.45307, -99.11258000000001], [19.45205, -99.10922000000001], [19.45156, -99.10940000000001], [19.451300000000003, -99.10958000000001], [19.45089, -99.10991000000001], [19.450580000000002, -99.11019], [19.450280000000003, -99.11032], [19.449170000000002, -99.11058000000001], [19.44891, -99.11066000000001], [19.449810000000003, -99.11481], [19.45126, -99.12142000000001], [19.448330000000002, -99.12135], [19.447930000000003, -99.12135], [19.447080000000003, -99.12133000000001], [19.44734, -99.12311000000001]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.6532998322843198}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+        var popup_21f361c27866606b4ce22ba333f49686 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ccb9496725fb4be365da913e9e3422fd = $(`<div id="html_ccb9496725fb4be365da913e9e3422fd" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 15270<br><b>Eventos:</b> 44<br><b>Unidad:</b> Hospital Materno Infantil Inguarán<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 2.67<br><b>Duracion min:</b> 7.8<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_21f361c27866606b4ce22ba333f49686.setContent(html_ccb9496725fb4be365da913e9e3422fd);
+            
+        
+
+        poly_line_9ab72ed92457f29e3e8d48d32facf478.bindPopup(popup_21f361c27866606b4ce22ba333f49686)
+        ;
+
+        
+    
+    
+            poly_line_9ab72ed92457f29e3e8d48d32facf478.bindTooltip(
+                `<div>
+                     Homicidio CP 15270 -> Hospital Materno Infantil Inguarán
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f447a35f201e234134bd5fec8caa6380 = L.circleMarker(
+                [19.4472731, -99.1231182],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.685138655950444, "stroke": true, "weight": 1}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+            circle_marker_f447a35f201e234134bd5fec8caa6380.bindTooltip(
+                `<div>
+                     Homicidio CP 15270 (44 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2aacceabf15df925112ec5f4f23d43ca = L.polyline(
+                [[19.37677, -99.09698], [19.37713, -99.09675000000001], [19.37744, -99.09695], [19.376530000000002, -99.09743], [19.375130000000002, -99.09811], [19.37505, -99.09817000000001], [19.374830000000003, -99.0981], [19.37472, -99.09798], [19.37469, -99.09760000000001], [19.37468, -99.09539000000001], [19.3745, -99.09525000000001], [19.374370000000003, -99.09522000000001], [19.37187, -99.09527000000001], [19.3718, -99.09516], [19.37179, -99.09504000000001], [19.371820000000003, -99.09498], [19.37188, -99.09491000000001], [19.372500000000002, -99.09491000000001], [19.372390000000003, -99.09043000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.4979991993593593}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+        var popup_98cc6efb85cf732a407f4492a6bb9c57 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_05f18fecd158f031a208ac9f8522ed96 = $(`<div id="html_05f18fecd158f031a208ac9f8522ed96" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 09040<br><b>Eventos:</b> 39<br><b>Unidad:</b> Policía<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.6<br><b>Duracion min:</b> 6.0<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_98cc6efb85cf732a407f4492a6bb9c57.setContent(html_05f18fecd158f031a208ac9f8522ed96);
+            
+        
+
+        poly_line_2aacceabf15df925112ec5f4f23d43ca.bindPopup(popup_98cc6efb85cf732a407f4492a6bb9c57)
+        ;
+
+        
+    
+    
+            poly_line_2aacceabf15df925112ec5f4f23d43ca.bindTooltip(
+                `<div>
+                     Homicidio CP 09040 -> Policía
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d08793891a466709b826e6cf094c050f = L.circleMarker(
+                [19.3724059, -99.0904311],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.4694433324435545, "stroke": true, "weight": 1}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+            circle_marker_d08793891a466709b826e6cf094c050f.bindTooltip(
+                `<div>
+                     Homicidio CP 09040 (39 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4d0b51a3e7c4de04a06d363b5c67e35b = L.polyline(
+                [[19.4154, -99.15495000000001], [19.41505, -99.15486000000001], [19.415100000000002, -99.15445000000001], [19.41484, -99.15111], [19.414800000000003, -99.15085], [19.414620000000003, -99.14837000000001], [19.412850000000002, -99.14869]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.4}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+        var popup_106103413fc466af05608e418c7043c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_59b9df4d09f3dbf0e73dedfe403d3b04 = $(`<div id="html_59b9df4d09f3dbf0e73dedfe403d3b04" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 06720<br><b>Eventos:</b> 36<br><b>Unidad:</b> Hospital Punto Médico<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 0.92<br><b>Duracion min:</b> 3.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_106103413fc466af05608e418c7043c5.setContent(html_59b9df4d09f3dbf0e73dedfe403d3b04);
+            
+        
+
+        poly_line_4d0b51a3e7c4de04a06d363b5c67e35b.bindPopup(popup_106103413fc466af05608e418c7043c5)
+        ;
+
+        
+    
+    
+            poly_line_4d0b51a3e7c4de04a06d363b5c67e35b.bindTooltip(
+                `<div>
+                     Homicidio CP 06720 -> Hospital Punto Médico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1d2e0f8d5bff17cc199a282e3410e0e7 = L.circleMarker(
+                [19.4128966, -99.1489969],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.333333333333333, "stroke": true, "weight": 1}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+            circle_marker_1d2e0f8d5bff17cc199a282e3410e0e7.bindTooltip(
+                `<div>
+                     Homicidio CP 06720 (36 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_16d103ffd7fcac4a462586a63e45746f = L.polyline(
+                [[19.444380000000002, -99.13539], [19.444360000000003, -99.13517], [19.44548, -99.13504], [19.447190000000003, -99.13484000000001], [19.44759, -99.13478], [19.44762, -99.13453000000001], [19.44769, -99.13435000000001], [19.447770000000002, -99.13424], [19.44773, -99.13407000000001], [19.447560000000003, -99.13262], [19.448220000000003, -99.13247000000001], [19.449370000000002, -99.13210000000001], [19.44977, -99.13195], [19.449460000000002, -99.13108000000001], [19.44914, -99.13009000000001], [19.448790000000002, -99.12878], [19.4492, -99.12870000000001], [19.449160000000003, -99.12842]],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#059669", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 2.3664319132398464}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+        var popup_2b8d07d3521bc9f831e717c1455e0fbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_622e8733af30f455eba5335e5135ec7d = $(`<div id="html_622e8733af30f455eba5335e5135ec7d" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Homicidio<br><b>CP:</b> 06200<br><b>Eventos:</b> 35<br><b>Unidad:</b> Centro de Salud Dr. D. Orvañanos<br><b>Categoria:</b> Salud / emergencia medica<br><b>Distancia km:</b> 1.3<br><b>Duracion min:</b> 5.5<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_2b8d07d3521bc9f831e717c1455e0fbb.setContent(html_622e8733af30f455eba5335e5135ec7d);
+            
+        
+
+        poly_line_16d103ffd7fcac4a462586a63e45746f.bindPopup(popup_2b8d07d3521bc9f831e717c1455e0fbb)
+        ;
+
+        
+    
+    
+            poly_line_16d103ffd7fcac4a462586a63e45746f.bindTooltip(
+                `<div>
+                     Homicidio CP 06200 -> Centro de Salud Dr. D. Orvañanos
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a767c77949eed092f1bd9d39c24041f = L.circleMarker(
+                [19.4491525, -99.1284365],
+                {"bubblingMouseEvents": true, "color": "#059669", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#059669", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2867109906108976, "stroke": true, "weight": 1}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+        
+    
+            circle_marker_2a767c77949eed092f1bd9d39c24041f.bindTooltip(
+                `<div>
+                     Homicidio CP 06200 (35 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_6cd3869afb022ad1688ef19d5d369e4d_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_83923f60094da33a9d5df2e1323bb69b,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_4a32329769398a7dcbbece09a1ae6f62,
+                },
+            };
+            let layer_control_6cd3869afb022ad1688ef19d5d369e4d = L.control.layers(
+                layer_control_6cd3869afb022ad1688ef19d5d369e4d_layers.base_layers,
+                layer_control_6cd3869afb022ad1688ef19d5d369e4d_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_062f78890558483c60cf87bcd12e4d70);
+
+        
+</script>
+</html>

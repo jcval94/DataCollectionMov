@@ -1,0 +1,301 @@
+unit_id,name,category,lat,lon,operator,osm_type,osm_id,source
+osm_node_319436637,Hospital San Angel Inn,hospital,19.3403526,-99.199841,,node,319436637,openstreetmap_overpass_cached
+osm_node_331600009,Santa Teresita,hospital,19.4223048,-99.2063529,,node,331600009,openstreetmap_overpass_cached
+osm_node_331698395,Bomberos Tecamachalco,fire_station,19.4310478,-99.2266118,,node,331698395,openstreetmap_overpass_cached
+osm_node_473112375,Seguridad / vigilancia,police,19.3956112,-99.1690504,,node,473112375,openstreetmap_overpass_cached
+osm_node_473196179,Seguridad / vigilancia,police,19.3938131,-99.178017,,node,473196179,openstreetmap_overpass_cached
+osm_node_496675423,Bomberos / proteccion civil,fire_station,19.3088565,-98.9153904,,node,496675423,openstreetmap_overpass_cached
+osm_node_496687174,Salud / emergencia medica,hospital,19.3078278,-98.9203085,,node,496687174,openstreetmap_overpass_cached
+osm_node_496813675,Bomberos / proteccion civil,fire_station,19.3207216,-98.9409497,,node,496813675,openstreetmap_overpass_cached
+osm_node_674394120,Base local Matamoros,police,19.4968636,-99.0307,,node,674394120,openstreetmap_overpass_cached
+osm_node_739035810,Clínica Hospital 8 IMSS,hospital,19.3366121,-99.2009685,Instituto Mexicano del Seguro Social,node,739035810,openstreetmap_overpass_cached
+osm_node_739036171,Instituto Nacional de Pediatria,hospital,19.30613,-99.1851961,,node,739036171,openstreetmap_overpass_cached
+osm_node_767323891,Hospital Dermatológico Ladislao Pascua,hospital,19.4064813,-99.1495056,Gobierno del Distrito Federal,node,767323891,openstreetmap_overpass_cached
+osm_node_837153168,PGJDF Fiscalia Desconcentrada en Coyoacan,police,19.3443229,-99.1669811,,node,837153168,openstreetmap_overpass_cached
+osm_node_837157889,PGJDF Fiscalia Desconcentrada en Benito Juarez,police,19.3727209,-99.1578376,,node,837157889,openstreetmap_overpass_cached
+osm_node_837167439,Dentix,hospital,19.3673609,-99.1803765,,node,837167439,openstreetmap_overpass_cached
+osm_node_839606804,Coordinación Territorial COY-3 (PGJDF y SSP),police,19.3339823,-99.1135947,,node,839606804,openstreetmap_overpass_cached
+osm_node_839608841,Coordinación Territorial COY-5 (PGJDF Y SSP),police,19.3195406,-99.1008513,,node,839608841,openstreetmap_overpass_cached
+osm_node_855761356,Hospital Santa Coleta,hospital,19.367824,-99.1865152,,node,855761356,openstreetmap_overpass_cached
+osm_node_958694701,Instituto Nacional de Higiene,hospital,19.4547365,-99.1809227,,node,958694701,openstreetmap_overpass_cached
+osm_node_972127625,Bomberos / proteccion civil,fire_station,19.4868577,-99.0640291,,node,972127625,openstreetmap_overpass_cached
+osm_node_994356029,caseta de policía,police,19.3689596,-99.1788619,,node,994356029,openstreetmap_overpass_cached
+osm_node_1015230879,santa maria tepepan,hospital,19.2683926,-99.1392026,,node,1015230879,openstreetmap_overpass_cached
+osm_node_1212734970,Modulo de seguridad y vigilancia,police,19.4517676,-99.0795749,,node,1212734970,openstreetmap_overpass_cached
+osm_node_1212735084,Modulo de seguridad y vigilancia,police,19.4558394,-99.0891155,,node,1212735084,openstreetmap_overpass_cached
+osm_node_1383426312,Seguridad / vigilancia,police,19.482332,-99.1131363,,node,1383426312,openstreetmap_overpass_cached
+osm_node_1466294105,Centro de Salud Dr. D. Orvañanos,hospital,19.4442171,-99.1354083,,node,1466294105,openstreetmap_overpass_cached
+osm_node_1477979999,Seguridad / vigilancia,police,19.3904466,-99.0637351,,node,1477979999,openstreetmap_overpass_cached
+osm_node_1478201548,Centro de Salud José Zozaya,hospital,19.3985249,-99.1187686,,node,1478201548,openstreetmap_overpass_cached
+osm_node_1514442618,Dr. Rio de la Loza (Ginecología),hospital,19.5143881,-99.2614959,,node,1514442618,openstreetmap_overpass_cached
+osm_node_1585123186,Fiscalía Regional Nezahualcóyotl,police,19.4088047,-99.0174448,,node,1585123186,openstreetmap_overpass_cached
+osm_node_1677057517,"Oficina de Policia ""SSPDF GAM 6 Tepeyac""",police,19.4746457,-99.1314248,,node,1677057517,openstreetmap_overpass_cached
+osm_node_1698266724,Agrupamiento a caballo,police,19.2347073,-99.1203903,,node,1698266724,openstreetmap_overpass_cached
+osm_node_1709275810,Seguridad / vigilancia,police,19.4049803,-99.2703646,,node,1709275810,openstreetmap_overpass_cached
+osm_node_1710331821,Juzgado Civico Iztapalapa 7,police,19.3380896,-99.0749659,,node,1710331821,openstreetmap_overpass_cached
+osm_node_1736439483,Seguridad / vigilancia,police,19.5947583,-99.0502376,,node,1736439483,openstreetmap_overpass_cached
+osm_node_2005357867,Hospital Materno Infantil Inguarán,hospital,19.4520667,-99.1130365,,node,2005357867,openstreetmap_overpass_cached
+osm_node_2115196813,Estacion de Bomberos de Chimalhuacan,fire_station,19.427177,-98.9658553,,node,2115196813,openstreetmap_overpass_cached
+osm_node_2126806248,Delegación de Policia,police,19.5202875,-99.1084842,,node,2126806248,openstreetmap_overpass_cached
+osm_node_2126808179,Salud / emergencia medica,hospital,19.5208892,-99.1093908,,node,2126808179,openstreetmap_overpass_cached
+osm_node_2278973453,Hospital Punto Médico,hospital,19.4153725,-99.1550669,,node,2278973453,openstreetmap_overpass_cached
+osm_node_2278973467,"Hospital Consultores Ambientales, S.A. De C.V.",hospital,19.4155616,-99.1570999,,node,2278973467,openstreetmap_overpass_cached
+osm_node_2278973470,"Hospital Santa Elena, Angeles Roma",hospital,19.415301,-99.1570758,,node,2278973470,openstreetmap_overpass_cached
+osm_node_2324499329,Hospital General Xoco,hospital,19.3603343,-99.1624076,,node,2324499329,openstreetmap_overpass_cached
+osm_node_2324519237,Hospital General Enrique Cabrera,hospital,19.3615894,-99.2243126,,node,2324519237,openstreetmap_overpass_cached
+osm_node_2324549710,Hospital General Ticoman,hospital,19.5145772,-99.1380497,,node,2324549710,openstreetmap_overpass_cached
+osm_node_2324568180,Hospital General Rubén Leñero,hospital,19.4513407,-99.1694061,,node,2324568180,openstreetmap_overpass_cached
+osm_node_2324609833,Hospital Materno Infantil Dr. Nicolas M. Cedillo,hospital,19.4971714,-99.2035124,,node,2324609833,openstreetmap_overpass_cached
+osm_node_2324619418,Hospital Pediatrico Azcapotzalco,hospital,19.4841167,-99.1856214,,node,2324619418,openstreetmap_overpass_cached
+osm_node_2324666055,Hospital Pediatrico la Villa,hospital,19.4872044,-99.1141898,,node,2324666055,openstreetmap_overpass_cached
+osm_node_2324694558,Hospital Materno Infantil Cuautepec,hospital,19.5397608,-99.1408013,,node,2324694558,openstreetmap_overpass_cached
+osm_node_2324739301,Hospital Pediátrico Iztacalco,hospital,19.4025983,-99.1177983,,node,2324739301,openstreetmap_overpass_cached
+osm_node_2324754213,Hospital Pediátrico Iztapalapa,hospital,19.3565253,-99.1076907,,node,2324754213,openstreetmap_overpass_cached
+osm_node_2324804235,Hospital Pediátrico Legaria,hospital,19.4506799,-99.2032965,,node,2324804235,openstreetmap_overpass_cached
+osm_node_2324849071,Hospital Pediatrico Moctezuma,hospital,19.4327232,-99.0981339,,node,2324849071,openstreetmap_overpass_cached
+osm_node_2324866576,Hospital Materno Infantil Xochimilco,hospital,19.2542119,-99.1047945,,node,2324866576,openstreetmap_overpass_cached
+osm_node_2324874934,Hospital General Milpa Alta,hospital,19.2008455,-99.0110247,,node,2324874934,openstreetmap_overpass_cached
+osm_node_2426031257,Sector Xochimilco,police,19.2578584,-99.1083956,,node,2426031257,openstreetmap_overpass_cached
+osm_node_2426031581,Issste Clinica Medico Familiar Xochimilco,hospital,19.2567655,-99.1082426,,node,2426031581,openstreetmap_overpass_cached
+osm_node_2426920239,Clinica Samano,hospital,19.532345,-99.0480861,,node,2426920239,openstreetmap_overpass_cached
+osm_node_2426950372,clinica samano,hospital,19.5324011,-99.0476158,,node,2426950372,openstreetmap_overpass_cached
+osm_node_2482978381,"Clínica de Especialidades ""Churubusco""",hospital,19.3455142,-99.1451247,Instituto de Seguridad y Servicios Sociales para los Trabajadores del Estado,node,2482978381,openstreetmap_overpass_cached
+osm_node_2539073662,Hospital Vivo Ciudad Azteca,hospital,19.5333405,-99.0270736,Star Médica,node,2539073662,openstreetmap_overpass_cached
+osm_node_2682372533,Módulo de policía,police,19.3685503,-99.0731378,SSC CDMX,node,2682372533,openstreetmap_overpass_cached
+osm_node_2727444943,"Centro de salud ""Nueva aragon""",hospital,19.5041365,-99.0172826,,node,2727444943,openstreetmap_overpass_cached
+osm_node_2937976909,Agencia del Ministerio Público,police,19.4837764,-99.1827004,,node,2937976909,openstreetmap_overpass_cached
+osm_node_2938027324,Hospital de la Divina Providencia,hospital,19.481014,-99.184899,,node,2938027324,openstreetmap_overpass_cached
+osm_node_2938027325,Ampl. Hospital de la Divina Providencia,hospital,19.4806822,-99.18446,,node,2938027325,openstreetmap_overpass_cached
+osm_node_2938268495,ISSSTE Clinica de Medicina Familiar,hospital,19.4826851,-99.1880483,,node,2938268495,openstreetmap_overpass_cached
+osm_node_2939774393,ISSSTE Clínica Cuitlahuac,hospital,19.4718047,-99.1658196,,node,2939774393,openstreetmap_overpass_cached
+osm_node_2941425707,SSP Unidad Poniente,police,19.4719818,-99.1986607,,node,2941425707,openstreetmap_overpass_cached
+osm_node_3026304095,Seguridad / vigilancia,police,19.462136,-99.1338364,,node,3026304095,openstreetmap_overpass_cached
+osm_node_3238899144,UAM Xochimilco,police,19.301347,-99.1021484,UAM Xochimilco,node,3238899144,openstreetmap_overpass_cached
+osm_node_3238906824,UAM Xochimilco,police,19.3000555,-99.1028842,UAM Xochimilco,node,3238906824,openstreetmap_overpass_cached
+osm_node_3238906825,UAM Xochimilco,police,19.3014594,-99.1022572,UAM Xochimilco,node,3238906825,openstreetmap_overpass_cached
+osm_node_3238906826,UAM Xochimilco,police,19.3040842,-99.1020263,UAM Xochimilco,node,3238906826,openstreetmap_overpass_cached
+osm_node_3238906828,UAM Xochimilco,police,19.307026,-99.101523,UAM Xochimilco,node,3238906828,openstreetmap_overpass_cached
+osm_node_3238914664,UAM Xochimilco,police,19.3076716,-99.1027722,UAM Xochimilco,node,3238914664,openstreetmap_overpass_cached
+osm_node_3238914677,UAM Xochimilco,police,19.3043099,-99.1040563,UAM Xochimilco,node,3238914677,openstreetmap_overpass_cached
+osm_node_3242735049,Caseta de vigilancia,police,19.280408,-99.1708187,Residencial Insurgentes Sur 1,node,3242735049,openstreetmap_overpass_cached
+osm_node_3242735050,Caseta de vigilancia,police,19.2786364,-99.1722564,Residencial Insurgentes Sur 2,node,3242735050,openstreetmap_overpass_cached
+osm_node_3242871603,Caseta de vigilancia,police,19.2647347,-99.126152,Condominio Los Cántaros,node,3242871603,openstreetmap_overpass_cached
+osm_node_3318135726,Seguridad / vigilancia,police,19.4557791,-99.1402939,,node,3318135726,openstreetmap_overpass_cached
+osm_node_3331252732,Clínica de Dios,hospital,19.2512423,-99.169635,,node,3331252732,openstreetmap_overpass_cached
+osm_node_3340745922,Insurgentes Sur,police,19.3049997,-99.1857964,,node,3340745922,openstreetmap_overpass_cached
+osm_node_3581968746,Bomberos / proteccion civil,fire_station,19.3546719,-98.9646499,,node,3581968746,openstreetmap_overpass_cached
+osm_node_3772280299,Hospital Churubusco,hospital,19.3616126,-99.1213644,,node,3772280299,openstreetmap_overpass_cached
+osm_node_3779138322,Salud / emergencia medica,hospital,19.4007961,-99.1497404,,node,3779138322,openstreetmap_overpass_cached
+osm_node_3779138327,Seguridad / vigilancia,police,19.4011561,-99.1480055,,node,3779138327,openstreetmap_overpass_cached
+osm_node_3779151826,Salud / emergencia medica,hospital,19.3930861,-99.1777866,,node,3779151826,openstreetmap_overpass_cached
+osm_node_3779257093,Podologia,hospital,19.4018662,-99.1502893,,node,3779257093,openstreetmap_overpass_cached
+osm_node_3779387424,Ortopedia Flores,hospital,19.3997787,-99.1491481,,node,3779387424,openstreetmap_overpass_cached
+osm_node_3779388862,Ortopedia Mitla 4,hospital,19.3997233,-99.1491788,,node,3779388862,openstreetmap_overpass_cached
+osm_node_3779577788,Salud / emergencia medica,hospital,19.3996861,-99.1476341,,node,3779577788,openstreetmap_overpass_cached
+osm_node_3977351148,Salud / emergencia medica,hospital,19.3290459,-99.2726709,,node,3977351148,openstreetmap_overpass_cached
+osm_node_3992433576,Centro de Salud T-III Dr. David Fragoso,hospital,19.2652777,-99.1608719,,node,3992433576,openstreetmap_overpass_cached
+osm_node_4070639592,Módulo SSP La Pera,police,19.4525276,-99.1396332,,node,4070639592,openstreetmap_overpass_cached
+osm_node_4168566090,Hospital Star Médica Centro,hospital,19.4139311,-99.1612587,,node,4168566090,openstreetmap_overpass_cached
+osm_node_4196383189,Hospital Tehuantepec,hospital,19.4050112,-99.1625655,,node,4196383189,openstreetmap_overpass_cached
+osm_node_4241815891,Modulo de policia.,police,19.488578,-99.1069463,,node,4241815891,openstreetmap_overpass_cached
+osm_node_4271001389,Hospital General La Perla Nezahualcoyotl,hospital,19.3873904,-98.9896243,,node,4271001389,openstreetmap_overpass_cached
+osm_node_4278702191,DEPOSITO VEHICULAR - MODULO 39 (SSP-CDMX),police,19.384537,-99.0465052,,node,4278702191,openstreetmap_overpass_cached
+osm_node_4330349598,Caseta policía,police,19.4921483,-99.0665914,,node,4330349598,openstreetmap_overpass_cached
+osm_node_4334919510,Seguridad / vigilancia,police,19.3632054,-99.1154671,,node,4334919510,openstreetmap_overpass_cached
+osm_node_4337114792,módulo policía Boulevares,police,19.4886838,-99.2439775,,node,4337114792,openstreetmap_overpass_cached
+osm_node_4337569492,seguridad pública Naucalpan,police,19.479218,-99.2331427,,node,4337569492,openstreetmap_overpass_cached
+osm_node_4337600394,Tecalli San Mateo,police,19.5017559,-99.2739597,,node,4337600394,openstreetmap_overpass_cached
+osm_node_4338682390,Hospital Ciudad Satelite,hospital,19.5136584,-99.2373862,,node,4338682390,openstreetmap_overpass_cached
+osm_node_4341810520,Tecalli Las Armas,police,19.4873007,-99.2173805,,node,4341810520,openstreetmap_overpass_cached
+osm_node_4348976592,Tecalli 4,police,19.5186058,-99.2439852,,node,4348976592,openstreetmap_overpass_cached
+osm_node_4356073537,Hospital Militar de Zona,hospital,19.3123584,-99.0820964,SEDENA,node,4356073537,openstreetmap_overpass_cached
+osm_node_4403446355,Hospital vicentino y casa hogar,hospital,19.339686,-99.1999184,,node,4403446355,openstreetmap_overpass_cached
+osm_node_4407581030,SSA,hospital,19.574714,-99.2436724,,node,4407581030,openstreetmap_overpass_cached
+osm_node_4415799493,Bomberos / proteccion civil,fire_station,19.5788561,-99.2062451,,node,4415799493,openstreetmap_overpass_cached
+osm_node_4415923862,Centro de Salud T-II Ramos Millan,hospital,19.3859363,-99.0954454,,node,4415923862,openstreetmap_overpass_cached
+osm_node_4425468090,Instituto Oftalmologia,hospital,19.4225708,-99.1418319,,node,4425468090,openstreetmap_overpass_cached
+osm_node_4430079390,7mo Sector Huixquilucan,police,19.4202849,-99.2655093,,node,4430079390,openstreetmap_overpass_cached
+osm_node_4443102789,Titán 3,police,19.5059037,-99.2565612,,node,4443102789,openstreetmap_overpass_cached
+osm_node_4538333499,Centro de salud Ramos Millan,hospital,19.3864154,-99.0956199,,node,4538333499,openstreetmap_overpass_cached
+osm_node_4550126415,"Agencia del Ministerio Público, Tlalpan",police,19.2835763,-99.165628,,node,4550126415,openstreetmap_overpass_cached
+osm_node_4576617362,Policía Tecamachalco 066,police,19.4173543,-99.236888,,node,4576617362,openstreetmap_overpass_cached
+osm_node_4590079371,Estación de Policía Viaducto,police,19.3084249,-99.1419356,,node,4590079371,openstreetmap_overpass_cached
+osm_node_4602998225,Médica Coapa,hospital,19.2944627,-99.1303368,,node,4602998225,openstreetmap_overpass_cached
+osm_node_4619075208,Seguridad / vigilancia,police,19.3006693,-99.1596857,,node,4619075208,openstreetmap_overpass_cached
+osm_node_4630450850,Hospitales Tlalpan,police,19.2864442,-99.1564696,,node,4630450850,openstreetmap_overpass_cached
+osm_node_4677261126,Estación de Policía Cáliz,police,19.3182627,-99.1388944,,node,4677261126,openstreetmap_overpass_cached
+osm_node_4687361077,Seguridad / vigilancia,police,19.4364751,-99.1314879,,node,4687361077,openstreetmap_overpass_cached
+osm_node_4708975161,Vigilancia Colinas de San José,police,19.5263753,-99.0918744,,node,4708975161,openstreetmap_overpass_cached
+osm_node_4717536191,Estación de bomberos,fire_station,19.4005086,-99.0305158,,node,4717536191,openstreetmap_overpass_cached
+osm_node_4717561089,Seguridad / vigilancia,police,19.3999397,-99.0283107,,node,4717561089,openstreetmap_overpass_cached
+osm_node_4728551391,Modulo San Simon,police,19.374735,-99.1430964,,node,4728551391,openstreetmap_overpass_cached
+osm_node_4730048292,Policia Montada CDMX,police,19.3718884,-99.0405386,,node,4730048292,openstreetmap_overpass_cached
+osm_node_4730058290,Seguridad / vigilancia,police,19.3863887,-99.0368532,,node,4730058290,openstreetmap_overpass_cached
+osm_node_4756848427,Seguridad / vigilancia,police,19.3718711,-99.1489469,,node,4756848427,openstreetmap_overpass_cached
+osm_node_4783302622,Estacion Vallejo,police,19.4908231,-99.1688916,,node,4783302622,openstreetmap_overpass_cached
+osm_node_4793330422,SUMEDIC ambulancias,hospital,19.2869541,-99.2361104,,node,4793330422,openstreetmap_overpass_cached
+osm_node_4831765750,Laboratorio Médico del Chopo,hospital,19.4463572,-99.1555081,,node,4831765750,openstreetmap_overpass_cached
+osm_node_4831766821,Laboratorios médicos Chopo,hospital,19.5494621,-99.2375285,,node,4831766821,openstreetmap_overpass_cached
+osm_node_4835772863,Centro Comunitario de Salud Mental Cuauhtémoc,hospital,19.4474277,-99.1551947,,node,4835772863,openstreetmap_overpass_cached
+osm_node_4840767822,Estación de bomberos,fire_station,19.5257983,-99.1100121,,node,4840767822,openstreetmap_overpass_cached
+osm_node_4846755622,Seguridad / vigilancia,police,19.3315985,-99.209501,,node,4846755622,openstreetmap_overpass_cached
+osm_node_4878871116,Seguridad / vigilancia,police,19.4547869,-99.1567074,,node,4878871116,openstreetmap_overpass_cached
+osm_node_4878881532,Policia Auxiliar,police,19.4535805,-99.1523035,,node,4878881532,openstreetmap_overpass_cached
+osm_node_4892571882,Universidad de la Policía de la CDMX,police,19.336419,-99.2502603,,node,4892571882,openstreetmap_overpass_cached
+osm_node_4949202821,"Hospital de traumatología y ortopedia No 2 ""villa coapa""",hospital,19.3096299,-99.1284724,,node,4949202821,openstreetmap_overpass_cached
+osm_node_4955815021,Corralón Policía Federal,police,19.3721286,-99.0398087,,node,4955815021,openstreetmap_overpass_cached
+osm_node_4987377846,Unidad de medicina física y rehabilitación norte,hospital,19.4835319,-99.1342805,Instituto Mexicano del Seguro Social,node,4987377846,openstreetmap_overpass_cached
+osm_node_4993591422,Parque guayacanes,fire_station,19.2705094,-99.237838,,node,4993591422,openstreetmap_overpass_cached
+osm_node_5076636722,CES,police,19.4666854,-99.238207,,node,5076636722,openstreetmap_overpass_cached
+osm_node_5087557122,Hospital De Cos,hospital,19.4160151,-99.1623423,,node,5087557122,openstreetmap_overpass_cached
+osm_node_5117146858,Hospital General IMSS Coyoacán,hospital,19.3084815,-99.1295811,,node,5117146858,openstreetmap_overpass_cached
+osm_node_5135444041,Salud / emergencia medica,hospital,19.4418532,-99.1716072,,node,5135444041,openstreetmap_overpass_cached
+osm_node_5138747122,Hospital Guadalupe,hospital,19.4844305,-99.1140285,,node,5138747122,openstreetmap_overpass_cached
+osm_node_5145714223,Torre médica,hospital,19.5377792,-99.2276918,,node,5145714223,openstreetmap_overpass_cached
+osm_node_5157283322,Hospital Boutique,hospital,19.494916,-99.1234808,,node,5157283322,openstreetmap_overpass_cached
+osm_node_5190989121,"ISSSTE Unidad Especial Centro de Apoyo Diagnóstico ""San Rafael""",hospital,19.4358437,-99.1634237,Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado,node,5190989121,openstreetmap_overpass_cached
+osm_node_5280393723,Centro Hospitalario Sanatorio Durango,hospital,19.4183686,-99.1716807,Sanatorio Durango,node,5280393723,openstreetmap_overpass_cached
+osm_node_5306935622,Salud / emergencia medica,hospital,19.5357995,-99.1968054,,node,5306935622,openstreetmap_overpass_cached
+osm_node_5320237918,Seguridad / vigilancia,police,19.5467518,-99.0348642,,node,5320237918,openstreetmap_overpass_cached
+osm_node_5328257655,Seguridad / vigilancia,police,19.5460927,-99.036525,,node,5328257655,openstreetmap_overpass_cached
+osm_node_5334047015,Estación de Vigilancia de Pirules,police,19.5474649,-99.2213947,,node,5334047015,openstreetmap_overpass_cached
+osm_node_5335602904,Caseta de Vigilancia,police,19.5487274,-99.2186127,,node,5335602904,openstreetmap_overpass_cached
+osm_node_5355412527,Seguridad / vigilancia,police,19.5460686,-99.0390849,,node,5355412527,openstreetmap_overpass_cached
+osm_node_5364021834,UAM Xochimilco,police,19.3074673,-99.1025221,UAM Xochimilco,node,5364021834,openstreetmap_overpass_cached
+osm_node_5368779798,Clínica médica.,hospital,19.3813291,-99.1249754,,node,5368779798,openstreetmap_overpass_cached
+osm_node_5369204576,Unidad Centro De Salud T-1 Chimalpa,hospital,19.3545158,-99.3191599,,node,5369204576,openstreetmap_overpass_cached
+osm_node_5374595772,Delegación guadalupana,police,19.2756595,-98.9218627,,node,5374595772,openstreetmap_overpass_cached
+osm_node_5379875421,Módulo de policía,police,19.3959598,-99.0200754,,node,5379875421,openstreetmap_overpass_cached
+osm_node_5441375038,Hospital Medex,hospital,19.4161532,-99.1588141,,node,5441375038,openstreetmap_overpass_cached
+osm_node_5441456298,Seguridad / vigilancia,police,19.5465415,-99.0397233,,node,5441456298,openstreetmap_overpass_cached
+osm_node_5451918633,Seguridad / vigilancia,police,19.5343863,-99.038021,,node,5451918633,openstreetmap_overpass_cached
+osm_node_5460589125,Centro de salud Palo Alto,hospital,19.3828691,-99.2552566,,node,5460589125,openstreetmap_overpass_cached
+osm_node_5492369022,Seguridad / vigilancia,police,19.4908541,-99.2326787,,node,5492369022,openstreetmap_overpass_cached
+osm_node_5502335022,Policía Montada de Naucalpan,police,19.4753906,-99.2537172,,node,5502335022,openstreetmap_overpass_cached
+osm_node_5503705022,Tecalli 3,police,19.4670211,-99.2580947,,node,5503705022,openstreetmap_overpass_cached
+osm_node_5516868022,Policía Federal,police,19.3354234,-99.3116554,,node,5516868022,openstreetmap_overpass_cached
+osm_node_5580558722,ISSSTE C.M.F. Perú,hospital,19.4395299,-99.1381773,Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado,node,5580558722,openstreetmap_overpass_cached
+osm_node_5584953139,Hospital General Regional 2 IMSS,hospital,19.3087697,-99.1296862,,node,5584953139,openstreetmap_overpass_cached
+osm_node_5584953140,IMSS HGR 2/URGENCIAS,hospital,19.3096388,-99.129175,Instituto Mexicano del Seguro Social,node,5584953140,openstreetmap_overpass_cached
+osm_node_5594982824,Hospital Elizur,hospital,19.5356059,-99.1965193,,node,5594982824,openstreetmap_overpass_cached
+osm_node_5668176258,Policía,police,19.3648602,-99.1456059,SSP,node,5668176258,openstreetmap_overpass_cached
+osm_node_5786335172,Módulo Judicial,police,19.4201186,-99.0831441,,node,5786335172,openstreetmap_overpass_cached
+osm_node_5805382651,Estacion de policia Vigilante,police,19.4201464,-99.1140589,,node,5805382651,openstreetmap_overpass_cached
+osm_node_5825839898,Seguridad / vigilancia,police,19.5732223,-99.0434617,,node,5825839898,openstreetmap_overpass_cached
+osm_node_5833520186,Módulo De Policía,police,19.3630791,-99.0571328,,node,5833520186,openstreetmap_overpass_cached
+osm_node_5859752058,Seguridad Privada,police,19.4178002,-99.0862747,,node,5859752058,openstreetmap_overpass_cached
+osm_node_5899997186,Policía,police,19.3767411,-99.0969283,,node,5899997186,openstreetmap_overpass_cached
+osm_node_5899997187,Policía,police,19.3734126,-99.1081031,,node,5899997187,openstreetmap_overpass_cached
+osm_node_5899997188,Módulo de policía,police,19.3631069,-99.0570977,,node,5899997188,openstreetmap_overpass_cached
+osm_node_5900012685,Instituto Nacional de Psiquiatría,hospital,19.2895487,-99.1549306,,node,5900012685,openstreetmap_overpass_cached
+osm_node_6047850590,ISSEMYM,hospital,19.5703159,-99.0459807,,node,6047850590,openstreetmap_overpass_cached
+osm_node_6051620426,Issemym,hospital,19.5811947,-99.0168387,,node,6051620426,openstreetmap_overpass_cached
+osm_node_6223359252,Unidad de Medicina Familiar 93,hospital,19.5501232,-99.0517137,,node,6223359252,openstreetmap_overpass_cached
+osm_node_6256173399,Bomberos / proteccion civil,fire_station,19.3911873,-98.9845013,,node,6256173399,openstreetmap_overpass_cached
+osm_node_6270207821,Seguridad / vigilancia,police,19.3175515,-98.936806,,node,6270207821,openstreetmap_overpass_cached
+osm_node_6296084165,Sub-Estacion de Bombreos Satélite,fire_station,19.5068328,-99.2207402,Naucalpan,node,6296084165,openstreetmap_overpass_cached
+osm_node_6296100612,"Estación sur de Bombreos, Javier Perez Olagaray",fire_station,19.5135679,-99.2166123,Talanepantla,node,6296100612,openstreetmap_overpass_cached
+osm_node_6296109883,Estación de policía Prados del Rosario,police,19.5080009,-99.2099926,,node,6296109883,openstreetmap_overpass_cached
+osm_node_6296180484,Modulo de Policía Coltongo,police,19.4813359,-99.1524861,,node,6296180484,openstreetmap_overpass_cached
+osm_node_6389734742,ISSSTE Clínica de Medicina Familitar Xalostoc,hospital,19.550623,-99.0515915,Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado,node,6389734742,openstreetmap_overpass_cached
+osm_node_6394674309,Clinica Especializada en el Manejo Integral de la Diabetes Iztapalapa,hospital,19.3666033,-99.1113957,,node,6394674309,openstreetmap_overpass_cached
+osm_node_6426403897,Centro Medico Huixquilucan,hospital,19.3615562,-99.3493092,,node,6426403897,openstreetmap_overpass_cached
+osm_node_6426682600,Centro de Salud Santa María de Guadalupe,hospital,19.5925946,-99.1916659,,node,6426682600,openstreetmap_overpass_cached
+osm_node_6429049326,Delegación Dos Ríos,police,19.375558,-99.3415301,,node,6429049326,openstreetmap_overpass_cached
+osm_node_6431952620,Hospital Campos Castellanos Jorge,hospital,19.3986431,-99.3290624,,node,6431952620,openstreetmap_overpass_cached
+osm_node_6459174077,Modulo de Seguridad y Participación Ciudadana,police,19.3505472,-99.1461651,,node,6459174077,openstreetmap_overpass_cached
+osm_node_6466683705,Efraín Díaz Jouanen,hospital,19.4005799,-99.31183,,node,6466683705,openstreetmap_overpass_cached
+osm_node_6699414986,Estación de Policía,police,19.5503242,-99.099135,,node,6699414986,openstreetmap_overpass_cached
+osm_node_6720453187,Hospital Ángeles Dalinde,hospital,19.4053707,-99.1678461,,node,6720453187,openstreetmap_overpass_cached
+osm_node_6720453188,Hospital Pediatrico de Azcapotzalco,hospital,19.4842608,-99.1852226,,node,6720453188,openstreetmap_overpass_cached
+osm_node_7158690385,Estación de policía Roma,police,19.4117187,-99.1589261,,node,7158690385,openstreetmap_overpass_cached
+osm_node_7261616759,Hospital de aves FMVZ- UNAM,hospital,19.3294366,-99.1767088,,node,7261616759,openstreetmap_overpass_cached
+osm_node_7261644107,MCZE Hospital para Équidos,hospital,19.3301095,-99.1767591,,node,7261644107,openstreetmap_overpass_cached
+osm_node_7392909592,Clínica de Colposcopia Fundación Cruz Talonia,hospital,19.377257,-99.1333431,Fundación Cruz Talonia,node,7392909592,openstreetmap_overpass_cached
+osm_node_7393104443,"IMSS Hospital General de Zona 1-A Dr. Rodolfo Antonio de Mucha Macias ""Venados""",hospital,19.3699886,-99.1558906,Instituto Mexicano del Seguro Social,node,7393104443,openstreetmap_overpass_cached
+osm_node_7809016459,Centro de Salud Magdalena Panoaya,hospital,19.5359858,-98.9119316,,node,7809016459,openstreetmap_overpass_cached
+osm_node_7829887949,Modulo Municipal de Vigilancia,police,19.5494214,-99.1734628,Policia Municipal,node,7829887949,openstreetmap_overpass_cached
+osm_node_7996546294,1ro de Mayo,hospital,19.3916524,-99.1872156,1,node,7996546294,openstreetmap_overpass_cached
+osm_node_8209552319,Seguridad / vigilancia,police,19.5161483,-99.2143911,,node,8209552319,openstreetmap_overpass_cached
+osm_node_8419174812,Cruz Roja Mexicana La Perla,hospital,19.3890459,-98.9979011,,node,8419174812,openstreetmap_overpass_cached
+osm_node_8419569610,Hospital General Gustavo Baz,hospital,19.422372,-99.0152119,,node,8419569610,openstreetmap_overpass_cached
+osm_node_8419573520,ISSSTE,hospital,19.4214803,-99.0138929,Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado,node,8419573520,openstreetmap_overpass_cached
+osm_node_8421567161,DirrecionGeneral de Seguridad Cuidadna,police,19.4095588,-99.0022153,Gob. Neza,node,8421567161,openstreetmap_overpass_cached
+osm_node_8547202432,Módulo de Vacunación COVID-19,hospital,19.3841045,-99.0078283,,node,8547202432,openstreetmap_overpass_cached
+osm_node_8570208386,Seguridad / vigilancia,police,19.4306244,-99.0522197,,node,8570208386,openstreetmap_overpass_cached
+osm_node_8685616768,Laboratorio Quest,hospital,19.3889784,-99.2929057,,node,8685616768,openstreetmap_overpass_cached
+osm_node_8685649836,Modulo de Policia Minas,police,19.4200569,-99.2655244,Público,node,8685649836,openstreetmap_overpass_cached
+osm_node_8685710574,Hospital Santa Monica,hospital,19.433868,-99.1918907,,node,8685710574,openstreetmap_overpass_cached
+osm_node_8685718369,Farmacia ETC,hospital,19.4155968,-99.2978939,,node,8685718369,openstreetmap_overpass_cached
+osm_node_8790652381,Sub Dirrecion Operativa Regional Oriente,police,19.4155423,-99.0143984,Secretaria de Seguridad Publica del Estado de México,node,8790652381,openstreetmap_overpass_cached
+osm_node_8843537533,central de emergencias,hospital,19.3532048,-99.3009542,,node,8843537533,openstreetmap_overpass_cached
+osm_node_9130222753,Seguridad / vigilancia,police,19.4333514,-99.1719654,,node,9130222753,openstreetmap_overpass_cached
+osm_node_9306696421,Salud / emergencia medica,hospital,19.358654,-98.9796335,,node,9306696421,openstreetmap_overpass_cached
+osm_node_9595768372,DIF,hospital,19.344046,-99.3441146,,node,9595768372,openstreetmap_overpass_cached
+osm_node_9678551817,Hospital Angeles Santa Monica,hospital,19.4358898,-99.1916578,,node,9678551817,openstreetmap_overpass_cached
+osm_node_9709777177,Imss Villalonguin,hospital,19.4340558,-99.1655405,Instituto Mexicano del Seguro Social,node,9709777177,openstreetmap_overpass_cached
+osm_node_9768668045,Hospital General Enrique Cabrera,hospital,19.3614426,-99.2241327,,node,9768668045,openstreetmap_overpass_cached
+osm_node_9847150318,Seguridad / vigilancia,police,19.4708297,-99.1017402,,node,9847150318,openstreetmap_overpass_cached
+osm_node_9870764235,Hospital Pediátrico de la Cruz Blanca Neutral,hospital,19.3453732,-99.1511488,"Asociación Mexicana de la Cruz Blanca Neutral, IAP",node,9870764235,openstreetmap_overpass_cached
+osm_node_9945213010,Hospital SMA,hospital,19.3394541,-99.1456263,,node,9945213010,openstreetmap_overpass_cached
+osm_node_9990066559,Dirección de Seguridad Publica Atenco,police,19.5521731,-98.9166587,H. Ayuntamiento,node,9990066559,openstreetmap_overpass_cached
+osm_node_10148320385,Hospital Carso 3,hospital,19.4446422,-99.2047507,,node,10148320385,openstreetmap_overpass_cached
+osm_node_10196039032,Centro de salud,hospital,19.3890727,-99.2831117,Instituto de Salud del Estado de México,node,10196039032,openstreetmap_overpass_cached
+osm_node_10224647523,Hospital Santiago Apóstol de Cuautepec,hospital,19.5266438,-99.1423963,,node,10224647523,openstreetmap_overpass_cached
+osm_node_10303439009,Salud / emergencia medica,hospital,19.2994043,-99.1349086,,node,10303439009,openstreetmap_overpass_cached
+osm_node_10800153317,Médica San Luis,hospital,19.4138659,-99.1603067,,node,10800153317,openstreetmap_overpass_cached
+osm_node_10823121866,Hospital de Jesus,hospital,19.4288082,-99.1336905,,node,10823121866,openstreetmap_overpass_cached
+osm_node_10934789262,Hospital Militar de Zona Constituyentes,hospital,19.4121944,-99.1930748,Secretaría de la Defensa Nacional,node,10934789262,openstreetmap_overpass_cached
+osm_node_11123710005,Grupo de Especialidades Médicas Santa Inés,hospital,19.4773985,-99.1172786,,node,11123710005,openstreetmap_overpass_cached
+osm_node_11126128008,Gemsi,hospital,19.477392,-99.1172934,,node,11126128008,openstreetmap_overpass_cached
+osm_node_11235046379,Vidatox,hospital,19.4541351,-99.1403548,,node,11235046379,openstreetmap_overpass_cached
+osm_node_11413689879,Base Colon Zona 10,police,19.4898694,-99.2248147,,node,11413689879,openstreetmap_overpass_cached
+osm_node_11458661504,Seguridad / vigilancia,police,19.4774585,-99.052117,,node,11458661504,openstreetmap_overpass_cached
+osm_node_11484310471,Centro Azcapotzalco de Respuesta a Emergencias,police,19.4880016,-99.2084233,,node,11484310471,openstreetmap_overpass_cached
+osm_node_11788866069,Centro de Salud T.I Copilco el Alto,hospital,19.33267,-99.1775931,"Secretaría de Salud, Gobierno de la Ciudad de México",node,11788866069,openstreetmap_overpass_cached
+osm_node_12401504308,Módulo de Policía,police,19.3443046,-99.2737244,,node,12401504308,openstreetmap_overpass_cached
+osm_node_12401537001,Módulo de Policía,police,19.3442214,-99.2737112,,node,12401537001,openstreetmap_overpass_cached
+osm_node_12505483357,Healthy me by pam,hospital,19.383611,-99.2511293,,node,12505483357,openstreetmap_overpass_cached
+osm_node_12508247105,Hospital Municipal Huixquilucan Santos Degollado Bicentenario,hospital,19.3594923,-99.3528917,,node,12508247105,openstreetmap_overpass_cached
+osm_node_12523839701,Centro Infantil Magdalena,hospital,19.4128493,-99.3228814,,node,12523839701,openstreetmap_overpass_cached
+osm_node_12544975713,Vista Diagnostica,hospital,19.3591631,-99.2746158,,node,12544975713,openstreetmap_overpass_cached
+osm_node_12545928605,Clinica Medica Maternidad Dr. Adrian,hospital,19.4185444,-99.2713569,,node,12545928605,openstreetmap_overpass_cached
+osm_node_12547343921,Clinica Imss,hospital,19.304212,-99.2485826,,node,12547343921,openstreetmap_overpass_cached
+osm_node_12547365730,Centro Especializado De Atencion Primaria A La Salud Palo Solo,hospital,19.4144681,-99.2719779,,node,12547365730,openstreetmap_overpass_cached
+osm_node_12547812266,Clinica Del Carmen,hospital,19.3567934,-99.3002705,,node,12547812266,openstreetmap_overpass_cached
+osm_node_12554794482,Servicio Médico,hospital,19.4896396,-99.2710247,,node,12554794482,openstreetmap_overpass_cached
+osm_node_12560402801,Noor Clinic,hospital,19.4309949,-99.2820695,,node,12560402801,openstreetmap_overpass_cached
+osm_node_12568798767,Sanatorio Santa Esperanza,hospital,19.4528623,-99.276267,,node,12568798767,openstreetmap_overpass_cached
+osm_node_12599631530,ISSSTE Hospital General José María Morelos y Pavón,hospital,19.3630536,-98.9952885,Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado,node,12599631530,openstreetmap_overpass_cached
+osm_node_12607721478,Macfer,hospital,19.358831,-99.2814581,,node,12607721478,openstreetmap_overpass_cached
+osm_node_12627989801,Seguridad / vigilancia,police,19.3031354,-99.1597833,,node,12627989801,openstreetmap_overpass_cached
+osm_node_12628891030,Luna Amparo Ochoa,hospital,19.3483646,-99.3030516,Unidad territorial de atención y prevención de la violencia de género,node,12628891030,openstreetmap_overpass_cached
+osm_node_12628903603,"Clínica de Atención Integral de la Mujer ""Romero Rubio""",hospital,19.4439419,-99.0903861,SEDESA,node,12628903603,openstreetmap_overpass_cached
+osm_node_12628945585,Luna Amparo O Castorena,hospital,19.3569212,-99.2944801,Gobierno de la Ciudad de México,node,12628945585,openstreetmap_overpass_cached
+osm_node_12840603601,Estación Norte de Bomberos CEMEX Arturo Zapata Gil,fire_station,19.5783839,-99.2061543,,node,12840603601,openstreetmap_overpass_cached
+osm_node_12984992701,Hospitalito,hospital,19.4400723,-99.1941519,,node,12984992701,openstreetmap_overpass_cached
+osm_node_13039851981,CEMENAV - CENTRO MÉDICO NAVAL,hospital,19.3235342,-99.125514,SEMAR,node,13039851981,openstreetmap_overpass_cached
+osm_node_13054708711,Seguridad / vigilancia,police,19.3722337,-99.1492579,Gobierno de la Ciudad de México,node,13054708711,openstreetmap_overpass_cached
+osm_node_13090520280,Seguridad / vigilancia,police,19.4555506,-99.2059696,,node,13090520280,openstreetmap_overpass_cached
+osm_node_13090520281,Seguridad / vigilancia,police,19.4488915,-99.2047939,,node,13090520281,openstreetmap_overpass_cached
+osm_node_13107722564,Seguridad / vigilancia,police,19.4720901,-99.2460044,,node,13107722564,openstreetmap_overpass_cached
+osm_node_13187632988,Centro Universitario de Enfermería Comunitaria,hospital,19.2576212,-99.0350129,"Facultad de Enfermería y Obstetricia, UNAM",node,13187632988,openstreetmap_overpass_cached
+osm_node_13430477132,Edificio de enseñanza médica Hospital Juárez,hospital,19.4239838,-99.1307816,,node,13430477132,openstreetmap_overpass_cached
+osm_node_13636072310,Casa Azul Comunidad Terapéutica,hospital,19.387243,-99.1494763,,node,13636072310,openstreetmap_overpass_cached
+osm_node_13683152785,IMSS Bienestar Reforma Urbana,hospital,19.5720299,-99.1834594,Instituto Mexicano del Seguro Social,node,13683152785,openstreetmap_overpass_cached
+osm_node_13731129901,Urgencias ortopedicas INR-LGII,hospital,19.2888964,-99.1477531,,node,13731129901,openstreetmap_overpass_cached
+osm_way_25364122,Hospital San Angel Inn Universidad,hospital,19.3597768,-99.1677047,,way,25364122,openstreetmap_overpass_cached
+osm_way_26550267,Depósito Vehicular Troncoso,police,19.3924961,-99.1149739,Secretaría de Seguridad Ciudadana,way,26550267,openstreetmap_overpass_cached
+osm_way_27804337,Centro Médico ABC,hospital,19.4002123,-99.2039979,,way,27804337,openstreetmap_overpass_cached
+osm_way_28932842,Hospital Ángeles del Pedregal,hospital,19.3126463,-99.2210233,,way,28932842,openstreetmap_overpass_cached
+osm_way_30373861,Hospital Español,hospital,19.4395705,-99.1963836,,way,30373861,openstreetmap_overpass_cached
+osm_way_30374094,Hospital Central Militar,hospital,19.4373297,-99.216189,,way,30374094,openstreetmap_overpass_cached
+osm_way_30854789,Tecali,police,19.4172262,-99.2370127,,way,30854789,openstreetmap_overpass_cached
+osm_way_30910883,"Hospital General ""Dr. Darío Fernández Fierro""",hospital,19.3634914,-99.1884574,Instituto de Seguridad y Servicios Sociales para los Trabajadores del Estado,way,30910883,openstreetmap_overpass_cached
+osm_way_30911592,Hospital Angeles Lomas,hospital,19.3949604,-99.2819914,,way,30911592,openstreetmap_overpass_cached
+osm_way_30965126,Centro Médico ABC,hospital,19.3563214,-99.2823418,,way,30965126,openstreetmap_overpass_cached
+osm_way_39544321,Centro Medico Nacional Siglo XXI,hospital,19.4091815,-99.1528235,Instituto Mexicano del Seguro Social,way,39544321,openstreetmap_overpass_cached
+osm_way_54241683,Depósito Vehicular  Añil,police,19.4069299,-99.1032509,Secretaría de Seguridad Ciudadana,way,54241683,openstreetmap_overpass_cached
+osm_way_79682915,Hospital Ángeles Lindavista,hospital,19.4865571,-99.1293597,,way,79682915,openstreetmap_overpass_cached
+osm_way_79683408,Hospital 1º de Octubre ISSSTE,hospital,19.4867184,-99.1330709,Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado,way,79683408,openstreetmap_overpass_cached
+osm_way_79683964,Hospital de Gineco Pediatría 3A,hospital,19.4860356,-99.1355271,,way,79683964,openstreetmap_overpass_cached

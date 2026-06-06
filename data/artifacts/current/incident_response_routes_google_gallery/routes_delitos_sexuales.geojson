@@ -1,0 +1,455 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.1718,
+            19.418290000000002
+          ],
+          [
+            -99.17206,
+            19.41864
+          ],
+          [
+            -99.16806000000001,
+            19.419520000000002
+          ],
+          [
+            -99.16690000000001,
+            19.419790000000003
+          ],
+          [
+            -99.16669,
+            19.41974
+          ],
+          [
+            -99.16655000000002,
+            19.41963
+          ],
+          [
+            -99.16639,
+            19.41958
+          ],
+          [
+            -99.16624,
+            19.419590000000003
+          ],
+          [
+            -99.16608000000001,
+            19.41965
+          ],
+          [
+            -99.16595000000001,
+            19.419780000000003
+          ],
+          [
+            -99.16589,
+            19.41991
+          ],
+          [
+            -99.16592000000001,
+            19.42014
+          ],
+          [
+            -99.16597,
+            19.420250000000003
+          ],
+          [
+            -99.16594,
+            19.42032
+          ],
+          [
+            -99.16567,
+            19.42061
+          ],
+          [
+            -99.16527,
+            19.421100000000003
+          ],
+          [
+            -99.16513,
+            19.42124
+          ],
+          [
+            -99.16551000000001,
+            19.42264
+          ],
+          [
+            -99.1657,
+            19.42322
+          ],
+          [
+            -99.16577000000001,
+            19.42339
+          ],
+          [
+            -99.16579,
+            19.42352
+          ],
+          [
+            -99.16626000000001,
+            19.424400000000002
+          ],
+          [
+            -99.16421000000001,
+            19.42537
+          ],
+          [
+            -99.16458000000002,
+            19.42611
+          ],
+          [
+            -99.16470000000001,
+            19.42605
+          ],
+          [
+            -99.16447000000001,
+            19.425590000000003
+          ],
+          [
+            -99.16456000000001,
+            19.42554
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06600_delitos_sexuales_1",
+        "codigo_postal": "06600",
+        "crime_type": "Delitos sexuales",
+        "centroid_id": 1,
+        "centroid_lat": 19.4255123,
+        "centroid_lon": -99.1645435,
+        "n_events": 89,
+        "resolver_unit_id": "osm_node_5280393723",
+        "resolver_name": "Centro Hospitalario Sanatorio Durango",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4183686,
+        "resolver_lon": -99.1716807,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1698.0,
+        "duration_seconds": 891.0,
+        "duration_minutes": 14.85,
+        "static_duration_seconds": 499.0,
+        "delay_seconds": 392.0,
+        "encoded_polyline": "isouBvnh|QeAr@oD_Xu@gFHi@T[H_@A]K_@YYYKm@DUHMEy@u@aBoA[[wGjAsBd@a@LYBoD|AaEyKsChAJVzAm@HP",
+        "route_description": "Durango",
+        "generated_at_utc": "2026-06-06T17:35:11+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14182000000001,
+            19.4223
+          ],
+          [
+            -99.14154,
+            19.422310000000003
+          ],
+          [
+            -99.14164000000001,
+            19.421390000000002
+          ],
+          [
+            -99.14421,
+            19.42162
+          ],
+          [
+            -99.14708,
+            19.42192
+          ],
+          [
+            -99.1483,
+            19.422030000000003
+          ],
+          [
+            -99.14817000000001,
+            19.42265
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_delitos_sexuales_1",
+        "codigo_postal": "06720",
+        "crime_type": "Delitos sexuales",
+        "centroid_id": 1,
+        "centroid_lat": 19.422607,
+        "centroid_lon": -99.1479305,
+        "n_events": 86,
+        "resolver_unit_id": "osm_node_4425468090",
+        "resolver_name": "Instituto Oftalmologia",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4225708,
+        "resolver_lon": -99.1418319,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 905.0,
+        "duration_seconds": 235.0,
+        "duration_minutes": 3.9166666666666665,
+        "static_duration_seconds": 252.0,
+        "delay_seconds": -17.0,
+        "encoded_polyline": "klpuBjsb|QAw@vDRm@`O{@|PUrF{BY",
+        "route_description": "C. Dr. Liceaga",
+        "generated_at_utc": "2026-06-06T17:35:11+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13972000000001,
+            19.452620000000003
+          ],
+          [
+            -99.13986000000001,
+            19.452520000000003
+          ],
+          [
+            -99.14069,
+            19.45229
+          ],
+          [
+            -99.14086,
+            19.45232
+          ],
+          [
+            -99.141,
+            19.45238
+          ],
+          [
+            -99.14110000000001,
+            19.45248
+          ],
+          [
+            -99.14118,
+            19.4526
+          ],
+          [
+            -99.14126,
+            19.452240000000003
+          ],
+          [
+            -99.14116000000001,
+            19.451900000000002
+          ],
+          [
+            -99.14119000000001,
+            19.451700000000002
+          ],
+          [
+            -99.14127,
+            19.45135
+          ],
+          [
+            -99.14129000000001,
+            19.45109
+          ],
+          [
+            -99.14167,
+            19.44923
+          ],
+          [
+            -99.14178000000001,
+            19.44867
+          ],
+          [
+            -99.14206000000001,
+            19.44731
+          ],
+          [
+            -99.14241000000001,
+            19.445330000000002
+          ],
+          [
+            -99.14287,
+            19.442580000000003
+          ],
+          [
+            -99.14557,
+            19.44304
+          ],
+          [
+            -99.14523000000001,
+            19.444580000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06300_delitos_sexuales_1",
+        "codigo_postal": "06300",
+        "crime_type": "Delitos sexuales",
+        "centroid_id": 1,
+        "centroid_lat": 19.4445847,
+        "centroid_lon": -99.1452585,
+        "n_events": 80,
+        "resolver_unit_id": "osm_node_4070639592",
+        "resolver_name": "Módulo SSP La Pera",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4525276,
+        "resolver_lon": -99.1396332,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1769.0,
+        "duration_seconds": 525.0,
+        "duration_minutes": 8.75,
+        "static_duration_seconds": 495.0,
+        "delay_seconds": 30.0,
+        "encoded_polyline": "{ivuBffb|QRZl@dDE`@KZSRWNfANbASf@DdANr@BrJjAnBTnGv@jKdAdPzA{AzOsHcA",
+        "route_description": "Lerdo",
+        "generated_at_utc": "2026-06-06T17:35:13+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13388,
+            19.42883
+          ],
+          [
+            -99.13382000000001,
+            19.429260000000003
+          ],
+          [
+            -99.13260000000001,
+            19.429080000000003
+          ],
+          [
+            -99.13303,
+            19.42605
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06090_delitos_sexuales_1",
+        "codigo_postal": "06090",
+        "crime_type": "Delitos sexuales",
+        "centroid_id": 1,
+        "centroid_lat": 19.4260636,
+        "centroid_lon": -99.1331063,
+        "n_events": 64,
+        "resolver_unit_id": "osm_node_10823121866",
+        "resolver_name": "Hospital de Jesus",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4288082,
+        "resolver_lon": -99.1336905,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 517.0,
+        "duration_seconds": 180.0,
+        "duration_minutes": 3.0,
+        "static_duration_seconds": 154.0,
+        "delay_seconds": 26.0,
+        "encoded_polyline": "euquBvaa|QuAKb@sF|QtA",
+        "route_description": "José María Pino Suárez",
+        "generated_at_utc": "2026-06-06T17:35:14+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15298000000001,
+            19.409080000000003
+          ],
+          [
+            -99.1533,
+            19.4095
+          ],
+          [
+            -99.15328000000001,
+            19.40969
+          ],
+          [
+            -99.15321,
+            19.41016
+          ],
+          [
+            -99.15322,
+            19.41025
+          ],
+          [
+            -99.15257000000001,
+            19.41015
+          ],
+          [
+            -99.15192,
+            19.41009
+          ],
+          [
+            -99.15178,
+            19.410050000000002
+          ],
+          [
+            -99.1508,
+            19.409940000000002
+          ],
+          [
+            -99.15052000000001,
+            19.41129
+          ],
+          [
+            -99.1503,
+            19.41241
+          ],
+          [
+            -99.14977,
+            19.412360000000003
+          ],
+          [
+            -99.14976000000001,
+            19.412460000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_delitos_sexuales_2",
+        "codigo_postal": "06720",
+        "crime_type": "Delitos sexuales",
+        "centroid_id": 2,
+        "centroid_lat": 19.4124621,
+        "centroid_lon": -99.149754,
+        "n_events": 57,
+        "resolver_unit_id": "osm_way_39544321",
+        "resolver_name": "Centro Medico Nacional Siglo XXI",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4091815,
+        "resolver_lon": -99.1528235,
+        "allowed_resolver_categories": "police,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 745.0,
+        "duration_seconds": 180.0,
+        "duration_minutes": 3.0,
+        "static_duration_seconds": 218.0,
+        "delay_seconds": -38.0,
+        "encoded_polyline": "wymuBbyd|QsA~@e@C}AMQ@RaCJaCF[TcEmGw@_Fk@HiBSA",
+        "route_description": "Dr. Jimenez",
+        "generated_at_utc": "2026-06-06T17:35:15+00:00"
+      }
+    }
+  ]
+}

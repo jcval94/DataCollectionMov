@@ -1,0 +1,463 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15843000000001,
+            19.413200000000003
+          ],
+          [
+            -99.15912,
+            19.415950000000002
+          ],
+          [
+            -99.15892000000001,
+            19.41598
+          ],
+          [
+            -99.15915000000001,
+            19.41692
+          ],
+          [
+            -99.15934000000001,
+            19.416880000000003
+          ],
+          [
+            -99.1594,
+            19.41714
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_robo_a_casa_habitacion_1",
+        "codigo_postal": "06700",
+        "crime_type": "Robo a casa habitación",
+        "centroid_id": 1,
+        "centroid_lat": 19.4171446,
+        "centroid_lon": -99.159368,
+        "n_events": 225,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 754.0,
+        "duration_seconds": 272.0,
+        "duration_minutes": 4.533333333333333,
+        "static_duration_seconds": 240.0,
+        "delay_seconds": 32.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCiHjAePhCEg@{Dl@Fd@s@J",
+        "route_description": "C. Orizaba",
+        "generated_at_utc": "2026-06-06T17:36:04+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06347000000001,
+            19.390600000000003
+          ],
+          [
+            -99.06354,
+            19.39028
+          ],
+          [
+            -99.06710000000001,
+            19.390890000000002
+          ],
+          [
+            -99.06687000000001,
+            19.391910000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_robo_a_casa_habitacion_1",
+        "codigo_postal": "08500",
+        "crime_type": "Robo a casa habitación",
+        "centroid_id": 1,
+        "centroid_lat": 19.3918903,
+        "centroid_lon": -99.0667464,
+        "n_events": 135,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 573.0,
+        "duration_seconds": 153.0,
+        "duration_minutes": 2.55,
+        "static_duration_seconds": 137.0,
+        "delay_seconds": 16.0,
+        "encoded_polyline": "qejuBlks{Q[GDo@~@LyBfUkEm@",
+        "route_description": "Sur 20",
+        "generated_at_utc": "2026-06-06T17:36:05+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14794,
+            19.40115
+          ],
+          [
+            -99.14839,
+            19.39542
+          ],
+          [
+            -99.14845000000001,
+            19.39532
+          ],
+          [
+            -99.14897,
+            19.394720000000003
+          ],
+          [
+            -99.15101000000001,
+            19.39252
+          ],
+          [
+            -99.15110000000001,
+            19.392560000000003
+          ],
+          [
+            -99.15125,
+            19.3926
+          ],
+          [
+            -99.15137000000001,
+            19.392590000000002
+          ],
+          [
+            -99.15156,
+            19.392490000000002
+          ],
+          [
+            -99.15162000000001,
+            19.39244
+          ],
+          [
+            -99.15169,
+            19.392300000000002
+          ],
+          [
+            -99.15174,
+            19.3917
+          ],
+          [
+            -99.15169,
+            19.391530000000003
+          ],
+          [
+            -99.15165,
+            19.391450000000003
+          ],
+          [
+            -99.15155000000001,
+            19.391370000000002
+          ],
+          [
+            -99.15136000000001,
+            19.39131
+          ],
+          [
+            -99.15168000000001,
+            19.38861
+          ],
+          [
+            -99.15137000000001,
+            19.388560000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "03023_robo_a_casa_habitacion_1",
+        "codigo_postal": "03023",
+        "crime_type": "Robo a casa habitación",
+        "centroid_id": 1,
+        "centroid_lat": 19.3886899,
+        "centroid_lon": -99.1513451,
+        "n_events": 128,
+        "resolver_unit_id": "osm_node_3779138327",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4011561,
+        "resolver_lon": -99.1480055,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1617.0,
+        "duration_seconds": 333.0,
+        "duration_minutes": 5.55,
+        "static_duration_seconds": 321.0,
+        "delay_seconds": 12.0,
+        "encoded_polyline": "ehluBryc|Qxb@xARJvBfBvLvKGPG\\@VRd@HJZLvBH`@INGNSJe@zO~@H}@",
+        "route_description": "Zempoala y Av. Universidad",
+        "generated_at_utc": "2026-06-06T17:36:07+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.16907,
+            19.39552
+          ],
+          [
+            -99.16928000000001,
+            19.395560000000003
+          ],
+          [
+            -99.17007000000001,
+            19.395760000000003
+          ],
+          [
+            -99.16975000000001,
+            19.39705
+          ],
+          [
+            -99.16969,
+            19.397100000000002
+          ],
+          [
+            -99.16965,
+            19.39712
+          ],
+          [
+            -99.16952,
+            19.396630000000002
+          ],
+          [
+            -99.16939,
+            19.396310000000003
+          ],
+          [
+            -99.16918000000001,
+            19.395970000000002
+          ],
+          [
+            -99.16864000000001,
+            19.39533
+          ],
+          [
+            -99.16816000000001,
+            19.3948
+          ],
+          [
+            -99.16798000000001,
+            19.39461
+          ],
+          [
+            -99.16517,
+            19.391430000000003
+          ],
+          [
+            -99.16473,
+            19.390960000000003
+          ],
+          [
+            -99.16456000000001,
+            19.39075
+          ],
+          [
+            -99.16343,
+            19.389460000000003
+          ],
+          [
+            -99.16295000000001,
+            19.388910000000003
+          ],
+          [
+            -99.16270000000002,
+            19.38885
+          ],
+          [
+            -99.16237000000001,
+            19.38876
+          ],
+          [
+            -99.16001000000001,
+            19.38822
+          ],
+          [
+            -99.15996000000001,
+            19.38822
+          ],
+          [
+            -99.15849000000001,
+            19.387890000000002
+          ],
+          [
+            -99.15876000000002,
+            19.386760000000002
+          ],
+          [
+            -99.15867000000001,
+            19.38673
+          ],
+          [
+            -99.15842,
+            19.38772
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "03020_robo_a_casa_habitacion_2",
+        "codigo_postal": "03020",
+        "crime_type": "Robo a casa habitación",
+        "centroid_id": 2,
+        "centroid_lat": 19.3876936,
+        "centroid_lon": -99.1582889,
+        "n_events": 116,
+        "resolver_unit_id": "osm_node_473112375",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3956112,
+        "resolver_lon": -99.1690504,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2164.0,
+        "duration_seconds": 553.0,
+        "duration_minutes": 9.216666666666667,
+        "static_duration_seconds": 545.0,
+        "delay_seconds": 8.0,
+        "encoded_polyline": "_ekuBt}g|QGh@g@|CaG_AIKCG`BY~@YbAi@~BkBhB_Bd@c@zRqP|AwAh@a@`GaFlB_BJq@PaAjBwM?I`AeH`Ft@DQeEq@",
+        "route_description": "Av. División del Nte.",
+        "generated_at_utc": "2026-06-06T17:36:09+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14794,
+            19.40115
+          ],
+          [
+            -99.14797000000002,
+            19.400750000000002
+          ],
+          [
+            -99.14891000000001,
+            19.400190000000002
+          ],
+          [
+            -99.14948000000001,
+            19.39987
+          ],
+          [
+            -99.15086000000001,
+            19.399060000000002
+          ],
+          [
+            -99.15097000000002,
+            19.39901
+          ],
+          [
+            -99.15184,
+            19.398490000000002
+          ],
+          [
+            -99.15222000000001,
+            19.398290000000003
+          ],
+          [
+            -99.15288000000001,
+            19.398320000000002
+          ],
+          [
+            -99.1559,
+            19.39834
+          ],
+          [
+            -99.15805,
+            19.398490000000002
+          ],
+          [
+            -99.15822000000001,
+            19.396120000000003
+          ],
+          [
+            -99.15754000000001,
+            19.39607
+          ],
+          [
+            -99.15750000000001,
+            19.396600000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "03020_robo_a_casa_habitacion_1",
+        "codigo_postal": "03020",
+        "crime_type": "Robo a casa habitación",
+        "centroid_id": 1,
+        "centroid_lat": 19.3965861,
+        "centroid_lon": -99.1572879,
+        "n_events": 115,
+        "resolver_unit_id": "osm_node_3779138327",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4011561,
+        "resolver_lon": -99.1480055,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1575.0,
+        "duration_seconds": 473.0,
+        "duration_minutes": 7.883333333333334,
+        "static_duration_seconds": 423.0,
+        "delay_seconds": 50.0,
+        "encoded_polyline": "ehluBryc|QnADnBzD~@pB`DrGHTfBlDf@jAEbCCzQ]lLxM`@HgCiBG",
+        "route_description": "Diag. San Antonio y La Morena",
+        "generated_at_utc": "2026-06-06T17:36:10+00:00"
+      }
+    }
+  ]
+}

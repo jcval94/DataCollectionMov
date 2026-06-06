@@ -1,0 +1,220 @@
+{
+  "generated_at_utc": "2026-06-06T17:36:50+00:00",
+  "routes": 80,
+  "response_units": 300,
+  "crime_types": 16,
+  "summary_by_type": [
+    {
+      "crime_type": "Amenazas",
+      "centroids": 5,
+      "events": 1119,
+      "avg_distance_km": 1.492,
+      "avg_duration_min": 5.63,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Daño a la propiedad",
+      "centroids": 5,
+      "events": 980,
+      "avg_distance_km": 1.491,
+      "avg_duration_min": 7.44,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Delitos sexuales",
+      "centroids": 5,
+      "events": 376,
+      "avg_distance_km": 1.127,
+      "avg_duration_min": 6.7,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "hospital": 4,
+        "police": 1
+      }
+    },
+    {
+      "crime_type": "Fraude y extorsión",
+      "centroids": 5,
+      "events": 5644,
+      "avg_distance_km": 1.871,
+      "avg_duration_min": 9.52,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Homicidio",
+      "centroids": 5,
+      "events": 204,
+      "avg_distance_km": 2.451,
+      "avg_duration_min": 9.09,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "hospital": 3,
+        "police": 2
+      }
+    },
+    {
+      "crime_type": "Lesiones",
+      "centroids": 5,
+      "events": 958,
+      "avg_distance_km": 1.055,
+      "avg_duration_min": 5.38,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "hospital": 4,
+        "police": 1
+      }
+    },
+    {
+      "crime_type": "Narcomenudeo",
+      "centroids": 5,
+      "events": 1064,
+      "avg_distance_km": 2.782,
+      "avg_duration_min": 11.45,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Otros incidentes",
+      "centroids": 5,
+      "events": 10988,
+      "avg_distance_km": 1.351,
+      "avg_duration_min": 8.53,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "hospital": 5
+      }
+    },
+    {
+      "crime_type": "Otros robos",
+      "centroids": 5,
+      "events": 2944,
+      "avg_distance_km": 1.924,
+      "avg_duration_min": 10.34,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Robo a casa habitación",
+      "centroids": 5,
+      "events": 719,
+      "avg_distance_km": 1.337,
+      "avg_duration_min": 5.95,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Robo a negocio",
+      "centroids": 5,
+      "events": 3974,
+      "avg_distance_km": 2.448,
+      "avg_duration_min": 10.02,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Robo a transeúnte",
+      "centroids": 5,
+      "events": 3569,
+      "avg_distance_km": 2.494,
+      "avg_duration_min": 11.77,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Robo de vehículo",
+      "centroids": 5,
+      "events": 3537,
+      "avg_distance_km": 1.233,
+      "avg_duration_min": 5.3,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Robo en transporte",
+      "centroids": 5,
+      "events": 1598,
+      "avg_distance_km": 2.139,
+      "avg_duration_min": 10.99,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Secuestro",
+      "centroids": 5,
+      "events": 110,
+      "avg_distance_km": 1.551,
+      "avg_duration_min": 6.58,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "police": 5
+      }
+    },
+    {
+      "crime_type": "Violencia familiar",
+      "centroids": 5,
+      "events": 2192,
+      "avg_distance_km": 1.384,
+      "avg_duration_min": 6.0,
+      "route_sources": {
+        "google_routes": 5
+      },
+      "resolver_categories": {
+        "hospital": 3,
+        "police": 2
+      }
+    }
+  ]
+}

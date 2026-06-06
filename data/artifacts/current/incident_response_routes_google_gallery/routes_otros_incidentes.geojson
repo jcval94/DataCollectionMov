@@ -1,0 +1,359 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14182000000001,
+            19.4223
+          ],
+          [
+            -99.14154,
+            19.422310000000003
+          ],
+          [
+            -99.14164000000001,
+            19.421390000000002
+          ],
+          [
+            -99.14421,
+            19.42162
+          ],
+          [
+            -99.14708,
+            19.42192
+          ],
+          [
+            -99.1483,
+            19.422030000000003
+          ],
+          [
+            -99.14799000000001,
+            19.4235
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_otros_incidentes_1",
+        "codigo_postal": "06720",
+        "crime_type": "Otros incidentes",
+        "centroid_id": 1,
+        "centroid_lat": 19.4235394,
+        "centroid_lon": -99.1482086,
+        "n_events": 4733,
+        "resolver_unit_id": "osm_node_4425468090",
+        "resolver_name": "Instituto Oftalmologia",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4225708,
+        "resolver_lon": -99.1418319,
+        "allowed_resolver_categories": "police,fire_station,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1001.0,
+        "duration_seconds": 253.0,
+        "duration_minutes": 4.216666666666667,
+        "static_duration_seconds": 281.0,
+        "delay_seconds": -28.0,
+        "encoded_polyline": "klpuBjsb|QAw@vDRm@`O{@|PUrFeH}@",
+        "route_description": "C. Dr. Liceaga",
+        "generated_at_utc": "2026-06-06T17:35:47+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13388,
+            19.42883
+          ],
+          [
+            -99.13371000000001,
+            19.430100000000003
+          ],
+          [
+            -99.14134000000001,
+            19.4312
+          ],
+          [
+            -99.14533,
+            19.43178
+          ],
+          [
+            -99.14510000000001,
+            19.43305
+          ],
+          [
+            -99.14478000000001,
+            19.434890000000003
+          ],
+          [
+            -99.14186000000001,
+            19.4344
+          ],
+          [
+            -99.14189,
+            19.43412
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06050_otros_incidentes_1",
+        "codigo_postal": "06050",
+        "crime_type": "Otros incidentes",
+        "centroid_id": 1,
+        "centroid_lat": 19.4341369,
+        "centroid_lon": -99.1420229,
+        "n_events": 1915,
+        "resolver_unit_id": "osm_node_10823121866",
+        "resolver_name": "Hospital de Jesus",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4288082,
+        "resolver_lon": -99.1336905,
+        "allowed_resolver_categories": "police,fire_station,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2067.0,
+        "duration_seconds": 985.0,
+        "duration_minutes": 16.416666666666668,
+        "static_duration_seconds": 605.0,
+        "delay_seconds": 380.0,
+        "encoded_polyline": "euquBvaa|Q}Fa@{Etn@sB|W}Fm@oJ_A`BgQv@D",
+        "route_description": "República de Uruguay",
+        "generated_at_utc": "2026-06-06T17:35:49+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.14182000000001,
+            19.4223
+          ],
+          [
+            -99.14154,
+            19.422310000000003
+          ],
+          [
+            -99.14164000000001,
+            19.421390000000002
+          ],
+          [
+            -99.14421,
+            19.42162
+          ],
+          [
+            -99.14699,
+            19.42191
+          ],
+          [
+            -99.1469,
+            19.42247
+          ],
+          [
+            -99.14667000000001,
+            19.423740000000002
+          ],
+          [
+            -99.14668,
+            19.42394
+          ],
+          [
+            -99.14641,
+            19.425600000000003
+          ],
+          [
+            -99.14621000000001,
+            19.42668
+          ],
+          [
+            -99.14614,
+            19.427100000000003
+          ],
+          [
+            -99.14614,
+            19.427280000000003
+          ],
+          [
+            -99.14604000000001,
+            19.4278
+          ],
+          [
+            -99.14577000000001,
+            19.429350000000003
+          ],
+          [
+            -99.14510000000001,
+            19.43305
+          ],
+          [
+            -99.14485,
+            19.43446
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06050_otros_incidentes_2",
+        "codigo_postal": "06050",
+        "crime_type": "Otros incidentes",
+        "centroid_id": 2,
+        "centroid_lat": 19.4344557,
+        "centroid_lon": -99.1448049,
+        "n_events": 1582,
+        "resolver_unit_id": "osm_node_4425468090",
+        "resolver_name": "Instituto Oftalmologia",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4225708,
+        "resolver_lon": -99.1418319,
+        "allowed_resolver_categories": "police,fire_station,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2111.0,
+        "duration_seconds": 830.0,
+        "duration_minutes": 13.833333333333334,
+        "static_duration_seconds": 599.0,
+        "delay_seconds": 231.0,
+        "encoded_polyline": "klpuBjsb|QAw@vDRm@`Oy@jPoBQ}Fm@g@@kIu@wEg@sAMc@?gBSuHu@cVeCyGq@",
+        "route_description": "C. Dr. José María Vértiz y Luis Moya",
+        "generated_at_utc": "2026-06-06T17:35:52+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.1718,
+            19.418290000000002
+          ],
+          [
+            -99.17206,
+            19.41864
+          ],
+          [
+            -99.16806000000001,
+            19.419520000000002
+          ],
+          [
+            -99.16690000000001,
+            19.419790000000003
+          ],
+          [
+            -99.16669,
+            19.41974
+          ],
+          [
+            -99.16655000000002,
+            19.41963
+          ],
+          [
+            -99.16649000000001,
+            19.419600000000003
+          ],
+          [
+            -99.16623000000001,
+            19.4185
+          ],
+          [
+            -99.16696,
+            19.41834
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_otros_incidentes_1",
+        "codigo_postal": "06700",
+        "crime_type": "Otros incidentes",
+        "centroid_id": 1,
+        "centroid_lat": 19.4181087,
+        "centroid_lon": -99.1669035,
+        "n_events": 1488,
+        "resolver_unit_id": "osm_node_5280393723",
+        "resolver_name": "Centro Hospitalario Sanatorio Durango",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4183686,
+        "resolver_lon": -99.1716807,
+        "allowed_resolver_categories": "police,fire_station,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 857.0,
+        "duration_seconds": 325.0,
+        "duration_minutes": 5.416666666666667,
+        "static_duration_seconds": 225.0,
+        "delay_seconds": 100.0,
+        "encoded_polyline": "isouBvnh|QeAr@oD_Xu@gFHi@T[DKzEs@^pC",
+        "route_description": "Durango",
+        "generated_at_utc": "2026-06-06T17:35:52+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15495000000001,
+            19.4154
+          ],
+          [
+            -99.15486000000001,
+            19.41505
+          ],
+          [
+            -99.15445000000001,
+            19.415100000000002
+          ],
+          [
+            -99.15369000000001,
+            19.41504
+          ],
+          [
+            -99.15359000000001,
+            19.4159
+          ],
+          [
+            -99.14922000000001,
+            19.415580000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_otros_incidentes_2",
+        "codigo_postal": "06720",
+        "crime_type": "Otros incidentes",
+        "centroid_id": 2,
+        "centroid_lat": 19.415479,
+        "centroid_lon": -99.1492271,
+        "n_events": 1270,
+        "resolver_unit_id": "osm_node_2278973453",
+        "resolver_name": "Hospital Punto Médico",
+        "resolver_category": "hospital",
+        "resolver_category_label": "Salud / emergencia medica",
+        "resolver_lat": 19.4153725,
+        "resolver_lon": -99.1550669,
+        "allowed_resolver_categories": "police,fire_station,hospital",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 720.0,
+        "duration_seconds": 167.0,
+        "duration_minutes": 2.783333333333333,
+        "static_duration_seconds": 176.0,
+        "delay_seconds": -9.0,
+        "encoded_polyline": "gaouBlee|QdAQIqAJwCkDS~@iZ",
+        "route_description": "C. Doctor Olvera/Eje 2 Sur",
+        "generated_at_utc": "2026-06-06T17:35:54+00:00"
+      }
+    }
+  ]
+}

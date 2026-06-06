@@ -1,0 +1,743 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.11402000000001,
+            19.42029
+          ],
+          [
+            -99.11300000000001,
+            19.42002
+          ],
+          [
+            -99.11261,
+            19.419900000000002
+          ],
+          [
+            -99.11248,
+            19.420250000000003
+          ],
+          [
+            -99.11544,
+            19.421020000000002
+          ],
+          [
+            -99.11890000000001,
+            19.42198
+          ],
+          [
+            -99.11896,
+            19.42197
+          ],
+          [
+            -99.11905,
+            19.42192
+          ],
+          [
+            -99.11939000000001,
+            19.42201
+          ],
+          [
+            -99.12031,
+            19.42227
+          ],
+          [
+            -99.12054,
+            19.422320000000003
+          ],
+          [
+            -99.12270000000001,
+            19.42256
+          ],
+          [
+            -99.12527000000001,
+            19.42285
+          ],
+          [
+            -99.12607000000001,
+            19.42293
+          ],
+          [
+            -99.1281,
+            19.42321
+          ],
+          [
+            -99.12828,
+            19.423270000000002
+          ],
+          [
+            -99.12813000000001,
+            19.424970000000002
+          ],
+          [
+            -99.12804000000001,
+            19.425900000000002
+          ],
+          [
+            -99.12885000000001,
+            19.42605
+          ],
+          [
+            -99.12984,
+            19.426170000000003
+          ],
+          [
+            -99.13002,
+            19.426250000000003
+          ],
+          [
+            -99.13031000000001,
+            19.42624
+          ],
+          [
+            -99.13051,
+            19.426170000000003
+          ],
+          [
+            -99.13102,
+            19.425880000000003
+          ],
+          [
+            -99.13132,
+            19.42577
+          ],
+          [
+            -99.13141,
+            19.42576
+          ],
+          [
+            -99.13289,
+            19.425880000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06090_robo_en_transporte_1",
+        "codigo_postal": "06090",
+        "crime_type": "Robo en transporte",
+        "centroid_id": 1,
+        "centroid_lat": 19.425744,
+        "centroid_lon": -99.1329029,
+        "n_events": 487,
+        "resolver_unit_id": "osm_node_5805382651",
+        "resolver_name": "Estacion de policia Vigilante",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4201464,
+        "resolver_lon": -99.1140589,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2714.0,
+        "duration_seconds": 912.0,
+        "duration_minutes": 15.2,
+        "static_duration_seconds": 483.0,
+        "delay_seconds": 429.0,
+        "encoded_polyline": "y_puBre}{Qt@kEVmAeAYyCnQ_ErT@JHPQbAs@vDIl@o@nLy@`OO~Cw@tKKb@sI]yDQ]`DWdEOb@@x@Lf@x@dBTz@@PWfH",
+        "route_description": "Fray Servando Teresa de Mier",
+        "generated_at_utc": "2026-06-06T17:36:32+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13972000000001,
+            19.452620000000003
+          ],
+          [
+            -99.13986000000001,
+            19.452520000000003
+          ],
+          [
+            -99.14069,
+            19.45229
+          ],
+          [
+            -99.14086,
+            19.45232
+          ],
+          [
+            -99.141,
+            19.45238
+          ],
+          [
+            -99.14110000000001,
+            19.45248
+          ],
+          [
+            -99.14118,
+            19.4526
+          ],
+          [
+            -99.14126,
+            19.452240000000003
+          ],
+          [
+            -99.14116000000001,
+            19.451900000000002
+          ],
+          [
+            -99.14119000000001,
+            19.451700000000002
+          ],
+          [
+            -99.14127,
+            19.45135
+          ],
+          [
+            -99.14129000000001,
+            19.45109
+          ],
+          [
+            -99.14167,
+            19.44923
+          ],
+          [
+            -99.14178000000001,
+            19.44867
+          ],
+          [
+            -99.14206000000001,
+            19.44731
+          ],
+          [
+            -99.14241000000001,
+            19.445330000000002
+          ],
+          [
+            -99.14302,
+            19.44168
+          ],
+          [
+            -99.14313000000001,
+            19.44116
+          ],
+          [
+            -99.14328,
+            19.44116
+          ],
+          [
+            -99.14343000000001,
+            19.44113
+          ],
+          [
+            -99.14364,
+            19.441000000000003
+          ],
+          [
+            -99.14377,
+            19.44086
+          ],
+          [
+            -99.14386,
+            19.44066
+          ],
+          [
+            -99.14388000000001,
+            19.44048
+          ],
+          [
+            -99.14385000000001,
+            19.44022
+          ],
+          [
+            -99.14422,
+            19.43985
+          ],
+          [
+            -99.14503,
+            19.439120000000003
+          ],
+          [
+            -99.14659,
+            19.43769
+          ],
+          [
+            -99.14682,
+            19.437510000000003
+          ],
+          [
+            -99.14705000000001,
+            19.43756
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06300_robo_en_transporte_2",
+        "codigo_postal": "06300",
+        "crime_type": "Robo en transporte",
+        "centroid_id": 2,
+        "centroid_lat": 19.4376634,
+        "centroid_lon": -99.1470289,
+        "n_events": 312,
+        "resolver_unit_id": "osm_node_4070639592",
+        "resolver_name": "Módulo SSP La Pera",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4525276,
+        "resolver_lon": -99.1396332,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2078.0,
+        "duration_seconds": 865.0,
+        "duration_minutes": 14.416666666666666,
+        "static_duration_seconds": 562.0,
+        "delay_seconds": 303.0,
+        "encoded_polyline": "{ivuBffb|QRZl@dDE`@KZSRWNfANbASf@DdANr@BrJjAnBTnGv@jKdAxUxBfBT?\\D\\Xh@ZXf@Pb@Br@EhAhApC`D|GvHb@l@Il@",
+        "route_description": "Lerdo",
+        "generated_at_utc": "2026-06-06T17:36:34+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.08317000000001,
+            19.42014
+          ],
+          [
+            -99.08285000000001,
+            19.42067
+          ],
+          [
+            -99.08256000000002,
+            19.42105
+          ],
+          [
+            -99.08167,
+            19.420520000000003
+          ],
+          [
+            -99.08138000000001,
+            19.42029
+          ],
+          [
+            -99.08116000000001,
+            19.420060000000003
+          ],
+          [
+            -99.08090000000001,
+            19.419700000000002
+          ],
+          [
+            -99.08049000000001,
+            19.41901
+          ],
+          [
+            -99.08028,
+            19.418770000000002
+          ],
+          [
+            -99.07992,
+            19.418490000000002
+          ],
+          [
+            -99.07831,
+            19.417340000000003
+          ],
+          [
+            -99.07587000000001,
+            19.41591
+          ],
+          [
+            -99.07568,
+            19.41578
+          ],
+          [
+            -99.07493000000001,
+            19.41523
+          ],
+          [
+            -99.07437,
+            19.41488
+          ],
+          [
+            -99.07361,
+            19.414460000000002
+          ],
+          [
+            -99.07331,
+            19.414340000000003
+          ],
+          [
+            -99.07267,
+            19.414240000000003
+          ],
+          [
+            -99.07036000000001,
+            19.413880000000002
+          ],
+          [
+            -99.06865,
+            19.413610000000002
+          ],
+          [
+            -99.06727000000001,
+            19.41344
+          ],
+          [
+            -99.06702000000001,
+            19.41344
+          ],
+          [
+            -99.06684000000001,
+            19.41357
+          ],
+          [
+            -99.06681,
+            19.41365
+          ],
+          [
+            -99.06684000000001,
+            19.413780000000003
+          ],
+          [
+            -99.06689000000001,
+            19.41385
+          ],
+          [
+            -99.06968,
+            19.41423
+          ],
+          [
+            -99.07071,
+            19.41437
+          ],
+          [
+            -99.07111,
+            19.41441
+          ],
+          [
+            -99.07102,
+            19.41495
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08100_robo_en_transporte_2",
+        "codigo_postal": "08100",
+        "crime_type": "Robo en transporte",
+        "centroid_id": 2,
+        "centroid_lat": 19.4149655,
+        "centroid_lon": -99.0711658,
+        "n_events": 300,
+        "resolver_unit_id": "osm_node_5786335172",
+        "resolver_name": "Módulo Judicial",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4201186,
+        "resolver_lon": -99.0831441,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2590.0,
+        "duration_seconds": 372.0,
+        "duration_minutes": 6.2,
+        "static_duration_seconds": 315.0,
+        "delay_seconds": 57.0,
+        "encoded_polyline": "{~ouBxdw{QiB_AkAy@hBqDl@y@l@k@fAs@hCqAn@i@v@gAdFaI|GgNXe@lBuCdAoBrAwCV{@R_CfAmMt@uI`@sG?q@Yc@OEYDMHkAlP[lEGnAkBQ",
+        "route_description": "Eje 1 Nte.",
+        "generated_at_utc": "2026-06-06T17:36:34+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13148000000001,
+            19.43655
+          ],
+          [
+            -99.13366,
+            19.436850000000003
+          ],
+          [
+            -99.13452000000001,
+            19.43694
+          ],
+          [
+            -99.13473,
+            19.436980000000002
+          ],
+          [
+            -99.13504,
+            19.43466
+          ],
+          [
+            -99.13511000000001,
+            19.43411
+          ],
+          [
+            -99.13403000000001,
+            19.433970000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06060_robo_en_transporte_1",
+        "codigo_postal": "06060",
+        "crime_type": "Robo en transporte",
+        "centroid_id": 1,
+        "centroid_lat": 19.4327145,
+        "centroid_lon": -99.1327014,
+        "n_events": 254,
+        "resolver_unit_id": "osm_node_4687361077",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4364751,
+        "resolver_lon": -99.1314879,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 781.0,
+        "duration_seconds": 327.0,
+        "duration_minutes": 5.45,
+        "static_duration_seconds": 217.0,
+        "delay_seconds": 110.0,
+        "encoded_polyline": "mesuBvr`|Q{@rLQjDGh@nM|@lBLZwE",
+        "route_description": "Luis González Obregón",
+        "generated_at_utc": "2026-06-06T17:36:36+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.17801000000001,
+            19.39386
+          ],
+          [
+            -99.17816,
+            19.393890000000003
+          ],
+          [
+            -99.18007000000001,
+            19.39448
+          ],
+          [
+            -99.18012,
+            19.39457
+          ],
+          [
+            -99.18036000000001,
+            19.39488
+          ],
+          [
+            -99.18077000000001,
+            19.395110000000003
+          ],
+          [
+            -99.18093,
+            19.395220000000002
+          ],
+          [
+            -99.18125,
+            19.395570000000003
+          ],
+          [
+            -99.18144000000001,
+            19.39579
+          ],
+          [
+            -99.18252000000001,
+            19.397280000000002
+          ],
+          [
+            -99.18311000000001,
+            19.39804
+          ],
+          [
+            -99.18484000000001,
+            19.40001
+          ],
+          [
+            -99.18491,
+            19.400070000000003
+          ],
+          [
+            -99.18524000000001,
+            19.40012
+          ],
+          [
+            -99.18543000000001,
+            19.4002
+          ],
+          [
+            -99.18560000000001,
+            19.400350000000003
+          ],
+          [
+            -99.18585,
+            19.400750000000002
+          ],
+          [
+            -99.18589000000001,
+            19.400820000000003
+          ],
+          [
+            -99.18594,
+            19.400850000000002
+          ],
+          [
+            -99.18636000000001,
+            19.401590000000002
+          ],
+          [
+            -99.18647000000001,
+            19.40172
+          ],
+          [
+            -99.18703000000001,
+            19.402710000000003
+          ],
+          [
+            -99.18703000000001,
+            19.40296
+          ],
+          [
+            -99.18697,
+            19.403090000000002
+          ],
+          [
+            -99.18678000000001,
+            19.40343
+          ],
+          [
+            -99.18676,
+            19.40358
+          ],
+          [
+            -99.18679,
+            19.40368
+          ],
+          [
+            -99.18686000000001,
+            19.403760000000002
+          ],
+          [
+            -99.18709000000001,
+            19.40388
+          ],
+          [
+            -99.18906000000001,
+            19.403910000000003
+          ],
+          [
+            -99.18920000000001,
+            19.403830000000003
+          ],
+          [
+            -99.18927000000001,
+            19.4037
+          ],
+          [
+            -99.18927000000001,
+            19.403550000000003
+          ],
+          [
+            -99.18933000000001,
+            19.403270000000003
+          ],
+          [
+            -99.18937000000001,
+            19.403190000000002
+          ],
+          [
+            -99.18943,
+            19.40237
+          ],
+          [
+            -99.18845,
+            19.40231
+          ],
+          [
+            -99.18817000000001,
+            19.402320000000003
+          ],
+          [
+            -99.18805,
+            19.40227
+          ],
+          [
+            -99.18772000000001,
+            19.402250000000002
+          ],
+          [
+            -99.18762000000001,
+            19.402140000000003
+          ],
+          [
+            -99.18757000000001,
+            19.40203
+          ],
+          [
+            -99.18757000000001,
+            19.401940000000003
+          ],
+          [
+            -99.18761,
+            19.40184
+          ],
+          [
+            -99.18826000000001,
+            19.4007
+          ],
+          [
+            -99.18818,
+            19.40068
+          ],
+          [
+            -99.18752,
+            19.4018
+          ],
+          [
+            -99.18733,
+            19.4021
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "11870_robo_en_transporte_1",
+        "codigo_postal": "11870",
+        "crime_type": "Robo en transporte",
+        "centroid_id": 1,
+        "centroid_lat": 19.4021426,
+        "centroid_lon": -99.1873504,
+        "n_events": 245,
+        "resolver_unit_id": "osm_node_473196179",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3938131,
+        "resolver_lon": -99.178017,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2532.0,
+        "duration_seconds": 820.0,
+        "duration_minutes": 13.666666666666666,
+        "static_duration_seconds": 655.0,
+        "delay_seconds": 165.0,
+        "encoded_polyline": "szjuBpui|QE\\uB|JQH}@n@m@pAU^eA~@k@d@iHvEwCtBiKxIKLI`AOd@]`@oAp@MFEHsCrAYTeEnBq@?YKcAe@]CSDOLWl@EhKNZXL\\?v@JNFbDJJcEAw@HWBaATSTIP?RFbF`CBO_FcC{@e@",
+        "route_description": "Puente de La Morena",
+        "generated_at_utc": "2026-06-06T17:36:37+00:00"
+      }
+    }
+  ]
+}

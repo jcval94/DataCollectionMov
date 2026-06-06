@@ -1,0 +1,603 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15817000000001,
+            19.412190000000002
+          ],
+          [
+            -99.15907000000001,
+            19.412000000000003
+          ],
+          [
+            -99.15974000000001,
+            19.41188
+          ],
+          [
+            -99.16253,
+            19.411330000000003
+          ],
+          [
+            -99.16309000000001,
+            19.41347
+          ],
+          [
+            -99.16335000000001,
+            19.41448
+          ],
+          [
+            -99.16342,
+            19.41465
+          ],
+          [
+            -99.16421000000001,
+            19.41768
+          ],
+          [
+            -99.16444000000001,
+            19.418570000000003
+          ],
+          [
+            -99.16452000000001,
+            19.41889
+          ],
+          [
+            -99.16623000000001,
+            19.4185
+          ],
+          [
+            -99.1662,
+            19.418390000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_otros_robos_2",
+        "codigo_postal": "06700",
+        "crime_type": "Otros robos",
+        "centroid_id": 2,
+        "centroid_lat": 19.4184103,
+        "centroid_lon": -99.1661011,
+        "n_events": 804,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1676.0,
+        "duration_seconds": 525.0,
+        "duration_minutes": 8.75,
+        "static_duration_seconds": 512.0,
+        "delay_seconds": 13.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eC_BVd@rDVdClBlPkLnBiEr@a@L}Q|CqDl@_ANlAtITE",
+        "route_description": "Coahuila y Monterrey/Eje 2 Pte",
+        "generated_at_utc": "2026-06-06T17:35:55+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.17188,
+            19.433300000000003
+          ],
+          [
+            -99.17242,
+            19.43248
+          ],
+          [
+            -99.17247,
+            19.43239
+          ],
+          [
+            -99.17281000000001,
+            19.43193
+          ],
+          [
+            -99.1731,
+            19.431350000000002
+          ],
+          [
+            -99.17333,
+            19.43084
+          ],
+          [
+            -99.1739,
+            19.42969
+          ],
+          [
+            -99.17398000000001,
+            19.42959
+          ],
+          [
+            -99.17360000000001,
+            19.42943
+          ],
+          [
+            -99.17349,
+            19.429350000000003
+          ],
+          [
+            -99.17340000000002,
+            19.4292
+          ],
+          [
+            -99.17336,
+            19.42902
+          ],
+          [
+            -99.17337,
+            19.428590000000003
+          ],
+          [
+            -99.17334000000001,
+            19.4284
+          ],
+          [
+            -99.17316000000001,
+            19.428
+          ],
+          [
+            -99.173,
+            19.42774
+          ],
+          [
+            -99.17188,
+            19.425600000000003
+          ],
+          [
+            -99.1718,
+            19.425500000000003
+          ],
+          [
+            -99.17163000000001,
+            19.42538
+          ],
+          [
+            -99.17160000000001,
+            19.425340000000002
+          ],
+          [
+            -99.17149,
+            19.42529
+          ],
+          [
+            -99.17143000000002,
+            19.42521
+          ],
+          [
+            -99.17143000000002,
+            19.42508
+          ],
+          [
+            -99.17146000000001,
+            19.425030000000003
+          ],
+          [
+            -99.17136,
+            19.42472
+          ],
+          [
+            -99.17134000000001,
+            19.424660000000003
+          ],
+          [
+            -99.17117,
+            19.42482
+          ],
+          [
+            -99.17108,
+            19.424930000000003
+          ],
+          [
+            -99.17096000000001,
+            19.42502
+          ],
+          [
+            -99.16823000000001,
+            19.426280000000002
+          ],
+          [
+            -99.16816000000001,
+            19.426280000000002
+          ],
+          [
+            -99.16792000000001,
+            19.426190000000002
+          ],
+          [
+            -99.16767,
+            19.426150000000003
+          ],
+          [
+            -99.16748000000001,
+            19.426180000000002
+          ],
+          [
+            -99.16733,
+            19.42624
+          ],
+          [
+            -99.16722000000001,
+            19.4263
+          ],
+          [
+            -99.16703000000001,
+            19.426450000000003
+          ],
+          [
+            -99.16690000000001,
+            19.426620000000003
+          ],
+          [
+            -99.16676000000001,
+            19.42699
+          ],
+          [
+            -99.16654000000001,
+            19.427090000000003
+          ],
+          [
+            -99.16616,
+            19.42726
+          ],
+          [
+            -99.16544,
+            19.425900000000002
+          ],
+          [
+            -99.16615,
+            19.42556
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06600_otros_robos_2",
+        "codigo_postal": "06600",
+        "crime_type": "Otros robos",
+        "centroid_id": 2,
+        "centroid_lat": 19.4253322,
+        "centroid_lon": -99.1660146,
+        "n_events": 571,
+        "resolver_unit_id": "osm_node_9130222753",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4333514,
+        "resolver_lon": -99.1719654,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2017.0,
+        "duration_seconds": 1026.0,
+        "duration_minutes": 17.1,
+        "static_duration_seconds": 507.0,
+        "delay_seconds": 519.0,
+        "encoded_polyline": "cqruBfoh|QbDjBPHzAbArBx@dBl@dFpBRN^kANU\\Qb@GtA@d@EnAc@r@_@jL_FROVa@FEHUNKX?HD|@SJC_@a@UQQW{FaP?MPo@Fq@Ee@K]KU]e@a@YiA[Sk@a@kAnGoCbAlC",
+        "route_description": "Río Misisipi/Eje 3 Pte y Av. P.º de la Reforma",
+        "generated_at_utc": "2026-06-06T17:35:57+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15843000000001,
+            19.413200000000003
+          ],
+          [
+            -99.15912,
+            19.415950000000002
+          ],
+          [
+            -99.15892000000001,
+            19.41598
+          ],
+          [
+            -99.15915000000001,
+            19.41692
+          ],
+          [
+            -99.15934000000001,
+            19.416880000000003
+          ],
+          [
+            -99.15968000000001,
+            19.418190000000003
+          ],
+          [
+            -99.15842,
+            19.41844
+          ],
+          [
+            -99.15782000000002,
+            19.418570000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_otros_robos_1",
+        "codigo_postal": "06700",
+        "crime_type": "Otros robos",
+        "centroid_id": 1,
+        "centroid_lat": 19.4182815,
+        "centroid_lon": -99.1577576,
+        "n_events": 529,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1074.0,
+        "duration_seconds": 379.0,
+        "duration_minutes": 6.316666666666666,
+        "static_duration_seconds": 335.0,
+        "delay_seconds": 44.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCiHjAePhCEg@{Dl@Fd@eGbAq@{FYwB",
+        "route_description": "C. Orizaba",
+        "generated_at_utc": "2026-06-06T17:35:59+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15618,
+            19.41179
+          ],
+          [
+            -99.15495000000001,
+            19.411800000000003
+          ],
+          [
+            -99.15487,
+            19.41184
+          ],
+          [
+            -99.15312,
+            19.41159
+          ],
+          [
+            -99.15054,
+            19.4112
+          ],
+          [
+            -99.14982,
+            19.414730000000002
+          ],
+          [
+            -99.14964,
+            19.41561
+          ],
+          [
+            -99.14931000000001,
+            19.4172
+          ],
+          [
+            -99.14919,
+            19.41778
+          ],
+          [
+            -99.14859000000001,
+            19.4207
+          ],
+          [
+            -99.14854000000001,
+            19.42086
+          ],
+          [
+            -99.14846000000001,
+            19.421310000000002
+          ],
+          [
+            -99.14815,
+            19.42277
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_otros_robos_2",
+        "codigo_postal": "06720",
+        "crime_type": "Otros robos",
+        "centroid_id": 2,
+        "centroid_lat": 19.4227805,
+        "centroid_lon": -99.1481938,
+        "n_events": 522,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2196.0,
+        "duration_seconds": 523.0,
+        "duration_minutes": 8.716666666666667,
+        "static_duration_seconds": 600.0,
+        "delay_seconds": -77.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCOuJAuFGOp@}IlAcOaUoCoDc@}HaAsBWgQwB_@IyAOcH}@",
+        "route_description": "Dr. Jimenez",
+        "generated_at_utc": "2026-06-06T17:36:00+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15204000000001,
+            19.45354
+          ],
+          [
+            -99.15230000000001,
+            19.452160000000003
+          ],
+          [
+            -99.15231000000001,
+            19.452
+          ],
+          [
+            -99.15228,
+            19.45191
+          ],
+          [
+            -99.15256000000001,
+            19.45054
+          ],
+          [
+            -99.15301000000001,
+            19.44807
+          ],
+          [
+            -99.15633000000001,
+            19.44864
+          ],
+          [
+            -99.15734,
+            19.443160000000002
+          ],
+          [
+            -99.15573,
+            19.442890000000002
+          ],
+          [
+            -99.15237,
+            19.44235
+          ],
+          [
+            -99.15213000000001,
+            19.44516
+          ],
+          [
+            -99.1521,
+            19.44536
+          ],
+          [
+            -99.15201,
+            19.44556
+          ],
+          [
+            -99.15187,
+            19.445710000000002
+          ],
+          [
+            -99.15162000000001,
+            19.445860000000003
+          ],
+          [
+            -99.15153000000001,
+            19.44594
+          ],
+          [
+            -99.15147,
+            19.44603
+          ],
+          [
+            -99.15135000000001,
+            19.44601
+          ],
+          [
+            -99.15135000000001,
+            19.44613
+          ],
+          [
+            -99.15140000000001,
+            19.44621
+          ],
+          [
+            -99.15149000000001,
+            19.446250000000003
+          ],
+          [
+            -99.15197,
+            19.446360000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06350_otros_robos_1",
+        "codigo_postal": "06350",
+        "crime_type": "Otros robos",
+        "centroid_id": 1,
+        "centroid_lat": 19.4469463,
+        "centroid_lon": -99.1518391,
+        "n_events": 518,
+        "resolver_unit_id": "osm_node_4878881532",
+        "resolver_name": "Policia Auxiliar",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4535805,
+        "resolver_lon": -99.1523035,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2656.0,
+        "duration_seconds": 648.0,
+        "duration_minutes": 10.8,
+        "static_duration_seconds": 662.0,
+        "delay_seconds": -14.0,
+        "encoded_polyline": "sovuBfsd|QrGr@^@PEpGv@lNxAqBvSfa@hEt@aIjB_TqPo@g@Eg@Q][]q@OQQKBWW?OHGPU~A",
+        "route_description": "Dr. Atl",
+        "generated_at_utc": "2026-06-06T17:36:02+00:00"
+      }
+    }
+  ]
+}

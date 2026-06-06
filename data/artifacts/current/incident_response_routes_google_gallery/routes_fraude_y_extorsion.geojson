@@ -1,0 +1,539 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15843000000001,
+            19.413200000000003
+          ],
+          [
+            -99.15871000000001,
+            19.41431
+          ],
+          [
+            -99.15790000000001,
+            19.414460000000002
+          ],
+          [
+            -99.15699000000001,
+            19.414620000000003
+          ],
+          [
+            -99.15474,
+            19.41507
+          ],
+          [
+            -99.15445000000001,
+            19.415100000000002
+          ],
+          [
+            -99.15408000000001,
+            19.419680000000003
+          ],
+          [
+            -99.15398,
+            19.42079
+          ],
+          [
+            -99.15386000000001,
+            19.42257
+          ],
+          [
+            -99.14992000000001,
+            19.42219
+          ],
+          [
+            -99.15,
+            19.421770000000002
+          ],
+          [
+            -99.15016000000001,
+            19.42106
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_fraude_y_extorsion_2",
+        "codigo_postal": "06720",
+        "crime_type": "Fraude y extorsión",
+        "centroid_id": 2,
+        "centroid_lat": 19.4210234,
+        "centroid_lon": -99.1499486,
+        "n_events": 2214,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2221.0,
+        "duration_seconds": 569.0,
+        "duration_minutes": 9.483333333333333,
+        "static_duration_seconds": 563.0,
+        "delay_seconds": 6.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCiHjA}Ev@]aD_@uDyAaMEy@s[iA}EScJWjAsWrANlC^",
+        "route_description": "Av. Cuauhtémoc/Eje 1 Pte",
+        "generated_at_utc": "2026-06-06T17:35:16+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15843000000001,
+            19.413200000000003
+          ],
+          [
+            -99.15891,
+            19.41512
+          ],
+          [
+            -99.15682000000001,
+            19.4155
+          ],
+          [
+            -99.15618,
+            19.415640000000003
+          ],
+          [
+            -99.15505,
+            19.415850000000002
+          ],
+          [
+            -99.15449000000001,
+            19.415960000000002
+          ],
+          [
+            -99.14964,
+            19.41561
+          ],
+          [
+            -99.14931000000001,
+            19.4172
+          ],
+          [
+            -99.14919,
+            19.41778
+          ],
+          [
+            -99.14859000000001,
+            19.4207
+          ],
+          [
+            -99.14854000000001,
+            19.42086
+          ],
+          [
+            -99.14846000000001,
+            19.421310000000002
+          ],
+          [
+            -99.14792000000001,
+            19.423840000000002
+          ],
+          [
+            -99.14776,
+            19.42436
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_fraude_y_extorsion_1",
+        "codigo_postal": "06720",
+        "crime_type": "Fraude y extorsión",
+        "centroid_id": 1,
+        "centroid_lat": 19.4243287,
+        "centroid_lon": -99.1476236,
+        "n_events": 1419,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2458.0,
+        "duration_seconds": 670.0,
+        "duration_minutes": 11.166666666666666,
+        "static_duration_seconds": 636.0,
+        "delay_seconds": 34.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCiHjA_K~AkAaL[_Ci@aFUoBdAi]}HaAsBWgQwB_@IyAOyNkBgB_@",
+        "route_description": "Eje 2 Sur y Dr. Jimenez",
+        "generated_at_utc": "2026-06-06T17:35:18+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15843000000001,
+            19.413200000000003
+          ],
+          [
+            -99.15871000000001,
+            19.41431
+          ],
+          [
+            -99.15790000000001,
+            19.414460000000002
+          ],
+          [
+            -99.15699000000001,
+            19.414620000000003
+          ],
+          [
+            -99.15474,
+            19.41507
+          ],
+          [
+            -99.15445000000001,
+            19.415100000000002
+          ],
+          [
+            -99.15431000000001,
+            19.416860000000003
+          ],
+          [
+            -99.15285000000002,
+            19.41675
+          ],
+          [
+            -99.15267000000001,
+            19.41675
+          ],
+          [
+            -99.14862000000001,
+            19.41639
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_fraude_y_extorsion_3",
+        "codigo_postal": "06720",
+        "crime_type": "Fraude y extorsión",
+        "centroid_id": 3,
+        "centroid_lat": 19.4168186,
+        "centroid_lon": -99.1485756,
+        "n_events": 710,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1639.0,
+        "duration_seconds": 408.0,
+        "duration_minutes": 6.8,
+        "static_duration_seconds": 399.0,
+        "delay_seconds": 9.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCiHjA}Ev@]aD_@uDyAaMEy@_J[TcH?c@fAiX",
+        "route_description": "San Luis Potosí y C. Dr. García Diego",
+        "generated_at_utc": "2026-06-06T17:35:19+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.17188,
+            19.433300000000003
+          ],
+          [
+            -99.17242,
+            19.43248
+          ],
+          [
+            -99.17247,
+            19.43239
+          ],
+          [
+            -99.17281000000001,
+            19.43193
+          ],
+          [
+            -99.1731,
+            19.431350000000002
+          ],
+          [
+            -99.17333,
+            19.43084
+          ],
+          [
+            -99.1739,
+            19.42969
+          ],
+          [
+            -99.17398000000001,
+            19.42959
+          ],
+          [
+            -99.17360000000001,
+            19.42943
+          ],
+          [
+            -99.17349,
+            19.429350000000003
+          ],
+          [
+            -99.17340000000002,
+            19.4292
+          ],
+          [
+            -99.17336,
+            19.42902
+          ],
+          [
+            -99.17337,
+            19.428590000000003
+          ],
+          [
+            -99.17334000000001,
+            19.4284
+          ],
+          [
+            -99.17316000000001,
+            19.428
+          ],
+          [
+            -99.173,
+            19.42774
+          ],
+          [
+            -99.17188,
+            19.425600000000003
+          ],
+          [
+            -99.1718,
+            19.425500000000003
+          ],
+          [
+            -99.17163000000001,
+            19.42538
+          ],
+          [
+            -99.17160000000001,
+            19.425340000000002
+          ],
+          [
+            -99.17149,
+            19.42529
+          ],
+          [
+            -99.17143000000002,
+            19.42521
+          ],
+          [
+            -99.17143000000002,
+            19.42508
+          ],
+          [
+            -99.17146000000001,
+            19.425030000000003
+          ],
+          [
+            -99.17136,
+            19.42472
+          ],
+          [
+            -99.17134000000001,
+            19.424660000000003
+          ],
+          [
+            -99.17117,
+            19.42482
+          ],
+          [
+            -99.17108,
+            19.424930000000003
+          ],
+          [
+            -99.17096000000001,
+            19.42502
+          ],
+          [
+            -99.16823000000001,
+            19.426280000000002
+          ],
+          [
+            -99.16816000000001,
+            19.426280000000002
+          ],
+          [
+            -99.16792000000001,
+            19.426190000000002
+          ],
+          [
+            -99.16732,
+            19.425
+          ],
+          [
+            -99.16755,
+            19.4249
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06600_fraude_y_extorsion_1",
+        "codigo_postal": "06600",
+        "crime_type": "Fraude y extorsión",
+        "centroid_id": 1,
+        "centroid_lat": 19.4250592,
+        "centroid_lon": -99.1676324,
+        "n_events": 662,
+        "resolver_unit_id": "osm_node_9130222753",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4333514,
+        "resolver_lon": -99.1719654,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1697.0,
+        "duration_seconds": 891.0,
+        "duration_minutes": 14.85,
+        "static_duration_seconds": 414.0,
+        "delay_seconds": 477.0,
+        "encoded_polyline": "cqruBfoh|QbDjBPHzAbArBx@dBl@dFpBRN^kANU\\Qb@GtA@d@EnAc@r@_@jL_FROVa@FEHUNKX?HD|@SJC_@a@UQQW{FaP?MPo@lFwBRl@",
+        "route_description": "Cto. Interior Melchor Ocampo y Río Misisipi/Eje 3 Pte",
+        "generated_at_utc": "2026-06-06T17:35:20+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.16907,
+            19.39552
+          ],
+          [
+            -99.16928000000001,
+            19.395560000000003
+          ],
+          [
+            -99.17058,
+            19.395880000000002
+          ],
+          [
+            -99.17164000000001,
+            19.3926
+          ],
+          [
+            -99.17169000000001,
+            19.392480000000003
+          ],
+          [
+            -99.17544000000001,
+            19.393310000000003
+          ],
+          [
+            -99.17563000000001,
+            19.393440000000002
+          ],
+          [
+            -99.17574,
+            19.393530000000002
+          ],
+          [
+            -99.17509000000001,
+            19.394540000000003
+          ],
+          [
+            -99.17475,
+            19.395090000000003
+          ],
+          [
+            -99.17456000000001,
+            19.395030000000002
+          ],
+          [
+            -99.1735,
+            19.3948
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "03810_fraude_y_extorsion_1",
+        "codigo_postal": "03810",
+        "crime_type": "Fraude y extorsión",
+        "centroid_id": 1,
+        "centroid_lat": 19.3948544,
+        "centroid_lon": -99.1734876,
+        "n_events": 639,
+        "resolver_unit_id": "osm_node_473112375",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3956112,
+        "resolver_lon": -99.1690504,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1340.0,
+        "duration_seconds": 317.0,
+        "duration_minutes": 5.283333333333333,
+        "static_duration_seconds": 350.0,
+        "delay_seconds": -33.0,
+        "encoded_polyline": "_ekuBt}g|QGh@_AbGnSrEVHeDlVYd@QTiEaCmBcAJe@l@sE",
+        "route_description": "Av. Magdalena",
+        "generated_at_utc": "2026-06-06T17:35:21+00:00"
+      }
+    }
+  ]
+}

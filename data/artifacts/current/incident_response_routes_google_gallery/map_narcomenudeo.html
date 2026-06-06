@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8f7d3d7b54d9df506874a6b2aafbd33c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+      position: fixed; top: 12px; left: 50px; z-index: 9999;
+      background: white; padding: 10px 12px; border: 1px solid #cbd5e1;
+      border-radius: 6px; box-shadow: 0 1px 6px rgba(15,23,42,.14);
+      font-family: Arial, sans-serif; font-size: 13px;">
+      <strong>Narcomenudeo</strong><br>
+      5 rutas / 1,064 eventos / 5 lineas visibles
+    </div>
+    
+    
+            <div class="folium-map" id="map_8f7d3d7b54d9df506874a6b2aafbd33c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8f7d3d7b54d9df506874a6b2aafbd33c = L.map(
+                "map_8f7d3d7b54d9df506874a6b2aafbd33c",
+                {
+                    center: [19.42233298, -99.11975992],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+
+            
+
+        
+    
+            var tile_layer_e81657ee4b2000cacca96311608a0d26 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e81657ee4b2000cacca96311608a0d26.addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+            var marker_cluster_dfb5569881089aa8936728288009c9db = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_5bcc5be98745849011b92883db96d23b = L.marker(
+                [19.4525276, -99.1396332],
+                {
+}
+            ).addTo(marker_cluster_dfb5569881089aa8936728288009c9db);
+        
+    
+            var icon_a0629ab157a34321beb19e8f3cacba2e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0092d0f16f583a13f5cc4976ea755af7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e52ef11ae207691dfd3fdf48865a53df = $(`<div id="html_e52ef11ae207691dfd3fdf48865a53df" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_0092d0f16f583a13f5cc4976ea755af7.setContent(html_e52ef11ae207691dfd3fdf48865a53df);
+            
+        
+
+        marker_5bcc5be98745849011b92883db96d23b.bindPopup(popup_0092d0f16f583a13f5cc4976ea755af7)
+        ;
+
+        
+    
+    
+            marker_5bcc5be98745849011b92883db96d23b.bindTooltip(
+                `<div>
+                     Módulo SSP La Pera (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5bcc5be98745849011b92883db96d23b.setIcon(icon_a0629ab157a34321beb19e8f3cacba2e);
+            
+    
+            var marker_8451c72db39d12d53f69311fc524297b = L.marker(
+                [19.3631069, -99.0570977],
+                {
+}
+            ).addTo(marker_cluster_dfb5569881089aa8936728288009c9db);
+        
+    
+            var icon_78e377dfd5780b2ba500be16aff60aa1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shield",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b158ba437e4cace0e786b08a333f12af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a2d4151fa656edaec44cee174b8caa3 = $(`<div id="html_4a2d4151fa656edaec44cee174b8caa3" style="width: 100.0%; height: 100.0%;"><b>Unidad:</b> Módulo de policía<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Fuente:</b> openstreetmap_overpass_cached</div>`)[0];
+                popup_b158ba437e4cace0e786b08a333f12af.setContent(html_4a2d4151fa656edaec44cee174b8caa3);
+            
+        
+
+        marker_8451c72db39d12d53f69311fc524297b.bindPopup(popup_b158ba437e4cace0e786b08a333f12af)
+        ;
+
+        
+    
+    
+            marker_8451c72db39d12d53f69311fc524297b.bindTooltip(
+                `<div>
+                     Módulo de policía (Seguridad / vigilancia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8451c72db39d12d53f69311fc524297b.setIcon(icon_78e377dfd5780b2ba500be16aff60aa1);
+            
+    
+            marker_cluster_dfb5569881089aa8936728288009c9db.addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+            var poly_line_a4997f8adec50eb297ce2cef20810e55 = L.polyline(
+                [[19.452620000000003, -99.13972000000001], [19.452520000000003, -99.13986000000001], [19.45229, -99.14069], [19.45232, -99.14086], [19.45238, -99.141], [19.45248, -99.14110000000001], [19.4526, -99.14118], [19.452240000000003, -99.14126], [19.451900000000002, -99.14116000000001], [19.451700000000002, -99.14119000000001], [19.45135, -99.14127], [19.45109, -99.14129000000001], [19.450950000000002, -99.14079000000001], [19.45082, -99.14045], [19.450290000000003, -99.13928000000001], [19.44902, -99.13657], [19.448620000000002, -99.13571], [19.44848, -99.13548], [19.44837, -99.13537000000001], [19.44816, -99.13539], [19.448050000000002, -99.13538000000001], [19.447850000000003, -99.13530000000002], [19.4477, -99.13513], [19.447650000000003, -99.13502000000001], [19.44759, -99.13478], [19.447190000000003, -99.13484000000001], [19.446240000000003, -99.13495], [19.44601, -99.13267], [19.447480000000002, -99.13263], [19.447190000000003, -99.13035], [19.44612, -99.13050000000001], [19.444380000000002, -99.13068000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+        var popup_a850151145d6cc760376bbdbfa1ae760 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d98788c33e925a1ea8e6ea306727905 = $(`<div id="html_8d98788c33e925a1ea8e6ea306727905" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Narcomenudeo<br><b>CP:</b> 06200<br><b>Eventos:</b> 488<br><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 2.27<br><b>Duracion min:</b> 11.1<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_a850151145d6cc760376bbdbfa1ae760.setContent(html_8d98788c33e925a1ea8e6ea306727905);
+            
+        
+
+        poly_line_a4997f8adec50eb297ce2cef20810e55.bindPopup(popup_a850151145d6cc760376bbdbfa1ae760)
+        ;
+
+        
+    
+    
+            poly_line_a4997f8adec50eb297ce2cef20810e55.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06200 -> Módulo SSP La Pera
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6960fc87aeaf3310502750912a7ea119 = L.circleMarker(
+                [19.4443746, -99.1306244],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 1}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+            circle_marker_6960fc87aeaf3310502750912a7ea119.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06200 (488 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8a5a4867244a2c86dbd527429ed2d62e = L.polyline(
+                [[19.452620000000003, -99.13972000000001], [19.452520000000003, -99.13986000000001], [19.45229, -99.14069], [19.45232, -99.14086], [19.45238, -99.141], [19.45248, -99.14110000000001], [19.4526, -99.14118], [19.452240000000003, -99.14126], [19.451900000000002, -99.14116000000001], [19.451700000000002, -99.14119000000001], [19.45135, -99.14127], [19.45109, -99.14129000000001], [19.450950000000002, -99.14079000000001], [19.45082, -99.14045], [19.450290000000003, -99.13928000000001], [19.44902, -99.13657], [19.448620000000002, -99.13571], [19.44848, -99.13548], [19.44837, -99.13537000000001], [19.44816, -99.13539], [19.448050000000002, -99.13538000000001], [19.447850000000003, -99.13530000000002], [19.4477, -99.13513], [19.447650000000003, -99.13502000000001], [19.44759, -99.13478], [19.44762, -99.13453000000001], [19.44769, -99.13435000000001], [19.447770000000002, -99.13424], [19.44773, -99.13407000000001], [19.447560000000003, -99.13262], [19.448220000000003, -99.13247000000001], [19.449370000000002, -99.13210000000001], [19.44977, -99.13195], [19.449460000000002, -99.13108000000001], [19.44914, -99.13009000000001], [19.448330000000002, -99.13019000000001]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 6.5}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+        var popup_4e55756c83362eef0d7b30f63bc7a239 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1c1b87a276a57b2767148f10cbaf4c1 = $(`<div id="html_d1c1b87a276a57b2767148f10cbaf4c1" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Narcomenudeo<br><b>CP:</b> 06200<br><b>Eventos:</b> 271<br><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.95<br><b>Duracion min:</b> 9.3<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_4e55756c83362eef0d7b30f63bc7a239.setContent(html_d1c1b87a276a57b2767148f10cbaf4c1);
+            
+        
+
+        poly_line_8a5a4867244a2c86dbd527429ed2d62e.bindPopup(popup_4e55756c83362eef0d7b30f63bc7a239)
+        ;
+
+        
+    
+    
+            poly_line_8a5a4867244a2c86dbd527429ed2d62e.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06200 -> Módulo SSP La Pera
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eda5d173dc775bd47148fef2b8fb522b = L.circleMarker(
+                [19.4483371, -99.1302776],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.145598685085739, "stroke": true, "weight": 1}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+            circle_marker_eda5d173dc775bd47148fef2b8fb522b.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06200 (271 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4da30c7a1ef7e43aba2c8218e783064f = L.polyline(
+                [[19.36315, -99.05709], [19.36299, -99.05581000000001], [19.362910000000003, -99.05447000000001], [19.36286, -99.05441], [19.362830000000002, -99.05427], [19.36277, -99.05418], [19.362460000000002, -99.05123], [19.362190000000002, -99.0489], [19.362170000000003, -99.04865000000001], [19.36108, -99.04297000000001], [19.36101, -99.04233], [19.361, -99.04185000000001], [19.361030000000003, -99.04134], [19.36111, -99.04084], [19.36098, -99.04062], [19.36091, -99.04055000000001], [19.3608, -99.04049], [19.35801, -99.04056000000001], [19.35717, -99.04056000000001], [19.35302, -99.04066], [19.352680000000003, -99.04073000000001], [19.352580000000003, -99.04078000000001], [19.351280000000003, -99.04157000000001], [19.350920000000002, -99.04151], [19.3485, -99.04128000000001], [19.34316, -99.04073000000001], [19.34317, -99.04057], [19.34305, -99.04053], [19.34222, -99.04054000000001], [19.34009, -99.04062], [19.34008, -99.04059000000001], [19.33995, -99.04065000000001], [19.339820000000003, -99.04081000000001], [19.33977, -99.04100000000001], [19.339750000000002, -99.04139], [19.339370000000002, -99.04143], [19.33931, -99.04148], [19.339190000000002, -99.04161], [19.33903, -99.04164], [19.33867, -99.04167000000001], [19.33855, -99.04270000000001], [19.338, -99.04267], [19.337680000000002, -99.04270000000001], [19.337210000000002, -99.04282], [19.33678, -99.04286], [19.33559, -99.04289000000001], [19.334760000000003, -99.04294], [19.33399, -99.04289000000001], [19.333830000000003, -99.04286], [19.3337, -99.04287000000001], [19.3331, -99.04285], [19.33263, -99.04286], [19.331500000000002, -99.04301000000001], [19.33136, -99.04298000000001], [19.331000000000003, -99.04303], [19.33038, -99.04323000000001], [19.33011, -99.04329000000001], [19.32948, -99.04347000000001], [19.328580000000002, -99.04371], [19.32761, -99.04400000000001], [19.32664, -99.04424], [19.326220000000003, -99.04257000000001], [19.32733, -99.04228], [19.327370000000002, -99.04221000000001], [19.32731, -99.04196]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 4.17612260356422}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+        var popup_db70a4005fd152c0ee5b08f2349eea99 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_551c879bb375da15e4221597ce228f93 = $(`<div id="html_551c879bb375da15e4221597ce228f93" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Narcomenudeo<br><b>CP:</b> 09700<br><b>Eventos:</b> 109<br><b>Unidad:</b> Módulo de policía<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 6.16<br><b>Duracion min:</b> 19.6<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_db70a4005fd152c0ee5b08f2349eea99.setContent(html_551c879bb375da15e4221597ce228f93);
+            
+        
+
+        poly_line_4da30c7a1ef7e43aba2c8218e783064f.bindPopup(popup_db70a4005fd152c0ee5b08f2349eea99)
+        ;
+
+        
+    
+    
+            poly_line_4da30c7a1ef7e43aba2c8218e783064f.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 09700 -> Módulo de policía
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ed6035a74bef416a90309395b37df3e = L.circleMarker(
+                [19.3273682, -99.0419488],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.800170282728083, "stroke": true, "weight": 1}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+            circle_marker_0ed6035a74bef416a90309395b37df3e.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 09700 (109 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_259e2a28504716b7f9f735ed0d673ac2 = L.polyline(
+                [[19.452620000000003, -99.13972000000001], [19.452520000000003, -99.13986000000001], [19.45229, -99.14069], [19.45232, -99.14086], [19.45238, -99.141], [19.45248, -99.14110000000001], [19.4526, -99.14118], [19.452240000000003, -99.14126], [19.451900000000002, -99.14116000000001], [19.451700000000002, -99.14119000000001], [19.45135, -99.14127], [19.45119, -99.14128000000001], [19.451970000000003, -99.14399], [19.452080000000002, -99.14437000000001], [19.451990000000002, -99.1444], [19.44969, -99.1449], [19.44994, -99.14628], [19.450010000000002, -99.14681], [19.45031, -99.14849000000001], [19.44997, -99.14891000000001], [19.44957, -99.14936], [19.44893, -99.14987], [19.44882, -99.14992000000001], [19.44697, -99.15026]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 4.019950248448356}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+        var popup_7995f5d1acc72584f356507e46e1b2f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb8bc415f71fbffbc6afd858cd77acef = $(`<div id="html_bb8bc415f71fbffbc6afd858cd77acef" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Narcomenudeo<br><b>CP:</b> 06350<br><b>Eventos:</b> 101<br><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.76<br><b>Duracion min:</b> 8.7<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_7995f5d1acc72584f356507e46e1b2f2.setContent(html_bb8bc415f71fbffbc6afd858cd77acef);
+            
+        
+
+        poly_line_259e2a28504716b7f9f735ed0d673ac2.bindPopup(popup_7995f5d1acc72584f356507e46e1b2f2)
+        ;
+
+        
+    
+    
+            poly_line_259e2a28504716b7f9f735ed0d673ac2.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06350 -> Módulo SSP La Pera
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_308a44d0fa7636605612c5df2da7deaa = L.circleMarker(
+                [19.4470176, -99.1505832],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.58326423395605, "stroke": true, "weight": 1}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+            circle_marker_308a44d0fa7636605612c5df2da7deaa.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06350 (101 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e43d00c38917910e230e205dba86b62c = L.polyline(
+                [[19.452620000000003, -99.13972000000001], [19.452520000000003, -99.13986000000001], [19.45229, -99.14069], [19.45232, -99.14086], [19.45238, -99.141], [19.45248, -99.14110000000001], [19.4526, -99.14118], [19.452240000000003, -99.14126], [19.451900000000002, -99.14116000000001], [19.451700000000002, -99.14119000000001], [19.45135, -99.14127], [19.45109, -99.14129000000001], [19.44923, -99.14167], [19.44867, -99.14178000000001], [19.44731, -99.14206000000001], [19.445330000000002, -99.14241000000001], [19.442580000000003, -99.14287], [19.44304, -99.14557], [19.44454, -99.14524]],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2563eb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.48, "smoothFactor": 1.0, "stroke": true, "weight": 3.8987177379235853}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+        var popup_8c037fb0214c06ce548a74d18172a8f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aff2037d7c896a7cd3431b04064f5980 = $(`<div id="html_aff2037d7c896a7cd3431b04064f5980" style="width: 100.0%; height: 100.0%;"><b>Tipo:</b> Narcomenudeo<br><b>CP:</b> 06300<br><b>Eventos:</b> 95<br><b>Unidad:</b> Módulo SSP La Pera<br><b>Categoria:</b> Seguridad / vigilancia<br><b>Distancia km:</b> 1.76<br><b>Duracion min:</b> 8.6<br><b>Fuente ruta:</b> google_routes<br><b>Estado:</b> ok</div>`)[0];
+                popup_8c037fb0214c06ce548a74d18172a8f1.setContent(html_aff2037d7c896a7cd3431b04064f5980);
+            
+        
+
+        poly_line_e43d00c38917910e230e205dba86b62c.bindPopup(popup_8c037fb0214c06ce548a74d18172a8f1)
+        ;
+
+        
+    
+    
+            poly_line_e43d00c38917910e230e205dba86b62c.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06300 -> Módulo SSP La Pera
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ca5f1d510140b08261f37bce0f105a2 = L.circleMarker(
+                [19.4445674, -99.1453656],
+                {"bubblingMouseEvents": true, "color": "#2563eb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2563eb", "fillOpacity": 0.72, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.414885747116091, "stroke": true, "weight": 1}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+        
+    
+            circle_marker_5ca5f1d510140b08261f37bce0f105a2.bindTooltip(
+                `<div>
+                     Narcomenudeo CP 06300 (95 eventos)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_5df3e0c83b1474f48d4882358e5c5acf_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_e81657ee4b2000cacca96311608a0d26,
+                },
+                overlays :  {
+                    "Unidades resolutoras" : marker_cluster_dfb5569881089aa8936728288009c9db,
+                },
+            };
+            let layer_control_5df3e0c83b1474f48d4882358e5c5acf = L.control.layers(
+                layer_control_5df3e0c83b1474f48d4882358e5c5acf_layers.base_layers,
+                layer_control_5df3e0c83b1474f48d4882358e5c5acf_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_8f7d3d7b54d9df506874a6b2aafbd33c);
+
+        
+</script>
+</html>

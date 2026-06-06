@@ -1,0 +1,655 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15817000000001,
+            19.412190000000002
+          ],
+          [
+            -99.15907000000001,
+            19.412000000000003
+          ],
+          [
+            -99.15974000000001,
+            19.41188
+          ],
+          [
+            -99.16253,
+            19.411330000000003
+          ],
+          [
+            -99.16309000000001,
+            19.41347
+          ],
+          [
+            -99.16335000000001,
+            19.41448
+          ],
+          [
+            -99.16342,
+            19.41465
+          ],
+          [
+            -99.16421000000001,
+            19.41768
+          ],
+          [
+            -99.16444000000001,
+            19.418570000000003
+          ],
+          [
+            -99.16498000000001,
+            19.420640000000002
+          ],
+          [
+            -99.16551000000001,
+            19.42264
+          ],
+          [
+            -99.1657,
+            19.42322
+          ],
+          [
+            -99.16577000000001,
+            19.42339
+          ],
+          [
+            -99.16579,
+            19.42352
+          ],
+          [
+            -99.16626000000001,
+            19.424400000000002
+          ],
+          [
+            -99.16421000000001,
+            19.42537
+          ],
+          [
+            -99.16458000000002,
+            19.42611
+          ],
+          [
+            -99.16470000000001,
+            19.42605
+          ],
+          [
+            -99.16447000000001,
+            19.425590000000003
+          ],
+          [
+            -99.16472,
+            19.42546
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06600_robo_a_transeunte_1",
+        "codigo_postal": "06600",
+        "crime_type": "Robo a transeúnte",
+        "centroid_id": 1,
+        "centroid_lat": 19.4256163,
+        "centroid_lon": -99.1648082,
+        "n_events": 769,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2553.0,
+        "duration_seconds": 1026.0,
+        "duration_minutes": 17.1,
+        "static_duration_seconds": 752.0,
+        "delay_seconds": 274.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eC_BVd@rDVdClBlPkLnBiEr@a@L}Q|CqDl@}KjBoKhBsBd@a@LYBoD|AaEyKsChAJVzAm@Xp@",
+        "route_description": "Eje 2 Pte",
+        "generated_at_utc": "2026-06-06T17:36:20+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.19846000000001,
+            19.472550000000002
+          ],
+          [
+            -99.19637,
+            19.4719
+          ],
+          [
+            -99.19359000000001,
+            19.471130000000002
+          ],
+          [
+            -99.1931,
+            19.471010000000003
+          ],
+          [
+            -99.19191000000001,
+            19.47077
+          ],
+          [
+            -99.19135000000001,
+            19.47063
+          ],
+          [
+            -99.19098000000001,
+            19.47052
+          ],
+          [
+            -99.19040000000001,
+            19.4703
+          ],
+          [
+            -99.18967,
+            19.469990000000003
+          ],
+          [
+            -99.18987000000001,
+            19.46788
+          ],
+          [
+            -99.19006,
+            19.46556
+          ],
+          [
+            -99.19004000000001,
+            19.46547
+          ],
+          [
+            -99.19002,
+            19.465230000000002
+          ],
+          [
+            -99.19000000000001,
+            19.46518
+          ],
+          [
+            -99.1902,
+            19.462850000000003
+          ],
+          [
+            -99.19105,
+            19.460610000000003
+          ],
+          [
+            -99.19097000000001,
+            19.46029
+          ],
+          [
+            -99.19086000000001,
+            19.46012
+          ],
+          [
+            -99.19068000000001,
+            19.459960000000002
+          ],
+          [
+            -99.19050000000001,
+            19.459880000000002
+          ],
+          [
+            -99.18901000000001,
+            19.45952
+          ],
+          [
+            -99.18873,
+            19.45943
+          ],
+          [
+            -99.1877,
+            19.45924
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "11410_robo_a_transeunte_1",
+        "codigo_postal": "11410",
+        "crime_type": "Robo a transeúnte",
+        "centroid_id": 1,
+        "centroid_lat": 19.4590042,
+        "centroid_lon": -99.1877625,
+        "n_events": 748,
+        "resolver_unit_id": "osm_node_2941425707",
+        "resolver_name": "SSP Unidad Poniente",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4719818,
+        "resolver_lon": -99.1986607,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2436.0,
+        "duration_seconds": 306.0,
+        "duration_minutes": 5.1,
+        "static_duration_seconds": 299.0,
+        "delay_seconds": 7.0,
+        "encoded_polyline": "mfzuBjum|Q`CaLxCkPVaBn@mFZoBTiAj@sB|@qCdLf@nMd@PCn@CHCpMf@~LhD~@O`@U^c@Nc@fAiHPw@d@mE",
+        "route_description": "Av. 5 de Mayo y Av. Aquiles Serdán",
+        "generated_at_utc": "2026-06-06T17:36:21+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15817000000001,
+            19.412190000000002
+          ],
+          [
+            -99.15907000000001,
+            19.412000000000003
+          ],
+          [
+            -99.15974000000001,
+            19.41188
+          ],
+          [
+            -99.16253,
+            19.411330000000003
+          ],
+          [
+            -99.16309000000001,
+            19.41347
+          ],
+          [
+            -99.16335000000001,
+            19.41448
+          ],
+          [
+            -99.16342,
+            19.41465
+          ],
+          [
+            -99.16417000000001,
+            19.417530000000003
+          ],
+          [
+            -99.16579,
+            19.41719
+          ],
+          [
+            -99.16583000000001,
+            19.417160000000003
+          ],
+          [
+            -99.16591000000001,
+            19.417160000000003
+          ],
+          [
+            -99.16596000000001,
+            19.41713
+          ],
+          [
+            -99.16607,
+            19.41713
+          ],
+          [
+            -99.16735000000001,
+            19.416880000000003
+          ],
+          [
+            -99.16746,
+            19.41691
+          ],
+          [
+            -99.16751000000001,
+            19.416960000000003
+          ],
+          [
+            -99.16764,
+            19.4175
+          ],
+          [
+            -99.16781,
+            19.41826
+          ],
+          [
+            -99.16668000000001,
+            19.419520000000002
+          ],
+          [
+            -99.16657000000001,
+            19.41964
+          ],
+          [
+            -99.16649000000001,
+            19.419600000000003
+          ],
+          [
+            -99.16632000000001,
+            19.41888
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06700_robo_a_transeunte_2",
+        "codigo_postal": "06700",
+        "crime_type": "Robo a transeúnte",
+        "centroid_id": 2,
+        "centroid_lat": 19.4189302,
+        "centroid_lon": -99.1661474,
+        "n_events": 693,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2127.0,
+        "duration_seconds": 671.0,
+        "duration_minutes": 11.183333333333334,
+        "static_duration_seconds": 616.0,
+        "delay_seconds": 55.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eC_BVd@rDVdClBlPkLnBiEr@a@L_QtCbAbIDF?NDH?Tp@~FETIHkBXwC`@{FaFWUFOnCa@",
+        "route_description": "Monterrey/Eje 2 Pte",
+        "generated_at_utc": "2026-06-06T17:36:22+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.11402000000001,
+            19.42029
+          ],
+          [
+            -99.11300000000001,
+            19.42002
+          ],
+          [
+            -99.11261,
+            19.419900000000002
+          ],
+          [
+            -99.11248,
+            19.420250000000003
+          ],
+          [
+            -99.11544,
+            19.421020000000002
+          ],
+          [
+            -99.11890000000001,
+            19.42198
+          ],
+          [
+            -99.11896,
+            19.42197
+          ],
+          [
+            -99.11905,
+            19.42192
+          ],
+          [
+            -99.11939000000001,
+            19.42201
+          ],
+          [
+            -99.12031,
+            19.42227
+          ],
+          [
+            -99.12054,
+            19.422320000000003
+          ],
+          [
+            -99.12270000000001,
+            19.42256
+          ],
+          [
+            -99.12527000000001,
+            19.42285
+          ],
+          [
+            -99.12607000000001,
+            19.42293
+          ],
+          [
+            -99.1281,
+            19.42321
+          ],
+          [
+            -99.12828,
+            19.423270000000002
+          ],
+          [
+            -99.12813000000001,
+            19.424970000000002
+          ],
+          [
+            -99.12804000000001,
+            19.425900000000002
+          ],
+          [
+            -99.12885000000001,
+            19.42605
+          ],
+          [
+            -99.12984,
+            19.426170000000003
+          ],
+          [
+            -99.13002,
+            19.426250000000003
+          ],
+          [
+            -99.13031000000001,
+            19.42624
+          ],
+          [
+            -99.13051,
+            19.426170000000003
+          ],
+          [
+            -99.13102,
+            19.425880000000003
+          ],
+          [
+            -99.13124,
+            19.425800000000002
+          ],
+          [
+            -99.13140000000001,
+            19.42584
+          ],
+          [
+            -99.13270000000001,
+            19.42594
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06090_robo_a_transeunte_1",
+        "codigo_postal": "06090",
+        "crime_type": "Robo a transeúnte",
+        "centroid_id": 1,
+        "centroid_lat": 19.4260066,
+        "centroid_lon": -99.1327351,
+        "n_events": 680,
+        "resolver_unit_id": "osm_node_5805382651",
+        "resolver_name": "Estacion de policia Vigilante",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4201464,
+        "resolver_lon": -99.1140589,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2694.0,
+        "duration_seconds": 862.0,
+        "duration_minutes": 14.366666666666667,
+        "static_duration_seconds": 472.0,
+        "delay_seconds": 390.0,
+        "encoded_polyline": "y_puBre}{Qt@kEVmAeAYyCnQ_ErT@JHPQbAs@vDIl@o@nLy@`OO~Cw@tKKb@sI]yDQ]`DWdEOb@@x@Lf@x@dBNj@G^SbG",
+        "route_description": "Fray Servando Teresa de Mier",
+        "generated_at_utc": "2026-06-06T17:36:24+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15204000000001,
+            19.45354
+          ],
+          [
+            -99.15230000000001,
+            19.452160000000003
+          ],
+          [
+            -99.15231000000001,
+            19.452
+          ],
+          [
+            -99.15228,
+            19.45191
+          ],
+          [
+            -99.15256000000001,
+            19.45054
+          ],
+          [
+            -99.15301000000001,
+            19.44807
+          ],
+          [
+            -99.15633000000001,
+            19.44864
+          ],
+          [
+            -99.15734,
+            19.443160000000002
+          ],
+          [
+            -99.15573,
+            19.442890000000002
+          ],
+          [
+            -99.15237,
+            19.44235
+          ],
+          [
+            -99.15213000000001,
+            19.44516
+          ],
+          [
+            -99.1521,
+            19.44536
+          ],
+          [
+            -99.15201,
+            19.44556
+          ],
+          [
+            -99.15187,
+            19.445710000000002
+          ],
+          [
+            -99.15162000000001,
+            19.445860000000003
+          ],
+          [
+            -99.15153000000001,
+            19.44594
+          ],
+          [
+            -99.15147,
+            19.44603
+          ],
+          [
+            -99.15135000000001,
+            19.44601
+          ],
+          [
+            -99.15135000000001,
+            19.44613
+          ],
+          [
+            -99.15140000000001,
+            19.44621
+          ],
+          [
+            -99.15149000000001,
+            19.446250000000003
+          ],
+          [
+            -99.15199000000001,
+            19.446360000000002
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06350_robo_a_transeunte_1",
+        "codigo_postal": "06350",
+        "crime_type": "Robo a transeúnte",
+        "centroid_id": 1,
+        "centroid_lat": 19.4464347,
+        "centroid_lon": -99.1519722,
+        "n_events": 679,
+        "resolver_unit_id": "osm_node_4878881532",
+        "resolver_name": "Policia Auxiliar",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4535805,
+        "resolver_lon": -99.1523035,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2658.0,
+        "duration_seconds": 667.0,
+        "duration_minutes": 11.116666666666667,
+        "static_duration_seconds": 663.0,
+        "delay_seconds": 4.0,
+        "encoded_polyline": "sovuBfsd|QrGr@^@PEpGv@lNxAqBvSfa@hEt@aIjB_TqPo@g@Eg@Q][]q@OQQKBWW?OHGPUbB",
+        "route_description": "Dr. Atl",
+        "generated_at_utc": "2026-06-06T17:36:25+00:00"
+      }
+    }
+  ]
+}

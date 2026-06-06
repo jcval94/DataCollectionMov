@@ -1,0 +1,6005 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.199841,
+          19.3403526
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_319436637",
+        "name": "Hospital San Angel Inn",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 319436637,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2063529,
+          19.4223048
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_331600009",
+        "name": "Santa Teresita",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 331600009,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2266118,
+          19.4310478
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_331698395",
+        "name": "Bomberos Tecamachalco",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 331698395,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1690504,
+          19.3956112
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_473112375",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 473112375,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.178017,
+          19.3938131
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_473196179",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 473196179,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9153904,
+          19.3088565
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_496675423",
+        "name": "Bomberos / proteccion civil",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 496675423,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9203085,
+          19.3078278
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_496687174",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 496687174,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9409497,
+          19.3207216
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_496813675",
+        "name": "Bomberos / proteccion civil",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 496813675,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0307,
+          19.4968636
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_674394120",
+        "name": "Base local Matamoros",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 674394120,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2009685,
+          19.3366121
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_739035810",
+        "name": "Clínica Hospital 8 IMSS",
+        "category": "hospital",
+        "operator": "Instituto Mexicano del Seguro Social",
+        "osm_type": "node",
+        "osm_id": 739035810,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1851961,
+          19.30613
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_739036171",
+        "name": "Instituto Nacional de Pediatria",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 739036171,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1495056,
+          19.4064813
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_767323891",
+        "name": "Hospital Dermatológico Ladislao Pascua",
+        "category": "hospital",
+        "operator": "Gobierno del Distrito Federal",
+        "osm_type": "node",
+        "osm_id": 767323891,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1669811,
+          19.3443229
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_837153168",
+        "name": "PGJDF Fiscalia Desconcentrada en Coyoacan",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 837153168,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1578376,
+          19.3727209
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_837157889",
+        "name": "PGJDF Fiscalia Desconcentrada en Benito Juarez",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 837157889,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1803765,
+          19.3673609
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_837167439",
+        "name": "Dentix",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 837167439,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1135947,
+          19.3339823
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_839606804",
+        "name": "Coordinación Territorial COY-3 (PGJDF y SSP)",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 839606804,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1008513,
+          19.3195406
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_839608841",
+        "name": "Coordinación Territorial COY-5 (PGJDF Y SSP)",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 839608841,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1865152,
+          19.367824
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_855761356",
+        "name": "Hospital Santa Coleta",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 855761356,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1809227,
+          19.4547365
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_958694701",
+        "name": "Instituto Nacional de Higiene",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 958694701,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0640291,
+          19.4868577
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_972127625",
+        "name": "Bomberos / proteccion civil",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 972127625,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1788619,
+          19.3689596
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_994356029",
+        "name": "caseta de policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 994356029,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1392026,
+          19.2683926
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1015230879",
+        "name": "santa maria tepepan",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1015230879,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0795749,
+          19.4517676
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1212734970",
+        "name": "Modulo de seguridad y vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1212734970,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0891155,
+          19.4558394
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1212735084",
+        "name": "Modulo de seguridad y vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1212735084,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1131363,
+          19.482332
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1383426312",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1383426312,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1354083,
+          19.4442171
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1466294105",
+        "name": "Centro de Salud Dr. D. Orvañanos",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1466294105,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0637351,
+          19.3904466
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1477979999",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1477979999,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1187686,
+          19.3985249
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1478201548",
+        "name": "Centro de Salud José Zozaya",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1478201548,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2614959,
+          19.5143881
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1514442618",
+        "name": "Dr. Rio de la Loza (Ginecología)",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1514442618,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0174448,
+          19.4088047
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1585123186",
+        "name": "Fiscalía Regional Nezahualcóyotl",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1585123186,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1314248,
+          19.4746457
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1677057517",
+        "name": "Oficina de Policia \"SSPDF GAM 6 Tepeyac\"",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1677057517,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1203903,
+          19.2347073
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1698266724",
+        "name": "Agrupamiento a caballo",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1698266724,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2703646,
+          19.4049803
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1709275810",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1709275810,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0749659,
+          19.3380896
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1710331821",
+        "name": "Juzgado Civico Iztapalapa 7",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1710331821,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0502376,
+          19.5947583
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_1736439483",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 1736439483,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1130365,
+          19.4520667
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2005357867",
+        "name": "Hospital Materno Infantil Inguarán",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2005357867,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9658553,
+          19.427177
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2115196813",
+        "name": "Estacion de Bomberos de Chimalhuacan",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2115196813,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1084842,
+          19.5202875
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2126806248",
+        "name": "Delegación de Policia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2126806248,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1093908,
+          19.5208892
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2126808179",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2126808179,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1550669,
+          19.4153725
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2278973453",
+        "name": "Hospital Punto Médico",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2278973453,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1570999,
+          19.4155616
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2278973467",
+        "name": "Hospital Consultores Ambientales, S.A. De C.V.",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2278973467,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1570758,
+          19.415301
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2278973470",
+        "name": "Hospital Santa Elena, Angeles Roma",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2278973470,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1624076,
+          19.3603343
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324499329",
+        "name": "Hospital General Xoco",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324499329,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2243126,
+          19.3615894
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324519237",
+        "name": "Hospital General Enrique Cabrera",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324519237,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1380497,
+          19.5145772
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324549710",
+        "name": "Hospital General Ticoman",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324549710,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1694061,
+          19.4513407
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324568180",
+        "name": "Hospital General Rubén Leñero",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324568180,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2035124,
+          19.4971714
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324609833",
+        "name": "Hospital Materno Infantil Dr. Nicolas M. Cedillo",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324609833,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1856214,
+          19.4841167
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324619418",
+        "name": "Hospital Pediatrico Azcapotzalco",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324619418,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1141898,
+          19.4872044
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324666055",
+        "name": "Hospital Pediatrico la Villa",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324666055,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1408013,
+          19.5397608
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324694558",
+        "name": "Hospital Materno Infantil Cuautepec",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324694558,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1177983,
+          19.4025983
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324739301",
+        "name": "Hospital Pediátrico Iztacalco",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324739301,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1076907,
+          19.3565253
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324754213",
+        "name": "Hospital Pediátrico Iztapalapa",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324754213,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2032965,
+          19.4506799
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324804235",
+        "name": "Hospital Pediátrico Legaria",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324804235,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0981339,
+          19.4327232
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324849071",
+        "name": "Hospital Pediatrico Moctezuma",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324849071,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1047945,
+          19.2542119
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324866576",
+        "name": "Hospital Materno Infantil Xochimilco",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324866576,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0110247,
+          19.2008455
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2324874934",
+        "name": "Hospital General Milpa Alta",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2324874934,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1083956,
+          19.2578584
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2426031257",
+        "name": "Sector Xochimilco",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2426031257,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1082426,
+          19.2567655
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2426031581",
+        "name": "Issste Clinica Medico Familiar Xochimilco",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2426031581,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0480861,
+          19.532345
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2426920239",
+        "name": "Clinica Samano",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2426920239,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0476158,
+          19.5324011
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2426950372",
+        "name": "clinica samano",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2426950372,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1451247,
+          19.3455142
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2482978381",
+        "name": "Clínica de Especialidades \"Churubusco\"",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales para los Trabajadores del Estado",
+        "osm_type": "node",
+        "osm_id": 2482978381,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0270736,
+          19.5333405
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2539073662",
+        "name": "Hospital Vivo Ciudad Azteca",
+        "category": "hospital",
+        "operator": "Star Médica",
+        "osm_type": "node",
+        "osm_id": 2539073662,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0731378,
+          19.3685503
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2682372533",
+        "name": "Módulo de policía",
+        "category": "police",
+        "operator": "SSC CDMX",
+        "osm_type": "node",
+        "osm_id": 2682372533,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0172826,
+          19.5041365
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2727444943",
+        "name": "Centro de salud \"Nueva aragon\"",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2727444943,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1827004,
+          19.4837764
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2937976909",
+        "name": "Agencia del Ministerio Público",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2937976909,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.184899,
+          19.481014
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2938027324",
+        "name": "Hospital de la Divina Providencia",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2938027324,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.18446,
+          19.4806822
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2938027325",
+        "name": "Ampl. Hospital de la Divina Providencia",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2938027325,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1880483,
+          19.4826851
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2938268495",
+        "name": "ISSSTE Clinica de Medicina Familiar",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2938268495,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1658196,
+          19.4718047
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2939774393",
+        "name": "ISSSTE Clínica Cuitlahuac",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2939774393,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1986607,
+          19.4719818
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_2941425707",
+        "name": "SSP Unidad Poniente",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 2941425707,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1338364,
+          19.462136
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3026304095",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3026304095,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1021484,
+          19.301347
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3238899144",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 3238899144,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1028842,
+          19.3000555
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3238906824",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 3238906824,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1022572,
+          19.3014594
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3238906825",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 3238906825,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1020263,
+          19.3040842
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3238906826",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 3238906826,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.101523,
+          19.307026
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3238906828",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 3238906828,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1027722,
+          19.3076716
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3238914664",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 3238914664,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1040563,
+          19.3043099
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3238914677",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 3238914677,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1708187,
+          19.280408
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3242735049",
+        "name": "Caseta de vigilancia",
+        "category": "police",
+        "operator": "Residencial Insurgentes Sur 1",
+        "osm_type": "node",
+        "osm_id": 3242735049,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1722564,
+          19.2786364
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3242735050",
+        "name": "Caseta de vigilancia",
+        "category": "police",
+        "operator": "Residencial Insurgentes Sur 2",
+        "osm_type": "node",
+        "osm_id": 3242735050,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.126152,
+          19.2647347
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3242871603",
+        "name": "Caseta de vigilancia",
+        "category": "police",
+        "operator": "Condominio Los Cántaros",
+        "osm_type": "node",
+        "osm_id": 3242871603,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1402939,
+          19.4557791
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3318135726",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3318135726,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.169635,
+          19.2512423
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3331252732",
+        "name": "Clínica de Dios",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3331252732,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1857964,
+          19.3049997
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3340745922",
+        "name": "Insurgentes Sur",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3340745922,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9646499,
+          19.3546719
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3581968746",
+        "name": "Bomberos / proteccion civil",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3581968746,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1213644,
+          19.3616126
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3772280299",
+        "name": "Hospital Churubusco",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3772280299,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1497404,
+          19.4007961
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3779138322",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3779138322,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1480055,
+          19.4011561
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3779138327",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3779138327,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1777866,
+          19.3930861
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3779151826",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3779151826,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1502893,
+          19.4018662
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3779257093",
+        "name": "Podologia",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3779257093,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1491481,
+          19.3997787
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3779387424",
+        "name": "Ortopedia Flores",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3779387424,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1491788,
+          19.3997233
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3779388862",
+        "name": "Ortopedia Mitla 4",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3779388862,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1476341,
+          19.3996861
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3779577788",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3779577788,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2726709,
+          19.3290459
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3977351148",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3977351148,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1608719,
+          19.2652777
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_3992433576",
+        "name": "Centro de Salud T-III Dr. David Fragoso",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 3992433576,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1396332,
+          19.4525276
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4070639592",
+        "name": "Módulo SSP La Pera",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4070639592,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1612587,
+          19.4139311
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4168566090",
+        "name": "Hospital Star Médica Centro",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4168566090,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1625655,
+          19.4050112
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4196383189",
+        "name": "Hospital Tehuantepec",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4196383189,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1069463,
+          19.488578
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4241815891",
+        "name": "Modulo de policia.",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4241815891,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9896243,
+          19.3873904
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4271001389",
+        "name": "Hospital General La Perla Nezahualcoyotl",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4271001389,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0465052,
+          19.384537
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4278702191",
+        "name": "DEPOSITO VEHICULAR - MODULO 39 (SSP-CDMX)",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4278702191,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0665914,
+          19.4921483
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4330349598",
+        "name": "Caseta policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4330349598,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1154671,
+          19.3632054
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4334919510",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4334919510,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2439775,
+          19.4886838
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4337114792",
+        "name": "módulo policía Boulevares",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4337114792,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2331427,
+          19.479218
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4337569492",
+        "name": "seguridad pública Naucalpan",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4337569492,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2739597,
+          19.5017559
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4337600394",
+        "name": "Tecalli San Mateo",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4337600394,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2373862,
+          19.5136584
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4338682390",
+        "name": "Hospital Ciudad Satelite",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4338682390,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2173805,
+          19.4873007
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4341810520",
+        "name": "Tecalli Las Armas",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4341810520,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2439852,
+          19.5186058
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4348976592",
+        "name": "Tecalli 4",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4348976592,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0820964,
+          19.3123584
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4356073537",
+        "name": "Hospital Militar de Zona",
+        "category": "hospital",
+        "operator": "SEDENA",
+        "osm_type": "node",
+        "osm_id": 4356073537,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1999184,
+          19.339686
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4403446355",
+        "name": "Hospital vicentino y casa hogar",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4403446355,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2436724,
+          19.574714
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4407581030",
+        "name": "SSA",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4407581030,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2062451,
+          19.5788561
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4415799493",
+        "name": "Bomberos / proteccion civil",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4415799493,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0954454,
+          19.3859363
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4415923862",
+        "name": "Centro de Salud T-II Ramos Millan",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4415923862,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1418319,
+          19.4225708
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4425468090",
+        "name": "Instituto Oftalmologia",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4425468090,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2655093,
+          19.4202849
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4430079390",
+        "name": "7mo Sector Huixquilucan",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4430079390,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2565612,
+          19.5059037
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4443102789",
+        "name": "Titán 3",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4443102789,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0956199,
+          19.3864154
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4538333499",
+        "name": "Centro de salud Ramos Millan",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4538333499,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.165628,
+          19.2835763
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4550126415",
+        "name": "Agencia del Ministerio Público, Tlalpan",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4550126415,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.236888,
+          19.4173543
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4576617362",
+        "name": "Policía Tecamachalco 066",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4576617362,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1419356,
+          19.3084249
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4590079371",
+        "name": "Estación de Policía Viaducto",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4590079371,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1303368,
+          19.2944627
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4602998225",
+        "name": "Médica Coapa",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4602998225,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1596857,
+          19.3006693
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4619075208",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4619075208,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1564696,
+          19.2864442
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4630450850",
+        "name": "Hospitales Tlalpan",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4630450850,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1388944,
+          19.3182627
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4677261126",
+        "name": "Estación de Policía Cáliz",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4677261126,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1314879,
+          19.4364751
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4687361077",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4687361077,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0918744,
+          19.5263753
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4708975161",
+        "name": "Vigilancia Colinas de San José",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4708975161,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0305158,
+          19.4005086
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4717536191",
+        "name": "Estación de bomberos",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4717536191,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0283107,
+          19.3999397
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4717561089",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4717561089,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1430964,
+          19.374735
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4728551391",
+        "name": "Modulo San Simon",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4728551391,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0405386,
+          19.3718884
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4730048292",
+        "name": "Policia Montada CDMX",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4730048292,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0368532,
+          19.3863887
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4730058290",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4730058290,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1489469,
+          19.3718711
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4756848427",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4756848427,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1688916,
+          19.4908231
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4783302622",
+        "name": "Estacion Vallejo",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4783302622,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2361104,
+          19.2869541
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4793330422",
+        "name": "SUMEDIC ambulancias",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4793330422,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1555081,
+          19.4463572
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4831765750",
+        "name": "Laboratorio Médico del Chopo",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4831765750,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2375285,
+          19.5494621
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4831766821",
+        "name": "Laboratorios médicos Chopo",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4831766821,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1551947,
+          19.4474277
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4835772863",
+        "name": "Centro Comunitario de Salud Mental Cuauhtémoc",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4835772863,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1100121,
+          19.5257983
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4840767822",
+        "name": "Estación de bomberos",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4840767822,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.209501,
+          19.3315985
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4846755622",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4846755622,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1567074,
+          19.4547869
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4878871116",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4878871116,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1523035,
+          19.4535805
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4878881532",
+        "name": "Policia Auxiliar",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4878881532,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2502603,
+          19.336419
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4892571882",
+        "name": "Universidad de la Policía de la CDMX",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4892571882,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1284724,
+          19.3096299
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4949202821",
+        "name": "Hospital de traumatología y ortopedia No 2 \"villa coapa\"",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4949202821,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0398087,
+          19.3721286
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4955815021",
+        "name": "Corralón Policía Federal",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4955815021,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1342805,
+          19.4835319
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4987377846",
+        "name": "Unidad de medicina física y rehabilitación norte",
+        "category": "hospital",
+        "operator": "Instituto Mexicano del Seguro Social",
+        "osm_type": "node",
+        "osm_id": 4987377846,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.237838,
+          19.2705094
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_4993591422",
+        "name": "Parque guayacanes",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 4993591422,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.238207,
+          19.4666854
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5076636722",
+        "name": "CES",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5076636722,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1623423,
+          19.4160151
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5087557122",
+        "name": "Hospital De Cos",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5087557122,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1295811,
+          19.3084815
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5117146858",
+        "name": "Hospital General IMSS Coyoacán",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5117146858,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1716072,
+          19.4418532
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5135444041",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5135444041,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1140285,
+          19.4844305
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5138747122",
+        "name": "Hospital Guadalupe",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5138747122,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2276918,
+          19.5377792
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5145714223",
+        "name": "Torre médica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5145714223,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1234808,
+          19.494916
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5157283322",
+        "name": "Hospital Boutique",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5157283322,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1634237,
+          19.4358437
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5190989121",
+        "name": "ISSSTE Unidad Especial Centro de Apoyo Diagnóstico \"San Rafael\"",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+        "osm_type": "node",
+        "osm_id": 5190989121,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1716807,
+          19.4183686
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5280393723",
+        "name": "Centro Hospitalario Sanatorio Durango",
+        "category": "hospital",
+        "operator": "Sanatorio Durango",
+        "osm_type": "node",
+        "osm_id": 5280393723,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1968054,
+          19.5357995
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5306935622",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5306935622,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0348642,
+          19.5467518
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5320237918",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5320237918,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.036525,
+          19.5460927
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5328257655",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5328257655,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2213947,
+          19.5474649
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5334047015",
+        "name": "Estación de Vigilancia de Pirules",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5334047015,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2186127,
+          19.5487274
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5335602904",
+        "name": "Caseta de Vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5335602904,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0390849,
+          19.5460686
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5355412527",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5355412527,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1025221,
+          19.3074673
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5364021834",
+        "name": "UAM Xochimilco",
+        "category": "police",
+        "operator": "UAM Xochimilco",
+        "osm_type": "node",
+        "osm_id": 5364021834,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1249754,
+          19.3813291
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5368779798",
+        "name": "Clínica médica.",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5368779798,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3191599,
+          19.3545158
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5369204576",
+        "name": "Unidad Centro De Salud T-1 Chimalpa",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5369204576,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9218627,
+          19.2756595
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5374595772",
+        "name": "Delegación guadalupana",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5374595772,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0200754,
+          19.3959598
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5379875421",
+        "name": "Módulo de policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5379875421,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1588141,
+          19.4161532
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5441375038",
+        "name": "Hospital Medex",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5441375038,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0397233,
+          19.5465415
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5441456298",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5441456298,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.038021,
+          19.5343863
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5451918633",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5451918633,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2552566,
+          19.3828691
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5460589125",
+        "name": "Centro de salud Palo Alto",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5460589125,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2326787,
+          19.4908541
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5492369022",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5492369022,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2537172,
+          19.4753906
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5502335022",
+        "name": "Policía Montada de Naucalpan",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5502335022,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2580947,
+          19.4670211
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5503705022",
+        "name": "Tecalli 3",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5503705022,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3116554,
+          19.3354234
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5516868022",
+        "name": "Policía Federal",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5516868022,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1381773,
+          19.4395299
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5580558722",
+        "name": "ISSSTE C.M.F. Perú",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+        "osm_type": "node",
+        "osm_id": 5580558722,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1296862,
+          19.3087697
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5584953139",
+        "name": "Hospital General Regional 2 IMSS",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5584953139,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.129175,
+          19.3096388
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5584953140",
+        "name": "IMSS HGR 2/URGENCIAS",
+        "category": "hospital",
+        "operator": "Instituto Mexicano del Seguro Social",
+        "osm_type": "node",
+        "osm_id": 5584953140,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1965193,
+          19.5356059
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5594982824",
+        "name": "Hospital Elizur",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5594982824,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1456059,
+          19.3648602
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5668176258",
+        "name": "Policía",
+        "category": "police",
+        "operator": "SSP",
+        "osm_type": "node",
+        "osm_id": 5668176258,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0831441,
+          19.4201186
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5786335172",
+        "name": "Módulo Judicial",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5786335172,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1140589,
+          19.4201464
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5805382651",
+        "name": "Estacion de policia Vigilante",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5805382651,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0434617,
+          19.5732223
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5825839898",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5825839898,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0571328,
+          19.3630791
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5833520186",
+        "name": "Módulo De Policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5833520186,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0862747,
+          19.4178002
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5859752058",
+        "name": "Seguridad Privada",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5859752058,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0969283,
+          19.3767411
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5899997186",
+        "name": "Policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5899997186,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1081031,
+          19.3734126
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5899997187",
+        "name": "Policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5899997187,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0570977,
+          19.3631069
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5899997188",
+        "name": "Módulo de policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5899997188,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1549306,
+          19.2895487
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_5900012685",
+        "name": "Instituto Nacional de Psiquiatría",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 5900012685,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0459807,
+          19.5703159
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6047850590",
+        "name": "ISSEMYM",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6047850590,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0168387,
+          19.5811947
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6051620426",
+        "name": "Issemym",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6051620426,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0517137,
+          19.5501232
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6223359252",
+        "name": "Unidad de Medicina Familiar 93",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6223359252,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9845013,
+          19.3911873
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6256173399",
+        "name": "Bomberos / proteccion civil",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6256173399,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.936806,
+          19.3175515
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6270207821",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6270207821,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2207402,
+          19.5068328
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6296084165",
+        "name": "Sub-Estacion de Bombreos Satélite",
+        "category": "fire_station",
+        "operator": "Naucalpan",
+        "osm_type": "node",
+        "osm_id": 6296084165,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2166123,
+          19.5135679
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6296100612",
+        "name": "Estación sur de Bombreos, Javier Perez Olagaray",
+        "category": "fire_station",
+        "operator": "Talanepantla",
+        "osm_type": "node",
+        "osm_id": 6296100612,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2099926,
+          19.5080009
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6296109883",
+        "name": "Estación de policía Prados del Rosario",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6296109883,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1524861,
+          19.4813359
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6296180484",
+        "name": "Modulo de Policía Coltongo",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6296180484,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0515915,
+          19.550623
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6389734742",
+        "name": "ISSSTE Clínica de Medicina Familitar Xalostoc",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+        "osm_type": "node",
+        "osm_id": 6389734742,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1113957,
+          19.3666033
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6394674309",
+        "name": "Clinica Especializada en el Manejo Integral de la Diabetes Iztapalapa",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6394674309,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3493092,
+          19.3615562
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6426403897",
+        "name": "Centro Medico Huixquilucan",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6426403897,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1916659,
+          19.5925946
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6426682600",
+        "name": "Centro de Salud Santa María de Guadalupe",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6426682600,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3415301,
+          19.375558
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6429049326",
+        "name": "Delegación Dos Ríos",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6429049326,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3290624,
+          19.3986431
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6431952620",
+        "name": "Hospital Campos Castellanos Jorge",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6431952620,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1461651,
+          19.3505472
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6459174077",
+        "name": "Modulo de Seguridad y Participación Ciudadana",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6459174077,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.31183,
+          19.4005799
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6466683705",
+        "name": "Efraín Díaz Jouanen",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6466683705,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.099135,
+          19.5503242
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6699414986",
+        "name": "Estación de Policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6699414986,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1678461,
+          19.4053707
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6720453187",
+        "name": "Hospital Ángeles Dalinde",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6720453187,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1852226,
+          19.4842608
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_6720453188",
+        "name": "Hospital Pediatrico de Azcapotzalco",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 6720453188,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1589261,
+          19.4117187
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7158690385",
+        "name": "Estación de policía Roma",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 7158690385,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1767088,
+          19.3294366
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7261616759",
+        "name": "Hospital de aves FMVZ- UNAM",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 7261616759,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1767591,
+          19.3301095
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7261644107",
+        "name": "MCZE Hospital para Équidos",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 7261644107,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1333431,
+          19.377257
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7392909592",
+        "name": "Clínica de Colposcopia Fundación Cruz Talonia",
+        "category": "hospital",
+        "operator": "Fundación Cruz Talonia",
+        "osm_type": "node",
+        "osm_id": 7392909592,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1558906,
+          19.3699886
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7393104443",
+        "name": "IMSS Hospital General de Zona 1-A Dr. Rodolfo Antonio de Mucha Macias \"Venados\"",
+        "category": "hospital",
+        "operator": "Instituto Mexicano del Seguro Social",
+        "osm_type": "node",
+        "osm_id": 7393104443,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9119316,
+          19.5359858
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7809016459",
+        "name": "Centro de Salud Magdalena Panoaya",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 7809016459,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1734628,
+          19.5494214
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7829887949",
+        "name": "Modulo Municipal de Vigilancia",
+        "category": "police",
+        "operator": "Policia Municipal",
+        "osm_type": "node",
+        "osm_id": 7829887949,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1872156,
+          19.3916524
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_7996546294",
+        "name": "1ro de Mayo",
+        "category": "hospital",
+        "operator": "1",
+        "osm_type": "node",
+        "osm_id": 7996546294,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2143911,
+          19.5161483
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8209552319",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8209552319,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9979011,
+          19.3890459
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8419174812",
+        "name": "Cruz Roja Mexicana La Perla",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8419174812,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0152119,
+          19.422372
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8419569610",
+        "name": "Hospital General Gustavo Baz",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8419569610,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0138929,
+          19.4214803
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8419573520",
+        "name": "ISSSTE",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+        "osm_type": "node",
+        "osm_id": 8419573520,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0022153,
+          19.4095588
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8421567161",
+        "name": "DirrecionGeneral de Seguridad Cuidadna",
+        "category": "police",
+        "operator": "Gob. Neza",
+        "osm_type": "node",
+        "osm_id": 8421567161,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0078283,
+          19.3841045
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8547202432",
+        "name": "Módulo de Vacunación COVID-19",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8547202432,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0522197,
+          19.4306244
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8570208386",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8570208386,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2929057,
+          19.3889784
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8685616768",
+        "name": "Laboratorio Quest",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8685616768,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2655244,
+          19.4200569
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8685649836",
+        "name": "Modulo de Policia Minas",
+        "category": "police",
+        "operator": "Público",
+        "osm_type": "node",
+        "osm_id": 8685649836,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1918907,
+          19.433868
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8685710574",
+        "name": "Hospital Santa Monica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8685710574,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2978939,
+          19.4155968
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8685718369",
+        "name": "Farmacia ETC",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8685718369,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0143984,
+          19.4155423
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8790652381",
+        "name": "Sub Dirrecion Operativa Regional Oriente",
+        "category": "police",
+        "operator": "Secretaria de Seguridad Publica del Estado de México",
+        "osm_type": "node",
+        "osm_id": 8790652381,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3009542,
+          19.3532048
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_8843537533",
+        "name": "central de emergencias",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 8843537533,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1719654,
+          19.4333514
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9130222753",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 9130222753,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9796335,
+          19.358654
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9306696421",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 9306696421,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3441146,
+          19.344046
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9595768372",
+        "name": "DIF",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 9595768372,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1916578,
+          19.4358898
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9678551817",
+        "name": "Hospital Angeles Santa Monica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 9678551817,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1655405,
+          19.4340558
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9709777177",
+        "name": "Imss Villalonguin",
+        "category": "hospital",
+        "operator": "Instituto Mexicano del Seguro Social",
+        "osm_type": "node",
+        "osm_id": 9709777177,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2241327,
+          19.3614426
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9768668045",
+        "name": "Hospital General Enrique Cabrera",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 9768668045,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1017402,
+          19.4708297
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9847150318",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 9847150318,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1511488,
+          19.3453732
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9870764235",
+        "name": "Hospital Pediátrico de la Cruz Blanca Neutral",
+        "category": "hospital",
+        "operator": "Asociación Mexicana de la Cruz Blanca Neutral, IAP",
+        "osm_type": "node",
+        "osm_id": 9870764235,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1456263,
+          19.3394541
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9945213010",
+        "name": "Hospital SMA",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 9945213010,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9166587,
+          19.5521731
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_9990066559",
+        "name": "Dirección de Seguridad Publica Atenco",
+        "category": "police",
+        "operator": "H. Ayuntamiento",
+        "osm_type": "node",
+        "osm_id": 9990066559,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2047507,
+          19.4446422
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_10148320385",
+        "name": "Hospital Carso 3",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 10148320385,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2831117,
+          19.3890727
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_10196039032",
+        "name": "Centro de salud",
+        "category": "hospital",
+        "operator": "Instituto de Salud del Estado de México",
+        "osm_type": "node",
+        "osm_id": 10196039032,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1423963,
+          19.5266438
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_10224647523",
+        "name": "Hospital Santiago Apóstol de Cuautepec",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 10224647523,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1349086,
+          19.2994043
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_10303439009",
+        "name": "Salud / emergencia medica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 10303439009,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1603067,
+          19.4138659
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_10800153317",
+        "name": "Médica San Luis",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 10800153317,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1336905,
+          19.4288082
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_10823121866",
+        "name": "Hospital de Jesus",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 10823121866,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1930748,
+          19.4121944
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_10934789262",
+        "name": "Hospital Militar de Zona Constituyentes",
+        "category": "hospital",
+        "operator": "Secretaría de la Defensa Nacional",
+        "osm_type": "node",
+        "osm_id": 10934789262,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1172786,
+          19.4773985
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_11123710005",
+        "name": "Grupo de Especialidades Médicas Santa Inés",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 11123710005,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1172934,
+          19.477392
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_11126128008",
+        "name": "Gemsi",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 11126128008,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1403548,
+          19.4541351
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_11235046379",
+        "name": "Vidatox",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 11235046379,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2248147,
+          19.4898694
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_11413689879",
+        "name": "Base Colon Zona 10",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 11413689879,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.052117,
+          19.4774585
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_11458661504",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 11458661504,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2084233,
+          19.4880016
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_11484310471",
+        "name": "Centro Azcapotzalco de Respuesta a Emergencias",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 11484310471,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1775931,
+          19.33267
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_11788866069",
+        "name": "Centro de Salud T.I Copilco el Alto",
+        "category": "hospital",
+        "operator": "Secretaría de Salud, Gobierno de la Ciudad de México",
+        "osm_type": "node",
+        "osm_id": 11788866069,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2737244,
+          19.3443046
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12401504308",
+        "name": "Módulo de Policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12401504308,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2737112,
+          19.3442214
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12401537001",
+        "name": "Módulo de Policía",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12401537001,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2511293,
+          19.383611
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12505483357",
+        "name": "Healthy me by pam",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12505483357,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3528917,
+          19.3594923
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12508247105",
+        "name": "Hospital Municipal Huixquilucan Santos Degollado Bicentenario",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12508247105,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3228814,
+          19.4128493
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12523839701",
+        "name": "Centro Infantil Magdalena",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12523839701,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2746158,
+          19.3591631
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12544975713",
+        "name": "Vista Diagnostica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12544975713,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2713569,
+          19.4185444
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12545928605",
+        "name": "Clinica Medica Maternidad Dr. Adrian",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12545928605,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2485826,
+          19.304212
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12547343921",
+        "name": "Clinica Imss",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12547343921,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2719779,
+          19.4144681
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12547365730",
+        "name": "Centro Especializado De Atencion Primaria A La Salud Palo Solo",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12547365730,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3002705,
+          19.3567934
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12547812266",
+        "name": "Clinica Del Carmen",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12547812266,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2710247,
+          19.4896396
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12554794482",
+        "name": "Servicio Médico",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12554794482,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2820695,
+          19.4309949
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12560402801",
+        "name": "Noor Clinic",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12560402801,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.276267,
+          19.4528623
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12568798767",
+        "name": "Sanatorio Santa Esperanza",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12568798767,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.9952885,
+          19.3630536
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12599631530",
+        "name": "ISSSTE Hospital General José María Morelos y Pavón",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+        "osm_type": "node",
+        "osm_id": 12599631530,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2814581,
+          19.358831
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12607721478",
+        "name": "Macfer",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12607721478,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1597833,
+          19.3031354
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12627989801",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12627989801,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.3030516,
+          19.3483646
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12628891030",
+        "name": "Luna Amparo Ochoa",
+        "category": "hospital",
+        "operator": "Unidad territorial de atención y prevención de la violencia de género",
+        "osm_type": "node",
+        "osm_id": 12628891030,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0903861,
+          19.4439419
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12628903603",
+        "name": "Clínica de Atención Integral de la Mujer \"Romero Rubio\"",
+        "category": "hospital",
+        "operator": "SEDESA",
+        "osm_type": "node",
+        "osm_id": 12628903603,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2944801,
+          19.3569212
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12628945585",
+        "name": "Luna Amparo O Castorena",
+        "category": "hospital",
+        "operator": "Gobierno de la Ciudad de México",
+        "osm_type": "node",
+        "osm_id": 12628945585,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2061543,
+          19.5783839
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12840603601",
+        "name": "Estación Norte de Bomberos CEMEX Arturo Zapata Gil",
+        "category": "fire_station",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12840603601,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Bomberos / proteccion civil"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1941519,
+          19.4400723
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_12984992701",
+        "name": "Hospitalito",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 12984992701,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.125514,
+          19.3235342
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13039851981",
+        "name": "CEMENAV - CENTRO MÉDICO NAVAL",
+        "category": "hospital",
+        "operator": "SEMAR",
+        "osm_type": "node",
+        "osm_id": 13039851981,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1492579,
+          19.3722337
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13054708711",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": "Gobierno de la Ciudad de México",
+        "osm_type": "node",
+        "osm_id": 13054708711,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2059696,
+          19.4555506
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13090520280",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 13090520280,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2047939,
+          19.4488915
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13090520281",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 13090520281,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2460044,
+          19.4720901
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13107722564",
+        "name": "Seguridad / vigilancia",
+        "category": "police",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 13107722564,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0350129,
+          19.2576212
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13187632988",
+        "name": "Centro Universitario de Enfermería Comunitaria",
+        "category": "hospital",
+        "operator": "Facultad de Enfermería y Obstetricia, UNAM",
+        "osm_type": "node",
+        "osm_id": 13187632988,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1307816,
+          19.4239838
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13430477132",
+        "name": "Edificio de enseñanza médica Hospital Juárez",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 13430477132,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1494763,
+          19.387243
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13636072310",
+        "name": "Casa Azul Comunidad Terapéutica",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 13636072310,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1834594,
+          19.5720299
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13683152785",
+        "name": "IMSS Bienestar Reforma Urbana",
+        "category": "hospital",
+        "operator": "Instituto Mexicano del Seguro Social",
+        "osm_type": "node",
+        "osm_id": 13683152785,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1477531,
+          19.2888964
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_node_13731129901",
+        "name": "Urgencias ortopedicas INR-LGII",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "node",
+        "osm_id": 13731129901,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1677047,
+          19.3597768
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_25364122",
+        "name": "Hospital San Angel Inn Universidad",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 25364122,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1149739,
+          19.3924961
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_26550267",
+        "name": "Depósito Vehicular Troncoso",
+        "category": "police",
+        "operator": "Secretaría de Seguridad Ciudadana",
+        "osm_type": "way",
+        "osm_id": 26550267,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2039979,
+          19.4002123
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_27804337",
+        "name": "Centro Médico ABC",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 27804337,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2210233,
+          19.3126463
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_28932842",
+        "name": "Hospital Ángeles del Pedregal",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 28932842,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1963836,
+          19.4395705
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_30373861",
+        "name": "Hospital Español",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 30373861,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.216189,
+          19.4373297
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_30374094",
+        "name": "Hospital Central Militar",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 30374094,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2370127,
+          19.4172262
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_30854789",
+        "name": "Tecali",
+        "category": "police",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 30854789,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1884574,
+          19.3634914
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_30910883",
+        "name": "Hospital General \"Dr. Darío Fernández Fierro\"",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales para los Trabajadores del Estado",
+        "osm_type": "way",
+        "osm_id": 30910883,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2819914,
+          19.3949604
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_30911592",
+        "name": "Hospital Angeles Lomas",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 30911592,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2823418,
+          19.3563214
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_30965126",
+        "name": "Centro Médico ABC",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 30965126,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1528235,
+          19.4091815
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_39544321",
+        "name": "Centro Medico Nacional Siglo XXI",
+        "category": "hospital",
+        "operator": "Instituto Mexicano del Seguro Social",
+        "osm_type": "way",
+        "osm_id": 39544321,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1032509,
+          19.4069299
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_54241683",
+        "name": "Depósito Vehicular  Añil",
+        "category": "police",
+        "operator": "Secretaría de Seguridad Ciudadana",
+        "osm_type": "way",
+        "osm_id": 54241683,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Seguridad / vigilancia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1293597,
+          19.4865571
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_79682915",
+        "name": "Hospital Ángeles Lindavista",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 79682915,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1330709,
+          19.4867184
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_79683408",
+        "name": "Hospital 1º de Octubre ISSSTE",
+        "category": "hospital",
+        "operator": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado",
+        "osm_type": "way",
+        "osm_id": 79683408,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1355271,
+          19.4860356
+        ]
+      },
+      "properties": {
+        "unit_id": "osm_way_79683964",
+        "name": "Hospital de Gineco Pediatría 3A",
+        "category": "hospital",
+        "operator": null,
+        "osm_type": "way",
+        "osm_id": 79683964,
+        "source": "openstreetmap_overpass_cached",
+        "category_label": "Salud / emergencia medica"
+      }
+    }
+  ]
+}

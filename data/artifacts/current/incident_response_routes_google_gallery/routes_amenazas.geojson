@@ -1,0 +1,507 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15618,
+            19.41179
+          ],
+          [
+            -99.15495000000001,
+            19.411800000000003
+          ],
+          [
+            -99.15487,
+            19.41184
+          ],
+          [
+            -99.15312,
+            19.41159
+          ],
+          [
+            -99.15054,
+            19.4112
+          ],
+          [
+            -99.14982,
+            19.414730000000002
+          ],
+          [
+            -99.14964,
+            19.41561
+          ],
+          [
+            -99.14931000000001,
+            19.4172
+          ],
+          [
+            -99.14919,
+            19.41778
+          ],
+          [
+            -99.14859000000001,
+            19.4207
+          ],
+          [
+            -99.14854000000001,
+            19.42086
+          ],
+          [
+            -99.14846000000001,
+            19.421310000000002
+          ],
+          [
+            -99.14813000000001,
+            19.42286
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_amenazas_2",
+        "codigo_postal": "06720",
+        "crime_type": "Amenazas",
+        "centroid_id": 2,
+        "centroid_lat": 19.4229017,
+        "centroid_lon": -99.1483245,
+        "n_events": 306,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2207.0,
+        "duration_seconds": 537.0,
+        "duration_minutes": 8.95,
+        "static_duration_seconds": 603.0,
+        "delay_seconds": -66.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCOuJAuFGOp@}IlAcOaUoCoDc@}HaAsBWgQwB_@IyAOuHaA",
+        "route_description": "Dr. Jimenez",
+        "generated_at_utc": "2026-06-06T17:34:57+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.15891,
+            19.41176
+          ],
+          [
+            -99.15872,
+            19.411710000000003
+          ],
+          [
+            -99.15805,
+            19.411710000000003
+          ],
+          [
+            -99.15618,
+            19.41179
+          ],
+          [
+            -99.15495000000001,
+            19.411800000000003
+          ],
+          [
+            -99.15487,
+            19.41184
+          ],
+          [
+            -99.15312,
+            19.41159
+          ],
+          [
+            -99.15054,
+            19.4112
+          ],
+          [
+            -99.15052000000001,
+            19.41129
+          ],
+          [
+            -99.14889000000001,
+            19.41118
+          ],
+          [
+            -99.14857,
+            19.412920000000003
+          ],
+          [
+            -99.14858000000001,
+            19.41296
+          ],
+          [
+            -99.14847,
+            19.41353
+          ],
+          [
+            -99.14931000000001,
+            19.413580000000003
+          ],
+          [
+            -99.14922000000001,
+            19.414
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06720_amenazas_1",
+        "codigo_postal": "06720",
+        "crime_type": "Amenazas",
+        "centroid_id": 1,
+        "centroid_lat": 19.4140202,
+        "centroid_lon": -99.1489288,
+        "n_events": 242,
+        "resolver_unit_id": "osm_node_7158690385",
+        "resolver_name": "Estación de policía Roma",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4117187,
+        "resolver_lon": -99.1589261,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 1467.0,
+        "duration_seconds": 344.0,
+        "duration_minutes": 5.733333333333333,
+        "static_duration_seconds": 405.0,
+        "delay_seconds": -61.0,
+        "encoded_polyline": "ojnuBd~e|QHe@?eCOuJAuFGOp@}IlAcOQCTeI{I_AG@qBUIfDsAQ",
+        "route_description": "C. Antonio M. Anza y C. Dr.Márquez",
+        "generated_at_utc": "2026-06-06T17:34:59+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.13972000000001,
+            19.452620000000003
+          ],
+          [
+            -99.13986000000001,
+            19.452520000000003
+          ],
+          [
+            -99.14069,
+            19.45229
+          ],
+          [
+            -99.14086,
+            19.45232
+          ],
+          [
+            -99.141,
+            19.45238
+          ],
+          [
+            -99.14110000000001,
+            19.45248
+          ],
+          [
+            -99.14118,
+            19.4526
+          ],
+          [
+            -99.14126,
+            19.452240000000003
+          ],
+          [
+            -99.14116000000001,
+            19.451900000000002
+          ],
+          [
+            -99.14119000000001,
+            19.451700000000002
+          ],
+          [
+            -99.14127,
+            19.45135
+          ],
+          [
+            -99.14129000000001,
+            19.45109
+          ],
+          [
+            -99.14167,
+            19.44923
+          ],
+          [
+            -99.14178000000001,
+            19.44867
+          ],
+          [
+            -99.14206000000001,
+            19.44731
+          ],
+          [
+            -99.14254000000001,
+            19.44741
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "06300_amenazas_1",
+        "codigo_postal": "06300",
+        "crime_type": "Amenazas",
+        "centroid_id": 1,
+        "centroid_lat": 19.4475228,
+        "centroid_lon": -99.1425098,
+        "n_events": 194,
+        "resolver_unit_id": "osm_node_4070639592",
+        "resolver_name": "Módulo SSP La Pera",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4525276,
+        "resolver_lon": -99.1396332,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 825.0,
+        "duration_seconds": 213.0,
+        "duration_minutes": 3.55,
+        "static_duration_seconds": 236.0,
+        "delay_seconds": -23.0,
+        "encoded_polyline": "{ivuBffb|QRZl@dDE`@KZSRWNfANbASf@DdANr@BrJjAnBTnGv@S~A",
+        "route_description": "Lerdo",
+        "generated_at_utc": "2026-06-06T17:35:00+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.08618000000001,
+            19.417740000000002
+          ],
+          [
+            -99.08629,
+            19.4176
+          ],
+          [
+            -99.08635000000001,
+            19.41756
+          ],
+          [
+            -99.08761000000001,
+            19.417270000000002
+          ],
+          [
+            -99.08848,
+            19.417080000000002
+          ],
+          [
+            -99.08869000000001,
+            19.41713
+          ],
+          [
+            -99.08952000000001,
+            19.41761
+          ],
+          [
+            -99.08976000000001,
+            19.417180000000002
+          ],
+          [
+            -99.09006000000001,
+            19.41674
+          ],
+          [
+            -99.09012000000001,
+            19.416610000000002
+          ],
+          [
+            -99.09237,
+            19.41789
+          ],
+          [
+            -99.09355000000001,
+            19.418580000000002
+          ],
+          [
+            -99.09526000000001,
+            19.41953
+          ],
+          [
+            -99.09591,
+            19.419900000000002
+          ],
+          [
+            -99.09611000000001,
+            19.419990000000002
+          ],
+          [
+            -99.09618,
+            19.420070000000003
+          ],
+          [
+            -99.09629000000001,
+            19.42012
+          ],
+          [
+            -99.09637000000001,
+            19.42012
+          ],
+          [
+            -99.09704,
+            19.42048
+          ],
+          [
+            -99.09937000000001,
+            19.421740000000003
+          ],
+          [
+            -99.0994,
+            19.42191
+          ],
+          [
+            -99.09946000000001,
+            19.42208
+          ],
+          [
+            -99.09959,
+            19.422870000000003
+          ],
+          [
+            -99.09984000000001,
+            19.42338
+          ],
+          [
+            -99.09993000000001,
+            19.423530000000003
+          ],
+          [
+            -99.10009000000001,
+            19.423830000000002
+          ],
+          [
+            -99.10085000000001,
+            19.4249
+          ],
+          [
+            -99.10092,
+            19.42492
+          ],
+          [
+            -99.10119,
+            19.42539
+          ],
+          [
+            -99.1011,
+            19.425520000000002
+          ],
+          [
+            -99.09941,
+            19.42856
+          ],
+          [
+            -99.09894000000001,
+            19.4295
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "15530_amenazas_1",
+        "codigo_postal": "15530",
+        "crime_type": "Amenazas",
+        "centroid_id": 1,
+        "centroid_lat": 19.4294952,
+        "centroid_lon": -99.0989232,
+        "n_events": 193,
+        "resolver_unit_id": "osm_node_5859752058",
+        "resolver_name": "Seguridad Privada",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.4178002,
+        "resolver_lon": -99.0862747,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 2611.0,
+        "duration_seconds": 507.0,
+        "duration_minutes": 8.45,
+        "static_duration_seconds": 541.0,
+        "delay_seconds": -34.0,
+        "encoded_polyline": "{oouBrww{QZTFJx@zFd@lDIh@_BdDtAn@vAz@XJ_G`MiCjF}DtIiA`CQf@OLIT?NgAdC{FpMa@Da@J}CXeBp@]P{@^uEvCCL}At@YQ_RqI{D}A",
+        "route_description": "Calz. Ignacio Zaragoza",
+        "generated_at_utc": "2026-06-06T17:35:01+00:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.06375000000001,
+            19.390490000000003
+          ],
+          [
+            -99.06371000000001,
+            19.39063
+          ],
+          [
+            -99.06613,
+            19.39104
+          ],
+          [
+            -99.06598000000001,
+            19.391710000000003
+          ]
+        ]
+      },
+      "properties": {
+        "incident_key": "08500_amenazas_1",
+        "codigo_postal": "08500",
+        "crime_type": "Amenazas",
+        "centroid_id": 1,
+        "centroid_lat": 19.3917059,
+        "centroid_lon": -99.0659832,
+        "n_events": 184,
+        "resolver_unit_id": "osm_node_1477979999",
+        "resolver_name": "Seguridad / vigilancia",
+        "resolver_category": "police",
+        "resolver_category_label": "Seguridad / vigilancia",
+        "resolver_lat": 19.3904466,
+        "resolver_lon": -99.0637351,
+        "allowed_resolver_categories": "police",
+        "route_source": "google_routes",
+        "routing_status": "ok",
+        "distance_meters": 349.0,
+        "duration_seconds": 87.0,
+        "duration_minutes": 1.45,
+        "static_duration_seconds": 101.0,
+        "delay_seconds": -14.0,
+        "encoded_polyline": "qejuBlks{Q[GqAbNeC]",
+        "route_description": "Sur 20",
+        "generated_at_utc": "2026-06-06T17:35:03+00:00"
+      }
+    }
+  ]
+}
