@@ -1,0 +1,125 @@
+name: TomTom one-month history
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: "Fecha inicial YYYY-MM-DD; vacio ejecuta una captura inmediata"
+        required: false
+      end_date:
+        description: "Fecha final YYYY-MM-DD; vacio usa start_date + 30 dias"
+        required: false
+      force_run:
+        description: "Ignorar ventana y ejecutar una captura inmediata"
+        type: boolean
+        default: false
+  schedule:
+    # Campaña moderada: 5 capturas por dia aprox. en horario operativo CDMX.
+    # Para activar el schedule configure repository variables:
+    # TOMTOM_HISTORY_ENABLED=true, TOMTOM_HISTORY_START_DATE=YYYY-MM-DD,
+    # TOMTOM_HISTORY_END_DATE=YYYY-MM-DD.
+    - cron: "35 12,16,20 * * *"
+    - cron: "35 0,4 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tomtom-traffic
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validar ventana de campaña
+        id: window
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_START_DATE: ${{ inputs.start_date }}
+          INPUT_END_DATE: ${{ inputs.end_date }}
+          INPUT_FORCE_RUN: ${{ inputs.force_run }}
+          VAR_ENABLED: ${{ vars.TOMTOM_HISTORY_ENABLED }}
+          VAR_START_DATE: ${{ vars.TOMTOM_HISTORY_START_DATE }}
+          VAR_END_DATE: ${{ vars.TOMTOM_HISTORY_END_DATE }}
+        run: |
+          set -euo pipefail
+
+          today="$(TZ=America/Mexico_City date +%F)"
+          active="false"
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$INPUT_FORCE_RUN" = "true" ]; then
+            echo "force_run=true: se ejecutara una captura inmediata."
+            active="true"
+            start_date="${INPUT_START_DATE:-$today}"
+            end_date="${INPUT_END_DATE:-$today}"
+          else
+            start_date="${INPUT_START_DATE:-$VAR_START_DATE}"
+            end_date="${INPUT_END_DATE:-$VAR_END_DATE}"
+
+            if [ "$EVENT_NAME" = "schedule" ]; then
+              if [ "${VAR_ENABLED,,}" != "true" ]; then
+                echo "TOMTOM_HISTORY_ENABLED no es true; schedule desactivado."
+                echo "active=false" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              if [ -z "$start_date" ] || [ -z "$end_date" ]; then
+                echo "Faltan TOMTOM_HISTORY_START_DATE y/o TOMTOM_HISTORY_END_DATE; schedule desactivado para evitar corridas indefinidas."
+                echo "active=false" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+            fi
+
+            if [ -z "$start_date" ]; then
+              start_date="$today"
+            fi
+            if [ -z "$end_date" ]; then
+              end_date="$(date -u -d "$start_date + 30 days" +%F)"
+            fi
+
+            if [ "$today" \< "$start_date" ] || [ "$today" \> "$end_date" ]; then
+              echo "Fuera de ventana: today=$today start=$start_date end=$end_date."
+            else
+              active="true"
+            fi
+          fi
+
+          echo "today=$today"
+          echo "start_date=$start_date"
+          echo "end_date=$end_date"
+          echo "active=$active" >> "$GITHUB_OUTPUT"
+          echo "start_date=$start_date" >> "$GITHUB_OUTPUT"
+          echo "end_date=$end_date" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.window.outputs.active == 'true'
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        if: steps.window.outputs.active == 'true'
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - name: Instalar dependencias
+        if: steps.window.outputs.active == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+      - name: Extraer TomTom
+        if: steps.window.outputs.active == 'true'
+        env:
+          TOMTOM: ${{ secrets.TOMTOM }}
+        run: python -m historico_api source tomtom --config configs/tables.yml
+      - name: Regenerar docs
+        if: steps.window.outputs.active == 'true'
+        run: python -m historico_api docs --config configs/tables.yml
+      - name: Commit
+        if: steps.window.outputs.active == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs configs README.md
+          if git diff --cached --quiet; then echo "Sin cambios."; exit 0; fi
+          git commit -m "Actualiza historico mensual TomTom"
+          git pull --rebase
+          git push

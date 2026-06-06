@@ -9,6 +9,7 @@ El objetivo es conservar informacion suficiente para analisis historico sin satu
 | `metrobus-realtime.yml` | Metrobús GTFS-Realtime | Cada hora en horario operativo de lunes a viernes | Posiciones y trip updates son de vida corta. Una hora reduce carga y deja patron operativo. |
 | `metrobus-static.yml` | Metrobús GTFS estatico | Semanal | Rutas, paradas y calendarios cambian poco, pero pueden actualizarse sin aviso. |
 | `tomtom-traffic.yml` | TomTom incidentes y flow | Cada 2 horas en horario operativo de lunes a viernes | Trafico cambia rapido, pero TomTom tiene cuota/costo. |
+| `tomtom-one-month-history.yml` | TomTom incidentes y flow | Campaña opcional de 5 capturas diarias por hasta 1 mes | Permite construir un historico acotado sin corridas indefinidas; requiere variables de inicio/fin y flag de activacion. |
 | `ecobici-realtime.yml` | ECOBICI station_status | Cada 2 horas en horario operativo de lunes a viernes | GBFS es realtime; capturas moderadas permiten historico de disponibilidad. |
 | `ecobici-catalog.yml` | ECOBICI station_information y feeds | Mensual | Catalogo de estaciones y URLs cambia poco. |
 | `ecobici-historical.yml` | Historicos mensuales ECOBICI | Mensual, dia 6 | Los archivos historicos son mensuales; correr despues del inicio del mes evita buscar archivos aun no publicados. |
@@ -30,3 +31,14 @@ El objetivo es conservar informacion suficiente para analisis historico sin satu
 ## Horario
 
 GitHub Actions usa UTC. Los cron fueron escritos para aproximar horario laboral de `America/Mexico_City`. Si se requiere otra ventana, ajuste las expresiones en `.github/workflows/*.yml`.
+
+
+## Campañas acotadas de TomTom
+
+El workflow `tomtom-one-month-history.yml` esta pensado para levantar un historico de aproximadamente un mes sin saturar la API:
+
+- Ejecuta 5 capturas diarias aproximadas en horario operativo de CDMX (`06:35`, `10:35`, `14:35`, `18:35` y `22:35`, sujeto a UTC y a GitHub Actions).
+- Requiere `TOMTOM_HISTORY_ENABLED=true`, `TOMTOM_HISTORY_START_DATE` y `TOMTOM_HISTORY_END_DATE` para que el schedule haga trabajo real.
+- Sale sin consultar la API cuando falta la configuracion o cuando la fecha actual esta fuera de la ventana.
+- Usa el mismo grupo de concurrencia que `tomtom-traffic.yml` para evitar extracciones TomTom simultaneas.
+- Para minimizar duplicados y consumo de cuota, deshabilite `tomtom-traffic.yml` durante la campaña si no necesita ambos ritmos de captura.
