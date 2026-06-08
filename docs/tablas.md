@@ -11,7 +11,20 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Campus estrategicos CDMX usados como puntos de analisis.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `denue` |
+| `_source_table` | `str` | Pendiente de documentar | `campus_cdmx_base` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-08T13:17:26Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260608T131619Z` |
+| `campus_id` | `str` | Pendiente de documentar | `unam_cu` |
+| `universidad` | `str` | Pendiente de documentar | `UNAM` |
+| `campus` | `str` | Pendiente de documentar | `Ciudad Universitaria` |
+| `lat` | `float64` | Pendiente de documentar | `19.3322` |
+| `lon` | `float64` | Pendiente de documentar | `-99.1861` |
+| `tipo` | `str` | Pendiente de documentar | `publica` |
+| `comentario` | `str` | Pendiente de documentar | `Zona universitaria grande.` |
 
 ## `denue_cdmx_educacion_superior_universitaria`
 
@@ -21,7 +34,58 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Subconjunto estimado de educacion superior/universitaria.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `denue` |
+| `_source_table` | `str` | Pendiente de documentar | `denue_cdmx_educacion_superior_universitaria` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-08T13:17:26Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260608T131619Z` |
+| `clee` | `str` | Pendiente de documentar | `09015611312000136000000000U1` |
+| `id_establecimiento` | `int64` | Pendiente de documentar | `1059370` |
+| `nombre` | `str` | Pendiente de documentar | `ACADEMIA DE SAN CARLOS` |
+| `razon_social` | `str` | Pendiente de documentar | `UNAM` |
+| `clase_actividad` | `str` | Pendiente de documentar | `Escuelas de educación superior del sector público` |
+| `estrato` | `str` | Pendiente de documentar | `101 a 250 personas` |
+| `tipo_vialidad` | `str` | Pendiente de documentar | `CALLE` |
+| `calle` | `str` | Pendiente de documentar | `EMILIANO ZAPATA` |
+| `num_exterior` | `float64` | Pendiente de documentar | `39.0` |
+| `num_interior` | `float64` | Pendiente de documentar | `4.0` |
+| `colonia` | `str` | Pendiente de documentar | `CENTRO` |
+| `cp` | `int64` | Pendiente de documentar | `6060` |
+| `ubicacion` | `str` | Pendiente de documentar | `CUAUHTÉMOC                                                                                                    , Cuauhtém` |
+| `telefono` | `float64` | Pendiente de documentar | `5556220601.0` |
+| `correo_e` | `str` | Pendiente de documentar | `DIANA.PACHECO@SC.NACER-GLOBAL.COM.MX` |
+| `sitio_internet` | `str` | Pendiente de documentar | `ACADEMIASANCARLOS.UNAM.MX` |
+| `tipo_establecimiento` | `str` | Pendiente de documentar | `Fijo` |
+| `longitud` | `float64` | Pendiente de documentar | `-99.12804346` |
+| `latitud` | `float64` | Pendiente de documentar | `19.4331231` |
+| `tipo_corredor_industrial` | `str` | Pendiente de documentar | `EDIFICIO COMERCIAL Y DE SERVICIOS` |
+| `nom_corredor_industrial` | `str` | Pendiente de documentar | `CORPORATIVO SAN JERONIMO 424` |
+| `numero_local` | `str` | Pendiente de documentar | `458` |
+| `ageb` | `int64` | Pendiente de documentar | `771` |
+| `manzana` | `int64` | Pendiente de documentar | `21` |
+| `CLASE_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `611312` |
+| `EDIFICIO_PISO` | `float64` | Pendiente de documentar | `1.0` |
+| `SECTOR_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `61` |
+| `SUBSECTOR_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `611` |
+| `RAMA_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `6113` |
+| `SUBRAMA_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `61131` |
+| `EDIFICIO` | `str` | Pendiente de documentar | `EDIFICIO SIN NOMBRE` |
+| `Tipo_Asentamiento` | `str` | Pendiente de documentar | `COLONIA` |
+| `fecha_alta` | `str` | Pendiente de documentar | `2014-12` |
+| `area_geo` | `int64` | Pendiente de documentar | `90150001` |
+| `nombre_clean` | `str` | Pendiente de documentar | `academia de san carlos` |
+| `razon_social_clean` | `str` | Pendiente de documentar | `unam` |
+| `clase_actividad_clean` | `str` | Pendiente de documentar | `escuelas de educacion superior del sector publico` |
+| `estrato_clean` | `str` | Pendiente de documentar | `101 a 250 personas` |
+| `colonia_clean` | `str` | Pendiente de documentar | `centro` |
+| `ubicacion_clean` | `str` | Pendiente de documentar | `cuauhtemoc , cuauhtemoc, ciudad de mexico` |
+| `nivel_educativo_estimado` | `str` | Pendiente de documentar | `superior_universitaria` |
+| `flag_universidad` | `bool` | Pendiente de documentar | `True` |
+| `flag_media_superior` | `bool` | Pendiente de documentar | `False` |
+| `flag_educacion_basica` | `bool` | Pendiente de documentar | `False` |
+| `estrato_ocupacion_estimado` | `str` | Pendiente de documentar | `101 a 250 personas` |
 
 ## `denue_cdmx_sector_61_servicios_educativos`
 
@@ -31,7 +95,58 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Universo de establecimientos educativos de CDMX.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `denue` |
+| `_source_table` | `str` | Pendiente de documentar | `denue_cdmx_sector_61_servicios_educativos` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-08T13:17:26Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260608T131619Z` |
+| `clee` | `str` | Pendiente de documentar | `09005611621001441000000000U9` |
+| `id_establecimiento` | `int64` | Pendiente de documentar | `9496872` |
+| `nombre` | `str` | Pendiente de documentar | `12 ROUNDS` |
+| `razon_social` | `str` | Pendiente de documentar | `SECRETARIA DE EDUCACION PUBLICA SEP` |
+| `clase_actividad` | `str` | Pendiente de documentar | `Escuelas de deporte del sector privado` |
+| `estrato` | `str` | Pendiente de documentar | `0 a 5 personas` |
+| `tipo_vialidad` | `str` | Pendiente de documentar | `AVENIDA` |
+| `calle` | `str` | Pendiente de documentar | `CONSTITUCION DE LA REPUBLICA` |
+| `num_exterior` | `float64` | Pendiente de documentar | `221.0` |
+| `num_interior` | `float64` | Pendiente de documentar | `11.0` |
+| `colonia` | `str` | Pendiente de documentar | `LA PRADERA` |
+| `cp` | `int64` | Pendiente de documentar | `7500` |
+| `ubicacion` | `str` | Pendiente de documentar | `GUSTAVO A. MADERO                                                                                             , Gustavo ` |
+| `telefono` | `float64` | Pendiente de documentar | `5620137765.0` |
+| `correo_e` | `str` | Pendiente de documentar | `E09DPR2087X@AEFCM.GOB.MX` |
+| `sitio_internet` | `str` | Pendiente de documentar | `SIKHCENTERMEXICO.ORG` |
+| `tipo_establecimiento` | `str` | Pendiente de documentar | `Fijo` |
+| `longitud` | `float64` | Pendiente de documentar | `-99.06501588` |
+| `latitud` | `float64` | Pendiente de documentar | `19.48014404` |
+| `tipo_corredor_industrial` | `str` | Pendiente de documentar | `CENTRO Y PLAZA COMERCIAL` |
+| `nom_corredor_industrial` | `str` | Pendiente de documentar | `PUERTA ARAGON` |
+| `numero_local` | `str` | Pendiente de documentar | `LC 02` |
+| `ageb` | `str` | Pendiente de documentar | `1716` |
+| `manzana` | `int64` | Pendiente de documentar | `6` |
+| `CLASE_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `611621` |
+| `EDIFICIO_PISO` | `float64` | Pendiente de documentar | `18.0` |
+| `SECTOR_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `61` |
+| `SUBSECTOR_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `611` |
+| `RAMA_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `6116` |
+| `SUBRAMA_ACTIVIDAD_ID` | `int64` | Pendiente de documentar | `61162` |
+| `EDIFICIO` | `float64` | Pendiente de documentar | `` |
+| `Tipo_Asentamiento` | `str` | Pendiente de documentar | `COLONIA` |
+| `fecha_alta` | `str` | Pendiente de documentar | `2024-11` |
+| `area_geo` | `int64` | Pendiente de documentar | `90050001` |
+| `nombre_clean` | `str` | Pendiente de documentar | `12 rounds` |
+| `razon_social_clean` | `str` | Pendiente de documentar | `secretaria de educacion publica sep` |
+| `clase_actividad_clean` | `str` | Pendiente de documentar | `escuelas de deporte del sector privado` |
+| `estrato_clean` | `str` | Pendiente de documentar | `0 a 5 personas` |
+| `colonia_clean` | `str` | Pendiente de documentar | `la pradera` |
+| `ubicacion_clean` | `str` | Pendiente de documentar | `gustavo a. madero , gustavo a. madero, ciudad de mexico` |
+| `nivel_educativo_estimado` | `str` | Pendiente de documentar | `capacitacion_otros` |
+| `flag_universidad` | `bool` | Pendiente de documentar | `False` |
+| `flag_media_superior` | `bool` | Pendiente de documentar | `False` |
+| `flag_educacion_basica` | `bool` | Pendiente de documentar | `False` |
+| `estrato_ocupacion_estimado` | `str` | Pendiente de documentar | `0 a 5 personas` |
 
 ## `denue_establecimientos_alrededor_campus`
 
@@ -41,7 +156,54 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Establecimientos educativos alrededor de campus y radios 500/1000/2000 m.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `denue` |
+| `_source_table` | `str` | Pendiente de documentar | `denue_establecimientos_alrededor_campus` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-08T13:17:27Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260608T131619Z` |
+| `clee` | `str` | Pendiente de documentar | `09003491110000063000041638S6` |
+| `id_establecimiento` | `int64` | Pendiente de documentar | `8631657` |
+| `nombre` | `str` | Pendiente de documentar | `CIUDAD UNIVERSITARIA CDMX` |
+| `razon_social` | `str` | Pendiente de documentar | `SERVICIO POSTAL MEXICANO` |
+| `clase_actividad` | `str` | Pendiente de documentar | `Servicios postales` |
+| `estrato` | `str` | Pendiente de documentar | `11 a 30 personas` |
+| `tipo_vialidad` | `str` | Pendiente de documentar | `CIRCUITO` |
+| `calle` | `str` | Pendiente de documentar | `ESCOLAR` |
+| `num_exterior` | `float64` | Pendiente de documentar | `3000.0` |
+| `num_interior` | `float64` | Pendiente de documentar | `4.0` |
+| `colonia` | `str` | Pendiente de documentar | `UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO CIUDAD UNIVERSITARIA` |
+| `cp` | `int64` | Pendiente de documentar | `4511` |
+| `ubicacion` | `str` | Pendiente de documentar | `COYOACÁN                                                                                                      , Coyoacán` |
+| `telefono` | `float64` | Pendiente de documentar | `5519233249.0` |
+| `correo_e` | `str` | Pendiente de documentar | `ARIVERO@LUMEN.COM.MX` |
+| `sitio_internet` | `str` | Pendiente de documentar | `WWW.LUMEN.COM.MX` |
+| `tipo_establecimiento` | `str` | Pendiente de documentar | `Fijo` |
+| `longitud` | `float64` | Pendiente de documentar | `-99.18532328` |
+| `latitud` | `float64` | Pendiente de documentar | `19.33068518` |
+| `centro_comercial` | `str` | Pendiente de documentar | `PASAJE COMERCIAL RECTORIA` |
+| `tipo_centro_comercial` | `str` | Pendiente de documentar | `PASAJE Y ANDADOR COMERCIAL` |
+| `num_local` | `str` | Pendiente de documentar | `SN` |
+| `nombre_clean` | `str` | Pendiente de documentar | `ciudad universitaria cdmx` |
+| `razon_social_clean` | `str` | Pendiente de documentar | `servicio postal mexicano` |
+| `clase_actividad_clean` | `str` | Pendiente de documentar | `servicios postales` |
+| `estrato_clean` | `str` | Pendiente de documentar | `11 a 30 personas` |
+| `colonia_clean` | `str` | Pendiente de documentar | `universidad nacional autonoma de mexico ciudad universitaria` |
+| `ubicacion_clean` | `str` | Pendiente de documentar | `coyoacan , coyoacan, ciudad de mexico` |
+| `nivel_educativo_estimado` | `str` | Pendiente de documentar | `educativo_no_clasificado` |
+| `flag_universidad` | `bool` | Pendiente de documentar | `False` |
+| `flag_media_superior` | `bool` | Pendiente de documentar | `False` |
+| `flag_educacion_basica` | `bool` | Pendiente de documentar | `False` |
+| `estrato_ocupacion_estimado` | `str` | Pendiente de documentar | `11 a 30 personas` |
+| `campus_id` | `str` | Pendiente de documentar | `unam_cu` |
+| `universidad_base` | `str` | Pendiente de documentar | `UNAM` |
+| `campus_base` | `str` | Pendiente de documentar | `Ciudad Universitaria` |
+| `campus_lat` | `float64` | Pendiente de documentar | `19.3322` |
+| `campus_lon` | `float64` | Pendiente de documentar | `-99.1861` |
+| `radio_m` | `int64` | Pendiente de documentar | `500` |
+| `campus_tipo` | `str` | Pendiente de documentar | `publica` |
+| `distancia_campus_m` | `float64` | Pendiente de documentar | `187.12038756497373` |
 
 ## `denue_metadata_reporte`
 
@@ -51,7 +213,21 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Perfil de columnas de tablas DENUE.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `denue` |
+| `_source_table` | `str` | Pendiente de documentar | `denue_metadata_reporte` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-08T13:17:27Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260608T131619Z` |
+| `table_name` | `str` | Pendiente de documentar | `campus_cdmx_base` |
+| `column` | `str` | Pendiente de documentar | `campus_id` |
+| `dtype` | `str` | Pendiente de documentar | `str` |
+| `non_null` | `int64` | Pendiente de documentar | `12` |
+| `nulls` | `int64` | Pendiente de documentar | `0` |
+| `null_pct` | `float64` | Pendiente de documentar | `0.0` |
+| `unique_values` | `int64` | Pendiente de documentar | `12` |
+| `sample` | `str` | Pendiente de documentar | `unam_cu` |
 
 ## `denue_resumen_por_nivel_educativo`
 
@@ -61,7 +237,20 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Conteo por nivel educativo estimado, campus y radio.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `denue` |
+| `_source_table` | `str` | Pendiente de documentar | `denue_resumen_por_nivel_educativo` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-08T13:17:27Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260608T131619Z` |
+| `campus_id` | `str` | Pendiente de documentar | `ibero_santa_fe` |
+| `universidad_base` | `str` | Pendiente de documentar | `Universidad Iberoamericana` |
+| `campus_base` | `str` | Pendiente de documentar | `Santa Fe` |
+| `radio_m` | `int64` | Pendiente de documentar | `500` |
+| `nivel_educativo_estimado` | `str` | Pendiente de documentar | `capacitacion_otros` |
+| `establecimientos` | `int64` | Pendiente de documentar | `7` |
+| `distancia_promedio_m` | `float64` | Pendiente de documentar | `344.73629317193564` |
 
 ## `denue_resumen_zonas_universitarias`
 
@@ -71,7 +260,27 @@ No existe snapshot actual para esta tabla.
 - **Responsable:** Movilidad universitaria
 - **Descripcion:** Resumen por campus y radio con score de concentracion educativa.
 
-No existe snapshot actual para esta tabla.
+| Columna | Tipo inferido | Significado | Ejemplo |
+| --- | --- | --- | --- |
+| `_source_system` | `str` | Pendiente de documentar | `denue` |
+| `_source_table` | `str` | Pendiente de documentar | `denue_resumen_zonas_universitarias` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-08T13:17:27Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260608T131619Z` |
+| `campus_id` | `str` | Pendiente de documentar | `unam_cu` |
+| `universidad_base` | `str` | Pendiente de documentar | `UNAM` |
+| `campus_base` | `str` | Pendiente de documentar | `Ciudad Universitaria` |
+| `campus_tipo` | `str` | Pendiente de documentar | `publica` |
+| `radio_m` | `int64` | Pendiente de documentar | `500` |
+| `establecimientos_educativos` | `int64` | Pendiente de documentar | `154` |
+| `establecimientos_superior` | `int64` | Pendiente de documentar | `44` |
+| `establecimientos_media_superior` | `int64` | Pendiente de documentar | `0` |
+| `establecimientos_basica` | `int64` | Pendiente de documentar | `2` |
+| `distancia_promedio_m` | `float64` | Pendiente de documentar | `329.28579736192063` |
+| `distancia_min_m` | `float64` | Pendiente de documentar | `187.12038756497373` |
+| `distancia_max_m` | `float64` | Pendiente de documentar | `501.3318682855536` |
+| `score_concentracion_educativa_raw` | `float64` | Pendiente de documentar | `244.0` |
+| `score_concentracion_educativa_0_100` | `float64` | Pendiente de documentar | `100.0` |
 
 ## `ecobici_dataset_summary`
 

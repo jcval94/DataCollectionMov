@@ -1,0 +1,13 @@
+_source_system,_source_table,_extracted_at_utc,_snapshot_date,_snapshot_id,campus_id,universidad,campus,lat,lon,tipo,comentario
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,19.3322,-99.1861,publica,Zona universitaria grande.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,19.5008,-99.1466,publica,Concentracion universitaria fuerte al norte de CDMX.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,19.3048,-99.103,publica,Campus relevante para conectividad sur-oriente.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,19.3605,-99.0738,publica,Zona importante para movilidad en oriente.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,19.5038,-99.1866,publica,Campus con entorno industrial y educativo.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,19.3957,-99.0925,publica,Zona de alta presion vial.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,19.2839,-99.1353,privada,Campus privado relevante al sur.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,19.3677,-99.2634,privada,Zona con dependencia fuerte de auto.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,19.3454,-99.1997,privada,Campus con presion vial local.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,up_mixcoac,Universidad Panamericana,Mixcoac,19.374,-99.183,privada,Zona urbana densa.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,19.3066,-99.0639,publica,Movilidad escolar en periferia sur-oriente.
+denue,campus_cdmx_base,2026-06-08T13:17:26Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,19.4099,-99.1815,privada,Zona central y densa.

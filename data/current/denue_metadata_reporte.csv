@@ -1,0 +1,160 @@
+_source_system,_source_table,_extracted_at_utc,_snapshot_date,_snapshot_id,table_name,column,dtype,non_null,nulls,null_pct,unique_values,sample
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,campus_cdmx_base,campus_id,str,12,0,0.0,12,unam_cu
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,campus_cdmx_base,universidad,str,12,0,0.0,9,UNAM
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,campus_cdmx_base,campus,str,12,0,0.0,12,Ciudad Universitaria
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,campus_cdmx_base,lat,float64,12,0,0.0,12,19.3322
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,campus_cdmx_base,lon,float64,12,0,0.0,12,-99.1861
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,campus_cdmx_base,tipo,str,12,0,0.0,2,publica
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,campus_cdmx_base,comentario,str,12,0,0.0,12,Zona universitaria grande.
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,clee,str,10591,0,0.0,10591,09005611621001441000000000U9
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,id_establecimiento,str,10591,0,0.0,10591,9496872
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,nombre,str,10591,0,0.0,9834,12 ROUNDS
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,razon_social,str,10591,0,0.0,3116,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,clase_actividad,str,10591,0,0.0,36,Escuelas de deporte del sector privado
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,estrato,str,10591,0,0.0,7,0 a 5 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,tipo_vialidad,str,10591,0,0.0,21,AVENIDA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,calle,str,10591,0,0.0,3997,CONSTITUCION DE LA REPUBLICA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,num_exterior,str,10591,0,0.0,1337,221
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,num_interior,str,10591,0,0.0,178,11
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,colonia,str,10591,0,0.0,1159,LA PRADERA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,cp,str,10591,0,0.0,1129,07500
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,ubicacion,str,10591,0,0.0,40,"GUSTAVO A. MADERO                                                                                             , Gustavo "
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,telefono,str,10591,0,0.0,3363,5620137765
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,correo_e,str,10591,0,0.0,6075,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,sitio_internet,str,10591,0,0.0,1844,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,tipo_establecimiento,str,10591,0,0.0,2,Fijo
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,longitud,float64,10591,0,0.0,9691,-99.06501588
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,latitud,float64,10591,0,0.0,9693,19.48014404
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,tipo_corredor_industrial,str,10591,0,0.0,9,CENTRO Y PLAZA COMERCIAL
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,nom_corredor_industrial,str,10591,0,0.0,320,PUERTA ARAGON
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,numero_local,str,10591,0,0.0,218,LC 02
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,ageb,str,10591,0,0.0,1672,1716
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,manzana,str,10591,0,0.0,80,006
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,CLASE_ACTIVIDAD_ID,str,10591,0,0.0,36,611621
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,EDIFICIO_PISO,str,10591,0,0.0,25,18
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,SECTOR_ACTIVIDAD_ID,str,10591,0,0.0,1,61
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,SUBSECTOR_ACTIVIDAD_ID,str,10591,0,0.0,1,611
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,RAMA_ACTIVIDAD_ID,str,10591,0,0.0,7,6116
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,SUBRAMA_ACTIVIDAD_ID,str,10591,0,0.0,19,61162
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,EDIFICIO,str,10591,0,0.0,62,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,Tipo_Asentamiento,str,10591,0,0.0,26,COLONIA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,fecha_alta,str,10591,0,0.0,24,2024-11
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,area_geo,str,10591,0,0.0,40,090050001
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,nombre_clean,str,10591,0,0.0,9831,12 rounds
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,razon_social_clean,str,10591,0,0.0,3107,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,clase_actividad_clean,str,10591,0,0.0,36,escuelas de deporte del sector privado
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,estrato_clean,str,10591,0,0.0,7,0 a 5 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,colonia_clean,str,10591,0,0.0,1144,la pradera
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,ubicacion_clean,str,10591,0,0.0,40,"gustavo a. madero , gustavo a. madero, ciudad de mexico"
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,nivel_educativo_estimado,str,10591,0,0.0,7,capacitacion_otros
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,flag_universidad,bool,10591,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,flag_media_superior,bool,10591,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,flag_educacion_basica,bool,10591,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_sector_61_servicios_educativos,estrato_ocupacion_estimado,str,10591,0,0.0,7,0 a 5 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,clee,str,881,0,0.0,881,09015611312000136000000000U1
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,id_establecimiento,str,881,0,0.0,881,1059370
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,nombre,str,881,0,0.0,770,ACADEMIA DE SAN CARLOS
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,razon_social,str,881,0,0.0,326,UNAM
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,clase_actividad,str,881,0,0.0,16,Escuelas de educación superior del sector público
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,estrato,str,881,0,0.0,7,101 a 250 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,tipo_vialidad,str,881,0,0.0,16,CALLE
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,calle,str,881,0,0.0,447,EMILIANO ZAPATA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,num_exterior,str,881,0,0.0,338,39
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,num_interior,str,881,0,0.0,32,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,colonia,str,881,0,0.0,282,CENTRO
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,cp,str,881,0,0.0,319,06060
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,ubicacion,str,881,0,0.0,24,"CUAUHTÉMOC                                                                                                    , Cuauhtém"
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,telefono,str,881,0,0.0,228,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,correo_e,str,881,0,0.0,500,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,sitio_internet,str,881,0,0.0,372,ACADEMIASANCARLOS.UNAM.MX
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,tipo_establecimiento,str,881,0,0.0,1,Fijo
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,longitud,float64,881,0,0.0,786,-99.12804346
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,latitud,float64,881,0,0.0,786,19.4331231
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,tipo_corredor_industrial,str,881,0,0.0,6,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,nom_corredor_industrial,str,881,0,0.0,37,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,numero_local,str,881,0,0.0,39,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,ageb,str,881,0,0.0,360,0771
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,manzana,str,881,0,0.0,47,021
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,CLASE_ACTIVIDAD_ID,str,881,0,0.0,16,611312
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,EDIFICIO_PISO,str,881,0,0.0,12,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,SECTOR_ACTIVIDAD_ID,str,881,0,0.0,1,61
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,SUBSECTOR_ACTIVIDAD_ID,str,881,0,0.0,1,611
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,RAMA_ACTIVIDAD_ID,str,881,0,0.0,6,6113
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,SUBRAMA_ACTIVIDAD_ID,str,881,0,0.0,11,61131
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,EDIFICIO,str,881,0,0.0,12,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,Tipo_Asentamiento,str,881,0,0.0,12,COLONIA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,fecha_alta,str,881,0,0.0,21,2014-12
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,area_geo,str,881,0,0.0,24,090150001
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,nombre_clean,str,881,0,0.0,769,academia de san carlos
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,razon_social_clean,str,881,0,0.0,324,unam
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,clase_actividad_clean,str,881,0,0.0,16,escuelas de educacion superior del sector publico
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,estrato_clean,str,881,0,0.0,7,101 a 250 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,colonia_clean,str,881,0,0.0,280,centro
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,ubicacion_clean,str,881,0,0.0,24,"cuauhtemoc , cuauhtemoc, ciudad de mexico"
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,nivel_educativo_estimado,str,881,0,0.0,1,superior_universitaria
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,flag_universidad,bool,881,0,0.0,2,True
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,flag_media_superior,bool,881,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,flag_educacion_basica,bool,881,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_cdmx_educacion_superior_universitaria,estrato_ocupacion_estimado,str,881,0,0.0,7,101 a 250 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,clee,str,5728,0,0.0,3775,09003491110000063000041638S6
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,id_establecimiento,str,5728,0,0.0,3775,8631657
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,nombre,str,5728,0,0.0,3513,CIUDAD UNIVERSITARIA CDMX
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,razon_social,str,5728,0,0.0,1160,SERVICIO POSTAL MEXICANO
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,clase_actividad,str,5728,0,0.0,264,Servicios postales
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,estrato,str,5728,0,0.0,7,11 a 30 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,tipo_vialidad,str,5728,0,0.0,17,CIRCUITO
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,calle,str,5728,0,0.0,928,ESCOLAR
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,num_exterior,str,5728,0,0.0,719,3000
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,num_interior,str,5728,0,0.0,147,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,colonia,str,5728,0,0.0,276,UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO CIUDAD UNIVERSITARIA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,cp,str,5728,0,0.0,298,04511
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,ubicacion,str,5728,0,0.0,16,"COYOACÁN                                                                                                      , Coyoacán"
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,telefono,str,5728,0,0.0,1184,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,correo_e,str,5728,0,0.0,1655,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,sitio_internet,str,5728,0,0.0,732,
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,tipo_establecimiento,str,5728,0,0.0,2,Fijo
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,longitud,float64,5728,0,0.0,3244,-99.18532328
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,latitud,float64,5728,0,0.0,3240,19.33068518
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,centro_comercial,str,5728,0,0.0,118,PASAJE COMERCIAL RECTORIA
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,tipo_centro_comercial,str,5728,0,0.0,8,PASAJE Y ANDADOR COMERCIAL
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,num_local,str,5728,0,0.0,159,SN
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,nombre_clean,str,5728,0,0.0,3511,ciudad universitaria cdmx
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,razon_social_clean,str,5728,0,0.0,1153,servicio postal mexicano
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,clase_actividad_clean,str,5728,0,0.0,264,servicios postales
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,estrato_clean,str,5728,0,0.0,7,11 a 30 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,colonia_clean,str,5728,0,0.0,274,universidad nacional autonoma de mexico ciudad universitaria
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,ubicacion_clean,str,5728,0,0.0,16,"coyoacan , coyoacan, ciudad de mexico"
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,nivel_educativo_estimado,str,5728,0,0.0,7,educativo_no_clasificado
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,flag_universidad,bool,5728,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,flag_media_superior,bool,5728,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,flag_educacion_basica,bool,5728,0,0.0,2,False
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,estrato_ocupacion_estimado,str,5728,0,0.0,7,11 a 30 personas
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,campus_id,str,5728,0,0.0,11,unam_cu
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,universidad_base,str,5728,0,0.0,8,UNAM
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,campus_base,str,5728,0,0.0,11,Ciudad Universitaria
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,campus_lat,float64,5728,0,0.0,11,19.3322
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,campus_lon,float64,5728,0,0.0,11,-99.1861
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,radio_m,int64,5728,0,0.0,3,500
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,campus_tipo,str,5728,0,0.0,2,publica
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_establecimientos_alrededor_campus,distancia_campus_m,float64,5728,0,0.0,3576,187.12038756497375
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,campus_id,str,32,0,0.0,11,unam_cu
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,universidad_base,str,32,0,0.0,8,UNAM
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,campus_base,str,32,0,0.0,11,Ciudad Universitaria
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,campus_tipo,str,32,0,0.0,2,publica
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,radio_m,int64,32,0,0.0,3,500
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,establecimientos_educativos,int64,32,0,0.0,31,154
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,establecimientos_superior,int64,32,0,0.0,22,44
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,establecimientos_media_superior,int64,32,0,0.0,8,0
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,establecimientos_basica,int64,32,0,0.0,24,2
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,distancia_promedio_m,float64,32,0,0.0,32,329.28579736192063
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,distancia_min_m,float64,32,0,0.0,11,187.12038756497375
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,distancia_max_m,float64,32,0,0.0,32,501.33186828555364
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,score_concentracion_educativa_raw,float64,32,0,0.0,32,244.0
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_zonas_universitarias,score_concentracion_educativa_0_100,float64,32,0,0.0,28,100.0
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_por_nivel_educativo,campus_id,str,186,0,0.0,11,ibero_santa_fe
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_por_nivel_educativo,universidad_base,str,186,0,0.0,8,Universidad Iberoamericana
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_por_nivel_educativo,campus_base,str,186,0,0.0,11,Santa Fe
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_por_nivel_educativo,radio_m,int64,186,0,0.0,3,500
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_por_nivel_educativo,nivel_educativo_estimado,str,186,0,0.0,7,capacitacion_otros
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_por_nivel_educativo,establecimientos,int64,186,0,0.0,60,7
+denue,denue_metadata_reporte,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,denue_resumen_por_nivel_educativo,distancia_promedio_m,float64,186,0,0.0,183,344.73629317193564

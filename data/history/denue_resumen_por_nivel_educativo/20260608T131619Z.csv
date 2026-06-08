@@ -1,0 +1,187 @@
+_source_system,_source_table,_extracted_at_utc,_snapshot_date,_snapshot_id,campus_id,universidad_base,campus_base,radio_m,nivel_educativo_estimado,establecimientos,distancia_promedio_m
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,500,capacitacion_otros,7,344.73629317193564
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,500,superior_universitaria,5,281.01944606982636
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,1000,capacitacion_otros,7,344.73629317193564
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,1000,superior_universitaria,7,395.13913794174823
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,1000,educativo_no_clasificado,1,931.1432720552363
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,2000,educativo_no_clasificado,28,1568.9422665179143
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,2000,capacitacion_otros,17,1096.569417261894
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,2000,preescolar,16,1664.5006394101974
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,2000,superior_universitaria,10,671.5719444588195
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,2000,primaria,9,1661.5193764099536
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ibero_santa_fe,Universidad Iberoamericana,Santa Fe,2000,secundaria,1,1987.2242054030983
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,500,preescolar,3,391.5467850086179
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,500,educativo_no_clasificado,2,161.40699980403951
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,500,media_superior,1,481.7781076863321
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,500,superior_universitaria,1,102.58217066177288
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,1000,primaria,14,674.9904330881184
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,1000,preescolar,10,670.0448970786998
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,1000,educativo_no_clasificado,9,670.9838790744874
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,1000,secundaria,4,748.407120202838
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,1000,superior_universitaria,4,562.9030644962687
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,1000,media_superior,3,795.5861754980228
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,2000,primaria,52,1299.4262911954104
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,2000,preescolar,44,1358.005234996268
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,2000,capacitacion_otros,36,1452.5819935282796
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,2000,educativo_no_clasificado,32,1356.4290098220508
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,2000,secundaria,26,1463.0906671764494
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,2000,superior_universitaria,7,985.4114854907147
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_upiicsa,IPN,UPIICSA,2000,media_superior,4,951.055663724873
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,500,superior_universitaria,8,346.49878870444184
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,500,media_superior,2,409.8136045461496
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,500,primaria,2,410.8275575939152
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,500,educativo_no_clasificado,1,379.7063040140418
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,500,preescolar,1,414.3293384455821
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,1000,superior_universitaria,33,638.4958891125126
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,1000,educativo_no_clasificado,7,682.8607639401251
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,1000,preescolar,6,652.9656190657718
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,1000,primaria,6,624.1363949741003
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,1000,capacitacion_otros,4,738.3508419313112
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,1000,secundaria,3,533.0700517640862
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,1000,media_superior,2,409.8136045461496
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,2000,educativo_no_clasificado,281,1686.6456486364948
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,2000,superior_universitaria,70,1036.1729509798092
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,2000,primaria,31,1290.8431335728415
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,2000,preescolar,27,1373.7602076942503
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,2000,capacitacion_otros,24,1567.4872122398085
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,2000,secundaria,20,1527.7308495971502
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,ipn_zacatenco,IPN,Zacatenco,2000,media_superior,5,1200.3301222476991
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,500,superior_universitaria,3,291.2282392095105
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,500,educativo_no_clasificado,2,294.2103859750502
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,500,primaria,2,287.1049224608767
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,500,preescolar,1,461.8641897847231
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,1000,educativo_no_clasificado,12,597.135149066358
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,1000,primaria,10,701.5633562524979
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,1000,capacitacion_otros,8,900.8303660427549
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,1000,preescolar,7,735.9130267514184
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,1000,secundaria,7,541.9812734385102
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,1000,superior_universitaria,5,570.6082498965566
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,1000,media_superior,1,757.6961070060491
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,2000,educativo_no_clasificado,307,1788.5886256428942
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,2000,superior_universitaria,90,1624.423713955329
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,2000,capacitacion_otros,37,1426.218007791304
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,2000,primaria,28,1225.533267435579
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,2000,preescolar,25,1278.7538307380578
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,2000,secundaria,16,1088.109084102661
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itam_rio_hondo,ITAM,Rio Hondo,2000,media_superior,8,1374.0608081934233
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,500,educativo_no_clasificado,26,401.7069030892832
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,500,capacitacion_otros,3,462.76067570423976
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,500,preescolar,3,368.7419888015709
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,500,superior_universitaria,2,304.72698479607124
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,500,primaria,1,451.29592264787533
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,1000,educativo_no_clasificado,72,572.9953929835851
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,1000,capacitacion_otros,6,683.5691238778121
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,1000,preescolar,6,565.1599169124185
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,1000,primaria,5,753.1670730834251
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,1000,superior_universitaria,5,507.448365576576
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,1000,media_superior,1,647.0183784279872
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,2000,educativo_no_clasificado,99,849.0098769133373
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,2000,capacitacion_otros,42,1480.8137328735254
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,2000,primaria,23,1359.000010666292
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,2000,preescolar,22,1238.5603400325954
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,2000,superior_universitaria,15,1298.4706617005154
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,2000,media_superior,8,1606.814868239461
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,itesm_ccm,ITESM,Campus Ciudad de Mexico,2000,secundaria,6,1754.884559018947
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,500,superior_universitaria,48,251.12348315567098
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,500,capacitacion_otros,6,344.36082841958523
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,500,educativo_no_clasificado,6,361.9688657468318
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,500,preescolar,5,360.8304967994301
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,500,primaria,3,296.0235193678027
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,500,secundaria,3,224.8853913749599
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,500,media_superior,1,354.5724655340084
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,1000,superior_universitaria,51,275.313950430447
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,1000,educativo_no_clasificado,39,758.1552447830147
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,1000,capacitacion_otros,28,696.345892254777
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,1000,preescolar,21,675.3472513025964
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,1000,primaria,12,597.689254328968
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,1000,secundaria,7,473.79509491805294
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,1000,media_superior,2,669.0280016446068
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,2000,educativo_no_clasificado,369,1353.2412377525143
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,2000,capacitacion_otros,129,1292.1695965180975
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,2000,superior_universitaria,83,809.4269367364367
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,2000,preescolar,47,1177.4308666333693
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,2000,primaria,41,1278.996022957282
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,2000,secundaria,21,1133.0464509880949
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,la_salle_condesa,Universidad La Salle,Condesa,2000,media_superior,6,1370.4934692254192
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,500,educativo_no_clasificado,8,393.73320483462976
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,500,capacitacion_otros,4,327.99134871073045
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,500,primaria,4,361.6581944372326
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,500,preescolar,3,357.1230458928726
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,500,media_superior,1,247.11514935203493
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,1000,educativo_no_clasificado,13,525.9137695079474
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,1000,preescolar,11,692.7977283259648
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,1000,capacitacion_otros,10,620.7011631174867
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,1000,primaria,10,669.6388120953416
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,1000,media_superior,3,680.9649772677512
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,1000,superior_universitaria,3,751.0032513604559
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,2000,primaria,56,1337.9717875063882
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,2000,preescolar,48,1315.3194363200637
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,2000,capacitacion_otros,35,1250.1526044942946
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,2000,educativo_no_clasificado,35,1169.8055913872784
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,2000,secundaria,18,1573.4617590233695
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,2000,media_superior,9,1293.5473927616738
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uacm_san_lorenzo,UACM,San Lorenzo Tezonco,2000,superior_universitaria,6,1237.6673055062065
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,500,preescolar,1,367.53526755202
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,500,secundaria,1,492.9374265205638
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,500,superior_universitaria,1,334.16133877231323
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,1000,primaria,12,808.1892955445873
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,1000,preescolar,7,775.9717813137304
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,1000,educativo_no_clasificado,6,873.2819268086249
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,1000,secundaria,5,776.540270245479
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,1000,superior_universitaria,2,526.245183739363
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,1000,capacitacion_otros,1,780.4263158121306
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,2000,primaria,48,1391.0125449489913
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,2000,preescolar,42,1482.811182041518
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,2000,educativo_no_clasificado,21,1375.5249665795588
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,2000,secundaria,20,1485.5669121785481
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,2000,capacitacion_otros,15,1642.6301656203398
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,2000,superior_universitaria,6,1300.7979592514575
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_azcapotzalco,UAM,Azcapotzalco,2000,media_superior,4,1612.05004862336
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,500,superior_universitaria,4,367.87125693350765
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,500,capacitacion_otros,3,385.71725936056913
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,500,educativo_no_clasificado,2,317.96975031520344
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,500,preescolar,1,254.54179175099725
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,500,primaria,1,219.65564186163297
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,1000,primaria,17,737.3072025050317
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,1000,capacitacion_otros,12,667.5797414815595
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,1000,preescolar,10,697.1700052712505
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,1000,educativo_no_clasificado,8,736.7371564699192
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,1000,secundaria,4,734.0981805727243
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,1000,superior_universitaria,4,367.87125693350765
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,2000,primaria,48,1263.3372404667468
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,2000,preescolar,44,1397.0259688636509
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,2000,educativo_no_clasificado,42,1268.4636771915657
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,2000,capacitacion_otros,35,1200.5911718422035
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,2000,secundaria,12,1337.3969707789513
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,2000,superior_universitaria,7,722.2330631108117
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_iztapalapa,UAM,Iztapalapa,2000,media_superior,3,1781.932225593778
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,1000,superior_universitaria,28,558.0067365819217
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,1000,educativo_no_clasificado,8,691.7833671607206
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,1000,capacitacion_otros,5,654.4902775241042
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,1000,secundaria,4,909.0450427645219
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,1000,preescolar,3,895.8447632721219
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,1000,primaria,3,802.7589894090928
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,2000,capacitacion_otros,45,1447.6737543892664
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,2000,educativo_no_clasificado,39,1450.9922900838515
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,2000,superior_universitaria,31,672.9596588832527
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,2000,preescolar,29,1517.6986233734688
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,2000,primaria,19,1386.4064047263207
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,2000,secundaria,11,1377.9479404033211
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,uam_xochimilco,UAM,Xochimilco,2000,media_superior,2,1705.602334257102
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,500,educativo_no_clasificado,104,322.75011150366623
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,500,superior_universitaria,45,348.7001676213786
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,500,capacitacion_otros,3,293.792938618209
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,500,preescolar,2,285.5574192689134
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,1000,educativo_no_clasificado,470,677.6029499865568
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,1000,superior_universitaria,97,551.8279992136444
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,1000,capacitacion_otros,13,685.5136876165174
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,1000,primaria,5,949.2608827283691
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,1000,preescolar,3,507.3766724465506
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,1000,media_superior,1,923.5137420177781
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,2000,educativo_no_clasificado,1002,1115.0390687627144
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,2000,superior_universitaria,189,952.4667963412213
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,2000,capacitacion_otros,43,1363.1445272091023
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,2000,primaria,25,1465.9320187311405
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,2000,preescolar,21,1350.0699059471294
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,2000,secundaria,14,1643.7829230736522
+denue,denue_resumen_por_nivel_educativo,2026-06-08T13:17:27Z,2026-06-08,20260608T131619Z,unam_cu,UNAM,Ciudad Universitaria,2000,media_superior,3,1026.2028470477878
