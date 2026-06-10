@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-06-10T16:47:59Z",
+  "source": "google_routes",
+  "snapshot_id": "20260610T164754Z",
+  "snapshot_date": "2026-06-10",
+  "tables": [
+    {
+      "table": "routes_api_comparacion_modos",
+      "source": "google_routes",
+      "snapshot_id": "20260610T164754Z",
+      "snapshot_date": "2026-06-10",
+      "rows": 4,
+      "columns": 21,
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_comparacion_modos.csv",
+      "snapshot_path": "data/history/routes_api_comparacion_modos/20260610T164754Z.csv"
+    },
+    {
+      "table": "routes_api_drive_pairs",
+      "source": "google_routes",
+      "snapshot_id": "20260610T164754Z",
+      "snapshot_date": "2026-06-10",
+      "rows": 8,
+      "columns": 21,
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_drive_pairs.csv",
+      "snapshot_path": "data/history/routes_api_drive_pairs/20260610T164754Z.csv"
+    },
+    {
+      "table": "routes_api_ejemplo_ruta",
+      "source": "google_routes",
+      "snapshot_id": "20260610T164754Z",
+      "snapshot_date": "2026-06-10",
+      "rows": 1,
+      "columns": 21,
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_ejemplo_ruta.csv",
+      "snapshot_path": "data/history/routes_api_ejemplo_ruta/20260610T164754Z.csv"
+    },
+    {
+      "table": "routes_api_matriz",
+      "source": "google_routes",
+      "snapshot_id": "20260610T164754Z",
+      "snapshot_date": "2026-06-10",
+      "rows": 18,
+      "columns": 21,
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_matriz.csv",
+      "snapshot_path": "data/history/routes_api_matriz/20260610T164754Z.csv"
+    },
+    {
+      "table": "routes_api_score",
+      "source": "google_routes",
+      "snapshot_id": "20260610T164754Z",
+      "snapshot_date": "2026-06-10",
+      "rows": 18,
+      "columns": 26,
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_score.csv",
+      "snapshot_path": "data/history/routes_api_score/20260610T164754Z.csv"
+    }
+  ]
+}
