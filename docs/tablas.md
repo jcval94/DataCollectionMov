@@ -362,21 +362,21 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_station_status` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-12T18:26:59Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-12T20:38:51Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-12` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260612T182658Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260612T203850Z` |
 | `station_id` | `int64` | Pendiente de documentar | `1` |
 | `num_bikes_available` | `int64` | Pendiente de documentar | `26` |
-| `num_bikes_disabled` | `int64` | Pendiente de documentar | `6` |
-| `num_docks_available` | `int64` | Pendiente de documentar | `7` |
+| `num_bikes_disabled` | `int64` | Pendiente de documentar | `5` |
+| `num_docks_available` | `int64` | Pendiente de documentar | `8` |
 | `num_docks_disabled` | `int64` | Pendiente de documentar | `0` |
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
 | `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1781288798` |
+| `last_reported` | `int64` | Pendiente de documentar | `1781296355` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-06-12 18:26:38` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-06-12 20:32:35` |
 
 ## `ecobici_historical_links`
 
@@ -452,32 +452,32 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_realtime_stations` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-12T18:26:59Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-12T20:38:51Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-12` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260612T182658Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260612T203850Z` |
 | `station_id` | `int64` | Identificador de cicloestacion. | `271` |
 | `external_id` | `str` | Pendiente de documentar | `e961269c-34c4-4b70-8e30-a51aa95a8429` |
 | `station_name` | `str` | Nombre de cicloestacion. | `271 Reforma` |
 | `short_name` | `int64` | Pendiente de documentar | `710` |
 | `lat` | `float64` | Pendiente de documentar | `19.416795` |
 | `lon` | `float64` | Pendiente de documentar | `-99.192508` |
-| `rental_methods` | `str` | Pendiente de documentar | `['CREDITCARD', 'KEY']` |
+| `rental_methods` | `str` | Pendiente de documentar | `['KEY', 'CREDITCARD']` |
 | `capacity` | `int64` | Capacidad total aproximada. | `20` |
 | `electric_bike_surcharge_waiver` | `bool` | Pendiente de documentar | `False` |
 | `is_charging_info` | `bool` | Pendiente de documentar | `False` |
 | `eightd_has_key_dispenser` | `bool` | Pendiente de documentar | `False` |
 | `has_kiosk` | `bool` | Pendiente de documentar | `True` |
 | `num_bikes_available` | `int64` | Bicicletas disponibles. | `8` |
-| `num_bikes_disabled` | `int64` | Pendiente de documentar | `6` |
+| `num_bikes_disabled` | `int64` | Pendiente de documentar | `5` |
 | `num_docks_available` | `int64` | Espacios libres para devolver bicicleta. | `12` |
 | `num_docks_disabled` | `int64` | Pendiente de documentar | `0` |
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
 | `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1781288798` |
+| `last_reported` | `int64` | Pendiente de documentar | `1781296355` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging_status` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-06-12 18:26:38` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-06-12 20:32:35` |
 | `bike_availability_pct` | `float64` | Proporcion de bicicletas disponibles. | `0.4` |
 | `dock_availability_pct` | `float64` | Proporcion de espacios disponibles. | `0.6` |
 
