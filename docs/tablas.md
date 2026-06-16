@@ -787,22 +787,22 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `google_routes` |
 | `_source_table` | `str` | Pendiente de documentar | `routes_api_comparacion_modos` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-15T18:09:55Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-15` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260615T180950Z` |
-| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-15T18:09:51.066669` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-16T18:17:44Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-16` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260616T181739Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-16T18:17:39.792579` |
 | `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
 | `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
 | `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
 | `route_found` | `bool` | Pendiente de documentar | `True` |
 | `distance_meters` | `int64` | Pendiente de documentar | `2330` |
-| `duration_seconds` | `float64` | Pendiente de documentar | `402.0` |
-| `static_duration_seconds` | `float64` | Pendiente de documentar | `439.0` |
-| `duration_minutes` | `float64` | Pendiente de documentar | `6.7` |
-| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.316666666666666` |
-| `delay_seconds` | `float64` | Pendiente de documentar | `-37.0` |
-| `delay_minutes` | `float64` | Pendiente de documentar | `-0.6166666666666667` |
-| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-8.42824601366743` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `386.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `442.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.433333333333334` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.366666666666666` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-56.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.9333333333333332` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-12.669683257918551` |
 | `encoded_polyline` | `str` | Pendiente de documentar | `mh}tBxai\|QwAIcDAuCGqDFkCLoBTk@NYPgDdDgGhDMPeBnHKTgCUIV@h@nBLDFf@Xf@`@tA`BN\HXDj@BfGDzDJtEDbFA`C`AtQU?I[KCgABQBSCYD` |
 | `description` | `str` | Pendiente de documentar | `Investigación Científica y Escolar` |
 | `route_labels` | `str` | Pendiente de documentar | `DEFAULT_ROUTE` |
@@ -819,22 +819,22 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `google_routes` |
 | `_source_table` | `str` | Pendiente de documentar | `routes_api_drive_pairs` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-15T18:09:55Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-15` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260615T180950Z` |
-| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-15T18:09:52.453164` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-16T18:17:44Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-16` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260616T181739Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-16T18:17:41.171235` |
 | `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
 | `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
 | `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
 | `route_found` | `bool` | Pendiente de documentar | `True` |
 | `distance_meters` | `int64` | Pendiente de documentar | `2330` |
-| `duration_seconds` | `float64` | Pendiente de documentar | `402.0` |
-| `static_duration_seconds` | `float64` | Pendiente de documentar | `439.0` |
-| `duration_minutes` | `float64` | Pendiente de documentar | `6.7` |
-| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.316666666666666` |
-| `delay_seconds` | `float64` | Pendiente de documentar | `-37.0` |
-| `delay_minutes` | `float64` | Pendiente de documentar | `-0.6166666666666667` |
-| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-8.42824601366743` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `386.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `442.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.433333333333334` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.366666666666666` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-56.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.9333333333333332` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-12.669683257918551` |
 | `encoded_polyline` | `str` | Pendiente de documentar | `mh}tBxai\|QwAIcDAuCGqDFkCLoBTk@NYPgDdDgGhDMPeBnHKTgCUIV@h@nBLDFf@Xf@`@tA`BN\HXDj@BfGDzDJtEDbFA`C`AtQU?I[KCgABQBSCYD` |
 | `description` | `str` | Pendiente de documentar | `Investigación Científica y Escolar` |
 | `route_labels` | `str` | Pendiente de documentar | `DEFAULT_ROUTE` |
@@ -851,22 +851,22 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `google_routes` |
 | `_source_table` | `str` | Pendiente de documentar | `routes_api_ejemplo_ruta` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-15T18:09:55Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-15` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260615T180950Z` |
-| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-15T18:09:50.966316` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-16T18:17:44Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-16` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260616T181739Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-16T18:17:39.685171` |
 | `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
 | `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
 | `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
 | `route_found` | `bool` | Pendiente de documentar | `True` |
 | `distance_meters` | `int64` | Pendiente de documentar | `2330` |
-| `duration_seconds` | `float64` | Pendiente de documentar | `402.0` |
-| `static_duration_seconds` | `float64` | Pendiente de documentar | `439.0` |
-| `duration_minutes` | `float64` | Pendiente de documentar | `6.7` |
-| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.316666666666666` |
-| `delay_seconds` | `float64` | Pendiente de documentar | `-37.0` |
-| `delay_minutes` | `float64` | Pendiente de documentar | `-0.6166666666666667` |
-| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-8.42824601366743` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `386.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `442.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `6.433333333333334` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.366666666666666` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-56.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-0.9333333333333332` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-12.669683257918551` |
 | `encoded_polyline` | `str` | Pendiente de documentar | `mh}tBxai\|QwAIcDAuCGqDFkCLoBTk@NYPgDdDgGhDMPeBnHKTgCUIV@h@nBLDFf@Xf@`@tA`BN\HXDj@BfGDzDJtEDbFA`C`AtQU?I[KCgABQBSCYD` |
 | `description` | `str` | Pendiente de documentar | `Investigación Científica y Escolar` |
 | `route_labels` | `str` | Pendiente de documentar | `DEFAULT_ROUTE` |
@@ -883,25 +883,25 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `google_routes` |
 | `_source_table` | `str` | Pendiente de documentar | `routes_api_matriz` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-15T18:09:55Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-15` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260615T180950Z` |
-| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-15T18:09:55.000133` |
-| `origin_index` | `int64` | Pendiente de documentar | `0` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-16T18:17:44Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-16` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260616T181739Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-16T18:17:43.995251` |
+| `origin_index` | `int64` | Pendiente de documentar | `1` |
 | `destination_index` | `int64` | Pendiente de documentar | `0` |
-| `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
+| `origin` | `str` | Pendiente de documentar | `Metro Copilco` |
 | `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
 | `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
 | `status` | `str` | Pendiente de documentar | `{}` |
 | `condition` | `str` | Pendiente de documentar | `ROUTE_EXISTS` |
-| `distance_meters` | `int64` | Pendiente de documentar | `2330` |
-| `duration_seconds` | `float64` | Pendiente de documentar | `402.0` |
-| `static_duration_seconds` | `float64` | Pendiente de documentar | `439.0` |
-| `duration_minutes` | `float64` | Pendiente de documentar | `6.7` |
-| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.316666666666666` |
-| `delay_seconds` | `float64` | Pendiente de documentar | `-37.0` |
-| `delay_minutes` | `float64` | Pendiente de documentar | `-0.6166666666666667` |
-| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-8.42824601366743` |
+| `distance_meters` | `int64` | Pendiente de documentar | `1715` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `270.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `333.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `4.5` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `5.55` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-63.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-1.05` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-18.91891891891892` |
 
 ## `routes_api_score`
 
@@ -915,29 +915,29 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `google_routes` |
 | `_source_table` | `str` | Pendiente de documentar | `routes_api_score` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-15T18:09:55Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-15` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260615T180950Z` |
-| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-15T18:09:55.000133` |
-| `origin_index` | `int64` | Pendiente de documentar | `0` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-16T18:17:44Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-16` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260616T181739Z` |
+| `query_timestamp` | `str` | Pendiente de documentar | `2026-06-16T18:17:43.995251` |
+| `origin_index` | `int64` | Pendiente de documentar | `1` |
 | `destination_index` | `int64` | Pendiente de documentar | `0` |
-| `origin` | `str` | Pendiente de documentar | `Metro Universidad` |
+| `origin` | `str` | Pendiente de documentar | `Metro Copilco` |
 | `destination` | `str` | Pendiente de documentar | `Rectoria UNAM` |
 | `travel_mode` | `str` | Pendiente de documentar | `DRIVE` |
 | `status` | `str` | Pendiente de documentar | `{}` |
 | `condition` | `str` | Pendiente de documentar | `ROUTE_EXISTS` |
-| `distance_meters` | `int64` | Pendiente de documentar | `2330` |
-| `duration_seconds` | `float64` | Pendiente de documentar | `402.0` |
-| `static_duration_seconds` | `float64` | Pendiente de documentar | `439.0` |
-| `duration_minutes` | `float64` | Pendiente de documentar | `6.7` |
-| `static_duration_minutes` | `float64` | Pendiente de documentar | `7.316666666666666` |
-| `delay_seconds` | `float64` | Pendiente de documentar | `-37.0` |
-| `delay_minutes` | `float64` | Pendiente de documentar | `-0.6166666666666667` |
-| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-8.42824601366743` |
-| `duration_score` | `float64` | Pendiente de documentar | `0.0396875` |
-| `delay_score` | `float64` | Pendiente de documentar | `0.0466988727858293` |
-| `traffic_pct_score` | `float64` | Pendiente de documentar | `0.2277992284266631` |
-| `criticality_score_0_100` | `float64` | Pendiente de documentar | `7.976382616037291` |
+| `distance_meters` | `int64` | Pendiente de documentar | `1715` |
+| `duration_seconds` | `float64` | Pendiente de documentar | `270.0` |
+| `static_duration_seconds` | `float64` | Pendiente de documentar | `333.0` |
+| `duration_minutes` | `float64` | Pendiente de documentar | `4.5` |
+| `static_duration_minutes` | `float64` | Pendiente de documentar | `5.55` |
+| `delay_seconds` | `float64` | Pendiente de documentar | `-63.0` |
+| `delay_minutes` | `float64` | Pendiente de documentar | `-1.05` |
+| `traffic_delay_pct` | `float64` | Pendiente de documentar | `-18.91891891891892` |
+| `duration_score` | `float64` | Pendiente de documentar | `0.0` |
+| `delay_score` | `float64` | Pendiente de documentar | `0.000593471810089` |
+| `traffic_pct_score` | `float64` | Pendiente de documentar | `0.0` |
+| `criticality_score_0_100` | `float64` | Pendiente de documentar | `0.0207715133531156` |
 | `criticality_level` | `str` | Pendiente de documentar | `Baja` |
 
 ## `tomtom_cdmx_flow`
