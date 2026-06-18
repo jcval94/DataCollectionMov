@@ -700,15 +700,15 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `metrobus` |
 | `_source_table` | `str` | Pendiente de documentar | `metrobus_vehicle_positions` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-17T23:51:52Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-17` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260617T235148Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-18T05:00:56Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-18` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260618T050052Z` |
 | `entity_id` | `str` | Identificador de entidad GTFS-Realtime. | `vehicle_123` |
 | `trip_id` | `float64` | Identificador del viaje GTFS asociado. | `trip_456` |
 | `route_id` | `float64` | Identificador de ruta GTFS. | `1` |
 | `direction_id` | `float64` | Pendiente de documentar | `0.0` |
-| `start_time` | `str` | Pendiente de documentar | `23:22:41` |
-| `start_date` | `float64` | Pendiente de documentar | `20260617.0` |
+| `start_time` | `str` | Pendiente de documentar | `04:13:21` |
+| `start_date` | `float64` | Pendiente de documentar | `20260618.0` |
 | `vehicle_id` | `int64` | Identificador de unidad. | `1234` |
 | `vehicle_label` | `int64` | Pendiente de documentar | `2306` |
 | `license_plate` | `str` | Pendiente de documentar | `1240002` |
@@ -738,15 +738,15 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `metrobus` |
 | `_source_table` | `str` | Pendiente de documentar | `metrobus_vehicle_positions_enriched` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-17T23:51:52Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-17` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260617T235148Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-18T05:00:56Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-18` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260618T050052Z` |
 | `entity_id` | `str` | Pendiente de documentar | `53f36e27-b0cc-4564-92be-19d121ef1cc1` |
 | `trip_id` | `float64` | Pendiente de documentar | `` |
 | `route_id` | `float64` | Pendiente de documentar | `19563.0` |
 | `direction_id` | `float64` | Pendiente de documentar | `0.0` |
-| `start_time` | `str` | Pendiente de documentar | `23:22:41` |
-| `start_date` | `float64` | Pendiente de documentar | `20260617.0` |
+| `start_time` | `str` | Pendiente de documentar | `04:13:21` |
+| `start_date` | `float64` | Pendiente de documentar | `20260618.0` |
 | `vehicle_id` | `int64` | Pendiente de documentar | `69379` |
 | `vehicle_label` | `int64` | Pendiente de documentar | `2306` |
 | `license_plate` | `str` | Pendiente de documentar | `1240002` |
