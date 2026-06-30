@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-30T16:07:15Z",
+  "source": "google_routes",
+  "snapshot_id": "20260630T160711Z",
+  "snapshot_date": "2026-06-30",
+  "artifacts": [
+    {
+      "artifact": "routes_api_mapa",
+      "source": "google_routes",
+      "snapshot_id": "20260630T160711Z",
+      "snapshot_date": "2026-06-30",
+      "current_path": "data/artifacts/current/routes_api_mapa.html",
+      "snapshot_path": "data/artifacts/history/routes_api_mapa/20260630T160711Z.html"
+    }
+  ]
+}
