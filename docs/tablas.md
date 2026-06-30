@@ -953,10 +953,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_flow` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-29T23:31:57Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-29` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260629T233153Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-06-29T23:31:53.725099` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-30T04:38:11Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-30` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260630T043808Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-06-30T04:38:08.519259` |
 | `point_name` | `str` | Punto estrategico consultado. | `Universidad - CU` |
 | `input_lat` | `float64` | Pendiente de documentar | `19.432608` |
 | `input_lon` | `float64` | Pendiente de documentar | `-99.133209` |
@@ -967,15 +967,15 @@ No existe snapshot actual para esta tabla.
 | `free_flow_speed_kmph` | `int64` | Velocidad esperada sin trafico. | `45` |
 | `speed_ratio` | `float64` | current_speed_kmph / free_flow_speed_kmph. | `0.53` |
 | `congestion_index` | `float64` | Indice heuristico 1 - speed_ratio. | `0.47` |
-| `current_travel_time_seconds` | `int64` | Pendiente de documentar | `887` |
+| `current_travel_time_seconds` | `int64` | Pendiente de documentar | `514` |
 | `free_flow_travel_time_seconds` | `int64` | Pendiente de documentar | `514` |
 | `delay_seconds` | `int64` | Diferencia entre tiempo actual y tiempo libre. | `120` |
-| `delay_ratio` | `float64` | Pendiente de documentar | `1.7256809338521402` |
-| `confidence` | `float64` | Pendiente de documentar | `0.988599` |
+| `delay_ratio` | `float64` | Pendiente de documentar | `1.0` |
+| `confidence` | `float64` | Pendiente de documentar | `1.0` |
 | `road_closure` | `bool` | Pendiente de documentar | `False` |
 | `status_code` | `int64` | Pendiente de documentar | `200` |
 | `error` | `float64` | Pendiente de documentar | `` |
-| `raw_response` | `str` | Pendiente de documentar | `{"flowSegmentData": {"frc": "FRC5", "currentSpeed": 11, "freeFlowSpeed": 19, "currentTravelTime": 887, "freeFlowTravelTi` |
+| `raw_response` | `str` | Pendiente de documentar | `{"flowSegmentData": {"frc": "FRC5", "currentSpeed": 19, "freeFlowSpeed": 19, "currentTravelTime": 514, "freeFlowTravelTi` |
 | `traffic_status` | `str` | Clasificacion heuristica de congestion. | `Congestion media` |
 
 ## `tomtom_cdmx_incidents`
@@ -991,30 +991,30 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_incidents` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-29T23:31:57Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-29` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260629T233153Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-06-29T23:31:53.624412` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-06-30T04:38:11Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-06-30` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260630T043808Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-06-30T04:38:08.476537` |
 | `incident_id` | `str` | Identificador de incidente reportado por TomTom. | `123456` |
 | `incident_type` | `str` | Pendiente de documentar | `Feature` |
 | `geometry_type` | `str` | Pendiente de documentar | `LineString` |
-| `lat` | `float64` | Pendiente de documentar | `19.3623720203` |
-| `lon` | `float64` | Pendiente de documentar | `-99.3489951546` |
-| `icon_category` | `int64` | Pendiente de documentar | `6` |
+| `lat` | `float64` | Pendiente de documentar | `19.5486447953` |
+| `lon` | `float64` | Pendiente de documentar | `-99.3443616385` |
+| `icon_category` | `int64` | Pendiente de documentar | `9` |
 | `icon_category_desc` | `str` | Categoria legible del incidente. | `Jam` |
-| `magnitude_of_delay` | `int64` | Pendiente de documentar | `3` |
+| `magnitude_of_delay` | `int64` | Pendiente de documentar | `0` |
 | `delay_seconds` | `float64` | Retraso estimado en segundos. | `420` |
 | `length_meters` | `float64` | Longitud vial afectada. | `850` |
 | `from` | `str` | Inicio textual del tramo afectado. | `Av. Insurgentes` |
 | `to` | `str` | Fin textual del tramo afectado. | `Eje 5 Sur` |
-| `road_numbers` | `str` | Pendiente de documentar | `MEX-3` |
+| `road_numbers` | `str` | Pendiente de documentar | `MEX-57D` |
 | `time_validity` | `str` | Pendiente de documentar | `present` |
-| `probability` | `str` | Pendiente de documentar | `certain` |
+| `probability` | `str` | Pendiente de documentar | `probable` |
 | `number_of_reports` | `float64` | Pendiente de documentar | `` |
-| `start_time` | `str` | Pendiente de documentar | `2026-06-29T23:21:30Z` |
-| `end_time` | `str` | Pendiente de documentar | `2026-06-29T23:50:30Z` |
+| `start_time` | `str` | Pendiente de documentar | `2026-06-16T22:42:30Z` |
+| `end_time` | `str` | Pendiente de documentar | `2026-06-30T04:56:30Z` |
 | `last_report_time` | `float64` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
-| `event_descriptions` | `str` | Pendiente de documentar | `Tráfico parado` |
-| `event_codes` | `int64` | Pendiente de documentar | `101` |
-| `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3491198773, 19.3625986585], [-99.3491265828, 19.3625652084], [-99.3491239006` |
-| `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-d78aba7a-98dd-4e36-8e61-64835b4cc286-TTL24441700956011000", "iconCategory": 6, "magnitudeOfDelay": 3, "start` |
+| `event_descriptions` | `str` | Pendiente de documentar | `Obras` |
+| `event_codes` | `str` | Pendiente de documentar | `701` |
+| `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3446848447, 19.5507355812], [-99.3446781392, 19.5507275246], [-99.3444944078` |
+| `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-d78aba7a-98dd-4e36-8e61-64835b4cc286-TTR24415734752060000", "iconCategory": 9, "magnitudeOfDelay": 0, "start` |
