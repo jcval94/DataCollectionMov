@@ -953,10 +953,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_flow` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-04T04:06:36Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-04T07:19:02Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-04` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260704T040632Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-04T04:06:32.848995` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260704T071858Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-04T07:18:59.228978` |
 | `point_name` | `str` | Punto estrategico consultado. | `Universidad - CU` |
 | `input_lat` | `float64` | Pendiente de documentar | `19.432608` |
 | `input_lon` | `float64` | Pendiente de documentar | `-99.133209` |
@@ -967,15 +967,15 @@ No existe snapshot actual para esta tabla.
 | `free_flow_speed_kmph` | `int64` | Velocidad esperada sin trafico. | `45` |
 | `speed_ratio` | `float64` | current_speed_kmph / free_flow_speed_kmph. | `0.53` |
 | `congestion_index` | `float64` | Indice heuristico 1 - speed_ratio. | `0.47` |
-| `current_travel_time_seconds` | `int64` | Pendiente de documentar | `610` |
+| `current_travel_time_seconds` | `int64` | Pendiente de documentar | `514` |
 | `free_flow_travel_time_seconds` | `int64` | Pendiente de documentar | `514` |
 | `delay_seconds` | `int64` | Diferencia entre tiempo actual y tiempo libre. | `120` |
-| `delay_ratio` | `float64` | Pendiente de documentar | `1.1867704280155642` |
-| `confidence` | `float64` | Pendiente de documentar | `0.986837` |
+| `delay_ratio` | `float64` | Pendiente de documentar | `1.0` |
+| `confidence` | `float64` | Pendiente de documentar | `1.0` |
 | `road_closure` | `bool` | Pendiente de documentar | `False` |
 | `status_code` | `int64` | Pendiente de documentar | `200` |
 | `error` | `float64` | Pendiente de documentar | `` |
-| `raw_response` | `str` | Pendiente de documentar | `{"flowSegmentData": {"frc": "FRC5", "currentSpeed": 16, "freeFlowSpeed": 19, "currentTravelTime": 610, "freeFlowTravelTi` |
+| `raw_response` | `str` | Pendiente de documentar | `{"flowSegmentData": {"frc": "FRC5", "currentSpeed": 19, "freeFlowSpeed": 19, "currentTravelTime": 514, "freeFlowTravelTi` |
 | `traffic_status` | `str` | Clasificacion heuristica de congestion. | `Congestion media` |
 
 ## `tomtom_cdmx_incidents`
@@ -991,10 +991,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_incidents` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-04T04:06:36Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-04T07:19:02Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-04` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260704T040632Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-04T04:06:32.797096` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260704T071858Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-04T07:18:59.164372` |
 | `incident_id` | `str` | Identificador de incidente reportado por TomTom. | `123456` |
 | `incident_type` | `str` | Pendiente de documentar | `Feature` |
 | `geometry_type` | `str` | Pendiente de documentar | `LineString` |
@@ -1007,7 +1007,7 @@ No existe snapshot actual para esta tabla.
 | `length_meters` | `float64` | Longitud vial afectada. | `850` |
 | `from` | `str` | Inicio textual del tramo afectado. | `Av. Insurgentes` |
 | `to` | `str` | Fin textual del tramo afectado. | `Eje 5 Sur` |
-| `road_numbers` | `str` | Pendiente de documentar | `MEX-134D` |
+| `road_numbers` | `str` | Pendiente de documentar | `MEX-57D` |
 | `time_validity` | `str` | Pendiente de documentar | `present` |
 | `probability` | `str` | Pendiente de documentar | `certain` |
 | `number_of_reports` | `float64` | Pendiente de documentar | `` |
