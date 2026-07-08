@@ -362,21 +362,21 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_station_status` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T07:04:31Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T14:58:48Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T070430Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T145847Z` |
 | `station_id` | `int64` | Pendiente de documentar | `1` |
-| `num_bikes_available` | `int64` | Pendiente de documentar | `0` |
-| `num_bikes_disabled` | `int64` | Pendiente de documentar | `21` |
-| `num_docks_available` | `int64` | Pendiente de documentar | `18` |
+| `num_bikes_available` | `int64` | Pendiente de documentar | `36` |
+| `num_bikes_disabled` | `int64` | Pendiente de documentar | `3` |
+| `num_docks_available` | `int64` | Pendiente de documentar | `0` |
 | `num_docks_disabled` | `int64` | Pendiente de documentar | `0` |
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
-| `is_renting` | `int64` | Pendiente de documentar | `0` |
+| `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1783490236` |
+| `last_reported` | `int64` | Pendiente de documentar | `1783522680` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-08 05:57:16` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-08 14:58:00` |
 
 ## `ecobici_historical_links`
 
@@ -452,9 +452,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_realtime_stations` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T07:04:31Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T14:58:48Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T070430Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T145847Z` |
 | `station_id` | `int64` | Identificador de cicloestacion. | `271` |
 | `external_id` | `str` | Pendiente de documentar | `e961269c-34c4-4b70-8e30-a51aa95a8429` |
 | `station_name` | `str` | Nombre de cicloestacion. | `271 Reforma` |
@@ -468,16 +468,16 @@ No existe snapshot actual para esta tabla.
 | `eightd_has_key_dispenser` | `bool` | Pendiente de documentar | `False` |
 | `has_kiosk` | `bool` | Pendiente de documentar | `True` |
 | `num_bikes_available` | `int64` | Bicicletas disponibles. | `8` |
-| `num_bikes_disabled` | `int64` | Pendiente de documentar | `21` |
+| `num_bikes_disabled` | `int64` | Pendiente de documentar | `3` |
 | `num_docks_available` | `int64` | Espacios libres para devolver bicicleta. | `12` |
 | `num_docks_disabled` | `int64` | Pendiente de documentar | `0` |
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
-| `is_renting` | `int64` | Pendiente de documentar | `0` |
+| `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1783490236` |
+| `last_reported` | `int64` | Pendiente de documentar | `1783522680` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging_status` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-08 05:57:16` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-08 14:58:00` |
 | `bike_availability_pct` | `float64` | Proporcion de bicicletas disponibles. | `0.4` |
 | `dock_availability_pct` | `float64` | Proporcion de espacios disponibles. | `0.6` |
 
