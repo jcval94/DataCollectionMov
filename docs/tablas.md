@@ -362,21 +362,21 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_station_status` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-15T17:50:40Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-15T19:48:11Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-15` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260715T175039Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260715T194809Z` |
 | `station_id` | `int64` | Pendiente de documentar | `1` |
-| `num_bikes_available` | `int64` | Pendiente de documentar | `24` |
+| `num_bikes_available` | `int64` | Pendiente de documentar | `23` |
 | `num_bikes_disabled` | `int64` | Pendiente de documentar | `0` |
-| `num_docks_available` | `int64` | Pendiente de documentar | `15` |
+| `num_docks_available` | `int64` | Pendiente de documentar | `16` |
 | `num_docks_disabled` | `int64` | Pendiente de documentar | `0` |
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
 | `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1784137782` |
+| `last_reported` | `int64` | Pendiente de documentar | `1784144422` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-15 17:49:42` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-15 19:40:22` |
 
 ## `ecobici_historical_links`
 
@@ -452,16 +452,16 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_realtime_stations` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-15T17:50:40Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-15T19:48:11Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-15` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260715T175039Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260715T194809Z` |
 | `station_id` | `int64` | Identificador de cicloestacion. | `271` |
 | `external_id` | `str` | Pendiente de documentar | `e961269c-34c4-4b70-8e30-a51aa95a8429` |
 | `station_name` | `str` | Nombre de cicloestacion. | `271 Reforma` |
 | `short_name` | `int64` | Pendiente de documentar | `710` |
 | `lat` | `float64` | Pendiente de documentar | `19.416795` |
 | `lon` | `float64` | Pendiente de documentar | `-99.192508` |
-| `rental_methods` | `str` | Pendiente de documentar | `['KEY', 'CREDITCARD']` |
+| `rental_methods` | `str` | Pendiente de documentar | `['CREDITCARD', 'KEY']` |
 | `capacity` | `int64` | Capacidad total aproximada. | `20` |
 | `electric_bike_surcharge_waiver` | `bool` | Pendiente de documentar | `False` |
 | `is_charging_info` | `bool` | Pendiente de documentar | `False` |
@@ -474,10 +474,10 @@ No existe snapshot actual para esta tabla.
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
 | `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1784137782` |
+| `last_reported` | `int64` | Pendiente de documentar | `1784144422` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging_status` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-15 17:49:42` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-07-15 19:40:22` |
 | `bike_availability_pct` | `float64` | Proporcion de bicicletas disponibles. | `0.4` |
 | `dock_availability_pct` | `float64` | Proporcion de espacios disponibles. | `0.6` |
 
