@@ -953,10 +953,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_flow` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-17T03:43:05Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-17T06:31:33Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-17` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260717T034300Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-17T03:43:01.424182` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260717T063129Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-17T06:31:30.170566` |
 | `point_name` | `str` | Punto estrategico consultado. | `Universidad - CU` |
 | `input_lat` | `float64` | Pendiente de documentar | `19.432608` |
 | `input_lon` | `float64` | Pendiente de documentar | `-99.133209` |
@@ -991,10 +991,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_incidents` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-17T03:43:05Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-17T06:31:33Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-17` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260717T034300Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-17T03:43:01.357751` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260717T063129Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-07-17T06:31:30.122013` |
 | `incident_id` | `str` | Identificador de incidente reportado por TomTom. | `123456` |
 | `incident_type` | `str` | Pendiente de documentar | `Feature` |
 | `geometry_type` | `str` | Pendiente de documentar | `LineString` |
@@ -1007,14 +1007,14 @@ No existe snapshot actual para esta tabla.
 | `length_meters` | `float64` | Longitud vial afectada. | `850` |
 | `from` | `str` | Inicio textual del tramo afectado. | `Av. Insurgentes` |
 | `to` | `str` | Fin textual del tramo afectado. | `Eje 5 Sur` |
-| `road_numbers` | `str` | Pendiente de documentar | `MEX-134D` |
+| `road_numbers` | `str` | Pendiente de documentar | `MEX-57D` |
 | `time_validity` | `str` | Pendiente de documentar | `present` |
 | `probability` | `str` | Pendiente de documentar | `probable` |
 | `number_of_reports` | `float64` | Pendiente de documentar | `` |
 | `start_time` | `str` | Pendiente de documentar | `2026-07-17T00:45:00Z` |
-| `end_time` | `str` | Pendiente de documentar | `2026-07-17T04:02:30Z` |
+| `end_time` | `str` | Pendiente de documentar | `2026-07-17T06:39:00Z` |
 | `last_report_time` | `float64` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
 | `event_descriptions` | `str` | Pendiente de documentar | `Obras` |
-| `event_codes` | `str` | Pendiente de documentar | `701` |
+| `event_codes` | `int64` | Pendiente de documentar | `701` |
 | `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3446580226, 19.5507033547], [-99.3444944078, 19.5505075471], [-99.3444313759` |
 | `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-4d8c8d74-366a-433e-b79e-5e1803f72772-TTR24415734752060000", "iconCategory": 9, "magnitudeOfDelay": 0, "start` |
