@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-07-28T00:12:25Z",
+  "source": "metrobus",
+  "snapshot_id": "20260728T001220Z",
+  "snapshot_date": "2026-07-28",
+  "artifacts": [
+    {
+      "artifact": "metrobus_vehicle_map",
+      "source": "metrobus",
+      "snapshot_id": "20260728T001220Z",
+      "snapshot_date": "2026-07-28",
+      "current_path": "data/artifacts/current/metrobus_vehicle_map.html",
+      "snapshot_path": "data/artifacts/history/metrobus_vehicle_map/20260728T001220Z.html"
+    }
+  ]
+}
