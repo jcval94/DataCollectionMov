@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-08-08T09:52:51Z",
+  "source": "denue",
+  "snapshot_id": "20260808T095142Z",
+  "snapshot_date": "2026-08-08",
+  "artifacts": [
+    {
+      "artifact": "mapa_denue_zonas_universitarias_cdmx",
+      "source": "denue",
+      "snapshot_id": "20260808T095142Z",
+      "snapshot_date": "2026-08-08",
+      "current_path": "data/artifacts/current/mapa_denue_zonas_universitarias_cdmx.html",
+      "snapshot_path": "data/artifacts/history/mapa_denue_zonas_universitarias_cdmx/20260808T095142Z.html"
+    }
+  ]
+}

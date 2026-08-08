@@ -15,9 +15,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `campus_cdmx_base` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T11:16:14Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T111509Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-08T09:52:49Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260808T095142Z` |
 | `campus_id` | `str` | Pendiente de documentar | `unam_cu` |
 | `universidad` | `str` | Pendiente de documentar | `UNAM` |
 | `campus` | `str` | Pendiente de documentar | `Ciudad Universitaria` |
@@ -38,9 +38,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_cdmx_educacion_superior_universitaria` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T11:16:14Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T111509Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-08T09:52:49Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260808T095142Z` |
 | `clee` | `str` | Pendiente de documentar | `09015611312000136000000000U1` |
 | `id_establecimiento` | `int64` | Pendiente de documentar | `1059370` |
 | `nombre` | `str` | Pendiente de documentar | `ACADEMIA DE SAN CARLOS` |
@@ -99,9 +99,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_cdmx_sector_61_servicios_educativos` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T11:16:14Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T111509Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-08T09:52:49Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260808T095142Z` |
 | `clee` | `str` | Pendiente de documentar | `09005611621001441000000000U9` |
 | `id_establecimiento` | `int64` | Pendiente de documentar | `9496872` |
 | `nombre` | `str` | Pendiente de documentar | `12 ROUNDS` |
@@ -160,9 +160,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_establecimientos_alrededor_campus` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T11:16:14Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T111509Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-08T09:52:49Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260808T095142Z` |
 | `clee` | `str` | Pendiente de documentar | `09003491110000063000041638S6` |
 | `id_establecimiento` | `int64` | Pendiente de documentar | `8631657` |
 | `nombre` | `str` | Pendiente de documentar | `CIUDAD UNIVERSITARIA CDMX` |
@@ -217,9 +217,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_metadata_reporte` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T11:16:14Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T111509Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-08T09:52:50Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260808T095142Z` |
 | `table_name` | `str` | Pendiente de documentar | `campus_cdmx_base` |
 | `column` | `str` | Pendiente de documentar | `campus_id` |
 | `dtype` | `str` | Pendiente de documentar | `str` |
@@ -241,9 +241,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_resumen_por_nivel_educativo` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T11:16:14Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T111509Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-08T09:52:50Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260808T095142Z` |
 | `campus_id` | `str` | Pendiente de documentar | `ibero_santa_fe` |
 | `universidad_base` | `str` | Pendiente de documentar | `Universidad Iberoamericana` |
 | `campus_base` | `str` | Pendiente de documentar | `Santa Fe` |
@@ -264,9 +264,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_resumen_zonas_universitarias` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-07-08T11:16:14Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-07-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260708T111509Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-08T09:52:50Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260808T095142Z` |
 | `campus_id` | `str` | Pendiente de documentar | `unam_cu` |
 | `universidad_base` | `str` | Pendiente de documentar | `UNAM` |
 | `campus_base` | `str` | Pendiente de documentar | `Ciudad Universitaria` |
