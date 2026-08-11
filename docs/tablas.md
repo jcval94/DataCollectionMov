@@ -700,27 +700,27 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `metrobus` |
 | `_source_table` | `str` | Pendiente de documentar | `metrobus_vehicle_positions` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-10T23:52:03Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-10` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260810T235159Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-11T02:25:43Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-11` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260811T022540Z` |
 | `entity_id` | `str` | Identificador de entidad GTFS-Realtime. | `vehicle_123` |
 | `trip_id` | `float64` | Identificador del viaje GTFS asociado. | `trip_456` |
 | `route_id` | `float64` | Identificador de ruta GTFS. | `1` |
 | `direction_id` | `float64` | Pendiente de documentar | `1.0` |
-| `start_time` | `str` | Pendiente de documentar | `23:14:55` |
-| `start_date` | `float64` | Pendiente de documentar | `20260810.0` |
+| `start_time` | `str` | Pendiente de documentar | `02:13:29` |
+| `start_date` | `float64` | Pendiente de documentar | `20260811.0` |
 | `vehicle_id` | `int64` | Identificador de unidad. | `1234` |
 | `vehicle_label` | `int64` | Pendiente de documentar | `2306` |
 | `license_plate` | `str` | Pendiente de documentar | `1240002` |
 | `latitude` | `float64` | Latitud reportada por la unidad. | `19.4326` |
 | `longitude` | `float64` | Longitud reportada por la unidad. | `-99.1332` |
-| `bearing` | `float64` | Pendiente de documentar | `125.0` |
-| `speed_mps` | `float64` | Pendiente de documentar | `38.0` |
+| `bearing` | `float64` | Pendiente de documentar | `104.0` |
+| `speed_mps` | `float64` | Pendiente de documentar | `0.0` |
 | `speed_kmh` | `float64` | Velocidad estimada en kilometros por hora. | `24.5` |
 | `current_stop_sequence` | `float64` | Pendiente de documentar | `` |
 | `stop_id` | `float64` | Pendiente de documentar | `` |
 | `current_status` | `float64` | Pendiente de documentar | `` |
-| `timestamp_raw` | `int64` | Pendiente de documentar | `1786405910` |
+| `timestamp_raw` | `int64` | Pendiente de documentar | `1786415115` |
 | `timestamp_cdmx` | `str` | Hora del reporte convertida a America/Mexico_City. | `2026-06-04 08:15:00-06:00` |
 | `congestion_level` | `float64` | Pendiente de documentar | `` |
 | `occupancy_status` | `float64` | Pendiente de documentar | `` |
@@ -738,28 +738,28 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `metrobus` |
 | `_source_table` | `str` | Pendiente de documentar | `metrobus_vehicle_positions_enriched` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-10T23:52:03Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-10` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260810T235159Z` |
-| `entity_id` | `str` | Pendiente de documentar | `5728a01f-80c2-4d15-aae6-22d3a149cc56` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-11T02:25:43Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-11` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260811T022540Z` |
+| `entity_id` | `str` | Pendiente de documentar | `a7b7ff42-19c9-4a32-876e-aa25a0968572` |
 | `trip_id` | `float64` | Pendiente de documentar | `` |
 | `route_id` | `float64` | Pendiente de documentar | `19472.0` |
 | `direction_id` | `float64` | Pendiente de documentar | `1.0` |
-| `start_time` | `str` | Pendiente de documentar | `23:14:55` |
-| `start_date` | `float64` | Pendiente de documentar | `20260810.0` |
+| `start_time` | `str` | Pendiente de documentar | `02:13:29` |
+| `start_date` | `float64` | Pendiente de documentar | `20260811.0` |
 | `vehicle_id` | `int64` | Pendiente de documentar | `69379` |
 | `vehicle_label` | `int64` | Pendiente de documentar | `2306` |
 | `license_plate` | `str` | Pendiente de documentar | `1240002` |
-| `latitude` | `float64` | Pendiente de documentar | `19.470842361450195` |
-| `longitude` | `float64` | Pendiente de documentar | `-99.06629180908205` |
-| `bearing` | `float64` | Pendiente de documentar | `125.0` |
-| `speed_mps` | `float64` | Pendiente de documentar | `38.0` |
-| `speed_kmh` | `float64` | Pendiente de documentar | `136.8` |
+| `latitude` | `float64` | Pendiente de documentar | `19.482776641845703` |
+| `longitude` | `float64` | Pendiente de documentar | `-99.10706329345705` |
+| `bearing` | `float64` | Pendiente de documentar | `104.0` |
+| `speed_mps` | `float64` | Pendiente de documentar | `0.0` |
+| `speed_kmh` | `float64` | Pendiente de documentar | `0.0` |
 | `current_stop_sequence` | `float64` | Pendiente de documentar | `` |
 | `stop_id` | `float64` | Pendiente de documentar | `` |
 | `current_status` | `float64` | Pendiente de documentar | `` |
-| `timestamp_raw` | `int64` | Pendiente de documentar | `1786405910` |
-| `timestamp_cdmx` | `str` | Pendiente de documentar | `2026-08-10 17:51:50-06:00` |
+| `timestamp_raw` | `int64` | Pendiente de documentar | `1786415115` |
+| `timestamp_cdmx` | `str` | Pendiente de documentar | `2026-08-10 20:25:15-06:00` |
 | `congestion_level` | `float64` | Pendiente de documentar | `` |
 | `occupancy_status` | `float64` | Pendiente de documentar | `` |
 | `route_short_name` | `float64` | Nombre corto de ruta proveniente de routes.txt. | `L1` |
