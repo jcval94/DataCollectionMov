@@ -362,9 +362,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_station_status` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-12T19:43:06Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-12T21:24:20Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-12` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260812T194304Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260812T212419Z` |
 | `station_id` | `int64` | Pendiente de documentar | `1` |
 | `num_bikes_available` | `int64` | Pendiente de documentar | `2` |
 | `num_bikes_disabled` | `int64` | Pendiente de documentar | `0` |
@@ -373,10 +373,10 @@ No existe snapshot actual para esta tabla.
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
 | `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1786562006` |
+| `last_reported` | `int64` | Pendiente de documentar | `1786569808` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-08-12 19:13:26` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-08-12 21:23:28` |
 
 ## `ecobici_historical_links`
 
@@ -452,9 +452,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_realtime_stations` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-12T19:43:06Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-12T21:24:20Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-12` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260812T194304Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260812T212419Z` |
 | `station_id` | `int64` | Identificador de cicloestacion. | `271` |
 | `external_id` | `str` | Pendiente de documentar | `e961269c-34c4-4b70-8e30-a51aa95a8429` |
 | `station_name` | `str` | Nombre de cicloestacion. | `271 Reforma` |
@@ -474,10 +474,10 @@ No existe snapshot actual para esta tabla.
 | `is_installed` | `int64` | Pendiente de documentar | `1` |
 | `is_renting` | `int64` | Pendiente de documentar | `1` |
 | `is_returning` | `int64` | Pendiente de documentar | `1` |
-| `last_reported` | `int64` | Pendiente de documentar | `1786562006` |
+| `last_reported` | `int64` | Pendiente de documentar | `1786569808` |
 | `eightd_has_available_keys` | `bool` | Pendiente de documentar | `False` |
 | `is_charging_status` | `bool` | Pendiente de documentar | `False` |
-| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-08-12 19:13:26` |
+| `last_reported_datetime` | `str` | Pendiente de documentar | `2026-08-12 21:23:28` |
 | `bike_availability_pct` | `float64` | Proporcion de bicicletas disponibles. | `0.4` |
 | `dock_availability_pct` | `float64` | Proporcion de espacios disponibles. | `0.6` |
 
