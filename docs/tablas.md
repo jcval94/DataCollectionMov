@@ -700,9 +700,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `metrobus` |
 | `_source_table` | `str` | Pendiente de documentar | `metrobus_vehicle_positions` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-14T21:42:51Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-14T22:42:24Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-14` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260814T214247Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260814T224221Z` |
 | `entity_id` | `str` | Identificador de entidad GTFS-Realtime. | `vehicle_123` |
 | `trip_id` | `float64` | Identificador del viaje GTFS asociado. | `trip_456` |
 | `route_id` | `float64` | Identificador de ruta GTFS. | `1` |
@@ -738,9 +738,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `metrobus` |
 | `_source_table` | `str` | Pendiente de documentar | `metrobus_vehicle_positions_enriched` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-14T21:42:51Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-14T22:42:24Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-14` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260814T214247Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260814T224221Z` |
 | `entity_id` | `str` | Pendiente de documentar | `373a97e8-6184-4f09-8beb-512aded38866` |
 | `trip_id` | `float64` | Pendiente de documentar | `` |
 | `route_id` | `float64` | Pendiente de documentar | `19567.0` |
