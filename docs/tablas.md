@@ -362,9 +362,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_station_status` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-18T03:23:11Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-18T05:02:41Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-18` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260818T032310Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260818T050239Z` |
 | `station_id` | `int64` | Pendiente de documentar | `1` |
 | `num_bikes_available` | `int64` | Pendiente de documentar | `0` |
 | `num_bikes_disabled` | `int64` | Pendiente de documentar | `1` |
@@ -452,9 +452,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_realtime_stations` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-18T03:23:11Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-18T05:02:41Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-18` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260818T032310Z` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260818T050239Z` |
 | `station_id` | `int64` | Identificador de cicloestacion. | `271` |
 | `external_id` | `str` | Pendiente de documentar | `e961269c-34c4-4b70-8e30-a51aa95a8429` |
 | `station_name` | `str` | Nombre de cicloestacion. | `271 Reforma` |
