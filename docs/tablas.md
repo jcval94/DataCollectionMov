@@ -953,10 +953,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_flow` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-19T20:56:30Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-19T22:47:51Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-19` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260819T205626Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-19T20:56:27.261597` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260819T224747Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-19T22:47:47.969280` |
 | `point_name` | `str` | Punto estrategico consultado. | `Universidad - CU` |
 | `input_lat` | `float64` | Pendiente de documentar | `19.432608` |
 | `input_lon` | `float64` | Pendiente de documentar | `-99.133209` |
@@ -971,7 +971,7 @@ No existe snapshot actual para esta tabla.
 | `free_flow_travel_time_seconds` | `int64` | Pendiente de documentar | `514` |
 | `delay_seconds` | `int64` | Diferencia entre tiempo actual y tiempo libre. | `120` |
 | `delay_ratio` | `float64` | Pendiente de documentar | `2.3735408560311284` |
-| `confidence` | `float64` | Pendiente de documentar | `0.993899` |
+| `confidence` | `float64` | Pendiente de documentar | `0.998356` |
 | `road_closure` | `bool` | Pendiente de documentar | `False` |
 | `status_code` | `int64` | Pendiente de documentar | `200` |
 | `error` | `float64` | Pendiente de documentar | `` |
@@ -991,15 +991,15 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_incidents` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-19T20:56:30Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-19T22:47:51Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-19` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260819T205626Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-19T20:56:27.160315` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260819T224747Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-19T22:47:47.878532` |
 | `incident_id` | `str` | Identificador de incidente reportado por TomTom. | `123456` |
 | `incident_type` | `str` | Pendiente de documentar | `Feature` |
 | `geometry_type` | `str` | Pendiente de documentar | `LineString` |
-| `lat` | `float64` | Pendiente de documentar | `19.3623720203` |
-| `lon` | `float64` | Pendiente de documentar | `-99.3489951546` |
+| `lat` | `float64` | Pendiente de documentar | `19.3613621876` |
+| `lon` | `float64` | Pendiente de documentar | `-99.3502718861` |
 | `icon_category` | `int64` | Pendiente de documentar | `6` |
 | `icon_category_desc` | `str` | Categoria legible del incidente. | `Jam` |
 | `magnitude_of_delay` | `int64` | Pendiente de documentar | `2` |
@@ -1011,10 +1011,10 @@ No existe snapshot actual para esta tabla.
 | `time_validity` | `str` | Pendiente de documentar | `present` |
 | `probability` | `str` | Pendiente de documentar | `certain` |
 | `number_of_reports` | `float64` | Pendiente de documentar | `` |
-| `start_time` | `str` | Pendiente de documentar | `2026-08-19T20:44:30Z` |
-| `end_time` | `str` | Pendiente de documentar | `2026-08-19T21:15:00Z` |
+| `start_time` | `str` | Pendiente de documentar | `2026-08-19T22:43:00Z` |
+| `end_time` | `str` | Pendiente de documentar | `2026-08-19T23:06:00Z` |
 | `last_report_time` | `float64` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
 | `event_descriptions` | `str` | Pendiente de documentar | `Tráfico en cola` |
 | `event_codes` | `int64` | Pendiente de documentar | `108` |
-| `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3491198773, 19.3625986585], [-99.3491265828, 19.3625652084], [-99.3491239006` |
-| `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-1183a978-9987-4332-9a28-b6a0825228f3-TTL24441700956011000", "iconCategory": 6, "magnitudeOfDelay": 2, "start` |
+| `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3507600481, 19.3621158856], [-99.3502718861, 19.3613621876], [-99.3498722369` |
+| `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-1183a978-9987-4332-9a28-b6a0825228f3-TTL24441700956014000", "iconCategory": 6, "magnitudeOfDelay": 2, "start` |
