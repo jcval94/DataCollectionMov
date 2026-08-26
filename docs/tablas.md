@@ -953,10 +953,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_flow` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-26T04:59:35Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-26T13:31:17Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-26` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260826T045931Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-26T04:59:32.139018` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260826T133114Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-26T13:31:14.384647` |
 | `point_name` | `str` | Punto estrategico consultado. | `Universidad - CU` |
 | `input_lat` | `float64` | Pendiente de documentar | `19.432608` |
 | `input_lon` | `float64` | Pendiente de documentar | `-99.133209` |
@@ -991,15 +991,15 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_incidents` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-26T04:59:35Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-26T13:31:17Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-26` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260826T045931Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-26T04:59:32.082790` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260826T133114Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-08-26T13:31:14.327209` |
 | `incident_id` | `str` | Identificador de incidente reportado por TomTom. | `123456` |
 | `incident_type` | `str` | Pendiente de documentar | `Feature` |
 | `geometry_type` | `str` | Pendiente de documentar | `LineString` |
-| `lat` | `float64` | Pendiente de documentar | `19.4349231422` |
-| `lon` | `float64` | Pendiente de documentar | `-99.3334517533` |
+| `lat` | `float64` | Pendiente de documentar | `19.3311149185` |
+| `lon` | `float64` | Pendiente de documentar | `-99.3152931983` |
 | `icon_category` | `int64` | Pendiente de documentar | `6` |
 | `icon_category_desc` | `str` | Categoria legible del incidente. | `Jam` |
 | `magnitude_of_delay` | `int64` | Pendiente de documentar | `1` |
@@ -1007,14 +1007,14 @@ No existe snapshot actual para esta tabla.
 | `length_meters` | `float64` | Longitud vial afectada. | `850` |
 | `from` | `str` | Inicio textual del tramo afectado. | `Av. Insurgentes` |
 | `to` | `str` | Fin textual del tramo afectado. | `Eje 5 Sur` |
-| `road_numbers` | `str` | Pendiente de documentar | `MEX-134D` |
+| `road_numbers` | `str` | Pendiente de documentar | `MEX-15D` |
 | `time_validity` | `str` | Pendiente de documentar | `present` |
 | `probability` | `str` | Pendiente de documentar | `certain` |
 | `number_of_reports` | `float64` | Pendiente de documentar | `` |
-| `start_time` | `str` | Pendiente de documentar | `2026-08-26T04:52:30Z` |
-| `end_time` | `str` | Pendiente de documentar | `2026-08-26T05:18:00Z` |
+| `start_time` | `str` | Pendiente de documentar | `2026-08-26T13:16:00Z` |
+| `end_time` | `str` | Pendiente de documentar | `2026-08-26T13:45:00Z` |
 | `last_report_time` | `float64` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
 | `event_descriptions` | `str` | Pendiente de documentar | `Tráfico lento` |
-| `event_codes` | `str` | Pendiente de documentar | `115` |
-| `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3204148764, 19.4223931538], [-99.3204282875, 19.4223958415], [-99.3205691034` |
-| `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-8bdb8a22-bc89-4292-91ed-a170049c774c-TTL24441702016034000", "iconCategory": 6, "magnitudeOfDelay": 1, "start` |
+| `event_codes` | `int64` | Pendiente de documentar | `115` |
+| `raw_geometry` | `str` | Pendiente de documentar | `{"type": "LineString", "coordinates": [[-99.3172243888, 19.326484091], [-99.3171278293, 19.3266423614], [-99.317035293, ` |
+| `raw_properties` | `str` | Pendiente de documentar | `{"id": "TTI-8bdb8a22-bc89-4292-91ed-a170049c774c-TTL24456127836024001", "iconCategory": 6, "magnitudeOfDelay": 1, "start` |
