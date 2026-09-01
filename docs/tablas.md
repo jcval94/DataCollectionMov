@@ -314,9 +314,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_feed_urls` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-01T11:05:15Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-01` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260801T110514Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-09-01T14:18:14Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-09-01` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260901T141813Z` |
 | `feed_name` | `str` | Pendiente de documentar | `free_bike_status` |
 | `url` | `str` | Pendiente de documentar | `https://gbfs.mex.lyftbikes.com/gbfs/en/free_bike_status.json` |
 
@@ -333,9 +333,9 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `ecobici` |
 | `_source_table` | `str` | Pendiente de documentar | `ecobici_gbfs_station_information` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-08-01T11:05:15Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-08-01` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20260801T110514Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-09-01T14:18:14Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-09-01` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20260901T141813Z` |
 | `station_id` | `int64` | Pendiente de documentar | `1` |
 | `external_id` | `str` | Pendiente de documentar | `e961269c-34c4-4b70-8e30-a51aa95a8429` |
 | `station_name` | `str` | Pendiente de documentar | `CE-710 Molino del Rey - Glorieta de la Lealtad` |
