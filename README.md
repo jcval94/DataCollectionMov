@@ -16,6 +16,12 @@ Este repositorio genera historicos versionados de tablas provenientes de Metrob�
 | `docs/periodicidad.md` | Criterio de programacion y schedules de GitHub Actions. |
 | `docs/tablas.md` | Diccionario de tablas y columnas. |
 
+## Catálogo de datasets para nuevos análisis
+
+El [catálogo de 30 datasets y fuentes reales de México](docs/CATALOGO_DATASETS_REALES.md) reúne rifa del avión presidencial (GSE 235), APIs INEGI, presupuesto, códigos postales, educación, movilidad social, transporte, salud y seguridad. Cada ficha incluye enlaces, cobertura, periodicidad, variables, llaves para cruces, ideas de análisis y límites de acceso/verificación.
+
+La [versión estructurada JSON](catalogs/datasets_reales_mexico.json) permite filtrar y reutilizar las fichas. Es un catálogo de oportunidades: las nuevas fuentes todavía no tienen recolección implementada. Revisión: 4 de noviembre de 2026.
+
 ## Fuentes cubiertas
 
 | Fuente | Tablas principales | Workflow |

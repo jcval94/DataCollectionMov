@@ -1,0 +1,1624 @@
+{
+  "schema_version": "1.0",
+  "title": "Catálogo de datasets reales para análisis en México",
+  "reviewed_on": "2026-11-04",
+  "timezone": "America/Mexico_City",
+  "repository": "jcval94/DataCollectionMov",
+  "scope": "Catálogo de fuentes y oportunidades de análisis. No agrega nuevos recolectores, no descarga masivamente bases y no acredita disponibilidad de APIs en vivo.",
+  "field_notes": {
+    "variables": "Selección semántica de variables; no constituye un esquema físico validado de cada archivo.",
+    "join_keys": "Llaves propuestas para unión o identificación; no garantizan unicidad ni son PK declaradas por el productor.",
+    "reference_period": "Periodo del fenómeno, separado de la fecha de revisión del catálogo.",
+    "postal_code_relation": "native: campo documentado; catalog: catálogo postal; polygon: geometría postal; spatial_only: posible cruce territorial; none: no asumir CP; unconfirmed: revisar archivo.",
+    "priority": "P1/P2 expresa recomendación de valor y factibilidad para este repo; no es un compromiso de implementación.",
+    "effort": "Estimación editorial: Baja/Media/Alta.",
+    "verification": "opened_primary: contenido primario leído; indexed_primary: fuente primaria localizada mediante búsqueda; indexed_primary_fetch_blocked: localizada pero apertura bloqueada/fallida; repository_inspected: código/árbol del repo revisado. Ninguna implica descarga masiva probada.",
+    "integration": "existing: código y al menos un CSV current vistos; partial: subconjunto implementado; collector_only: código presente sin CSV current de la tabla objetivo; not_ingested: sin integración identificada."
+  },
+  "datasets": [
+    {
+      "id": "rifa-235-premios",
+      "category": "Rifa del avión",
+      "name": "GSE 235: lista oficial de premios",
+      "publisher": "Lotería Nacional",
+      "sources": [
+        {
+          "url": "https://www.gob.mx/lotenal/prensa/con-gran-apoyo-de-la-sociedad-lotenal-llevo-a-cabo-con-exito-el-gran-sorteo-especial-no-235?idiom=es-MX",
+          "resource_url": "http://www.lotenal.gob.mx/Comercial/Listas/235.pdf",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Comunicado oficial indexado; apertura devolvió 403. Cita la lista en http://www.lotenal.gob.mx/Comercial/Listas/235.pdf; la variante HTTPS no pudo recuperarse.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México",
+      "grain": "Billete premiado",
+      "reference_period": "15-09-2020",
+      "source_frequency": "Evento único",
+      "formats": [
+        "PDF"
+      ],
+      "access": "Recuperar PDF histórico citado; requiere extracción y revisión manual.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Alta",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Número de billete",
+        "Premio",
+        "Número y fecha de sorteo"
+      ],
+      "join_keys": [
+        "sorteo + número de billete (texto, conservar longitud)"
+      ],
+      "analysis_ideas": [
+        "Distribución de números ganadores y simulación del sorteo."
+      ],
+      "caveats": [
+        "PDF no recuperado en esta revisión; no existe CSV validado en el repo.",
+        "Lista de ganadores no equivale a registro de ventas ni de cobro; no permite atribuir irregularidades."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "rifa-235-reportes",
+      "category": "Rifa del avión",
+      "name": "GSE 235: balance y beneficiarios publicados",
+      "publisher": "Lotería Nacional / INDEP",
+      "sources": [
+        {
+          "url": "https://www.gob.mx/lotenal/prensa/197193",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Comunicado del 11-12-2020 indexado; apertura devolvió 403.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://www.gob.mx/indep/prensa/informa-indep-que-siete-escuelas-recibieron-premios-del-sorteo-alusivo-al-avion-presidencial",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Comunicado oficial localizado en el índice de búsqueda; archivo tabular no comprobado.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México; instituciones mencionadas",
+      "grain": "Concepto financiero o institución, separado por documento",
+      "reference_period": "Comunicados de 2020",
+      "source_frequency": "Evento único; reportes con diferentes cortes",
+      "formats": [
+        "HTML"
+      ],
+      "access": "Reconstrucción documental; no hay microdatos completos de ventas verificados.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Ventas",
+        "Premios",
+        "Gastos",
+        "Remanente",
+        "Instituciones reportadas"
+      ],
+      "join_keys": [
+        "documento + fecha de publicación + concepto",
+        "CCT/CLUES sólo tras correspondencia documentada"
+      ],
+      "analysis_ideas": [
+        "Comparar balances por fecha; documentar escuelas beneficiarias."
+      ],
+      "caveats": [
+        "Separar cortes y definiciones: las cifras iniciales y auditadas pueden diferir.",
+        "Una escuela mencionada no trae necesariamente CCT; vincular sólo con evidencia."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "rifa-235-asf",
+      "category": "Rifa del avión",
+      "name": "GSE 235: auditoría de gestión financiera",
+      "publisher": "Auditoría Superior de la Federación",
+      "sources": [
+        {
+          "url": "https://www.asf.gob.mx/Trans/Informes/IR2020c/Documentos/Auditorias/2020_0051_a.pdf",
+          "resource_url": "https://www.asf.gob.mx/Trans/Informes/IR2020c/Documentos/Auditorias/2020_0051_a.pdf",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "PDF legible de 68 páginas; resultado 4, páginas impresas 23–31, dedicado al GSE 235.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México",
+      "grain": "Concepto o categoría del resultado 4",
+      "reference_period": "Cuenta Pública 2020; revisión posterior",
+      "source_frequency": "Informe histórico",
+      "formats": [
+        "PDF"
+      ],
+      "access": "PDF público legible; extraer tablas de las páginas impresas 23–31.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Billetes vendidos y no vendidos",
+        "Tipo de ganador",
+        "Premios pagados",
+        "Flujos y rentabilidad"
+      ],
+      "join_keys": [
+        "auditoría + página + concepto + unidad"
+      ],
+      "analysis_ideas": [
+        "Conciliar ventas, premios y remanentes contra los comunicados."
+      ],
+      "caveats": [
+        "El PDF contiene discrepancias internas: conservar página, unidad y literal original.",
+        "Importes expresados en miles de pesos; distinguirlos de pesos."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "inegi-indicadores-api",
+      "category": "INEGI y contexto",
+      "name": "API del Banco de Indicadores",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/servicios/api-indicadores/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "Documentación de indicadores y catálogo de metadatos leída. No se ejecutaron consultas con token.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México; geografía disponible según indicador",
+      "grain": "Indicador × área × periodo",
+      "reference_period": "Series variables según indicador",
+      "source_frequency": "Según indicador",
+      "formats": [
+        "JSON",
+        "XML"
+      ],
+      "access": "API con token INEGI; seleccionar IDs mediante catálogo de metadatos.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "ID de indicador",
+        "Periodo",
+        "Valor",
+        "Unidad",
+        "Área geográfica"
+      ],
+      "join_keys": [
+        "ID indicador + área + periodo + fuente/versión"
+      ],
+      "analysis_ideas": [
+        "Series de población, precios o actividad para contextualizar transporte y gasto."
+      ],
+      "caveats": [
+        "No todos los indicadores admiten municipio o AGEB.",
+        "Guardar unidad, base, frecuencia, fuente y revisiones; no asumir que el token DENUE sirve sin comprobar."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "inegi-denue",
+      "category": "INEGI y contexto",
+      "name": "DENUE: establecimientos y actividad económica",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/servicios/api-denue/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Documentación oficial indexada con campo CP; apertura devolvió 502. Integración y campo cp confirmados en el código del repo.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Nacional; extracción actual centrada en educación CDMX",
+      "grain": "Establecimiento por edición/snapshot",
+      "reference_period": "Edición vigente y snapshots propios",
+      "source_frequency": "Ediciones del productor; consulta mensual en este repo",
+      "formats": [
+        "JSON API",
+        "Descarga masiva"
+      ],
+      "access": "API con token; ampliar sectores o estados cuando se implemente.",
+      "postal_code_relation": "native",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "partial",
+        "paths": [
+          "src/historico_api/sources/denue.py",
+          "data/current/denue_cdmx_sector_61_servicios_educativos.csv"
+        ]
+      },
+      "variables": [
+        "CLEE/ID",
+        "Actividad SCIAN",
+        "Estrato de personal",
+        "CP",
+        "Latitud y longitud"
+      ],
+      "join_keys": [
+        "CLEE o ID establecimiento + edición",
+        "CP como agrupación; coordenadas para cruce espacial"
+      ],
+      "analysis_ideas": [
+        "Mapear servicios y concentración de escuelas por CP y acceso al Metrobús."
+      ],
+      "caveats": [
+        "Estrato de personal no es facturación ni empleo exacto.",
+        "La integración actual no cubre todo DENUE; usar ID/CLEE y edición al deduplicar."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "inegi-censo-2020-ageb",
+      "category": "INEGI y contexto",
+      "name": "Censo 2020: indicadores por AGEB y manzana urbana",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Programa oficial y disponibilidad de resultados por AGEB/manzana localizados. La ficha antigua tit=326085 devolvió 'archivo no existe'; usar el programa como entrada.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México; resultados urbanos a pequeña área",
+      "grain": "Área geográfica × indicador; separar agregados",
+      "reference_period": "2020",
+      "source_frequency": "Censal; puede haber correcciones del archivo",
+      "formats": [
+        "CSV/ZIP",
+        "Diccionario"
+      ],
+      "access": "Descarga desde programa CPV 2020; seleccionar resultados AGEB/manzana urbana.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Población",
+        "Edad",
+        "Escolaridad",
+        "Discapacidad",
+        "Vivienda"
+      ],
+      "join_keys": [
+        "Entidad (2) + municipio (3) + localidad (4) + AGEB (4); manzana (3) cuando proceda"
+      ],
+      "analysis_ideas": [
+        "Estimar población y rezago educativo cerca de estaciones y escuelas."
+      ],
+      "caveats": [
+        "CP no es AGEB; manejar asteriscos y valores reservados como faltantes.",
+        "No sumar filas totales con manzanas; mantener claves geográficas como texto."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "inegi-marco-geoestadistico",
+      "category": "INEGI y contexto",
+      "name": "Marco Geoestadístico y equivalencias",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/temas/mg/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Portal oficial de descargas y metadatos del Marco Geoestadístico localizados.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Nacional",
+      "grain": "Polígono, localidad o clave por edición",
+      "reference_period": "Edición compatible con el dato analizado; 2020 para Censo 2020",
+      "source_frequency": "Actualizaciones por edición",
+      "formats": [
+        "SHP/ZIP",
+        "Catálogos"
+      ],
+      "access": "Descargar edición y entidad desde portal oficial.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "CVEGEO",
+        "Entidad",
+        "Municipio",
+        "Localidad",
+        "AGEB",
+        "Geometría"
+      ],
+      "join_keys": [
+        "CVEGEO + edición + nivel"
+      ],
+      "analysis_ideas": [
+        "Unir censo con estaciones, escuelas, CP y presupuesto territorial."
+      ],
+      "caveats": [
+        "Fijar edición y CRS; cambios de límites requieren equivalencias.",
+        "Geografía estadística no equivale automáticamente a límite jurídico."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "inegi-entorno-urbano-2020",
+      "category": "INEGI y contexto",
+      "name": "Características del entorno urbano 2020",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/rnm/index.php/catalog/941/related-materials",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Metadatos oficiales identifican tablas de Vialidad y Manzana y enlazan los microdatos del CPV 2020.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Localidades urbanas cubiertas por el levantamiento",
+      "grain": "Manzana y vialidad, tablas distintas",
+      "reference_period": "2020",
+      "source_frequency": "Levantamiento 2020",
+      "formats": [
+        "Bases descargables",
+        "Diccionario XLSX"
+      ],
+      "access": "Microdatos del CPV 2020 enlazados en metadatos oficiales.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Banquetas",
+        "Rampas",
+        "Alumbrado",
+        "Características viales"
+      ],
+      "join_keys": [
+        "Clave geográfica de manzana/vialidad según diccionario + edición"
+      ],
+      "analysis_ideas": [
+        "Accesibilidad peatonal en el entorno de escuelas y estaciones."
+      ],
+      "caveats": [
+        "Revisar categorías y cobertura exacta de cada variable.",
+        "Infraestructura registrada en 2020 no describe necesariamente el estado actual."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "inegi-enigh-2024",
+      "category": "INEGI y contexto",
+      "name": "ENIGH 2024: ingresos y gastos del hogar",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Programa oficial, microdatos y documentación ENIGH 2024 localizados.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Nacional y dominios de estimación de la encuesta",
+      "grain": "Vivienda, hogar, persona, ingreso o gasto; tablas relacionadas",
+      "reference_period": "2024; ediciones anteriores en el programa",
+      "source_frequency": "Bienal",
+      "formats": [
+        "CSV/ZIP",
+        "Documentación"
+      ],
+      "access": "Microdatos públicos por edición.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Ingreso corriente",
+        "Gasto en transporte",
+        "Gasto educativo",
+        "Composición del hogar"
+      ],
+      "join_keys": [
+        "folioviv + foliohog; numren en tablas de personas, según diccionario",
+        "Entidad para agregados representativos"
+      ],
+      "analysis_ideas": [
+        "Carga del transporte y educación sobre el ingreso, por decil y entidad."
+      ],
+      "caveats": [
+        "Usar ponderadores, estratos y UPM; no estimar por CP o manzana.",
+        "Es corte transversal: no mide por sí sola movilidad intergeneracional."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "inegi-enoe",
+      "category": "INEGI y contexto",
+      "name": "ENOE: empleo, ingresos laborales e informalidad",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/programas/enoe/15ymas/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Programa oficial y notas sobre revisiones de microdatos localizados; no se determinó el último trimestre descargable.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Nacional, entidades y ciudades autorrepresentadas según edición",
+      "grain": "Persona y hogar por trimestre",
+      "reference_period": "Desde 2005; seleccionar trimestre disponible",
+      "source_frequency": "Indicadores mensuales y trimestrales; microdatos por corte",
+      "formats": [
+        "CSV/DBF según edición",
+        "Documentación"
+      ],
+      "access": "Microdatos públicos; fijar periodo y versión.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Escolaridad",
+        "Ocupación",
+        "Horas",
+        "Ingreso laboral",
+        "Informalidad"
+      ],
+      "join_keys": [
+        "Llaves de vivienda/hogar/persona y trimestre según diccionario"
+      ],
+      "analysis_ideas": [
+        "Brechas laborales por escolaridad, edad y género."
+      ],
+      "caveats": [
+        "Diseño muestral y cambios durante pandemia requieren tratamiento.",
+        "No unir personas entre encuestas distintas; no inferir salarios por CP."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "inegi-eod-zmvm-2017",
+      "category": "INEGI y contexto",
+      "name": "Encuesta Origen Destino ZMVM 2017",
+      "publisher": "INEGI / gobiernos CDMX y Estado de México",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/programas/eod/2017/default.html",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Programa oficial de la EOD ZMVM 2017 y catálogo de microdatos localizados.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "ZMVM dentro de la cobertura de la encuesta",
+      "grain": "Hogar, persona y viaje",
+      "reference_period": "2017",
+      "source_frequency": "Levantamiento específico",
+      "formats": [
+        "Microdatos",
+        "Tabulados",
+        "Cartografía/documentación"
+      ],
+      "access": "Descarga por programa; revisar distritos y factores.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Origen/destino",
+        "Motivo",
+        "Modo",
+        "Tiempo",
+        "Costo"
+      ],
+      "join_keys": [
+        "Identificadores de hogar/persona/viaje y distrito según diccionario"
+      ],
+      "analysis_ideas": [
+        "Viajes a estudiar; carga de traslado y conexiones con transporte público."
+      ],
+      "caveats": [
+        "Distritos EOD no son CP; revisar cartografía y dominios.",
+        "La red y los patrones de 2017 son una referencia histórica."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "sepomex-codigos-postales",
+      "category": "Código postal y territorio",
+      "name": "Catálogo Nacional de Códigos Postales",
+      "publisher": "Servicio Postal Mexicano",
+      "sources": [
+        {
+          "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Página oficial de exportación localizada; apertura agotó el tiempo. El formulario y sus descargas no se probaron.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México",
+      "grain": "Asentamiento × CP; un CP puede tener varios asentamientos",
+      "reference_period": "Corte del archivo descargado",
+      "source_frequency": "Actualización del productor, sin calendario validado",
+      "formats": [
+        "TXT",
+        "Excel/XML según formulario"
+      ],
+      "access": "Exportación por entidad o país en formulario; descarga no probada.",
+      "postal_code_relation": "catalog",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "CP",
+        "Asentamiento",
+        "Tipo de asentamiento",
+        "Municipio",
+        "Entidad"
+      ],
+      "join_keys": [
+        "CP + identificador de asentamiento; validar unicidad",
+        "Claves de entidad/municipio previa homologación"
+      ],
+      "analysis_ideas": [
+        "Normalizar domicilios y explorar desigualdad de servicios por CP."
+      ],
+      "caveats": [
+        "Conservar CP como texto de cinco dígitos, incluidos ceros iniciales.",
+        "No ofrece por sí solo polígonos ni relación uno a uno CP–municipio."
+      ],
+      "usage_terms": "La consulta oficial indica gratuidad y prohíbe comercialización total o parcial del catálogo; revisar aviso antes de redistribuir."
+    },
+    {
+      "id": "cdmx-codigos-postales-poligonos",
+      "category": "Código postal y territorio",
+      "name": "Códigos postales CDMX: capa geográfica",
+      "publisher": "Gobierno de la Ciudad de México",
+      "sources": [
+        {
+          "url": "https://www.datos.cdmx.gob.mx/es_AR/dataset/codigos-postales",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Ficha oficial indexada anuncia GeoJSON. La variante /dataset/codigos-postales agotó el tiempo; geometrías no descargadas.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Ciudad de México",
+      "grain": "Polígono de código postal",
+      "reference_period": "Edición del recurso; no determinada en esta revisión",
+      "source_frequency": "Sin calendario validado",
+      "formats": [
+        "GeoJSON"
+      ],
+      "access": "Recurso geográfico desde ficha CKAN; descarga pendiente.",
+      "postal_code_relation": "polygon",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Código postal",
+        "Geometría"
+      ],
+      "join_keys": [
+        "CP (texto); unión espacial punto–polígono"
+      ],
+      "analysis_ideas": [
+        "Asignar CP a establecimientos, estaciones y unidades de salud por coordenadas."
+      ],
+      "caveats": [
+        "Revisar CRS, geometrías, solapes y fecha de corte.",
+        "Un polígono CP no reproduce una AGEB; no agregar población sin regla espacial explícita."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "shcp-pef",
+      "category": "Presupuesto",
+      "name": "Presupuesto de Egresos de la Federación aprobado",
+      "publisher": "SHCP",
+      "sources": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/presupuesto_egresos_federacion_pef",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Ficha oficial indexada describe el PEF 2026; apertura devolvió 403. El portal de analíticos devolvió 502.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://www.pef.hacienda.gob.mx/es/PEF/Analiticos_PresupuestariosPEF",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Ruta oficial de analíticos localizada en búsqueda; apertura devolvió 502.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Federal; entidad cuando el registro la desagrega",
+      "grain": "Clave presupuestaria × ejercicio",
+      "reference_period": "PEF 2026 identificado; otros ejercicios según portal",
+      "source_frequency": "Anual",
+      "formats": [
+        "Bases tabulares",
+        "Catálogos",
+        "Analíticos"
+      ],
+      "access": "Ficha y analíticos oficiales; descarga bloqueada durante esta revisión.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Ramo",
+        "Unidad responsable",
+        "Programa",
+        "Objeto/tipo de gasto",
+        "Monto aprobado"
+      ],
+      "join_keys": [
+        "Ejercicio + clave presupuestaria completa del recurso"
+      ],
+      "analysis_ideas": [
+        "Asignación a educación, salud y movilidad por programa y habitante."
+      ],
+      "caveats": [
+        "PPEF es propuesta; PEF es aprobado: nunca intercambiarlos.",
+        "Ubicación presupuestaria puede ser unidad ejecutora y no beneficiarios; homogeneizar pesos reales."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "shcp-cuenta-publica",
+      "category": "Presupuesto",
+      "name": "Cuenta Pública: gasto al cierre",
+      "publisher": "SHCP",
+      "sources": [
+        {
+          "url": "https://www.transparenciapresupuestaria.gob.mx/es/PTP/Cuenta_Publica_2025",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Página oficial indexada con datos abiertos; apertura devolvió 502.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Federal y desagregaciones de la base elegida",
+      "grain": "Clave presupuestaria × ejercicio × momento contable",
+      "reference_period": "Cuenta Pública 2025 identificada",
+      "source_frequency": "Anual",
+      "formats": [
+        "Bases tabulares",
+        "Reportes"
+      ],
+      "access": "Datos abiertos del ejercicio y sus catálogos; descarga pendiente.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Aprobado",
+        "Modificado",
+        "Devengado",
+        "Pagado",
+        "Programa"
+      ],
+      "join_keys": [
+        "Ejercicio + clave presupuestaria + momento contable"
+      ],
+      "analysis_ideas": [
+        "Diferencia entre asignación y gasto al cierre por sector."
+      ],
+      "caveats": [
+        "Homologar llaves y clasificaciones entre ejercicios.",
+        "Devengado y pagado son conceptos distintos; no sumar momentos contables."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "shcp-srft",
+      "category": "Presupuesto",
+      "name": "SRFT: ejercicio y destino del gasto federalizado",
+      "publisher": "SHCP y gobiernos subnacionales",
+      "sources": [
+        {
+          "url": "https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary_fetch_blocked",
+            "detail": "Página oficial indexada describe ejercicio, destino y resultados trimestrales; apertura devolvió 502.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://www.finanzaspublicas.hacienda.gob.mx/es/Finanzas_Publicas/Informes_al_Congreso_de_la_Union",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Página SHCP localizada con el informe de recursos federales transferidos y sus carpetas.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Entidades y municipios; proyectos con georreferencia cuando exista",
+      "grain": "Ejercicio: registro presupuestario; destino: proyecto/ubicación × corte",
+      "reference_period": "Ejercicios y trimestres publicados; último corte no comprobado",
+      "source_frequency": "Trimestral",
+      "formats": [
+        "Bases tabulares",
+        "Anexos"
+      ],
+      "access": "Descargar separadamente Ejercicio del gasto y Destino del gasto.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P1",
+      "effort": "Alta",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Fondo",
+        "Municipio",
+        "Proyecto",
+        "Avance físico/financiero",
+        "Coordenadas si existen"
+      ],
+      "join_keys": [
+        "Ejercicio + trimestre + fondo + entidad/municipio; folio de proyecto en Destino"
+      ],
+      "analysis_ideas": [
+        "Priorizar zonas con carencias y obras rezagadas; gasto escolar y accesibilidad."
+      ],
+      "caveats": [
+        "No sumar cortes acumulados trimestrales ni multiplicar monto al expandir ubicaciones.",
+        "Coordenadas faltantes o de oficina requieren validar destino; no asumir CP nativo."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "sep-cct",
+      "category": "Educación",
+      "name": "Catálogo de Centros de Trabajo",
+      "publisher": "SEP / SIGED",
+      "sources": [
+        {
+          "url": "https://siged.sep.gob.mx/SIGED/datos_abiertos.html",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "Página oficial leída; anuncia Catálogo de Centros de Trabajo y Formato 911. Las tablas de descarga no expusieron archivos en la lectura estática.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México",
+      "grain": "Centro de trabajo; revisar servicios y turnos del archivo",
+      "reference_period": "Corte publicado por SIGED; no determinado",
+      "source_frequency": "Actualización del catálogo; sin frecuencia comprobada",
+      "formats": [
+        "Descarga anunciada; formato por confirmar"
+      ],
+      "access": "SIGED anuncia la descarga; los recursos no fueron visibles en lectura estática.",
+      "postal_code_relation": "unconfirmed",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "CCT",
+        "Nombre",
+        "Nivel/servicio",
+        "Sostenimiento",
+        "Ubicación según archivo"
+      ],
+      "join_keys": [
+        "CCT + turno/servicio cuando aplique + corte"
+      ],
+      "analysis_ideas": [
+        "Escuelas con baja accesibilidad; cobertura educativa por territorio."
+      ],
+      "caveats": [
+        "Confirmar CP y coordenadas en el diccionario antes de tratarlos como disponibles.",
+        "CCT, turno y servicio pueden producir varias filas por inmueble."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "sep-formato-911",
+      "category": "Educación",
+      "name": "Formato 911: alumnado, docentes y escuelas",
+      "publisher": "SEP",
+      "sources": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/registro_alumnado_personal_docente_educacion_basica_media_superior_formato_911",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Ficha SEP localizada; requiere revisar recursos y diccionario por nivel/ciclo.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://siged.sep.gob.mx/SIGED/datos_abiertos.html",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "Página oficial leída; anuncia Catálogo de Centros de Trabajo y Formato 911. Las tablas de descarga no expusieron archivos en la lectura estática.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México, conforme recursos y ciclo",
+      "grain": "Escuela/servicio o agregado, según archivo × ciclo",
+      "reference_period": "Ciclos disponibles en la fuente; último no determinado",
+      "source_frequency": "Por ciclo escolar",
+      "formats": [
+        "Bases tabulares",
+        "Diccionario"
+      ],
+      "access": "Seleccionar recurso por nivel y ciclo en datos.gob.mx o SIGED.",
+      "postal_code_relation": "unconfirmed",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Matrícula",
+        "Docentes",
+        "Grupos",
+        "Nivel y modalidad"
+      ],
+      "join_keys": [
+        "Ciclo + CCT/turno/servicio si el recurso los contiene"
+      ],
+      "analysis_ideas": [
+        "Razón alumnos/docente y oferta educativa vinculada a transporte."
+      ],
+      "caveats": [
+        "No son expedientes individuales de alumnos.",
+        "Confirmar CCT, granularidad y turnos antes de enlazar; matrícula no mide calidad del aprendizaje."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "anuies-anuario",
+      "category": "Educación",
+      "name": "Anuario Estadístico de Educación Superior",
+      "publisher": "ANUIES",
+      "sources": [
+        {
+          "url": "https://anuario.anuies.mx/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Aplicación oficial localizada; su enlace fue confirmado en una página de ANUIES abierta. No se exportaron resultados.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México",
+      "grain": "Institución/plantel × programa × ciclo, según exportación",
+      "reference_period": "Ciclos escolares disponibles en el anuario",
+      "source_frequency": "Por ciclo escolar",
+      "formats": [
+        "Consulta interactiva",
+        "Exportaciones por confirmar"
+      ],
+      "access": "Filtrar y exportar en aplicación; no asumir API pública.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Programa",
+        "Matrícula",
+        "Egreso",
+        "Titulación",
+        "Sexo"
+      ],
+      "join_keys": [
+        "Ciclo + institución/plantel + programa + dimensiones publicadas"
+      ],
+      "analysis_ideas": [
+        "Oferta de carreras y brechas de participación o egreso."
+      ],
+      "caveats": [
+        "No dividir egresados entre matrícula como tasa de cohorte.",
+        "Homologar planteles y carreras; no garantiza CCT o CP."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "ceey-emovi-2023",
+      "category": "Movilidad social",
+      "name": "ESRU–EMOVI 2023",
+      "publisher": "CEEY / Fundación ESRU",
+      "sources": [
+        {
+          "url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "resource_url": "https://drive.google.com/file/d/1r736z5vok0ss68cIW11SnZ5_MR0bUiDC/view?usp=drive_link",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "Página del productor leída y enlace BASES DE DATOS 2023 seguido hasta el ZIP en Drive; contenido del ZIP no descargado.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Nacional, urbano/no urbano y cinco regiones",
+      "grain": "Persona entrevistada con retrospectiva del hogar de origen",
+      "reference_period": "2023",
+      "source_frequency": "Ola específica",
+      "formats": [
+        "ZIP de bases",
+        "Metodología",
+        "Programas de cálculo"
+      ],
+      "access": "ZIP enlazado desde la página del productor; formato interno no inspeccionado.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Origen/destino socioeconómico",
+        "Educación",
+        "Cuidados",
+        "Inclusión financiera"
+      ],
+      "join_keys": [
+        "ID de entrevista dentro de la ola; región sólo para agregados"
+      ],
+      "analysis_ideas": [
+        "Matrices de transición y brechas de oportunidades."
+      ],
+      "caveats": [
+        "Usar factores y metodología de índices; no extrapolar a CP ni alcaldía.",
+        "Comparar olas exige armonizar variables."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "ceey-emovi-2017",
+      "category": "Movilidad social",
+      "name": "ESRU–EMOVI 2017",
+      "publisher": "CEEY / Fundación ESRU",
+      "sources": [
+        {
+          "url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "resource_url": "https://drive.google.com/file/d/1hko58nfnlexpw5kiB1K0kqeXlOPAaGyr/view?usp=sharing",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "Página del productor leída y enlace BASES DE DATOS 2017 seguido hasta el ZIP en Drive; contenido del ZIP no descargado.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Nacional, cinco regiones y CDMX según diseño",
+      "grain": "Persona entrevistada y origen familiar retrospectivo",
+      "reference_period": "2017",
+      "source_frequency": "Ola específica",
+      "formats": [
+        "ZIP de bases",
+        "Metodología"
+      ],
+      "access": "ZIP del productor localizado; contenido no descargado.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Recursos de origen",
+        "Logro educativo",
+        "Destino socioeconómico"
+      ],
+      "join_keys": [
+        "ID de entrevista dentro de la ola; dominios sólo para agregados"
+      ],
+      "analysis_ideas": [
+        "Contrastar movilidad regional y CDMX con 2023 donde sea comparable."
+      ],
+      "caveats": [
+        "Encuestas independientes; no es panel de las mismas personas.",
+        "La representatividad CDMX no habilita desglose por CP."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "inegi-mmsi-2016",
+      "category": "Movilidad social",
+      "name": "Módulo de Movilidad Social Intergeneracional 2016",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/programas/mmsi/2016/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Programa oficial, diccionario y descripción de tabla MMSI_2016 localizados.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México; dominios definidos por diseño muestral",
+      "grain": "Persona de 25–64 años, presente y retrospectiva a los 14",
+      "reference_period": "2016",
+      "source_frequency": "Levantamiento específico",
+      "formats": [
+        "Microdatos",
+        "Diccionario",
+        "Cuestionario"
+      ],
+      "access": "Microdatos públicos; tabla MMSI_2016 documentada.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Educación y ocupación actuales",
+        "Condición socioeconómica de origen"
+      ],
+      "join_keys": [
+        "Llave de persona dentro del levantamiento, según diccionario"
+      ],
+      "analysis_ideas": [
+        "Persistencia educativa y ocupacional entre generaciones."
+      ],
+      "caveats": [
+        "No mezclar índices MMSI y EMOVI como si fueran equivalentes.",
+        "Ponderadores y dominios de inferencia obligatorios."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    },
+    {
+      "id": "coneval-pobreza-municipal",
+      "category": "Movilidad social",
+      "name": "Pobreza municipal 2010–2020",
+      "publisher": "CONEVAL, archivo histórico",
+      "sources": [
+        {
+          "url": "https://www.coneval.org.mx/Medicion/Paginas/Programas_BD_municipal_2010_2020.aspx",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Archivo histórico oficial con bases y programas de cálculo municipal localizado.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Municipios y alcaldías de México",
+      "grain": "Municipio × año × indicador",
+      "reference_period": "2010, 2015 y 2020",
+      "source_frequency": "Cortes de medición publicados",
+      "formats": [
+        "Bases",
+        "Programas de cálculo"
+      ],
+      "access": "Descargar bases y metodología del archivo histórico.",
+      "postal_code_relation": "none",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Pobreza",
+        "Pobreza extrema",
+        "Carencias",
+        "Población de referencia"
+      ],
+      "join_keys": [
+        "Clave entidad (2) + municipio (3) + año"
+      ],
+      "analysis_ideas": [
+        "Distribución de presupuesto por población en pobreza."
+      ],
+      "caveats": [
+        "Resultados territoriales, no trayectorias individuales.",
+        "Revisar cambios municipales y comparabilidad metodológica; no presentar como cifras de 2026."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "conapo-marginacion-2020",
+      "category": "Movilidad social",
+      "name": "Índices de marginación 2020",
+      "publisher": "CONAPO",
+      "sources": [
+        {
+          "url": "https://www.gob.mx/conapo/documentos/indices-de-marginacion-2020-284372",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Página oficial con bases por entidad, municipio, localidad y ámbito urbano localizada.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Entidad, municipio, localidad y ámbito urbano, según base",
+      "grain": "Área geográfica × indicadores de marginación",
+      "reference_period": "2020",
+      "source_frequency": "Edición basada en Censo 2020",
+      "formats": [
+        "Bases tabulares",
+        "Notas técnicas"
+      ],
+      "access": "Elegir nivel de desagregación y descargar su base.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Índice y grado",
+        "Indicadores socioeconómicos",
+        "Población"
+      ],
+      "join_keys": [
+        "Clave geográfica + nivel + 2020"
+      ],
+      "analysis_ideas": [
+        "Zonas con marginación alta y baja oferta de transporte o escuelas."
+      ],
+      "caveats": [
+        "Marginación y pobreza son medidas distintas.",
+        "La estimación por colonia no es automáticamente CP; documentar equivalencias."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "metrobus-gtfs",
+      "category": "Movilidad",
+      "name": "Metrobús: GTFS estático y tiempo real",
+      "publisher": "Metrobús / proveedor del feed",
+      "sources": [
+        {
+          "url": "https://github.com/jcval94/DataCollectionMov/blob/main/src/historico_api/sources/metrobus.py",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "repository_inspected",
+            "detail": "Código de autenticación y recolección leído; rutas de snapshots presentes. No se ejecutó la API autenticada.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Red Metrobús CDMX",
+      "grain": "Estación/viaje programado y vehículo × snapshot",
+      "reference_period": "Snapshots propios; disponibilidad según historial del repo",
+      "source_frequency": "Captura horaria laboral de realtime; estático semanal en configuración",
+      "formats": [
+        "GTFS ZIP/CSV",
+        "GTFS-Realtime protobuf"
+      ],
+      "access": "API autenticada con secrets existentes del repo.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "existing",
+        "paths": [
+          "src/historico_api/sources/metrobus.py",
+          "data/current/metrobus_vehicle_positions.csv",
+          "data/current/metrobus_vehicle_positions_enriched.csv"
+        ]
+      },
+      "variables": [
+        "route_id",
+        "stop_id",
+        "trip_id",
+        "Posición",
+        "Hora"
+      ],
+      "join_keys": [
+        "_snapshot_id + entity_id; trip_id/route_id/stop_id contra la versión GTFS compatible"
+      ],
+      "analysis_ideas": [
+        "Regularidad observada y accesibilidad a escuelas y servicios."
+      ],
+      "caveats": [
+        "Snapshots horarios no reconstruyen cada viaje ni miden puntualidad completa.",
+        "Tablas estáticas configuradas; no todas tenían CSV current en el árbol revisado."
+      ],
+      "usage_terms": "Revisar condiciones del proveedor para reutilización y redistribución del feed."
+    },
+    {
+      "id": "ecobici-viajes",
+      "category": "Movilidad",
+      "name": "ECOBICI: viajes históricos",
+      "publisher": "ECOBICI / SEMOVI",
+      "sources": [
+        {
+          "url": "https://ecobici.cdmx.gob.mx/datos-abiertos/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Página oficial de datos abiertos localizada; histórico mensual también indexado en ecobici.mx/datos-abiertos/.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "CDMX, área del sistema",
+      "grain": "Viaje entre cicloestaciones",
+      "reference_period": "Archivos mensuales históricos; página indexa desde 2010",
+      "source_frequency": "Mensual",
+      "formats": [
+        "CSV/ZIP"
+      ],
+      "access": "Descarga mensual; recolector ya implementado.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "collector_only",
+        "paths": [
+          "src/historico_api/sources/ecobici.py",
+          ".github/workflows/ecobici-historical.yml"
+        ]
+      },
+      "variables": [
+        "Estaciones de origen/destino",
+        "Inicio/fin",
+        "Duración",
+        "Demografía cuando exista"
+      ],
+      "join_keys": [
+        "ID de estación origen/destino + periodo de vigencia del catálogo"
+      ],
+      "analysis_ideas": [
+        "Flujos casa–estudio aproximados y conexiones con Metrobús."
+      ],
+      "caveats": [
+        "No se encontró ecobici_historico_normalizado en current durante esta revisión.",
+        "Cambian esquemas/sistema; una estación cercana a universidad no prueba motivo de viaje."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "ecobici-gbfs",
+      "category": "Movilidad",
+      "name": "ECOBICI: catálogo y disponibilidad GBFS",
+      "publisher": "ECOBICI / SEMOVI",
+      "sources": [
+        {
+          "url": "https://ecobici.cdmx.gob.mx/datos-abiertos/",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Página oficial de datos abiertos localizada; histórico mensual también indexado en ecobici.mx/datos-abiertos/.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "CDMX, cicloestaciones del sistema",
+      "grain": "Cicloestación × snapshot",
+      "reference_period": "Snapshots propios del repositorio",
+      "source_frequency": "Disponibilidad en origen en tiempo real; repo cada dos horas laborales",
+      "formats": [
+        "JSON GBFS",
+        "CSV derivado"
+      ],
+      "access": "Feeds GBFS y recolección existentes; consultar configuración actual.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P2",
+      "effort": "Baja",
+      "repository": {
+        "integration": "existing",
+        "paths": [
+          "data/current/ecobici_gbfs_station_information.csv",
+          "data/current/ecobici_realtime_stations.csv"
+        ]
+      },
+      "variables": [
+        "station_id",
+        "Capacidad",
+        "Bicicletas/espacios disponibles",
+        "Coordenadas"
+      ],
+      "join_keys": [
+        "_snapshot_id + station_id"
+      ],
+      "analysis_ideas": [
+        "Frecuencia observada de estaciones vacías cerca de campus y Metrobús."
+      ],
+      "caveats": [
+        "Snapshots no son viajes ni disponibilidad continua.",
+        "Conservar timestamp y estado operativo al comparar estaciones."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "salud-clues",
+      "category": "Salud y seguridad",
+      "name": "CLUES: establecimientos de salud",
+      "publisher": "Secretaría de Salud / DGIS",
+      "sources": [
+        {
+          "url": "https://gobi.salud.gob.mx/Bases_Clues.html",
+          "resource_url": "https://gobi.salud.gob.mx/historico_clues/ESTABLECIMIENTO_SALUD_202609.xlsx?v=1.1",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "Histórico oficial leído; enlace septiembre 2026 resolvió a XLSX no interpretable por el navegador de investigación.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://www.dgis.salud.gob.mx/descargas/clues/pdf/Manual_registro_informacion_catalogo_CLUES_202506.pdf",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "opened_primary",
+            "detail": "Manual oficial consultado: documenta código postal de cinco dígitos.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México",
+      "grain": "Establecimiento de salud × corte",
+      "reference_period": "Histórico visible desde 2016; enlace septiembre 2026 localizado",
+      "source_frequency": "Cortes mensuales publicados",
+      "formats": [
+        "XLSX"
+      ],
+      "access": "Descarga del histórico oficial; XLSX localizado, filas no inspeccionadas.",
+      "postal_code_relation": "native",
+      "priority": "P1",
+      "effort": "Baja",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "CLUES",
+        "Institución",
+        "Tipo/estatus",
+        "CP",
+        "Coordenadas según corte"
+      ],
+      "join_keys": [
+        "CLUES + corte; CP como agrupación"
+      ],
+      "analysis_ideas": [
+        "Acceso a unidades de salud por CP y transporte."
+      ],
+      "caveats": [
+        "Validar nombres exactos de columnas y unidades activas.",
+        "Existencia de unidad no implica capacidad, atención efectiva ni calidad."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "cdmx-fgj-carpetas",
+      "category": "Salud y seguridad",
+      "name": "Carpetas de investigación FGJ CDMX",
+      "publisher": "FGJ CDMX / portal de datos CDMX",
+      "sources": [
+        {
+          "url": "https://datos.cdmx.gob.mx/dataset/carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Ficha FGJ oficial localizada: registros desde enero 2016 y variables geográficas; no se comprobó último mes.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Ciudad de México",
+      "grain": "Registro publicado de carpeta/delito según diccionario",
+      "reference_period": "Desde enero de 2016; último corte sin comprobar",
+      "source_frequency": "Actualización de la fuente; comprobar corte",
+      "formats": [
+        "CSV"
+      ],
+      "access": "Descarga desde ficha CKAN.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Delito",
+        "Fecha de hechos/apertura",
+        "Alcaldía",
+        "Colonia",
+        "Coordenadas"
+      ],
+      "join_keys": [
+        "ID de registro si existe; fecha y coordenadas para agregados"
+      ],
+      "analysis_ideas": [
+        "Incidencia registrada en entornos de escuelas y estaciones."
+      ],
+      "caveats": [
+        "No son todos los delitos: hay subregistro y cambios de clasificación.",
+        "Usar denominadores de exposición; comparar hechos con hechos y aperturas con aperturas."
+      ],
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+    },
+    {
+      "id": "inegi-atus",
+      "category": "Salud y seguridad",
+      "name": "ATUS: accidentes de tránsito urbanos y suburbanos",
+      "publisher": "INEGI",
+      "sources": [
+        {
+          "url": "https://www.inegi.org.mx/programas/accidentes/default.html",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "indexed_primary",
+            "detail": "Programa ATUS oficial localizado; georreferenciación desde 2019 sólo para municipios seleccionados.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México; cobertura de reporte y georreferenciación variable",
+      "grain": "Accidente reportado",
+      "reference_period": "Serie anual; coordenadas desde 2019 en municipios seleccionados",
+      "source_frequency": "Anual",
+      "formats": [
+        "CSV",
+        "Documentación"
+      ],
+      "access": "Descargar año y diccionario desde programa.",
+      "postal_code_relation": "spatial_only",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Tipo",
+        "Hora",
+        "Municipio",
+        "Lesionados/fallecidos según registro",
+        "Usuarios involucrados"
+      ],
+      "join_keys": [
+        "ID/llave definida por edición; entidad + municipio + año"
+      ],
+      "analysis_ideas": [
+        "Seguridad vial alrededor de escuelas y conexiones de transporte."
+      ],
+      "caveats": [
+        "No asumir cobertura carretera federal ni coordenadas para todos los municipios.",
+        "Revisar notas por año/municipio antes de comparar tasas."
+      ],
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+    }
+  ]
+}
