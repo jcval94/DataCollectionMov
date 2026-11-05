@@ -1,0 +1,1978 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "started_at_utc": "2026-11-05T00:07:41+00:00",
+    "started_at_local": "2026-11-04T18:07:41-06:00",
+    "timeout_seconds": 18,
+    "workers": 4,
+    "max_bytes": 8388608,
+    "python_version": "3.12.14",
+    "probe_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd",
+    "probe_definitions_sha256": "c9782e1ccc02ca8adcdba945653616793b156c431b0cd0db43de6676441efab7",
+    "finished_at_utc": "2026-11-05T00:08:41+00:00"
+  },
+  "summary": {
+    "HTTP_ERROR": 7,
+    "BLOCKED": 4,
+    "DOCUMENT_SAMPLE": 3,
+    "DOC_ONLY": 16,
+    "CACHED_SAMPLE": 2,
+    "DATA_SAMPLE": 10,
+    "METADATA_SAMPLE": 3
+  },
+  "results": [
+    {
+      "id": "rifa-235-premios",
+      "name": "GSE 235: lista oficial de premios",
+      "status": "HTTP_ERROR",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:41+00:00",
+          "kind": "pdf",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.lotenal.gob.mx/Comercial/Listas/235.pdf",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 3.628
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "rifa-235-reportes",
+      "name": "GSE 235: balance y beneficiarios publicados",
+      "status": "BLOCKED",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:41+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.gob.mx/lotenal/prensa/197193",
+          "http_status": 403,
+          "status": "BLOCKED",
+          "detail": "HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 4.167
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "rifa-235-asf",
+      "name": "GSE 235: auditoría de gestión financiera",
+      "status": "DOCUMENT_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:41+00:00",
+          "kind": "pdf",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page": 28,
+              "excerpt": "Informe Individual del Resultado de la Fiscalización Superior de la Cuenta Pública 2020 28 Celebración del sorteo De conformidad con"
+            }
+          ],
+          "requested_url": "https://www.asf.gob.mx/Trans/Informes/IR2020c/Documentos/Auditorias/2020_0051_a.pdf",
+          "final_url": "https://www.asf.gob.mx/Trans/Informes/IR2020c/Documentos/Auditorias/2020_0051_a.pdf",
+          "http_status": 200,
+          "content_type": "application/pdf",
+          "last_modified": "Thu, 17 Feb 2022 20:31:45 GMT",
+          "bytes_read": 541919,
+          "truncated": false,
+          "sha256": "e848198a380f6b3f3634edd1c7074504c1987c38254689653d8852bbfbd87473",
+          "hash_scope": "complete_response",
+          "status": "DOCUMENT_SAMPLE",
+          "pages": 68,
+          "detail": "Firma PDF y extracción de una página validadas; sin OCR ni auditoría de todas sus tablas.",
+          "elapsed_seconds": 3.541
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-indicadores-api",
+      "name": "API del Banco de Indicadores",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:41+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "API del Banco de Indicadores"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/servicios/api-indicadores/",
+          "final_url": "https://www.inegi.org.mx/servicios/api-indicadores/",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Fri, 30 Oct 2026 22:00:21 GMT",
+          "bytes_read": 153586,
+          "truncated": false,
+          "sha256": "f1be5c445bdbedd82de1528f89c71bc92d7f76fb2be15e914961534bf7919be7",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.625
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-denue",
+      "name": "DENUE: establecimientos y actividad económica",
+      "status": "CACHED_SAMPLE",
+      "note": "La muestra es el CSV público ya recolectado; no se prueba la API autenticada en vivo.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:45+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "API del DENUE"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/servicios/api-denue/",
+          "final_url": "https://www.inegi.org.mx/servicios/api-denue/",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Fri, 09 Oct 2026 22:01:09 GMT",
+          "bytes_read": 100446,
+          "truncated": false,
+          "sha256": "3d6b9b7ed8b9d6810fc59b675da98e901c1f90235ab0472eda513efc7de64814",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.558
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:07:48+00:00",
+          "kind": "csv",
+          "scope": "repository_snapshot",
+          "sample": [
+            {
+              "id_establecimiento": "9496872",
+              "clee": "09005611621001441000000000U9",
+              "nombre": "12 ROUNDS",
+              "cp": "07500",
+              "latitud": "19.48014404",
+              "longitud": "-99.06501588"
+            },
+            {
+              "id_establecimiento": "824823",
+              "clee": "09007611122001343002000000U2",
+              "nombre": "24 DE FEBRERO TURNO MATUTINO PRIMARIA CCT 09DPR2087X",
+              "cp": "09510",
+              "latitud": "19.36841162",
+              "longitud": "-99.01300142"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/jcval94/DataCollectionMov/main/data/current/denue_cdmx_sector_61_servicios_educativos.csv",
+          "final_url": "https://raw.githubusercontent.com/jcval94/DataCollectionMov/main/data/current/denue_cdmx_sector_61_servicios_educativos.csv",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "23fd78b98778bd351d534032cf922616f7652bcac113b6a12ad1bbc648d01618",
+          "hash_scope": "response_prefix",
+          "status": "CACHED_SAMPLE",
+          "columns": [
+            "_source_system",
+            "_source_table",
+            "_extracted_at_utc",
+            "_snapshot_date",
+            "_snapshot_id",
+            "clee",
+            "id_establecimiento",
+            "nombre",
+            "razon_social",
+            "clase_actividad",
+            "estrato",
+            "tipo_vialidad",
+            "calle",
+            "num_exterior",
+            "num_interior",
+            "colonia",
+            "cp",
+            "ubicacion",
+            "telefono",
+            "correo_e",
+            "sitio_internet",
+            "tipo_establecimiento",
+            "longitud",
+            "latitud",
+            "tipo_corredor_industrial",
+            "nom_corredor_industrial",
+            "numero_local",
+            "ageb",
+            "manzana",
+            "CLASE_ACTIVIDAD_ID",
+            "EDIFICIO_PISO",
+            "SECTOR_ACTIVIDAD_ID",
+            "SUBSECTOR_ACTIVIDAD_ID",
+            "RAMA_ACTIVIDAD_ID",
+            "SUBRAMA_ACTIVIDAD_ID",
+            "EDIFICIO",
+            "Tipo_Asentamiento",
+            "fecha_alta",
+            "area_geo",
+            "nombre_clean",
+            "razon_social_clean",
+            "clase_actividad_clean",
+            "estrato_clean",
+            "colonia_clean",
+            "ubicacion_clean",
+            "nivel_educativo_estimado",
+            "flag_universidad",
+            "flag_media_superior",
+            "flag_educacion_basica",
+            "estrato_ocupacion_estimado"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 3.971
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-censo-2020-ageb",
+      "name": "Censo 2020: indicadores por AGEB y manzana urbana",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:45+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Censo de Población y Vivienda (CPV) 2020"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "final_url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Mon, 21 Sep 2026 17:59:55 GMT",
+          "bytes_read": 5163,
+          "truncated": false,
+          "sha256": "98d08c294787502ce58923da38955543d9223cffc2455411d59815183cc09a69",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.293
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-marco-geoestadistico",
+      "name": "Marco Geoestadístico y equivalencias",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:45+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Marco Geoestadístico"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/temas/mg/",
+          "final_url": "https://www.inegi.org.mx/temas/mg/",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Thu, 12 Mar 2026 22:00:05 GMT",
+          "bytes_read": 4265,
+          "truncated": false,
+          "sha256": "1c48cfaec21c5b67d33259fa5058448bf8690dc9f20c92a1364959ec48c8babb",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.301
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-entorno-urbano-2020",
+      "name": "Características del entorno urbano 2020",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:45+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Mexico - Características de las Localidades y del Entorno Urbano 2020"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/rnm/index.php/catalog/941/related-materials",
+          "final_url": "https://www.inegi.org.mx/rnm/index.php/catalog/941/related-materials",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 273272,
+          "truncated": false,
+          "sha256": "a6df2c5640c4295ed7f7674cdeb3f29ac8e1b0c0f423c02089edddb4a218adf5",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.149
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-enigh-2024",
+      "name": "ENIGH 2024: ingresos y gastos del hogar",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:48+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) 2024"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/programas/enigh/nc/2024/",
+          "final_url": "https://www.inegi.org.mx/programas/enigh/nc/2024/",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Wed, 30 Jul 2025 12:00:45 GMT",
+          "bytes_read": 3918,
+          "truncated": false,
+          "sha256": "73d280ec8799e5c30088c945e6a401a712c0efb59909ace63f062ef437db5eb2",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.315
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-enoe",
+      "name": "ENOE: empleo, ingresos laborales e informalidad",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:48+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Encuesta Nacional de Ocupación y Empleo (ENOE), población de 15 años y más de edad"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/programas/enoe/15ymas/",
+          "final_url": "https://www.inegi.org.mx/programas/enoe/15ymas/",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Thu, 08 Feb 2024 20:00:20 GMT",
+          "bytes_read": 5765,
+          "truncated": false,
+          "sha256": "dad5c95cbaa369078d8bf89524781b8b482a255da59a5a365d304bba78c1e0fc",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.268
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-eod-zmvm-2017",
+      "name": "Encuesta Origen Destino ZMVM 2017",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:49+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Encuesta Origen Destino en Hogares de la Zona Metropolitana del Valle de México (EOD) 2017"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/programas/eod/2017/default.html",
+          "final_url": "https://www.inegi.org.mx/programas/eod/2017/default.html",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Fri, 08 Mar 2024 22:00:07 GMT",
+          "bytes_read": 5164,
+          "truncated": false,
+          "sha256": "c1d06b2f9960d901689a3ffddb899f3ad54863f14f1a2570a7a1e7720a12d31c",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 2.92
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "sepomex-codigos-postales",
+      "name": "Catálogo Nacional de Códigos Postales",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:51+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Descarga de Códigos Postales"
+            }
+          ],
+          "requested_url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+          "final_url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+          "http_status": 200,
+          "content_type": "text/html; charset=iso-8859-1",
+          "last_modified": null,
+          "bytes_read": 16842,
+          "truncated": false,
+          "sha256": "7d06aa2028468892b8694fc88e7dc27431a84c9ec97aacf401eb9f43640e21e7",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.039
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "cdmx-codigos-postales-poligonos",
+      "name": "Códigos postales CDMX: capa geográfica",
+      "status": "HTTP_ERROR",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:51+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.datos.cdmx.gob.mx/es_AR/dataset/codigos-postales",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 8.096
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:08:00+00:00",
+          "kind": "ckan",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://datos.cdmx.gob.mx/api/3/action/package_show?id=codigos-postales",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 8.37
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "shcp-pef",
+      "name": "Presupuesto de Egresos de la Federación aprobado",
+      "status": "BLOCKED",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:51+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.datos.gob.mx/dataset/presupuesto_egresos_federacion_pef",
+          "http_status": 403,
+          "status": "BLOCKED",
+          "detail": "HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 3.445
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "shcp-cuenta-publica",
+      "name": "Cuenta Pública: gasto al cierre",
+      "status": "HTTP_ERROR",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:52+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.transparenciapresupuestaria.gob.mx/es/PTP/Cuenta_Publica_2025",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 3.065
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "shcp-srft",
+      "name": "SRFT: ejercicio y destino del gasto federalizado",
+      "status": "HTTP_ERROR",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:54+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 0.941
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "sep-cct",
+      "name": "Catálogo de Centros de Trabajo",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:55+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "SEP | SIGED"
+            }
+          ],
+          "requested_url": "https://siged.sep.gob.mx/SIGED/datos_abiertos.html",
+          "final_url": "https://siged.sep.gob.mx/SIGED/datos_abiertos.html",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Wed, 24 Sep 2025 21:06:46 GMT",
+          "bytes_read": 18651,
+          "truncated": false,
+          "sha256": "422b3839c952da8fa5df69c34292d2ce0e4875db93acc55524890d1b92770c1d",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.762
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "sep-formato-911",
+      "name": "Formato 911: alumnado, docentes y escuelas",
+      "status": "BLOCKED",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:55+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.datos.gob.mx/dataset/registro_alumnado_personal_docente_educacion_basica_media_superior_formato_911",
+          "http_status": 403,
+          "status": "BLOCKED",
+          "detail": "HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 3.123
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "anuies-anuario",
+      "name": "Anuario Estadístico de Educación Superior",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:55+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Anuarios ANUIES"
+            }
+          ],
+          "requested_url": "https://anuario.anuies.mx/",
+          "final_url": "https://anuario.anuies.mx/",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 311474,
+          "truncated": false,
+          "sha256": "72ec389683b0e55bcb30033cf514f22bac915cd78eb2d171cf3863aa27f54aa7",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 4.07
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "ceey-emovi-2023",
+      "name": "ESRU–EMOVI 2023",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:58+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "ESRU – EMOVI – Centro de Estudios Espinosa Yglesias"
+            }
+          ],
+          "requested_url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "final_url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 317672,
+          "truncated": false,
+          "sha256": "4b6658d6d167a9375039cc261f78f87c827c91353ecfdb35992fed9d06d5ecfb",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.972
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:08:02+00:00",
+          "kind": "html",
+          "scope": "download_landing",
+          "sample": [],
+          "requested_url": "https://drive.google.com/file/d/1r736z5vok0ss68cIW11SnZ5_MR0bUiDC/view?usp=drive_link",
+          "http_status": 429,
+          "status": "BLOCKED",
+          "detail": "HTTP 429: Too Many Requests. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 7.045
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "ceey-emovi-2017",
+      "name": "ESRU–EMOVI 2017",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:59+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "ESRU – EMOVI – Centro de Estudios Espinosa Yglesias"
+            }
+          ],
+          "requested_url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "final_url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 317672,
+          "truncated": false,
+          "sha256": "fbe958aa94f3a51a2d11d946974665056909ed33eee30e0a1287c58ef932d70d",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.828
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:08:02+00:00",
+          "kind": "html",
+          "scope": "download_landing",
+          "sample": [],
+          "requested_url": "https://drive.google.com/file/d/1hko58nfnlexpw5kiB1K0kqeXlOPAaGyr/view?usp=sharing",
+          "http_status": 429,
+          "status": "BLOCKED",
+          "detail": "HTTP 429: Too Many Requests. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 7.003
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-mmsi-2016",
+      "name": "Módulo de Movilidad Social Intergeneracional 2016",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:07:59+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Módulo de Movilidad Social Intergeneracional (MMSI) 2016"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/programas/mmsi/2016/",
+          "final_url": "https://www.inegi.org.mx/programas/mmsi/2016/",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Fri, 08 Mar 2024 22:00:07 GMT",
+          "bytes_read": 2726,
+          "truncated": false,
+          "sha256": "ab7c1682f1cf1df3a11f2d00d233027a6866128b59fc4f058bb9d21575c6626f",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.917
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "coneval-pobreza-municipal",
+      "name": "Pobreza municipal 2010–2020",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:03+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Bases de datos y programas de cálculo pobreza municipal 2010-2020"
+            }
+          ],
+          "requested_url": "https://www.coneval.org.mx/Medicion/Paginas/Programas_BD_municipal_2010_2020.aspx",
+          "final_url": "https://www.coneval.org.mx/Medicion/Paginas/Programas_BD_municipal_2010_2020.aspx",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "last_modified": "Thu, 05 Nov 2026 00:08:07 GMT",
+          "bytes_read": 121024,
+          "truncated": false,
+          "sha256": "44cf9c8dbf0e50813b6db5ec5097c92d5116844e8da7a98b1f1aee217bec5d7a",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.808
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "conapo-marginacion-2020",
+      "name": "Índices de marginación 2020",
+      "status": "BLOCKED",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:07+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://www.gob.mx/conapo/documentos/indices-de-marginacion-2020-284372",
+          "http_status": 403,
+          "status": "BLOCKED",
+          "detail": "HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 5.113
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "metrobus-gtfs",
+      "name": "Metrobús: GTFS estático y tiempo real",
+      "status": "CACHED_SAMPLE",
+      "note": "Snapshot público del repo; no demuestra respuesta actual del feed autenticado ni todas las tablas GTFS.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:08+00:00",
+          "kind": "csv",
+          "scope": "repository_snapshot",
+          "sample": [
+            {
+              "entity_id": "3f98eff3-6ee2-4cfd-9455-8cd0763e8187",
+              "route_id": "19472",
+              "trip_id": "",
+              "latitude": "19.491252899169922",
+              "longitude": "-99.13525390625",
+              "timestamp_cdmx": "2026-11-04 13:48:53-06:00",
+              "_snapshot_id": "20261104T194911Z"
+            },
+            {
+              "entity_id": "98cc1a26-2a7e-4e2b-9779-ca4cb9617b08",
+              "route_id": "19562",
+              "trip_id": "",
+              "latitude": "19.406333923339844",
+              "longitude": "-99.17977142333984",
+              "timestamp_cdmx": "2026-11-04 13:48:54-06:00",
+              "_snapshot_id": "20261104T194911Z"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/jcval94/DataCollectionMov/main/data/current/metrobus_vehicle_positions.csv",
+          "final_url": "https://raw.githubusercontent.com/jcval94/DataCollectionMov/main/data/current/metrobus_vehicle_positions.csv",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "f7d15861e57957c5711fda1f6ace487ac35a1723e8da8d3a559a334b5a4510a3",
+          "hash_scope": "response_prefix",
+          "status": "CACHED_SAMPLE",
+          "columns": [
+            "_source_system",
+            "_source_table",
+            "_extracted_at_utc",
+            "_snapshot_date",
+            "_snapshot_id",
+            "entity_id",
+            "trip_id",
+            "route_id",
+            "direction_id",
+            "start_time",
+            "start_date",
+            "vehicle_id",
+            "vehicle_label",
+            "license_plate",
+            "latitude",
+            "longitude",
+            "bearing",
+            "speed_mps",
+            "speed_kmh",
+            "current_stop_sequence",
+            "stop_id",
+            "current_status",
+            "timestamp_raw",
+            "timestamp_cdmx",
+            "congestion_level",
+            "occupancy_status"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 3.448
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "ecobici-viajes",
+      "name": "ECOBICI: viajes históricos",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:09+00:00",
+          "kind": "discover_csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "Genero_Usuario": "M",
+              "Edad_Usuario": "30.0",
+              "Bici": "6583322",
+              "Ciclo_Estacion_Retiro": "028",
+              "Fecha_Retiro": "31/08/2026",
+              "Hora_Retiro": "23:54:59",
+              "Ciclo_EstacionArribo": "258",
+              "Fecha_Arribo": "01/09/2026",
+              "Hora_Arribo": "00:00:03"
+            },
+            {
+              "Genero_Usuario": "F",
+              "Edad_Usuario": "33.0",
+              "Bici": "4139655",
+              "Ciclo_Estacion_Retiro": "030",
+              "Fecha_Retiro": "31/08/2026",
+              "Hora_Retiro": "23:24:43",
+              "Ciclo_EstacionArribo": "530",
+              "Fecha_Arribo": "01/09/2026",
+              "Hora_Arribo": "00:00:04"
+            }
+          ],
+          "requested_url": "https://ecobici.cdmx.gob.mx/datos-abiertos/",
+          "final_url": "https://ecobici.cdmx.gob.mx/datos-abiertos/",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 117065,
+          "truncated": false,
+          "sha256": "c1abd22bdbe63290a759ca62a43836cde28a64fba3840e95caa1531c68d1a112",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "child": {
+            "checked_at_utc": "2026-11-05T00:08:13+00:00",
+            "kind": "csv",
+            "scope": "live_public",
+            "sample": [
+              {
+                "Genero_Usuario": "M",
+                "Edad_Usuario": "30.0",
+                "Bici": "6583322",
+                "Ciclo_Estacion_Retiro": "028",
+                "Fecha_Retiro": "31/08/2026",
+                "Hora_Retiro": "23:54:59",
+                "Ciclo_EstacionArribo": "258",
+                "Fecha_Arribo": "01/09/2026",
+                "Hora_Arribo": "00:00:03"
+              },
+              {
+                "Genero_Usuario": "F",
+                "Edad_Usuario": "33.0",
+                "Bici": "4139655",
+                "Ciclo_Estacion_Retiro": "030",
+                "Fecha_Retiro": "31/08/2026",
+                "Hora_Retiro": "23:24:43",
+                "Ciclo_EstacionArribo": "530",
+                "Fecha_Arribo": "01/09/2026",
+                "Hora_Arribo": "00:00:04"
+              }
+            ],
+            "requested_url": "https://ecobici.cdmx.gob.mx/wp-content/uploads/2026/10/public_data_web_2026-09.csv",
+            "final_url": "https://ecobici.cdmx.gob.mx/wp-content/uploads/2026/10/public_data_web_2026-09.csv",
+            "http_status": 200,
+            "content_type": "text/csv",
+            "last_modified": "Thu, 22 Oct 2026 06:01:12 GMT",
+            "bytes_read": 65536,
+            "truncated": true,
+            "sha256": "ef27b6c6c385c521ed73c48a032822969d2106be5d5cc41a203c7c8c85c6c490",
+            "hash_scope": "response_prefix",
+            "status": "DATA_SAMPLE",
+            "columns": [
+              "Genero_Usuario",
+              "Edad_Usuario",
+              "Bici",
+              "Ciclo_Estacion_Retiro",
+              "Fecha_Retiro",
+              "Hora_Retiro",
+              "Ciclo_EstacionArribo",
+              "Fecha_Arribo",
+              "Hora_Arribo"
+            ],
+            "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+            "elapsed_seconds": 3.676
+          },
+          "detail": "Descarga CSV descubierta en página oficial, muestreo por prefijo.",
+          "elapsed_seconds": 7.613
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "ecobici-gbfs",
+      "name": "ECOBICI: catálogo y disponibilidad GBFS",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:09+00:00",
+          "kind": "gbfs",
+          "scope": "live_public",
+          "sample": [
+            {
+              "station_id": "1",
+              "name": "CE-710 Molino del Rey - Glorieta de la Lealtad",
+              "lat": 19.416795,
+              "lon": -99.192508,
+              "capacity": 39
+            },
+            {
+              "station_id": "5",
+              "name": "CE-407  Prolongación Xochicalco-General Emiliano Zapata",
+              "lat": 19.36726591257277,
+              "lon": -99.15865559132271,
+              "capacity": 19
+            }
+          ],
+          "requested_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json",
+          "final_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json",
+          "http_status": 200,
+          "content_type": "text/plain; charset=UTF-8",
+          "last_modified": "Thu, 05 Nov 2026 00:08:11 GMT",
+          "bytes_read": 1049,
+          "truncated": false,
+          "sha256": "0652cbcb6aa4e292d7ed7b93733e8608ccacce242a1eb47b0afc25c140079695",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "child": {
+            "checked_at_utc": "2026-11-05T00:08:13+00:00",
+            "kind": "json",
+            "scope": "live_public",
+            "sample": [
+              {
+                "station_id": "1",
+                "name": "CE-710 Molino del Rey - Glorieta de la Lealtad",
+                "lat": 19.416795,
+                "lon": -99.192508,
+                "capacity": 39
+              },
+              {
+                "station_id": "5",
+                "name": "CE-407  Prolongación Xochicalco-General Emiliano Zapata",
+                "lat": 19.36726591257277,
+                "lon": -99.15865559132271,
+                "capacity": 19
+              }
+            ],
+            "requested_url": "https://gbfs.mex.lyftbikes.com/gbfs/en/station_information.json",
+            "final_url": "https://gbfs.mex.lyftbikes.com/gbfs/en/station_information.json",
+            "http_status": 200,
+            "content_type": "text/plain; charset=UTF-8",
+            "last_modified": "Thu, 05 Nov 2026 00:08:11 GMT",
+            "bytes_read": 226314,
+            "truncated": false,
+            "sha256": "22f200c787b0919879696c295a8aff28cdf44f14329b7f3cbea2b1b3e72e36fa",
+            "hash_scope": "complete_response",
+            "status": "DATA_SAMPLE",
+            "observed_rows": 677,
+            "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+            "elapsed_seconds": 3.316
+          },
+          "detail": "Descubrimiento GBFS y validación del catálogo de estaciones.",
+          "elapsed_seconds": 6.769
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "salud-clues",
+      "name": "CLUES: establecimientos de salud",
+      "status": "HTTP_ERROR",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:11+00:00",
+          "kind": "xlsx",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://gobi.salud.gob.mx/historico_clues/ESTABLECIMIENTO_SALUD_202609.xlsx?v=1.1",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 8.294
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "cdmx-fgj-carpetas",
+      "name": "Carpetas de investigación FGJ CDMX",
+      "status": "HTTP_ERROR",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:12+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://datos.cdmx.gob.mx/dataset/carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 9.02
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:08:21+00:00",
+          "kind": "ckan",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://datos.cdmx.gob.mx/api/3/action/package_show?id=carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 8.201
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "inegi-atus",
+      "name": "ATUS: accidentes de tránsito urbanos y suburbanos",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:16+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Accidentes de Tránsito Terrestre en Zonas Urbanas y Suburbanas (ATUS)"
+            }
+          ],
+          "requested_url": "https://www.inegi.org.mx/programas/accidentes/default.html",
+          "final_url": "https://www.inegi.org.mx/programas/accidentes/default.html",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Tue, 30 Apr 2024 22:00:01 GMT",
+          "bytes_read": 3876,
+          "truncated": false,
+          "sha256": "0072fbc88b9da65a91b2bc5d95cd3fb39f8ffacf696ee8335bba8426dddca0ed",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.089
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "dof-publicaciones",
+      "name": "DOF/SIDOF: publicaciones y reformas para explicar Git",
+      "status": "DOCUMENT_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:17+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Diario Oficial de la Federación || Datos abiertos"
+            }
+          ],
+          "requested_url": "https://sidof.segob.gob.mx/datos_abiertos",
+          "final_url": "https://sidof.segob.gob.mx/datos_abiertos",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 73112,
+          "truncated": false,
+          "sha256": "9c3dcc5fb849a9d5727322ef2ef1829b9aa3fc9003c8718e8271ac8618d3f2dd",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 4.835
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:08:22+00:00",
+          "kind": "dof",
+          "scope": "live_public",
+          "sample": [
+            {
+              "codigo": "5675889",
+              "titulo": "Decreto de reforma de los artículos 76 y 78 de la LFT",
+              "publicacion": "2022-12-27",
+              "nuevo_minimo_dias": 12,
+              "entrada_vigor": "2023-01-01"
+            }
+          ],
+          "requested_url": "https://sidof.segob.gob.mx/notas/docFuente/5675889",
+          "final_url": "https://sidof.segob.gob.mx/notas/docFuente/5675889",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 9468,
+          "truncated": false,
+          "sha256": "78a320876c6ab3f71a12c70d74a00604c5b379807585dd979c691d41893e5f5c",
+          "hash_scope": "complete_response",
+          "status": "DOCUMENT_SAMPLE",
+          "detail": "Texto real de nota histórica; campos extraídos/normalizados para la demostración.",
+          "elapsed_seconds": 3.921
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "usgs-sismos",
+      "name": "Terremotos del último día y sus revisiones",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:19+00:00",
+          "kind": "geojson",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "ci41358519",
+              "properties.title": "M 0.8 - 10 km SW of Idyllwild, CA",
+              "properties.mag": 0.83,
+              "properties.time": 1793837018700,
+              "properties.updated": 1793837221405,
+              "geometry.coordinates": [
+                -116.780666666667,
+                33.6643333333333,
+                13.53
+              ]
+            },
+            {
+              "id": "ci41358511",
+              "properties.title": "M 0.9 - 13 km SE of Tehachapi, CA",
+              "properties.mag": 0.92,
+              "properties.time": 1793835466310,
+              "properties.updated": 1793835679040,
+              "geometry.coordinates": [
+                -118.332666666667,
+                35.0611666666667,
+                1.7
+              ]
+            }
+          ],
+          "requested_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+          "final_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "last_modified": "Thu, 05 Nov 2026 00:07:35 GMT",
+          "bytes_read": 144196,
+          "truncated": false,
+          "sha256": "08e162c7c2c8789909a82e2bfe8c2d1a71d550b434097fcfeeb0966d9f531929",
+          "hash_scope": "complete_response",
+          "reported_count": 202,
+          "status": "DATA_SAMPLE",
+          "observed_rows": 202,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.331
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "nasa-exoplanetas",
+      "name": "Planetas fuera del Sistema Solar",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:20+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "pl_name": "55 Cnc b",
+              "hostname": "55 Cnc",
+              "discoverymethod": "Radial Velocity",
+              "disc_year": "1996",
+              "pl_orbper": "14.65155200000"
+            },
+            {
+              "pl_name": "55 Cnc c",
+              "hostname": "55 Cnc",
+              "discoverymethod": "Radial Velocity",
+              "disc_year": "2004",
+              "pl_orbper": "44.39360000000"
+            }
+          ],
+          "requested_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+top+3+pl_name,hostname,discoverymethod,disc_year,pl_orbper+from+pscomppars&format=csv",
+          "final_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+top+3+pl_name,hostname,discoverymethod,disc_year,pl_orbper+from+pscomppars&format=csv",
+          "http_status": 200,
+          "content_type": "text/plain",
+          "last_modified": null,
+          "bytes_read": 229,
+          "truncated": false,
+          "sha256": "106511eb5eb1327a89363ec266cbf1de930255a7da902c5e622e02b24dbef241",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "pl_name",
+            "hostname",
+            "discoverymethod",
+            "disc_year",
+            "pl_orbper"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 4.195
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "gwosc-ondas-gravitacionales",
+      "name": "Colisiones de agujeros negros y ondas gravitacionales",
+      "status": "HTTP_ERROR",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:23+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://gwosc.org/api/v2/catalogs?format=json",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 7.969
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "noaa-ghcn",
+      "name": "El clima escrito por estaciones meteorológicas",
+      "status": "METADATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:24+00:00",
+          "kind": "noaa_fixed",
+          "scope": "live_public",
+          "sample": [
+            {
+              "station_id": "ACW00011604",
+              "latitude": 17.1167,
+              "longitude": -61.7833,
+              "elevation_m": 10.1,
+              "name": "ST JOHNS COOLIDGE FLD"
+            },
+            {
+              "station_id": "ACW00011647",
+              "latitude": 17.1333,
+              "longitude": -61.7833,
+              "elevation_m": 19.2,
+              "name": "ST JOHNS"
+            }
+          ],
+          "requested_url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt",
+          "final_url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt",
+          "http_status": 200,
+          "content_type": "text/plain",
+          "last_modified": "Wed, 04 Nov 2026 17:52:23 GMT",
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "a24c537c71feb804783276bbbec08ccb3a93ec19a658656aedd819d44e8c664f",
+          "hash_scope": "response_prefix",
+          "status": "METADATA_SAMPLE",
+          "detail": "Catálogo de estaciones de ancho fijo; observaciones meteorológicas no probadas.",
+          "elapsed_seconds": 3.372
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "gbif-biodiversidad",
+      "name": "Dónde se ha observado vida: especies y sesgo de muestreo",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:26+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "key": 5937748320,
+              "scientificName": "Panthiades bathildis (R.F.C.Felder, 1865)",
+              "countryCode": "MX",
+              "eventDate": "2026-01-01",
+              "basisOfRecord": "HUMAN_OBSERVATION",
+              "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode"
+            },
+            {
+              "key": 5937748335,
+              "scientificName": "Urbanus dorantes (Stoll, 1790)",
+              "countryCode": "MX",
+              "eventDate": "2026-01-01",
+              "basisOfRecord": "HUMAN_OBSERVATION",
+              "license": "http://creativecommons.org/licenses/by-nc/4.0/legalcode"
+            }
+          ],
+          "requested_url": "https://api.gbif.org/v1/occurrence/search?country=MX&limit=3",
+          "final_url": "https://api.gbif.org/v1/occurrence/search?country=MX&limit=3",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 18157,
+          "truncated": false,
+          "sha256": "0ec012cebf2c1d85ed4a88a00746728fe34de769b94f8c00c7786d80cdf8591c",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.846
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "xeno-canto-audio",
+      "name": "Cantos de aves, murciélagos e insectos",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:09:58+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "API :: xeno-canto"
+            }
+          ],
+          "requested_url": "https://xeno-canto.org/explore/api",
+          "final_url": "https://xeno-canto.org/explore/api",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 52259,
+          "truncated": false,
+          "sha256": "7d80bfc02d6ca3c76a9ed36d0d3deee802f5be4d745eae612399052a1ccde344",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 3.89
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:10:02+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "1154497",
+              "gen": "Larus",
+              "sp": "fuscus",
+              "cnt": "United Kingdom",
+              "type": "alarm call",
+              "length": "1:33",
+              "file": "https://xeno-canto.org/1154497/download",
+              "lic": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            },
+            {
+              "id": "1065457",
+              "gen": "Larus",
+              "sp": "fuscus",
+              "cnt": "Italy",
+              "type": "flight call",
+              "length": "0:10",
+              "file": "https://xeno-canto.org/1065457/download",
+              "lic": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            }
+          ],
+          "requested_url": "https://xeno-canto.org/api/3/recordings?query=gen:larus+sp:fuscus&key=demo&per_page=2",
+          "final_url": "https://xeno-canto.org/api/3/recordings?query=gen:larus+sp:fuscus&key=demo&per_page=2",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 100822,
+          "truncated": false,
+          "sha256": "82fecffd75f833f790ff2e645b1d97491997aa76ea800ea783405d9118a613ce",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 50,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente. Se probó además la cabecera del medio enlazado; ver resultado del recurso.",
+          "child": {
+            "checked_at_utc": "2026-11-05T00:10:06+00:00",
+            "kind": "media",
+            "scope": "live_public",
+            "sample": [
+              {
+                "format": "WAV",
+                "bytes_checked": 65536,
+                "complete_file": false
+              }
+            ],
+            "requested_url": "https://xeno-canto.org/1154497/download",
+            "final_url": "https://xeno-canto.org/1154497/download",
+            "http_status": 200,
+            "content_type": "audio/wav",
+            "last_modified": "Wed, 08 Jul 2026 17:39:27 GMT",
+            "bytes_read": 65536,
+            "truncated": true,
+            "sha256": "9d73793ca8821aeccd88d073bd2bdee25d2148b1769385ca4b249475ab165424",
+            "hash_scope": "response_prefix",
+            "status": "MEDIA_SAMPLE",
+            "detail": "Sólo firma binaria y acceso al prefijo: no se decodificó, reprodujo ni validó el medio completo.",
+            "elapsed_seconds": 3.456
+          },
+          "elapsed_seconds": 7.379
+        }
+      ],
+      "captured_with_script_sha256": "bd7c86f78d1c7b4b3cd437d564aa7a67ed77aee1df824ab3c0fb20ac650e58e3"
+    },
+    {
+      "id": "met-arte",
+      "name": "Arte, objetos e imágenes del Metropolitan Museum",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:30+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "objectID": 436535,
+              "title": "Wheat Field with Cypresses",
+              "artistDisplayName": "Vincent van Gogh",
+              "objectDate": "1889",
+              "medium": "Oil on canvas",
+              "isPublicDomain": true,
+              "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DP-42549-001.jpg"
+            }
+          ],
+          "requested_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+          "final_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 2794,
+          "truncated": false,
+          "sha256": "1fa9e8fa9df93b41c335fdd4306a489551862acab66677f12dff2e9619781f10",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 1,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente. Se probó además la cabecera del medio enlazado; ver resultado del recurso.",
+          "child": {
+            "checked_at_utc": "2026-11-05T00:08:33+00:00",
+            "kind": "media",
+            "scope": "live_public",
+            "sample": [
+              {
+                "format": "JPEG",
+                "bytes_checked": 65536,
+                "complete_file": false
+              }
+            ],
+            "requested_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg",
+            "final_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg",
+            "http_status": 200,
+            "content_type": "image/jpeg",
+            "last_modified": "Thu, 20 Nov 2025 09:51:46 GMT",
+            "bytes_read": 65536,
+            "truncated": true,
+            "sha256": "13a1b7dca4e197436d38008ce8e45c32f4a9465d44b32bb3673dca73b9a7dcf7",
+            "hash_scope": "response_prefix",
+            "status": "MEDIA_SAMPLE",
+            "detail": "Sólo firma binaria y acceso al prefijo: no se decodificó, reprodujo ni validó el medio completo.",
+            "elapsed_seconds": 3.921
+          },
+          "elapsed_seconds": 7.528
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "loc-prensa-historica",
+      "name": "Periódicos antiguos: portadas, OCR y metadatos",
+      "status": "METADATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:30+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "http://www.loc.gov/item/2012218613/1882-04-12/ed-1/",
+              "title": "The Fairfield news and herald (Winnsboro, S.C.), April 12, 1882",
+              "date": "1882-04-12",
+              "language": [
+                "english"
+              ],
+              "original_format": [
+                "newspaper"
+              ],
+              "url": "https://www.loc.gov/item/2012218613/1882-04-12/ed-1/"
+            },
+            {
+              "id": "http://www.loc.gov/item/sn83045313/1949-10-25/ed-1/",
+              "title": "Le messager (Lewiston, Me.), October 25, 1949",
+              "date": "1949-10-25",
+              "language": [
+                "french",
+                "english"
+              ],
+              "original_format": [
+                "newspaper"
+              ],
+              "url": "https://www.loc.gov/item/sn83045313/1949-10-25/ed-1/"
+            }
+          ],
+          "requested_url": "https://www.loc.gov/newspapers/?fo=json&c=3",
+          "final_url": "https://www.loc.gov/newspapers/?fo=json&c=3",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 100574,
+          "truncated": false,
+          "sha256": "38f9bc787fcdf9efa8b84c94cde4818093c315ef6a32c7d043d8bd9d87aee98b",
+          "hash_scope": "complete_response",
+          "status": "METADATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.103
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "gutenberg-quijote",
+      "name": "Don Quijote como corpus de lenguaje",
+      "status": "DOCUMENT_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:31+00:00",
+          "kind": "text",
+          "scope": "live_public",
+          "sample": [
+            {
+              "excerpt": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían"
+            }
+          ],
+          "requested_url": "https://www.gutenberg.org/cache/epub/2000/pg2000.txt",
+          "final_url": "https://www.gutenberg.org/cache/epub/2000/pg2000.txt",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": "Thu, 01 Oct 2026 15:31:42 GMT",
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "70d85472a472a7fc06882cdbf8bb12f65c6bd66cade99cec4682ae60a75743e5",
+          "hash_scope": "response_prefix",
+          "status": "DOCUMENT_SAMPLE",
+          "detail": "Prefijo de documento real; no se descargó el corpus completo.",
+          "elapsed_seconds": 3.829
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "openfoodfacts-alimentos",
+      "name": "Alimentos: ingredientes, nutrientes y fotos de etiquetas",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:33+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "code": "3017620422003",
+              "product_name": "Nutella",
+              "brands": "Nutella, Ferrero",
+              "nutriscore_grade": "unknown",
+              "nutriments": {
+                "added-sugars": 52.13,
+                "added-sugars_100g": 52.13,
+                "added-sugars_unit": "g",
+                "added-sugars_value": 52.13,
+                "carbohydrates": 57.5,
+                "carbohydrates_100g": 57.5,
+                "carbohydrates_unit": "g",
+                "carbohydrates_value": 57.5,
+                "energy": 2252,
+                "energy-kcal": 539,
+                "energy-kcal_100g": 539,
+                "energy-kcal_unit": "kcal"
+              },
+              "image_url": "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.879.400.jpg"
+            }
+          ],
+          "requested_url": "https://world.openfoodfacts.org/api/v2/product/3017620422003?fields=code,product_name,brands,nutriments,nutriscore_grade,image_url",
+          "final_url": "https://world.openfoodfacts.org/api/v2/product/3017620422003?fields=code,product_name,brands,nutriments,nutriscore_grade,image_url",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 2687,
+          "truncated": false,
+          "sha256": "539077b8ce275af559beb12fa09f4b8f0bdfb8164165448fa0e3c6dd758033c4",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 1,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.421
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "nuforc-ovnis",
+      "name": "Relatos de avistamientos de ovnis/UAP",
+      "status": "DOC_ONLY",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:34+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "NUFORC Reports for State atest"
+            }
+          ],
+          "requested_url": "https://nuforc.org/databank/?id=latest",
+          "final_url": "https://nuforc.org/databank/?id=latest",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 160850,
+          "truncated": false,
+          "sha256": "14bf2ae31c6e752e64add3daa885066d276cf0703bf62a122dde263210c1841b",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 4.593
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "gdelt-noticias",
+      "name": "El mundo contado por noticias: eventos y menciones",
+      "status": "METADATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:36+00:00",
+          "kind": "gdelt_index",
+          "scope": "live_public",
+          "sample": [
+            {
+              "bytes": 131623,
+              "md5": "8c1327fd003001080389187c21fbb939",
+              "url": "http://data.gdeltproject.org/gdeltv2/20261105001500.export.CSV.zip"
+            },
+            {
+              "bytes": 122069,
+              "md5": "c27d37d8d98604efe7d9085d02db02d7",
+              "url": "http://data.gdeltproject.org/gdeltv2/20261105001500.mentions.CSV.zip"
+            },
+            {
+              "bytes": 5009186,
+              "md5": "3b8c897d4d7173d767dfcb5ad99f2243",
+              "url": "http://data.gdeltproject.org/gdeltv2/20261105001500.gkg.csv.zip"
+            }
+          ],
+          "requested_url": "https://data.gdeltproject.org/gdeltv2/lastupdate.txt",
+          "final_url": "https://data.gdeltproject.org/gdeltv2/lastupdate.txt",
+          "http_status": 200,
+          "content_type": "text/plain",
+          "last_modified": "Thu, 05 Nov 2026 00:04:57 GMT",
+          "bytes_read": 321,
+          "truncated": false,
+          "sha256": "748f49ab5ac55b3b4a125d0f26de5a729c1e5e751703ba631f0026d00d5332cb",
+          "hash_scope": "complete_response",
+          "status": "METADATA_SAMPLE",
+          "detail": "Manifiesto recuperado; archivos de eventos/mentions/GKG no descargados.",
+          "elapsed_seconds": 3.522
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "nasa-bolidos",
+      "name": "Bólidos: entradas atmosféricas detectadas por sensores",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:37+00:00",
+          "kind": "nasa_rows",
+          "scope": "live_public",
+          "sample": [
+            {
+              "date": "2026-10-04 03:14:45",
+              "energy": "5.4",
+              "impact-e": "0.18",
+              "lat": "41.8",
+              "lat-dir": "S",
+              "lon": "173.1",
+              "lon-dir": "W",
+              "alt": "26.9",
+              "vel": "13.8"
+            },
+            {
+              "date": "2026-09-15 11:26:13",
+              "energy": "2.2",
+              "impact-e": "0.079",
+              "lat": "37.6",
+              "lat-dir": "S",
+              "lon": "161.6",
+              "lon-dir": "W",
+              "alt": "37.0"
+            }
+          ],
+          "requested_url": "https://ssd-api.jpl.nasa.gov/fireball.api?limit=3",
+          "final_url": "https://ssd-api.jpl.nasa.gov/fireball.api?limit=3",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 390,
+          "truncated": false,
+          "sha256": "6ef7b4a6c382f52b3097b48603487988808a8933ce1f7f4bec46542b98511319",
+          "hash_scope": "complete_response",
+          "signature": {
+            "source": "NASA/JPL Fireball Data API",
+            "version": "1.2"
+          },
+          "status": "DATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.165
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "nyc-ratas",
+      "name": "Inspecciones de ratas por predio en Nueva York",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:08:38+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "job_id": "PC8178739",
+              "inspection_date": "2023-09-21T10:54:00.000",
+              "inspection_type": "Stoppage",
+              "zip_code": "11216",
+              "borough": "Brooklyn",
+              "result": "Stoppage done"
+            },
+            {
+              "job_id": "PC8129591",
+              "inspection_date": "2023-06-25T15:20:41.000",
+              "inspection_type": "Treatments",
+              "zip_code": "11237",
+              "borough": "Brooklyn",
+              "result": "Bait applied"
+            }
+          ],
+          "requested_url": "https://data.cityofnewyork.us/resource/p937-wjvj.json?$limit=3",
+          "final_url": "https://data.cityofnewyork.us/resource/p937-wjvj.json?$limit=3",
+          "http_status": 200,
+          "content_type": "application/json;charset=utf-8",
+          "last_modified": "Wed, 28 Oct 2026 09:42:59 GMT",
+          "bytes_read": 653,
+          "truncated": false,
+          "sha256": "26c7d3e545e14b547be82a05791d3f04a039b9c439a9e9373744ca0562b48ce5",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.143
+        }
+      ],
+      "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    }
+  ],
+  "rechecks": [
+    {
+      "run": {
+        "started_at_utc": "2026-11-05T00:09:58+00:00",
+        "started_at_local": "2026-11-04T18:09:58-06:00",
+        "timeout_seconds": 18,
+        "workers": 4,
+        "max_bytes": 8388608,
+        "python_version": "3.12.14",
+        "probe_script_sha256": "bd7c86f78d1c7b4b3cd437d564aa7a67ed77aee1df824ab3c0fb20ac650e58e3",
+        "probe_definitions_sha256": "c9782e1ccc02ca8adcdba945653616793b156c431b0cd0db43de6676441efab7",
+        "finished_at_utc": "2026-11-05T00:10:09+00:00"
+      },
+      "source_ids": [
+        "xeno-canto-audio"
+      ],
+      "reason": "Añadir reconocimiento de la firma WAV y recomprobar sólo la fuente afectada.",
+      "previous_result": {
+        "id": "xeno-canto-audio",
+        "name": "Cantos de aves, murciélagos e insectos",
+        "status": "DATA_SAMPLE",
+        "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+        "checks": [
+          {
+            "checked_at_utc": "2026-11-05T00:08:27+00:00",
+            "kind": "html",
+            "scope": "live_public",
+            "sample": [
+              {
+                "page_title": "API :: xeno-canto"
+              }
+            ],
+            "requested_url": "https://xeno-canto.org/explore/api",
+            "final_url": "https://xeno-canto.org/explore/api",
+            "http_status": 200,
+            "content_type": "text/html; charset=UTF-8",
+            "last_modified": null,
+            "bytes_read": 52258,
+            "truncated": false,
+            "sha256": "13e31d68059c12bd9a7b826deafd7068f50a165d2ceeaaea3f2493a6690f3357",
+            "hash_scope": "complete_response",
+            "status": "DOC_ONLY",
+            "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+            "elapsed_seconds": 3.44
+          },
+          {
+            "checked_at_utc": "2026-11-05T00:08:31+00:00",
+            "kind": "json",
+            "scope": "live_public",
+            "sample": [
+              {
+                "id": "1154497",
+                "gen": "Larus",
+                "sp": "fuscus",
+                "cnt": "United Kingdom",
+                "type": "alarm call",
+                "length": "1:33",
+                "file": "https://xeno-canto.org/1154497/download",
+                "lic": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+              },
+              {
+                "id": "1065457",
+                "gen": "Larus",
+                "sp": "fuscus",
+                "cnt": "Italy",
+                "type": "flight call",
+                "length": "0:10",
+                "file": "https://xeno-canto.org/1065457/download",
+                "lic": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+              }
+            ],
+            "requested_url": "https://xeno-canto.org/api/3/recordings?query=gen:larus+sp:fuscus&key=demo&per_page=2",
+            "final_url": "https://xeno-canto.org/api/3/recordings?query=gen:larus+sp:fuscus&key=demo&per_page=2",
+            "http_status": 200,
+            "content_type": "application/json",
+            "last_modified": null,
+            "bytes_read": 100822,
+            "truncated": false,
+            "sha256": "82fecffd75f833f790ff2e645b1d97491997aa76ea800ea783405d9118a613ce",
+            "hash_scope": "complete_response",
+            "status": "DATA_SAMPLE",
+            "observed_rows": 50,
+            "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente. Se probó además la cabecera del medio enlazado; ver resultado del recurso.",
+            "child": {
+              "checked_at_utc": "2026-11-05T00:08:35+00:00",
+              "kind": "media",
+              "scope": "live_public",
+              "sample": [],
+              "requested_url": "https://xeno-canto.org/1154497/download",
+              "final_url": "https://xeno-canto.org/1154497/download",
+              "http_status": 200,
+              "content_type": "audio/wav",
+              "last_modified": "Wed, 08 Jul 2026 17:39:27 GMT",
+              "bytes_read": 65536,
+              "truncated": true,
+              "sha256": "9d73793ca8821aeccd88d073bd2bdee25d2148b1769385ca4b249475ab165424",
+              "hash_scope": "response_prefix",
+              "status": "PARSE_ERROR",
+              "detail": "ValueError: No se reconoce firma JPEG/PNG/MP3/OGG en el prefijo",
+              "elapsed_seconds": 3.246
+            },
+            "elapsed_seconds": 7.638
+          }
+        ],
+        "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+      }
+    }
+  ],
+  "report_generated_at_utc": "2026-11-05T00:10:09+00:00"
+}

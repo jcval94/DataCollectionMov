@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.0",
-  "title": "Catálogo de datasets reales para análisis en México",
+  "schema_version": "1.1",
+  "title": "Catálogo de datasets reales de México y fuentes globales sorprendentes",
   "reviewed_on": "2026-11-04",
   "timezone": "America/Mexico_City",
   "repository": "jcval94/DataCollectionMov",
-  "scope": "Catálogo de fuentes y oportunidades de análisis. No agrega nuevos recolectores, no descarga masivamente bases y no acredita disponibilidad de APIs en vivo.",
+  "scope": "Catálogo de fuentes mexicanas y exploraciones globales, con pruebas públicas acotadas. No activa nuevos recolectores ni horarios. Resultados y muestras en source_tests/README.md.",
   "field_notes": {
     "variables": "Selección semántica de variables; no constituye un esquema físico validado de cada archivo.",
     "join_keys": "Llaves propuestas para unión o identificación; no garantizan unicidad ni son PK declaradas por el productor.",
@@ -12,8 +12,10 @@
     "postal_code_relation": "native: campo documentado; catalog: catálogo postal; polygon: geometría postal; spatial_only: posible cruce territorial; none: no asumir CP; unconfirmed: revisar archivo.",
     "priority": "P1/P2 expresa recomendación de valor y factibilidad para este repo; no es un compromiso de implementación.",
     "effort": "Estimación editorial: Baja/Media/Alta.",
-    "verification": "opened_primary: contenido primario leído; indexed_primary: fuente primaria localizada mediante búsqueda; indexed_primary_fetch_blocked: localizada pero apertura bloqueada/fallida; repository_inspected: código/árbol del repo revisado. Ninguna implica descarga masiva probada.",
-    "integration": "existing: código y al menos un CSV current vistos; partial: subconjunto implementado; collector_only: código presente sin CSV current de la tabla objetivo; not_ingested: sin integración identificada."
+    "verification": "opened_primary: contenido primario leído; indexed_primary: fuente primaria localizada mediante búsqueda; indexed_primary_fetch_blocked: localizada pero apertura bloqueada/fallida; repository_inspected: código/árbol del repo revisado. Ninguna implica descarga masiva probada. primary_documentation_located: documentación del productor localizada durante la ampliación; consultar prueba HTTP fechada por separado.",
+    "integration": "existing: código y al menos un CSV current vistos; partial: subconjunto implementado; collector_only: código presente sin CSV current de la tabla objetivo; not_ingested: sin integración identificada.",
+    "data_structure": "Estructurado, no estructurado o mixto describe el contenido analizable, no sólo su contenedor JSON/HTML.",
+    "smoke_test": "Cada ficha tiene prueba definida en catalogs/source_probes.json y evidencia fechada en source_tests/results.json."
   },
   "datasets": [
     {
@@ -63,7 +65,12 @@
         "PDF no recuperado en esta revisión; no existe CSV validado en el repo.",
         "Lista de ganadores no equivale a registro de ventas ni de cobro; no permite atribuir irregularidades."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "no_estructurado",
+      "data_modalities": [
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#rifa-235-premios"
     },
     {
       "id": "rifa-235-reportes",
@@ -125,7 +132,13 @@
         "Separar cortes y definiciones: las cifras iniciales y auditadas pueden diferir.",
         "Una escuela mencionada no trae necesariamente CCT; vincular sólo con evidencia."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "text",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#rifa-235-reportes"
     },
     {
       "id": "rifa-235-asf",
@@ -175,7 +188,13 @@
         "El PDF contiene discrepancias internas: conservar página, unidad y literal original.",
         "Importes expresados en miles de pesos; distinguirlos de pesos."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "text",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#rifa-235-asf"
     },
     {
       "id": "inegi-indicadores-api",
@@ -227,7 +246,12 @@
         "No todos los indicadores admiten municipio o AGEB.",
         "Guardar unidad, base, frecuencia, fuente y revisiones; no asumir que el token DENUE sirve sin comprobar."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-indicadores-api"
     },
     {
       "id": "inegi-denue",
@@ -283,7 +307,12 @@
         "Estrato de personal no es facturación ni empleo exacto.",
         "La integración actual no cubre todo DENUE; usar ID/CLEE y edición al deduplicar."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-denue"
     },
     {
       "id": "inegi-censo-2020-ageb",
@@ -335,7 +364,12 @@
         "CP no es AGEB; manejar asteriscos y valores reservados como faltantes.",
         "No sumar filas totales con manzanas; mantener claves geográficas como texto."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-censo-2020-ageb"
     },
     {
       "id": "inegi-marco-geoestadistico",
@@ -388,7 +422,12 @@
         "Fijar edición y CRS; cambios de límites requieren equivalencias.",
         "Geografía estadística no equivale automáticamente a límite jurídico."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-marco-geoestadistico"
     },
     {
       "id": "inegi-entorno-urbano-2020",
@@ -439,7 +478,13 @@
         "Revisar categorías y cobertura exacta de cada variable.",
         "Infraestructura registrada en 2020 no describe necesariamente el estado actual."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "text",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-entorno-urbano-2020"
     },
     {
       "id": "inegi-enigh-2024",
@@ -491,7 +536,12 @@
         "Usar ponderadores, estratos y UPM; no estimar por CP o manzana.",
         "Es corte transversal: no mide por sí sola movilidad intergeneracional."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-enigh-2024"
     },
     {
       "id": "inegi-enoe",
@@ -543,7 +593,12 @@
         "Diseño muestral y cambios durante pandemia requieren tratamiento.",
         "No unir personas entre encuestas distintas; no inferir salarios por CP."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-enoe"
     },
     {
       "id": "inegi-eod-zmvm-2017",
@@ -596,7 +651,12 @@
         "Distritos EOD no son CP; revisar cartografía y dominios.",
         "La red y los patrones de 2017 son una referencia histórica."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-eod-zmvm-2017"
     },
     {
       "id": "sepomex-codigos-postales",
@@ -649,7 +709,12 @@
         "Conservar CP como texto de cinco dígitos, incluidos ceros iniciales.",
         "No ofrece por sí solo polígonos ni relación uno a uno CP–municipio."
       ],
-      "usage_terms": "La consulta oficial indica gratuidad y prohíbe comercialización total o parcial del catálogo; revisar aviso antes de redistribuir."
+      "usage_terms": "La consulta oficial indica gratuidad y prohíbe comercialización total o parcial del catálogo; revisar aviso antes de redistribuir.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#sepomex-codigos-postales"
     },
     {
       "id": "cdmx-codigos-postales-poligonos",
@@ -697,7 +762,12 @@
         "Revisar CRS, geometrías, solapes y fecha de corte.",
         "Un polígono CP no reproduce una AGEB; no agregar población sin regla espacial explícita."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#cdmx-codigos-postales-poligonos"
     },
     {
       "id": "shcp-pef",
@@ -760,7 +830,13 @@
         "PPEF es propuesta; PEF es aprobado: nunca intercambiarlos.",
         "Ubicación presupuestaria puede ser unidad ejecutora y no beneficiarios; homogeneizar pesos reales."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "text",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#shcp-pef"
     },
     {
       "id": "shcp-cuenta-publica",
@@ -812,7 +888,13 @@
         "Homologar llaves y clasificaciones entre ejercicios.",
         "Devengado y pagado son conceptos distintos; no sumar momentos contables."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "text",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#shcp-cuenta-publica"
     },
     {
       "id": "shcp-srft",
@@ -874,7 +956,13 @@
         "No sumar cortes acumulados trimestrales ni multiplicar monto al expandir ubicaciones.",
         "Coordenadas faltantes o de oficina requieren validar destino; no asumir CP nativo."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "text",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#shcp-srft"
     },
     {
       "id": "sep-cct",
@@ -925,7 +1013,12 @@
         "Confirmar CP y coordenadas en el diccionario antes de tratarlos como disponibles.",
         "CCT, turno y servicio pueden producir varias filas por inmueble."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#sep-cct"
     },
     {
       "id": "sep-formato-911",
@@ -986,7 +1079,12 @@
         "No son expedientes individuales de alumnos.",
         "Confirmar CCT, granularidad y turnos antes de enlazar; matrícula no mide calidad del aprendizaje."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#sep-formato-911"
     },
     {
       "id": "anuies-anuario",
@@ -1038,7 +1136,12 @@
         "No dividir egresados entre matrícula como tasa de cohorte.",
         "Homologar planteles y carreras; no garantiza CCT o CP."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#anuies-anuario"
     },
     {
       "id": "ceey-emovi-2023",
@@ -1090,7 +1193,12 @@
         "Usar factores y metodología de índices; no extrapolar a CP ni alcaldía.",
         "Comparar olas exige armonizar variables."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#ceey-emovi-2023"
     },
     {
       "id": "ceey-emovi-2017",
@@ -1140,7 +1248,12 @@
         "Encuestas independientes; no es panel de las mismas personas.",
         "La representatividad CDMX no habilita desglose por CP."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#ceey-emovi-2017"
     },
     {
       "id": "inegi-mmsi-2016",
@@ -1190,7 +1303,12 @@
         "No mezclar índices MMSI y EMOVI como si fueran equivalentes.",
         "Ponderadores y dominios de inferencia obligatorios."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-mmsi-2016"
     },
     {
       "id": "coneval-pobreza-municipal",
@@ -1241,7 +1359,12 @@
         "Resultados territoriales, no trayectorias individuales.",
         "Revisar cambios municipales y comparabilidad metodológica; no presentar como cifras de 2026."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#coneval-pobreza-municipal"
     },
     {
       "id": "conapo-marginacion-2020",
@@ -1291,7 +1414,12 @@
         "Marginación y pobreza son medidas distintas.",
         "La estimación por colonia no es automáticamente CP; documentar equivalencias."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#conapo-marginacion-2020"
     },
     {
       "id": "metrobus-gtfs",
@@ -1347,7 +1475,12 @@
         "Snapshots horarios no reconstruyen cada viaje ni miden puntualidad completa.",
         "Tablas estáticas configuradas; no todas tenían CSV current en el árbol revisado."
       ],
-      "usage_terms": "Revisar condiciones del proveedor para reutilización y redistribución del feed."
+      "usage_terms": "Revisar condiciones del proveedor para reutilización y redistribución del feed.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#metrobus-gtfs"
     },
     {
       "id": "ecobici-viajes",
@@ -1400,7 +1533,12 @@
         "No se encontró ecobici_historico_normalizado en current durante esta revisión.",
         "Cambian esquemas/sistema; una estación cercana a universidad no prueba motivo de viaje."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#ecobici-viajes"
     },
     {
       "id": "ecobici-gbfs",
@@ -1454,7 +1592,12 @@
         "Snapshots no son viajes ni disponibilidad continua.",
         "Conservar timestamp y estado operativo al comparar estaciones."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#ecobici-gbfs"
     },
     {
       "id": "salud-clues",
@@ -1515,7 +1658,12 @@
         "Validar nombres exactos de columnas y unidades activas.",
         "Existencia de unidad no implica capacidad, atención efectiva ni calidad."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#salud-clues"
     },
     {
       "id": "cdmx-fgj-carpetas",
@@ -1566,7 +1714,12 @@
         "No son todos los delitos: hay subregistro y cambios de clasificación.",
         "Usar denominadores de exposición; comparar hechos con hechos y aperturas con aperturas."
       ],
-      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base."
+      "usage_terms": "Conservar atribución y revisar los términos del recurso antes de redistribuir la base.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#cdmx-fgj-carpetas"
     },
     {
       "id": "inegi-atus",
@@ -1618,7 +1771,915 @@
         "No asumir cobertura carretera federal ni coordenadas para todos los municipios.",
         "Revisar notas por año/municipio antes de comparar tasas."
       ],
-      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos."
+      "usage_terms": "Términos INEGI: https://www.inegi.org.mx/inegi/terminos.html; conservar atribución, edición y metadatos.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#inegi-atus"
+    },
+    {
+      "id": "dof-publicaciones",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "DOF/SIDOF: publicaciones y reformas para explicar Git",
+      "publisher": "SEGOB / Diario Oficial de la Federación",
+      "sources": [
+        {
+          "url": "https://sidof.segob.gob.mx/datos_abiertos",
+          "resource_url": "https://sidof.segob.gob.mx/notas/docFuente/5675889",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "México",
+      "grain": "Publicación identificada por código; secciones y documentos",
+      "reference_period": "Archivo histórico; ejemplo publicado 27-12-2022",
+      "source_frequency": "Ediciones del DOF",
+      "formats": [
+        "HTML",
+        "PDF",
+        "Servicios web documentados"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Código de nota",
+        "Fecha de publicación",
+        "Dependencia",
+        "Título",
+        "Texto y transitorios"
+      ],
+      "join_keys": [
+        "Código de nota + edición/fecha; hash del archivo recuperado"
+      ],
+      "analysis_ideas": [
+        "Versionar una representación didáctica de la reforma de vacaciones; comparar commits y registrar procedencia.",
+        "Extraer dependencias, temas y artículos reformados para un buscador documental."
+      ],
+      "caveats": [
+        "Una reforma se publica como documento nuevo; no sobrescribe automáticamente el texto histórico.",
+        "Git no consolida leyes: la equivalencia con commits/ramas es pedagógica. Fecha de publicación y entrada en vigor difieren.",
+        "HTML convertido puede perder elementos; cotejar la edición PDF para uso jurídico."
+      ],
+      "usage_terms": "Conservar referencia oficial y separar la transformación didáctica del documento publicado.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "text",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#dof-publicaciones"
+    },
+    {
+      "id": "usgs-sismos",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Terremotos del último día y sus revisiones",
+      "publisher": "USGS",
+      "sources": [
+        {
+          "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php",
+          "resource_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Mundial; capacidad de detección desigual",
+      "grain": "Evento sísmico revisable",
+      "reference_period": "Ventana móvil de 24 horas",
+      "source_frequency": "Actualizaciones frecuentes",
+      "formats": [
+        "GeoJSON"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Magnitud",
+        "Profundidad",
+        "Coordenadas",
+        "Hora",
+        "Estado de revisión"
+      ],
+      "join_keys": [
+        "ID de evento + instante de captura"
+      ],
+      "analysis_ideas": [
+        "Comparar magnitud y profundidad; mostrar cómo se corrige un mismo evento con nueva evidencia."
+      ],
+      "caveats": [
+        "La ausencia de eventos no prueba ausencia de sismicidad.",
+        "Magnitud y ubicación pueden revisarse; no convertir un mapa en predicción sísmica."
+      ],
+      "usage_terms": "Atribuir a USGS y preservar actualización y estado de revisión.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "geospatial",
+        "time_series"
+      ],
+      "smoke_test": "source_tests/README.md#usgs-sismos"
+    },
+    {
+      "id": "nasa-exoplanetas",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Planetas fuera del Sistema Solar",
+      "publisher": "NASA Exoplanet Archive / Caltech-IPAC",
+      "sources": [
+        {
+          "url": "https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html",
+          "resource_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+top+3+pl_name,hostname,discoverymethod,disc_year,pl_orbper+from+pscomppars&format=csv",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Exoplanetas incluidos en el archivo",
+      "grain": "Planeta; tabla de parámetros compuestos",
+      "reference_period": "Archivo por descubrimiento/publicación; corte de consulta",
+      "source_frequency": "Actualización del archivo",
+      "formats": [
+        "CSV",
+        "JSON",
+        "VOTable"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Nombre",
+        "Estrella",
+        "Método de descubrimiento",
+        "Año",
+        "Periodo orbital"
+      ],
+      "join_keys": [
+        "Nombre de planeta; tabla/versión de consulta"
+      ],
+      "analysis_ideas": [
+        "¿Qué tipos de planetas descubre cada método? Visualizar sesgo de detección y valores faltantes."
+      ],
+      "caveats": [
+        "El catálogo observado no es una muestra uniforme de todos los planetas.",
+        "Revisar unidades e incertidumbres antes de comparar masa/radio."
+      ],
+      "usage_terms": "Citar NASA Exoplanet Archive, la tabla y referencias científicas de cada medición.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#nasa-exoplanetas"
+    },
+    {
+      "id": "gwosc-ondas-gravitacionales",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Colisiones de agujeros negros y ondas gravitacionales",
+      "publisher": "LIGO/Virgo/KAGRA / GWOSC",
+      "sources": [
+        {
+          "url": "https://gwosc.org/api/",
+          "resource_url": "https://gwosc.org/api/v2/catalogs?format=json",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Detecciones incluidas en catálogos de colaboración",
+      "grain": "Evento y versión de estimación; catálogo en la muestra inicial",
+      "reference_period": "Catálogos publicados",
+      "source_frequency": "Por publicación/revisión",
+      "formats": [
+        "JSON",
+        "HDF5",
+        "FITS"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Nombre de evento",
+        "Catálogo",
+        "Masas estimadas",
+        "Distancia",
+        "Señal temporal"
+      ],
+      "join_keys": [
+        "Evento + catálogo + versión"
+      ],
+      "analysis_ideas": [
+        "Explorar masas y distancias; pasar de una señal ruidosa a una detección."
+      ],
+      "caveats": [
+        "La muestra de catálogos no contiene por sí sola las señales ni prueba su descarga.",
+        "Parámetros son estimaciones con incertidumbre, no mediciones exactas."
+      ],
+      "usage_terms": "Usar la política de atribución y DOI de cada catálogo/dataset.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "time_series"
+      ],
+      "smoke_test": "source_tests/README.md#gwosc-ondas-gravitacionales"
+    },
+    {
+      "id": "noaa-ghcn",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "El clima escrito por estaciones meteorológicas",
+      "publisher": "NOAA / NCEI",
+      "sources": [
+        {
+          "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/",
+          "resource_url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Estaciones mundiales con periodos y cobertura desiguales",
+      "grain": "Estación–fecha–elemento; muestra inicial del catálogo de estaciones",
+      "reference_period": "Histórico variable por estación",
+      "source_frequency": "Actualización del productor",
+      "formats": [
+        "Ancho fijo TXT/DLY",
+        "CSV comprimido"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "ID estación",
+        "Latitud/longitud",
+        "Elevación",
+        "Temperatura",
+        "Precipitación",
+        "Banderas de calidad"
+      ],
+      "join_keys": [
+        "ID de estación + fecha + elemento"
+      ],
+      "analysis_ideas": [
+        "Detectar olas de calor y distinguir clima de ruido por cambio de estación."
+      ],
+      "caveats": [
+        "La muestra del catálogo no es una muestra de observaciones meteorológicas.",
+        "Interpretar -9999, banderas y escalas; una décima de grado no equivale a un grado."
+      ],
+      "usage_terms": "Citar NOAA/NCEI y documentar filtros de calidad.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "time_series",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#noaa-ghcn"
+    },
+    {
+      "id": "gbif-biodiversidad",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Dónde se ha observado vida: especies y sesgo de muestreo",
+      "publisher": "GBIF y publicadores de ocurrencias",
+      "sources": [
+        {
+          "url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+          "resource_url": "https://api.gbif.org/v1/occurrence/search?country=MX&limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Mundial; muestra acotada a México",
+      "grain": "Registro de ocurrencia de un organismo",
+      "reference_period": "Fechas variables del evento y publicación",
+      "source_frequency": "Continuo según publicadores",
+      "formats": [
+        "JSON",
+        "Darwin Core Archive",
+        "Multimedia enlazada"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Taxón",
+        "Fecha",
+        "Tipo de registro",
+        "Localidad",
+        "Licencia",
+        "Referencias multimedia"
+      ],
+      "join_keys": [
+        "Occurrence key; datasetKey + occurrenceID cuando aplique"
+      ],
+      "analysis_ideas": [
+        "Mapas de biodiversidad y contraste entre riqueza observada y esfuerzo de recolección."
+      ],
+      "caveats": [
+        "No confundir ausencia de registros con ausencia de especie.",
+        "Fotografías y registros tienen licencias propias; coordenadas pueden estar generalizadas."
+      ],
+      "usage_terms": "Respetar licencia por registro/publicador; descargas formales generan DOI.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "geospatial",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#gbif-biodiversidad"
+    },
+    {
+      "id": "xeno-canto-audio",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Cantos de aves, murciélagos e insectos",
+      "publisher": "Xeno-canto y autores de grabaciones",
+      "sources": [
+        {
+          "url": "https://xeno-canto.org/explore/api",
+          "resource_url": "https://xeno-canto.org/api/3/recordings?query=gen:larus+sp:fuscus&key=demo&per_page=2",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Mundial; muestra de la consulta demo documentada",
+      "grain": "Grabación y metadatos",
+      "reference_period": "Fechas de grabación y carga",
+      "source_frequency": "Carga comunitaria",
+      "formats": [
+        "JSON",
+        "Audio",
+        "Sonogramas"
+      ],
+      "access": "API v3 con clave de cuenta; se prueba únicamente la clave pública demo documentada, sin solicitar credenciales personales.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Especie",
+        "Lugar",
+        "Fecha",
+        "Duración",
+        "Tipo de vocalización",
+        "Calidad",
+        "Enlace de audio"
+      ],
+      "join_keys": [
+        "ID XC de grabación"
+      ],
+      "analysis_ideas": [
+        "Clasificar vocalizaciones y comparar dominios geográficos; enseñar espectrogramas."
+      ],
+      "caveats": [
+        "API v3 requiere clave; demo es un ejemplo público del productor y puede limitar consultas.",
+        "Abrir metadatos no valida descarga ni reproducción del audio.",
+        "Evitar que grabaciones del mismo individuo/sitio filtren información entre train/test."
+      ],
+      "usage_terms": "Licencia Creative Commons por grabación; no asumir autorización comercial para todas.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "audio",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#xeno-canto-audio"
+    },
+    {
+      "id": "met-arte",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Arte, objetos e imágenes del Metropolitan Museum",
+      "publisher": "The Metropolitan Museum of Art",
+      "sources": [
+        {
+          "url": "https://metmuseum.github.io/",
+          "resource_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Colección del museo",
+      "grain": "Objeto y sus imágenes/metadatos",
+      "reference_period": "Fechas históricas de las obras y corte del catálogo",
+      "source_frequency": "Actualizaciones del catálogo",
+      "formats": [
+        "JSON",
+        "CSV",
+        "Imágenes"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Título",
+        "Artista",
+        "Fecha",
+        "Material",
+        "Departamento",
+        "isPublicDomain",
+        "Imagen"
+      ],
+      "join_keys": [
+        "objectID; identificadores de artista cuando existan"
+      ],
+      "analysis_ideas": [
+        "Explorar materiales, periodos y representaciones; búsqueda por texto e imagen."
+      ],
+      "caveats": [
+        "Una colección museística tiene sesgos de adquisición y catalogación.",
+        "Validar isPublicDomain y derechos antes de descargar/republicar imágenes."
+      ],
+      "usage_terms": "Usar las condiciones Open Access del museo y el estado de derechos de cada obra.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#met-arte"
+    },
+    {
+      "id": "loc-prensa-historica",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Periódicos antiguos: portadas, OCR y metadatos",
+      "publisher": "Library of Congress / Chronicling America",
+      "sources": [
+        {
+          "url": "https://www.loc.gov/apis/json-and-yaml/",
+          "resource_url": "https://www.loc.gov/newspapers/?fo=json&c=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Colecciones disponibles en la Library of Congress",
+      "grain": "Título/ejemplar/página; distinguir niveles",
+      "reference_period": "Periódicos históricos según colección",
+      "source_frequency": "Digitalización y actualización del catálogo",
+      "formats": [
+        "JSON",
+        "OCR",
+        "JPEG/TIFF",
+        "IIIF"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Título",
+        "Fecha",
+        "Idioma",
+        "Lugar",
+        "Páginas",
+        "Enlaces a recursos"
+      ],
+      "join_keys": [
+        "Item ID + resource/page ID"
+      ],
+      "analysis_ideas": [
+        "Rastrear vocabulario de epidemias o tecnología a través de décadas y revisar errores OCR."
+      ],
+      "caveats": [
+        "Una búsqueda de títulos no equivale a recuperar páginas ni OCR.",
+        "Digitalización selectiva y errores de reconocimiento sesgan frecuencias."
+      ],
+      "usage_terms": "Revisar Rights & Access del ítem; no todas las colecciones tienen las mismas condiciones.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#loc-prensa-historica"
+    },
+    {
+      "id": "gutenberg-quijote",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Don Quijote como corpus de lenguaje",
+      "publisher": "Project Gutenberg / Miguel de Cervantes",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/ebooks/2000",
+          "resource_url": "https://www.gutenberg.org/cache/epub/2000/pg2000.txt",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Obra en español de dos partes",
+      "grain": "Libro, capítulo y segmento de texto",
+      "reference_period": "1605/1615; edición digital del productor",
+      "source_frequency": "Correcciones de edición digital",
+      "formats": [
+        "TXT",
+        "HTML",
+        "EPUB"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Texto",
+        "Capítulos",
+        "Diálogos",
+        "Metadatos de edición"
+      ],
+      "join_keys": [
+        "eBook ID + edición/hash + capítulo/offset"
+      ],
+      "analysis_ideas": [
+        "Redes de personajes, cambio de vocabulario y búsqueda semántica reproducible."
+      ],
+      "caveats": [
+        "Separar encabezados/licencia del contenido literario.",
+        "Una edición no representa por sí sola el español de una época; documentar normalización."
+      ],
+      "usage_terms": "Revisar licencia Project Gutenberg y condición de dominio público en la jurisdicción de uso.",
+      "data_structure": "no_estructurado",
+      "data_modalities": [
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#gutenberg-quijote"
+    },
+    {
+      "id": "openfoodfacts-alimentos",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Alimentos: ingredientes, nutrientes y fotos de etiquetas",
+      "publisher": "Open Food Facts y contribuyentes",
+      "sources": [
+        {
+          "url": "https://openfoodfacts.github.io/documentation/docs/Product-Opener/api/",
+          "resource_url": "https://world.openfoodfacts.org/api/v2/product/3017620422003?fields=code,product_name,brands,nutriments,nutriscore_grade,image_url",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Mundial; cobertura comunitaria",
+      "grain": "Producto por código de barras y versión",
+      "reference_period": "Última edición de cada producto",
+      "source_frequency": "Actualización colaborativa",
+      "formats": [
+        "JSON",
+        "CSV/JSONL",
+        "Imágenes"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Código de barras",
+        "Ingredientes",
+        "Nutrientes",
+        "Marca",
+        "Etiquetas",
+        "Imagen"
+      ],
+      "join_keys": [
+        "Barcode como texto + fecha de edición"
+      ],
+      "analysis_ideas": [
+        "Detectar ingredientes o comparar azúcar por 100 g; contrastar etiqueta con datos capturados."
+      ],
+      "caveats": [
+        "No inferir calidad de dieta individual de un producto aislado.",
+        "Revisar unidades, nutrientes faltantes, reformulaciones y país de comercialización."
+      ],
+      "usage_terms": "Base ODbL; revisar también atribución y licencia de imágenes/textos del productor.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#openfoodfacts-alimentos"
+    },
+    {
+      "id": "nuforc-ovnis",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Relatos de avistamientos de ovnis/UAP",
+      "publisher": "National UFO Reporting Center",
+      "sources": [
+        {
+          "url": "https://nuforc.org/databank/",
+          "resource_url": "https://nuforc.org/databank/?id=latest",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Reportes enviados al centro; cobertura desigual",
+      "grain": "Reporte narrativo y clasificación",
+      "reference_period": "Fecha declarada del evento y de publicación",
+      "source_frequency": "Publicaciones del productor",
+      "formats": [
+        "HTML",
+        "Texto",
+        "Multimedia cuando exista"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Fecha declarada",
+        "Lugar",
+        "Forma reportada",
+        "Duración",
+        "Relato",
+        "Clasificación del centro"
+      ],
+      "join_keys": [
+        "ID de reporte + fecha de captura"
+      ],
+      "analysis_ideas": [
+        "Analizar patrones del lenguaje y efectos de cobertura mediática en reportes."
+      ],
+      "caveats": [
+        "Son reportes/autopercepciones; no evidencia de visitas extraterrestres.",
+        "No hay descarga masiva/API abierta validada; no confundir portal accesible con permiso de scraping ilimitado."
+      ],
+      "usage_terms": "Consultar condiciones del productor; conservar sólo ejemplos breves y enlaces hasta verificar redistribución.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#nuforc-ovnis"
+    },
+    {
+      "id": "gdelt-noticias",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "El mundo contado por noticias: eventos y menciones",
+      "publisher": "The GDELT Project",
+      "sources": [
+        {
+          "url": "https://www.gdeltproject.org/data.html",
+          "resource_url": "https://data.gdeltproject.org/gdeltv2/lastupdate.txt",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Cobertura mediática mundial, desigual por idioma/medio",
+      "grain": "Evento codificado, mención o registro GKG; archivos separados",
+      "reference_period": "GDELT 2.0; lotes recientes de 15 minutos",
+      "source_frequency": "Cada 15 minutos en GDELT 2.0",
+      "formats": [
+        "TSV/ZIP",
+        "TXT índice",
+        "URLs de noticias"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Actores",
+        "Código de evento",
+        "Fecha",
+        "Geografía",
+        "Tono",
+        "URL de fuente"
+      ],
+      "join_keys": [
+        "GlobalEventID en Events; llaves propias en Mentions/GKG"
+      ],
+      "analysis_ideas": [
+        "Comparar narrativas y sesgos de cobertura entre regiones, sin equiparar noticia con hecho verificado."
+      ],
+      "caveats": [
+        "La muestra lastupdate es un manifiesto de archivos, no un conjunto de eventos.",
+        "El texto completo de artículos no viene necesariamente en el dataset y mantiene derechos del editor."
+      ],
+      "usage_terms": "Atribuir GDELT y respetar las condiciones de las noticias enlazadas.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#gdelt-noticias"
+    },
+    {
+      "id": "nasa-bolidos",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Bólidos: entradas atmosféricas detectadas por sensores",
+      "publisher": "NASA / JPL / CNEOS",
+      "sources": [
+        {
+          "url": "https://ssd-api.jpl.nasa.gov/doc/fireball.html",
+          "resource_url": "https://ssd-api.jpl.nasa.gov/fireball.api?limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Eventos detectados y publicados, cobertura instrumental no uniforme",
+      "grain": "Evento de bólido",
+      "reference_period": "Catálogo de eventos; corte de consulta",
+      "source_frequency": "Actualización del productor",
+      "formats": [
+        "JSON"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Fecha UTC",
+        "Energía",
+        "Coordenadas",
+        "Altitud",
+        "Velocidad"
+      ],
+      "join_keys": [
+        "Fecha + referencia de catálogo; revisar ausencia de ID único"
+      ],
+      "analysis_ideas": [
+        "Relación entre energía y altitud; detectar datos faltantes y errores al interpretar hemisferios."
+      ],
+      "caveats": [
+        "No es un censo completo de meteoritos; bólido no implica material recuperado.",
+        "No hay coordenadas o velocidad para todos los registros; respetar unidades y versión API."
+      ],
+      "usage_terms": "Atribuir NASA/JPL/CNEOS y respetar Fair Use del servicio.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "geospatial",
+        "time_series"
+      ],
+      "smoke_test": "source_tests/README.md#nasa-bolidos"
+    },
+    {
+      "id": "nyc-ratas",
+      "category": "Fuentes sorprendentes y multimodales",
+      "name": "Inspecciones de ratas por predio en Nueva York",
+      "publisher": "NYC DOHMH / NYC Open Data",
+      "sources": [
+        {
+          "url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+          "resource_url": "https://data.cityofnewyork.us/resource/p937-wjvj.json?$limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Nueva York; predios inspeccionados",
+      "grain": "Inspección/intervención en predio",
+      "reference_period": "Archivo con fechas de inspección; corte de consulta",
+      "source_frequency": "Diaria según ficha",
+      "formats": [
+        "JSON",
+        "CSV",
+        "GeoJSON"
+      ],
+      "access": "Consulta pública acotada; confirmar el resultado de acceso en source_tests/README.md.",
+      "postal_code_relation": "native",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Tipo de inspección",
+        "Fecha",
+        "Resultado",
+        "Borough",
+        "ZIP code",
+        "Observaciones"
+      ],
+      "join_keys": [
+        "Llave administrativa + tipo/fecha según diccionario; BBL enlaza predios"
+      ],
+      "analysis_ideas": [
+        "¿Hay más ratas o más inspecciones? Mostrar denominadores y sesgo de vigilancia."
+      ],
+      "caveats": [
+        "No inspeccionado no equivale a libre de ratas.",
+        "ZIP de EE. UU. no es un CP mexicano; el conteo de inspecciones no estima población de roedores."
+      ],
+      "usage_terms": "Usar términos NYC Open Data y las notas de limitación de DOHMH.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#nyc-ratas"
     }
   ]
 }

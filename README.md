@@ -18,9 +18,9 @@ Este repositorio genera historicos versionados de tablas provenientes de Metrob�
 
 ## Catálogo de datasets para nuevos análisis
 
-El [catálogo de 30 datasets y fuentes reales de México](docs/CATALOGO_DATASETS_REALES.md) reúne rifa del avión presidencial (GSE 235), APIs INEGI, presupuesto, códigos postales, educación, movilidad social, transporte, salud y seguridad. Cada ficha incluye enlaces, cobertura, periodicidad, variables, llaves para cruces, ideas de análisis y límites de acceso/verificación.
+El [catálogo de 45 datasets y fuentes reales de México y del mundo](docs/CATALOGO_DATASETS_REALES.md) reúne rifa del avión presidencial (GSE 235), APIs INEGI, presupuesto, códigos postales, educación, movilidad social, transporte, salud y seguridad. Incluye DOF para explicar Git y fuentes sobre exoplanetas, ondas gravitacionales, cantos de aves, arte, literatura, ovnis y más. Cada ficha incluye enlaces, cobertura, periodicidad, variables, llaves para cruces, ideas de análisis y límites de acceso/verificación.
 
-La [versión estructurada JSON](catalogs/datasets_reales_mexico.json) permite filtrar y reutilizar las fichas. Es un catálogo de oportunidades: las nuevas fuentes todavía no tienen recolección implementada. Revisión: 4 de noviembre de 2026.
+La [versión estructurada JSON](catalogs/datasets_reales_mexico.json) permite filtrar y reutilizar las fichas. Cada ficha distingue datos estructurados, no estructurados y mixtos. Las [pruebas de acceso](source_tests/README.md) muestran resultados fechados, registros o ejemplos reales y errores; su [JSON de evidencia](source_tests/results.json) registra cada solicitud. El [ejemplo DOF/Git](examples/dof_git/README.md) incluye dos commits locales comprobados y su diff. Es un catálogo de oportunidades: las nuevas fuentes no activan recolección programada; las pruebas son acotadas y bajo demanda. Revisión: 4 de noviembre de 2026.
 
 ## Fuentes cubiertas
 

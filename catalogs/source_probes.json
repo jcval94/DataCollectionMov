@@ -1,0 +1,664 @@
+{
+  "schema_version": "1.0",
+  "description": "Pruebas públicas de acceso, formato y muestra. No auditoría exhaustiva ni pruebas con credenciales.",
+  "probes": [
+    {
+      "id": "rifa-235-premios",
+      "name": "GSE 235: lista oficial de premios",
+      "checks": [
+        {
+          "url": "https://www.lotenal.gob.mx/Comercial/Listas/235.pdf",
+          "kind": "pdf"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "rifa-235-reportes",
+      "name": "GSE 235: balance y beneficiarios publicados",
+      "checks": [
+        {
+          "url": "https://www.gob.mx/lotenal/prensa/197193",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "rifa-235-asf",
+      "name": "GSE 235: auditoría de gestión financiera",
+      "checks": [
+        {
+          "url": "https://www.asf.gob.mx/Trans/Informes/IR2020c/Documentos/Auditorias/2020_0051_a.pdf",
+          "kind": "pdf",
+          "pdf_page": 27
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-indicadores-api",
+      "name": "API del Banco de Indicadores",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/servicios/api-indicadores/",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-denue",
+      "name": "DENUE: establecimientos y actividad económica",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/servicios/api-denue/",
+          "kind": "html"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/jcval94/DataCollectionMov/main/data/current/denue_cdmx_sector_61_servicios_educativos.csv",
+          "kind": "csv",
+          "scope": "repository_snapshot",
+          "fields": [
+            "id_establecimiento",
+            "clee",
+            "nombre",
+            "cp",
+            "latitud",
+            "longitud"
+          ]
+        }
+      ],
+      "note": "La muestra es el CSV público ya recolectado; no se prueba la API autenticada en vivo."
+    },
+    {
+      "id": "inegi-censo-2020-ageb",
+      "name": "Censo 2020: indicadores por AGEB y manzana urbana",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/programas/ccpv/2020/",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-marco-geoestadistico",
+      "name": "Marco Geoestadístico y equivalencias",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/temas/mg/",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-entorno-urbano-2020",
+      "name": "Características del entorno urbano 2020",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/rnm/index.php/catalog/941/related-materials",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-enigh-2024",
+      "name": "ENIGH 2024: ingresos y gastos del hogar",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-enoe",
+      "name": "ENOE: empleo, ingresos laborales e informalidad",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/programas/enoe/15ymas/",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-eod-zmvm-2017",
+      "name": "Encuesta Origen Destino ZMVM 2017",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/programas/eod/2017/default.html",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "sepomex-codigos-postales",
+      "name": "Catálogo Nacional de Códigos Postales",
+      "checks": [
+        {
+          "url": "https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "cdmx-codigos-postales-poligonos",
+      "name": "Códigos postales CDMX: capa geográfica",
+      "checks": [
+        {
+          "url": "https://www.datos.cdmx.gob.mx/es_AR/dataset/codigos-postales",
+          "kind": "html"
+        },
+        {
+          "url": "https://datos.cdmx.gob.mx/api/3/action/package_show?id=codigos-postales",
+          "kind": "ckan",
+          "follow_resource": true
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "shcp-pef",
+      "name": "Presupuesto de Egresos de la Federación aprobado",
+      "checks": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/presupuesto_egresos_federacion_pef",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "shcp-cuenta-publica",
+      "name": "Cuenta Pública: gasto al cierre",
+      "checks": [
+        {
+          "url": "https://www.transparenciapresupuestaria.gob.mx/es/PTP/Cuenta_Publica_2025",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "shcp-srft",
+      "name": "SRFT: ejercicio y destino del gasto federalizado",
+      "checks": [
+        {
+          "url": "https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "sep-cct",
+      "name": "Catálogo de Centros de Trabajo",
+      "checks": [
+        {
+          "url": "https://siged.sep.gob.mx/SIGED/datos_abiertos.html",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "sep-formato-911",
+      "name": "Formato 911: alumnado, docentes y escuelas",
+      "checks": [
+        {
+          "url": "https://www.datos.gob.mx/dataset/registro_alumnado_personal_docente_educacion_basica_media_superior_formato_911",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "anuies-anuario",
+      "name": "Anuario Estadístico de Educación Superior",
+      "checks": [
+        {
+          "url": "https://anuario.anuies.mx/",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "ceey-emovi-2023",
+      "name": "ESRU–EMOVI 2023",
+      "checks": [
+        {
+          "url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "kind": "html"
+        },
+        {
+          "url": "https://drive.google.com/file/d/1r736z5vok0ss68cIW11SnZ5_MR0bUiDC/view?usp=drive_link",
+          "kind": "html",
+          "scope": "download_landing"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "ceey-emovi-2017",
+      "name": "ESRU–EMOVI 2017",
+      "checks": [
+        {
+          "url": "https://ceey.org.mx/contenido/que-hacemos/emovi/",
+          "kind": "html"
+        },
+        {
+          "url": "https://drive.google.com/file/d/1hko58nfnlexpw5kiB1K0kqeXlOPAaGyr/view?usp=sharing",
+          "kind": "html",
+          "scope": "download_landing"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-mmsi-2016",
+      "name": "Módulo de Movilidad Social Intergeneracional 2016",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/programas/mmsi/2016/",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "coneval-pobreza-municipal",
+      "name": "Pobreza municipal 2010–2020",
+      "checks": [
+        {
+          "url": "https://www.coneval.org.mx/Medicion/Paginas/Programas_BD_municipal_2010_2020.aspx",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "conapo-marginacion-2020",
+      "name": "Índices de marginación 2020",
+      "checks": [
+        {
+          "url": "https://www.gob.mx/conapo/documentos/indices-de-marginacion-2020-284372",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "metrobus-gtfs",
+      "name": "Metrobús: GTFS estático y tiempo real",
+      "checks": [
+        {
+          "url": "https://raw.githubusercontent.com/jcval94/DataCollectionMov/main/data/current/metrobus_vehicle_positions.csv",
+          "kind": "csv",
+          "scope": "repository_snapshot",
+          "fields": [
+            "entity_id",
+            "route_id",
+            "trip_id",
+            "latitude",
+            "longitude",
+            "timestamp_cdmx",
+            "_snapshot_id"
+          ]
+        }
+      ],
+      "note": "Snapshot público del repo; no demuestra respuesta actual del feed autenticado ni todas las tablas GTFS."
+    },
+    {
+      "id": "ecobici-viajes",
+      "name": "ECOBICI: viajes históricos",
+      "checks": [
+        {
+          "url": "https://ecobici.cdmx.gob.mx/datos-abiertos/",
+          "kind": "discover_csv",
+          "link_pattern": "2026-09.*\\.csv",
+          "fields": null
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "ecobici-gbfs",
+      "name": "ECOBICI: catálogo y disponibilidad GBFS",
+      "checks": [
+        {
+          "url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json",
+          "kind": "gbfs",
+          "feed": "station_information"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "salud-clues",
+      "name": "CLUES: establecimientos de salud",
+      "checks": [
+        {
+          "url": "https://gobi.salud.gob.mx/historico_clues/ESTABLECIMIENTO_SALUD_202609.xlsx?v=1.1",
+          "kind": "xlsx",
+          "fields_matching": [
+            "CLUES",
+            "NOMBRE",
+            "CODIGO_POSTAL",
+            "CÓDIGO POSTAL",
+            "ENTIDAD"
+          ]
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "cdmx-fgj-carpetas",
+      "name": "Carpetas de investigación FGJ CDMX",
+      "checks": [
+        {
+          "url": "https://datos.cdmx.gob.mx/dataset/carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico",
+          "kind": "html"
+        },
+        {
+          "url": "https://datos.cdmx.gob.mx/api/3/action/package_show?id=carpetas-de-investigacion-fgj-de-la-ciudad-de-mexico",
+          "kind": "ckan",
+          "follow_resource": true
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "inegi-atus",
+      "name": "ATUS: accidentes de tránsito urbanos y suburbanos",
+      "checks": [
+        {
+          "url": "https://www.inegi.org.mx/programas/accidentes/default.html",
+          "kind": "html"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "dof-publicaciones",
+      "name": "DOF/SIDOF: publicaciones y reformas para explicar Git",
+      "checks": [
+        {
+          "url": "https://sidof.segob.gob.mx/datos_abiertos",
+          "kind": "html"
+        },
+        {
+          "url": "https://sidof.segob.gob.mx/notas/docFuente/5675889",
+          "kind": "dof"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "usgs-sismos",
+      "name": "Terremotos del último día y sus revisiones",
+      "checks": [
+        {
+          "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+          "kind": "geojson",
+          "fields": [
+            "id",
+            "properties.title",
+            "properties.mag",
+            "properties.time",
+            "properties.updated",
+            "geometry.coordinates"
+          ]
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "nasa-exoplanetas",
+      "name": "Planetas fuera del Sistema Solar",
+      "checks": [
+        {
+          "url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+top+3+pl_name,hostname,discoverymethod,disc_year,pl_orbper+from+pscomppars&format=csv",
+          "kind": "csv",
+          "full_read": true,
+          "required": [
+            "pl_name",
+            "hostname",
+            "discoverymethod",
+            "disc_year"
+          ]
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "gwosc-ondas-gravitacionales",
+      "name": "Colisiones de agujeros negros y ondas gravitacionales",
+      "checks": [
+        {
+          "url": "https://gwosc.org/api/v2/catalogs?format=json",
+          "kind": "json",
+          "path": "results",
+          "fields": [
+            "name",
+            "description",
+            "events_url"
+          ],
+          "sample_status": "METADATA_SAMPLE"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "noaa-ghcn",
+      "name": "El clima escrito por estaciones meteorológicas",
+      "checks": [
+        {
+          "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt",
+          "kind": "noaa_fixed"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "gbif-biodiversidad",
+      "name": "Dónde se ha observado vida: especies y sesgo de muestreo",
+      "checks": [
+        {
+          "url": "https://api.gbif.org/v1/occurrence/search?country=MX&limit=3",
+          "kind": "json",
+          "path": "results",
+          "fields": [
+            "key",
+            "scientificName",
+            "countryCode",
+            "eventDate",
+            "basisOfRecord",
+            "license"
+          ]
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "xeno-canto-audio",
+      "name": "Cantos de aves, murciélagos e insectos",
+      "checks": [
+        {
+          "url": "https://xeno-canto.org/explore/api",
+          "kind": "html"
+        },
+        {
+          "url": "https://xeno-canto.org/api/3/recordings?query=gen:larus+sp:fuscus&key=demo&per_page=2",
+          "kind": "json",
+          "path": "recordings",
+          "fields": [
+            "id",
+            "gen",
+            "sp",
+            "cnt",
+            "type",
+            "length",
+            "file",
+            "lic"
+          ],
+          "follow_media": "file"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "met-arte",
+      "name": "Arte, objetos e imágenes del Metropolitan Museum",
+      "checks": [
+        {
+          "url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+          "kind": "json",
+          "fields": [
+            "objectID",
+            "title",
+            "artistDisplayName",
+            "objectDate",
+            "medium",
+            "isPublicDomain",
+            "primaryImage"
+          ],
+          "required": [
+            "objectID",
+            "title"
+          ],
+          "follow_media": "primaryImageSmall"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "loc-prensa-historica",
+      "name": "Periódicos antiguos: portadas, OCR y metadatos",
+      "checks": [
+        {
+          "url": "https://www.loc.gov/newspapers/?fo=json&c=3",
+          "kind": "json",
+          "path": "results",
+          "fields": [
+            "id",
+            "title",
+            "date",
+            "language",
+            "original_format",
+            "url"
+          ],
+          "sample_status": "METADATA_SAMPLE"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "gutenberg-quijote",
+      "name": "Don Quijote como corpus de lenguaje",
+      "checks": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/2000/pg2000.txt",
+          "kind": "text",
+          "public_domain": true,
+          "expected": "Quijote",
+          "excerpt_start": "En\\s+un\\s+lugar\\s+de\\s+la\\s+Mancha"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "openfoodfacts-alimentos",
+      "name": "Alimentos: ingredientes, nutrientes y fotos de etiquetas",
+      "checks": [
+        {
+          "url": "https://world.openfoodfacts.org/api/v2/product/3017620422003?fields=code,product_name,brands,nutriments,nutriscore_grade,image_url",
+          "kind": "json",
+          "path": "product",
+          "fields": [
+            "code",
+            "product_name",
+            "brands",
+            "nutriscore_grade",
+            "nutriments",
+            "image_url"
+          ],
+          "required": [
+            "product_name"
+          ]
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "nuforc-ovnis",
+      "name": "Relatos de avistamientos de ovnis/UAP",
+      "checks": [
+        {
+          "url": "https://nuforc.org/databank/?id=latest",
+          "kind": "html",
+          "expected": "NUFORC"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "gdelt-noticias",
+      "name": "El mundo contado por noticias: eventos y menciones",
+      "checks": [
+        {
+          "url": "https://data.gdeltproject.org/gdeltv2/lastupdate.txt",
+          "kind": "gdelt_index"
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "nasa-bolidos",
+      "name": "Bólidos: entradas atmosféricas detectadas por sensores",
+      "checks": [
+        {
+          "url": "https://ssd-api.jpl.nasa.gov/fireball.api?limit=3",
+          "kind": "nasa_rows",
+          "required": [
+            "date",
+            "energy"
+          ]
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "nyc-ratas",
+      "name": "Inspecciones de ratas por predio en Nueva York",
+      "checks": [
+        {
+          "url": "https://data.cityofnewyork.us/resource/p937-wjvj.json?$limit=3",
+          "kind": "json",
+          "fields": [
+            "job_id",
+            "job_ticket_or_work_order_id",
+            "inspection_date",
+            "inspection_type",
+            "zip_code",
+            "borough",
+            "result",
+            "bbl"
+          ],
+          "required": [
+            "inspection_type",
+            "inspection_date"
+          ]
+        }
+      ],
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    }
+  ]
+}
