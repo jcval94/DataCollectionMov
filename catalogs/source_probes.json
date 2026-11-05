@@ -1143,6 +1143,13 @@
             "episode",
             "num_colors",
             "colors",
+            "color_hex",
+            "img_src"
+          ],
+          "delimiter": ",",
+          "quotechar": "\"",
+          "literal_list_fields": [
+            "colors",
             "color_hex"
           ]
         }

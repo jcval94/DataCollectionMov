@@ -22,6 +22,81 @@ El [catálogo de 72 datasets y fuentes reales de México y del mundo](docs/CATAL
 
 La [versión estructurada JSON](catalogs/datasets_reales_mexico.json) permite filtrar y reutilizar las fichas. Cada ficha distingue datos estructurados, no estructurados y mixtos. Las [pruebas de acceso](source_tests/README.md) muestran resultados fechados, registros o ejemplos reales y errores; su [JSON de evidencia](source_tests/results.json) registra cada solicitud. El [ejemplo DOF/Git](examples/dof_git/README.md) incluye dos commits locales comprobados y su diff. La [guía de descubrimientos con IA](docs/GUIA_DESCUBRIMIENTOS_IA.md) conecta las temáticas con preguntas y validación. El [piloto de Bob Ross](examples/bob_ross_discovery/README.md) muestra un resultado calculado, con programa y evidencia. Es un catálogo de oportunidades: las nuevas fuentes no activan recolección programada; las pruebas son acotadas y bajo demanda. Revisión: 4 de noviembre de 2026.
 
+<!-- SOURCE_TESTS:START -->
+## Tests y ejemplos visibles
+
+**72 fuentes probadas** y **9 ejemplos visuales descargados y decodificados**. Resultados guardados con fecha, URL y evidencia; no todas las fuentes entregaron datos.
+
+| Resultado | Fuentes |
+| --- | ---: |
+| `BLOCKED` — Acceso bloqueado | 6 |
+| `CACHED_SAMPLE` — Registros publicados en el repo | 2 |
+| `DATA_SAMPLE` — Registros recuperados | 22 |
+| `DOCUMENT_SAMPLE` — Documento recuperado | 5 |
+| `DOC_ONLY` — Sólo portal o documentación | 22 |
+| `HTTP_ERROR` — Error HTTP | 10 |
+| `METADATA_SAMPLE` — Sólo catálogo o manifiesto | 5 |
+
+[Ver todos los tests, registros e imágenes](source_tests/README.md) · [Pruebas por temática](source_tests/README.md#readme-por-temática)
+
+Ejemplo de registros recuperados del CSV de paletas de Bob Ross:
+
+| Título | Temporada | Episodio | Colores declarados |
+| --- | ---: | ---: | ---: |
+| A Walk in the Woods | 1 | 1 | 8 |
+| Mt. McKinley | 1 | 2 | 8 |
+
+Los tests de acceso y los de imágenes son independientes. A continuación, ejemplos reales de pintura, mapas, prensa y medicina histórica; los README temáticos también muestran producto, app, biodiversidad, sonograma y Bob Ross.
+
+<a href="https://www.metmuseum.org/art/collection/search/436535"><img src="source_tests/assets/met-436535.jpg" alt="Wheat Field with Cypresses — Vincent van Gogh, 1889" width="300"></a>
+
+**Wheat Field with Cypresses — Vincent van Gogh, 1889**. The Metropolitan Museum of Art; Purchase, The Annenberg Foundation Gift, 1993. [Ficha original](https://www.metmuseum.org/art/collection/search/436535) · [Licencia y condiciones](https://www.metmuseum.org/about-the-met/policies-and-documents/open-access): Dominio público (isPublicDomain=true).
+
+Prueba de imagen: **`IMAGE_DECODED`**, HTTP `200`, `JPEG`, **599 × 477 px**, 221,383 bytes. Captura UTC: `2026-11-05T03:19:49+00:00`.
+
+Vista del recurso original; decodificación de imagen independiente de la prueba de registros.
+
+Archivo de imagen conservado en el repo.
+
+GET completo y decodificación de píxeles comprobados. SHA-256 completo: `af0e3486621c210b54932d055294051b5601aa3362af4b84ab97e2831f8163bc`. [Metadatos de origen](https://collectionapi.metmuseum.org/public/collection/v1/objects/436535).
+
+<a href="https://www.loc.gov/item/sanborn03483_002/"><img src="source_tests/assets/loc-jonesport-1895.jpg" alt="Mapa Sanborn de Jonesport, Maine — septiembre de 1895" width="300"></a>
+
+**Mapa Sanborn de Jonesport, Maine — septiembre de 1895**. Library of Congress, Geography and Map Division, Sanborn Maps Collection. [Ficha original](https://www.loc.gov/item/sanborn03483_002/) · [Licencia y condiciones](https://www.loc.gov/collections/sanborn-maps/about-this-collection/rights-and-access/): Dominio público.
+
+Prueba de imagen: **`IMAGE_DECODED`**, HTTP `200`, `JPEG`, **807 × 957 px**, 102,894 bytes. Captura UTC: `2026-11-05T03:19:49+00:00`.
+
+Vista del recurso original; decodificación de imagen independiente de la prueba de registros.
+
+Archivo de imagen conservado en el repo.
+
+GET completo y decodificación de píxeles comprobados. SHA-256 completo: `57aed0aa7ecc19448dad7dbc63098719098e9dee46e7d3bd2a6d95f408187bca`. [Metadatos de origen](https://www.loc.gov/item/sanborn03483_002/?fo=json).
+
+<a href="https://www.loc.gov/item/2012218613/1882-04-12/ed-1/"><img src="source_tests/assets/loc-fairfield-1882.jpg" alt="The Fairfield news and herald — portada del 12 de abril de 1882" width="300"></a>
+
+**The Fairfield news and herald — portada del 12 de abril de 1882**. Library of Congress; University of South Carolina, Columbia, SC. [Ficha original](https://www.loc.gov/item/2012218613/1882-04-12/ed-1/) · [Licencia y condiciones](https://www.loc.gov/collections/chronicling-america/about-this-collection/rights-and-access/): Dominio público (edición de 1882).
+
+Prueba de imagen: **`IMAGE_DECODED`**, HTTP `200`, `JPEG`, **545 × 736 px**, 144,127 bytes. Captura UTC: `2026-11-05T03:19:49+00:00`.
+
+Vista del recurso original; decodificación de imagen independiente de la prueba de registros.
+
+Archivo de imagen conservado en el repo.
+
+GET completo y decodificación de píxeles comprobados. SHA-256 completo: `472cbe967361142cd5f7bd80d2eae9f2bb842cc6d9108ec9f98165c5f3016662`. [Metadatos de origen](https://www.loc.gov/item/2012218613/1882-04-12/ed-1/?fo=json).
+
+<a href="https://wellcomecollection.org/works/gvybrs3w"><img src="source_tests/assets/wellcome-sleep-and-dreams-1857.jpg" alt="Sleep and dreams; two lectures — John Addington Symonds, 1857, portada interior" width="300"></a>
+
+**Sleep and dreams; two lectures — John Addington Symonds, 1857, portada interior**. Wellcome Collection; John Addington Symonds. [Ficha original](https://wellcomecollection.org/works/gvybrs3w) · [Licencia y condiciones](https://creativecommons.org/publicdomain/mark/1.0/): Public Domain Mark 1.0.
+
+Prueba de imagen: **`IMAGE_DECODED`**, HTTP `200`, `JPEG`, **684 × 1024 px**, 93,980 bytes. Captura UTC: `2026-11-05T03:19:49+00:00`.
+
+Portada interior, canvas 5 del manifiesto IIIF. No es evidencia de sueño segmentado: esa hipótesis requiere lectura, contexto y contraste de textos.
+
+Archivo de imagen conservado en el repo.
+
+GET completo y decodificación de píxeles comprobados. SHA-256 completo: `4a7f014b22dee507e071388ffcae8e4638b569ba3272b59f1a2546b67929cbeb`. [Metadatos de origen](https://iiif.wellcomecollection.org/presentation/v2/b21001923).
+<!-- SOURCE_TESTS:END -->
+
 ## Fuentes cubiertas
 
 | Fuente | Tablas principales | Workflow |

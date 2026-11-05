@@ -3145,7 +3145,7 @@
       "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
       "checks": [
         {
-          "checked_at_utc": "2026-11-05T00:52:09+00:00",
+          "checked_at_utc": "2026-11-05T03:21:35+00:00",
           "kind": "csv",
           "scope": "live_public",
           "sample": [
@@ -3155,8 +3155,27 @@
               "season": "1",
               "episode": "1",
               "num_colors": "8",
-              "colors": "\"['Alizarin Crimson'",
-              "color_hex": " 'Bright Red'"
+              "colors": [
+                "Alizarin Crimson",
+                "Bright Red",
+                "Cadmium Yellow",
+                "Phthalo Green",
+                "Prussian Blue",
+                "Sap Green",
+                "Titanium White",
+                "Van Dyke Brown"
+              ],
+              "color_hex": [
+                "#4E1500",
+                "#DB0000",
+                "#FFEC00",
+                "#102E3C",
+                "#021E44",
+                "#0A3410",
+                "#FFFFFF",
+                "#221B15"
+              ],
+              "img_src": "https://www.twoinchbrush.com/images/painting282.webp"
             },
             {
               "painting_index": "283",
@@ -3164,8 +3183,27 @@
               "season": "1",
               "episode": "2",
               "num_colors": "8",
-              "colors": "\"['Alizarin Crimson'",
-              "color_hex": " 'Bright Red'"
+              "colors": [
+                "Alizarin Crimson",
+                "Bright Red",
+                "Cadmium Yellow",
+                "Phthalo Green",
+                "Prussian Blue",
+                "Sap Green",
+                "Titanium White",
+                "Van Dyke Brown"
+              ],
+              "color_hex": [
+                "#4E1500",
+                "#DB0000",
+                "#FFEC00",
+                "#102E3C",
+                "#021E44",
+                "#0A3410",
+                "#FFFFFF",
+                "#221B15"
+              ],
+              "img_src": "https://www.twoinchbrush.com/images/painting283.webp"
             }
           ],
           "requested_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv",
@@ -3210,11 +3248,11 @@
             "Alizarin_Crimson"
           ],
           "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
-          "elapsed_seconds": 2.773
+          "elapsed_seconds": 3.831
         }
       ],
-      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
-      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+      "captured_with_script_sha256": "3b538dbf5c66410c7309d8bbb424be59f74bed55b8d98dfa8d7b2d51c7349243",
+      "captured_with_definitions_sha256": "06cd81f032ce5164c273b8b1afb5427d04e48d4e1386f13f308dbf9ae9bda5df"
     }
   ],
   "rechecks": [
@@ -3323,9 +3361,104 @@
         ],
         "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
       }
+    },
+    {
+      "run": {
+        "started_at_utc": "2026-11-05T03:21:35+00:00",
+        "started_at_local": "2026-11-04T21:21:35-06:00",
+        "timeout_seconds": 18,
+        "workers": 4,
+        "max_bytes": 8388608,
+        "python_version": "3.12.14",
+        "probe_script_sha256": "3b538dbf5c66410c7309d8bbb424be59f74bed55b8d98dfa8d7b2d51c7349243",
+        "probe_definitions_sha256": "06cd81f032ce5164c273b8b1afb5427d04e48d4e1386f13f308dbf9ae9bda5df",
+        "finished_at_utc": "2026-11-05T03:21:39+00:00"
+      },
+      "source_ids": [
+        "bob-ross-paletas"
+      ],
+      "reason": "Corregir lectura CSV: las comillas simples internas de las listas de colores son datos; validar y convertir listas con ast.literal_eval.",
+      "previous_result": {
+        "id": "bob-ross-paletas",
+        "name": "Cuadros, paletas y episodios de Bob Ross",
+        "status": "DATA_SAMPLE",
+        "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+        "checks": [
+          {
+            "checked_at_utc": "2026-11-05T00:52:09+00:00",
+            "kind": "csv",
+            "scope": "live_public",
+            "sample": [
+              {
+                "painting_index": "282",
+                "painting_title": "A Walk in the Woods",
+                "season": "1",
+                "episode": "1",
+                "num_colors": "8",
+                "colors": "\"['Alizarin Crimson'",
+                "color_hex": " 'Bright Red'"
+              },
+              {
+                "painting_index": "283",
+                "painting_title": "Mt. McKinley",
+                "season": "1",
+                "episode": "2",
+                "num_colors": "8",
+                "colors": "\"['Alizarin Crimson'",
+                "color_hex": " 'Bright Red'"
+              }
+            ],
+            "requested_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv",
+            "final_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv",
+            "http_status": 200,
+            "content_type": "text/plain; charset=utf-8",
+            "last_modified": null,
+            "bytes_read": 65536,
+            "truncated": true,
+            "sha256": "c6c7e09c6be482982f8834383547548bb0733ee4c2fb3ba01276cce7a4f2e797",
+            "hash_scope": "response_prefix",
+            "status": "DATA_SAMPLE",
+            "columns": [
+              "",
+              "painting_index",
+              "img_src",
+              "painting_title",
+              "season",
+              "episode",
+              "num_colors",
+              "youtube_src",
+              "colors",
+              "color_hex",
+              "tags",
+              "Black_Gesso",
+              "Bright_Red",
+              "Burnt_Umber",
+              "Cadmium_Yellow",
+              "Dark_Sienna",
+              "Indian_Red",
+              "Indian_Yellow",
+              "Liquid_Black",
+              "Liquid_Clear",
+              "Midnight_Black",
+              "Phthalo_Blue",
+              "Phthalo_Green",
+              "Prussian_Blue",
+              "Sap_Green",
+              "Titanium_White",
+              "Van_Dyke_Brown",
+              "Yellow_Ochre",
+              "Alizarin_Crimson"
+            ],
+            "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+            "elapsed_seconds": 2.773
+          }
+        ],
+        "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+        "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+      }
     }
   ],
-  "report_generated_at_utc": "2026-11-05T00:53:57+00:00",
+  "report_generated_at_utc": "2026-11-05T03:21:39+00:00",
   "extensions": [
     {
       "run": {

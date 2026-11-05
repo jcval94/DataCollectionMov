@@ -7,6 +7,7 @@ This intentionally separates a readable portal from an actual data sample.
 """
 from __future__ import annotations
 import argparse
+import ast
 import concurrent.futures
 import csv
 import hashlib
@@ -154,14 +155,22 @@ def run_check(spec,args):
         elif kind=='csv':
             if '<html' in lower or '<!doctype html' in lower:raise ValueError('Se esperaba CSV y se recibió HTML')
             if out['truncated']:text=text.rsplit('\n',1)[0]
-            dialect=csv.Sniffer().sniff(text[:16000],delimiters=',;\t|')
-            reader=csv.DictReader(io.StringIO(text),fieldnames=spec.get('columns'),dialect=dialect)
+            delimiter=spec.get('delimiter') or csv.Sniffer().sniff(text[:16000],delimiters=',;\t|').delimiter
+            # Detect the separator only: apostrophes inside Python-like colour
+            # lists are data, not CSV quoting. CSV uses double quotes by default.
+            reader=csv.DictReader(io.StringIO(text),fieldnames=spec.get('columns'),delimiter=delimiter,quotechar=spec.get('quotechar','"'),doublequote=True)
             rows=[]
             for row in reader:
                 rows.append(row)
                 if len(rows)==2:break
             if not rows:out.update(status='EMPTY',detail='CSV sin registros de muestra.');return out
             if len(reader.fieldnames or [])<2:raise ValueError('CSV sin estructura multicolumna')
+            if any(None in row for row in rows):raise ValueError('CSV con valores sobrantes: revisar separador y comillas')
+            for row in rows:
+                for field in spec.get('literal_list_fields',[]):
+                    value=ast.literal_eval(row[field])
+                    if not isinstance(value,list):raise ValueError('Se esperaba una lista literal en '+field)
+                    row[field]=value
             for f in spec.get('required',[]):
                 if f not in reader.fieldnames:raise ValueError('Columna requerida ausente: '+f)
             out.update(status='CACHED_SAMPLE' if spec.get('scope')=='repository_snapshot' else 'DATA_SAMPLE',columns=reader.fieldnames,sample=[pick(r,spec.get('fields')) for r in rows],detail='Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.')
@@ -276,48 +285,9 @@ def run_source(spec,args):
     return dict(id=spec['id'],name=spec['name'],status=status,note=spec['note'],checks=checks)
 
 def write_report(results,path,meta):
-    counts=Counter(r['status'] for r in results)
-    lines=['# Prueba de acceso y muestras de fuentes','',f"Ejecución: **{meta['started_at_local']}** (America/Mexico_City). Fin UTC: `{meta['finished_at_utc']}`.",'',
-    f"Se probaron **{len(results)} fuentes** del catálogo mediante GET públicos, con timeout de {meta['timeout_seconds']} s por operación, {meta['workers']} fuentes en paralelo y un límite de {meta['max_bytes']} bytes para documentos completos. CSV/TXT se muestrean por prefijo de 64 KiB.",'',
-    '**Qué comprueba:** acceso desde este entorno, formato, campos mínimos y ejemplos recuperados. **Qué no comprueba:** disponibilidad futura, calidad estadística completa, autenticación de APIs protegidas, decodificación/reproducción integral de multimedia, ni salud de los workflows existentes. Una página HTTP 200 no se cuenta como un dataset recuperado.','',
-    'Los ejemplos se tomaron de las respuestas; los datos no disponibles no se sustituyen por filas inventadas. `CACHED_SAMPLE` identifica CSVs ya publicados por el repo, separados de las APIs en vivo. `METADATA_SAMPLE` prueba un catálogo/manifiesto, no los eventos u observaciones que referencia.','',
-    '## Resultados','', '| Resultado | Fuentes |','| --- | ---: |']
-    for k,n in sorted(counts.items()):lines.append(f'| {k}: {LABELS[k]} | {n} |')
-    lines+=['','## Índice de las pruebas','', '| Fuente | Resultado más útil | Capas con fallo o límite |','| --- | --- | --- |']
-    def all_failures(check):
-        failures=[] if check['status'] in ('DATA_SAMPLE','CACHED_SAMPLE','DOCUMENT_SAMPLE','MEDIA_SAMPLE','METADATA_SAMPLE','DOC_ONLY') else [check['status']]
-        return failures+(all_failures(check['child']) if check.get('child') else [])
-    for r in results:
-        failures=[failure for check in r['checks'] for failure in all_failures(check)]
-        lines.append(f"| [{r['id']}](#{r['id']}) | {r['status']} | {', '.join(failures) or '—'} |")
-    lines+=['','## Interpretación y siguientes correcciones','',
-    '- Registros recuperados permiten comenzar una exploración de esa muestra; no prueban representatividad ni unicidad global.',
-    '- Portales, índices y documentación requieren un segundo paso para obtener la base. Consultar cada ficha para autenticación, licencia y unidad de análisis.',
-    '- Un bloqueo/error queda registrado con URL, código y hora. Reintentar sólo esa fuente desde otro momento o entorno autorizado; no afirmar que el sitio está caído globalmente.',
-    '- Las muestras por prefijo no dan un conteo total ni una muestra aleatoria. Un hash de prefijo no identifica el archivo completo.',
-    '- En fuentes mixtas se indica la capa probada. Una URL de imagen o audio presente no demuestra descarga o reproducción del medio.',
-    '- Para citar resultados científicos, de encuestas o territoriales, añadir una validación del diseño, calidad y cobertura antes de inferir conclusiones.',
-    '', '## Reproducir','', 'Desde la raíz del repo (Python 3.10+; `pypdf` y `openpyxl` son lectores opcionales):','',
-    '```bash','python -m pip install pypdf openpyxl','python scripts/probe_catalog_sources.py','python scripts/probe_catalog_sources.py --only dof-publicaciones usgs-sismos','```','',
-    'No lee secrets ni activa tareas programadas. Sin `--strict`, el código de salida 0 significa que el informe se produjo; los fallos permanecen visibles. Con `--strict` devuelve 1 si falla cualquier comprobación definida, incluidos recursos enlazados. Un `DOC_ONLY` válido pasa su comprobación de página, pero sigue sin acreditar ingesta de registros.', '',
-    'La selección `--only` guarda resultados en un subdirectorio `selected/` para conservar la última corrida completa. Se puede cambiar con `--output`. El informe y results.json se generan juntos.','',
-    '## Ejemplos y evidencia por fuente','']
-    for r in results:
-        lines += [f"### {r['id']}",'',f"**{r['name']}** — `{r['status']}`.",'',r['note'],'']
-        for idx,check in enumerate(r['checks'],1):
-            lines += [f"Prueba {idx}: [{check['kind']}]({check['requested_url']}) — `{check['status']}`; HTTP `{check.get('http_status','sin respuesta')}`; {check.get('elapsed_seconds','?')} s.",'',check['detail'],'']
-            if check.get('child'):
-                child=check['child']
-                lines += [f"Recurso enlazado: [{child['kind']}]({child['requested_url']}) — `{child['status']}`, HTTP `{child.get('http_status','sin respuesta')}`.",'',child['detail'],'']
-                if child.get('sample') and child['sample']!=check['sample']:
-                    lines+=['```json',json.dumps(child['sample'],ensure_ascii=False,indent=2),'```','']
-            if check['sample']:
-                lines+=['```json',json.dumps(check['sample'],ensure_ascii=False,indent=2),'```','']
-            else:lines+=['Sin registros o ejemplos recuperados para esta prueba.','']
-    probes_link=Path(os.path.relpath(ROOT/'catalogs/source_probes.json',path.parent)).as_posix()
-    catalog_link=Path(os.path.relpath(ROOT/'docs/CATALOGO_DATASETS_REALES.md',path.parent)).as_posix()
-    lines += ['## Evidencia legible por máquina','', f'[results.json](results.json) contiene cada petición y su timestamp; código HTTP, content-type, bytes, hash y su alcance cuando están disponibles; además de muestras y errores. [Definición de pruebas]({probes_link}). [Catálogo]({catalog_link}).','']
-    path.write_text('\n'.join(lines))
+    # Keep images and per-topic README files when tests are rerun.
+    from render_source_readmes import render_report
+    render_report(dict(results=results,run=meta),path)
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
