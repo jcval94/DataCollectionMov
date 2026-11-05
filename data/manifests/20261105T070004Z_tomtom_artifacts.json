@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-11-05T07:00:08Z",
+  "source": "tomtom",
+  "snapshot_id": "20261105T070004Z",
+  "snapshot_date": "2026-11-05",
+  "artifacts": [
+    {
+      "artifact": "tomtom_cdmx_traffic_map",
+      "source": "tomtom",
+      "snapshot_id": "20261105T070004Z",
+      "snapshot_date": "2026-11-05",
+      "current_path": "data/artifacts/current/tomtom_cdmx_traffic_map.html",
+      "snapshot_path": "data/artifacts/history/tomtom_cdmx_traffic_map/20261105T070004Z.html"
+    }
+  ]
+}
