@@ -1,0 +1,532 @@
+{
+  "quality": {
+    "input_rows": 541909,
+    "exact_duplicate_rows": 5268,
+    "missing_customer_rows": 135080,
+    "eligible_rows": 536429,
+    "negative_without_C": 0,
+    "excluded_non_product_code": 2995,
+    "excluded_nonpositive_price": 2485
+  },
+  "date_min": "2010-12-01T08:26:00",
+  "date_max": "2011-12-09T12:50:00",
+  "examples": [
+    {
+      "InvoiceNo": "536365",
+      "StockCode": "85123A",
+      "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "Quantity": "6",
+      "UnitPrice": "2.55"
+    },
+    {
+      "InvoiceNo": "536365",
+      "StockCode": "71053",
+      "Description": "WHITE METAL LANTERN",
+      "Quantity": "6",
+      "UnitPrice": "3.39"
+    },
+    {
+      "InvoiceNo": "536365",
+      "StockCode": "84406B",
+      "Description": "CREAM CUPID HEARTS COAT HANGER",
+      "Quantity": "8",
+      "UnitPrice": "2.75"
+    },
+    {
+      "InvoiceNo": "536365",
+      "StockCode": "84029G",
+      "Description": "KNITTED UNION FLAG HOT WATER BOTTLE",
+      "Quantity": "6",
+      "UnitPrice": "3.39"
+    },
+    {
+      "InvoiceNo": "536365",
+      "StockCode": "84029E",
+      "Description": "RED WOOLLY HOTTIE WHITE HEART.",
+      "Quantity": "6",
+      "UnitPrice": "3.39"
+    }
+  ],
+  "reversal_evidence": [
+    {
+      "InvoiceNo": "581483",
+      "StockCode": "23843",
+      "Description": "PAPER CRAFT , LITTLE BIRDIE",
+      "Quantity": "80995",
+      "InvoiceDate": "12/9/2011 9:15",
+      "UnitPrice": "2.08",
+      "Country": "United Kingdom"
+    },
+    {
+      "InvoiceNo": "C581484",
+      "StockCode": "23843",
+      "Description": "PAPER CRAFT , LITTLE BIRDIE",
+      "Quantity": "-80995",
+      "InvoiceDate": "12/9/2011 9:27",
+      "UnitPrice": "2.08",
+      "Country": "United Kingdom"
+    }
+  ],
+  "variants": {
+    "retained_duplicates": {
+      "products": 3914,
+      "sums": {
+        "gross": "10271034.61",
+        "credits": "478724.18",
+        "net": "9792310.43"
+      },
+      "top20": [
+        {
+          "code": "22423",
+          "gross": "174484.74",
+          "credits": "9722.55",
+          "lines": 2198,
+          "description": "REGENCY CAKESTAND 3 TIER",
+          "net": "164762.19",
+          "rank_gross": 1,
+          "rank_net": 1,
+          "rank_loss": 0
+        },
+        {
+          "code": "23843",
+          "gross": "168469.60",
+          "credits": "168469.60",
+          "lines": 2,
+          "description": "PAPER CRAFT , LITTLE BIRDIE",
+          "net": "0.00",
+          "rank_gross": 2,
+          "rank_net": 3894,
+          "rank_loss": 3892
+        },
+        {
+          "code": "85123A",
+          "gross": "104518.80",
+          "credits": "6624.30",
+          "lines": 2307,
+          "description": "CREAM HANGING HEART T-LIGHT HOLDER",
+          "net": "97894.50",
+          "rank_gross": 3,
+          "rank_net": 3,
+          "rank_loss": 0
+        },
+        {
+          "code": "47566",
+          "gross": "99504.33",
+          "credits": "1201.35",
+          "lines": 1726,
+          "description": "PARTY BUNTING",
+          "net": "98302.98",
+          "rank_gross": 4,
+          "rank_net": 2,
+          "rank_loss": -2
+        },
+        {
+          "code": "85099B",
+          "gross": "94340.05",
+          "credits": "1984.02",
+          "lines": 2156,
+          "description": "JUMBO BAG RED RETROSPOT",
+          "net": "92356.03",
+          "rank_gross": 5,
+          "rank_net": 4,
+          "rank_loss": -1
+        },
+        {
+          "code": "23166",
+          "gross": "81700.92",
+          "credits": "77479.64",
+          "lines": 260,
+          "description": "MEDIUM CERAMIC TOP STORAGE JAR",
+          "net": "4221.28",
+          "rank_gross": 6,
+          "rank_net": 581,
+          "rank_loss": 575
+        },
+        {
+          "code": "23084",
+          "gross": "66964.99",
+          "credits": "208.40",
+          "lines": 1051,
+          "description": "RABBIT NIGHT LIGHT",
+          "net": "66756.59",
+          "rank_gross": 7,
+          "rank_net": 5,
+          "rank_loss": -2
+        },
+        {
+          "code": "22086",
+          "gross": "64952.29",
+          "credits": "1160.35",
+          "lines": 1210,
+          "description": "PAPER CHAIN KIT 50'S CHRISTMAS ",
+          "net": "63791.94",
+          "rank_gross": 8,
+          "rank_net": 6,
+          "rank_loss": -2
+        },
+        {
+          "code": "84879",
+          "gross": "59094.93",
+          "credits": "135.20",
+          "lines": 1501,
+          "description": "ASSORTED COLOUR BIRD ORNAMENT",
+          "net": "58959.73",
+          "rank_gross": 9,
+          "rank_net": 7,
+          "rank_loss": -2
+        },
+        {
+          "code": "79321",
+          "gross": "54117.76",
+          "credits": "349.70",
+          "lines": 676,
+          "description": "CHILLI LIGHTS",
+          "net": "53768.06",
+          "rank_gross": 10,
+          "rank_net": 8,
+          "rank_loss": -2
+        },
+        {
+          "code": "22502",
+          "gross": "51426.62",
+          "credits": "385.25",
+          "lines": 478,
+          "description": "PICNIC BASKET WICKER SMALL",
+          "net": "51041.37",
+          "rank_gross": 11,
+          "rank_net": 9,
+          "rank_loss": -2
+        },
+        {
+          "code": "22197",
+          "gross": "51354.02",
+          "credits": "366.55",
+          "lines": 1476,
+          "description": "POPCORN HOLDER",
+          "net": "50987.47",
+          "rank_gross": 12,
+          "rank_net": 10,
+          "rank_loss": -2
+        },
+        {
+          "code": "23298",
+          "gross": "43182.83",
+          "credits": "482.81",
+          "lines": 1177,
+          "description": "SPOTTY BUNTING",
+          "net": "42700.02",
+          "rank_gross": 13,
+          "rank_net": 11,
+          "rank_loss": -2
+        },
+        {
+          "code": "22386",
+          "gross": "42436.24",
+          "credits": "816.58",
+          "lines": 1251,
+          "description": "JUMBO BAG PINK POLKADOT",
+          "net": "41619.66",
+          "rank_gross": 14,
+          "rank_net": 12,
+          "rank_loss": -2
+        },
+        {
+          "code": "23203",
+          "gross": "42067.78",
+          "credits": "1076.40",
+          "lines": 1266,
+          "description": "JUMBO BAG VINTAGE DOILY ",
+          "net": "40991.38",
+          "rank_gross": 15,
+          "rank_net": 13,
+          "rank_loss": -2
+        },
+        {
+          "code": "21137",
+          "gross": "40652.13",
+          "credits": "55.17",
+          "lines": 384,
+          "description": "BLACK RECORD COVER FRAME",
+          "net": "40596.96",
+          "rank_gross": 16,
+          "rank_net": 14,
+          "rank_loss": -2
+        },
+        {
+          "code": "23284",
+          "gross": "38166.64",
+          "credits": "1601.25",
+          "lines": 742,
+          "description": "DOORMAT KEEP CALM AND COME IN",
+          "net": "36565.39",
+          "rank_gross": 17,
+          "rank_net": 16,
+          "rank_loss": -1
+        },
+        {
+          "code": "22720",
+          "gross": "38158.39",
+          "credits": "744.95",
+          "lines": 1473,
+          "description": "SET OF 3 CAKE TINS PANTRY DESIGN ",
+          "net": "37413.44",
+          "rank_gross": 18,
+          "rank_net": 15,
+          "rank_loss": -3
+        },
+        {
+          "code": "22960",
+          "gross": "37128.88",
+          "credits": "1012.79",
+          "lines": 1228,
+          "description": "JAM MAKING SET WITH JARS",
+          "net": "36116.09",
+          "rank_gross": 19,
+          "rank_net": 17,
+          "rank_loss": -2
+        },
+        {
+          "code": "20725",
+          "gross": "36042.01",
+          "credits": "854.70",
+          "lines": 1639,
+          "description": "LUNCH BAG RED RETROSPOT",
+          "net": "35187.31",
+          "rank_gross": 20,
+          "rank_net": 19,
+          "rank_loss": -1
+        }
+      ]
+    },
+    "removed_duplicates": {
+      "products": 3914,
+      "sums": {
+        "gross": "10246820.87",
+        "credits": "475901.16",
+        "net": "9770919.71"
+      },
+      "top20": [
+        {
+          "code": "22423",
+          "gross": "174156.54",
+          "credits": "9697.05",
+          "lines": 2187,
+          "description": "REGENCY CAKESTAND 3 TIER",
+          "net": "164459.49",
+          "rank_gross": 1,
+          "rank_net": 1,
+          "rank_loss": 0
+        },
+        {
+          "code": "23843",
+          "gross": "168469.60",
+          "credits": "168469.60",
+          "lines": 2,
+          "description": "PAPER CRAFT , LITTLE BIRDIE",
+          "net": "0.00",
+          "rank_gross": 2,
+          "rank_net": 3894,
+          "rank_loss": 3892
+        },
+        {
+          "code": "85123A",
+          "gross": "104462.75",
+          "credits": "6624.30",
+          "lines": 2295,
+          "description": "CREAM HANGING HEART T-LIGHT HOLDER",
+          "net": "97838.45",
+          "rank_gross": 3,
+          "rank_net": 3,
+          "rank_loss": 0
+        },
+        {
+          "code": "47566",
+          "gross": "99445.23",
+          "credits": "1201.35",
+          "lines": 1719,
+          "description": "PARTY BUNTING",
+          "net": "98243.88",
+          "rank_gross": 4,
+          "rank_net": 2,
+          "rank_loss": -2
+        },
+        {
+          "code": "85099B",
+          "gross": "94159.81",
+          "credits": "1984.02",
+          "lines": 2153,
+          "description": "JUMBO BAG RED RETROSPOT",
+          "net": "92175.79",
+          "rank_gross": 5,
+          "rank_net": 4,
+          "rank_loss": -1
+        },
+        {
+          "code": "23166",
+          "gross": "81700.92",
+          "credits": "77479.64",
+          "lines": 260,
+          "description": "MEDIUM CERAMIC TOP STORAGE JAR",
+          "net": "4221.28",
+          "rank_gross": 6,
+          "rank_net": 580,
+          "rank_loss": 574
+        },
+        {
+          "code": "23084",
+          "gross": "66870.03",
+          "credits": "208.40",
+          "lines": 1032,
+          "description": "RABBIT NIGHT LIGHT",
+          "net": "66661.63",
+          "rank_gross": 7,
+          "rank_net": 5,
+          "rank_loss": -2
+        },
+        {
+          "code": "22086",
+          "gross": "64875.59",
+          "credits": "1160.35",
+          "lines": 1194,
+          "description": "PAPER CHAIN KIT 50'S CHRISTMAS ",
+          "net": "63715.24",
+          "rank_gross": 8,
+          "rank_net": 6,
+          "rank_loss": -2
+        },
+        {
+          "code": "84879",
+          "gross": "58927.62",
+          "credits": "135.20",
+          "lines": 1488,
+          "description": "ASSORTED COLOUR BIRD ORNAMENT",
+          "net": "58792.42",
+          "rank_gross": 9,
+          "rank_net": 7,
+          "rank_loss": -2
+        },
+        {
+          "code": "79321",
+          "gross": "54096.36",
+          "credits": "349.70",
+          "lines": 673,
+          "description": "CHILLI LIGHTS",
+          "net": "53746.66",
+          "rank_gross": 10,
+          "rank_net": 8,
+          "rank_loss": -2
+        },
+        {
+          "code": "22502",
+          "gross": "51408.77",
+          "credits": "385.25",
+          "lines": 475,
+          "description": "PICNIC BASKET WICKER SMALL",
+          "net": "51023.52",
+          "rank_gross": 11,
+          "rank_net": 9,
+          "rank_loss": -2
+        },
+        {
+          "code": "22197",
+          "gross": "51334.47",
+          "credits": "366.55",
+          "lines": 1468,
+          "description": "POPCORN HOLDER",
+          "net": "50967.92",
+          "rank_gross": 12,
+          "rank_net": 10,
+          "rank_loss": -2
+        },
+        {
+          "code": "23298",
+          "gross": "43148.18",
+          "credits": "482.81",
+          "lines": 1173,
+          "description": "SPOTTY BUNTING",
+          "net": "42665.37",
+          "rank_gross": 13,
+          "rank_net": 11,
+          "rank_loss": -2
+        },
+        {
+          "code": "22386",
+          "gross": "42401.01",
+          "credits": "816.58",
+          "lines": 1245,
+          "description": "JUMBO BAG PINK POLKADOT",
+          "net": "41584.43",
+          "rank_gross": 14,
+          "rank_net": 12,
+          "rank_loss": -2
+        },
+        {
+          "code": "23203",
+          "gross": "42030.34",
+          "credits": "1076.40",
+          "lines": 1259,
+          "description": "JUMBO BAG VINTAGE DOILY ",
+          "net": "40953.94",
+          "rank_gross": 15,
+          "rank_net": 13,
+          "rank_loss": -2
+        },
+        {
+          "code": "21137",
+          "gross": "40633.38",
+          "credits": "55.17",
+          "lines": 381,
+          "description": "BLACK RECORD COVER FRAME",
+          "net": "40578.21",
+          "rank_gross": 16,
+          "rank_net": 14,
+          "rank_loss": -2
+        },
+        {
+          "code": "23284",
+          "gross": "38133.64",
+          "credits": "1601.25",
+          "lines": 739,
+          "description": "DOORMAT KEEP CALM AND COME IN",
+          "net": "36532.39",
+          "rank_gross": 17,
+          "rank_net": 16,
+          "rank_loss": -1
+        },
+        {
+          "code": "22720",
+          "gross": "38108.89",
+          "credits": "730.10",
+          "lines": 1465,
+          "description": "SET OF 3 CAKE TINS PANTRY DESIGN ",
+          "net": "37378.79",
+          "rank_gross": 18,
+          "rank_net": 15,
+          "rank_loss": -3
+        },
+        {
+          "code": "22960",
+          "gross": "37082.13",
+          "credits": "1012.79",
+          "lines": 1220,
+          "description": "JAM MAKING SET WITH JARS",
+          "net": "36069.34",
+          "rank_gross": 19,
+          "rank_net": 17,
+          "rank_loss": -2
+        },
+        {
+          "code": "82484",
+          "gross": "35966.92",
+          "credits": "170.95",
+          "lines": 696,
+          "description": "WOOD BLACK BOARD ANT WHITE FINISH",
+          "net": "35795.97",
+          "rank_gross": 20,
+          "rank_net": 18,
+          "rank_loss": -2
+        }
+      ]
+    }
+  }
+}

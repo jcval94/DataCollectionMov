@@ -3,7 +3,7 @@
   "title": "Plan de exploración con skills, MCP/herramientas y arneses",
   "reviewed_on": "2026-11-04",
   "timezone": "America/Mexico_City",
-  "scope": "Propuesta para las 72 fuentes del catálogo. Preguntas abiertas y contratos recomendados; no instala skills/MCP, no ejecuta análisis ni modifica pruebas previas.",
+  "scope": "Plan para 72 fuentes: cuatro skills instaladas y primer adaptador retail ejecutado; las otras preguntas y perfiles especializados siguen pendientes.",
   "terminology": {
     "MCC": "Se interpreta como MCP (Model Context Protocol). Si el autor se refería a otra sigla, revisar sólo la capa de herramientas.",
     "skill": "Procedimiento reutilizable y criterios de trabajo.",
@@ -29,15 +29,19 @@
     },
     "INGEST": {
       "name": "Integrar fuentes públicas con evidencia",
-      "status": "Skill propuesta",
+      "status": "Skill instalada y guardada",
       "priority": "Primera etapa",
-      "scope": "Elegir recurso frente a portal, entender diccionario/licencia, capturar respuesta original y versión, paginar, registrar fallos, producir muestra y contrato de datos."
+      "scope": "Elegir recurso frente a portal, entender diccionario/licencia, capturar respuesta original y versión, paginar, registrar fallos, producir muestra y contrato de datos.",
+      "installed_name": "integrar-fuentes-publicas",
+      "directory_url": "https://chatgpt.com/skills?skill_id=6aec094837b48191be11e4363dd64c01"
     },
     "GEO": {
       "name": "Analizar territorio y cruces en México",
-      "status": "Skill propuesta",
+      "status": "Skill instalada y guardada",
       "priority": "Primera etapa",
-      "scope": "CP, CVEGEO, CCT, CLUES y CLEE; CRS, puntos/polígonos, cambios de límites, accesibilidad y sensibilidad a la unidad territorial."
+      "scope": "CP, CVEGEO, CCT, CLUES y CLEE; CRS, puntos/polígonos, cambios de límites, accesibilidad y sensibilidad a la unidad territorial.",
+      "installed_name": "analizar-territorio-mexico",
+      "directory_url": "https://chatgpt.com/skills?skill_id=6aec09630070819187372c72e60e7c39"
     },
     "SURVEY": {
       "name": "Analizar encuestas y movilidad social",
@@ -47,15 +51,19 @@
     },
     "CORPUS": {
       "name": "Investigar corpus históricos y textos con citas",
-      "status": "Skill propuesta",
+      "status": "Skill instalada y guardada",
       "priority": "Primera etapa",
-      "scope": "Edición, OCR, página, género, fecha, voces editoriales, negación, anacronismos, copias y contraejemplos. En textos modernos, adaptar taxonomía, idioma y selección del corpus."
+      "scope": "Edición, OCR, página, género, fecha, voces editoriales, negación, anacronismos, copias y contraejemplos. En textos modernos, adaptar taxonomía, idioma y selección del corpus.",
+      "installed_name": "investigar-corpus-con-evidencia",
+      "directory_url": "https://chatgpt.com/skills?skill_id=6aec09822a6c8191a5c39b445cd8a8c2"
     },
     "VERSION": {
       "name": "Comparar publicaciones y reformas con Git",
-      "status": "Skill propuesta",
+      "status": "Skill instalada y guardada",
       "priority": "Primera etapa",
-      "scope": "Documentos inmutables, artículos y transitorios, fecha de publicación frente a vigencia, diff textual/semántico y cita a la fuente oficial. Git es herramienta pedagógica y de trazabilidad."
+      "scope": "Documentos inmutables, artículos y transitorios, fecha de publicación frente a vigencia, diff textual/semántico y cita a la fuente oficial. Git es herramienta pedagógica y de trazabilidad.",
+      "installed_name": "comparar-versiones-documentales",
+      "directory_url": "https://chatgpt.com/skills?skill_id=6aec09a2278c81918012376271d3b695"
     },
     "VISION": {
       "name": "Analizar imágenes, arte y etiquetas",
@@ -3898,7 +3906,8 @@
       "questions": [
         {
           "id": "uci-retail.q1",
-          "text": "¿Qué productos pasan de estrellas a resultados modestos al descontar cancelaciones y devoluciones en lugar de mirar ventas brutas?"
+          "text": "¿Qué productos pasan de estrellas a resultados modestos al descontar cancelaciones y devoluciones en lugar de mirar ventas brutas?",
+          "status": "descriptive_measured"
         },
         {
           "id": "uci-retail.q2",
@@ -3924,10 +3933,11 @@
         "2026-11-05T00:52:04+00:00"
       ],
       "source_test_link": "source_tests/README.md#uci-retail",
-      "plan_status": "proposed_not_executed",
+      "plan_status": "partially_executed",
       "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
       "first_question_id": "uci-retail.q1",
-      "execution_harness": "E1"
+      "execution_harness": "E1",
+      "implementation": "examples/retail_discovery/README.md"
     },
     {
       "id": "openfda-etiquetas",

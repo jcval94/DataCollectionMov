@@ -20,7 +20,7 @@ def validate(plan, catalog):
     question_ids = []
     question_texts = []
     for case in plan['cases']:
-        assert case['plan_status'] == 'proposed_not_executed', case['id']
+        assert case['plan_status'] in {'proposed_not_executed','partially_executed'}, case['id']
         assert len(case['questions']) >= 3, 'Faltan preguntas: ' + case['id']
         for question in case['questions']:
             assert question['id'].startswith(case['id'] + '.q'), question['id']
@@ -58,7 +58,7 @@ def render(plan, receipt):
         groups[case['category']].append(case)
     out = ['# De las fuentes a preguntas, herramientas y pruebas', '',
            f'Propuesta revisada el **{plan["reviewed_on"]}**, {plan["timezone"]}. **{receipt["sources"]} fuentes · {receipt["questions"]} preguntas · {receipt["categories"]} temáticas.**', '',
-           'El objetivo es descubrir relaciones inesperadas usando IA y comprobarlas con datos. Esta propuesta conecta cada fuente con preguntas específicas, skills reutilizables, herramientas/MCP y un arnés de evaluación. Las preguntas son hipótesis abiertas; no son hallazgos calculados.', '',
+           'El objetivo es descubrir relaciones inesperadas usando IA y comprobarlas con datos. Esta propuesta conecta cada fuente con preguntas específicas, skills reutilizables, herramientas/MCP y un arnés de evaluación. Las preguntas son hipótesis abiertas salvo el piloto retail Q1, ya ejecutado. Ver [avance de implementación](IMPLEMENTACION.md) y [resultado retail](../../examples/retail_discovery/README.md).', '',
            '**Interpretación de la sigla:** se toma «MCC» como **MCP**, Model Context Protocol. Si la intención era otra, sólo habría que ajustar la capa de herramientas.', '',
            '[Catálogo de fuentes](../CATALOGO_DATASETS_REALES.md) · [Tests y muestras existentes](../../source_tests/README.md) · [Guía de descubrimientos](../GUIA_DESCUBRIMIENTOS_IA.md) · [Plan JSON](../../catalogs/exploration_plan.json)', '',
            f'Base de la propuesta: [commit {plan["based_on"]["commit"][:8]}](https://github.com/{plan["based_on"]["repository"]}/commit/{plan["based_on"]["commit"]}). El JSON conserva los hashes del catálogo y las evidencias consultadas.', '',
@@ -83,7 +83,7 @@ def render(plan, receipt):
            '| ID | Skill | Situación | Cuándo conviene |', '| --- | --- | --- | --- |']
     for key, skill in plan['skills'].items():
         out.append(f'| [{key}](#skill-{key.lower()}) | {skill["name"]} | {skill["status"]} | {skill["priority"]} |')
-    out += ['', 'Las fichas siguientes son diseños de skills, no archivos SKILL.md instalados. Una skill se justifica si captura decisiones repetidas y errores recurrentes. Las capacidades generales de Data ya disponibles cubren buena parte de BASE.', '']
+    out += ['', 'La tabla distingue las cuatro skills instaladas de las especialidades propuestas; el detalle está en [implementación](IMPLEMENTACION.md). Una skill se justifica si captura decisiones repetidas y errores recurrentes. Las capacidades generales de Data ya disponibles cubren buena parte de BASE.', '']
     for key, skill in plan['skills'].items():
         out += [f'### skill-{key.lower()}', '', f'**{skill["name"]}**. {skill["scope"]}', '']
     out += ['## MCP y herramientas: situación real y propuesta', '',
@@ -122,7 +122,7 @@ def render(plan, receipt):
             '| Capa | Estado en este repo | Qué permite afirmar |', '| --- | --- | --- |',
             '| Acceso y ejemplos | Ya existen 72 fichas de prueba y nueve imágenes decodificadas. Cada petición conserva fecha y alcance. | Se recuperó el recurso/capa indicado, o se documentó el fallo. |',
             '| Integridad de este plan | Validada por el script de este documento. | Todas las fuentes tienen preguntas y rutas válidas a skills, herramientas y arneses. |',
-            '| Método y datos completos | Propuesto por fuente; pendiente de ejecutar para estas nuevas preguntas. | Grano, transformaciones y conclusiones resisten controles pertinentes. |',
+            '| Método y datos completos | Primer piloto retail Q1 ejecutado; otros casos pendientes. | Grano, transformaciones y conclusiones resisten controles pertinentes. |',
             '| Calidad de la IA | Pendiente por piloto. | Una evaluación independiente muestra errores, estabilidad y límites en la tarea concreta. |', '',
             'Como punto de partida, diseñar un conjunto manual pequeño y estratificado: páginas con OCR bueno/malo y pasajes ambiguos; imágenes con reproducciones distintas; ejercicios equivalentes y casos negativos. El tamaño y los umbrales se fijan según uso y riesgo antes de confirmar una hipótesis. Evaluar tanto errores como cobertura; una puntuación de un modelo que se evalúa a sí mismo no basta.', '',
             'Pruebas negativas útiles: HTML con HTTP 200 donde se esperaba CSV; CP con cero inicial perdido; unión que duplica gasto; miles de pesos interpretados como pesos; página ausente; negación omitida; distintas fotos de la misma obra repartidas entre entrenamiento y prueba; fórmula o audio ilegible; instrucciones incrustadas en el corpus tratadas como texto. Son casos a implementar, no tests de método ya pasados.', '',
@@ -152,8 +152,8 @@ def render(plan, receipt):
             f'| Tres preguntas como mínimo por fuente; IDs/textos únicos | PASS — {receipt["questions"]} preguntas |',
             '| Referencias a skills, herramientas y perfiles existentes en el plan | PASS |',
             '| Dependencias de otras fuentes pertenecen al catálogo | PASS |',
-            '| Todas las fichas conservan estado propuesto, insumos, controles y salida | PASS |', '',
-            'Esta comprobación valida el diseño y sus referencias. No certifica resultados analíticos ni disponibilidad futura, y no instala skills o MCP.', '',
+            '| Todas las fichas conservan estado propuesto o parcial, insumos, controles y salida | PASS |', '',
+            'Esta comprobación valida el diseño y sus referencias. El piloto retail registra por separado sus pruebas de método; no certifica disponibilidad futura ni instala MCP.', '',
             'Reproducir desde la raíz, sin acceso a red:', '', '```bash',
             'python scripts/render_exploration_plan.py --check',
             'python scripts/render_exploration_plan.py', '```', '',

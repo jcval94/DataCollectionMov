@@ -1,0 +1,11 @@
+{
+  "source_id": "uci-retail",
+  "source_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+  "input_scope": "local_snapshot",
+  "request": null,
+  "bytes": 45038760,
+  "sha256": "a2f79bbdd4463df6db8a3f5a50b9c980ae8f645a370bf5e2c0d6097f9e817b05",
+  "hash_scope": "complete_file",
+  "attribution": "Chen, D. (2015), Online Retail, UCI, doi:10.24432/C5BW33",
+  "license": "CC BY 4.0"
+}

@@ -2,7 +2,7 @@
 
 Propuesta revisada el **2026-11-04**, America/Mexico_City. **72 fuentes · 216 preguntas · 16 temáticas.**
 
-El objetivo es descubrir relaciones inesperadas usando IA y comprobarlas con datos. Esta propuesta conecta cada fuente con preguntas específicas, skills reutilizables, herramientas/MCP y un arnés de evaluación. Las preguntas son hipótesis abiertas; no son hallazgos calculados.
+El objetivo es descubrir relaciones inesperadas usando IA y comprobarlas con datos. Esta propuesta conecta cada fuente con preguntas específicas, skills reutilizables, herramientas/MCP y un arnés de evaluación. Las preguntas son hipótesis abiertas salvo el piloto retail Q1, ya ejecutado. Ver [avance de implementación](IMPLEMENTACION.md) y [resultado retail](../../examples/retail_discovery/README.md).
 
 **Interpretación de la sigla:** se toma «MCC» como **MCP**, Model Context Protocol. Si la intención era otra, sólo habría que ajustar la capa de herramientas.
 
@@ -41,18 +41,18 @@ Esta prioridad es una propuesta por acceso, utilidad didáctica y potencial de s
 | ID | Skill | Situación | Cuándo conviene |
 | --- | --- | --- | --- |
 | [BASE](#skill-base) | Análisis, calidad, validación y visualización | Reutilizar capacidades existentes de Data | Ahora |
-| [INGEST](#skill-ingest) | Integrar fuentes públicas con evidencia | Skill propuesta | Primera etapa |
-| [GEO](#skill-geo) | Analizar territorio y cruces en México | Skill propuesta | Primera etapa |
+| [INGEST](#skill-ingest) | Integrar fuentes públicas con evidencia | Skill instalada y guardada | Primera etapa |
+| [GEO](#skill-geo) | Analizar territorio y cruces en México | Skill instalada y guardada | Primera etapa |
 | [SURVEY](#skill-survey) | Analizar encuestas y movilidad social | Skill propuesta | Cuando se descarguen microdatos y diseño |
-| [CORPUS](#skill-corpus) | Investigar corpus históricos y textos con citas | Skill propuesta | Primera etapa |
-| [VERSION](#skill-version) | Comparar publicaciones y reformas con Git | Skill propuesta | Primera etapa |
+| [CORPUS](#skill-corpus) | Investigar corpus históricos y textos con citas | Skill instalada y guardada | Primera etapa |
+| [VERSION](#skill-version) | Comparar publicaciones y reformas con Git | Skill instalada y guardada | Primera etapa |
 | [VISION](#skill-vision) | Analizar imágenes, arte y etiquetas | Skill propuesta | Segunda etapa |
 | [AUDIO](#skill-audio) | Analizar grabaciones y sonidos | Skill propuesta | Cuando haya audio completo autorizado |
 | [MOTION](#skill-motion) | Analizar movimiento y baile | Skill propuesta | Cuando haya secuencias completas |
 | [GRAPH](#skill-graph) | Analizar redes y resolver entidades | Skill propuesta | Segunda etapa |
 | [MATH](#skill-math) | Evaluar soluciones y razonamiento matemático | Skill propuesta | Segunda etapa |
 
-Las fichas siguientes son diseños de skills, no archivos SKILL.md instalados. Una skill se justifica si captura decisiones repetidas y errores recurrentes. Las capacidades generales de Data ya disponibles cubren buena parte de BASE.
+La tabla distingue las cuatro skills instaladas de las especialidades propuestas; el detalle está en [implementación](IMPLEMENTACION.md). Una skill se justifica si captura decisiones repetidas y errores recurrentes. Las capacidades generales de Data ya disponibles cubren buena parte de BASE.
 
 ### skill-base
 
@@ -363,7 +363,7 @@ Estas rutas describen el contrato propuesto para futuros experimentos; el docume
 | --- | --- | --- |
 | Acceso y ejemplos | Ya existen 72 fichas de prueba y nueve imágenes decodificadas. Cada petición conserva fecha y alcance. | Se recuperó el recurso/capa indicado, o se documentó el fallo. |
 | Integridad de este plan | Validada por el script de este documento. | Todas las fuentes tienen preguntas y rutas válidas a skills, herramientas y arneses. |
-| Método y datos completos | Propuesto por fuente; pendiente de ejecutar para estas nuevas preguntas. | Grano, transformaciones y conclusiones resisten controles pertinentes. |
+| Método y datos completos | Primer piloto retail Q1 ejecutado; otros casos pendientes. | Grano, transformaciones y conclusiones resisten controles pertinentes. |
 | Calidad de la IA | Pendiente por piloto. | Una evaluación independiente muestra errores, estabilidad y límites en la tarea concreta. |
 
 Como punto de partida, diseñar un conjunto manual pequeño y estratificado: páginas con OCR bueno/malo y pasajes ambiguos; imágenes con reproducciones distintas; ejercicios equivalentes y casos negativos. El tamaño y los umbrales se fijan según uso y riesgo antes de confirmar una hipótesis. Evaluar tanto errores como cobertura; una puntuación de un modelo que se evalúa a sí mismo no basta.
@@ -2368,9 +2368,9 @@ En cada ficha, la fecha y estado de acceso proceden de las pruebas guardadas; no
 | Tres preguntas como mínimo por fuente; IDs/textos únicos | PASS — 216 preguntas |
 | Referencias a skills, herramientas y perfiles existentes en el plan | PASS |
 | Dependencias de otras fuentes pertenecen al catálogo | PASS |
-| Todas las fichas conservan estado propuesto, insumos, controles y salida | PASS |
+| Todas las fichas conservan estado propuesto o parcial, insumos, controles y salida | PASS |
 
-Esta comprobación valida el diseño y sus referencias. No certifica resultados analíticos ni disponibilidad futura, y no instala skills o MCP.
+Esta comprobación valida el diseño y sus referencias. El piloto retail registra por separado sus pruebas de método; no certifica disponibilidad futura ni instala MCP.
 
 Reproducir desde la raíz, sin acceso a red:
 

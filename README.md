@@ -194,3 +194,7 @@ historico = pd.concat((pd.read_csv(path) for path in paths), ignore_index=True)
 ```
 
 La guia completa de lectura por tabla esta en `docs/README_LECTURA_TABLAS.md`.
+
+## Primer descubrimiento ejecutado
+
+Ya está disponible el [piloto retail: bruto frente a neto](examples/retail_discovery/README.md), con 541,909 filas leídas, controles, ranking, sensibilidad a duplicados y gráfica incrustada. El [avance de implementación](docs/exploration/IMPLEMENTACION.md) documenta las cuatro skills instaladas y el primer arnés ejecutable.

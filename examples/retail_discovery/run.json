@@ -1,0 +1,21 @@
+{
+  "question_id": "uci-retail.q1",
+  "status": "descriptive_measured",
+  "started_at_utc": "2026-11-05T04:46:49+00:00",
+  "finished_at_utc": "2026-11-05T04:46:58+00:00",
+  "script_sha256": "8a4004cc9891249c63a79de7c6c42f2086d6fd3e6f3e13fbc358b01537ef4798",
+  "policy": "Product-like StockCode: five digits plus optional letters; positive price, nonzero integer quantity. Quarantine positive quantity on C invoice. Retain missing customers and exact duplicate lines; sensitivity removes duplicates.",
+  "currency": "GBP",
+  "test_status": "PASS",
+  "tests": [
+    "exact_decimal_arithmetic",
+    "signed_credits",
+    "duplicate_sensitivity",
+    "C_positive_quarantine",
+    "product_scope",
+    "missing_customers_retained",
+    "ranking_reversal",
+    "invalid_schema_rejected"
+  ],
+  "model_used": false
+}

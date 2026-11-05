@@ -8,6 +8,6 @@
   "source_dependencies": "PASS",
   "question_uniqueness": "PASS",
   "scope": "Validación estructural del plan, no validación de respuestas ni instalación de herramientas",
-  "plan_sha256": "343ebd6bc57eb7d44874db730af873df8ee9c22466b9067d116ff0fa03f30eca",
-  "validator_sha256": "46731d7eb28a350b0df8ffb69b5262f6583b9428ac51bccc4c51a8b854271979"
+  "plan_sha256": "bbcf15cd237bb9f2418aee41aedf0c2216e261bdf0f1668d8f99a99421e1de13",
+  "validator_sha256": "7cb62889681ba4ea4ddbecc1c961b0e186ca0af7f9592774a3e75adaf9c6031e"
 }
