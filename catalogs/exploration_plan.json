@@ -1,0 +1,4186 @@
+{
+  "schema_version": "1.0",
+  "title": "Plan de exploración con skills, MCP/herramientas y arneses",
+  "reviewed_on": "2026-11-04",
+  "timezone": "America/Mexico_City",
+  "scope": "Propuesta para las 72 fuentes del catálogo. Preguntas abiertas y contratos recomendados; no instala skills/MCP, no ejecuta análisis ni modifica pruebas previas.",
+  "terminology": {
+    "MCC": "Se interpreta como MCP (Model Context Protocol). Si el autor se refería a otra sigla, revisar sólo la capa de herramientas.",
+    "skill": "Procedimiento reutilizable y criterios de trabajo.",
+    "MCP": "Interfaz para conectar al agente con herramientas/contexto; una API pública no es automáticamente un MCP.",
+    "harness": "Arnés de ejecución (E1–E4): coordina herramientas, estado y artefactos. Perfiles de validación (H0 y perfiles por método): fijan pruebas y aceptación."
+  },
+  "common_skills": [
+    "BASE",
+    "INGEST"
+  ],
+  "common_tools": [
+    "REPO",
+    "FILES",
+    "HTTP"
+  ],
+  "common_harness": "H0",
+  "skills": {
+    "BASE": {
+      "name": "Análisis, calidad, validación y visualización",
+      "status": "Reutilizar capacidades existentes de Data",
+      "priority": "Ahora",
+      "scope": "Definir pregunta y denominador; calcular con código; comprobar sesgos, explicaciones alternativas y comunicar evidencia. Equivalentes disponibles: analyze-data-quality, product-business-analysis, validate-data, visualize-data."
+    },
+    "INGEST": {
+      "name": "Integrar fuentes públicas con evidencia",
+      "status": "Skill propuesta",
+      "priority": "Primera etapa",
+      "scope": "Elegir recurso frente a portal, entender diccionario/licencia, capturar respuesta original y versión, paginar, registrar fallos, producir muestra y contrato de datos."
+    },
+    "GEO": {
+      "name": "Analizar territorio y cruces en México",
+      "status": "Skill propuesta",
+      "priority": "Primera etapa",
+      "scope": "CP, CVEGEO, CCT, CLUES y CLEE; CRS, puntos/polígonos, cambios de límites, accesibilidad y sensibilidad a la unidad territorial."
+    },
+    "SURVEY": {
+      "name": "Analizar encuestas y movilidad social",
+      "status": "Skill propuesta",
+      "priority": "Cuando se descarguen microdatos y diseño",
+      "scope": "Ponderadores, estratos, UPM, dominios, incertidumbre, retrospectiva, armonización de olas y límites de inferencia."
+    },
+    "CORPUS": {
+      "name": "Investigar corpus históricos y textos con citas",
+      "status": "Skill propuesta",
+      "priority": "Primera etapa",
+      "scope": "Edición, OCR, página, género, fecha, voces editoriales, negación, anacronismos, copias y contraejemplos. En textos modernos, adaptar taxonomía, idioma y selección del corpus."
+    },
+    "VERSION": {
+      "name": "Comparar publicaciones y reformas con Git",
+      "status": "Skill propuesta",
+      "priority": "Primera etapa",
+      "scope": "Documentos inmutables, artículos y transitorios, fecha de publicación frente a vigencia, diff textual/semántico y cita a la fuente oficial. Git es herramienta pedagógica y de trazabilidad."
+    },
+    "VISION": {
+      "name": "Analizar imágenes, arte y etiquetas",
+      "status": "Skill propuesta",
+      "priority": "Segunda etapa",
+      "scope": "Derechos por imagen, decodificación, obra frente a reproducción, paletas, motivos, revisión humana y desacuerdos. Distinguir pigmento declarado de color de píxel."
+    },
+    "AUDIO": {
+      "name": "Analizar grabaciones y sonidos",
+      "status": "Skill propuesta",
+      "priority": "Cuando haya audio completo autorizado",
+      "scope": "Licencia, decodificación, tasa de muestreo, duración, ruido, anotación temporal y particiones por sitio/fecha/grabador. Un sonograma no sustituye al audio."
+    },
+    "MOTION": {
+      "name": "Analizar movimiento y baile",
+      "status": "Skill propuesta",
+      "priority": "Cuando haya secuencias completas",
+      "scope": "Esqueleto, articulaciones, coordenadas, FPS, sincronía musical, partición por bailarín/música y comparación de movimiento sin inferir identidad o salud."
+    },
+    "GRAPH": {
+      "name": "Analizar redes y resolver entidades",
+      "status": "Skill propuesta",
+      "priority": "Segunda etapa",
+      "scope": "Identificadores y alias, relaciones con significado explícito, grafos dirigidos/bipartitos, centralidad y pruebas al cambiar la definición de arista."
+    },
+    "MATH": {
+      "name": "Evaluar soluciones y razonamiento matemático",
+      "status": "Skill propuesta",
+      "priority": "Segunda etapa",
+      "scope": "Referencia comprobable, respuesta y unidades, variantes de enunciado, operaciones verificables, separación de evaluación y ejemplos conocidos; no evaluar alumnos con datos inexistentes."
+    }
+  },
+  "tools": {
+    "REPO": {
+      "name": "GitHub",
+      "kind": "Conector disponible; servidor MCP oficial como alternativa para otros clientes",
+      "status": "Conector utilizado en este proyecto; no se instaló otro servidor",
+      "use": "Leer versiones y guardar código, manifiestos, ejemplos y README. Para investigación, limitar herramientas al alcance necesario; publicación mediante operación separada autorizada.",
+      "references": [
+        "github-mcp"
+      ]
+    },
+    "FILES": {
+      "name": "Archivos y ejecución de Python/SQL",
+      "kind": "Herramientas nativas; Filesystem MCP de referencia opcional",
+      "status": "Acceso local y Python disponibles; servidor Filesystem adicional no configurado",
+      "use": "Trabajar sobre snapshots acotados y ejecutar cálculos reproducibles. pandas/stdlib ya usados; DuckDB es una opción para consultas locales, no un MCP instalado.",
+      "references": [
+        "filesystem-mcp",
+        "duckdb-spatial"
+      ]
+    },
+    "HTTP": {
+      "name": "HTTP/API del productor + Fetch MCP opcional",
+      "kind": "Adaptadores públicos por fuente; Fetch es un MCP de referencia",
+      "status": "El repo ya tiene sondas HTTP; no hay MCP de INEGI/DOF/BTS configurados",
+      "use": "Usar API/CSV/JSON/XML original para datos; Fetch para lectura de páginas. Preservar bytes originales y no sustituirlos por una conversión a Markdown.",
+      "references": [
+        "fetch-mcp"
+      ]
+    },
+    "DOC": {
+      "name": "Lectores PDF/XML/IIIF; Docling MCP opcional",
+      "kind": "pypdf/lectores ya usados; Docling tiene servidor MCP documentado",
+      "status": "pypdf ya usado; Docling MCP propuesto, sin instalar ni evaluar aquí",
+      "use": "Recuperar texto, tablas, páginas e imágenes con localizadores. Usar OCR cuando haga falta y contrastarlo con páginas reales.",
+      "references": [
+        "docling-mcp"
+      ]
+    },
+    "MEDIA": {
+      "name": "Herramientas de imagen, audio y movimiento",
+      "kind": "Pillow y procesadores locales; futuras herramientas MCP sólo si aportan reutilización",
+      "status": "Pillow ya verificó nueve imágenes; audio/pose completos y sus dependencias deben comprobarse caso por caso",
+      "use": "Decodificar el medio y generar características con parámetros guardados. No se presupone un MCP universal de visión, audio o biomecánica.",
+      "references": []
+    },
+    "SEARCH": {
+      "name": "Búsqueda web con fuentes primarias",
+      "kind": "Herramienta de búsqueda disponible",
+      "status": "Disponible en este trabajo",
+      "use": "Encontrar documentación, contexto histórico y fuentes de contraste; los resultados de búsqueda son pistas, no sustitutos de pasajes/documentos completos.",
+      "references": []
+    }
+  },
+  "harnesses": {
+    "H0": {
+      "name": "Base de evidencia y ejecución",
+      "checks": [
+        "Pregunta, población/corpus, unidad, periodo y exclusiones declarados antes del cálculo; separar exploración de confirmación.",
+        "URL, fecha UTC, edición, licencia, respuesta original, hash completo o alcance de prefijo y versión del código/prompt/modelo cuando se use.",
+        "Cada cifra enlaza al cálculo y snapshot; cada afirmación textual a documento/página o registro. Registrar ausencia de evidencia y desacuerdos.",
+        "Comparar con una referencia sencilla; buscar contraejemplos, medir sensibilidad y corregir multiplicidad si se exploran muchas asociaciones.",
+        "Separar prueba de acceso, contrato, método y evaluación de IA. HTTP 200 o nueve imágenes decodificadas no acreditan un análisis.",
+        "Corpus externo se trata como datos; un pasaje no cambia las instrucciones del agente. Respetar licencia, cuotas y autenticación del productor."
+      ],
+      "output": "run.json + inputs/manifest.json + contrato.json + métricas verificables + evidencia + README de resultados"
+    },
+    "TAB": {
+      "name": "Tablas, eventos y series",
+      "checks": [
+        "Grano, identificadores, duplicados, nulos, unidades, zona horaria y cobertura temporal.",
+        "Unión con cardinalidad comprobada; no multiplicar importes ni confundir fila con evento.",
+        "Denominadores y ventanas comparables; separar cero de no observado y cambio de esquema de cambio real."
+      ],
+      "output": "Tabla depurada + perfil de calidad + consulta/cálculo y sensibilidad"
+    },
+    "FIN": {
+      "name": "Presupuesto y conciliación financiera",
+      "checks": [
+        "Pesos/miles de pesos y precios nominales/reales; propuesta, aprobado, modificado, devengado y pagado separados.",
+        "Periodo, clasificación y corte compatibles; no sumar cortes acumulados ni momentos contables.",
+        "Cuadres según diccionario, sin imponer identidades improcedentes; discrepancias conservan cifra original, documento y página."
+      ],
+      "output": "Tabla de conceptos y unidades + conciliación de diferencias + páginas de respaldo"
+    },
+    "GEO": {
+      "name": "Geografía y accesibilidad",
+      "checks": [
+        "CRS, latitud/longitud, geometría válida, bordes, solapes y edición; CP/CVEGEO como texto.",
+        "Cardinalidad espacial y sensibilidad a radio, unidad territorial y cambios de límites.",
+        "Distancia caminable requiere red; prorrateo por área supone uniformidad y se identifica como estimación."
+      ],
+      "output": "Cruce auditado + mapa + no emparejados + sensibilidad territorial"
+    },
+    "SURVEY": {
+      "name": "Encuestas con diseño",
+      "checks": [
+        "Aplicar ponderadores, estratos, UPM y dominios publicados; intervalos con diseño, no remuestreo ingenuo de filas.",
+        "Denominador, no respuesta, tamaño sin ponderar y celdas pequeñas visibles.",
+        "Armonizar conceptos y cortes; no tratar olas independientes como panel ni generar estimaciones por CP sin dominio."
+      ],
+      "output": "Estimaciones ponderadas con incertidumbre + diccionario de armonización"
+    },
+    "TEXT": {
+      "name": "Texto y corpus documental",
+      "checks": [
+        "Obra/edición/página o ID/offset; separar contenido de encabezados, licencia, traducción y notas editoriales.",
+        "Conjunto manual de pasajes positivos, negativos y ambiguos para extracción/clasificación; medir precisión, recall y errores OCR cuando aplique.",
+        "Afirmaciones con cita localizada, autores/obras independientes y contraejemplos; un texto prescriptivo no prueba práctica general."
+      ],
+      "output": "Corpus delimitado + pasajes localizados + etiquetas revisadas + matriz de errores"
+    },
+    "LAW": {
+      "name": "Documentos, cambios y vigencia",
+      "checks": [
+        "Identificador y versión del documento, artículo, transitorio y fecha de publicación frente a entrada en vigor.",
+        "Diff cotejado con original oficial; distinguir cambio de forma/OCR y cambio sustantivo.",
+        "Casos manuales con reforma parcial, derogación y vigencia diferida; commits pedagógicos no simulan una consolidación jurídica oficial."
+      ],
+      "output": "Antes/después con localizadores + línea temporal de vigencia + diff explicable"
+    },
+    "VISION": {
+      "name": "Imagen y comparación visual",
+      "checks": [
+        "Licencia por medio, archivo completo decodificado, dimensiones, perfil/reproducción y obra/versión.",
+        "Muestra manual estratificada y desacuerdos; comparar extracción visual con metadatos/etiquetas y evitar duplicados entre particiones.",
+        "Normalización y sensibilidad a recorte, reproducción e iluminación; no atribuir intención artística o pigmentos a píxeles."
+      ],
+      "output": "Galería con IDs + características + revisión humana y errores por tipo de imagen"
+    },
+    "AUDIO": {
+      "name": "Audio y eventos sonoros",
+      "checks": [
+        "Audio completo decodificado: formato, duración, canales, tasa de muestreo y licencia.",
+        "Anotaciones temporales verificadas; ruido y silencio; comparación con referencia sencilla.",
+        "Separación por sitio/fecha/grabador e individuo cuando sea conocido; métricas por clase y calidad, sin fuga por clips vecinos."
+      ],
+      "output": "Clips autorizados/IDs + espectrogramas + anotaciones + evaluación por grupos"
+    },
+    "MOTION": {
+      "name": "Pose, secuencias y sincronía",
+      "checks": [
+        "ASF/esqueleto y orden de canales, articulaciones, unidades, FPS, cámara y sistema de coordenadas.",
+        "Alineación de música y movimiento, datos faltantes, normalización corporal y referencia simple.",
+        "Particiones por bailarín, canción y secuencia; sensibilidad a FPS/esqueleto y validación visual de animación."
+      ],
+      "output": "Secuencias comparables + animación/recurso enlazado + métricas temporales"
+    },
+    "GRAPH": {
+      "name": "Redes y entidades",
+      "checks": [
+        "Significado de nodo/arista, dirección, peso, periodo y cobertura; alias con IDs verificables.",
+        "Duplicados y versiones resueltos; revisar aislados, relaciones faltantes y emparejamientos ambiguos.",
+        "Centralidad/comunidades frente a frecuencia base y otra definición de relación; red registrada no equivale a red completa."
+      ],
+      "output": "Tabla de entidades/aristas + conflictos de identidad + métricas con sensibilidad"
+    },
+    "MATH": {
+      "name": "Evaluación matemática",
+      "checks": [
+        "Problema/edición/split identificados; respuesta y operaciones de referencia verificadas.",
+        "Normalizar sólo equivalencias válidas, unidades y tolerancia aplicable; revisar fallos del parser antes de culpar al modelo.",
+        "Contrastar enunciados equivalentes, distractores y problemas nuevos; documentar contaminación y no usar sólo autoevaluación del mismo modelo."
+      ],
+      "output": "Problemas con referencia + respuestas evaluadas + errores por habilidad y consistencia"
+    }
+  },
+  "references": [
+    {
+      "id": "mcp-architecture",
+      "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+      "purpose": "MCP conecta aplicaciones con herramientas/contexto; el protocolo no define por sí mismo un arnés analítico."
+    },
+    {
+      "id": "github-mcp",
+      "url": "https://github.com/github/github-mcp-server/blob/main/docs/server-configuration.md",
+      "purpose": "Servidor oficial GitHub, selección de herramientas y modo de sólo lectura."
+    },
+    {
+      "id": "fetch-mcp",
+      "url": "https://github.com/modelcontextprotocol/servers/blob/main/src/fetch/README.md",
+      "purpose": "Fetch MCP de referencia para recuperación de contenido web; leer el alcance y límites de la herramienta."
+    },
+    {
+      "id": "filesystem-mcp",
+      "url": "https://github.com/modelcontextprotocol/servers/blob/main/src/filesystem/README.md",
+      "purpose": "Servidor Filesystem de referencia con directorios permitidos; opcional frente a herramientas nativas."
+    },
+    {
+      "id": "docling-mcp",
+      "url": "https://docling-project.github.io/docling/usage/mcp/",
+      "purpose": "MCP documentado de Docling para conversión de documentos; propuesto, no probado en este repo."
+    },
+    {
+      "id": "duckdb-spatial",
+      "url": "https://duckdb.org/docs/current/core_extensions/spatial/overview",
+      "purpose": "Opción de SQL local con procesamiento espacial. Una biblioteca o extensión no equivale a un MCP configurado."
+    },
+    {
+      "id": "mcp-inspector",
+      "url": "https://modelcontextprotocol.io/docs/tools/inspector",
+      "purpose": "Probar conexión, descubrimiento y llamadas MCP; no sustituye validar datos, método o conclusiones."
+    },
+    {
+      "id": "langgraph-runtime",
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "purpose": "Runtime opcional de orquestación con estado, persistencia y revisión humana para corpus largos; no es necesario para una exploración acotada."
+    }
+  ],
+  "cases": [
+    {
+      "id": "rifa-235-premios",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "rifa-235-premios.q1",
+          "text": "¿Cómo se distribuyen las terminaciones y rangos de los números premiados frente a simulaciones que reproduzcan las reglas del GSE 235?"
+        },
+        {
+          "id": "rifa-235-premios.q2",
+          "text": "¿Qué errores de OCR cambiarían un número premiado o su importe y cuánto varía el análisis al cotejarlos con la página original?"
+        },
+        {
+          "id": "rifa-235-premios.q3",
+          "text": "¿Coinciden número de premios e importe agregado de la lista con lo reportado en la auditoría, usando el mismo corte y concepto?"
+        }
+      ],
+      "additional_source_ids": [
+        "rifa-235-asf"
+      ],
+      "needed_inputs": "Recuperar la lista oficial completa y reglas del sorteo; para Q3, páginas equivalentes de ASF.",
+      "specific_checks": [
+        "Número de billete como texto con longitud original.",
+        "Cantidad de premios y unidad monetaria cotejadas con reglas, sin inferir ventas o cobros."
+      ],
+      "first_output": "Lista revisada por página, distribución simulada y conciliación de premios.",
+      "name": "GSE 235: lista oficial de premios",
+      "category": "Rifa del avión",
+      "grain": "Billete premiado",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:41+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#rifa-235-premios",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "rifa-235-premios.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "rifa-235-reportes",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "FIN",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "rifa-235-reportes.q1",
+          "text": "¿Cómo cambió el balance comunicado de la rifa entre publicaciones y qué parte se explica por fecha de corte o definición?"
+        },
+        {
+          "id": "rifa-235-reportes.q2",
+          "text": "¿Qué escuelas u hospitales beneficiarios pueden enlazarse de forma documentada a CCT o CLUES y dónde quedan los casos ambiguos?"
+        },
+        {
+          "id": "rifa-235-reportes.q3",
+          "text": "¿Qué diferencia aparece entre beneficio anunciado, recursos transferidos y uso comprobado cuando los documentos permiten distinguirlos?"
+        }
+      ],
+      "additional_source_ids": [
+        "sep-cct",
+        "salud-clues",
+        "rifa-235-asf"
+      ],
+      "needed_inputs": "Comunicados y reportes completos de varios cortes; documentos de transferencia/uso para Q3, si se publican.",
+      "specific_checks": [
+        "No emparejar instituciones sólo por parecido de nombre.",
+        "Anuncio, transferencia y uso son hitos distintos; falta de documento no equivale a falta de entrega."
+      ],
+      "first_output": "Cronología de cifras y beneficiarios con evidencia y nivel de comprobación.",
+      "name": "GSE 235: balance y beneficiarios publicados",
+      "category": "Rifa del avión",
+      "grain": "Concepto financiero o institución, separado por documento",
+      "latest_source_test_status": "BLOCKED",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:41+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#rifa-235-reportes",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "rifa-235-reportes.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "rifa-235-asf",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "FIN"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "rifa-235-asf.q1",
+          "text": "¿Qué cambia en el remanente al incorporar premios, gastos y conceptos que los balances públicos presentan por separado?"
+        },
+        {
+          "id": "rifa-235-asf.q2",
+          "text": "¿Qué diferencias de cifras dentro del informe se deben a unidades o cortes y cuáles quedan sin conciliar?"
+        },
+        {
+          "id": "rifa-235-asf.q3",
+          "text": "¿Cómo se distribuyen billetes y premios entre las categorías de tenedores o ganadores que realmente distingue la auditoría?"
+        }
+      ],
+      "additional_source_ids": [
+        "rifa-235-reportes"
+      ],
+      "needed_inputs": "PDF completo y cuadros/páginas del resultado pertinente; contraste con reportes públicos para Q1.",
+      "specific_checks": [
+        "Convertir miles de pesos de manera explícita.",
+        "Conservar valores originales y no interpretar una discrepancia de extracción como irregularidad."
+      ],
+      "first_output": "Libro de conciliación reproducible con página y unidad por cifra.",
+      "name": "GSE 235: auditoría de gestión financiera",
+      "category": "Rifa del avión",
+      "grain": "Concepto o categoría del resultado 4",
+      "latest_source_test_status": "DOCUMENT_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:41+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#rifa-235-asf",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "rifa-235-asf.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "inegi-indicadores-api",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-indicadores-api.q1",
+          "text": "¿Qué indicadores de actividad, empleo o precios cambian antes o después de la demanda de movilidad, sin confundir coincidencia con causalidad?"
+        },
+        {
+          "id": "inegi-indicadores-api.q2",
+          "text": "¿Cuánto se modifica una tendencia si usamos tasas reales, índices o valores absolutos en lugar de mezclar sus unidades?"
+        },
+        {
+          "id": "inegi-indicadores-api.q3",
+          "text": "¿Qué series cambian al recapturarlas y qué efecto tienen esas revisiones en una conclusión previamente guardada?"
+        }
+      ],
+      "additional_source_ids": [
+        "metrobus-gtfs",
+        "ecobici-viajes"
+      ],
+      "needed_inputs": "Acceso autorizado a indicadores concretos, metadatos y observaciones; varios snapshots para Q3. Movilidad en periodos compatibles para Q1.",
+      "specific_checks": [
+        "Unidad, base, frecuencia, área y ajuste estacional explícitos.",
+        "La profundidad histórica debe corresponder a la movilidad efectivamente recolectada."
+      ],
+      "first_output": "Panel pequeño de indicadores comparables y bitácora de revisiones.",
+      "name": "API del Banco de Indicadores",
+      "category": "INEGI y contexto",
+      "grain": "Indicador × área × periodo",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:41+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-indicadores-api",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-indicadores-api.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-denue",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-denue.q1",
+          "text": "¿Qué zonas combinan muchos restaurantes o escuelas con poca cercanía a estaciones del Metrobús?"
+        },
+        {
+          "id": "inegi-denue.q2",
+          "text": "¿La variedad de servicios cambia más entre códigos postales o dentro de cada CP al comparar recorridos a pie?"
+        },
+        {
+          "id": "inegi-denue.q3",
+          "text": "¿Qué altas, bajas o cambios de actividad persisten entre ediciones después de resolver cambios de identificador y cobertura?"
+        }
+      ],
+      "additional_source_ids": [
+        "metrobus-gtfs",
+        "sepomex-codigos-postales"
+      ],
+      "needed_inputs": "DENUE de cobertura delimitada, estaciones y red peatonal para distancias caminables; ediciones comparables para Q3.",
+      "specific_checks": [
+        "CLEE/ID y edición, SCIAN y estrato de personal.",
+        "El snapshot integrado no es todo DENUE; cercanía geométrica no es recorrido peatonal."
+      ],
+      "first_output": "Mapa de oferta y accesibilidad con sensibilidad a radio y cobertura.",
+      "name": "DENUE: establecimientos y actividad económica",
+      "category": "INEGI y contexto",
+      "grain": "Establecimiento por edición/snapshot",
+      "latest_source_test_status": "CACHED_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:45+00:00",
+        "2026-11-05T00:07:48+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-denue",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay datos del repo; fijar snapshot, cobertura y versión antes de ampliar el análisis.",
+      "first_question_id": "inegi-denue.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-censo-2020-ageb",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-censo-2020-ageb.q1",
+          "text": "¿Dónde coinciden población con discapacidad o mayor edad y baja proximidad al transporte disponible en la fecha estudiada?"
+        },
+        {
+          "id": "inegi-censo-2020-ageb.q2",
+          "text": "¿Qué zonas tienen más población en edad escolar que oferta educativa cercana, sin asumir que toda escuela atiende al mismo nivel?"
+        },
+        {
+          "id": "inegi-censo-2020-ageb.q3",
+          "text": "¿Cuánto cambia un ranking de rezago al usar población total, proporciones o agregación a CP mediante reglas espaciales explícitas?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-marco-geoestadistico",
+        "sep-cct",
+        "metrobus-gtfs",
+        "cdmx-codigos-postales-poligonos"
+      ],
+      "needed_inputs": "Indicadores y diccionario del Censo, cartografía compatible y catálogo escolar/estaciones fechado; estimaciones espaciales identificadas como tales.",
+      "specific_checks": [
+        "No sumar totales con manzanas ni tratar valores reservados como cero.",
+        "Censo 2020 y oferta de otro año no son una fotografía simultánea."
+      ],
+      "first_output": "Brechas territoriales con denominadores y prueba de agregación.",
+      "name": "Censo 2020: indicadores por AGEB y manzana urbana",
+      "category": "INEGI y contexto",
+      "grain": "Área geográfica × indicador; separar agregados",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:45+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-censo-2020-ageb",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-censo-2020-ageb.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-marco-geoestadistico",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "GEO",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-marco-geoestadistico.q1",
+          "text": "¿Qué cambios aparentes de población o pobreza desaparecen al homologar límites territoriales entre ediciones?"
+        },
+        {
+          "id": "inegi-marco-geoestadistico.q2",
+          "text": "¿Qué estaciones, escuelas o establecimientos cambian de asignación territorial al usar puntos precisos en lugar de centroides?"
+        },
+        {
+          "id": "inegi-marco-geoestadistico.q3",
+          "text": "¿Dónde los cruces entre CP, AGEB y municipio generan correspondencias múltiples que invalidan una unión uno a uno?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-censo-2020-ageb",
+        "coneval-pobreza-municipal",
+        "cdmx-codigos-postales-poligonos",
+        "sep-cct",
+        "metrobus-gtfs"
+      ],
+      "needed_inputs": "Capas y equivalencias de las ediciones comparadas, puntos fechados y capa postal cuando proceda.",
+      "specific_checks": [
+        "CVEGEO con nivel y edición, CRS y geometrías.",
+        "La equivalencia por área no prueba equivalencia por población."
+      ],
+      "first_output": "Tabla de correspondencias con ambigüedades y mapas de cambios.",
+      "name": "Marco Geoestadístico y equivalencias",
+      "category": "INEGI y contexto",
+      "grain": "Polígono, localidad o clave por edición",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:45+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-marco-geoestadistico",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-marco-geoestadistico.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-entorno-urbano-2020",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-entorno-urbano-2020.q1",
+          "text": "¿En qué entornos escolares registrados en 2020 faltan banquetas, rampas o alumbrado en combinaciones especialmente problemáticas?"
+        },
+        {
+          "id": "inegi-entorno-urbano-2020.q2",
+          "text": "¿Una estación cercana sigue siendo poco accesible cuando se considera la infraestructura peatonal del entorno?"
+        },
+        {
+          "id": "inegi-entorno-urbano-2020.q3",
+          "text": "¿Qué brechas entre territorios persisten al cambiar la unidad de comparación de manzana a corredor alrededor de una estación?"
+        }
+      ],
+      "additional_source_ids": [
+        "sep-cct",
+        "metrobus-gtfs",
+        "inegi-marco-geoestadistico"
+      ],
+      "needed_inputs": "Tablas y cartografía del entorno urbano, definiciones por variable y escuelas/estaciones con corte compatible.",
+      "specific_checks": [
+        "Separar vialidad y manzana y respetar códigos no disponibles.",
+        "Describir 2020; verificar en campo si se quiere hablar de accesibilidad actual."
+      ],
+      "first_output": "Tipología de barreras registradas y mapa de entornos prioritarios.",
+      "name": "Características del entorno urbano 2020",
+      "category": "INEGI y contexto",
+      "grain": "Manzana y vialidad, tablas distintas",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:45+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-entorno-urbano-2020",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-entorno-urbano-2020.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-enigh-2024",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "SURVEY"
+      ],
+      "harnesses": [
+        "H0",
+        "SURVEY",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-enigh-2024.q1",
+          "text": "¿En qué grupos de ingreso el gasto conjunto de transporte y educación deja menos margen para otros gastos del hogar?"
+        },
+        {
+          "id": "inegi-enigh-2024.q2",
+          "text": "¿La carga de transporte cambia entre hogares con estudiantes, personas ocupadas o ambos, dentro de dominios representativos?"
+        },
+        {
+          "id": "inegi-enigh-2024.q3",
+          "text": "¿Qué cambia en las brechas al medir gasto absoluto, proporción del ingreso y proporción del gasto total?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Microdatos relacionados de ENIGH, diccionarios y variables de diseño; decisiones sobre ingresos nulos y gasto en especie.",
+      "specific_checks": [
+        "No duplicar ingreso del hogar al unir tablas de personas o gastos.",
+        "Pesos, dominios, intervalos y denominadores explícitos; no estimar por CP."
+      ],
+      "first_output": "Presupuestos domésticos ponderados y sensibilidad a la definición de carga.",
+      "name": "ENIGH 2024: ingresos y gastos del hogar",
+      "category": "INEGI y contexto",
+      "grain": "Vivienda, hogar, persona, ingreso o gasto; tablas relacionadas",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:48+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-enigh-2024",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-enigh-2024.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-enoe",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "SURVEY"
+      ],
+      "harnesses": [
+        "H0",
+        "SURVEY",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-enoe.q1",
+          "text": "¿En qué edades y niveles educativos la informalidad convive con jornadas extensas y bajos ingresos laborales?"
+        },
+        {
+          "id": "inegi-enoe.q2",
+          "text": "¿Cómo cambia una brecha de ingreso al comparar por hora en lugar de por mes, sin interpretar la comparación como causal?"
+        },
+        {
+          "id": "inegi-enoe.q3",
+          "text": "¿Qué ocupaciones muestran deterioro o recuperación que persiste al controlar composición y cambios de levantamiento?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Microdatos y diseño de trimestres comparables, diccionario de ocupaciones y reglas de comparabilidad.",
+      "specific_checks": [
+        "Ingreso no declarado, cero e ingreso de no ocupados se distinguen.",
+        "Comparación transversal por trimestre; vínculos longitudinales sólo si se valida el panel rotatorio."
+      ],
+      "first_output": "Perfiles laborales con incertidumbre y descomposición descriptiva.",
+      "name": "ENOE: empleo, ingresos laborales e informalidad",
+      "category": "INEGI y contexto",
+      "grain": "Persona y hogar por trimestre",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:48+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-enoe",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-enoe.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-eod-zmvm-2017",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "SURVEY",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "SURVEY",
+        "GEO",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-eod-zmvm-2017.q1",
+          "text": "¿Quiénes combinan viajes de estudio o trabajo largos con más transbordos en la ZMVM de 2017?"
+        },
+        {
+          "id": "inegi-eod-zmvm-2017.q2",
+          "text": "¿Cómo difieren las cadenas de viajes por cuidados, compras y empleo entre grupos comparables?"
+        },
+        {
+          "id": "inegi-eod-zmvm-2017.q3",
+          "text": "¿Qué pares de distritos muestran trayectos relativamente cortos en distancia pero largos en tiempo reportado?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Tablas de hogares, personas y viajes, diseño y cartografía EOD; calcular distancia sólo con geografía admisible.",
+      "specific_checks": [
+        "Conservar pesos al cambiar de persona a viaje.",
+        "No inferir hábitos actuales ni equiparar distrito EOD con CP."
+      ],
+      "first_output": "Matriz OD y tipologías de cadenas de viaje con tiempos ponderados.",
+      "name": "Encuesta Origen Destino ZMVM 2017",
+      "category": "INEGI y contexto",
+      "grain": "Hogar, persona y viaje",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:49+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-eod-zmvm-2017",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-eod-zmvm-2017.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "sepomex-codigos-postales",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "sepomex-codigos-postales.q1",
+          "text": "¿Qué CP agrupan más asentamientos y qué sesgos produciría asumir que CP y colonia son equivalentes?"
+        },
+        {
+          "id": "sepomex-codigos-postales.q2",
+          "text": "¿En qué entidades la normalización de nombres cambia más los cruces de domicilios con otros catálogos?"
+        },
+        {
+          "id": "sepomex-codigos-postales.q3",
+          "text": "¿Qué indicadores territoriales cambian al respetar correspondencias CP–asentamiento múltiples frente a quedarse con la primera fila?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Catálogo completo y versiones, ejemplos de domicilios públicos sin datos personales; capas postales sólo para análisis espacial.",
+      "specific_checks": [
+        "CP de cinco caracteres y relación muchos a muchos.",
+        "No deducir polígonos ni coordenadas a partir del catálogo nominal."
+      ],
+      "first_output": "Auditoría de llaves postales y comparación de estrategias de cruce.",
+      "name": "Catálogo Nacional de Códigos Postales",
+      "category": "Código postal y territorio",
+      "grain": "Asentamiento × CP; un CP puede tener varios asentamientos",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:51+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#sepomex-codigos-postales",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "sepomex-codigos-postales.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "cdmx-codigos-postales-poligonos",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "GEO",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "cdmx-codigos-postales-poligonos.q1",
+          "text": "¿Qué CP contienen mayor diversidad de servicios y cuáles dependen de servicios situados al otro lado de sus bordes?"
+        },
+        {
+          "id": "cdmx-codigos-postales-poligonos.q2",
+          "text": "¿Cuánto cambia la accesibilidad estimada al usar centroide de CP, población distribuida o puntos de demanda observados?"
+        },
+        {
+          "id": "cdmx-codigos-postales-poligonos.q3",
+          "text": "¿Qué solapes o huecos de la capa podrían explicar registros sin CP o asignados a más de uno?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-denue",
+        "inegi-censo-2020-ageb",
+        "inegi-marco-geoestadistico"
+      ],
+      "needed_inputs": "Capa con CRS y fecha, DENUE y cartografía/población si se pondera demanda.",
+      "specific_checks": [
+        "Validar geometría y resolver puntos en bordes sin asignación arbitraria.",
+        "Prorrateo de población por superficie se etiqueta como supuesto."
+      ],
+      "first_output": "Mapa de bordes problemáticos y sensibilidad de accesibilidad.",
+      "name": "Códigos postales CDMX: capa geográfica",
+      "category": "Código postal y territorio",
+      "grain": "Polígono de código postal",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:51+00:00",
+        "2026-11-05T00:08:00+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#cdmx-codigos-postales-poligonos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "cdmx-codigos-postales-poligonos.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "shcp-pef",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "FIN",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "shcp-pef.q1",
+          "text": "¿Qué programas ganan participación presupuestaria y cuáles sólo crecen en pesos nominales?"
+        },
+        {
+          "id": "shcp-pef.q2",
+          "text": "¿Cuánto cambia la concentración del gasto al agrupar por ramo, programa o unidad responsable?"
+        },
+        {
+          "id": "shcp-pef.q3",
+          "text": "¿Qué cambios de clasificación ocultan continuidades o crean aparentes programas nuevos entre ejercicios?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-indicadores-api"
+      ],
+      "needed_inputs": "PEF aprobado de varios años, diccionarios y equivalencias; deflactor oficial explícito para valores reales.",
+      "specific_checks": [
+        "Separar PEF de PPEF y no sumar subtotales con detalle.",
+        "Clasificación funcional y ubicación de ejecutora no equivalen a población beneficiaria."
+      ],
+      "first_output": "Mapa de reasignaciones en términos reales con correspondencias de programas.",
+      "name": "Presupuesto de Egresos de la Federación aprobado",
+      "category": "Presupuesto",
+      "grain": "Clave presupuestaria × ejercicio",
+      "latest_source_test_status": "BLOCKED",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:51+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#shcp-pef",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "shcp-pef.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "shcp-cuenta-publica",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "FIN",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "shcp-cuenta-publica.q1",
+          "text": "¿Qué programas terminan con la mayor distancia entre aprobado, modificado, devengado y pagado?"
+        },
+        {
+          "id": "shcp-cuenta-publica.q2",
+          "text": "¿Las ampliaciones presupuestarias se asocian con mayor ejecución o con mayores saldos al cierre?"
+        },
+        {
+          "id": "shcp-cuenta-publica.q3",
+          "text": "¿Qué rankings de programas cambian al medir diferencia absoluta, porcentaje ejecutado y magnitud del presupuesto?"
+        }
+      ],
+      "additional_source_ids": [
+        "shcp-pef"
+      ],
+      "needed_inputs": "Cuenta Pública de ejercicios comparables y llaves homologadas con el PEF.",
+      "specific_checks": [
+        "No sumar momentos contables; definir ejecución según la pregunta.",
+        "Una diferencia de ejecución no prueba por sí sola ineficiencia ni desvío."
+      ],
+      "first_output": "Panel de trayectorias contables y sensibilidad de rankings.",
+      "name": "Cuenta Pública: gasto al cierre",
+      "category": "Presupuesto",
+      "grain": "Clave presupuestaria × ejercicio × momento contable",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:52+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#shcp-cuenta-publica",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "shcp-cuenta-publica.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "shcp-srft",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "FIN",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "shcp-srft.q1",
+          "text": "¿Qué tipos de proyectos muestran mayor distancia entre avance físico y financiero dentro del mismo corte?"
+        },
+        {
+          "id": "shcp-srft.q2",
+          "text": "¿Cuáles aparentes saltos de gasto son correcciones del registro y cuáles avances entre cortes comparables?"
+        },
+        {
+          "id": "shcp-srft.q3",
+          "text": "¿Qué zonas acumulan proyectos reportados frente a su población o carencias, considerando ubicaciones múltiples y faltantes?"
+        }
+      ],
+      "additional_source_ids": [
+        "coneval-pobreza-municipal",
+        "inegi-marco-geoestadistico"
+      ],
+      "needed_inputs": "Módulos de ejercicio/destino separados, cortes sucesivos, diccionario y datos territoriales comparables.",
+      "specific_checks": [
+        "No sumar acumulados trimestrales ni repetir el monto por cada ubicación.",
+        "Revisar coordenadas de oficina antes de hablar de beneficiarios."
+      ],
+      "first_output": "Conciliación por proyecto y mapa con incertidumbre de ubicación.",
+      "name": "SRFT: ejercicio y destino del gasto federalizado",
+      "category": "Presupuesto",
+      "grain": "Ejercicio: registro presupuestario; destino: proyecto/ubicación × corte",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:54+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#shcp-srft",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "shcp-srft.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "sep-cct",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "sep-cct.q1",
+          "text": "¿Cuántas escuelas aparentes desaparecen al distinguir CCT, servicio, turno e inmueble compartido?"
+        },
+        {
+          "id": "sep-cct.q2",
+          "text": "¿Dónde hay población en edad escolar sin oferta cercana del nivel educativo correspondiente?"
+        },
+        {
+          "id": "sep-cct.q3",
+          "text": "¿Qué aperturas, cierres o cambios de servicio persisten entre cortes y cuáles son recodificaciones del catálogo?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-censo-2020-ageb",
+        "inegi-marco-geoestadistico"
+      ],
+      "needed_inputs": "Catálogo con estatus, turno/servicio, geografía cuando exista y al menos dos cortes para Q3.",
+      "specific_checks": [
+        "CCT no equivale automáticamente a edificio.",
+        "Validar CP y coordenadas; un registro activo no garantiza capacidad o calidad."
+      ],
+      "first_output": "Inventario de servicios e inmuebles y brechas de proximidad.",
+      "name": "Catálogo de Centros de Trabajo",
+      "category": "Educación",
+      "grain": "Centro de trabajo; revisar servicios y turnos del archivo",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:55+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#sep-cct",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "sep-cct.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "sep-formato-911",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "sep-formato-911.q1",
+          "text": "¿Dónde crece la matrícula más rápido que el número de docentes o grupos dentro de niveles comparables?"
+        },
+        {
+          "id": "sep-formato-911.q2",
+          "text": "¿Qué cambia en la relación alumnos/docente al separar modalidades, niveles y turnos?"
+        },
+        {
+          "id": "sep-formato-911.q3",
+          "text": "¿Qué rupturas de series escolares se explican por cambios de CCT o cobertura antes que por cambios de matrícula?"
+        }
+      ],
+      "additional_source_ids": [
+        "sep-cct"
+      ],
+      "needed_inputs": "Archivos 911 comparables, diccionario, ciclo y desagregación efectiva; catálogo CCT si es enlazable.",
+      "specific_checks": [
+        "No tratar cocientes agregados como tamaño de aula observado.",
+        "No usar matrícula como medida de aprendizaje ni inventar datos individuales."
+      ],
+      "first_output": "Trayectorias de oferta y demanda educativa con rupturas documentadas.",
+      "name": "Formato 911: alumnado, docentes y escuelas",
+      "category": "Educación",
+      "grain": "Escuela/servicio o agregado, según archivo × ciclo",
+      "latest_source_test_status": "BLOCKED",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:55+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#sep-formato-911",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "sep-formato-911.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "anuies-anuario",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "anuies-anuario.q1",
+          "text": "¿Qué carreras crecen en matrícula pero no muestran un crecimiento paralelo de egreso o titulación en los años siguientes?"
+        },
+        {
+          "id": "anuies-anuario.q2",
+          "text": "¿Qué brechas por sexo persisten dentro de la misma carrera y cuáles resultan de su diferente composición entre carreras?"
+        },
+        {
+          "id": "anuies-anuario.q3",
+          "text": "¿La expansión de oferta superior se concentra en las mismas instituciones y programas al homologar nombres y planteles?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Exportaciones de varios ciclos, niveles y programas homologados; sexo u otras desagregaciones sólo cuando estén publicadas.",
+      "specific_checks": [
+        "No llamar tasa de cohorte a egresados divididos entre matrícula.",
+        "Homologar cambios de carrera/plantel y distinguir ausencia de cero."
+      ],
+      "first_output": "Mapa de oferta académica y cambios de composición con series comparables.",
+      "name": "Anuario Estadístico de Educación Superior",
+      "category": "Educación",
+      "grain": "Institución/plantel × programa × ciclo, según exportación",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:55+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#anuies-anuario",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "anuies-anuario.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "ceey-emovi-2023",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "SURVEY"
+      ],
+      "harnesses": [
+        "H0",
+        "SURVEY",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "ceey-emovi-2023.q1",
+          "text": "¿Qué diferencias de movilidad educativa persisten entre personas con condiciones de origen similares?"
+        },
+        {
+          "id": "ceey-emovi-2023.q2",
+          "text": "¿Cómo varían las oportunidades de ascenso reportadas según sexo y contexto regional, con incertidumbre de diseño?"
+        },
+        {
+          "id": "ceey-emovi-2023.q3",
+          "text": "¿Las asociaciones entre cuidados, inclusión financiera y posición de destino cambian al considerar origen y edad?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Microdatos, diseño y metodología de índices EMOVI; confirmar disponibilidad y codificación de cuidados e inclusión.",
+      "specific_checks": [
+        "Asociación no equivale a efecto de una intervención.",
+        "Índices, cohortes y dominios definidos; no pronósticos por CP."
+      ],
+      "first_output": "Matrices de transición y asociaciones ponderadas con límites de inferencia.",
+      "name": "ESRU–EMOVI 2023",
+      "category": "Movilidad social",
+      "grain": "Persona entrevistada con retrospectiva del hogar de origen",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:58+00:00",
+        "2026-11-05T00:08:02+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#ceey-emovi-2023",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "ceey-emovi-2023.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "ceey-emovi-2017",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "SURVEY"
+      ],
+      "harnesses": [
+        "H0",
+        "SURVEY",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "ceey-emovi-2017.q1",
+          "text": "¿En qué grupos de origen se observa mayor persistencia en los extremos de la distribución de destino?"
+        },
+        {
+          "id": "ceey-emovi-2017.q2",
+          "text": "¿La movilidad relativa cambia entre cohortes cuando se homologa la medición de origen y destino?"
+        },
+        {
+          "id": "ceey-emovi-2017.q3",
+          "text": "¿Qué conclusiones se mantienen al comparar 2017 y 2023 sólo con variables e índices realmente armonizables?"
+        }
+      ],
+      "additional_source_ids": [
+        "ceey-emovi-2023"
+      ],
+      "needed_inputs": "Microdatos y diseño de 2017; metodología y variables comunes con 2023 para Q3.",
+      "specific_checks": [
+        "2017 y 2023 no son panel de las mismas personas.",
+        "No confundir cambio de índice, cohorte y efecto temporal."
+      ],
+      "first_output": "Transiciones por origen y tabla de comparabilidad entre olas.",
+      "name": "ESRU–EMOVI 2017",
+      "category": "Movilidad social",
+      "grain": "Persona entrevistada y origen familiar retrospectivo",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:59+00:00",
+        "2026-11-05T00:08:02+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#ceey-emovi-2017",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "ceey-emovi-2017.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-mmsi-2016",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "SURVEY"
+      ],
+      "harnesses": [
+        "H0",
+        "SURVEY",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-mmsi-2016.q1",
+          "text": "¿La movilidad educativa y la ocupacional cuentan historias distintas para personas con un mismo nivel de origen?"
+        },
+        {
+          "id": "inegi-mmsi-2016.q2",
+          "text": "¿Dónde aparecen personas con mayor escolaridad que sus padres pero sin un cambio ocupacional equivalente?"
+        },
+        {
+          "id": "inegi-mmsi-2016.q3",
+          "text": "¿Qué diferencias con EMOVI persisten al usar únicamente conceptos compatibles, edades y dominios comunes?"
+        }
+      ],
+      "additional_source_ids": [
+        "ceey-emovi-2017"
+      ],
+      "needed_inputs": "Microdatos, diseño e instrumentos MMSI; armonización documentada con EMOVI para Q3.",
+      "specific_checks": [
+        "Retrospectiva a los 14 años y población objetivo 25–64 según documentación.",
+        "No igualar índices distintos ni encadenar personas entre encuestas."
+      ],
+      "first_output": "Tipología de movilidad discordante con incertidumbre.",
+      "name": "Módulo de Movilidad Social Intergeneracional 2016",
+      "category": "Movilidad social",
+      "grain": "Persona de 25–64 años, presente y retrospectiva a los 14",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:07:59+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-mmsi-2016",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-mmsi-2016.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "coneval-pobreza-municipal",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "coneval-pobreza-municipal.q1",
+          "text": "¿Qué municipios reducen pobreza total sin una reducción equivalente de alguna carencia específica?"
+        },
+        {
+          "id": "coneval-pobreza-municipal.q2",
+          "text": "¿Cómo cambia la prioridad territorial al ordenar por tasa de pobreza frente a número de personas afectadas?"
+        },
+        {
+          "id": "coneval-pobreza-municipal.q3",
+          "text": "¿Qué trayectorias 2010–2020 se mantienen al homologar límites municipales y población de referencia?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-marco-geoestadistico"
+      ],
+      "needed_inputs": "Resultados municipales comparables y notas metodológicas; equivalencias territoriales.",
+      "specific_checks": [
+        "Son resultados territoriales, no movilidad individual.",
+        "No presentar el corte 2020 como situación actual ni omitir cambios municipales."
+      ],
+      "first_output": "Trayectorias de carencias y ranking dual de tasas y población.",
+      "name": "Pobreza municipal 2010–2020",
+      "category": "Movilidad social",
+      "grain": "Municipio × año × indicador",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:03+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#coneval-pobreza-municipal",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "coneval-pobreza-municipal.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "conapo-marginacion-2020",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "conapo-marginacion-2020.q1",
+          "text": "¿Qué territorios tienen grados de marginación similares pero perfiles de carencias muy diferentes?"
+        },
+        {
+          "id": "conapo-marginacion-2020.q2",
+          "text": "¿En qué municipios pobreza y marginación producen prioridades distintas y qué indicadores explican la discrepancia?"
+        },
+        {
+          "id": "conapo-marginacion-2020.q3",
+          "text": "¿Cuánto cambia una prioridad al ponderar población frente a tratar todas las localidades por igual?"
+        }
+      ],
+      "additional_source_ids": [
+        "coneval-pobreza-municipal"
+      ],
+      "needed_inputs": "Índice, componentes, población y nivel geográfico exacto; pobreza a nivel compatible para Q2.",
+      "specific_checks": [
+        "Marginación y pobreza son constructos distintos.",
+        "No traducir colonia/localidad a CP sin equivalencia documentada."
+      ],
+      "first_output": "Perfiles de marginación y explicación de rankings discordantes.",
+      "name": "Índices de marginación 2020",
+      "category": "Movilidad social",
+      "grain": "Área geográfica × indicadores de marginación",
+      "latest_source_test_status": "BLOCKED",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:07+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#conapo-marginacion-2020",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "conapo-marginacion-2020.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "metrobus-gtfs",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "metrobus-gtfs.q1",
+          "text": "¿Qué corredores muestran huecos frecuentes de observación o posiciones poco plausibles y cuánto depende del muestreo del feed?"
+        },
+        {
+          "id": "metrobus-gtfs.q2",
+          "text": "¿Qué escuelas o zonas de servicios tienen estaciones cercanas pero conexiones espaciales menos directas?"
+        },
+        {
+          "id": "metrobus-gtfs.q3",
+          "text": "¿Qué puede y qué no puede reconstruirse de un recorrido al comparar las posiciones disponibles con viajes y trazados estáticos?"
+        }
+      ],
+      "additional_source_ids": [
+        "sep-cct",
+        "inegi-denue"
+      ],
+      "needed_inputs": "Snapshots con timestamp y claves, GTFS estático de edición compatible; mayor frecuencia de captura si se pretende medir intervalos/puntualidad.",
+      "specific_checks": [
+        "Separar fecha del feed, timestamp del vehículo y hora local.",
+        "Capturas horarias no son trayectorias completas ni una medición fiable de espera por sí solas."
+      ],
+      "first_output": "Mapa de cobertura observada y diagnóstico de límites del muestreo.",
+      "name": "Metrobús: GTFS estático y tiempo real",
+      "category": "Movilidad",
+      "grain": "Estación/viaje programado y vehículo × snapshot",
+      "latest_source_test_status": "CACHED_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:08+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#metrobus-gtfs",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay datos del repo; fijar snapshot, cobertura y versión antes de ampliar el análisis.",
+      "first_question_id": "metrobus-gtfs.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "ecobici-viajes",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO",
+        "GRAPH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "ecobici-viajes.q1",
+          "text": "¿Qué estaciones funcionan como origen por la mañana y destino por la tarde, y cuáles mantienen un papel estable?"
+        },
+        {
+          "id": "ecobici-viajes.q2",
+          "text": "¿Qué pares de estaciones concentran viajes cortos y cuáles parecen sustituir conexiones menos directas de transporte?"
+        },
+        {
+          "id": "ecobici-viajes.q3",
+          "text": "¿Cómo cambian los patrones de fin de semana frente a días laborables al usar meses y estaciones comparables?"
+        }
+      ],
+      "additional_source_ids": [
+        "ecobici-gbfs",
+        "metrobus-gtfs"
+      ],
+      "needed_inputs": "Viajes históricos completos para ventana delimitada y catálogo de estaciones fechado; transporte/meteorología como contraste, si se usan.",
+      "specific_checks": [
+        "Cambios de sistema y estaciones, duración imposible y zona horaria.",
+        "Viaje próximo a una universidad no demuestra motivo educativo."
+      ],
+      "first_output": "Red OD por franja y roles temporales de estaciones.",
+      "name": "ECOBICI: viajes históricos",
+      "category": "Movilidad",
+      "grain": "Viaje entre cicloestaciones",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:09+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#ecobici-viajes",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "ecobici-viajes.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "ecobici-gbfs",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "ecobici-gbfs.q1",
+          "text": "¿Qué estaciones aparecen vacías o llenas con mayor frecuencia dentro de las horas efectivamente observadas?"
+        },
+        {
+          "id": "ecobici-gbfs.q2",
+          "text": "¿Qué estaciones cercanas presentan desequilibrios simultáneos que sugieren complementariedad de disponibilidad?"
+        },
+        {
+          "id": "ecobici-gbfs.q3",
+          "text": "¿Cuánto cambia el ranking de disponibilidad al excluir estaciones fuera de servicio o ponderar la cobertura de capturas?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Snapshots repetidos de disponibilidad y capacidad/estado operativo; coordenadas y timestamps consistentes.",
+      "specific_checks": [
+        "Faltante no es cero bicicletas; estación no operativa se trata por separado.",
+        "Fracción de snapshots vacíos no equivale a minutos reales sin servicio."
+      ],
+      "first_output": "Perfiles de disponibilidad observada y cobertura por estación.",
+      "name": "ECOBICI: catálogo y disponibilidad GBFS",
+      "category": "Movilidad",
+      "grain": "Cicloestación × snapshot",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:09+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#ecobici-gbfs",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "ecobici-gbfs.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "salud-clues",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "salud-clues.q1",
+          "text": "¿Dónde conviven población vulnerable y baja proximidad a establecimientos activos del tipo de atención requerido?"
+        },
+        {
+          "id": "salud-clues.q2",
+          "text": "¿Cuántas diferencias aparentes de oferta desaparecen al separar unidades activas, cerradas y duplicadas?"
+        },
+        {
+          "id": "salud-clues.q3",
+          "text": "¿Qué zonas dependen de establecimientos de otra demarcación cuando se usa accesibilidad geográfica en lugar de conteos administrativos?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-censo-2020-ageb",
+        "inegi-marco-geoestadistico"
+      ],
+      "needed_inputs": "CLUES actualizado, estatus y tipo de unidad; población y red de rutas si se calcula tiempo de viaje.",
+      "specific_checks": [
+        "Validar ubicación y CLUES por corte.",
+        "Presencia y proximidad no acreditan capacidad, horarios, calidad ni atención efectiva."
+      ],
+      "first_output": "Mapa de oferta registrada con tipos, estatus y supuestos de acceso.",
+      "name": "CLUES: establecimientos de salud",
+      "category": "Salud y seguridad",
+      "grain": "Establecimiento de salud × corte",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:11+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#salud-clues",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "salud-clues.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "cdmx-fgj-carpetas",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "cdmx-fgj-carpetas.q1",
+          "text": "¿Cómo cambian los patrones horarios al usar fecha de hechos frente a fecha de apertura de la carpeta?"
+        },
+        {
+          "id": "cdmx-fgj-carpetas.q2",
+          "text": "¿Qué concentraciones espaciales persisten al cambiar el denominador entre población residente y exposición disponible?"
+        },
+        {
+          "id": "cdmx-fgj-carpetas.q3",
+          "text": "¿Qué saltos de tendencia coinciden con cambios de clasificación, cobertura o demora de registro?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-censo-2020-ageb",
+        "metrobus-gtfs"
+      ],
+      "needed_inputs": "Datos y diccionario completos, fechas diferenciadas y denominadores justificables; exposición sólo si se puede medir.",
+      "specific_checks": [
+        "Registro publicado, carpeta y delito no se asumen equivalentes.",
+        "No confundir denuncia con incidencia total ni proximidad a una estación con riesgo por viaje."
+      ],
+      "first_output": "Patrones registrados con retraso de denuncia y sensibilidad de tasas.",
+      "name": "Carpetas de investigación FGJ CDMX",
+      "category": "Salud y seguridad",
+      "grain": "Registro publicado de carpeta/delito según diccionario",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:12+00:00",
+        "2026-11-05T00:08:21+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#cdmx-fgj-carpetas",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "cdmx-fgj-carpetas.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "inegi-atus",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "inegi-atus.q1",
+          "text": "¿Qué combinaciones de hora, tipo de accidente y usuario involucrado concentran consecuencias más graves en los registros?"
+        },
+        {
+          "id": "inegi-atus.q2",
+          "text": "¿La composición de accidentes cambia entre días laborales y fines de semana dentro de municipios comparables?"
+        },
+        {
+          "id": "inegi-atus.q3",
+          "text": "¿Qué tendencias sobreviven a excluir años o municipios con notas de cobertura y a usar un denominador de exposición adecuado?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Microdatos ATUS, diccionarios y notas por año/municipio; exposición externa si se estiman tasas de riesgo.",
+      "specific_checks": [
+        "No asumir cobertura carretera federal ni coordenadas universales.",
+        "Sin kilómetros/flujo no llamar riesgo de conducir al simple conteo."
+      ],
+      "first_output": "Perfiles de gravedad y tendencias con cobertura explícita.",
+      "name": "ATUS: accidentes de tránsito urbanos y suburbanos",
+      "category": "Salud y seguridad",
+      "grain": "Accidente reportado",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:16+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#inegi-atus",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "inegi-atus.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "dof-publicaciones",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "VERSION"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "LAW"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH"
+      ],
+      "questions": [
+        {
+          "id": "dof-publicaciones.q1",
+          "text": "¿Qué reformas parecen pequeñas en un diff de palabras pero cambian una condición, una excepción o una fecha importante?"
+        },
+        {
+          "id": "dof-publicaciones.q2",
+          "text": "¿Cuántas conclusiones equivocadas produciría confundir publicación, entrada en vigor y régimen transitorio en un conjunto delimitado?"
+        },
+        {
+          "id": "dof-publicaciones.q3",
+          "text": "¿Cómo reconstruir la secuencia de cambios de un artículo y explicar cada paso mediante commits, citas y documentos oficiales?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Documentos oficiales identificados, texto previo y reformas con transitorios; definir una norma y periodo acotados.",
+      "specific_checks": [
+        "Cotejar texto y transitorios con PDF oficial.",
+        "La historia Git del ejemplo no es una consolidación oficial de vigencia."
+      ],
+      "first_output": "Caso docente con diff textual/semántico, línea temporal y evidencia por artículo.",
+      "name": "DOF/SIDOF: publicaciones y reformas para explicar Git",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Publicación identificada por código; secciones y documentos",
+      "latest_source_test_status": "DOCUMENT_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:17+00:00",
+        "2026-11-05T00:08:22+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#dof-publicaciones",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "dof-publicaciones.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "usgs-sismos",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "usgs-sismos.q1",
+          "text": "¿Qué características de un sismo cambian más entre su primer reporte y su revisión posterior?"
+        },
+        {
+          "id": "usgs-sismos.q2",
+          "text": "¿Cómo cambia la distribución de profundidades al separar regiones, tipos de magnitud y estados de revisión?"
+        },
+        {
+          "id": "usgs-sismos.q3",
+          "text": "¿Qué patrones aparentemente llamativos desaparecen al usar ventanas de igual duración y umbrales de completitud comparables?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Catálogo delimitado, metadatos y snapshots sucesivos; criterios de cobertura para ventanas comparadas.",
+      "specific_checks": [
+        "Evento ID, updated, tiempo UTC y unidades.",
+        "No hacer predicción sísmica ni interpretar cobertura del feed como censo físico completo."
+      ],
+      "first_output": "Historial de revisiones y distribuciones con cobertura temporal explícita.",
+      "name": "Terremotos del último día y sus revisiones",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Evento sísmico revisable",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:19+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#usgs-sismos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "usgs-sismos.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "nasa-exoplanetas",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "nasa-exoplanetas.q1",
+          "text": "¿Cuánto de la diferencia de tamaños y periodos observados entre planetas se asocia al método de descubrimiento?"
+        },
+        {
+          "id": "nasa-exoplanetas.q2",
+          "text": "¿Qué sistemas parecen excepcionales después de incorporar incertidumbres y descartar parámetros incompatibles?"
+        },
+        {
+          "id": "nasa-exoplanetas.q3",
+          "text": "¿Cómo cambió la diversidad de planetas catalogados a medida que cambiaron las técnicas de detección?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Tabla de parámetros, referencias, incertidumbres y método/fecha de descubrimiento.",
+      "specific_checks": [
+        "Un planeta no se duplica por publicación; fijar tabla y selección de parámetros.",
+        "Muestra detectada no representa uniformemente la población de planetas."
+      ],
+      "first_output": "Atlas de sesgos de detección y candidatos extremos con incertidumbre.",
+      "name": "Planetas fuera del Sistema Solar",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Planeta; tabla de parámetros compuestos",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:20+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#nasa-exoplanetas",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "nasa-exoplanetas.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "gwosc-ondas-gravitacionales",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "gwosc-ondas-gravitacionales.q1",
+          "text": "¿Qué cambia en masas y distancias estimadas de un mismo evento entre versiones del catálogo?"
+        },
+        {
+          "id": "gwosc-ondas-gravitacionales.q2",
+          "text": "¿La aparente concentración de ciertos sistemas persiste al considerar incertidumbres y selección del detector?"
+        },
+        {
+          "id": "gwosc-ondas-gravitacionales.q3",
+          "text": "¿Cómo difiere la descripción del evento al comparar valores centrales con intervalos de estimación?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Catálogo de eventos completo con versión y parámetros; incertidumbres y documentación de selección. Señal strain sólo en una segunda fase.",
+      "specific_checks": [
+        "No confundir listado de catálogos con eventos ni eventos con señales descargadas.",
+        "Conservar marco de masas y significado de intervalos según productor."
+      ],
+      "first_output": "Comparativa de versiones y parámetros estimados; análisis de señales queda fuera del primer piloto.",
+      "name": "Colisiones de agujeros negros y ondas gravitacionales",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Evento y versión de estimación; catálogo en la muestra inicial",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:23+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#gwosc-ondas-gravitacionales",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "gwosc-ondas-gravitacionales.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "noaa-ghcn",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "noaa-ghcn.q1",
+          "text": "¿Qué supuestas tendencias de temperatura cambian al restringir el análisis a estaciones con cobertura estable?"
+        },
+        {
+          "id": "noaa-ghcn.q2",
+          "text": "¿Cómo varían las relaciones entre elevación, temperatura y precipitación dentro de regiones comparables?"
+        },
+        {
+          "id": "noaa-ghcn.q3",
+          "text": "¿Qué eventos extremos locales siguen siendo extremos después de revisar banderas de calidad y estacionalidad?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Observaciones GHCN además del catálogo de estaciones, diccionarios de elementos y banderas.",
+      "specific_checks": [
+        "Escalas por elemento, -9999 y periodos con observaciones.",
+        "Catálogo de estaciones no contiene series meteorológicas; no atribuir tendencias sin homogeneización."
+      ],
+      "first_output": "Series con cobertura y control de calidad por estación.",
+      "name": "El clima escrito por estaciones meteorológicas",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Estación–fecha–elemento; muestra inicial del catálogo de estaciones",
+      "latest_source_test_status": "METADATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:24+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#noaa-ghcn",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "noaa-ghcn.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "gbif-biodiversidad",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO",
+        "VISION"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO",
+        "VISION"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "gbif-biodiversidad.q1",
+          "text": "¿Qué zonas parecen pobres en especies sólo porque tienen pocos registros o campañas de observación?"
+        },
+        {
+          "id": "gbif-biodiversidad.q2",
+          "text": "¿Cómo difieren los patrones estacionales entre registros de observación, especímenes y fotografías?"
+        },
+        {
+          "id": "gbif-biodiversidad.q3",
+          "text": "¿Qué desacuerdos entre taxón, metadatos y revisión visual ameritan revisión humana sin que la IA se adjudique una identificación definitiva?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Ocurrencias, tipo de registro, esfuerzo o proxy de cobertura y licencias; imágenes autorizadas para Q3.",
+      "specific_checks": [
+        "Duplicados de ocurrencia, incertidumbre de coordenadas y taxonomía.",
+        "Revisar licencia de cada fotografía por separado."
+      ],
+      "first_output": "Mapa de esfuerzo y galería de casos discrepantes para revisión.",
+      "name": "Dónde se ha observado vida: especies y sesgo de muestreo",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Registro de ocurrencia de un organismo",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:26+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#gbif-biodiversidad",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "gbif-biodiversidad.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "xeno-canto-audio",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "AUDIO",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "AUDIO",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "xeno-canto-audio.q1",
+          "text": "¿Qué diferencias acústicas entre grabaciones de una misma especie persisten al separar lugar, grabador y calidad?"
+        },
+        {
+          "id": "xeno-canto-audio.q2",
+          "text": "¿Puede distinguirse un tipo de vocalización mejor que con una referencia simple, sin que clips del mismo sitio aparezcan en entrenamiento y prueba?"
+        },
+        {
+          "id": "xeno-canto-audio.q3",
+          "text": "¿Cuánto empeora la clasificación al pasar de grabaciones limpias a grabaciones ruidosas o de otras regiones?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Audio completo autorizado, metadatos y etiquetas de vocalización; conjunto manual de segmentos y particiones por grupos.",
+      "specific_checks": [
+        "La clave pública demo puede limitar el corpus; no equivale a una API sin restricciones.",
+        "El sonograma ya probado no acredita decodificación integral del audio ni identificación de individuos."
+      ],
+      "first_output": "Corpus acústico pequeño con espectrogramas, anotaciones y evaluación por ruido y sitio.",
+      "name": "Cantos de aves, murciélagos e insectos",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Grabación y metadatos",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:09:58+00:00",
+        "2026-11-05T00:10:02+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#xeno-canto-audio",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "xeno-canto-audio.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "met-arte",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "VISION",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "VISION",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "met-arte.q1",
+          "text": "¿Qué diferencias de paleta entre periodos persisten al comparar obras del mismo medio y tipo de reproducción?"
+        },
+        {
+          "id": "met-arte.q2",
+          "text": "¿Qué motivos visuales frecuentes faltan en títulos y descripciones del catálogo, y cuáles identifica erróneamente la IA?"
+        },
+        {
+          "id": "met-arte.q3",
+          "text": "¿Cuánto cambia una conclusión sobre la colección al restringirla a obras con imágenes abiertas frente al catálogo completo?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Metadatos e imágenes con isPublicDomain verificado; muestra por medio/periodo y anotación manual de motivos.",
+      "specific_checks": [
+        "Obra, imagen y reproducción se distinguen.",
+        "Sesgo de adquisición y de disponibilidad digital; color fotografiado no es colorimetría del original."
+      ],
+      "first_output": "Galería comparativa de motivos y paletas con auditoría de cobertura.",
+      "name": "Arte, objetos e imágenes del Metropolitan Museum",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Objeto y sus imágenes/metadatos",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:30+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#met-arte",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "met-arte.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "loc-prensa-historica",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH"
+      ],
+      "questions": [
+        {
+          "id": "loc-prensa-historica.q1",
+          "text": "¿Cómo cambia el vocabulario usado para una enfermedad, tecnología o protesta entre periódicos del mismo periodo?"
+        },
+        {
+          "id": "loc-prensa-historica.q2",
+          "text": "¿Qué noticias aparentan difusión independiente pero son copias o republicaciones del mismo texto?"
+        },
+        {
+          "id": "loc-prensa-historica.q3",
+          "text": "¿Qué tendencias de palabras desaparecen al corregir OCR y normalizar por páginas o texto efectivamente disponibles?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Páginas/OCR de ejemplares seleccionados y sus imágenes para cotejo; el catálogo de títulos por sí solo es insuficiente.",
+      "specific_checks": [
+        "Separar título, ejemplar y página; controlar fecha, idioma y género editorial.",
+        "Contar textos independientes y cobertura, no sólo coincidencias de búsqueda."
+      ],
+      "first_output": "Corpus de prensa con familias de republicación y frecuencias corregidas.",
+      "name": "Periódicos antiguos: portadas, OCR y metadatos",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Título/ejemplar/página; distinguir niveles",
+      "latest_source_test_status": "METADATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:30+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#loc-prensa-historica",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "loc-prensa-historica.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "gutenberg-quijote",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "GRAPH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "gutenberg-quijote.q1",
+          "text": "¿Qué personajes conectan grupos narrativos aunque tengan menos intervenciones que los protagonistas?"
+        },
+        {
+          "id": "gutenberg-quijote.q2",
+          "text": "¿Cómo cambia el contraste entre lo que un personaje dice y lo que el narrador cuenta sobre él a lo largo de la obra?"
+        },
+        {
+          "id": "gutenberg-quijote.q3",
+          "text": "¿Qué supuestas diferencias de estilo entre partes o capítulos se mantienen al separar narración, diálogo y episodios interpolados?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Edición de texto completa, segmentación revisada y muestra manual de atribución de voz y personajes.",
+      "specific_checks": [
+        "Excluir licencia/encabezados y conservar texto original junto al normalizado.",
+        "Copresencia, mención y diálogo son relaciones diferentes; errores de voz alteran la red."
+      ],
+      "first_output": "Mapa de voces y personajes con pasajes de contraste.",
+      "name": "Don Quijote como corpus de lenguaje",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Libro, capítulo y segmento de texto",
+      "latest_source_test_status": "DOCUMENT_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:31+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#gutenberg-quijote",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "gutenberg-quijote.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "openfoodfacts-alimentos",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "VISION",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "TEXT",
+        "VISION"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "openfoodfacts-alimentos.q1",
+          "text": "¿En qué productos la imagen de la etiqueta y los nutrientes estructurados discrepan, y se explica por idioma, versión o error de captura?"
+        },
+        {
+          "id": "openfoodfacts-alimentos.q2",
+          "text": "¿Qué reclamos del envase aparecen junto a perfiles nutricionales distintos dentro de categorías comparables?"
+        },
+        {
+          "id": "openfoodfacts-alimentos.q3",
+          "text": "¿Qué diferencias entre países permanecen al homologar categoría, unidad por 100 g/ml y versión del producto?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Productos comparables, ingredientes, nutrientes, fecha/país y fotos legibles; historial para distinguir reformulaciones.",
+      "specific_checks": [
+        "Faltante no es cero; no mezclar porción con 100 g ni sólidos con líquidos.",
+        "La foto alternativa en español tiene su propia prueba; marca y código no prueban formulación universal."
+      ],
+      "first_output": "Auditoría etiqueta–registro con discrepancias revisadas y contexto de versión.",
+      "name": "Alimentos: ingredientes, nutrientes y fotos de etiquetas",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Producto por código de barras y versión",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:33+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#openfoodfacts-alimentos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "openfoodfacts-alimentos.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "nuforc-ovnis",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH"
+      ],
+      "questions": [
+        {
+          "id": "nuforc-ovnis.q1",
+          "text": "¿Los relatos cambian después de episodios de alta cobertura mediática o sólo cambia la cantidad de reportes recibidos?"
+        },
+        {
+          "id": "nuforc-ovnis.q2",
+          "text": "¿Qué descripciones se parecen más por vocabulario que por fecha o lugar y cuántas son duplicados narrativos?"
+        },
+        {
+          "id": "nuforc-ovnis.q3",
+          "text": "¿Qué patrones horarios persisten al distinguir hora declarada, fecha de reporte, zonas horarias y observaciones ambiguas?"
+        }
+      ],
+      "additional_source_ids": [
+        "gdelt-noticias"
+      ],
+      "needed_inputs": "Reportes accesibles con uso permitido, fechas y lugares; cobertura de noticias delimitada para Q1, no scraping masivo supuesto.",
+      "specific_checks": [
+        "Son relatos de observación, no verificación de fenómenos extraterrestres.",
+        "Clasificación con citas y casos ambiguos; sesgo de quien decide reportar."
+      ],
+      "first_output": "Tipología de narrativas y línea temporal de cobertura frente a reportes.",
+      "name": "Relatos de avistamientos de ovnis/UAP",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Reporte narrativo y clasificación",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:34+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#nuforc-ovnis",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "nuforc-ovnis.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "gdelt-noticias",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "TEXT",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH"
+      ],
+      "questions": [
+        {
+          "id": "gdelt-noticias.q1",
+          "text": "¿Qué acontecimientos parecen globales por volumen de noticias pero dependen de pocos medios o copias del mismo contenido?"
+        },
+        {
+          "id": "gdelt-noticias.q2",
+          "text": "¿Cómo cambia el tono registrado al comparar países de publicación, idiomas y fuentes para un mismo tema delimitado?"
+        },
+        {
+          "id": "gdelt-noticias.q3",
+          "text": "¿Qué discrepancias aparecen entre evento codificado, menciones y lectura de una muestra de fuentes originales?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Archivos Events/Mentions/GKG seleccionados y diccionarios; artículos sólo cuando su acceso y derechos permitan lectura.",
+      "specific_checks": [
+        "lastupdate es manifiesto y no eventos ya ingeridos.",
+        "Tono/código automático no es verdad del hecho; noticias, eventos y menciones tienen granos distintos."
+      ],
+      "first_output": "Mapa de cobertura y validación manual de codificación en una muestra.",
+      "name": "El mundo contado por noticias: eventos y menciones",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Evento codificado, mención o registro GKG; archivos separados",
+      "latest_source_test_status": "METADATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:36+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#gdelt-noticias",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "gdelt-noticias.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "nasa-bolidos",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "nasa-bolidos.q1",
+          "text": "¿Cómo se relacionan energía y altitud reportadas y qué tan sensible es el patrón a los registros sin datos completos?"
+        },
+        {
+          "id": "nasa-bolidos.q2",
+          "text": "¿Qué eventos parecen extremos sólo por un error de unidad, signo de hemisferio o interpretación de energía?"
+        },
+        {
+          "id": "nasa-bolidos.q3",
+          "text": "¿Cómo cambia la distribución espacial o temporal al exigir coordenadas, velocidad u otros campos que no siempre están presentes?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Catálogo y documentación de campos/unidades, indicadores de faltantes y fecha de captura.",
+      "specific_checks": [
+        "No exigir identificador único inexistente ni interpretar N/S/E/W como signos sin validar.",
+        "Cobertura de sensores desconocida limita inferencias sobre frecuencia física global."
+      ],
+      "first_output": "Catálogo de extremos y análisis de selección por completitud.",
+      "name": "Bólidos: entradas atmosféricas detectadas por sensores",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Evento de bólido",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:37+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#nasa-bolidos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "nasa-bolidos.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "nyc-ratas",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "nyc-ratas.q1",
+          "text": "¿Qué zonas tienen más resultados positivos por inspección comparable, en lugar de sólo más inspecciones?"
+        },
+        {
+          "id": "nyc-ratas.q2",
+          "text": "¿Cuánto tarda una nueva inspección y cómo cambian sus resultados después de una intervención registrada?"
+        },
+        {
+          "id": "nyc-ratas.q3",
+          "text": "¿Los patrones por estación del año se mantienen al comparar los mismos predios y tipos de inspección?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Inspecciones con BBL, fecha, tipo y resultado; secuencias de seguimiento claramente enlazables.",
+      "specific_checks": [
+        "Vigilancia y reinspección no son muestreo aleatorio.",
+        "Una mejora tras intervención es asociación observada, no efecto causal demostrado."
+      ],
+      "first_output": "Secuencias por predio y tasas de positividad condicionadas al esquema de inspección.",
+      "name": "Inspecciones de ratas por predio en Nueva York",
+      "category": "Fuentes sorprendentes y multimodales",
+      "grain": "Inspección/intervención en predio",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:08:38+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#nyc-ratas",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "nyc-ratas.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "nyc-restaurantes",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "nyc-restaurantes.q1",
+          "text": "¿Qué infracciones reaparecen en el mismo restaurante después de una inspección y de cuánto tiempo depende la recurrencia observada?"
+        },
+        {
+          "id": "nyc-restaurantes.q2",
+          "text": "¿Cuánto cambia un ranking sanitario al contar inspecciones únicas en lugar de filas de infracción?"
+        },
+        {
+          "id": "nyc-restaurantes.q3",
+          "text": "¿Qué diferencias por cocina o zona persisten al comparar tipos de inspección y periodos equivalentes?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Historial de inspecciones e infracciones, CAMIS, tipo/fecha y seguimiento; cobertura completa para ventana definida.",
+      "specific_checks": [
+        "Separar restaurante, inspección e infracción.",
+        "Puntaje sanitario no mide sabor; selección de inspección puede explicar diferencias observadas."
+      ],
+      "first_output": "Mapa de recurrencia y comparación de rankings con grano correcto.",
+      "name": "Inspecciones de restaurantes de Nueva York",
+      "category": "Comida, viajes y aplicaciones",
+      "grain": "Restaurante–inspección–infracción; varias filas por inspección",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:41+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#nyc-restaurantes",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "nyc-restaurantes.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "openflights-red-aerea",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GRAPH",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GRAPH",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "openflights-red-aerea.q1",
+          "text": "¿Qué aeropuertos sostienen conexiones entre comunidades que quedarían separadas al retirar un nodo de la red histórica?"
+        },
+        {
+          "id": "openflights-red-aerea.q2",
+          "text": "¿Qué destinos tienen pocas alternativas aunque no estén lejos geográficamente de un aeropuerto grande?"
+        },
+        {
+          "id": "openflights-red-aerea.q3",
+          "text": "¿Cómo cambian las conclusiones al distinguir rutas dirigidas, códigos compartidos y equipos de aeronave incompletos?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Aeropuertos, rutas y aerolíneas de la misma captura; enlaces a equipo sólo si los códigos se resuelven.",
+      "specific_checks": [
+        "No usar rutas históricas para horarios, precios o capacidad actual.",
+        "Duplicados/codeshare y ausencia de rutas no prueban servicio vigente o inexistente."
+      ],
+      "first_output": "Red histórica con simulación descriptiva de retiro de nodos y sensibilidad.",
+      "name": "Aeropuertos, aerolíneas, aviones y rutas históricas",
+      "category": "Comida, viajes y aplicaciones",
+      "grain": "Aeropuerto y ruta; tablas distintas",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:41+00:00",
+        "2026-11-05T00:51:46+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#openflights-red-aerea",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "openflights-red-aerea.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "bts-puntualidad-vuelos",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "bts-puntualidad-vuelos.q1",
+          "text": "¿Se acumulan retrasos a lo largo del día dentro de rutas y temporadas comparables?"
+        },
+        {
+          "id": "bts-puntualidad-vuelos.q2",
+          "text": "¿Qué aerolíneas o rutas cambian de posición al incluir cancelaciones en la comparación de desempeño?"
+        },
+        {
+          "id": "bts-puntualidad-vuelos.q3",
+          "text": "¿En qué casos una mayor holgura de horario coincide con mejor puntualidad de llegada aunque el tiempo total del viaje aumente?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Registros de vuelos de meses delimitados, horarios programados/reales, cancelaciones y definiciones del productor.",
+      "specific_checks": [
+        "Excluir cancelados produce sesgo de supervivencia.",
+        "Distinguir hora local de origen/destino, cambio de día y duración; no concluir causa sin diseño."
+      ],
+      "first_output": "Comparativa de demoras y cancelaciones con métricas de tiempo total.",
+      "name": "Puntualidad, cancelaciones y demoras aéreas",
+      "category": "Comida, viajes y aplicaciones",
+      "grain": "Vuelo–fecha–transportista",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:41+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#bts-puntualidad-vuelos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "bts-puntualidad-vuelos.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "apple-apps",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "apple-apps.q1",
+          "text": "¿Qué grupos de apps prometen resolver el mismo problema aunque estén publicadas en categorías distintas?"
+        },
+        {
+          "id": "apple-apps.q2",
+          "text": "¿Qué promesas de funciones o monetización se relacionan con calificaciones diferentes dentro de muestras comparables?"
+        },
+        {
+          "id": "apple-apps.q3",
+          "text": "¿Cuánto cambian precio, descripción o versión de una app entre tiendas y capturas sin confundir cambio de país con evolución temporal?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Muestra definida de apps, tiendas y capturas repetidas; taxonomía de promesas revisada a mano.",
+      "specific_checks": [
+        "Búsqueda no es censo; trackId, país y fecha forman la observación.",
+        "Calificaciones no son ingresos, usuarios activos ni adopción."
+      ],
+      "first_output": "Mapa de problemas prometidos y cambios de ficha por tienda.",
+      "name": "Catálogo público de apps de Apple",
+      "category": "Comida, viajes y aplicaciones",
+      "grain": "App–tienda–captura",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:41+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#apple-apps",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "apple-apps.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "apple-resenas-apps",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "apple-resenas-apps.q1",
+          "text": "¿Qué fallos concretos aparecen tras una versión y quedan ocultos al mirar sólo el promedio de estrellas?"
+        },
+        {
+          "id": "apple-resenas-apps.q2",
+          "text": "¿Qué temas aparecen tanto en reseñas favorables como negativas y qué diferencia el contexto de uso?"
+        },
+        {
+          "id": "apple-resenas-apps.q3",
+          "text": "¿Cuánto cambia el ranking de problemas al deduplicar reseñas, separar países y revisar manualmente ironía o negación?"
+        }
+      ],
+      "additional_source_ids": [
+        "apple-apps"
+      ],
+      "needed_inputs": "Reseñas por ID/tienda/versión/fecha y muestra manual; ampliar captura prospectiva si el feed no cubre el periodo necesario.",
+      "specific_checks": [
+        "Quienes reseñan no representan a toda la base.",
+        "Un feed breve no permite reconstruir todas las versiones; no inferir causa sólo por proximidad temporal."
+      ],
+      "first_output": "Taxonomía de problemas con citas breves e intervalos/alcance de la muestra.",
+      "name": "Reseñas públicas de apps por tienda",
+      "category": "Comida, viajes y aplicaciones",
+      "grain": "Reseña publicada",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:45+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#apple-resenas-apps",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "apple-resenas-apps.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "insideairbnb-cdmx",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "insideairbnb-cdmx.q1",
+          "text": "¿Qué zonas concentran anuncios de anfitriones con múltiples propiedades y cambia el patrón por tipo de alojamiento?"
+        },
+        {
+          "id": "insideairbnb-cdmx.q2",
+          "text": "¿Qué atributos del anuncio se asocian con precios diferentes dentro de zonas comparables, sin equipararlos a ingreso realizado?"
+        },
+        {
+          "id": "insideairbnb-cdmx.q3",
+          "text": "¿Cuánto cambia la concentración de oferta entre snapshots al separar anuncios persistentes, nuevos y desaparecidos?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Listings completos y capturas comparables; detalle textual y geografía según archivo disponible.",
+      "specific_checks": [
+        "Disponibilidad no equivale a ocupación; precio anunciado no es precio cobrado.",
+        "Múltiples anuncios no demuestran por sí solos propiedad legal ni impacto causal sobre vivienda."
+      ],
+      "first_output": "Mapa de estructura de oferta y evolución de anuncios.",
+      "name": "Alojamiento turístico: Inside Airbnb CDMX",
+      "category": "Comida, viajes y aplicaciones",
+      "grain": "Anuncio; calendario y reseñas son tablas diferentes",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:46+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#insideairbnb-cdmx",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "insideairbnb-cdmx.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "napoleonica-cartas",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "GRAPH",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH"
+      ],
+      "questions": [
+        {
+          "id": "napoleonica-cartas.q1",
+          "text": "¿Cambia el vocabulario de órdenes, dudas o urgencia según destinatario dentro del mismo año y género de carta?"
+        },
+        {
+          "id": "napoleonica-cartas.q2",
+          "text": "¿Qué destinatarios conectan asuntos militares, administrativos y familiares en la correspondencia conservada?"
+        },
+        {
+          "id": "napoleonica-cartas.q3",
+          "text": "¿Qué cambios de tema se mantienen al controlar cartas faltantes, copias y concentración editorial de ciertos periodos?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Cartas completas con ID CG, fecha, destinatario y edición; taxonomía manual de temas y tipos de destinatario.",
+      "specific_checks": [
+        "Conservar original y traducción separados y resolver alias con evidencia.",
+        "No inferir personalidad, diagnóstico o pensamientos no escritos de una selección editorial."
+      ],
+      "first_output": "Red de destinatarios y cambios de temas con pasajes contrastables.",
+      "name": "Correspondencia general de Napoleón",
+      "category": "Historia, diarios y literatura",
+      "grain": "Carta–destinatario–fecha; distinguir copias/ediciones",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:49+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#napoleonica-cartas",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "napoleonica-cartas.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "gallica-napoleon",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH"
+      ],
+      "questions": [
+        {
+          "id": "gallica-napoleon.q1",
+          "text": "¿Cómo cambia la representación de Napoleón entre correspondencia, memorias y biografías publicadas en épocas distintas?"
+        },
+        {
+          "id": "gallica-napoleon.q2",
+          "text": "¿Qué citas se repiten en muchas obras pero proceden del mismo testimonio o edición anterior?"
+        },
+        {
+          "id": "gallica-napoleon.q3",
+          "text": "¿Qué diferencias entre ediciones de un mismo texto son correcciones, omisiones editoriales o errores de OCR?"
+        }
+      ],
+      "additional_source_ids": [
+        "napoleonica-cartas"
+      ],
+      "needed_inputs": "Volúmenes/páginas u OCR accesibles con ARK y edición; originales de cartas como contraste cuando se obtengan.",
+      "specific_checks": [
+        "Separar fecha del hecho, de escritura y de edición.",
+        "Una coincidencia bibliográfica no acredita texto recuperado ni independencia del testimonio."
+      ],
+      "first_output": "Árbol de citas y versiones con pasajes paralelos y procedencia.",
+      "name": "Gallica: libros históricos sobre Napoleón y su correspondencia",
+      "category": "Historia, diarios y literatura",
+      "grain": "Edición/volumen/página; no igual a una carta",
+      "latest_source_test_status": "BLOCKED",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:49+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#gallica-napoleon",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "gallica-napoleon.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "pepys-diarios",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB",
+        "GRAPH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH"
+      ],
+      "questions": [
+        {
+          "id": "pepys-diarios.q1",
+          "text": "¿Qué rutinas de sueño, comida o desplazamiento cambian por estación y cuáles sólo se vuelven más mencionadas?"
+        },
+        {
+          "id": "pepys-diarios.q2",
+          "text": "¿Cómo cambia la red de personas y lugares durante acontecimientos delimitados de la ciudad?"
+        },
+        {
+          "id": "pepys-diarios.q3",
+          "text": "¿Qué menciones de vigilia nocturna describen una práctica explícita y cuáles enfermedad, metáfora o un caso excepcional?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Edición completa, entradas fechadas y separación de notas editoriales; anotación humana del contexto de sueño.",
+      "specific_checks": [
+        "Un diarista no es una muestra de la población.",
+        "Distinguir ausencia de mención de ausencia de práctica y contrastar testimonios independientes."
+      ],
+      "first_output": "Diario anotado por fecha con cronología y casos ambiguos.",
+      "name": "Diario de Samuel Pepys: vida cotidiana, enfermedad y ciudad",
+      "category": "Historia, diarios y literatura",
+      "grain": "Entrada fechada; separar notas del editor",
+      "latest_source_test_status": "DOCUMENT_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:50+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#pepys-diarios",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "pepys-diarios.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "musicbrainz-conciertos",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GRAPH",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "GRAPH",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "musicbrainz-conciertos.q1",
+          "text": "¿Qué recintos o ciudades enlazan artistas que aparecen en escenas musicales distintas dentro del corpus registrado?"
+        },
+        {
+          "id": "musicbrainz-conciertos.q2",
+          "text": "¿Cómo cambian las rutas de eventos al distinguir giras individuales, festivales y eventos con varios artistas?"
+        },
+        {
+          "id": "musicbrainz-conciertos.q3",
+          "text": "¿Qué diferencias de centralidad desaparecen al corregir alias, eventos duplicados y lugares con relaciones incompletas?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Eventos y relaciones de artistas/lugares de una consulta delimitada, con IDs MBID y cobertura.",
+      "specific_checks": [
+        "Registros colaborativos no son censo de conciertos.",
+        "No usar número de eventos registrados como medida de asistencia o ingresos."
+      ],
+      "first_output": "Red de eventos, artistas y recintos con cobertura y conflictos de identidad.",
+      "name": "Eventos, artistas y lugares de conciertos",
+      "category": "Música, baile y teatro",
+      "grain": "Evento; relaciones con artista y lugar",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:53:47+00:00",
+        "2026-11-05T00:53:50+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#musicbrainz-conciertos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "musicbrainz-conciertos.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "setlist-conciertos",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GRAPH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "setlist-conciertos.q1",
+          "text": "¿Qué canciones tienen funciones estables de apertura o cierre y cuáles cambian según etapa de una gira?"
+        },
+        {
+          "id": "setlist-conciertos.q2",
+          "text": "¿Qué conciertos sorprenden más por repertorio frente al repertorio habitual de la misma gira?"
+        },
+        {
+          "id": "setlist-conciertos.q3",
+          "text": "¿Las diferencias entre países se mantienen al controlar fecha, longitud del show, festival y setlists incompletos?"
+        }
+      ],
+      "additional_source_ids": [
+        "musicbrainz-conciertos"
+      ],
+      "needed_inputs": "API key autorizada y repertorios con versión, sets/encores y posición; IDs de artista y canción homologados.",
+      "specific_checks": [
+        "Preservar versionId; covers, medleys y repeticiones no se colapsan sin criterio.",
+        "Un setlist incompleto no permite medir ausencia de canción con certeza."
+      ],
+      "first_output": "Mapa de roles de canciones y rareza de repertorios por gira.",
+      "name": "Repertorios y orden de canciones en conciertos",
+      "category": "Música, baile y teatro",
+      "grain": "Concierto–set–posición de canción; versión revisable",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:53+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#setlist-conciertos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "setlist-conciertos.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "osm-mapas-restaurantes",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "GEO",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "osm-mapas-restaurantes.q1",
+          "text": "¿Dónde coincide poca oferta cartografiada de restaurantes con muchos establecimientos en DENUE, sugiriendo un hueco de mapeo?"
+        },
+        {
+          "id": "osm-mapas-restaurantes.q2",
+          "text": "¿Qué tanto cambian los resultados de accesibilidad al incluir caminos peatonales y restricciones de la red?"
+        },
+        {
+          "id": "osm-mapas-restaurantes.q3",
+          "text": "¿Qué categorías y zonas tienen etiquetas más completas y podrían sesgar un buscador de servicios?"
+        }
+      ],
+      "additional_source_ids": [
+        "inegi-denue"
+      ],
+      "needed_inputs": "Extracto OSM/Overpass permitido y delimitado, versiones/etiquetas y DENUE para contraste; red conectada para rutas.",
+      "specific_checks": [
+        "Tipo de elemento + ID; nodos y polígonos del mismo sitio no se cuentan dos veces.",
+        "Falta de etiqueta/objeto no equivale a servicio inexistente o cerrado."
+      ],
+      "first_output": "Mapa de discrepancias entre fuentes y cobertura de etiquetas.",
+      "name": "OpenStreetMap / Overpass: lugares y mapas vivos",
+      "category": "Mapas e inmuebles",
+      "grain": "Elemento OSM con etiquetas y versión",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:53+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#osm-mapas-restaurantes",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "osm-mapas-restaurantes.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "loc-mapas-historicos",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO",
+        "VISION",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "GEO",
+        "VISION",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "loc-mapas-historicos.q1",
+          "text": "¿Qué caminos, cursos de agua o topónimos cambian entre hojas comparables y cuáles diferencias son deformaciones de la reproducción?"
+        },
+        {
+          "id": "loc-mapas-historicos.q2",
+          "text": "¿Qué actividades o usos de edificios revela un mapa de seguros que no aparecen en un mapa actual?"
+        },
+        {
+          "id": "loc-mapas-historicos.q3",
+          "text": "¿Cuánto cambia una conclusión al mover puntos de control dentro del error de georreferenciación?"
+        }
+      ],
+      "additional_source_ids": [
+        "osm-mapas-restaurantes"
+      ],
+      "needed_inputs": "Imágenes de hojas/ediciones comparables, leyendas y mapa actual de la misma localidad; puntos de control documentados.",
+      "specific_checks": [
+        "No comparar el ejemplo de Jonesport con CDMX como si fueran la misma zona.",
+        "Escala, orientación y error residual se conservan; OCR de símbolo no sustituye lectura de leyenda."
+      ],
+      "first_output": "Mapa superpuesto con error de georreferenciación y hallazgos localizados.",
+      "name": "Mapas históricos digitalizados",
+      "category": "Mapas e inmuebles",
+      "grain": "Mapa/edición/hoja",
+      "latest_source_test_status": "METADATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:54+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#loc-mapas-historicos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "loc-mapas-historicos.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "gsm8k-examenes",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "MATH",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "MATH",
+        "TEXT",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "gsm8k-examenes.q1",
+          "text": "¿Qué habilidades explican más errores: conversiones, relaciones implícitas, varios pasos o datos irrelevantes?"
+        },
+        {
+          "id": "gsm8k-examenes.q2",
+          "text": "¿Qué respuestas correctas dejan de serlo al cambiar números, nombres o el orden de información sin cambiar la estructura matemática?"
+        },
+        {
+          "id": "gsm8k-examenes.q3",
+          "text": "¿Cuánto mejora una respuesta al verificar operaciones y unidades con código frente a responder sin esa comprobación?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Split identificado, referencias comprobadas y variantes nuevas revisadas por una persona; configuración del modelo si se evalúa.",
+      "specific_checks": [
+        "Contaminación del benchmark y equivalencia real de variantes.",
+        "Medir respuesta, consistencia y errores verificables; no atribuir comprensión general a un acierto."
+      ],
+      "first_output": "Benchmark pequeño con variantes, referencia y errores por habilidad.",
+      "name": "GSM8K: problemas matemáticos con soluciones",
+      "category": "Educación, exámenes y UNAM",
+      "grain": "Problema–solución–respuesta final",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:55+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#gsm8k-examenes",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "gsm8k-examenes.q1",
+      "execution_harness": "E3"
+    },
+    {
+      "id": "unam-colecciones",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO",
+        "VISION",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO",
+        "VISION",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "unam-colecciones.q1",
+          "text": "¿Qué zonas o periodos están poco representados por esfuerzo de colecta o digitalización, en vez de menor biodiversidad?"
+        },
+        {
+          "id": "unam-colecciones.q2",
+          "text": "¿Qué cambios de nombre, taxonomía o etiquetas alteran los conteos al homologar registros históricos?"
+        },
+        {
+          "id": "unam-colecciones.q3",
+          "text": "¿Qué discrepancias entre ficha e imagen pueden detectarse para revisión humana de una colección específica?"
+        }
+      ],
+      "additional_source_ids": [
+        "gbif-biodiversidad"
+      ],
+      "needed_inputs": "Elegir una colección homogénea, recuperar registros y diccionario, licencias de imágenes y fechas de colecta/digitalización cuando existan.",
+      "specific_checks": [
+        "No sumar especímenes, obras y objetos como si fueran unidades intercambiables.",
+        "No tratar registro ausente como especie ausente ni usar coordenadas sensibles sin sus restricciones."
+      ],
+      "first_output": "Auditoría de una colección y galería de discrepancias documentadas.",
+      "name": "Colecciones universitarias abiertas UNAM",
+      "category": "Educación, exámenes y UNAM",
+      "grain": "Ejemplar/objeto/registro de colección",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:57+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#unam-colecciones",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "unam-colecciones.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "unam-agenda-estadistica",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "unam-agenda-estadistica.q1",
+          "text": "¿En qué entidades o niveles crece la matrícula más rápido que personal u oferta publicada, usando cuadros compatibles?"
+        },
+        {
+          "id": "unam-agenda-estadistica.q2",
+          "text": "¿Qué diferencias entre campus son cambios reales de composición y cuáles cambios de definición o desagregación del anuario?"
+        },
+        {
+          "id": "unam-agenda-estadistica.q3",
+          "text": "¿Cuánto cambia la narrativa institucional al usar tasas de crecimiento, participaciones o valores absolutos de matrícula e investigación?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Cuadros de varias agendas con notas de definición y desagregación publicada; homologación de entidades.",
+      "specific_checks": [
+        "No inventar granularidad por plantel ni trayectorias de alumnos.",
+        "Separar personas, plazas, productos y participaciones antes de construir cocientes."
+      ],
+      "first_output": "Panel de numeralia homologada con notas y rupturas de serie.",
+      "name": "Agenda Estadística y numeralia UNAM",
+      "category": "Educación, exámenes y UNAM",
+      "grain": "Indicador–entidad académica–periodo según cuadro",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:53:47+00:00",
+        "2026-11-05T00:53:51+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#unam-agenda-estadistica",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "unam-agenda-estadistica.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "unam-guias-examenes",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "MATH",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "MATH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "unam-guias-examenes.q1",
+          "text": "¿Qué habilidades y representaciones matemáticas aparecen con frecuencia y cuáles quedan poco cubiertas en las guías seleccionadas?"
+        },
+        {
+          "id": "unam-guias-examenes.q2",
+          "text": "¿En qué ejercicios la IA falla al interpretar una gráfica, fórmula o instrucción aunque resuelva problemas textuales parecidos?"
+        },
+        {
+          "id": "unam-guias-examenes.q3",
+          "text": "¿Qué ejercicios equivalentes producen respuestas distintas al cambiar sólo representación o redacción, tras verificar que la equivalencia es válida?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Guías con plan, materia y edición exactos; en el ejemplo recuperado revisar cálculo diferencial, no asumir Matemáticas I. Soluciones revisadas manualmente.",
+      "specific_checks": [
+        "Son guías públicas, no intentos de alumno ni examen de admisión.",
+        "Dificultad de contenido no equivale a dificultad empírica sin respuestas de estudiantes."
+      ],
+      "first_output": "Mapa de habilidades y conjunto de ejercicios equivalentes con referencia.",
+      "name": "Guías públicas de exámenes extraordinarios CCH",
+      "category": "Educación, exámenes y UNAM",
+      "grain": "Guía–unidad–ejercicio; no intento de alumno",
+      "latest_source_test_status": "DOCUMENT_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:57+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#unam-guias-examenes",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "unam-guias-examenes.q1",
+      "execution_harness": "E3"
+    },
+    {
+      "id": "ct-ventas-inmuebles",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GEO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GEO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "ct-ventas-inmuebles.q1",
+          "text": "¿Qué supuestas gangas desaparecen al separar transferencias familiares, parciales y códigos de exclusión?"
+        },
+        {
+          "id": "ct-ventas-inmuebles.q2",
+          "text": "¿Cómo cambia la relación precio de venta/valor fiscal entre tipos de propiedad, ciudades y periodos comparables?"
+        },
+        {
+          "id": "ct-ventas-inmuebles.q3",
+          "text": "¿Qué tendencia se obtiene al usar fecha registrada en lugar de ListYear, y cuánto cambia la conclusión?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Transacciones completas y diccionario de exclusiones; geografía disponible y periodos delimitados.",
+      "specific_checks": [
+        "ListYear no equivale necesariamente al año de DateRecorded.",
+        "Son ventas registradas en Connecticut, no anuncios ni mercado mexicano."
+      ],
+      "first_output": "Atlas de transacciones comparables y anomalías explicadas sin inferir fraude.",
+      "name": "Ventas inmobiliarias registradas en Connecticut",
+      "category": "Mapas e inmuebles",
+      "grain": "Transacción inmobiliaria registrada",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:51:58+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#ct-ventas-inmuebles",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "ct-ventas-inmuebles.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "cmu-movimiento-baile",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "MOTION"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "MOTION"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "cmu-movimiento-baile.q1",
+          "text": "¿Qué secuencias comparten ritmo de movimiento pero usan combinaciones articulares distintas?"
+        },
+        {
+          "id": "cmu-movimiento-baile.q2",
+          "text": "¿Puede una clasificación de movimientos generalizar a sujetos no vistos o depende de rasgos del intérprete?"
+        },
+        {
+          "id": "cmu-movimiento-baile.q3",
+          "text": "¿Cuánto cambian similitudes y grupos al normalizar tamaño corporal, velocidad y orientación?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Pares ASF/AMC completos y licencia, etiquetas de secuencia, unidades/FPS y variedad de sujetos.",
+      "specific_checks": [
+        "Un prefijo AMC no valida toda la animación; usar su esqueleto correcto.",
+        "No inferir salud, personalidad ni identidad desde el movimiento."
+      ],
+      "first_output": "Animaciones comparables y evaluación de similitud por sujeto.",
+      "name": "Movimiento humano y secuencias de baile CMU MoCap",
+      "category": "Música, baile y teatro",
+      "grain": "Sujeto–secuencia–frame–articulación",
+      "latest_source_test_status": "HTTP_ERROR",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:00+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#cmu-movimiento-baile",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "cmu-movimiento-baile.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "aist-dance",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "MOTION",
+        "AUDIO"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "MOTION",
+        "AUDIO"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "aist-dance.q1",
+          "text": "¿Qué géneros muestran acentos de movimiento más alineados con pulsos musicales dentro del corpus?"
+        },
+        {
+          "id": "aist-dance.q2",
+          "text": "¿Qué movimientos se transfieren entre canciones sin perder sincronía y cuáles dependen más de tempo o intérprete?"
+        },
+        {
+          "id": "aist-dance.q3",
+          "text": "¿La comparación entre estilos se mantiene al separar bailarines, música y cámaras entre entrenamiento y prueba?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Poses, música y metadatos autorizados, FPS, calibración y particiones publicadas; anotaciones de pulso verificadas.",
+      "specific_checks": [
+        "Poses reconstruidas no son posiciones físicas exactas.",
+        "No mezclar distintas vistas de una misma secuencia entre particiones."
+      ],
+      "first_output": "Panel de sincronía con animación/sonido autorizado y errores por grupo.",
+      "name": "AIST++: baile, música y movimiento 3D",
+      "category": "Música, baile y teatro",
+      "grain": "Secuencia–música–frame–joints/cámara",
+      "latest_source_test_status": "DOC_ONLY",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:01+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#aist-dance",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "aist-dance.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "artic-pintura",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "VISION",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "VISION",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "artic-pintura.q1",
+          "text": "¿Qué motivos comparten obras visualmente cercanas que pertenecen a periodos o artistas muy distintos?"
+        },
+        {
+          "id": "artic-pintura.q2",
+          "text": "¿Cuánto de la diferencia de paletas entre Met y Art Institute se explica por medio, reproducción y selección de obras?"
+        },
+        {
+          "id": "artic-pintura.q3",
+          "text": "¿Qué pares de obras son similares por imagen pero distintos por descripción, y resiste esa diferencia una revisión humana?"
+        }
+      ],
+      "additional_source_ids": [
+        "met-arte"
+      ],
+      "needed_inputs": "API/metadatos e imágenes abiertas del Art Institute; muestra comparable de Met y taxonomía manual.",
+      "specific_checks": [
+        "Revisar image_id y condiciones de cada imagen.",
+        "Similitud visual no demuestra influencia histórica, autoría ni igualdad de pigmentos."
+      ],
+      "first_output": "Galería de similitudes y desacuerdos entre imagen y texto.",
+      "name": "Obras, textos e imágenes del Art Institute of Chicago",
+      "category": "Arte, pintura y Bob Ross",
+      "grain": "Obra y sus registros/imágenes",
+      "latest_source_test_status": "BLOCKED",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:01+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#artic-pintura",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "El recurso falló o estuvo bloqueado en la petición guardada; recuperar acceso autorizado antes del análisis. No eludir el bloqueo.",
+      "first_question_id": "artic-pintura.q1",
+      "execution_harness": "E4"
+    },
+    {
+      "id": "dracor-teatro",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "GRAPH",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "dracor-teatro.q1",
+          "text": "¿Quién parece protagonista por volumen de palabras y quién conecta realmente grupos de personajes?"
+        },
+        {
+          "id": "dracor-teatro.q2",
+          "text": "¿Qué personajes cambian de función entre actos al comparar copresencia, menciones y turnos de habla?"
+        },
+        {
+          "id": "dracor-teatro.q3",
+          "text": "¿Qué estructura narrativa se mantiene o desaparece al construir la red con otra definición de relación?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Obras TEI completas, edición/commit, personajes, escenas e intervenciones; anotación manual de una muestra.",
+      "specific_checks": [
+        "Copresencia no prueba conversación ni afinidad.",
+        "Centralidad depende de segmentación y anotación, no reemplaza la lectura literaria."
+      ],
+      "first_output": "Redes alternativas de una obra con pasajes que expliquen las diferencias.",
+      "name": "DraCor: teatro, personajes y redes de diálogo",
+      "category": "Música, baile y teatro",
+      "grain": "Obra–acto/escena–intervención–personaje",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:04+00:00",
+        "2026-11-05T00:52:09+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#dracor-teatro",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "dracor-teatro.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "uci-retail",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "FIN"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "uci-retail.q1",
+          "text": "¿Qué productos pasan de estrellas a resultados modestos al descontar cancelaciones y devoluciones en lugar de mirar ventas brutas?"
+        },
+        {
+          "id": "uci-retail.q2",
+          "text": "¿Qué combinaciones de productos aparecen juntas más de lo esperable por sus frecuencias individuales?"
+        },
+        {
+          "id": "uci-retail.q3",
+          "text": "¿Qué segmentos de compra cambian al incluir pedidos sin CustomerID y al separar devoluciones, ajustes y ventas normales?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Archivo completo, definición de cancelaciones y unidad de línea/factura; registros con ID faltante conservados en análisis adecuados.",
+      "specific_checks": [
+        "Factura + producto no garantiza línea única; conservar índice de fila.",
+        "Sin costos no se calcula beneficio; RFM de identificados no representa a todos los compradores."
+      ],
+      "first_output": "Ranking bruto/neto, cestas y sensibilidad a faltantes de cliente.",
+      "name": "Online Retail: facturas y líneas de pedido reales",
+      "category": "Comercio y medicina",
+      "grain": "Línea de factura; no confundir con cesta o cliente",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:04+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#uci-retail",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "uci-retail.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "openfda-etiquetas",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "VERSION"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC"
+      ],
+      "questions": [
+        {
+          "id": "openfda-etiquetas.q1",
+          "text": "¿Qué advertencias se expresan de forma distinta entre etiquetas de ingredientes comparables y cómo cambia la extracción según la redacción?"
+        },
+        {
+          "id": "openfda-etiquetas.q2",
+          "text": "¿Qué modificaciones de texto aparecen entre versiones de una misma etiqueta y cuáles afectan negación, población o condición de uso?"
+        },
+        {
+          "id": "openfda-etiquetas.q3",
+          "text": "¿En qué pasajes la IA confunde ausencia de mención, contraindicación e interacción, frente a revisión experta de la etiqueta?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Etiquetas completas con set_id/id, effective_time y secciones; ingredientes y vías/formas compatibles; revisión experta para afirmaciones clínicas.",
+      "specific_checks": [
+        "Registro repetido y versión no son productos independientes.",
+        "El análisis es documental; frecuencia de advertencias no estima riesgo clínico ni recomienda tratamiento."
+      ],
+      "first_output": "Comparador de versiones y matriz de errores de extracción con citas.",
+      "name": "Etiquetas y documentación farmacéutica pública",
+      "category": "Comercio y medicina",
+      "grain": "Etiqueta–producto–versión",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:05+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#openfda-etiquetas",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "openfda-etiquetas.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "wellcome-medicina-antigua",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS",
+        "VISION"
+      ],
+      "harnesses": [
+        "H0",
+        "TEXT",
+        "VISION"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "DOC",
+        "SEARCH",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "wellcome-medicina-antigua.q1",
+          "text": "¿Qué pasajes sobre primer sueño, segundo sueño o vigilia describen práctica cotidiana, consejo médico, enfermedad, metáfora o un caso ambiguo?"
+        },
+        {
+          "id": "wellcome-medicina-antigua.q2",
+          "text": "¿La interpretación cambia al comparar autores, épocas y géneros documentales y al buscar testimonios que la contradigan?"
+        },
+        {
+          "id": "wellcome-medicina-antigua.q3",
+          "text": "¿Cuántas menciones aparentemente independientes son copias, reediciones o citas del mismo testimonio?"
+        }
+      ],
+      "additional_source_ids": [
+        "pepys-diarios",
+        "loc-prensa-historica"
+      ],
+      "needed_inputs": "Obras/páginas y OCR completos del corpus delimitado, imágenes para cotejo y estudios históricos contrapuestos; la portada ya probada no responde estas preguntas.",
+      "specific_checks": [
+        "Distinguir autor/obra/edición, lengua y fecha; vocabulario histórico contextualizado.",
+        "No universalizar el sueño segmentado ni convertir historia de prácticas en consejo médico."
+      ],
+      "first_output": "Corpus de pasajes con contexto, contraejemplos y genealogía de citas.",
+      "name": "Libros, archivos e ilustraciones de medicina histórica",
+      "category": "Comercio y medicina",
+      "grain": "Obra–edición–página, con metadatos de producción",
+      "latest_source_test_status": "METADATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:05+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#wellcome-medicina-antigua",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Sólo se probaron metadatos/portal: conseguir datos o contenido y validar su contrato antes de analizar.",
+      "first_question_id": "wellcome-medicina-antigua.q1",
+      "execution_harness": "E2"
+    },
+    {
+      "id": "bob-ross-elementos",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GRAPH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "bob-ross-elementos.q1",
+          "text": "¿Qué parejas de motivos coaparecen más de lo esperable después de considerar la frecuencia de cada motivo?"
+        },
+        {
+          "id": "bob-ross-elementos.q2",
+          "text": "¿Qué asociaciones cambian al excluir invitados, separar temporadas o corregir búsquedas de muchas parejas?"
+        },
+        {
+          "id": "bob-ross-elementos.q3",
+          "text": "¿Qué motivos organizan grupos de episodios y se mantienen esos grupos bajo otra medida de semejanza?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "CSV completo de indicadores y diccionario; el piloto existente ya calcula árboles/montañas, pero las nuevas asociaciones deben probarse aparte.",
+      "specific_checks": [
+        "TREE OR TREES y MOUNTAIN OR MOUNTAINS son presencia, no conteos de objetos.",
+        "Etiquetas humanas con error; reservar datos o tratar nuevas asociaciones como exploratorias."
+      ],
+      "first_output": "Red de motivos con frecuencias base, sensibilidad y asociaciones por confirmar.",
+      "name": "Elementos que aparecen en los cuadros de Bob Ross",
+      "category": "Arte, pintura y Bob Ross",
+      "grain": "Episodio con indicadores binarios de motivos",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T00:52:08+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#bob-ross-elementos",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "bob-ross-elementos.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "bob-ross-paletas",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "VISION"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "VISION"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP",
+        "MEDIA"
+      ],
+      "questions": [
+        {
+          "id": "bob-ross-paletas.q1",
+          "text": "¿Qué colores declarados diferencian paisajes nocturnos, invernales o montañosos tras revisar una muestra de etiquetas?"
+        },
+        {
+          "id": "bob-ross-paletas.q2",
+          "text": "¿Cuánto concuerda la similitud entre paletas declaradas con la similitud de color de las reproducciones?"
+        },
+        {
+          "id": "bob-ross-paletas.q3",
+          "text": "¿Qué patrones de paleta cambian entre temporadas después de cotejar episodios y separar invitados cuando el cruce lo permita?"
+        }
+      ],
+      "additional_source_ids": [
+        "bob-ross-elementos"
+      ],
+      "needed_inputs": "CSV de paletas, imágenes autorizadas y etiquetas de paisaje; cruce temporada/episodio revisado con el dataset de elementos.",
+      "specific_checks": [
+        "Listas colors/color_hex completas y num_colors coherente, preservando la corrección CSV ya probada.",
+        "Pigmentos declarados no son proporciones de píxeles; no asumir derechos sobre imágenes."
+      ],
+      "first_output": "Galería de paletas y comparación imagen–metadatos con desacuerdos.",
+      "name": "Cuadros, paletas y episodios de Bob Ross",
+      "category": "Arte, pintura y Bob Ross",
+      "grain": "Cuadro–episodio; metadatos y enlaces",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-05T03:21:35+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#bob-ross-paletas",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
+      "first_question_id": "bob-ross-paletas.q1",
+      "execution_harness": "E4"
+    }
+  ],
+  "based_on": {
+    "repository": "jcval94/DataCollectionMov",
+    "commit": "bb3a09f747b8a28266b80edcb967dfc698c07f65",
+    "catalog_sha256": "3fb57dff95a96743d43919c26c8f1420b9f8d1d40171c0318ee2925b0c33a3cb",
+    "source_tests_sha256": "465beb904d8731d25c8075dfc0aa0e598ae28fa5b45c27109f5a9bde566004f5",
+    "visual_examples_sha256": "deabaf4e756241c4ce0a04ada671e2d2ad936e521d00ee6c67ad61bfcbd27012"
+  },
+  "execution_harnesses": {
+    "E1": {
+      "name": "Agente con terminal y ejecución Python/SQL",
+      "choice": "Usar el entorno actual para explorar y una CLI Python reproducible para cálculos; pandas/stdlib y SQL local según volumen.",
+      "when": "Tablas, finanzas, geografía, encuestas y redes que caben en un flujo acotado.",
+      "state": "Capacidades de archivos/ejecución disponibles; el análisis específico sigue propuesto.",
+      "acceptance": "El agente deja código, parámetros, logs y artefactos; las cifras se recomputan sin depender de la conversación."
+    },
+    "E2": {
+      "name": "Flujo de corpus con estado y revisión",
+      "choice": "Empezar con trabajos Python reanudables por documento/página. Si hay pausas, reintentos y revisiones de larga duración, LangGraph es candidato para orquestar estados y checkpoints.",
+      "when": "DOF, auditorías, historia, prensa, literatura, etiquetas y corpus con citas/versiones.",
+      "state": "Diseño propuesto; LangGraph no se instaló ni se probó en este repo.",
+      "acceptance": "Reanudar no duplica documentos ni etiquetas; cada estado conserva corpus, página/versión, decisión y revisión."
+    },
+    "E3": {
+      "name": "Evaluación por lotes con casos de referencia",
+      "choice": "Runner Python de problemas, variantes, respuestas y evaluadores; tests deterministas para operaciones, unidades y formato, con revisión humana de referencias.",
+      "when": "GSM8K y guías CCH; adaptar a cualquier piloto que compare modelos.",
+      "state": "Diseño propuesto; no se ejecutaron llamadas de evaluación a modelos.",
+      "acceptance": "Cada respuesta se asocia a problema, split/variante, configuración, costo/latencia y referencia; se reportan fallos del parser por separado."
+    },
+    "E4": {
+      "name": "Pipeline multimedia por archivo y secuencia",
+      "choice": "Trabajos Python con caché de decodificación y características, control de recursos y pasos separados de anotación, extracción y evaluación. El agente orquesta; los cálculos los hacen las herramientas.",
+      "when": "Arte, producto/etiqueta, biodiversidad visual, audio y baile.",
+      "state": "Pillow ya se usó en pruebas de imagen; dependencias y corpus de cada análisis deben validarse.",
+      "acceptance": "Cada salida enlaza a medio/versión/intervalo; se fijan reproducción, FPS o frecuencia, y los grupos no se filtran entre particiones."
+    }
+  }
+}

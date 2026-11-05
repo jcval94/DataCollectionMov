@@ -22,6 +22,8 @@ El [catálogo de 72 datasets y fuentes reales de México y del mundo](docs/CATAL
 
 La [versión estructurada JSON](catalogs/datasets_reales_mexico.json) permite filtrar y reutilizar las fichas. Cada ficha distingue datos estructurados, no estructurados y mixtos. Las [pruebas de acceso](source_tests/README.md) muestran resultados fechados, registros o ejemplos reales y errores; su [JSON de evidencia](source_tests/results.json) registra cada solicitud. El [ejemplo DOF/Git](examples/dof_git/README.md) incluye dos commits locales comprobados y su diff. La [guía de descubrimientos con IA](docs/GUIA_DESCUBRIMIENTOS_IA.md) conecta las temáticas con preguntas y validación. El [piloto de Bob Ross](examples/bob_ross_discovery/README.md) muestra un resultado calculado, con programa y evidencia. Es un catálogo de oportunidades: las nuevas fuentes no activan recolección programada; las pruebas son acotadas y bajo demanda. Revisión: 4 de noviembre de 2026.
 
+La [matriz de exploración con IA](docs/exploration/README.md) propone **216 preguntas (tres por cada fuente)**, skills reutilizables, MCP/herramientas y un arnés por método, con insumos pendientes y criterios de validación. Incluye su [plan estructurado](catalogs/exploration_plan.json).
+
 <!-- SOURCE_TESTS:START -->
 ## Tests y ejemplos visibles
 

@@ -1,0 +1,13 @@
+{
+  "sources": 72,
+  "questions": 216,
+  "categories": 16,
+  "skill_routes": "PASS",
+  "tool_routes": "PASS",
+  "harness_routes": "PASS",
+  "source_dependencies": "PASS",
+  "question_uniqueness": "PASS",
+  "scope": "Validación estructural del plan, no validación de respuestas ni instalación de herramientas",
+  "plan_sha256": "343ebd6bc57eb7d44874db730af873df8ee9c22466b9067d116ff0fa03f30eca",
+  "validator_sha256": "46731d7eb28a350b0df8ffb69b5262f6583b9428ac51bccc4c51a8b854271979"
+}

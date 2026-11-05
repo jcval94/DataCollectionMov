@@ -4,6 +4,8 @@ El objetivo de este catálogo es encontrar preguntas que no se nos habrían ocur
 
 Las preguntas siguientes son **hipótesis abiertas**, no hallazgos ya demostrados. El [piloto de Bob Ross](../examples/bob_ross_discovery/README.md) es una excepción explícita: incluye cálculos ejecutados y verificaciones. Las [pruebas de acceso](../source_tests/README.md) indican qué material se recuperó realmente.
 
+La [matriz de exploración por fuente](exploration/README.md) amplía esta guía con **216 preguntas**, skills, MCP/herramientas, arneses y controles concretos para las 72 fuentes. Es un plan de trabajo; las respuestas y evaluaciones de método siguen pendientes.
+
 ## Mapa de temas y preguntas
 
 | Tema pedido | Fuentes del catálogo | Qué podríamos descubrir | Papel de la IA y comprobación necesaria |
