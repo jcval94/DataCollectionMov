@@ -202,3 +202,14 @@ Ya está disponible el [piloto retail: bruto frente a neto](examples/retail_disc
 ## Integración a las clases
 
 El [plan docente de datasets e IA](docs/exploration/PLAN_DOCENTE_DATASETS.md) propone cómo llevar las 72 fuentes a las 22 clases: pregunta recomendada, justificación curricular, duración, guion de acción, preparación docente y contingencias. Incluye una primera actividad de retail de 30 minutos para la clase 11 y una secuencia inicial de seis cápsulas dentro de las horas existentes.
+
+## Auditoría y validación
+
+La [auditoría del 5 de noviembre de 2026](docs/revisiones/2026-11-05-auditoria/README.md) documenta hallazgos, correcciones, pruebas y límites de cobertura. Incluye registros públicos nuevos y pendientes de almacenamiento/observabilidad. Validación local sin secretos:
+
+```bash
+python -m pip install -e '.[audit]'
+python -m pytest -q tests
+python scripts/render_exploration_plan.py --check
+python scripts/run_discovery.py --self-check
+```

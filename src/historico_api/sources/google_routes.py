@@ -35,7 +35,7 @@ PLACES = {
 
 
 def run_google_routes(config_path: str, run_date: str | None = None) -> None:
-    key = os.getenv("MAPS", os.getenv("GOOGLE_MAPS_API_KEY", "")).strip()
+    key = (os.getenv("MAPS", "").strip() or os.getenv("GOOGLE_MAPS_API_KEY", "").strip())
     if not key:
         raise ValueError("Configura secret MAPS o GOOGLE_MAPS_API_KEY en GitHub Actions.")
 
@@ -283,11 +283,16 @@ def build_accessibility_score(df: pd.DataFrame) -> pd.DataFrame:
             out[col] = np.nan
 
     def minmax(series: pd.Series) -> pd.Series:
-        numeric = pd.to_numeric(series, errors="coerce")
+        numeric = pd.to_numeric(series, errors="coerce").where(valid)
         if numeric.notna().sum() == 0 or numeric.max() == numeric.min():
-            return pd.Series([0.0] * len(numeric), index=numeric.index)
+            return numeric.where(numeric.isna(), 0.0)
         return (numeric - numeric.min()) / (numeric.max() - numeric.min())
 
+    valid = pd.to_numeric(out["duration_minutes"], errors="coerce").notna()
+    if "route_found" in out:
+        valid &= out["route_found"].fillna(False).astype(bool)
+    if "condition" in out:
+        valid &= out["condition"].eq("ROUTE_EXISTS")
     out["duration_score"] = minmax(out["duration_minutes"])
     out["delay_score"] = minmax(out["delay_minutes"].fillna(0))
     out["traffic_pct_score"] = minmax(out["traffic_delay_pct"].fillna(0))

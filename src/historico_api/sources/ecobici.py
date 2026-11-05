@@ -61,6 +61,13 @@ def run_ecobici_historical(
     start_month: str | None = None,
     end_month: str | None = None,
 ) -> None:
+    for month in (start_month, end_month):
+        if month is not None:
+            if not re.fullmatch(r"\d{4}-\d{2}", month):
+                raise ValueError("Mes debe tener formato YYYY-MM")
+            datetime.strptime(month, "%Y-%m")
+    if start_month and end_month and start_month > end_month:
+        raise ValueError("Mes inicial posterior al final")
     snapshot_id = make_snapshot_id()
     links = discover_historical_csv_links()
     if start_month is None and end_month is None:

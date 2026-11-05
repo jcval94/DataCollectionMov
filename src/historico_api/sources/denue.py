@@ -136,7 +136,7 @@ def denue_get_json(url: str, timeout: int = 60, retries: int = 3) -> Any:
             last_error = exc
             if attempt < retries:
                 time.sleep(1.0)
-    raise RuntimeError(f"No se pudo consultar DENUE. Ultimo error: {last_error}")
+    raise RuntimeError(f"No se pudo consultar DENUE tras {retries} intentos ({type(last_error).__name__}). URL y respuesta omitidas para proteger el token.") from None
 
 
 def normalize_denue_df(data: Any) -> pd.DataFrame:

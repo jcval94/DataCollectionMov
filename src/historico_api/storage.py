@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -18,7 +19,7 @@ def parse_run_date(run_date: str | None = None) -> date:
 
 
 def make_snapshot_id() -> str:
-    return datetime.utcnow().replace(microsecond=0).strftime("%Y%m%dT%H%M%SZ")
+    return datetime.now(timezone.utc).replace(microsecond=0).strftime("%Y%m%dT%H%M%SZ")
 
 
 def save_tables(
@@ -82,12 +83,13 @@ def save_table(
     for column, value in [
         ("_snapshot_id", snapshot_id),
         ("_snapshot_date", snapshot_date.isoformat()),
-        ("_extracted_at_utc", datetime.utcnow().replace(microsecond=0).isoformat() + "Z"),
+        ("_extracted_at_utc", datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")),
         ("_source_table", name),
         ("_source_system", source),
     ]:
-        if column not in normalized.columns:
-            normalized.insert(0, column, value)
+        if column in normalized.columns:
+            normalized = normalized.drop(columns=[column])
+        normalized.insert(0, column, value)
 
     current_dir = Path("data/current")
     history_dir = Path("data/history") / name
@@ -97,8 +99,13 @@ def save_table(
     current_path = current_dir / f"{name}.csv"
     snapshot_path = history_dir / f"{snapshot_id}.csv"
 
-    normalized.to_csv(current_path, index=False, encoding="utf-8")
-    normalized.to_csv(snapshot_path, index=False, encoding="utf-8")
+    # A repeated identifier must never rewrite historical evidence or current.
+    if snapshot_path.exists():
+        raise FileExistsError(f"Snapshot ya existe: {snapshot_path}")
+    normalized.to_csv(snapshot_path, index=False, encoding="utf-8", mode="x")
+    temp_path = current_path.with_suffix(".csv.tmp")
+    normalized.to_csv(temp_path, index=False, encoding="utf-8")
+    temp_path.replace(current_path)
 
     return {
         "table": name,
@@ -107,6 +114,7 @@ def save_table(
         "snapshot_date": snapshot_date.isoformat(),
         "rows": int(len(normalized)),
         "columns": int(len(normalized.columns)),
+        "hash_sha256": hashlib.sha256(snapshot_path.read_bytes()).hexdigest(),
         "cadence": cadence,
         "current_path": str(current_path).replace("\\", "/"),
         "snapshot_path": str(snapshot_path).replace("\\", "/"),
@@ -162,7 +170,7 @@ def write_manifest(
     manifest_path.write_text(
         json.dumps(
             {
-                "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+                "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
                 "source": source,
                 "snapshot_id": snapshot_id,
                 "snapshot_date": snapshot_date.isoformat(),
@@ -186,12 +194,17 @@ def append_artifact_manifest(
     manifest_dir.mkdir(parents=True, exist_ok=True)
     path = manifest_dir / f"{snapshot_id}_{source}_artifacts.json"
     payload = {
-        "generated_at": datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "source": source,
         "snapshot_id": snapshot_id,
         "snapshot_date": snapshot_date.isoformat(),
         "artifacts": [row],
     }
+    if path.exists():
+        existing = json.loads(path.read_text(encoding="utf-8"))
+        if any(existing.get(k) != payload[k] for k in ("source", "snapshot_id", "snapshot_date")):
+            raise ValueError("Identidad de manifiesto incompatible")
+        payload["artifacts"] = [a for a in existing.get("artifacts", []) if a.get("artifact") != row["artifact"]] + [row]
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -199,4 +212,6 @@ def read_current_table(name: str) -> pd.DataFrame:
     path = Path("data/current") / f"{name}.csv"
     if not path.exists():
         return pd.DataFrame()
-    return pd.read_csv(path, low_memory=False)
+    columns = pd.read_csv(path, nrows=0).columns
+    text_keys = {c: "string" for c in columns if c.endswith("_id") or c in {"codigo_postal", "d_codigo", "CP", "CVEGEO", "CCT", "CLUES", "CLEE"}}
+    return pd.read_csv(path, dtype=text_keys, low_memory=False)

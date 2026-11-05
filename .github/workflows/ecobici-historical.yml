@@ -34,11 +34,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
       - name: Extraer historico ECOBICI
+        env:
+          START_MONTH: ${{ inputs.start_month }}
+          END_MONTH: ${{ inputs.end_month }}
+        shell: bash
         run: |
-          ARGS=""
-          if [ -n "${{ inputs.start_month }}" ]; then ARGS="$ARGS --start-month ${{ inputs.start_month }}"; fi
-          if [ -n "${{ inputs.end_month }}" ]; then ARGS="$ARGS --end-month ${{ inputs.end_month }}"; fi
-          python -m historico_api source ecobici_historical --config configs/tables.yml $ARGS
+          set -euo pipefail
+          ARGS=()
+          if [ -n "$START_MONTH" ]; then ARGS+=(--start-month "$START_MONTH"); fi
+          if [ -n "$END_MONTH" ]; then ARGS+=(--end-month "$END_MONTH"); fi
+          python -m historico_api source ecobici_historical --config configs/tables.yml "${ARGS[@]}"
       - run: python -m historico_api docs --config configs/tables.yml
       - name: Commit
         run: |

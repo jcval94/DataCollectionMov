@@ -88,7 +88,7 @@ def main() -> int:
     routes = build_routes(
         centroids=centroids,
         units=units,
-        google_key=os.getenv("MAPS", os.getenv("GOOGLE_MAPS_API_KEY", "")).strip(),
+        google_key=(os.getenv("MAPS", "").strip() or os.getenv("GOOGLE_MAPS_API_KEY", "").strip()),
         max_google_routes=args.max_google_routes,
         candidate_units=args.candidate_units,
         sleep_seconds=args.google_sleep_seconds,

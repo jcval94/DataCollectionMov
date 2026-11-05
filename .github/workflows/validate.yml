@@ -1,0 +1,36 @@
+name: Validar código y catálogo
+on:
+  push:
+    paths: ['src/**', 'scripts/**', 'tests/**', 'catalogs/**', 'pyproject.toml', '.github/workflows/**']
+  pull_request:
+    paths: ['src/**', 'scripts/**', 'tests/**', 'catalogs/**', 'pyproject.toml', '.github/workflows/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            src
+            scripts
+            tests
+            catalogs
+            docs
+            examples
+            source_tests
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -e '.[audit]'
+      - name: Rechazar caché de autenticación versionada
+        run: test -z "$(git ls-files data/tmp/)"
+      - run: python -m pytest -q tests
+      - run: python -m compileall -q src scripts
+      - run: python scripts/render_exploration_plan.py --check
+      - run: python scripts/run_discovery.py --self-check

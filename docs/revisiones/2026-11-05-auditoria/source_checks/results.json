@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "started_at_utc": "2026-11-05T16:02:34+00:00",
+    "started_at_local": "2026-11-05T10:02:34-06:00",
+    "timeout_seconds": 18,
+    "workers": 4,
+    "max_bytes": 8388608,
+    "python_version": "3.12.14",
+    "probe_script_sha256": "3b538dbf5c66410c7309d8bbb424be59f74bed55b8d98dfa8d7b2d51c7349243",
+    "probe_definitions_sha256": "06cd81f032ce5164c273b8b1afb5427d04e48d4e1386f13f308dbf9ae9bda5df",
+    "finished_at_utc": "2026-11-05T16:02:44+00:00"
+  },
+  "summary": {
+    "DATA_SAMPLE": 3
+  },
+  "results": [
+    {
+      "id": "ecobici-gbfs",
+      "name": "ECOBICI: catálogo y disponibilidad GBFS",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T16:02:34+00:00",
+          "kind": "gbfs",
+          "scope": "live_public",
+          "sample": [
+            {
+              "station_id": "1",
+              "name": "CE-710 Molino del Rey - Glorieta de la Lealtad",
+              "lat": 19.416795,
+              "lon": -99.192508,
+              "capacity": 39
+            },
+            {
+              "station_id": "5",
+              "name": "CE-407  Prolongación Xochicalco-General Emiliano Zapata",
+              "lat": 19.36726591257277,
+              "lon": -99.15865559132271,
+              "capacity": 19
+            }
+          ],
+          "requested_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json",
+          "final_url": "https://gbfs.mex.lyftbikes.com/gbfs/gbfs.json",
+          "http_status": 200,
+          "content_type": "text/plain; charset=UTF-8",
+          "last_modified": "Thu, 05 Nov 2026 16:02:32 GMT",
+          "bytes_read": 1049,
+          "truncated": false,
+          "sha256": "47534851cdec6cc3eed02032105d73ce33065fcf01316a9cde9514292257f185",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "child": {
+            "checked_at_utc": "2026-11-05T16:02:38+00:00",
+            "kind": "json",
+            "scope": "live_public",
+            "sample": [
+              {
+                "station_id": "1",
+                "name": "CE-710 Molino del Rey - Glorieta de la Lealtad",
+                "lat": 19.416795,
+                "lon": -99.192508,
+                "capacity": 39
+              },
+              {
+                "station_id": "5",
+                "name": "CE-407  Prolongación Xochicalco-General Emiliano Zapata",
+                "lat": 19.36726591257277,
+                "lon": -99.15865559132271,
+                "capacity": 19
+              }
+            ],
+            "requested_url": "https://gbfs.mex.lyftbikes.com/gbfs/en/station_information.json",
+            "final_url": "https://gbfs.mex.lyftbikes.com/gbfs/en/station_information.json",
+            "http_status": 200,
+            "content_type": "text/plain; charset=UTF-8",
+            "last_modified": "Thu, 05 Nov 2026 16:02:43 GMT",
+            "bytes_read": 226314,
+            "truncated": false,
+            "sha256": "5fe57f82b573e30554241b2b5b0b6b15bb2206aeb97190dc7192a40c6b04ee1a",
+            "hash_scope": "complete_response",
+            "status": "DATA_SAMPLE",
+            "observed_rows": 677,
+            "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+            "elapsed_seconds": 4.852
+          },
+          "detail": "Descubrimiento GBFS y validación del catálogo de estaciones.",
+          "elapsed_seconds": 9.081
+        }
+      ]
+    },
+    {
+      "id": "usgs-sismos",
+      "name": "Terremotos del último día y sus revisiones",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T16:02:34+00:00",
+          "kind": "geojson",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "nc75462752",
+              "properties.title": "M 0.6 - 8 km NW of The Geysers, CA",
+              "properties.mag": 0.57,
+              "properties.time": 1793892938920,
+              "properties.updated": 1793893034165,
+              "geometry.coordinates": [
+                -122.818336486816,
+                38.8349990844727,
+                1.76999998092651
+              ]
+            },
+            {
+              "id": "aka2026vybunh",
+              "properties.title": "M 2.2 - 44 km WNW of Happy Valley, Alaska",
+              "properties.mag": 2.2,
+              "properties.time": 1793892669666,
+              "properties.updated": 1793892815939,
+              "geometry.coordinates": [
+                -152.482,
+                60.083,
+                90.5
+              ]
+            }
+          ],
+          "requested_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+          "final_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "last_modified": "Thu, 05 Nov 2026 16:02:29 GMT",
+          "bytes_read": 133825,
+          "truncated": false,
+          "sha256": "852a95cf56d165fe890ef80de27717d0a7f1b50d02e73fd4ae6ed825baf0cf0f",
+          "hash_scope": "complete_response",
+          "reported_count": 187,
+          "status": "DATA_SAMPLE",
+          "observed_rows": 187,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 4.058
+        }
+      ]
+    },
+    {
+      "id": "met-arte",
+      "name": "Arte, objetos e imágenes del Metropolitan Museum",
+      "status": "DATA_SAMPLE",
+      "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T16:02:34+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "objectID": 436535,
+              "title": "Wheat Field with Cypresses",
+              "artistDisplayName": "Vincent van Gogh",
+              "objectDate": "1889",
+              "medium": "Oil on canvas",
+              "isPublicDomain": true,
+              "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DP-42549-001.jpg"
+            }
+          ],
+          "requested_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+          "final_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/436535",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 2794,
+          "truncated": false,
+          "sha256": "1fa9e8fa9df93b41c335fdd4306a489551862acab66677f12dff2e9619781f10",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 1,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente. Se probó además la cabecera del medio enlazado; ver resultado del recurso.",
+          "child": {
+            "checked_at_utc": "2026-11-05T16:02:39+00:00",
+            "kind": "media",
+            "scope": "live_public",
+            "sample": [
+              {
+                "format": "JPEG",
+                "bytes_checked": 65536,
+                "complete_file": false
+              }
+            ],
+            "requested_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg",
+            "final_url": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg",
+            "http_status": 200,
+            "content_type": "image/jpeg",
+            "last_modified": "Thu, 20 Nov 2025 09:51:46 GMT",
+            "bytes_read": 65536,
+            "truncated": true,
+            "sha256": "13a1b7dca4e197436d38008ce8e45c32f4a9465d44b32bb3673dca73b9a7dcf7",
+            "hash_scope": "response_prefix",
+            "status": "MEDIA_SAMPLE",
+            "detail": "Sólo firma binaria y acceso al prefijo: no se decodificó, reprodujo ni validó el medio completo.",
+            "elapsed_seconds": 5.07
+          },
+          "elapsed_seconds": 10.152
+        }
+      ]
+    }
+  ]
+}

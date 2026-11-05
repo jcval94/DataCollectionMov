@@ -1,0 +1,450 @@
+{
+  "head": "8a222d541a599d7cffde368191d99fac919ff9e4",
+  "tree": {
+    "files": 10587,
+    "bytes": 3349012655
+  },
+  "runs": [
+    {
+      "name": "TomTom one-month history",
+      "conclusion": "success",
+      "date": "2026-11-05T07:17:33Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41986196803"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-05T07:10:33Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41985372629"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-05T06:59:23Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41984074039"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-05T06:39:28Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41981874074"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-05T01:01:13Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41945570019"
+    },
+    {
+      "name": "TomTom one-month history",
+      "conclusion": "success",
+      "date": "2026-11-05T00:58:46Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41945275354"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-05T00:56:34Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41945027774"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-05T00:54:51Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41944824384"
+    },
+    {
+      "name": "Google Routes",
+      "conclusion": "success",
+      "date": "2026-11-04T20:29:49Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41907143168"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-04T19:58:47Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41902139086"
+    },
+    {
+      "name": "TomTom one-month history",
+      "conclusion": "success",
+      "date": "2026-11-04T19:57:30Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41901939775"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-04T19:55:33Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41901632806"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-04T19:48:25Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41900495880"
+    },
+    {
+      "name": "TomTom one-month history",
+      "conclusion": "success",
+      "date": "2026-11-04T06:55:13Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41788707243"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-04T06:52:41Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41788431952"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-04T06:39:54Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41787025125"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-04T06:10:36Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41783792278"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-04T00:50:05Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41749758005"
+    },
+    {
+      "name": "TomTom one-month history",
+      "conclusion": "success",
+      "date": "2026-11-04T00:46:34Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41749336235"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-04T00:42:35Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41748837576"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-04T00:37:22Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41748197249"
+    },
+    {
+      "name": "Google Routes",
+      "conclusion": "success",
+      "date": "2026-11-03T20:13:31Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41710575853"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-03T19:44:58Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41706143482"
+    },
+    {
+      "name": "TomTom one-month history",
+      "conclusion": "success",
+      "date": "2026-11-03T19:42:34Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41705775199"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-03T19:39:26Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41705292118"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-03T19:30:10Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41703833503"
+    },
+    {
+      "name": "TomTom one-month history",
+      "conclusion": "success",
+      "date": "2026-11-03T07:10:07Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41594517053"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-03T07:07:05Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41594182958"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-03T06:58:05Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41593203242"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-03T06:42:34Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41591594362"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-03T03:40:30Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41573603508"
+    },
+    {
+      "name": "TomTom traffic",
+      "conclusion": "success",
+      "date": "2026-11-03T03:31:32Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41572712423"
+    },
+    {
+      "name": "Metrobus realtime",
+      "conclusion": "success",
+      "date": "2026-11-03T03:28:35Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41572418008"
+    },
+    {
+      "name": "Google Routes",
+      "conclusion": "success",
+      "date": "2026-11-02T22:25:38Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41537163955"
+    },
+    {
+      "name": "ECOBICI realtime",
+      "conclusion": "success",
+      "date": "2026-11-02T21:53:52Z",
+      "url": "https://github.com/jcval94/DataCollectionMov/actions/runs/41532489801"
+    }
+  ],
+  "manifests": [
+    {
+      "source": "ecobici",
+      "path": "data/manifests/20261105T071126Z_ecobici.json",
+      "generated_at": "2026-11-05T07:11:27Z",
+      "tables": [
+        {
+          "table": "ecobici_gbfs_station_status",
+          "rows": 677,
+          "current_path": "data/current/ecobici_gbfs_station_status.csv",
+          "has_hash": false
+        },
+        {
+          "table": "ecobici_realtime_stations",
+          "rows": 677,
+          "current_path": "data/current/ecobici_realtime_stations.csv",
+          "has_hash": false
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "source": "google_routes",
+      "path": "data/manifests/20261104T203052Z_google_routes.json",
+      "generated_at": "2026-11-04T20:30:56Z",
+      "tables": [
+        {
+          "table": "routes_api_comparacion_modos",
+          "rows": 4,
+          "current_path": "data/current/routes_api_comparacion_modos.csv",
+          "has_hash": false
+        },
+        {
+          "table": "routes_api_drive_pairs",
+          "rows": 8,
+          "current_path": "data/current/routes_api_drive_pairs.csv",
+          "has_hash": false
+        },
+        {
+          "table": "routes_api_ejemplo_ruta",
+          "rows": 1,
+          "current_path": "data/current/routes_api_ejemplo_ruta.csv",
+          "has_hash": false
+        },
+        {
+          "table": "routes_api_matriz",
+          "rows": 18,
+          "current_path": "data/current/routes_api_matriz.csv",
+          "has_hash": false
+        },
+        {
+          "table": "routes_api_score",
+          "rows": 18,
+          "current_path": "data/current/routes_api_score.csv",
+          "has_hash": false
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "source": "google_routes_artifacts",
+      "path": "data/manifests/20261104T203052Z_google_routes_artifacts.json",
+      "generated_at": "2026-11-04T20:30:57Z",
+      "tables": [],
+      "artifacts": 1
+    },
+    {
+      "source": "tomtom",
+      "path": "data/manifests/20261105T070004Z_tomtom.json",
+      "generated_at": "2026-11-05T07:00:08Z",
+      "tables": [
+        {
+          "table": "tomtom_cdmx_flow",
+          "rows": 12,
+          "current_path": "data/current/tomtom_cdmx_flow.csv",
+          "has_hash": false
+        },
+        {
+          "table": "tomtom_cdmx_incidents",
+          "rows": 458,
+          "current_path": "data/current/tomtom_cdmx_incidents.csv",
+          "has_hash": false
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "source": "tomtom_artifacts",
+      "path": "data/manifests/20261105T070004Z_tomtom_artifacts.json",
+      "generated_at": "2026-11-05T07:00:08Z",
+      "tables": [],
+      "artifacts": 1
+    },
+    {
+      "source": "metrobus",
+      "path": "data/manifests/20261105T064029Z_metrobus.json",
+      "generated_at": "2026-11-05T06:40:32Z",
+      "tables": [
+        {
+          "table": "metrobus_alerts",
+          "rows": 0,
+          "current_path": "data/current/metrobus_alerts.csv",
+          "has_hash": false
+        },
+        {
+          "table": "metrobus_trip_updates",
+          "rows": 0,
+          "current_path": "data/current/metrobus_trip_updates.csv",
+          "has_hash": false
+        },
+        {
+          "table": "metrobus_vehicle_positions",
+          "rows": 829,
+          "current_path": "data/current/metrobus_vehicle_positions.csv",
+          "has_hash": false
+        },
+        {
+          "table": "metrobus_vehicle_positions_enriched",
+          "rows": 829,
+          "current_path": "data/current/metrobus_vehicle_positions_enriched.csv",
+          "has_hash": false
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "source": "metrobus_artifacts",
+      "path": "data/manifests/20261105T064029Z_metrobus_artifacts.json",
+      "generated_at": "2026-11-05T06:40:33Z",
+      "tables": [],
+      "artifacts": 1
+    },
+    {
+      "source": "denue",
+      "path": "data/manifests/20261008T162625Z_denue.json",
+      "generated_at": "2026-10-08T16:27:53Z",
+      "tables": [
+        {
+          "table": "campus_cdmx_base",
+          "rows": 12,
+          "current_path": "data/current/campus_cdmx_base.csv",
+          "has_hash": false
+        },
+        {
+          "table": "denue_cdmx_educacion_superior_universitaria",
+          "rows": 881,
+          "current_path": "data/current/denue_cdmx_educacion_superior_universitaria.csv",
+          "has_hash": false
+        },
+        {
+          "table": "denue_cdmx_sector_61_servicios_educativos",
+          "rows": 10591,
+          "current_path": "data/current/denue_cdmx_sector_61_servicios_educativos.csv",
+          "has_hash": false
+        },
+        {
+          "table": "denue_establecimientos_alrededor_campus",
+          "rows": 5728,
+          "current_path": "data/current/denue_establecimientos_alrededor_campus.csv",
+          "has_hash": false
+        },
+        {
+          "table": "denue_metadata_reporte",
+          "rows": 159,
+          "current_path": "data/current/denue_metadata_reporte.csv",
+          "has_hash": false
+        },
+        {
+          "table": "denue_resumen_por_nivel_educativo",
+          "rows": 186,
+          "current_path": "data/current/denue_resumen_por_nivel_educativo.csv",
+          "has_hash": false
+        },
+        {
+          "table": "denue_resumen_zonas_universitarias",
+          "rows": 32,
+          "current_path": "data/current/denue_resumen_zonas_universitarias.csv",
+          "has_hash": false
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "source": "denue_artifacts",
+      "path": "data/manifests/20261008T162625Z_denue_artifacts.json",
+      "generated_at": "2026-10-08T16:27:54Z",
+      "tables": [],
+      "artifacts": 1
+    }
+  ],
+  "validation": {
+    "regressions_before": {
+      "failed": 12,
+      "passed": 1
+    },
+    "regressions_after": {
+      "passed": 13,
+      "failed": 0
+    },
+    "catalog_sources": 72,
+    "catalog_questions": 216,
+    "public_source_checks": 3,
+    "public_source_status": "DATA_SAMPLE",
+    "scope": "Local Python 3.12; CI Python 3.11 todavía no observado"
+  },
+  "missing_current_tables": [
+    "metrobus_gtfs_static_agency",
+    "metrobus_gtfs_static_routes",
+    "metrobus_gtfs_static_stops",
+    "metrobus_gtfs_static_trips",
+    "metrobus_gtfs_static_stop_times",
+    "metrobus_gtfs_static_calendar",
+    "metrobus_gtfs_static_calendar_dates",
+    "metrobus_gtfs_static_shapes",
+    "metrobus_gtfs_static_frequencies",
+    "metrobus_gtfs_static_feed_info",
+    "metrobus_gtfs_static_transfers",
+    "ecobici_historical_links",
+    "ecobici_historico_raw",
+    "ecobici_historico_normalizado",
+    "ecobici_summary_trips_by_hour",
+    "ecobici_summary_trips_by_date",
+    "ecobici_summary_top_start_stations",
+    "ecobici_summary_top_end_stations",
+    "ecobici_summary_top_od_flows",
+    "ecobici_summary_duration_stats",
+    "ecobici_metadata_columns",
+    "ecobici_dataset_summary",
+    "ecobici_datetime_summary",
+    "ecobici_numeric_summary"
+  ]
+}

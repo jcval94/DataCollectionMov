@@ -55,7 +55,7 @@ ICON_CATEGORY_MAP = {
 
 def run_tomtom(config_path: str, run_date: str | None = None) -> None:
     snapshot_id = make_snapshot_id()
-    key = os.getenv("TOMTOM", os.getenv("TOMTOM_KEY", "")).strip()
+    key = (os.getenv("TOMTOM", "").strip() or os.getenv("TOMTOM_KEY", "").strip())
     if not key:
         raise ValueError("Configura secret TOMTOM o TOMTOM_KEY en GitHub Actions.")
 

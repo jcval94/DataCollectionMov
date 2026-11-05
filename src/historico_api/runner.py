@@ -209,7 +209,9 @@ def _parse_date(run_date: str | None) -> date:
 
 
 def _is_due(cadence: str, process_date: date, policy: dict[str, Any]) -> bool:
-    if cadence in {"hourly_weekdays", "every_2_hours_weekdays", "daily", "daily_weekdays"}:
+    if cadence in {"hourly_weekdays", "every_2_hours_weekdays", "daily_weekdays"}:
+        return process_date.isoweekday() <= 5
+    if cadence == "daily":
         return True
     if cadence == "weekly":
         weekday = int(policy.get("weekly", {}).get("weekday", 1))
