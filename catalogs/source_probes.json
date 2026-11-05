@@ -659,6 +659,495 @@
         }
       ],
       "note": "Sólo se confirma la capa descrita por cada prueba; no se generaliza disponibilidad o calidad."
+    },
+    {
+      "id": "nyc-restaurantes",
+      "name": "Inspecciones de restaurantes de Nueva York",
+      "checks": [
+        {
+          "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=3",
+          "kind": "json",
+          "fields": [
+            "camis",
+            "dba",
+            "boro",
+            "zipcode",
+            "cuisine_description",
+            "inspection_date",
+            "score",
+            "grade",
+            "violation_code"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "openflights-red-aerea",
+      "name": "Aeropuertos, aerolíneas, aviones y rutas históricas",
+      "checks": [
+        {
+          "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+          "kind": "csv",
+          "columns": [
+            "airport_id",
+            "name",
+            "city",
+            "country",
+            "iata",
+            "icao",
+            "latitude",
+            "longitude",
+            "altitude",
+            "timezone",
+            "dst",
+            "tz_database",
+            "type",
+            "source"
+          ],
+          "fields": [
+            "airport_id",
+            "name",
+            "country",
+            "iata",
+            "latitude",
+            "longitude"
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+          "kind": "csv",
+          "columns": [
+            "airline",
+            "airline_id",
+            "source_airport",
+            "source_id",
+            "dest_airport",
+            "dest_id",
+            "codeshare",
+            "stops",
+            "equipment"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "bts-puntualidad-vuelos",
+      "name": "Puntualidad, cancelaciones y demoras aéreas",
+      "checks": [
+        {
+          "url": "https://transtats.bts.gov/ONTIME/",
+          "kind": "html"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "apple-apps",
+      "name": "Catálogo público de apps de Apple",
+      "checks": [
+        {
+          "url": "https://itunes.apple.com/search?term=travel&entity=software&country=mx&limit=3",
+          "kind": "json",
+          "path": "results",
+          "fields": [
+            "trackId",
+            "trackName",
+            "primaryGenreName",
+            "price",
+            "currency",
+            "averageUserRating",
+            "userRatingCount",
+            "version"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "apple-resenas-apps",
+      "name": "Reseñas públicas de apps por tienda",
+      "checks": [
+        {
+          "url": "https://itunes.apple.com/mx/rss/customerreviews/id=310633997/sortBy=mostRecent/json",
+          "kind": "json",
+          "path": "feed.entry",
+          "fields": [
+            "id.label",
+            "im:rating.label",
+            "im:version.label",
+            "title.label"
+          ],
+          "sample_rows": 1
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "insideairbnb-cdmx",
+      "name": "Alojamiento turístico: Inside Airbnb CDMX",
+      "checks": [
+        {
+          "url": "https://data.insideairbnb.com/mexico/df/mexico-city/2026-09-23/visualisations/listings.csv",
+          "kind": "csv",
+          "fields": [
+            "id",
+            "neighbourhood",
+            "room_type",
+            "price",
+            "minimum_nights",
+            "number_of_reviews",
+            "availability_365"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "napoleonica-cartas",
+      "name": "Correspondencia general de Napoleón",
+      "checks": [
+        {
+          "url": "https://www.napoleonica.org/collection/9457",
+          "kind": "html"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "gallica-napoleon",
+      "name": "Gallica: libros históricos sobre Napoleón y su correspondencia",
+      "checks": [
+        {
+          "url": "https://gallica.bnf.fr/SRU?version=1.2&operation=searchRetrieve&query=dc.title%20all%20%22correspondance%20Napoleon%22&maximumRecords=3",
+          "kind": "sru"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "pepys-diarios",
+      "name": "Diario de Samuel Pepys: vida cotidiana, enfermedad y ciudad",
+      "checks": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/4184/pg4184.txt",
+          "kind": "text",
+          "expected": "Pepys",
+          "public_domain": true
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "musicbrainz-conciertos",
+      "name": "Eventos, artistas y lugares de conciertos",
+      "checks": [
+        {
+          "url": "https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3",
+          "kind": "json",
+          "path": "events",
+          "fields": [
+            "id",
+            "name",
+            "type",
+            "life-span"
+          ]
+        },
+        {
+          "url": "https://musicbrainz.org/doc/MusicBrainz_API",
+          "kind": "html"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "setlist-conciertos",
+      "name": "Repertorios y orden de canciones en conciertos",
+      "checks": [
+        {
+          "url": "https://api.setlist.fm/docs/1.0/index.html",
+          "kind": "html"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "osm-mapas-restaurantes",
+      "name": "OpenStreetMap / Overpass: lugares y mapas vivos",
+      "checks": [
+        {
+          "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A15%5D%3Bnode%5Bamenity%3Drestaurant%5D%2819.42%2C-99.18%2C19.44%2C-99.15%29%3Bout%203%3B",
+          "kind": "json",
+          "path": "elements",
+          "fields": [
+            "type",
+            "id",
+            "lat",
+            "lon",
+            "tags"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "loc-mapas-historicos",
+      "name": "Mapas históricos digitalizados",
+      "checks": [
+        {
+          "url": "https://www.loc.gov/maps/?fo=json&c=3",
+          "kind": "json",
+          "path": "results",
+          "fields": [
+            "id",
+            "title",
+            "date",
+            "original_format"
+          ],
+          "sample_status": "METADATA_SAMPLE",
+          "sample_rows": 1
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "gsm8k-examenes",
+      "name": "GSM8K: problemas matemáticos con soluciones",
+      "checks": [
+        {
+          "url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl",
+          "kind": "gsm_jsonl"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "unam-colecciones",
+      "name": "Colecciones universitarias abiertas UNAM",
+      "checks": [
+        {
+          "url": "https://datosabiertos.unam.mx/IBUNAM%3AMEXU%3A1210262",
+          "kind": "html",
+          "expected": "Furcraea"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "unam-agenda-estadistica",
+      "name": "Agenda Estadística y numeralia UNAM",
+      "checks": [
+        {
+          "url": "https://estadistica.unam.mx/numeralia/",
+          "kind": "html"
+        },
+        {
+          "url": "https://web.planeacion.unam.mx/direccion-de-sistemas-de-informacion-estadistica/agenda/",
+          "kind": "html"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "unam-guias-examenes",
+      "name": "Guías públicas de exámenes extraordinarios CCH",
+      "checks": [
+        {
+          "url": "https://portalacademico.cch.unam.mx/materiales/al/Guias_extras/Matematicas/cal1_ori.pdf",
+          "kind": "pdf"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "ct-ventas-inmuebles",
+      "name": "Ventas inmobiliarias registradas en Connecticut",
+      "checks": [
+        {
+          "url": "https://data.ct.gov/resource/5mzw-sjtu.json?$limit=3",
+          "kind": "json",
+          "fields": [
+            "serialnumber",
+            "listyear",
+            "daterecorded",
+            "town",
+            "assessedvalue",
+            "saleamount",
+            "salesratio",
+            "propertytype",
+            "residentialtype",
+            "nonusecode"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "cmu-movimiento-baile",
+      "name": "Movimiento humano y secuencias de baile CMU MoCap",
+      "checks": [
+        {
+          "url": "https://mocap.cs.cmu.edu/subjects/05/05_02.amc",
+          "kind": "amc"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "aist-dance",
+      "name": "AIST++: baile, música y movimiento 3D",
+      "checks": [
+        {
+          "url": "https://google.github.io/aistplusplus_dataset/factsfigures.html",
+          "kind": "html"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "artic-pintura",
+      "name": "Obras, textos e imágenes del Art Institute of Chicago",
+      "checks": [
+        {
+          "url": "https://api.artic.edu/api/v1/artworks/search?q=Monet&fields=id,title,artist_title,date_display,image_id,is_public_domain&limit=3",
+          "kind": "json",
+          "path": "data",
+          "fields": [
+            "id",
+            "title",
+            "artist_title",
+            "date_display",
+            "is_public_domain"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "dracor-teatro",
+      "name": "DraCor: teatro, personajes y redes de diálogo",
+      "checks": [
+        {
+          "url": "https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie",
+          "kind": "json",
+          "fields": [
+            "id",
+            "title",
+            "name",
+            "allInSegment",
+            "segments"
+          ],
+          "sample_rows": 1
+        },
+        {
+          "url": "https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/tei",
+          "kind": "tei"
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "uci-retail",
+      "name": "Online Retail: facturas y líneas de pedido reales",
+      "checks": [
+        {
+          "url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+          "kind": "csv",
+          "fields": [
+            "InvoiceNo",
+            "StockCode",
+            "Description",
+            "Quantity",
+            "InvoiceDate",
+            "UnitPrice",
+            "CustomerID",
+            "Country"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "openfda-etiquetas",
+      "name": "Etiquetas y documentación farmacéutica pública",
+      "checks": [
+        {
+          "url": "https://api.fda.gov/drug/label.json?limit=1",
+          "kind": "json",
+          "path": "results",
+          "fields": [
+            "id",
+            "set_id",
+            "effective_time",
+            "openfda.brand_name",
+            "openfda.generic_name"
+          ],
+          "sample_rows": 1
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "wellcome-medicina-antigua",
+      "name": "Libros, archivos e ilustraciones de medicina histórica",
+      "checks": [
+        {
+          "url": "https://api.wellcomecollection.org/catalogue/v2/works?query=sleep&production.dates.to=1900-01-01&pageSize=3&include=production,items",
+          "kind": "json",
+          "path": "results",
+          "fields": [
+            "id",
+            "title",
+            "production",
+            "workType"
+          ],
+          "sample_status": "METADATA_SAMPLE",
+          "sample_rows": 1
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "bob-ross-elementos",
+      "name": "Elementos que aparecen en los cuadros de Bob Ross",
+      "checks": [
+        {
+          "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv",
+          "kind": "csv",
+          "fields": [
+            "EPISODE",
+            "TITLE",
+            "TREE",
+            "TREES",
+            "MOUNTAIN",
+            "MOUNTAINS",
+            "CLOUDS",
+            "GUEST"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "bob-ross-paletas",
+      "name": "Cuadros, paletas y episodios de Bob Ross",
+      "checks": [
+        {
+          "url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv",
+          "kind": "csv",
+          "fields": [
+            "painting_index",
+            "painting_title",
+            "season",
+            "episode",
+            "num_colors",
+            "colors",
+            "color_hex"
+          ]
+        }
+      ],
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "title": "Catálogo de datasets reales de México y fuentes globales sorprendentes",
   "reviewed_on": "2026-11-04",
   "timezone": "America/Mexico_City",
   "repository": "jcval94/DataCollectionMov",
-  "scope": "Catálogo de fuentes mexicanas y exploraciones globales, con pruebas públicas acotadas. No activa nuevos recolectores ni horarios. Resultados y muestras en source_tests/README.md.",
+  "scope": "Fuentes para descubrir patrones con IA y datos: acceso, evidencia, preguntas, modalidades y límites. Nuevas fuentes no activan recolección programada.",
   "field_notes": {
     "variables": "Selección semántica de variables; no constituye un esquema físico validado de cada archivo.",
     "join_keys": "Llaves propuestas para unión o identificación; no garantizan unicidad ni son PK declaradas por el productor.",
@@ -15,7 +15,8 @@
     "verification": "opened_primary: contenido primario leído; indexed_primary: fuente primaria localizada mediante búsqueda; indexed_primary_fetch_blocked: localizada pero apertura bloqueada/fallida; repository_inspected: código/árbol del repo revisado. Ninguna implica descarga masiva probada. primary_documentation_located: documentación del productor localizada durante la ampliación; consultar prueba HTTP fechada por separado.",
     "integration": "existing: código y al menos un CSV current vistos; partial: subconjunto implementado; collector_only: código presente sin CSV current de la tabla objetivo; not_ingested: sin integración identificada.",
     "data_structure": "Estructurado, no estructurado o mixto describe el contenido analizable, no sólo su contenedor JSON/HTML.",
-    "smoke_test": "Cada ficha tiene prueba definida en catalogs/source_probes.json y evidencia fechada en source_tests/results.json."
+    "smoke_test": "Cada ficha tiene prueba definida en catalogs/source_probes.json y evidencia fechada en source_tests/results.json.",
+    "discovery": "Pregunta de investigación, papel de IA y validación mínima. hypothesis_not_tested no equivale a insight observado."
   },
   "datasets": [
     {
@@ -2680,6 +2681,1859 @@
         "geospatial"
       ],
       "smoke_test": "source_tests/README.md#nyc-ratas"
+    },
+    {
+      "id": "nyc-restaurantes",
+      "category": "Comida, viajes y aplicaciones",
+      "name": "Inspecciones de restaurantes de Nueva York",
+      "publisher": "NYC DOHMH",
+      "sources": [
+        {
+          "url": "https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j",
+          "resource_url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Restaurantes inspeccionados en NYC",
+      "grain": "Restaurante–inspección–infracción; varias filas por inspección",
+      "reference_period": "Fechas de inspección del archivo",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "CSV"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "native",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "CAMIS",
+        "Cocina",
+        "ZIP",
+        "Fecha",
+        "Puntaje",
+        "Infracción"
+      ],
+      "join_keys": [
+        "CAMIS + fecha + tipo; infracción para detalle"
+      ],
+      "analysis_ideas": [
+        "¿Qué infracciones reaparecen después de una inspección y cambia el patrón por tipo de cocina?"
+      ],
+      "caveats": [
+        "Más registros pueden significar más inspecciones; no medir sabor ni calidad culinaria con puntaje sanitario.",
+        "No convertir diferencias observacionales en causas culturales."
+      ],
+      "usage_terms": "Términos NYC Open Data y notas DOHMH.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#nyc-restaurantes",
+      "discovery": {
+        "question": "¿Qué infracciones reaparecen después de una inspección y cambia el patrón por tipo de cocina?",
+        "ai_role": "Agrupar descripciones de infracciones y resumir trayectorias por local.",
+        "minimum_validation": [
+          "Separar inspecciones de infracciones antes de contar.",
+          "Comparar tasas por inspección y conservar fechas de reinspección."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "openflights-red-aerea",
+      "category": "Comida, viajes y aplicaciones",
+      "name": "Aeropuertos, aerolíneas, aviones y rutas históricas",
+      "publisher": "OpenFlights",
+      "sources": [
+        {
+          "url": "https://openflights.org/data.php",
+          "resource_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Mundial; cobertura del catálogo",
+      "grain": "Aeropuerto y ruta; tablas distintas",
+      "reference_period": "Rutas históricas, no horarios vigentes",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "CSV sin cabecera"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "IATA/ICAO",
+        "País",
+        "Coordenadas",
+        "Origen/destino",
+        "Equipo de aeronave"
+      ],
+      "join_keys": [
+        "Airport ID; IATA/ICAO con validación de nulos"
+      ],
+      "analysis_ideas": [
+        "¿Qué aeropuertos conectan comunidades de la red que quedarían aisladas al perder un enlace?"
+      ],
+      "caveats": [
+        "No representa vuelos, precios, capacidad ni conexiones actuales.",
+        "No utilizarlo para navegación o comprar conexiones sin consultar horarios."
+      ],
+      "usage_terms": "Open Database License; atribución OpenFlights.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#openflights-red-aerea",
+      "discovery": {
+        "question": "¿Qué aeropuertos conectan comunidades de la red que quedarían aisladas al perder un enlace?",
+        "ai_role": "Explicar comunidades, centralidad y rutas poco obvias en un grafo.",
+        "minimum_validation": [
+          "Identificar fecha de corte de routes.dat.",
+          "Separar vuelos compartidos, aeropuertos y códigos faltantes."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "bts-puntualidad-vuelos",
+      "category": "Comida, viajes y aplicaciones",
+      "name": "Puntualidad, cancelaciones y demoras aéreas",
+      "publisher": "US DOT / Bureau of Transportation Statistics",
+      "sources": [
+        {
+          "url": "https://transtats.bts.gov/ONTIME/",
+          "resource_url": "https://www.transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=b0-gvzr&gnoyr_VQ=FGJ",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Transportistas y vuelos cubiertos por BTS, EE. UU.",
+      "grain": "Vuelo–fecha–transportista",
+      "reference_period": "Serie Reporting Carrier desde 1987; cortes publicados",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "Tablas",
+        "Descargas tabulares"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Hora prevista/real",
+        "Demora",
+        "Cancelación",
+        "Origen/destino",
+        "Transportista"
+      ],
+      "join_keys": [
+        "Fecha + transportista + número de vuelo + origen/destino; comprobar duplicados"
+      ],
+      "analysis_ideas": [
+        "¿Se acumulan retrasos a lo largo del día incluso en rutas con buen desempeño temprano?"
+      ],
+      "caveats": [
+        "Comparar vuelos sobrevivientes sesga puntualidad si se omiten cancelaciones.",
+        "Estadística histórica, no estado de vuelo en vivo."
+      ],
+      "usage_terms": "Atribuir BTS y notas del producto; revisar datos y campos al descargar.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "time_series"
+      ],
+      "smoke_test": "source_tests/README.md#bts-puntualidad-vuelos",
+      "discovery": {
+        "question": "¿Se acumulan retrasos a lo largo del día incluso en rutas con buen desempeño temprano?",
+        "ai_role": "Detectar patrones por franja horaria y explicar segmentos comparables.",
+        "minimum_validation": [
+          "Controlar ruta, temporada y composición de aerolíneas.",
+          "Tratar cancelación como resultado distinto, no demora cero."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "apple-apps",
+      "category": "Comida, viajes y aplicaciones",
+      "name": "Catálogo público de apps de Apple",
+      "publisher": "Apple iTunes Search API",
+      "sources": [
+        {
+          "url": "https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html",
+          "resource_url": "https://itunes.apple.com/search?term=travel&entity=software&country=mx&limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Resultados de una tienda/región; ejemplo México",
+      "grain": "App–tienda–captura",
+      "reference_period": "Metadatos de la consulta",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "Imágenes enlazadas"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "trackId",
+        "Categoría",
+        "Precio",
+        "Calificación",
+        "Descripción",
+        "Versión"
+      ],
+      "join_keys": [
+        "trackId + country + fecha de captura"
+      ],
+      "analysis_ideas": [
+        "¿Las apps que prometen lo mismo usan vocabulario distinto según categoría y modelo de cobro?"
+      ],
+      "caveats": [
+        "Resultados de búsqueda no son un censo de apps.",
+        "Calificaciones no miden usuarios activos, ingresos ni éxito comercial."
+      ],
+      "usage_terms": "Términos Apple Search API y derechos de cada app; no asumir libre redistribución de screenshots.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#apple-apps",
+      "discovery": {
+        "question": "¿Las apps que prometen lo mismo usan vocabulario distinto según categoría y modelo de cobro?",
+        "ai_role": "Extraer funciones prometidas de descripciones y construir un mapa semántico.",
+        "minimum_validation": [
+          "Guardar país, consulta y fecha.",
+          "Distinguir precio de compra de suscripciones y compras internas."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "apple-resenas-apps",
+      "category": "Comida, viajes y aplicaciones",
+      "name": "Reseñas públicas de apps por tienda",
+      "publisher": "Apple / autores de reseñas",
+      "sources": [
+        {
+          "url": "https://itunes.apple.com/",
+          "resource_url": "https://itunes.apple.com/mx/rss/customerreviews/id=310633997/sortBy=mostRecent/json",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Reseñas devueltas para app y país, no todos los usuarios",
+      "grain": "Reseña publicada",
+      "reference_period": "Ventana disponible en el feed público",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON/RSS"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "ID reseña",
+        "Texto",
+        "Estrellas",
+        "Versión",
+        "Fecha"
+      ],
+      "join_keys": [
+        "ID reseña + tienda; trackId enlaza catálogo"
+      ],
+      "analysis_ideas": [
+        "¿Qué funciones generan quejas después de una versión y qué problemas no se reflejan en el promedio de estrellas?"
+      ],
+      "caveats": [
+        "Sólo escriben algunos usuarios; no inferir proporción de toda la base.",
+        "Un feed corto no permite reconstruir todo el historial de versiones."
+      ],
+      "usage_terms": "Reseñas de sus autores; conservar ejemplos muy breves y enlaces, revisar términos Apple.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#apple-resenas-apps",
+      "discovery": {
+        "question": "¿Qué funciones generan quejas después de una versión y qué problemas no se reflejan en el promedio de estrellas?",
+        "ai_role": "Etiquetar motivos de queja y contrastarlos con cambios de versión.",
+        "minimum_validation": [
+          "Validar una muestra de etiquetas humanas.",
+          "Comparar ventanas y versiones con volumen suficiente."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "insideairbnb-cdmx",
+      "category": "Comida, viajes y aplicaciones",
+      "name": "Alojamiento turístico: Inside Airbnb CDMX",
+      "publisher": "Inside Airbnb, proyecto independiente",
+      "sources": [
+        {
+          "url": "https://insideairbnb.com/get-the-data/",
+          "resource_url": "https://data.insideairbnb.com/mexico/df/mexico-city/2026-09-23/visualisations/listings.csv",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "CDMX en la captura publicada",
+      "grain": "Anuncio; calendario y reseñas son tablas diferentes",
+      "reference_period": "Captura 2026-09-23 localizada",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "CSV",
+        "CSV.GZ",
+        "GeoJSON"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Precio anunciado",
+        "Tipo de habitación",
+        "Zona",
+        "Noches mínimas",
+        "Disponibilidad",
+        "Reseñas"
+      ],
+      "join_keys": [
+        "Listing ID + fecha de captura; host ID sólo cuando corresponda"
+      ],
+      "analysis_ideas": [
+        "¿Las zonas turísticas concentran anuncios de anfitriones con múltiples propiedades?"
+      ],
+      "caveats": [
+        "Disponibilidad no equivale a noches vendidas; precio anunciado no es ingreso realizado.",
+        "Fuente independiente de Airbnb; no es un registro de ventas de inmuebles."
+      ],
+      "usage_terms": "Revisar licencia y notas de Inside Airbnb; textos/fotos pueden tener derechos propios.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#insideairbnb-cdmx",
+      "discovery": {
+        "question": "¿Las zonas turísticas concentran anuncios de anfitriones con múltiples propiedades?",
+        "ai_role": "Clasificar descripciones y resumir diferencias entre tipos de alojamiento.",
+        "minimum_validation": [
+          "Normalizar moneda/precio y fecha.",
+          "Contrastar anuncios por anfitrión, zona y tipo de habitación."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "napoleonica-cartas",
+      "category": "Historia, diarios y literatura",
+      "name": "Correspondencia general de Napoleón",
+      "publisher": "Fondation Napoléon / Napoleonica",
+      "sources": [
+        {
+          "url": "https://fondationnapoleon.org/en/activities-and-services/telling-history/correspondence-napoleon/",
+          "resource_url": "https://www.napoleonica.org/collection/9457",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Cartas editadas e identificadas en el corpus",
+      "grain": "Carta–destinatario–fecha; distinguir copias/ediciones",
+      "reference_period": "1784–1821; edición y ampliaciones modernas",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "HTML",
+        "Imágenes y transcripciones según ítem"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Alta",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Fecha",
+        "Lugar",
+        "Destinatario",
+        "Texto",
+        "Número CG",
+        "Procedencia"
+      ],
+      "join_keys": [
+        "ID de carta CG + versión editorial"
+      ],
+      "analysis_ideas": [
+        "¿Napoleón usa un vocabulario diferente al escribir a generales, funcionarios y familiares, incluso dentro del mismo año?"
+      ],
+      "caveats": [
+        "Correspondencia conservada no representa todo lo que pensaba o dijo.",
+        "No inferir estado mental, diagnósticos ni autenticidad sólo con estilo."
+      ],
+      "usage_terms": "Respetar condiciones de la edición moderna y del archivo; no asumir que todas las anotaciones están en dominio público.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#napoleonica-cartas",
+      "discovery": {
+        "question": "¿Napoleón usa un vocabulario diferente al escribir a generales, funcionarios y familiares, incluso dentro del mismo año?",
+        "ai_role": "Reconocer personas/lugares y comparar temas por destinatario; citar cada carta.",
+        "minimum_validation": [
+          "Leer cartas completas de cada segmento.",
+          "Separar fecha de escritura, edición, copias y traducciones."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "gallica-napoleon",
+      "category": "Historia, diarios y literatura",
+      "name": "Gallica: libros históricos sobre Napoleón y su correspondencia",
+      "publisher": "Bibliothèque nationale de France",
+      "sources": [
+        {
+          "url": "https://api.bnf.fr/fr/api-gallica-de-recherche",
+          "resource_url": "https://gallica.bnf.fr/SRU?version=1.2&operation=searchRetrieve&query=dc.title%20all%20%22correspondance%20Napoleon%22&maximumRecords=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Documentos digitalizados de Gallica que coincidan con la consulta",
+      "grain": "Edición/volumen/página; no igual a una carta",
+      "reference_period": "Ediciones históricas y digitalización posterior",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "XML SRU",
+        "OCR",
+        "Imágenes",
+        "IIIF"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Alta",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Título",
+        "Autor/editor",
+        "Fecha de edición",
+        "ARK",
+        "OCR cuando exista"
+      ],
+      "join_keys": [
+        "ARK + página; relacionar carta por referencia editorial"
+      ],
+      "analysis_ideas": [
+        "¿Cómo difiere la imagen de Napoleón entre cartas, memorias de terceros y ediciones posteriores?"
+      ],
+      "caveats": [
+        "Una búsqueda de metadatos no descarga OCR ni todas las cartas.",
+        "Los géneros y el sesgo editorial pueden explicar más que cambios históricos."
+      ],
+      "usage_terms": "Consultar condiciones Gallica y derechos/reutilización por documento.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#gallica-napoleon",
+      "discovery": {
+        "question": "¿Cómo difiere la imagen de Napoleón entre cartas, memorias de terceros y ediciones posteriores?",
+        "ai_role": "Clasificar género, fecha y voz narrativa antes de comparar afirmaciones.",
+        "minimum_validation": [
+          "Distinguir autor, editor, traducción y fecha de los hechos.",
+          "Cotejar OCR con imagen y validar correspondencias entre ediciones."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "pepys-diarios",
+      "category": "Historia, diarios y literatura",
+      "name": "Diario de Samuel Pepys: vida cotidiana, enfermedad y ciudad",
+      "publisher": "Samuel Pepys / Project Gutenberg",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/ebooks/4184",
+          "resource_url": "https://www.gutenberg.org/cache/epub/4184/pg4184.txt",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Diario de un autor y una edición, Londres",
+      "grain": "Entrada fechada; separar notas del editor",
+      "reference_period": "Volumen de 1667 N.S.; otros años en el catálogo",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "TXT",
+        "HTML",
+        "EPUB"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Fecha",
+        "Rutinas",
+        "Lugares",
+        "Comida",
+        "Sueño",
+        "Relaciones"
+      ],
+      "join_keys": [
+        "Edición/hash + fecha de entrada + offset"
+      ],
+      "analysis_ideas": [
+        "¿Las comidas, desplazamientos y menciones al sueño cambian con estaciones o acontecimientos de la ciudad?"
+      ],
+      "caveats": [
+        "Un diarista no representa a toda la población.",
+        "Una mención de despertar no demuestra un hábito general ni sueño segmentado sistemático."
+      ],
+      "usage_terms": "Revisar licencia Gutenberg y dominio público según jurisdicción.",
+      "data_structure": "no_estructurado",
+      "data_modalities": [
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#pepys-diarios",
+      "discovery": {
+        "question": "¿Las comidas, desplazamientos y menciones al sueño cambian con estaciones o acontecimientos de la ciudad?",
+        "ai_role": "Extraer eventos con citas y construir una cronología de rutinas.",
+        "minimum_validation": [
+          "Verificar calendario, fechas y edición.",
+          "Contar entradas disponibles y separar texto del editor."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "musicbrainz-conciertos",
+      "category": "Música, baile y teatro",
+      "name": "Eventos, artistas y lugares de conciertos",
+      "publisher": "MusicBrainz / MetaBrainz y comunidad",
+      "sources": [
+        {
+          "url": "https://musicbrainz.org/doc/MusicBrainz_API",
+          "resource_url": "https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Eventos documentados por la comunidad",
+      "grain": "Evento; relaciones con artista y lugar",
+      "reference_period": "Fechas de eventos y revisiones del catálogo",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "XML"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "MBID",
+        "Nombre",
+        "Tipo",
+        "Fecha",
+        "Artista/lugar vía relaciones"
+      ],
+      "join_keys": [
+        "Event MBID; Artist MBID y Place MBID"
+      ],
+      "analysis_ideas": [
+        "¿Qué ciudades o recintos conectan escenas musicales que parecen separadas por género?"
+      ],
+      "caveats": [
+        "No es un inventario completo ni una API de venta de boletos.",
+        "No inferir asistencia, ingresos ni popularidad por cantidad de registros."
+      ],
+      "usage_terms": "Licencias MetaBrainz por tipo de dato; API con User-Agent y límites de uso, revisar uso comercial.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#musicbrainz-conciertos",
+      "discovery": {
+        "question": "¿Qué ciudades o recintos conectan escenas musicales que parecen separadas por género?",
+        "ai_role": "Resolver nombres y explicar redes de artistas, eventos y lugares.",
+        "minimum_validation": [
+          "Distinguir eventos históricos de programados.",
+          "Medir cobertura y revisar relaciones faltantes."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "setlist-conciertos",
+      "category": "Música, baile y teatro",
+      "name": "Repertorios y orden de canciones en conciertos",
+      "publisher": "setlist.fm y colaboradores",
+      "sources": [
+        {
+          "url": "https://api.setlist.fm/docs/1.0/index.html",
+          "resource_url": null,
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Conciertos incluidos por colaboradores",
+      "grain": "Concierto–set–posición de canción; versión revisable",
+      "reference_period": "Histórico de conciertos documentados",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "XML"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Artista",
+        "Recinto",
+        "Fecha",
+        "Gira",
+        "Set/encore",
+        "Canción"
+      ],
+      "join_keys": [
+        "setlist ID + versionId; MBID de artista"
+      ],
+      "analysis_ideas": [
+        "¿Qué canciones funcionan como apertura, cierre o sorpresa, y cambian según país o etapa de una gira?"
+      ],
+      "caveats": [
+        "Requiere API key; esta ampliación comprueba sólo documentación.",
+        "Repertorio reportado puede ser incompleto; no equivale a grabación íntegra."
+      ],
+      "usage_terms": "API gratuita sólo para proyectos no comerciales según documentación; atribuir y revisar términos.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#setlist-conciertos",
+      "discovery": {
+        "question": "¿Qué canciones funcionan como apertura, cierre o sorpresa, y cambian según país o etapa de una gira?",
+        "ai_role": "Homologar nombres de canciones y comparar secuencias.",
+        "minimum_validation": [
+          "Conservar versionId.",
+          "Comparar giras y cobertura de conciertos antes de atribuir preferencias al país."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "osm-mapas-restaurantes",
+      "category": "Mapas e inmuebles",
+      "name": "OpenStreetMap / Overpass: lugares y mapas vivos",
+      "publisher": "Colaboradores de OpenStreetMap / Overpass",
+      "sources": [
+        {
+          "url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
+          "resource_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A15%5D%3Bnode%5Bamenity%3Drestaurant%5D%2819.42%2C-99.18%2C19.44%2C-99.15%29%3Bout%203%3B",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Área pequeña CDMX en la prueba; cobertura mundial",
+      "grain": "Elemento OSM con etiquetas y versión",
+      "reference_period": "Estado de la base al consultar",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "XML",
+        "GeoJSON derivado"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "ID/tipo",
+        "Coordenadas",
+        "Nombre",
+        "Cocina",
+        "Horario",
+        "Etiquetas"
+      ],
+      "join_keys": [
+        "Tipo de elemento + ID + versión/captura"
+      ],
+      "analysis_ideas": [
+        "¿Hay zonas con mucha población y pocos servicios registrados, o simplemente menos cartografía comunitaria?"
+      ],
+      "caveats": [
+        "Una ausencia en el mapa puede ser falta de captura.",
+        "Datos contribuidos no garantizan horarios vigentes ni precisión de navegación."
+      ],
+      "usage_terms": "ODbL y atribución OpenStreetMap; consultas pequeñas y respeto de cuotas.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#osm-mapas-restaurantes",
+      "discovery": {
+        "question": "¿Hay zonas con mucha población y pocos servicios registrados, o simplemente menos cartografía comunitaria?",
+        "ai_role": "Normalizar etiquetas y detectar diferencias de cobertura sin inventar sitios faltantes.",
+        "minimum_validation": [
+          "Contar cobertura de etiquetas.",
+          "Validar contra DENUE y una muestra manual antes de medir carencias."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "loc-mapas-historicos",
+      "category": "Mapas e inmuebles",
+      "name": "Mapas históricos digitalizados",
+      "publisher": "Library of Congress",
+      "sources": [
+        {
+          "url": "https://www.loc.gov/apis/json-and-yaml/",
+          "resource_url": "https://www.loc.gov/maps/?fo=json&c=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Colecciones cartográficas disponibles en LOC",
+      "grain": "Mapa/edición/hoja",
+      "reference_period": "Fechas históricas según documento",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "Imágenes",
+        "IIIF"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Título",
+        "Fecha",
+        "Autor",
+        "Lugar",
+        "Escala",
+        "Recurso digital"
+      ],
+      "join_keys": [
+        "Item ID + edición + hoja"
+      ],
+      "analysis_ideas": [
+        "¿Qué ríos, caminos, barrios o fronteras cambiaron entre un mapa antiguo y uno actual?"
+      ],
+      "caveats": [
+        "Georreferenciación requiere validar errores; una deformación visual no es cambio real.",
+        "La prueba de metadatos no valida todas las imágenes."
+      ],
+      "usage_terms": "Rights & Access por ítem y colección.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#loc-mapas-historicos",
+      "discovery": {
+        "question": "¿Qué ríos, caminos, barrios o fronteras cambiaron entre un mapa antiguo y uno actual?",
+        "ai_role": "OCR de topónimos, correspondencias visuales y propuestas de georreferenciación.",
+        "minimum_validation": [
+          "Revisar escala, proyección y puntos de control.",
+          "Separar cambio del territorio de convenciones del cartógrafo."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "gsm8k-examenes",
+      "category": "Educación, exámenes y UNAM",
+      "name": "GSM8K: problemas matemáticos con soluciones",
+      "publisher": "OpenAI / autores del dataset",
+      "sources": [
+        {
+          "url": "https://github.com/openai/grade-school-math",
+          "resource_url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Problemas en inglés, nivel escolar del benchmark",
+      "grain": "Problema–solución–respuesta final",
+      "reference_period": "Dataset publicado en 2021",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSONL"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Pregunta",
+        "Razonamiento de referencia",
+        "Respuesta final"
+      ],
+      "join_keys": [
+        "Split + línea/hash; detectar duplicados y contaminación"
+      ],
+      "analysis_ideas": [
+        "¿Qué errores comete una IA cuando el enunciado exige varios pasos o convierte unidades?"
+      ],
+      "caveats": [
+        "No es un examen UNAM ni mide todo el razonamiento humano.",
+        "Exposición previa al benchmark puede inflar el desempeño del modelo."
+      ],
+      "usage_terms": "MIT, conservar atribución y licencia del dataset.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#gsm8k-examenes",
+      "discovery": {
+        "question": "¿Qué errores comete una IA cuando el enunciado exige varios pasos o convierte unidades?",
+        "ai_role": "Evaluar por tipos de operación y comparar respuesta final con pasos verificables.",
+        "minimum_validation": [
+          "Separar entrenamiento, ajuste y prueba.",
+          "Verificar respuestas con cálculo independiente y auditoría de etiquetas."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "unam-colecciones",
+      "category": "Educación, exámenes y UNAM",
+      "name": "Colecciones universitarias abiertas UNAM",
+      "publisher": "UNAM / DGRU y colecciones participantes",
+      "sources": [
+        {
+          "url": "https://datosabiertos.unam.mx/",
+          "resource_url": "https://datosabiertos.unam.mx/IBUNAM%3AMEXU%3A1210262",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Colecciones científicas, artísticas y culturales UNAM",
+      "grain": "Ejemplar/objeto/registro de colección",
+      "reference_period": "Fecha de colecta, catalogación y digitalización distintas",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "HTML",
+        "Objetos digitales",
+        "Descargas según colección"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Colección",
+        "ID",
+        "Taxón/objeto",
+        "Fecha",
+        "Lugar",
+        "Imagen"
+      ],
+      "join_keys": [
+        "Colección + identificador de ejemplar"
+      ],
+      "analysis_ideas": [
+        "¿Las zonas poco representadas tienen menos biodiversidad o menor esfuerzo histórico de colecta?"
+      ],
+      "caveats": [
+        "No es la base de estudiantes de UNAM.",
+        "Sesgo de colecta y digitalización; no sumar objetos heterogéneos como especies."
+      ],
+      "usage_terms": "Políticas por colección y objeto; atribuir a la colección responsable y UNAM.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#unam-colecciones",
+      "discovery": {
+        "question": "¿Las zonas poco representadas tienen menos biodiversidad o menor esfuerzo histórico de colecta?",
+        "ai_role": "Homologar taxonomía y leer etiquetas antiguas con trazabilidad al ejemplar.",
+        "minimum_validation": [
+          "Identificar colección y cobertura temporal.",
+          "Tratar placeholders y campos faltantes como problemas de calidad."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "unam-agenda-estadistica",
+      "category": "Educación, exámenes y UNAM",
+      "name": "Agenda Estadística y numeralia UNAM",
+      "publisher": "UNAM / planeación y estadística institucional",
+      "sources": [
+        {
+          "url": "https://web.planeacion.unam.mx/direccion-de-sistemas-de-informacion-estadistica/agenda/",
+          "resource_url": "https://estadistica.unam.mx/numeralia/",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "UNAM y desagregaciones publicadas",
+      "grain": "Indicador–entidad académica–periodo según cuadro",
+      "reference_period": "Publicaciones anuales",
+      "source_frequency": "Anual",
+      "formats": [
+        "Cuadros",
+        "PDF/descargas según edición"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Matrícula",
+        "Personal",
+        "Oferta educativa",
+        "Investigación",
+        "Campus/entidad"
+      ],
+      "join_keys": [
+        "Indicador + entidad académica + periodo; homologar definiciones"
+      ],
+      "analysis_ideas": [
+        "¿El crecimiento de matrícula y oferta se distribuye igual entre campus y niveles?"
+      ],
+      "caveats": [
+        "No son trayectorias individuales ni datos de admisión por aspirante.",
+        "Disponibilidad de desagregación depende del cuadro; no inventar nivel plantel."
+      ],
+      "usage_terms": "Atribuir UNAM y cuadro/edición; revisar términos del producto.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#unam-agenda-estadistica",
+      "discovery": {
+        "question": "¿El crecimiento de matrícula y oferta se distribuye igual entre campus y niveles?",
+        "ai_role": "Extraer cuadros y explicar cambios de definición o cobertura.",
+        "minimum_validation": [
+          "Confirmar unidad, notas y edición.",
+          "Separar licenciatura, bachillerato, posgrado y otras actividades."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "unam-guias-examenes",
+      "category": "Educación, exámenes y UNAM",
+      "name": "Guías públicas de exámenes extraordinarios CCH",
+      "publisher": "UNAM / CCH y docentes autores",
+      "sources": [
+        {
+          "url": "https://e1.portalacademico.cch.unam.mx/guiasextraordinarios",
+          "resource_url": "https://portalacademico.cch.unam.mx/materiales/al/Guias_extras/Matematicas/cal1_ori.pdf",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Guía de Matemáticas I CCH; materiales de otros planteles en el portal",
+      "grain": "Guía–unidad–ejercicio; no intento de alumno",
+      "reference_period": "Edición histórica de la guía, cotejar plan vigente",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "PDF"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Enunciado",
+        "Tema",
+        "Representación matemática",
+        "Instrucciones"
+      ],
+      "join_keys": [
+        "Guía/plan/edición + número de ejercicio"
+      ],
+      "analysis_ideas": [
+        "¿Qué temas y tipos de razonamiento se repiten y qué habilidades quedan poco representadas en estas guías?"
+      ],
+      "caveats": [
+        "Son guías públicas, no filtraciones de exámenes ni banco oficial de admisión.",
+        "La dificultad no puede estimarse de forma empírica sin respuestas de estudiantes."
+      ],
+      "usage_terms": "Respetar autoría y condiciones UNAM; citar y enlazar, sin republicar íntegramente guías sin autorización.",
+      "data_structure": "no_estructurado",
+      "data_modalities": [
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#unam-guias-examenes",
+      "discovery": {
+        "question": "¿Qué temas y tipos de razonamiento se repiten y qué habilidades quedan poco representadas en estas guías?",
+        "ai_role": "Clasificar ejercicios y proponer práctica equivalente, con revisión docente.",
+        "minimum_validation": [
+          "Cotejar programa, edición y extracción de fórmulas.",
+          "Comparar etiquetas IA con una muestra revisada por un docente."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "ct-ventas-inmuebles",
+      "category": "Mapas e inmuebles",
+      "name": "Ventas inmobiliarias registradas en Connecticut",
+      "publisher": "State of Connecticut / Office of Policy and Management",
+      "sources": [
+        {
+          "url": "https://data.ct.gov/Housing-and-Development/Real-Estate-Sales-2001-2024-GL/5mzw-sjtu",
+          "resource_url": "https://data.ct.gov/resource/5mzw-sjtu.json?$limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Connecticut, EE. UU.",
+      "grain": "Transacción inmobiliaria registrada",
+      "reference_period": "Años disponibles del producto; título 2001–2024 GL localizado",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "CSV"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "unconfirmed",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Fecha",
+        "Ciudad",
+        "Precio de venta",
+        "Valor fiscal",
+        "Tipo de propiedad",
+        "Código de exclusión"
+      ],
+      "join_keys": [
+        "Número serial + año; verificar unicidad por versión"
+      ],
+      "analysis_ideas": [
+        "¿La relación entre precio de venta y avalúo fiscal cambia por zona, tipo de propiedad o periodo?"
+      ],
+      "caveats": [
+        "No son anuncios, ni precios de oferta, ni datos de México.",
+        "Donaciones, transferencias familiares o parciales pueden parecer gangas si no se excluyen.",
+        "No asumir que ListYear equivale al año de DateRecorded; la muestra contiene valores distintos."
+      ],
+      "usage_terms": "Términos Connecticut Open Data; consultar diccionario y códigos de operaciones no comparables.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "geospatial"
+      ],
+      "smoke_test": "source_tests/README.md#ct-ventas-inmuebles",
+      "discovery": {
+        "question": "¿La relación entre precio de venta y avalúo fiscal cambia por zona, tipo de propiedad o periodo?",
+        "ai_role": "Detectar segmentos atípicos y explicar por qué una operación no es comparable.",
+        "minimum_validation": [
+          "Filtrar operaciones no comparables según códigos OPM.",
+          "Separar valor fiscal, precio de cierre, moneda y fecha."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "cmu-movimiento-baile",
+      "category": "Música, baile y teatro",
+      "name": "Movimiento humano y secuencias de baile CMU MoCap",
+      "publisher": "Carnegie Mellon Graphics Lab",
+      "sources": [
+        {
+          "url": "https://mocap.cs.cmu.edu/",
+          "resource_url": "https://mocap.cs.cmu.edu/subjects/05/05_02.amc",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Sesiones de laboratorio de captura de movimiento",
+      "grain": "Sujeto–secuencia–frame–articulación",
+      "reference_period": "Colección de laboratorio; no muestra poblacional",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "ASF",
+        "AMC"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Esqueleto",
+        "Frame",
+        "Canal/articulación",
+        "Ángulos"
+      ],
+      "join_keys": [
+        "Sujeto + secuencia + frame; ASF define canales"
+      ],
+      "analysis_ideas": [
+        "¿Dos estilos pueden tener ritmo parecido y patrones corporales muy distintos?"
+      ],
+      "caveats": [
+        "Portal y archivo pueden no responder; comprobar antes de incorporar.",
+        "No inferir salud, personalidad ni identidad de una persona a partir de su baile."
+      ],
+      "usage_terms": "Consultar condiciones del laboratorio y atribución CMU; no asumir derechos sobre música externa.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "time_series",
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#cmu-movimiento-baile",
+      "discovery": {
+        "question": "¿Dos estilos pueden tener ritmo parecido y patrones corporales muy distintos?",
+        "ai_role": "Construir descriptores de movimiento y explicar agrupaciones de secuencias.",
+        "minimum_validation": [
+          "Validar descripción de cada secuencia en el catálogo.",
+          "Homologar FPS, esqueleto, unidades y duración."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "aist-dance",
+      "category": "Música, baile y teatro",
+      "name": "AIST++: baile, música y movimiento 3D",
+      "publisher": "Google Research / autores AIST++, a partir de AIST Dance Video DB",
+      "sources": [
+        {
+          "url": "https://google.github.io/aistplusplus_dataset/",
+          "resource_url": "https://google.github.io/aistplusplus_dataset/download.html",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Secuencias del dataset y géneros cubiertos",
+      "grain": "Secuencia–música–frame–joints/cámara",
+      "reference_period": "Dataset de investigación publicado con trabajo de 2021",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "Anotaciones",
+        "Movimiento 3D",
+        "Vídeo y música asociados"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Alta",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Género",
+        "Secuencia",
+        "Poses 3D",
+        "Música",
+        "Cámaras"
+      ],
+      "join_keys": [
+        "Sequence ID + cámara + frame; particiones publicadas"
+      ],
+      "analysis_ideas": [
+        "¿Los cambios de movimiento se sincronizan con pulsos musicales de la misma forma entre géneros?"
+      ],
+      "caveats": [
+        "La prueba de documentación no valida descargas de todos los vídeos.",
+        "No confundir reconstrucción estimada de pose con posición exacta."
+      ],
+      "usage_terms": "Anotaciones Google CC BY 4.0 según documentación; comprobar condiciones separadas de vídeos y música AIST.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "time_series",
+        "audio",
+        "image",
+        "video"
+      ],
+      "smoke_test": "source_tests/README.md#aist-dance",
+      "discovery": {
+        "question": "¿Los cambios de movimiento se sincronizan con pulsos musicales de la misma forma entre géneros?",
+        "ai_role": "Extraer ritmo y movimiento, comparar sincronización y detectar desalineaciones.",
+        "minimum_validation": [
+          "Respetar splits por bailarín/secuencia.",
+          "Comprobar FPS, unidad de pose y alineación temporal."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "artic-pintura",
+      "category": "Arte, pintura y Bob Ross",
+      "name": "Obras, textos e imágenes del Art Institute of Chicago",
+      "publisher": "Art Institute of Chicago",
+      "sources": [
+        {
+          "url": "https://api.artic.edu/docs/",
+          "resource_url": "https://api.artic.edu/api/v1/artworks/search?q=Monet&fields=id,title,artist_title,date_display,image_id,is_public_domain&limit=3",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Colección del museo; muestra buscada por Monet",
+      "grain": "Obra y sus registros/imágenes",
+      "reference_period": "Fechas de obra y revisión del catálogo",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "IIIF",
+        "Imágenes"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Artista",
+        "Fecha",
+        "Material",
+        "Título",
+        "Descripción",
+        "Imagen",
+        "Dominio público"
+      ],
+      "join_keys": [
+        "Artwork ID + image_id"
+      ],
+      "analysis_ideas": [
+        "¿Cómo cambian paletas, escenas y materiales entre artistas y periodos, y cuánto depende del museo que conservó las obras?"
+      ],
+      "caveats": [
+        "Fotos de museo no son mediciones colorimétricas del original.",
+        "Parecido visual no demuestra influencia histórica."
+      ],
+      "usage_terms": "Revisar derechos por obra e imagen; Open Access no cubre toda la colección por igual.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#artic-pintura",
+      "discovery": {
+        "question": "¿Cómo cambian paletas, escenas y materiales entre artistas y periodos, y cuánto depende del museo que conservó las obras?",
+        "ai_role": "Comparar imagen y descripción, proponer motivos visuales y verificarlos manualmente.",
+        "minimum_validation": [
+          "Comprobar is_public_domain antes de reutilizar imagen.",
+          "Controlar medio, reproducción y selección de colección."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "dracor-teatro",
+      "category": "Música, baile y teatro",
+      "name": "DraCor: teatro, personajes y redes de diálogo",
+      "publisher": "DraCor / editores de cada corpus",
+      "sources": [
+        {
+          "url": "https://dracor.org/doc/api",
+          "resource_url": "https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Corpus teatrales por lengua/edición; ejemplo Faust",
+      "grain": "Obra–acto/escena–intervención–personaje",
+      "reference_period": "Teatro histórico, edición digital por corpus",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "TEI XML",
+        "Métricas de red"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Personajes",
+        "Escenas",
+        "Intervenciones",
+        "Relaciones",
+        "Texto"
+      ],
+      "join_keys": [
+        "Corpus + play ID + edición/commit + scene/speaker ID"
+      ],
+      "analysis_ideas": [
+        "¿Quién parece protagonista por aparecer mucho y quién conecta realmente grupos de personajes?"
+      ],
+      "caveats": [
+        "Una métrica de centralidad no reemplaza una lectura literaria.",
+        "Roles y género dependen de anotaciones; documentar categorías."
+      ],
+      "usage_terms": "Licencias por corpus; GerDraCor declara CC0, otros corpus tienen condiciones diferentes.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#dracor-teatro",
+      "discovery": {
+        "question": "¿Quién parece protagonista por aparecer mucho y quién conecta realmente grupos de personajes?",
+        "ai_role": "Extraer relaciones y comparar centralidad de red con evidencia textual.",
+        "minimum_validation": [
+          "Separar copresencia de diálogo directo.",
+          "Validar adaptación, edición y personajes colectivos."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "uci-retail",
+      "category": "Comercio y medicina",
+      "name": "Online Retail: facturas y líneas de pedido reales",
+      "publisher": "Daqing Chen / UCI Machine Learning Repository",
+      "sources": [
+        {
+          "url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+          "resource_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Comercio online británico del caso de estudio",
+      "grain": "Línea de factura; no confundir con cesta o cliente",
+      "reference_period": "2010-12-01 a 2011-12-09",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "CSV",
+        "XLSX"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "InvoiceNo",
+        "StockCode",
+        "Description",
+        "Quantity",
+        "InvoiceDate",
+        "UnitPrice",
+        "CustomerID",
+        "Country"
+      ],
+      "join_keys": [
+        "Factura + producto no garantiza línea única; preservar fila y revisar duplicados"
+      ],
+      "analysis_ideas": [
+        "¿Qué productos parecen estrellas por ventas brutas pero cambian de posición al considerar cancelaciones y devoluciones?"
+      ],
+      "caveats": [
+        "No es una tienda mexicana actual.",
+        "No asumir que el metadato de ausencia de faltantes describe cada fila: comprobar el archivo."
+      ],
+      "usage_terms": "CC BY 4.0; citar DOI 10.24432/C5BW33.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "time_series"
+      ],
+      "smoke_test": "source_tests/README.md#uci-retail",
+      "discovery": {
+        "question": "¿Qué productos parecen estrellas por ventas brutas pero cambian de posición al considerar cancelaciones y devoluciones?",
+        "ai_role": "Agrupar descripciones y detectar patrones de cesta; explicar anomalías antes de segmentar clientes.",
+        "minimum_validation": [
+          "Separar facturas de cancelación, cantidades negativas y clientes faltantes.",
+          "No confundir facturación con beneficio: faltan costos."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "openfda-etiquetas",
+      "category": "Comercio y medicina",
+      "name": "Etiquetas y documentación farmacéutica pública",
+      "publisher": "FDA / openFDA",
+      "sources": [
+        {
+          "url": "https://open.fda.gov/apis/drug/label/how-to-use-the-endpoint/",
+          "resource_url": "https://api.fda.gov/drug/label.json?limit=1",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Registros de etiquetado publicados en openFDA, EE. UU.",
+      "grain": "Etiqueta–producto–versión",
+      "reference_period": "effective_time y última actualización de la API",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "Texto regulatorio"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "ID",
+        "effective_time",
+        "Marca/genérico",
+        "Advertencias",
+        "Interacciones",
+        "Indicaciones"
+      ],
+      "join_keys": [
+        "set_id/id + versión/effective_time; revisar equivalencias"
+      ],
+      "analysis_ideas": [
+        "¿Se expresan riesgos o interacciones de forma muy distinta entre etiquetas con ingredientes similares?"
+      ],
+      "caveats": [
+        "openFDA no valida decisiones de atención médica.",
+        "Frecuencia de una advertencia no mide riesgo clínico, causalidad ni recomendación terapéutica."
+      ],
+      "usage_terms": "Términos y licencia openFDA; conservar advertencias de calidad de la fuente.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text"
+      ],
+      "smoke_test": "source_tests/README.md#openfda-etiquetas",
+      "discovery": {
+        "question": "¿Se expresan riesgos o interacciones de forma muy distinta entre etiquetas con ingredientes similares?",
+        "ai_role": "Extraer términos y comparar lenguaje, siempre con citas al documento.",
+        "minimum_validation": [
+          "Verificar ingrediente, formulación, versión y campos ausentes.",
+          "Revisión experta de cualquier conclusión de seguridad."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "wellcome-medicina-antigua",
+      "category": "Comercio y medicina",
+      "name": "Libros, archivos e ilustraciones de medicina histórica",
+      "publisher": "Wellcome Collection",
+      "sources": [
+        {
+          "url": "https://developers.wellcomecollection.org/api/catalogue",
+          "resource_url": "https://api.wellcomecollection.org/catalogue/v2/works?query=sleep&production.dates.to=1900-01-01&pageSize=3&include=production,items",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Fondos Wellcome; búsqueda sleep con producción anterior a 1900",
+      "grain": "Obra–edición–página, con metadatos de producción",
+      "reference_period": "Producción histórica; digitalización y catalogación posteriores",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "JSON",
+        "IIIF",
+        "OCR cuando exista",
+        "Imágenes"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Alta",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Título",
+        "Autor",
+        "Fecha",
+        "Temas",
+        "Localización digital",
+        "Texto de página"
+      ],
+      "join_keys": [
+        "Work ID + edición + canvas/página"
+      ],
+      "analysis_ideas": [
+        "¿Qué significaban primer sueño, segundo sueño o vigilia nocturna en distintos textos, lugares y siglos?"
+      ],
+      "caveats": [
+        "Una consulta bibliográfica no es el corpus completo de OCR.",
+        "La interpretación del sueño segmentado es debatida; no afirmar una costumbre universal ni convertirla en consejo de salud."
+      ],
+      "usage_terms": "Licencia por objeto y edición; seguir derechos del recurso IIIF y OCR.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image"
+      ],
+      "smoke_test": "source_tests/README.md#wellcome-medicina-antigua",
+      "discovery": {
+        "question": "¿Qué significaban primer sueño, segundo sueño o vigilia nocturna en distintos textos, lugares y siglos?",
+        "ai_role": "Buscar expresiones y sinónimos, extraer pasajes con contexto y detectar contraejemplos.",
+        "minimum_validation": [
+          "Cotejar OCR con imagen y leer contexto.",
+          "Separar descripción de costumbre, prescripción médica, metáfora y ficción.",
+          "Comparar siglos, regiones y géneros sin tratar cada mención como una persona."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "bob-ross-elementos",
+      "category": "Arte, pintura y Bob Ross",
+      "name": "Elementos que aparecen en los cuadros de Bob Ross",
+      "publisher": "FiveThirtyEight / autores de la codificación",
+      "sources": [
+        {
+          "url": "https://github.com/fivethirtyeight/data/tree/master/bob-ross",
+          "resource_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Episodios codificados de The Joy of Painting",
+      "grain": "Episodio con indicadores binarios de motivos",
+      "reference_period": "S01E01–S31E13 según documentación",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "CSV"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Baja",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "EPISODE",
+        "TITLE",
+        "TREE",
+        "TREES",
+        "MOUNTAIN",
+        "MOUNTAINS",
+        "CLOUDS",
+        "GUEST"
+      ],
+      "join_keys": [
+        "EPISODE; comprobar unicidad"
+      ],
+      "analysis_ideas": [
+        "¿Qué elementos aparecen juntos más de lo que esperaríamos al conocer su frecuencia por separado?"
+      ],
+      "caveats": [
+        "Son etiquetas humanas, no verdad visual perfecta.",
+        "Coocurrencia no explica intención artística ni causalidad."
+      ],
+      "usage_terms": "Conservar atribución FiveThirtyEight y licencia del repositorio; derechos de vídeos/obras aparte.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#bob-ross-elementos",
+      "discovery": {
+        "question": "¿Qué elementos aparecen juntos más de lo que esperaríamos al conocer su frecuencia por separado?",
+        "ai_role": "Proponer asociaciones y explicarlas con conteos, probabilidades y ejemplos de cuadros.",
+        "minimum_validation": [
+          "Verificar columnas binarias y episodios únicos.",
+          "Comparar probabilidad conjunta con frecuencias base; controlar búsquedas múltiples si se exploran muchos motivos."
+        ],
+        "status": "descriptive_pilot_calculated",
+        "evidence": "examples/bob_ross_discovery/README.md"
+      }
+    },
+    {
+      "id": "bob-ross-paletas",
+      "category": "Arte, pintura y Bob Ross",
+      "name": "Cuadros, paletas y episodios de Bob Ross",
+      "publisher": "J. Wilber, recopilación derivada de TwoInchBrush",
+      "sources": [
+        {
+          "url": "https://github.com/jwilber/Bob_Ross_Paintings",
+          "resource_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv",
+          "verification": {
+            "checked_on": "2026-11-04",
+            "method": "primary_documentation_located",
+            "detail": "Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Cuadros incluidos en la recopilación comunitaria",
+      "grain": "Cuadro–episodio; metadatos y enlaces",
+      "reference_period": "Episodios del programa; corte del repositorio",
+      "source_frequency": "Según actualización del productor",
+      "formats": [
+        "CSV",
+        "Imágenes enlazadas",
+        "Enlaces a episodios"
+      ],
+      "access": "Acceso público descrito por el productor; ver prueba y límites por capa.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Título",
+        "Temporada",
+        "Episodio",
+        "Colores",
+        "Hex",
+        "Imagen",
+        "Vídeo"
+      ],
+      "join_keys": [
+        "Temporada + episodio; cotejar con índice de cuadro y títulos"
+      ],
+      "analysis_ideas": [
+        "¿Los paisajes nocturnos o de invierno comparten paletas, y qué colores son casi universales?"
+      ],
+      "caveats": [
+        "Paleta declarada no equivale a porcentaje de píxeles de un color.",
+        "Recopilación de terceros; no asumir permisos sobre cuadros, imágenes o vídeos."
+      ],
+      "usage_terms": "Revisar licencia del repositorio y condiciones TwoInchBrush/Bob Ross; conservar enlaces sin redistribuir medios completos.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "image",
+        "video"
+      ],
+      "smoke_test": "source_tests/README.md#bob-ross-paletas",
+      "discovery": {
+        "question": "¿Los paisajes nocturnos o de invierno comparten paletas, y qué colores son casi universales?",
+        "ai_role": "Comparar paletas declaradas con colores extraídos de miniaturas, manteniendo ambas medidas separadas.",
+        "minimum_validation": [
+          "Homologar nombres y lista/hex de colores.",
+          "Revisar una muestra visual y diferencias de reproducción."
+        ],
+        "status": "hypothesis_not_tested"
+      }
     }
   ]
 }

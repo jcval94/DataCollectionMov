@@ -1,0 +1,34 @@
+{
+  "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv",
+  "captured_at_utc": "2026-11-05T00:52:56+00:00",
+  "sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "hash_scope": "complete_response",
+  "bytes": 66315,
+  "definitions": {
+    "tree": "TREE == 1 OR TREES == 1",
+    "mountain": "MOUNTAIN == 1 OR MOUNTAINS == 1"
+  },
+  "checks": {
+    "unique_episode_ids": true,
+    "selected_labels_binary_and_nonmissing": true
+  },
+  "all_episodes": {
+    "episodes": 403,
+    "with_tree": 361,
+    "with_mountain": 161,
+    "with_both": 157,
+    "p_tree": 0.8957816377171216,
+    "p_tree_given_mountain": 0.9751552795031055,
+    "p_tree_given_no_mountain": 0.8429752066115702
+  },
+  "excluding_guest": {
+    "episodes": 381,
+    "with_tree": 345,
+    "with_mountain": 150,
+    "with_both": 146,
+    "p_tree": 0.905511811023622,
+    "p_tree_given_mountain": 0.9733333333333334,
+    "p_tree_given_no_mountain": 0.8614718614718615
+  },
+  "interpretation": "Descriptive co-occurrence of human-coded labels; no causal claim or inference about the painter’s intention."
+}

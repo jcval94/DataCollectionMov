@@ -42,6 +42,6 @@ Para guardar tu ejecución:
 python examples/dof_git/demo_git.py --report /tmp/ejecucion_dof_git.md
 ```
 
-Revisa la [ejecución comprobada](EJECUCION.md) y las [pruebas de las 45 fuentes](../../source_tests/README.md).
+Revisa la [ejecución comprobada](EJECUCION.md) y las [pruebas de las fuentes del catálogo](../../source_tests/README.md).
 
 Pregunta para clase: si alguien cambia `12` por `120`, ¿qué comando muestra la diferencia, cuál identifica el commit y por qué ese historial no basta para validar el contenido?

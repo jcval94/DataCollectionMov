@@ -1,28 +1,32 @@
 # Prueba de acceso y muestras de fuentes
 
-Ejecución: **2026-11-04T18:07:41-06:00** (America/Mexico_City). Fin UTC: `2026-11-05T00:08:41+00:00`.
+Ejecución: **2026-11-04T18:07:41-06:00** (America/Mexico_City). Fin UTC: `2026-11-05T00:53:57+00:00`.
 
-Se probaron **45 fuentes** del catálogo mediante GET públicos, con timeout de 18 s por operación, 4 fuentes en paralelo y un límite de 8388608 bytes para documentos completos. CSV/TXT se muestrean por prefijo de 64 KiB.
+Se probaron **72 fuentes** del catálogo mediante GET públicos, con timeout de 18 s por operación, 4 fuentes en paralelo y un límite de 8388608 bytes para documentos completos. CSV/TXT se muestrean por prefijo de 64 KiB.
 
 **Qué comprueba:** acceso desde este entorno, formato, campos mínimos y ejemplos recuperados. **Qué no comprueba:** disponibilidad futura, calidad estadística completa, autenticación de APIs protegidas, decodificación/reproducción integral de multimedia, ni salud de los workflows existentes. Una página HTTP 200 no se cuenta como un dataset recuperado.
 
 Los ejemplos se tomaron de las respuestas; los datos no disponibles no se sustituyen por filas inventadas. `CACHED_SAMPLE` identifica CSVs ya publicados por el repo, separados de las APIs en vivo. `METADATA_SAMPLE` prueba un catálogo/manifiesto, no los eventos u observaciones que referencia.
 
-## Corridas y recomprobación selectiva
+## Alcance de este informe acumulado
 
-La corrida completa probó las 45 fuentes. Después se añadió el reconocimiento de audio WAV y se recomprobó sólo Xeno-canto: `2026-11-04T18:09:58-06:00`. Su resultado final sustituye esa ficha; `results.json` conserva la evidencia anterior, los hashes de ambos programas y la corrida adicional en `rechecks`. Cada ficha indica en JSON el hash del programa con el que se capturó. El README se volvió a generar con los resultados reunidos. No se volvieron a solicitar las otras 44 fuentes por este cambio del lector multimedia.
+Se conservan las **45 fuentes** comprobadas en la entrega anterior y se añaden **27** pruebas nuevas. Las anteriores no se volvieron a solicitar por la ampliación del catálogo. La corrida nueva comenzó en `2026-11-04T18:51:41-06:00`; se recomprobaron selectivamente los dos portales con respuestas incompletas para añadir sus páginas oficiales de documentación. Los errores de la capa de datos se conservan en cada ficha.
+
+`results.json` conserva la corrida anterior, su recomprobación de Xeno-canto, la nueva corrida en `extensions`, los resultados anteriores de las dos fichas recomprobadas y el hash del programa/definiciones por captura. El título de resultado muestra la capa más útil recuperada; la columna de fallos y el detalle conservan las capas que fallaron.
+
+Además del acceso, se ejecutó un [piloto descriptivo con Bob Ross](../examples/bob_ross_discovery/README.md). La [guía de descubrimientos](../docs/GUIA_DESCUBRIMIENTOS_IA.md) distingue preguntas abiertas y resultados ya medidos.
 
 ## Resultados
 
 | Resultado | Fuentes |
 | --- | ---: |
-| BLOCKED: Acceso bloqueado | 4 |
+| BLOCKED: Acceso bloqueado | 6 |
 | CACHED_SAMPLE: Registros del repo | 2 |
-| DATA_SAMPLE: Registros recuperados | 10 |
-| DOCUMENT_SAMPLE: Documento recuperado | 3 |
-| DOC_ONLY: Sólo portal/documentación | 16 |
-| HTTP_ERROR: Error HTTP | 7 |
-| METADATA_SAMPLE: Sólo catálogo/manifiesto | 3 |
+| DATA_SAMPLE: Registros recuperados | 22 |
+| DOCUMENT_SAMPLE: Documento recuperado | 5 |
+| DOC_ONLY: Sólo portal/documentación | 22 |
+| HTTP_ERROR: Error HTTP | 10 |
+| METADATA_SAMPLE: Sólo catálogo/manifiesto | 5 |
 
 ## Índice de las pruebas
 
@@ -73,6 +77,33 @@ La corrida completa probó las 45 fuentes. Después se añadió el reconocimient
 | [gdelt-noticias](#gdelt-noticias) | METADATA_SAMPLE | — |
 | [nasa-bolidos](#nasa-bolidos) | DATA_SAMPLE | — |
 | [nyc-ratas](#nyc-ratas) | DATA_SAMPLE | — |
+| [nyc-restaurantes](#nyc-restaurantes) | DATA_SAMPLE | — |
+| [openflights-red-aerea](#openflights-red-aerea) | DATA_SAMPLE | — |
+| [bts-puntualidad-vuelos](#bts-puntualidad-vuelos) | DOC_ONLY | — |
+| [apple-apps](#apple-apps) | DATA_SAMPLE | — |
+| [apple-resenas-apps](#apple-resenas-apps) | DATA_SAMPLE | — |
+| [insideairbnb-cdmx](#insideairbnb-cdmx) | DATA_SAMPLE | — |
+| [napoleonica-cartas](#napoleonica-cartas) | DOC_ONLY | — |
+| [gallica-napoleon](#gallica-napoleon) | BLOCKED | BLOCKED |
+| [pepys-diarios](#pepys-diarios) | DOCUMENT_SAMPLE | — |
+| [musicbrainz-conciertos](#musicbrainz-conciertos) | DOC_ONLY | PARSE_ERROR |
+| [setlist-conciertos](#setlist-conciertos) | DOC_ONLY | — |
+| [osm-mapas-restaurantes](#osm-mapas-restaurantes) | HTTP_ERROR | HTTP_ERROR |
+| [loc-mapas-historicos](#loc-mapas-historicos) | METADATA_SAMPLE | — |
+| [gsm8k-examenes](#gsm8k-examenes) | DATA_SAMPLE | — |
+| [unam-colecciones](#unam-colecciones) | HTTP_ERROR | HTTP_ERROR |
+| [unam-agenda-estadistica](#unam-agenda-estadistica) | DOC_ONLY | PARSE_ERROR |
+| [unam-guias-examenes](#unam-guias-examenes) | DOCUMENT_SAMPLE | — |
+| [ct-ventas-inmuebles](#ct-ventas-inmuebles) | DATA_SAMPLE | — |
+| [cmu-movimiento-baile](#cmu-movimiento-baile) | HTTP_ERROR | HTTP_ERROR |
+| [aist-dance](#aist-dance) | DOC_ONLY | — |
+| [artic-pintura](#artic-pintura) | BLOCKED | BLOCKED |
+| [dracor-teatro](#dracor-teatro) | DATA_SAMPLE | — |
+| [uci-retail](#uci-retail) | DATA_SAMPLE | — |
+| [openfda-etiquetas](#openfda-etiquetas) | DATA_SAMPLE | — |
+| [wellcome-medicina-antigua](#wellcome-medicina-antigua) | METADATA_SAMPLE | — |
+| [bob-ross-elementos](#bob-ross-elementos) | DATA_SAMPLE | — |
+| [bob-ross-paletas](#bob-ross-paletas) | DATA_SAMPLE | — |
 
 ## Interpretación y siguientes correcciones
 
@@ -1160,6 +1191,791 @@ Formato y campos de la muestra validados; no implica calidad de toda la fuente.
     "zip_code": "11237",
     "borough": "Brooklyn",
     "result": "Bait applied"
+  }
+]
+```
+
+### nyc-restaurantes
+
+**Inspecciones de restaurantes de Nueva York** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=3) — `DATA_SAMPLE`; HTTP `200`; 9.964 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "camis": "50160418",
+    "dba": "MAMAS CHICKEN SHACK HAPPY DUMPLING COCOA CABIN COCOA CABIN",
+    "boro": "Manhattan",
+    "zipcode": "10036",
+    "inspection_date": "1900-01-01T00:00:00.000"
+  },
+  {
+    "camis": "50177284",
+    "dba": "WORLD SPA ENTERTAINMENT LLC",
+    "boro": "Brooklyn",
+    "zipcode": "11230",
+    "inspection_date": "1900-01-01T00:00:00.000"
+  }
+]
+```
+
+### openflights-red-aerea
+
+**Aeropuertos, aerolíneas, aviones y rutas históricas** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [csv](https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat) — `DATA_SAMPLE`; HTTP `200`; 5.231 s.
+
+Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.
+
+```json
+[
+  {
+    "airport_id": "1",
+    "name": "Goroka Airport",
+    "country": "Papua New Guinea",
+    "iata": "GKA",
+    "latitude": "-6.081689834590001",
+    "longitude": "145.391998291"
+  },
+  {
+    "airport_id": "2",
+    "name": "Madang Airport",
+    "country": "Papua New Guinea",
+    "iata": "MAG",
+    "latitude": "-5.20707988739",
+    "longitude": "145.789001465"
+  }
+]
+```
+
+Prueba 2: [csv](https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat) — `DATA_SAMPLE`; HTTP `200`; 3.454 s.
+
+Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.
+
+```json
+[
+  {
+    "airline": "2B",
+    "airline_id": "410",
+    "source_airport": "AER",
+    "source_id": "2965",
+    "dest_airport": "KZN",
+    "dest_id": "2990",
+    "codeshare": "",
+    "stops": "0",
+    "equipment": "CR2"
+  },
+  {
+    "airline": "2B",
+    "airline_id": "410",
+    "source_airport": "ASF",
+    "source_id": "2966",
+    "dest_airport": "KZN",
+    "dest_id": "2990",
+    "codeshare": "",
+    "stops": "0",
+    "equipment": "CR2"
+  }
+]
+```
+
+### bts-puntualidad-vuelos
+
+**Puntualidad, cancelaciones y demoras aéreas** — `DOC_ONLY`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [html](https://transtats.bts.gov/ONTIME/) — `DOC_ONLY`; HTTP `200`; 4.982 s.
+
+Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.
+
+```json
+[
+  {
+    "page_title": "On-Time Index pageLockU.S. Department of TransportationUnited States Department of Transportation"
+  }
+]
+```
+
+### apple-apps
+
+**Catálogo público de apps de Apple** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://itunes.apple.com/search?term=travel&entity=software&country=mx&limit=3) — `DATA_SAMPLE`; HTTP `200`; 4.707 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "trackId": 912390687,
+    "trackName": "TREBEL Music - Download Songs",
+    "primaryGenreName": "Music",
+    "price": 0.0,
+    "currency": "MXN",
+    "averageUserRating": 4.70673,
+    "userRatingCount": 470548,
+    "version": "7.9.9"
+  },
+  {
+    "trackId": 427916203,
+    "trackName": "Expedia: hoteles y vuelos",
+    "primaryGenreName": "Travel",
+    "price": 0.0,
+    "currency": "MXN",
+    "averageUserRating": 4.852,
+    "userRatingCount": 371599,
+    "version": "2026.44"
+  }
+]
+```
+
+### apple-resenas-apps
+
+**Reseñas públicas de apps por tienda** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://itunes.apple.com/mx/rss/customerreviews/id=310633997/sortBy=mostRecent/json) — `DATA_SAMPLE`; HTTP `200`; 3.811 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "id.label": "14746272762",
+    "im:rating.label": "1",
+    "im:version.label": "26.43.75",
+    "title.label": "Hackean"
+  }
+]
+```
+
+### insideairbnb-cdmx
+
+**Alojamiento turístico: Inside Airbnb CDMX** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [csv](https://data.insideairbnb.com/mexico/df/mexico-city/2026-09-23/visualisations/listings.csv) — `DATA_SAMPLE`; HTTP `200`; 4.238 s.
+
+Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.
+
+```json
+[
+  {
+    "id": "35797",
+    "neighbourhood": "Cuajimalpa de Morelos",
+    "room_type": "Private room",
+    "price": "8874",
+    "minimum_nights": "1",
+    "number_of_reviews": "0",
+    "availability_365": "363"
+  },
+  {
+    "id": "44616",
+    "neighbourhood": "Cuauhtémoc",
+    "room_type": "Entire home/apt",
+    "price": "21950",
+    "minimum_nights": "1",
+    "number_of_reviews": "67",
+    "availability_365": "361"
+  }
+]
+```
+
+### napoleonica-cartas
+
+**Correspondencia general de Napoleón** — `DOC_ONLY`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [html](https://www.napoleonica.org/collection/9457) — `DOC_ONLY`; HTTP `200`; 5.716 s.
+
+Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.
+
+```json
+[
+  {
+    "page_title": "correspondance (Napoleonica les archives)"
+  }
+]
+```
+
+### gallica-napoleon
+
+**Gallica: libros históricos sobre Napoleón y su correspondencia** — `BLOCKED`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [sru](https://gallica.bnf.fr/SRU?version=1.2&operation=searchRetrieve&query=dc.title%20all%20%22correspondance%20Napoleon%22&maximumRecords=3) — `BLOCKED`; HTTP `403`; 3.887 s.
+
+HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.
+
+Sin registros o ejemplos recuperados para esta prueba.
+
+### pepys-diarios
+
+**Diario de Samuel Pepys: vida cotidiana, enfermedad y ciudad** — `DOCUMENT_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [text](https://www.gutenberg.org/cache/epub/4184/pg4184.txt) — `DOCUMENT_SAMPLE`; HTTP `200`; 3.255 s.
+
+Prefijo de documento real; no se descargó el corpus completo.
+
+```json
+[
+  {
+    "excerpt": "The Project Gutenberg eBook of Diary of Samuel Pepys — Complete 1667 N.S. This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever. You may copy it, give it away or re-use it under the terms of the Project Gutenberg License"
+  }
+]
+```
+
+### musicbrainz-conciertos
+
+**Eventos, artistas y lugares de conciertos** — `DOC_ONLY`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3) — `PARSE_ERROR`; HTTP `200`; 3.49 s.
+
+JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+Sin registros o ejemplos recuperados para esta prueba.
+
+Prueba 2: [html](https://musicbrainz.org/doc/MusicBrainz_API) — `DOC_ONLY`; HTTP `200`; 4.701 s.
+
+Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.
+
+```json
+[
+  {
+    "page_title": "Site Unavailable"
+  }
+]
+```
+
+### setlist-conciertos
+
+**Repertorios y orden de canciones en conciertos** — `DOC_ONLY`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [html](https://api.setlist.fm/docs/1.0/index.html) — `DOC_ONLY`; HTTP `200`; 4.019 s.
+
+Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.
+
+```json
+[
+  {
+    "page_title": "setlist.fm API"
+  }
+]
+```
+
+### osm-mapas-restaurantes
+
+**OpenStreetMap / Overpass: lugares y mapas vivos** — `HTTP_ERROR`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A15%5D%3Bnode%5Bamenity%3Drestaurant%5D%2819.42%2C-99.18%2C19.44%2C-99.15%29%3Bout%203%3B) — `HTTP_ERROR`; HTTP `502`; 3.666 s.
+
+HTTP 502: Bad Gateway. No se sorteó el bloqueo ni se usaron credenciales personales.
+
+Sin registros o ejemplos recuperados para esta prueba.
+
+### loc-mapas-historicos
+
+**Mapas históricos digitalizados** — `METADATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://www.loc.gov/maps/?fo=json&c=3) — `METADATA_SAMPLE`; HTTP `200`; 3.225 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "id": "http://www.loc.gov/item/sanborn03483_002/",
+    "title": "Sanborn Fire Insurance Map from Jonesport, Washington County, Maine.",
+    "date": "1895-09",
+    "original_format": [
+      "map"
+    ]
+  }
+]
+```
+
+### gsm8k-examenes
+
+**GSM8K: problemas matemáticos con soluciones** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [gsm_jsonl](https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl) — `DATA_SAMPLE`; HTTP `200`; 2.848 s.
+
+Una línea JSONL real: fragmento breve de pregunta y respuesta final de referencia, sin ejecutar un modelo ni evaluar todo el benchmark.
+
+```json
+[
+  {
+    "question_excerpt": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for",
+    "answer_numeric": "18"
+  }
+]
+```
+
+### unam-colecciones
+
+**Colecciones universitarias abiertas UNAM** — `HTTP_ERROR`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [html](https://datosabiertos.unam.mx/IBUNAM%3AMEXU%3A1210262) — `HTTP_ERROR`; HTTP `503`; 8.544 s.
+
+HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.
+
+Sin registros o ejemplos recuperados para esta prueba.
+
+### unam-agenda-estadistica
+
+**Agenda Estadística y numeralia UNAM** — `DOC_ONLY`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [html](https://estadistica.unam.mx/numeralia/) — `PARSE_ERROR`; HTTP `200`; 4.392 s.
+
+ValueError: Página vacía sin título ni contenido suficiente
+
+Sin registros o ejemplos recuperados para esta prueba.
+
+Prueba 2: [html](https://web.planeacion.unam.mx/direccion-de-sistemas-de-informacion-estadistica/agenda/) — `DOC_ONLY`; HTTP `200`; 5.66 s.
+
+Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.
+
+```json
+[
+  {
+    "page_title": "Agenda Estadística – Coordinación de Planeación, Evaluación y Simplificación de la Gestión Institucional"
+  }
+]
+```
+
+### unam-guias-examenes
+
+**Guías públicas de exámenes extraordinarios CCH** — `DOCUMENT_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [pdf](https://portalacademico.cch.unam.mx/materiales/al/Guias_extras/Matematicas/cal1_ori.pdf) — `DOCUMENT_SAMPLE`; HTTP `200`; 3.68 s.
+
+Firma PDF y extracción de una página validadas; sin OCR ni auditoría de todas sus tablas.
+
+```json
+[
+  {
+    "page": 1,
+    "excerpt": "UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO COLEGIO DE CIENCIAS Y HUMANIDADES PLANTEL ORIENTE GUÍA PARA EL EXAMEN EXTRAORDINARIO DE CÁLCULO DIFERENCIAL"
+  }
+]
+```
+
+### ct-ventas-inmuebles
+
+**Ventas inmobiliarias registradas en Connecticut** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://data.ct.gov/resource/5mzw-sjtu.json?$limit=3) — `DATA_SAMPLE`; HTTP `200`; 3.717 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "serialnumber": "24079",
+    "listyear": "2024",
+    "daterecorded": "2025-09-26T00:00:00.000",
+    "town": "Ashford",
+    "assessedvalue": "54460",
+    "saleamount": "95000",
+    "salesratio": "0.5732",
+    "propertytype": "Vacant Land"
+  },
+  {
+    "serialnumber": "240171",
+    "listyear": "2024",
+    "daterecorded": "2025-06-06T00:00:00.000",
+    "town": "Berlin",
+    "assessedvalue": "251400",
+    "saleamount": "350000",
+    "salesratio": "0.7182",
+    "propertytype": "Commercial",
+    "nonusecode": "25 - Other"
+  }
+]
+```
+
+### cmu-movimiento-baile
+
+**Movimiento humano y secuencias de baile CMU MoCap** — `HTTP_ERROR`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [amc](https://mocap.cs.cmu.edu/subjects/05/05_02.amc) — `HTTP_ERROR`; HTTP `503`; 3.788 s.
+
+HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.
+
+Sin registros o ejemplos recuperados para esta prueba.
+
+### aist-dance
+
+**AIST++: baile, música y movimiento 3D** — `DOC_ONLY`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [html](https://google.github.io/aistplusplus_dataset/factsfigures.html) — `DOC_ONLY`; HTTP `200`; 4.482 s.
+
+Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.
+
+```json
+[
+  {
+    "page_title": "AIST++ Dataset - Description"
+  }
+]
+```
+
+### artic-pintura
+
+**Obras, textos e imágenes del Art Institute of Chicago** — `BLOCKED`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://api.artic.edu/api/v1/artworks/search?q=Monet&fields=id,title,artist_title,date_display,image_id,is_public_domain&limit=3) — `BLOCKED`; HTTP `403`; 2.934 s.
+
+HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.
+
+Sin registros o ejemplos recuperados para esta prueba.
+
+### dracor-teatro
+
+**DraCor: teatro, personajes y redes de diálogo** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie) — `DATA_SAMPLE`; HTTP `200`; 4.592 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "id": "ger000243",
+    "title": "Faust",
+    "name": "goethe-faust-eine-tragoedie",
+    "allInSegment": 28,
+    "segments": [
+      {
+        "type": "scene",
+        "title": "Zueignung.",
+        "number": 1
+      },
+      {
+        "type": "scene",
+        "title": "Vorspiel auf dem Theater.",
+        "speakers": [
+          "direktor",
+          "dichter",
+          "lustige_person"
+        ],
+        "number": 2
+      },
+      {
+        "type": "scene",
+        "title": "Prolog im Himmel.",
+        "speakers": [
+          "raphael",
+          "gabriel",
+          "michael",
+          "mephistopheles",
+          "der_herr"
+        ],
+        "number": 3
+      },
+      {
+        "type": "scene",
+        "title": "Nacht.",
+        "speakers": [
+          "faust",
+          "geist",
+          "wagner",
+          "chor_der_engel",
+          "chor_der_weiber",
+          "chor_der_juenger"
+        ],
+        "number": 4
+      },
+      {
+        "type": "scene",
+        "title": "Vor dem Tor.",
+        "speakers": [
+          "einige_handwerksburschen",
+          "andre_handwerksburschen",
+          "ein_handwerksbursch",
+          "zweiter_handwerksbursch",
+          "ein_dritter_handwerksbursch",
+          "vierter_handwerksbursch",
+          "fuenfter_handwerksbursch",
+          "erstes_dienstmaedchen"
+        ],
+        "number": 5
+      },
+      {
+        "type": "scene",
+        "title": "Studierzimmer.",
+        "speakers": [
+          "faust",
+          "geister",
+          "mephistopheles"
+        ],
+        "number": 6
+      },
+      {
+        "type": "scene",
+        "title": "Studierzimmer.",
+        "speakers": [
+          "faust",
+          "mephistopheles",
+          "geisterchor",
+          "schueler"
+        ],
+        "number": 7
+      },
+      {
+        "type": "scene",
+        "title": "Auerbachs Keller in Leipzig.",
+        "speakers": [
+          "frosch",
+          "brander",
+          "siebel",
+          "altmayer",
+          "mephistopheles",
+          "faust"
+        ],
+        "number": 8
+      }
+    ]
+  }
+]
+```
+
+Prueba 2: [tei](https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/tei) — `DOCUMENT_SAMPLE`; HTTP `200`; 3.941 s.
+
+Documento TEI con título e intervenciones; no se calculó todavía la red completa de personajes.
+
+```json
+[
+  {
+    "title": "Faust",
+    "speaker_examples": [
+      "Direktor.",
+      "Dichter."
+    ],
+    "passage_excerpt": "Im Elend! Verzweifelnd! Erbärmlich auf der Erde lange verirrt und nun gefangen! Als Missetäterin im Kerker zu entsetzlichen Qualen eingesperrt"
+  }
+]
+```
+
+### uci-retail
+
+**Online Retail: facturas y líneas de pedido reales** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [csv](https://archive.ics.uci.edu/static/public/352/data.csv) — `DATA_SAMPLE`; HTTP `200`; 3.337 s.
+
+Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.
+
+```json
+[
+  {
+    "InvoiceNo": "536365",
+    "StockCode": "85123A",
+    "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+    "Quantity": "6",
+    "InvoiceDate": "12/1/2010 8:26",
+    "UnitPrice": "2.55",
+    "CustomerID": "17850",
+    "Country": "United Kingdom"
+  },
+  {
+    "InvoiceNo": "536365",
+    "StockCode": "71053",
+    "Description": "WHITE METAL LANTERN",
+    "Quantity": "6",
+    "InvoiceDate": "12/1/2010 8:26",
+    "UnitPrice": "3.39",
+    "CustomerID": "17850",
+    "Country": "United Kingdom"
+  }
+]
+```
+
+### openfda-etiquetas
+
+**Etiquetas y documentación farmacéutica pública** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://api.fda.gov/drug/label.json?limit=1) — `DATA_SAMPLE`; HTTP `200`; 3.58 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "id": "ca7bbcc8-2354-375c-e053-2995a90a72a0",
+    "set_id": "0000025c-6dbf-4af7-a741-5cbacaed519a",
+    "effective_time": "20210902",
+    "openfda.brand_name": [
+      "SILICEA"
+    ],
+    "openfda.generic_name": [
+      "SILICEA"
+    ]
+  }
+]
+```
+
+### wellcome-medicina-antigua
+
+**Libros, archivos e ilustraciones de medicina histórica** — `METADATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [json](https://api.wellcomecollection.org/catalogue/v2/works?query=sleep&production.dates.to=1900-01-01&pageSize=3&include=production,items) — `METADATA_SAMPLE`; HTTP `200`; 3.383 s.
+
+Formato y campos de la muestra validados; no implica calidad de toda la fuente.
+
+```json
+[
+  {
+    "id": "gvybrs3w",
+    "title": "Sleep and dreams.",
+    "production": [
+      {
+        "label": "London : Longman, Brown, [1857]",
+        "agents": [
+          {
+            "label": "Longman, Brown",
+            "type": "Agent"
+          }
+        ],
+        "dates": [
+          {
+            "label": "[1857]",
+            "type": "Period"
+          }
+        ],
+        "function": {
+          "label": "Publication",
+          "type": "Concept"
+        },
+        "type": "ProductionEvent",
+        "places": [
+          {
+            "label": "London",
+            "type": "Place"
+          }
+        ]
+      }
+    ],
+    "workType": {
+      "id": "a",
+      "type": "Format",
+      "label": "Books"
+    }
+  }
+]
+```
+
+### bob-ross-elementos
+
+**Elementos que aparecen en los cuadros de Bob Ross** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [csv](https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv) — `DATA_SAMPLE`; HTTP `200`; 3.885 s.
+
+Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.
+
+```json
+[
+  {
+    "EPISODE": "S01E01",
+    "TITLE": "\"A WALK IN THE WOODS\"",
+    "TREE": "1",
+    "TREES": "1",
+    "MOUNTAIN": "0",
+    "MOUNTAINS": "0",
+    "CLOUDS": "0",
+    "GUEST": "0"
+  },
+  {
+    "EPISODE": "S01E02",
+    "TITLE": "\"MT. MCKINLEY\"",
+    "TREE": "1",
+    "TREES": "1",
+    "MOUNTAIN": "1",
+    "MOUNTAINS": "0",
+    "CLOUDS": "1",
+    "GUEST": "0"
+  }
+]
+```
+
+### bob-ross-paletas
+
+**Cuadros, paletas y episodios de Bob Ross** — `DATA_SAMPLE`.
+
+Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.
+
+Prueba 1: [csv](https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv) — `DATA_SAMPLE`; HTTP `200`; 2.773 s.
+
+Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.
+
+```json
+[
+  {
+    "painting_index": "282",
+    "painting_title": "A Walk in the Woods",
+    "season": "1",
+    "episode": "1",
+    "num_colors": "8",
+    "colors": "\"['Alizarin Crimson'",
+    "color_hex": " 'Bright Red'"
+  },
+  {
+    "painting_index": "283",
+    "painting_title": "Mt. McKinley",
+    "season": "1",
+    "episode": "2",
+    "num_colors": "8",
+    "colors": "\"['Alizarin Crimson'",
+    "color_hex": " 'Bright Red'"
   }
 ]
 ```

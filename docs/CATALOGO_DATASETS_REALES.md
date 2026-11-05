@@ -2,14 +2,14 @@
 
 Revisión: **4 de noviembre de 2026**, zona `America/Mexico_City`. Repositorio: `jcval94/DataCollectionMov`.
 
-45 fichas de datasets, productos y fuentes documentales reales. La selección prioriza preguntas sobre oportunidades educativas, movilidad, desigualdad territorial y uso de recursos públicos. Incluye fuentes del sorteo alusivo al avión presidencial.
+72 fichas de datasets, productos y fuentes documentales reales. La selección busca preguntas sorprendentes y verificables sobre vida cotidiana, historia, cultura, ciencia, educación, comercio y territorio. Incluye fuentes del sorteo alusivo al avión presidencial.
 
 **Alcance:** catálogo con enlaces y propuestas; las nuevas fuentes todavía no están ingeridas. Sólo se identifican como existentes las integraciones comprobadas en el código y el árbol del repo. La ampliación incorpora pruebas públicas acotadas, sin credenciales personales; no es una ingesta masiva ni una evaluación de la salud de los workflows.
 
-- [Versión estructurada JSON](../catalogs/datasets_reales_mexico.json): mismos 45 registros, fuentes, acceso, periodicidad, variables, llaves de cruce y limitaciones.
+- [Versión estructurada JSON](../catalogs/datasets_reales_mexico.json): mismos 72 registros, fuentes, acceso, periodicidad, variables, llaves de cruce y limitaciones.
 - [Tablas operativas existentes](tablas.md) y [configuración de recolección](../configs/tables.yml): describen las extracciones ya implementadas; este catálogo no las modifica.
 
-## Por dónde empezaría
+## Prioridades del núcleo territorial original
 
 Estas prioridades son recomendaciones de análisis, no resultados calculados ni compromisos de ingesta.
 
@@ -38,9 +38,16 @@ El DOF se usa para explicar Git con una reforma real y una [demostración ejecut
 
 - [README de las pruebas y ejemplos reales](../source_tests/README.md).
 - [Resultados HTTP y muestras en JSON](../source_tests/results.json).
-- [Definición de las 45 pruebas](../catalogs/source_probes.json) y [programa reproducible](../scripts/probe_catalog_sources.py).
+- [Definición de las pruebas](../catalogs/source_probes.json) y [programa reproducible](../scripts/probe_catalog_sources.py).
 
 La verificación inicial de cada ficha se conserva como antecedente de localización. El README de pruebas contiene el estado de acceso medido y fechado; se distingue de ese antecedente y de la periodicidad del fenómeno.
+
+
+## Descubrimiento con IA
+
+La [guía de descubrimientos](GUIA_DESCUBRIMIENTOS_IA.md) enlaza todas las temáticas pedidas y propone preguntas, papel de la IA y comprobaciones mínimas. Las **27 fuentes nuevas** añaden restaurantes, aviones, apps y reseñas, viajes, Napoleón, diarios, conciertos, mapas históricos, exámenes, UNAM, venta de inmuebles, baile, pintura, teatro, retail, medicina y Bob Ross. Las fichas nuevas incorporan `discovery`: hipótesis, uso de IA, validación y estado.
+
+El [piloto de Bob Ross](../examples/bob_ross_discovery/README.md) ya contiene un hallazgo descriptivo calculado. El caso de sueño histórico se presenta como investigación abierta con fuentes y contraargumentos; no se da por probado antes de leer el corpus.
 
 
 ## Índice
@@ -92,6 +99,33 @@ La verificación inicial de cada ficha se conserva como antecedente de localizac
 | [gdelt-noticias](#gdelt-noticias) | El mundo contado por noticias: eventos y menciones | mixto | P2 / Media | No asumir |
 | [nasa-bolidos](#nasa-bolidos) | Bólidos: entradas atmosféricas detectadas por sensores | estructurado | P2 / Media | No asumir |
 | [nyc-ratas](#nyc-ratas) | Inspecciones de ratas por predio en Nueva York | mixto | P2 / Media | Campo documentado |
+| [nyc-restaurantes](#nyc-restaurantes) | Inspecciones de restaurantes de Nueva York | mixto | P2 / Media | Campo documentado |
+| [openflights-red-aerea](#openflights-red-aerea) | Aeropuertos, aerolíneas, aviones y rutas históricas | estructurado | P2 / Media | No asumir |
+| [bts-puntualidad-vuelos](#bts-puntualidad-vuelos) | Puntualidad, cancelaciones y demoras aéreas | estructurado | P2 / Media | No asumir |
+| [apple-apps](#apple-apps) | Catálogo público de apps de Apple | mixto | P2 / Media | No asumir |
+| [apple-resenas-apps](#apple-resenas-apps) | Reseñas públicas de apps por tienda | mixto | P2 / Media | No asumir |
+| [insideairbnb-cdmx](#insideairbnb-cdmx) | Alojamiento turístico: Inside Airbnb CDMX | mixto | P2 / Media | No asumir |
+| [napoleonica-cartas](#napoleonica-cartas) | Correspondencia general de Napoleón | mixto | P2 / Alta | No asumir |
+| [gallica-napoleon](#gallica-napoleon) | Gallica: libros históricos sobre Napoleón y su correspondencia | mixto | P2 / Alta | No asumir |
+| [pepys-diarios](#pepys-diarios) | Diario de Samuel Pepys: vida cotidiana, enfermedad y ciudad | no_estructurado | P2 / Media | No asumir |
+| [musicbrainz-conciertos](#musicbrainz-conciertos) | Eventos, artistas y lugares de conciertos | estructurado | P2 / Media | No asumir |
+| [setlist-conciertos](#setlist-conciertos) | Repertorios y orden de canciones en conciertos | mixto | P2 / Media | No asumir |
+| [osm-mapas-restaurantes](#osm-mapas-restaurantes) | OpenStreetMap / Overpass: lugares y mapas vivos | mixto | P2 / Media | No asumir |
+| [loc-mapas-historicos](#loc-mapas-historicos) | Mapas históricos digitalizados | mixto | P2 / Media | No asumir |
+| [gsm8k-examenes](#gsm8k-examenes) | GSM8K: problemas matemáticos con soluciones | mixto | P2 / Media | No asumir |
+| [unam-colecciones](#unam-colecciones) | Colecciones universitarias abiertas UNAM | mixto | P2 / Media | No asumir |
+| [unam-agenda-estadistica](#unam-agenda-estadistica) | Agenda Estadística y numeralia UNAM | estructurado | P2 / Media | No asumir |
+| [unam-guias-examenes](#unam-guias-examenes) | Guías públicas de exámenes extraordinarios CCH | no_estructurado | P2 / Media | No asumir |
+| [ct-ventas-inmuebles](#ct-ventas-inmuebles) | Ventas inmobiliarias registradas en Connecticut | estructurado | P2 / Media | Por confirmar |
+| [cmu-movimiento-baile](#cmu-movimiento-baile) | Movimiento humano y secuencias de baile CMU MoCap | estructurado | P2 / Media | No asumir |
+| [aist-dance](#aist-dance) | AIST++: baile, música y movimiento 3D | mixto | P2 / Alta | No asumir |
+| [artic-pintura](#artic-pintura) | Obras, textos e imágenes del Art Institute of Chicago | mixto | P2 / Media | No asumir |
+| [dracor-teatro](#dracor-teatro) | DraCor: teatro, personajes y redes de diálogo | mixto | P2 / Media | No asumir |
+| [uci-retail](#uci-retail) | Online Retail: facturas y líneas de pedido reales | mixto | P2 / Media | No asumir |
+| [openfda-etiquetas](#openfda-etiquetas) | Etiquetas y documentación farmacéutica pública | mixto | P2 / Media | No asumir |
+| [wellcome-medicina-antigua](#wellcome-medicina-antigua) | Libros, archivos e ilustraciones de medicina histórica | mixto | P2 / Alta | No asumir |
+| [bob-ross-elementos](#bob-ross-elementos) | Elementos que aparecen en los cuadros de Bob Ross | estructurado | P2 / Baja | No asumir |
+| [bob-ross-paletas](#bob-ross-paletas) | Cuadros, paletas y episodios de Bob Ross | mixto | P2 / Media | No asumir |
 
 ## Reglas para combinar los datos
 
@@ -114,6 +148,7 @@ Esquema **propuesto**, todavía sin registros extraídos:
 - `rifa_conceptos`: documento, concepto, valor literal, unidad original y monto normalizado.
 - `rifa_premios`: sorteo, billete, premio, condición de cobro y documento de respaldo; usar nulos cuando no se conozcan.
 - `rifa_instituciones`: institución mencionada y correspondencia CCT/CLUES sólo si se verifica.
+
 
 
 ## Fichas
@@ -1086,8 +1121,678 @@ Esquema **propuesto**, todavía sin registros extraídos:
 
 - [Fuente 1](https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data) — `primary_documentation_located`. Fuente del productor localizada; el resultado de la prueba HTTP está separado en source_tests/results.json. [Recurso localizado](https://data.cityofnewyork.us/resource/p937-wjvj.json?$limit=3).
 
+### Comida, viajes y aplicaciones
+
+#### nyc-restaurantes
+
+**Inspecciones de restaurantes de Nueva York** — NYC DOHMH.
+
+- **Contenido:** mixto; modalidades: tabular, text, geospatial.
+- **Cobertura y unidad:** Restaurantes inspeccionados en NYC. Restaurante–inspección–infracción; varias filas por inspección.
+- **Periodo / actualización:** Fechas de inspección del archivo. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, CSV.
+- **Variables de interés:** CAMIS; Cocina; ZIP; Fecha; Puntaje; Infracción.
+- **Llaves propuestas:** CAMIS + fecha + tipo; infracción para detalle.
+- **CP:** Campo documentado. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué infracciones reaparecen después de una inspección y cambia el patrón por tipo de cocina?
+- **Límites:** Más registros pueden significar más inspecciones; no medir sabor ni calidad culinaria con puntaje sanitario. No convertir diferencias observacionales en causas culturales.
+- **Uso:** Términos NYC Open Data y notas DOHMH.
+- **Prueba y ejemplos:** [nyc-restaurantes](../source_tests/README.md#nyc-restaurantes).
+- **IA:** Agrupar descripciones de infracciones y resumir trayectorias por local.
+- **Validación mínima:** Separar inspecciones de infracciones antes de contar. Comparar tasas por inspección y conservar fechas de reinspección.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=3).
+
+#### openflights-red-aerea
+
+**Aeropuertos, aerolíneas, aviones y rutas históricas** — OpenFlights.
+
+- **Contenido:** estructurado; modalidades: tabular, geospatial.
+- **Cobertura y unidad:** Mundial; cobertura del catálogo. Aeropuerto y ruta; tablas distintas.
+- **Periodo / actualización:** Rutas históricas, no horarios vigentes. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: CSV sin cabecera.
+- **Variables de interés:** IATA/ICAO; País; Coordenadas; Origen/destino; Equipo de aeronave.
+- **Llaves propuestas:** Airport ID; IATA/ICAO con validación de nulos.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué aeropuertos conectan comunidades de la red que quedarían aisladas al perder un enlace?
+- **Límites:** No representa vuelos, precios, capacidad ni conexiones actuales. No utilizarlo para navegación o comprar conexiones sin consultar horarios.
+- **Uso:** Open Database License; atribución OpenFlights.
+- **Prueba y ejemplos:** [openflights-red-aerea](../source_tests/README.md#openflights-red-aerea).
+- **IA:** Explicar comunidades, centralidad y rutas poco obvias en un grafo.
+- **Validación mínima:** Identificar fecha de corte de routes.dat. Separar vuelos compartidos, aeropuertos y códigos faltantes.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://openflights.org/data.php) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat).
+
+#### bts-puntualidad-vuelos
+
+**Puntualidad, cancelaciones y demoras aéreas** — US DOT / Bureau of Transportation Statistics.
+
+- **Contenido:** estructurado; modalidades: tabular, time_series.
+- **Cobertura y unidad:** Transportistas y vuelos cubiertos por BTS, EE. UU.. Vuelo–fecha–transportista.
+- **Periodo / actualización:** Serie Reporting Carrier desde 1987; cortes publicados. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: Tablas, Descargas tabulares.
+- **Variables de interés:** Hora prevista/real; Demora; Cancelación; Origen/destino; Transportista.
+- **Llaves propuestas:** Fecha + transportista + número de vuelo + origen/destino; comprobar duplicados.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Se acumulan retrasos a lo largo del día incluso en rutas con buen desempeño temprano?
+- **Límites:** Comparar vuelos sobrevivientes sesga puntualidad si se omiten cancelaciones. Estadística histórica, no estado de vuelo en vivo.
+- **Uso:** Atribuir BTS y notas del producto; revisar datos y campos al descargar.
+- **Prueba y ejemplos:** [bts-puntualidad-vuelos](../source_tests/README.md#bts-puntualidad-vuelos).
+- **IA:** Detectar patrones por franja horaria y explicar segmentos comparables.
+- **Validación mínima:** Controlar ruta, temporada y composición de aerolíneas. Tratar cancelación como resultado distinto, no demora cero.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://transtats.bts.gov/ONTIME/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://www.transtats.bts.gov/DL_SelectFields.aspx?QO_fu146_anzr=b0-gvzr&gnoyr_VQ=FGJ).
+
+#### apple-apps
+
+**Catálogo público de apps de Apple** — Apple iTunes Search API.
+
+- **Contenido:** mixto; modalidades: tabular, text, image.
+- **Cobertura y unidad:** Resultados de una tienda/región; ejemplo México. App–tienda–captura.
+- **Periodo / actualización:** Metadatos de la consulta. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, Imágenes enlazadas.
+- **Variables de interés:** trackId; Categoría; Precio; Calificación; Descripción; Versión.
+- **Llaves propuestas:** trackId + country + fecha de captura.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Las apps que prometen lo mismo usan vocabulario distinto según categoría y modelo de cobro?
+- **Límites:** Resultados de búsqueda no son un censo de apps. Calificaciones no miden usuarios activos, ingresos ni éxito comercial.
+- **Uso:** Términos Apple Search API y derechos de cada app; no asumir libre redistribución de screenshots.
+- **Prueba y ejemplos:** [apple-apps](../source_tests/README.md#apple-apps).
+- **IA:** Extraer funciones prometidas de descripciones y construir un mapa semántico.
+- **Validación mínima:** Guardar país, consulta y fecha. Distinguir precio de compra de suscripciones y compras internas.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://itunes.apple.com/search?term=travel&entity=software&country=mx&limit=3).
+
+#### apple-resenas-apps
+
+**Reseñas públicas de apps por tienda** — Apple / autores de reseñas.
+
+- **Contenido:** mixto; modalidades: tabular, text.
+- **Cobertura y unidad:** Reseñas devueltas para app y país, no todos los usuarios. Reseña publicada.
+- **Periodo / actualización:** Ventana disponible en el feed público. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON/RSS.
+- **Variables de interés:** ID reseña; Texto; Estrellas; Versión; Fecha.
+- **Llaves propuestas:** ID reseña + tienda; trackId enlaza catálogo.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué funciones generan quejas después de una versión y qué problemas no se reflejan en el promedio de estrellas?
+- **Límites:** Sólo escriben algunos usuarios; no inferir proporción de toda la base. Un feed corto no permite reconstruir todo el historial de versiones.
+- **Uso:** Reseñas de sus autores; conservar ejemplos muy breves y enlaces, revisar términos Apple.
+- **Prueba y ejemplos:** [apple-resenas-apps](../source_tests/README.md#apple-resenas-apps).
+- **IA:** Etiquetar motivos de queja y contrastarlos con cambios de versión.
+- **Validación mínima:** Validar una muestra de etiquetas humanas. Comparar ventanas y versiones con volumen suficiente.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://itunes.apple.com/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://itunes.apple.com/mx/rss/customerreviews/id=310633997/sortBy=mostRecent/json).
+
+#### insideairbnb-cdmx
+
+**Alojamiento turístico: Inside Airbnb CDMX** — Inside Airbnb, proyecto independiente.
+
+- **Contenido:** mixto; modalidades: tabular, text, geospatial.
+- **Cobertura y unidad:** CDMX en la captura publicada. Anuncio; calendario y reseñas son tablas diferentes.
+- **Periodo / actualización:** Captura 2026-09-23 localizada. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: CSV, CSV.GZ, GeoJSON.
+- **Variables de interés:** Precio anunciado; Tipo de habitación; Zona; Noches mínimas; Disponibilidad; Reseñas.
+- **Llaves propuestas:** Listing ID + fecha de captura; host ID sólo cuando corresponda.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Las zonas turísticas concentran anuncios de anfitriones con múltiples propiedades?
+- **Límites:** Disponibilidad no equivale a noches vendidas; precio anunciado no es ingreso realizado. Fuente independiente de Airbnb; no es un registro de ventas de inmuebles.
+- **Uso:** Revisar licencia y notas de Inside Airbnb; textos/fotos pueden tener derechos propios.
+- **Prueba y ejemplos:** [insideairbnb-cdmx](../source_tests/README.md#insideairbnb-cdmx).
+- **IA:** Clasificar descripciones y resumir diferencias entre tipos de alojamiento.
+- **Validación mínima:** Normalizar moneda/precio y fecha. Contrastar anuncios por anfitrión, zona y tipo de habitación.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://insideairbnb.com/get-the-data/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://data.insideairbnb.com/mexico/df/mexico-city/2026-09-23/visualisations/listings.csv).
+
+### Historia, diarios y literatura
+
+#### napoleonica-cartas
+
+**Correspondencia general de Napoleón** — Fondation Napoléon / Napoleonica.
+
+- **Contenido:** mixto; modalidades: tabular, text, image.
+- **Cobertura y unidad:** Cartas editadas e identificadas en el corpus. Carta–destinatario–fecha; distinguir copias/ediciones.
+- **Periodo / actualización:** 1784–1821; edición y ampliaciones modernas. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: HTML, Imágenes y transcripciones según ítem.
+- **Variables de interés:** Fecha; Lugar; Destinatario; Texto; Número CG; Procedencia.
+- **Llaves propuestas:** ID de carta CG + versión editorial.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Alta.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Napoleón usa un vocabulario diferente al escribir a generales, funcionarios y familiares, incluso dentro del mismo año?
+- **Límites:** Correspondencia conservada no representa todo lo que pensaba o dijo. No inferir estado mental, diagnósticos ni autenticidad sólo con estilo.
+- **Uso:** Respetar condiciones de la edición moderna y del archivo; no asumir que todas las anotaciones están en dominio público.
+- **Prueba y ejemplos:** [napoleonica-cartas](../source_tests/README.md#napoleonica-cartas).
+- **IA:** Reconocer personas/lugares y comparar temas por destinatario; citar cada carta.
+- **Validación mínima:** Leer cartas completas de cada segmento. Separar fecha de escritura, edición, copias y traducciones.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://fondationnapoleon.org/en/activities-and-services/telling-history/correspondence-napoleon/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://www.napoleonica.org/collection/9457).
+
+#### gallica-napoleon
+
+**Gallica: libros históricos sobre Napoleón y su correspondencia** — Bibliothèque nationale de France.
+
+- **Contenido:** mixto; modalidades: tabular, text, image.
+- **Cobertura y unidad:** Documentos digitalizados de Gallica que coincidan con la consulta. Edición/volumen/página; no igual a una carta.
+- **Periodo / actualización:** Ediciones históricas y digitalización posterior. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: XML SRU, OCR, Imágenes, IIIF.
+- **Variables de interés:** Título; Autor/editor; Fecha de edición; ARK; OCR cuando exista.
+- **Llaves propuestas:** ARK + página; relacionar carta por referencia editorial.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Alta.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Cómo difiere la imagen de Napoleón entre cartas, memorias de terceros y ediciones posteriores?
+- **Límites:** Una búsqueda de metadatos no descarga OCR ni todas las cartas. Los géneros y el sesgo editorial pueden explicar más que cambios históricos.
+- **Uso:** Consultar condiciones Gallica y derechos/reutilización por documento.
+- **Prueba y ejemplos:** [gallica-napoleon](../source_tests/README.md#gallica-napoleon).
+- **IA:** Clasificar género, fecha y voz narrativa antes de comparar afirmaciones.
+- **Validación mínima:** Distinguir autor, editor, traducción y fecha de los hechos. Cotejar OCR con imagen y validar correspondencias entre ediciones.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://api.bnf.fr/fr/api-gallica-de-recherche) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://gallica.bnf.fr/SRU?version=1.2&operation=searchRetrieve&query=dc.title%20all%20%22correspondance%20Napoleon%22&maximumRecords=3).
+
+#### pepys-diarios
+
+**Diario de Samuel Pepys: vida cotidiana, enfermedad y ciudad** — Samuel Pepys / Project Gutenberg.
+
+- **Contenido:** no_estructurado; modalidades: text.
+- **Cobertura y unidad:** Diario de un autor y una edición, Londres. Entrada fechada; separar notas del editor.
+- **Periodo / actualización:** Volumen de 1667 N.S.; otros años en el catálogo. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: TXT, HTML, EPUB.
+- **Variables de interés:** Fecha; Rutinas; Lugares; Comida; Sueño; Relaciones.
+- **Llaves propuestas:** Edición/hash + fecha de entrada + offset.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Las comidas, desplazamientos y menciones al sueño cambian con estaciones o acontecimientos de la ciudad?
+- **Límites:** Un diarista no representa a toda la población. Una mención de despertar no demuestra un hábito general ni sueño segmentado sistemático.
+- **Uso:** Revisar licencia Gutenberg y dominio público según jurisdicción.
+- **Prueba y ejemplos:** [pepys-diarios](../source_tests/README.md#pepys-diarios).
+- **IA:** Extraer eventos con citas y construir una cronología de rutinas.
+- **Validación mínima:** Verificar calendario, fechas y edición. Contar entradas disponibles y separar texto del editor.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://www.gutenberg.org/ebooks/4184) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://www.gutenberg.org/cache/epub/4184/pg4184.txt).
+
+### Música, baile y teatro
+
+#### musicbrainz-conciertos
+
+**Eventos, artistas y lugares de conciertos** — MusicBrainz / MetaBrainz y comunidad.
+
+- **Contenido:** estructurado; modalidades: tabular, geospatial.
+- **Cobertura y unidad:** Eventos documentados por la comunidad. Evento; relaciones con artista y lugar.
+- **Periodo / actualización:** Fechas de eventos y revisiones del catálogo. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, XML.
+- **Variables de interés:** MBID; Nombre; Tipo; Fecha; Artista/lugar vía relaciones.
+- **Llaves propuestas:** Event MBID; Artist MBID y Place MBID.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué ciudades o recintos conectan escenas musicales que parecen separadas por género?
+- **Límites:** No es un inventario completo ni una API de venta de boletos. No inferir asistencia, ingresos ni popularidad por cantidad de registros.
+- **Uso:** Licencias MetaBrainz por tipo de dato; API con User-Agent y límites de uso, revisar uso comercial.
+- **Prueba y ejemplos:** [musicbrainz-conciertos](../source_tests/README.md#musicbrainz-conciertos).
+- **IA:** Resolver nombres y explicar redes de artistas, eventos y lugares.
+- **Validación mínima:** Distinguir eventos históricos de programados. Medir cobertura y revisar relaciones faltantes.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://musicbrainz.org/doc/MusicBrainz_API) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3).
+
+#### setlist-conciertos
+
+**Repertorios y orden de canciones en conciertos** — setlist.fm y colaboradores.
+
+- **Contenido:** mixto; modalidades: tabular, text.
+- **Cobertura y unidad:** Conciertos incluidos por colaboradores. Concierto–set–posición de canción; versión revisable.
+- **Periodo / actualización:** Histórico de conciertos documentados. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, XML.
+- **Variables de interés:** Artista; Recinto; Fecha; Gira; Set/encore; Canción.
+- **Llaves propuestas:** setlist ID + versionId; MBID de artista.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué canciones funcionan como apertura, cierre o sorpresa, y cambian según país o etapa de una gira?
+- **Límites:** Requiere API key; esta ampliación comprueba sólo documentación. Repertorio reportado puede ser incompleto; no equivale a grabación íntegra.
+- **Uso:** API gratuita sólo para proyectos no comerciales según documentación; atribuir y revisar términos.
+- **Prueba y ejemplos:** [setlist-conciertos](../source_tests/README.md#setlist-conciertos).
+- **IA:** Homologar nombres de canciones y comparar secuencias.
+- **Validación mínima:** Conservar versionId. Comparar giras y cobertura de conciertos antes de atribuir preferencias al país.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://api.setlist.fm/docs/1.0/index.html) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación.
+
+### Mapas e inmuebles
+
+#### osm-mapas-restaurantes
+
+**OpenStreetMap / Overpass: lugares y mapas vivos** — Colaboradores de OpenStreetMap / Overpass.
+
+- **Contenido:** mixto; modalidades: tabular, text, geospatial.
+- **Cobertura y unidad:** Área pequeña CDMX en la prueba; cobertura mundial. Elemento OSM con etiquetas y versión.
+- **Periodo / actualización:** Estado de la base al consultar. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, XML, GeoJSON derivado.
+- **Variables de interés:** ID/tipo; Coordenadas; Nombre; Cocina; Horario; Etiquetas.
+- **Llaves propuestas:** Tipo de elemento + ID + versión/captura.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Hay zonas con mucha población y pocos servicios registrados, o simplemente menos cartografía comunitaria?
+- **Límites:** Una ausencia en el mapa puede ser falta de captura. Datos contribuidos no garantizan horarios vigentes ni precisión de navegación.
+- **Uso:** ODbL y atribución OpenStreetMap; consultas pequeñas y respeto de cuotas.
+- **Prueba y ejemplos:** [osm-mapas-restaurantes](../source_tests/README.md#osm-mapas-restaurantes).
+- **IA:** Normalizar etiquetas y detectar diferencias de cobertura sin inventar sitios faltantes.
+- **Validación mínima:** Contar cobertura de etiquetas. Validar contra DENUE y una muestra manual antes de medir carencias.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://wiki.openstreetmap.org/wiki/Overpass_API) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A15%5D%3Bnode%5Bamenity%3Drestaurant%5D%2819.42%2C-99.18%2C19.44%2C-99.15%29%3Bout%203%3B).
+
+#### loc-mapas-historicos
+
+**Mapas históricos digitalizados** — Library of Congress.
+
+- **Contenido:** mixto; modalidades: tabular, text, image, geospatial.
+- **Cobertura y unidad:** Colecciones cartográficas disponibles en LOC. Mapa/edición/hoja.
+- **Periodo / actualización:** Fechas históricas según documento. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, Imágenes, IIIF.
+- **Variables de interés:** Título; Fecha; Autor; Lugar; Escala; Recurso digital.
+- **Llaves propuestas:** Item ID + edición + hoja.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué ríos, caminos, barrios o fronteras cambiaron entre un mapa antiguo y uno actual?
+- **Límites:** Georreferenciación requiere validar errores; una deformación visual no es cambio real. La prueba de metadatos no valida todas las imágenes.
+- **Uso:** Rights & Access por ítem y colección.
+- **Prueba y ejemplos:** [loc-mapas-historicos](../source_tests/README.md#loc-mapas-historicos).
+- **IA:** OCR de topónimos, correspondencias visuales y propuestas de georreferenciación.
+- **Validación mínima:** Revisar escala, proyección y puntos de control. Separar cambio del territorio de convenciones del cartógrafo.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://www.loc.gov/apis/json-and-yaml/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://www.loc.gov/maps/?fo=json&c=3).
+
+### Educación, exámenes y UNAM
+
+#### gsm8k-examenes
+
+**GSM8K: problemas matemáticos con soluciones** — OpenAI / autores del dataset.
+
+- **Contenido:** mixto; modalidades: tabular, text.
+- **Cobertura y unidad:** Problemas en inglés, nivel escolar del benchmark. Problema–solución–respuesta final.
+- **Periodo / actualización:** Dataset publicado en 2021. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSONL.
+- **Variables de interés:** Pregunta; Razonamiento de referencia; Respuesta final.
+- **Llaves propuestas:** Split + línea/hash; detectar duplicados y contaminación.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué errores comete una IA cuando el enunciado exige varios pasos o convierte unidades?
+- **Límites:** No es un examen UNAM ni mide todo el razonamiento humano. Exposición previa al benchmark puede inflar el desempeño del modelo.
+- **Uso:** MIT, conservar atribución y licencia del dataset.
+- **Prueba y ejemplos:** [gsm8k-examenes](../source_tests/README.md#gsm8k-examenes).
+- **IA:** Evaluar por tipos de operación y comparar respuesta final con pasos verificables.
+- **Validación mínima:** Separar entrenamiento, ajuste y prueba. Verificar respuestas con cálculo independiente y auditoría de etiquetas.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://github.com/openai/grade-school-math) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl).
+
+#### unam-colecciones
+
+**Colecciones universitarias abiertas UNAM** — UNAM / DGRU y colecciones participantes.
+
+- **Contenido:** mixto; modalidades: tabular, text, image, geospatial.
+- **Cobertura y unidad:** Colecciones científicas, artísticas y culturales UNAM. Ejemplar/objeto/registro de colección.
+- **Periodo / actualización:** Fecha de colecta, catalogación y digitalización distintas. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: HTML, Objetos digitales, Descargas según colección.
+- **Variables de interés:** Colección; ID; Taxón/objeto; Fecha; Lugar; Imagen.
+- **Llaves propuestas:** Colección + identificador de ejemplar.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Las zonas poco representadas tienen menos biodiversidad o menor esfuerzo histórico de colecta?
+- **Límites:** No es la base de estudiantes de UNAM. Sesgo de colecta y digitalización; no sumar objetos heterogéneos como especies.
+- **Uso:** Políticas por colección y objeto; atribuir a la colección responsable y UNAM.
+- **Prueba y ejemplos:** [unam-colecciones](../source_tests/README.md#unam-colecciones).
+- **IA:** Homologar taxonomía y leer etiquetas antiguas con trazabilidad al ejemplar.
+- **Validación mínima:** Identificar colección y cobertura temporal. Tratar placeholders y campos faltantes como problemas de calidad.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://datosabiertos.unam.mx/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://datosabiertos.unam.mx/IBUNAM%3AMEXU%3A1210262).
+
+#### unam-agenda-estadistica
+
+**Agenda Estadística y numeralia UNAM** — UNAM / planeación y estadística institucional.
+
+- **Contenido:** estructurado; modalidades: tabular.
+- **Cobertura y unidad:** UNAM y desagregaciones publicadas. Indicador–entidad académica–periodo según cuadro.
+- **Periodo / actualización:** Publicaciones anuales. Anual.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: Cuadros, PDF/descargas según edición.
+- **Variables de interés:** Matrícula; Personal; Oferta educativa; Investigación; Campus/entidad.
+- **Llaves propuestas:** Indicador + entidad académica + periodo; homologar definiciones.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿El crecimiento de matrícula y oferta se distribuye igual entre campus y niveles?
+- **Límites:** No son trayectorias individuales ni datos de admisión por aspirante. Disponibilidad de desagregación depende del cuadro; no inventar nivel plantel.
+- **Uso:** Atribuir UNAM y cuadro/edición; revisar términos del producto.
+- **Prueba y ejemplos:** [unam-agenda-estadistica](../source_tests/README.md#unam-agenda-estadistica).
+- **IA:** Extraer cuadros y explicar cambios de definición o cobertura.
+- **Validación mínima:** Confirmar unidad, notas y edición. Separar licenciatura, bachillerato, posgrado y otras actividades.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://web.planeacion.unam.mx/direccion-de-sistemas-de-informacion-estadistica/agenda/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://estadistica.unam.mx/numeralia/).
+
+#### unam-guias-examenes
+
+**Guías públicas de exámenes extraordinarios CCH** — UNAM / CCH y docentes autores.
+
+- **Contenido:** no_estructurado; modalidades: text, image.
+- **Cobertura y unidad:** Guía de Matemáticas I CCH; materiales de otros planteles en el portal. Guía–unidad–ejercicio; no intento de alumno.
+- **Periodo / actualización:** Edición histórica de la guía, cotejar plan vigente. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: PDF.
+- **Variables de interés:** Enunciado; Tema; Representación matemática; Instrucciones.
+- **Llaves propuestas:** Guía/plan/edición + número de ejercicio.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué temas y tipos de razonamiento se repiten y qué habilidades quedan poco representadas en estas guías?
+- **Límites:** Son guías públicas, no filtraciones de exámenes ni banco oficial de admisión. La dificultad no puede estimarse de forma empírica sin respuestas de estudiantes.
+- **Uso:** Respetar autoría y condiciones UNAM; citar y enlazar, sin republicar íntegramente guías sin autorización.
+- **Prueba y ejemplos:** [unam-guias-examenes](../source_tests/README.md#unam-guias-examenes).
+- **IA:** Clasificar ejercicios y proponer práctica equivalente, con revisión docente.
+- **Validación mínima:** Cotejar programa, edición y extracción de fórmulas. Comparar etiquetas IA con una muestra revisada por un docente.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://e1.portalacademico.cch.unam.mx/guiasextraordinarios) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://portalacademico.cch.unam.mx/materiales/al/Guias_extras/Matematicas/cal1_ori.pdf).
+
+### Mapas e inmuebles
+
+#### ct-ventas-inmuebles
+
+**Ventas inmobiliarias registradas en Connecticut** — State of Connecticut / Office of Policy and Management.
+
+- **Contenido:** estructurado; modalidades: tabular, geospatial.
+- **Cobertura y unidad:** Connecticut, EE. UU.. Transacción inmobiliaria registrada.
+- **Periodo / actualización:** Años disponibles del producto; título 2001–2024 GL localizado. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, CSV.
+- **Variables de interés:** Fecha; Ciudad; Precio de venta; Valor fiscal; Tipo de propiedad; Código de exclusión.
+- **Llaves propuestas:** Número serial + año; verificar unicidad por versión.
+- **CP:** Por confirmar. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿La relación entre precio de venta y avalúo fiscal cambia por zona, tipo de propiedad o periodo?
+- **Límites:** No son anuncios, ni precios de oferta, ni datos de México. Donaciones, transferencias familiares o parciales pueden parecer gangas si no se excluyen. No asumir que ListYear equivale al año de DateRecorded; la muestra contiene valores distintos.
+- **Uso:** Términos Connecticut Open Data; consultar diccionario y códigos de operaciones no comparables.
+- **Prueba y ejemplos:** [ct-ventas-inmuebles](../source_tests/README.md#ct-ventas-inmuebles).
+- **IA:** Detectar segmentos atípicos y explicar por qué una operación no es comparable.
+- **Validación mínima:** Filtrar operaciones no comparables según códigos OPM. Separar valor fiscal, precio de cierre, moneda y fecha.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://data.ct.gov/Housing-and-Development/Real-Estate-Sales-2001-2024-GL/5mzw-sjtu) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://data.ct.gov/resource/5mzw-sjtu.json?$limit=3).
+
+### Música, baile y teatro
+
+#### cmu-movimiento-baile
+
+**Movimiento humano y secuencias de baile CMU MoCap** — Carnegie Mellon Graphics Lab.
+
+- **Contenido:** estructurado; modalidades: time_series, tabular.
+- **Cobertura y unidad:** Sesiones de laboratorio de captura de movimiento. Sujeto–secuencia–frame–articulación.
+- **Periodo / actualización:** Colección de laboratorio; no muestra poblacional. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: ASF, AMC.
+- **Variables de interés:** Esqueleto; Frame; Canal/articulación; Ángulos.
+- **Llaves propuestas:** Sujeto + secuencia + frame; ASF define canales.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Dos estilos pueden tener ritmo parecido y patrones corporales muy distintos?
+- **Límites:** Portal y archivo pueden no responder; comprobar antes de incorporar. No inferir salud, personalidad ni identidad de una persona a partir de su baile.
+- **Uso:** Consultar condiciones del laboratorio y atribución CMU; no asumir derechos sobre música externa.
+- **Prueba y ejemplos:** [cmu-movimiento-baile](../source_tests/README.md#cmu-movimiento-baile).
+- **IA:** Construir descriptores de movimiento y explicar agrupaciones de secuencias.
+- **Validación mínima:** Validar descripción de cada secuencia en el catálogo. Homologar FPS, esqueleto, unidades y duración.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://mocap.cs.cmu.edu/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://mocap.cs.cmu.edu/subjects/05/05_02.amc).
+
+#### aist-dance
+
+**AIST++: baile, música y movimiento 3D** — Google Research / autores AIST++, a partir de AIST Dance Video DB.
+
+- **Contenido:** mixto; modalidades: tabular, time_series, audio, image, video.
+- **Cobertura y unidad:** Secuencias del dataset y géneros cubiertos. Secuencia–música–frame–joints/cámara.
+- **Periodo / actualización:** Dataset de investigación publicado con trabajo de 2021. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: Anotaciones, Movimiento 3D, Vídeo y música asociados.
+- **Variables de interés:** Género; Secuencia; Poses 3D; Música; Cámaras.
+- **Llaves propuestas:** Sequence ID + cámara + frame; particiones publicadas.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Alta.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Los cambios de movimiento se sincronizan con pulsos musicales de la misma forma entre géneros?
+- **Límites:** La prueba de documentación no valida descargas de todos los vídeos. No confundir reconstrucción estimada de pose con posición exacta.
+- **Uso:** Anotaciones Google CC BY 4.0 según documentación; comprobar condiciones separadas de vídeos y música AIST.
+- **Prueba y ejemplos:** [aist-dance](../source_tests/README.md#aist-dance).
+- **IA:** Extraer ritmo y movimiento, comparar sincronización y detectar desalineaciones.
+- **Validación mínima:** Respetar splits por bailarín/secuencia. Comprobar FPS, unidad de pose y alineación temporal.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://google.github.io/aistplusplus_dataset/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://google.github.io/aistplusplus_dataset/download.html).
+
+### Arte, pintura y Bob Ross
+
+#### artic-pintura
+
+**Obras, textos e imágenes del Art Institute of Chicago** — Art Institute of Chicago.
+
+- **Contenido:** mixto; modalidades: tabular, text, image.
+- **Cobertura y unidad:** Colección del museo; muestra buscada por Monet. Obra y sus registros/imágenes.
+- **Periodo / actualización:** Fechas de obra y revisión del catálogo. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, IIIF, Imágenes.
+- **Variables de interés:** Artista; Fecha; Material; Título; Descripción; Imagen; Dominio público.
+- **Llaves propuestas:** Artwork ID + image_id.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Cómo cambian paletas, escenas y materiales entre artistas y periodos, y cuánto depende del museo que conservó las obras?
+- **Límites:** Fotos de museo no son mediciones colorimétricas del original. Parecido visual no demuestra influencia histórica.
+- **Uso:** Revisar derechos por obra e imagen; Open Access no cubre toda la colección por igual.
+- **Prueba y ejemplos:** [artic-pintura](../source_tests/README.md#artic-pintura).
+- **IA:** Comparar imagen y descripción, proponer motivos visuales y verificarlos manualmente.
+- **Validación mínima:** Comprobar is_public_domain antes de reutilizar imagen. Controlar medio, reproducción y selección de colección.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://api.artic.edu/docs/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://api.artic.edu/api/v1/artworks/search?q=Monet&fields=id,title,artist_title,date_display,image_id,is_public_domain&limit=3).
+
+### Música, baile y teatro
+
+#### dracor-teatro
+
+**DraCor: teatro, personajes y redes de diálogo** — DraCor / editores de cada corpus.
+
+- **Contenido:** mixto; modalidades: tabular, text.
+- **Cobertura y unidad:** Corpus teatrales por lengua/edición; ejemplo Faust. Obra–acto/escena–intervención–personaje.
+- **Periodo / actualización:** Teatro histórico, edición digital por corpus. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, TEI XML, Métricas de red.
+- **Variables de interés:** Personajes; Escenas; Intervenciones; Relaciones; Texto.
+- **Llaves propuestas:** Corpus + play ID + edición/commit + scene/speaker ID.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Quién parece protagonista por aparecer mucho y quién conecta realmente grupos de personajes?
+- **Límites:** Una métrica de centralidad no reemplaza una lectura literaria. Roles y género dependen de anotaciones; documentar categorías.
+- **Uso:** Licencias por corpus; GerDraCor declara CC0, otros corpus tienen condiciones diferentes.
+- **Prueba y ejemplos:** [dracor-teatro](../source_tests/README.md#dracor-teatro).
+- **IA:** Extraer relaciones y comparar centralidad de red con evidencia textual.
+- **Validación mínima:** Separar copresencia de diálogo directo. Validar adaptación, edición y personajes colectivos.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://dracor.org/doc/api) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie).
+
+### Comercio y medicina
+
+#### uci-retail
+
+**Online Retail: facturas y líneas de pedido reales** — Daqing Chen / UCI Machine Learning Repository.
+
+- **Contenido:** mixto; modalidades: tabular, text, time_series.
+- **Cobertura y unidad:** Comercio online británico del caso de estudio. Línea de factura; no confundir con cesta o cliente.
+- **Periodo / actualización:** 2010-12-01 a 2011-12-09. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: CSV, XLSX.
+- **Variables de interés:** InvoiceNo; StockCode; Description; Quantity; InvoiceDate; UnitPrice; CustomerID; Country.
+- **Llaves propuestas:** Factura + producto no garantiza línea única; preservar fila y revisar duplicados.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué productos parecen estrellas por ventas brutas pero cambian de posición al considerar cancelaciones y devoluciones?
+- **Límites:** No es una tienda mexicana actual. No asumir que el metadato de ausencia de faltantes describe cada fila: comprobar el archivo.
+- **Uso:** CC BY 4.0; citar DOI 10.24432/C5BW33.
+- **Prueba y ejemplos:** [uci-retail](../source_tests/README.md#uci-retail).
+- **IA:** Agrupar descripciones y detectar patrones de cesta; explicar anomalías antes de segmentar clientes.
+- **Validación mínima:** Separar facturas de cancelación, cantidades negativas y clientes faltantes. No confundir facturación con beneficio: faltan costos.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://archive.ics.uci.edu/dataset/352/online+retail) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://archive.ics.uci.edu/static/public/352/data.csv).
+
+#### openfda-etiquetas
+
+**Etiquetas y documentación farmacéutica pública** — FDA / openFDA.
+
+- **Contenido:** mixto; modalidades: tabular, text.
+- **Cobertura y unidad:** Registros de etiquetado publicados en openFDA, EE. UU.. Etiqueta–producto–versión.
+- **Periodo / actualización:** effective_time y última actualización de la API. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, Texto regulatorio.
+- **Variables de interés:** ID; effective_time; Marca/genérico; Advertencias; Interacciones; Indicaciones.
+- **Llaves propuestas:** set_id/id + versión/effective_time; revisar equivalencias.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Se expresan riesgos o interacciones de forma muy distinta entre etiquetas con ingredientes similares?
+- **Límites:** openFDA no valida decisiones de atención médica. Frecuencia de una advertencia no mide riesgo clínico, causalidad ni recomendación terapéutica.
+- **Uso:** Términos y licencia openFDA; conservar advertencias de calidad de la fuente.
+- **Prueba y ejemplos:** [openfda-etiquetas](../source_tests/README.md#openfda-etiquetas).
+- **IA:** Extraer términos y comparar lenguaje, siempre con citas al documento.
+- **Validación mínima:** Verificar ingrediente, formulación, versión y campos ausentes. Revisión experta de cualquier conclusión de seguridad.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://open.fda.gov/apis/drug/label/how-to-use-the-endpoint/) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://api.fda.gov/drug/label.json?limit=1).
+
+#### wellcome-medicina-antigua
+
+**Libros, archivos e ilustraciones de medicina histórica** — Wellcome Collection.
+
+- **Contenido:** mixto; modalidades: tabular, text, image.
+- **Cobertura y unidad:** Fondos Wellcome; búsqueda sleep con producción anterior a 1900. Obra–edición–página, con metadatos de producción.
+- **Periodo / actualización:** Producción histórica; digitalización y catalogación posteriores. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: JSON, IIIF, OCR cuando exista, Imágenes.
+- **Variables de interés:** Título; Autor; Fecha; Temas; Localización digital; Texto de página.
+- **Llaves propuestas:** Work ID + edición + canvas/página.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Alta.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué significaban primer sueño, segundo sueño o vigilia nocturna en distintos textos, lugares y siglos?
+- **Límites:** Una consulta bibliográfica no es el corpus completo de OCR. La interpretación del sueño segmentado es debatida; no afirmar una costumbre universal ni convertirla en consejo de salud.
+- **Uso:** Licencia por objeto y edición; seguir derechos del recurso IIIF y OCR.
+- **Prueba y ejemplos:** [wellcome-medicina-antigua](../source_tests/README.md#wellcome-medicina-antigua).
+- **IA:** Buscar expresiones y sinónimos, extraer pasajes con contexto y detectar contraejemplos.
+- **Validación mínima:** Cotejar OCR con imagen y leer contexto. Separar descripción de costumbre, prescripción médica, metáfora y ficción. Comparar siglos, regiones y géneros sin tratar cada mención como una persona.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://developers.wellcomecollection.org/api/catalogue) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://api.wellcomecollection.org/catalogue/v2/works?query=sleep&production.dates.to=1900-01-01&pageSize=3&include=production,items).
+
+### Arte, pintura y Bob Ross
+
+#### bob-ross-elementos
+
+**Elementos que aparecen en los cuadros de Bob Ross** — FiveThirtyEight / autores de la codificación.
+
+- **Contenido:** estructurado; modalidades: tabular.
+- **Cobertura y unidad:** Episodios codificados de The Joy of Painting. Episodio con indicadores binarios de motivos.
+- **Periodo / actualización:** S01E01–S31E13 según documentación. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: CSV.
+- **Variables de interés:** EPISODE; TITLE; TREE; TREES; MOUNTAIN; MOUNTAINS; CLOUDS; GUEST.
+- **Llaves propuestas:** EPISODE; comprobar unicidad.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Baja.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Qué elementos aparecen juntos más de lo que esperaríamos al conocer su frecuencia por separado?
+- **Límites:** Son etiquetas humanas, no verdad visual perfecta. Coocurrencia no explica intención artística ni causalidad.
+- **Uso:** Conservar atribución FiveThirtyEight y licencia del repositorio; derechos de vídeos/obras aparte.
+- **Prueba y ejemplos:** [bob-ross-elementos](../source_tests/README.md#bob-ross-elementos).
+- **IA:** Proponer asociaciones y explicarlas con conteos, probabilidades y ejemplos de cuadros.
+- **Validación mínima:** Verificar columnas binarias y episodios únicos. Comparar probabilidad conjunta con frecuencias base; controlar búsquedas múltiples si se exploran muchos motivos.
+- **Estado de investigación:** `descriptive_pilot_calculated`. [Resultado calculado](../examples/bob_ross_discovery/README.md).
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://github.com/fivethirtyeight/data/tree/master/bob-ross) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv).
+
+#### bob-ross-paletas
+
+**Cuadros, paletas y episodios de Bob Ross** — J. Wilber, recopilación derivada de TwoInchBrush.
+
+- **Contenido:** mixto; modalidades: tabular, text, image, video.
+- **Cobertura y unidad:** Cuadros incluidos en la recopilación comunitaria. Cuadro–episodio; metadatos y enlaces.
+- **Periodo / actualización:** Episodios del programa; corte del repositorio. Según actualización del productor.
+- **Acceso y formatos:** Acceso público descrito por el productor; ver prueba y límites por capa. Formatos: CSV, Imágenes enlazadas, Enlaces a episodios.
+- **Variables de interés:** Título; Temporada; Episodio; Colores; Hex; Imagen; Vídeo.
+- **Llaves propuestas:** Temporada + episodio; cotejar con índice de cuadro y títulos.
+- **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Media.
+- **Integración:** `not_ingested`.
+- **Análisis:** ¿Los paisajes nocturnos o de invierno comparten paletas, y qué colores son casi universales?
+- **Límites:** Paleta declarada no equivale a porcentaje de píxeles de un color. Recopilación de terceros; no asumir permisos sobre cuadros, imágenes o vídeos.
+- **Uso:** Revisar licencia del repositorio y condiciones TwoInchBrush/Bob Ross; conservar enlaces sin redistribuir medios completos.
+- **Prueba y ejemplos:** [bob-ross-paletas](../source_tests/README.md#bob-ross-paletas).
+- **IA:** Comparar paletas declaradas con colores extraídos de miniaturas, manteniendo ambas medidas separadas.
+- **Validación mínima:** Homologar nombres y lista/hex de colores. Revisar una muestra visual y diferencias de reproducción.
+- **Estado de investigación:** `hypothesis_not_tested`.
+
+**Fuentes y antecedente de verificación:**
+
+- [Fuente 1](https://github.com/jwilber/Bob_Ross_Paintings) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv).
+
 ## Incorporación posterior y mantenimiento
 
 Antes de incorporar una fuente a los recolectores: probar un archivo, identificar corte/licencia, guardar diccionario, comprobar llaves/cobertura y definir el histórico necesario. No añadir a `configs/tables.yml` hasta disponer de una extracción reproducible. La recolección de movilidad existente conserva su configuración.
 
-Para actualizar este catálogo, mantener alineados `catalogs/datasets_reales_mexico.json`, este documento y `catalogs/source_probes.json`. Las pruebas producen juntas `source_tests/README.md` y `source_tests/results.json`; las rutas y archivos cambian, por lo que el resultado es fechado y no una garantía permanente.
+Mantener alineados el JSON del catálogo, este documento y `catalogs/source_probes.json`. Las pruebas producen README y JSON; registrar corridas y recomprobaciones cuando se conserve evidencia de varias fechas. El acceso no equivale a validar un análisis ni un hallazgo.

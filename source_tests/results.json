@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "run": {
     "started_at_utc": "2026-11-05T00:07:41+00:00",
     "started_at_local": "2026-11-04T18:07:41-06:00",
@@ -12,13 +12,13 @@
     "finished_at_utc": "2026-11-05T00:08:41+00:00"
   },
   "summary": {
-    "HTTP_ERROR": 7,
-    "BLOCKED": 4,
-    "DOCUMENT_SAMPLE": 3,
-    "DOC_ONLY": 16,
+    "HTTP_ERROR": 10,
+    "BLOCKED": 6,
+    "DOCUMENT_SAMPLE": 5,
+    "DOC_ONLY": 22,
     "CACHED_SAMPLE": 2,
-    "DATA_SAMPLE": 10,
-    "METADATA_SAMPLE": 3
+    "DATA_SAMPLE": 22,
+    "METADATA_SAMPLE": 5
   },
   "results": [
     {
@@ -1864,6 +1864,1357 @@
         }
       ],
       "captured_with_script_sha256": "2cc32fbd1f091c56d91fccaaa4a57c18227c47ff771b7369c5e3e06da38b15cd"
+    },
+    {
+      "id": "nyc-restaurantes",
+      "name": "Inspecciones de restaurantes de Nueva York",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:41+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "camis": "50160418",
+              "dba": "MAMAS CHICKEN SHACK HAPPY DUMPLING COCOA CABIN COCOA CABIN",
+              "boro": "Manhattan",
+              "zipcode": "10036",
+              "inspection_date": "1900-01-01T00:00:00.000"
+            },
+            {
+              "camis": "50177284",
+              "dba": "WORLD SPA ENTERTAINMENT LLC",
+              "boro": "Brooklyn",
+              "zipcode": "11230",
+              "inspection_date": "1900-01-01T00:00:00.000"
+            }
+          ],
+          "requested_url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=3",
+          "final_url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=3",
+          "http_status": 200,
+          "content_type": "application/json;charset=utf-8",
+          "last_modified": "Wed, 04 Nov 2026 21:56:01 GMT",
+          "bytes_read": 2033,
+          "truncated": false,
+          "sha256": "62aa0d009950eeb2b1d519dfe0b64871955643b6abbaca5cf42f1d0f19ae73af",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 9.964
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "openflights-red-aerea",
+      "name": "Aeropuertos, aerolíneas, aviones y rutas históricas",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:41+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "airport_id": "1",
+              "name": "Goroka Airport",
+              "country": "Papua New Guinea",
+              "iata": "GKA",
+              "latitude": "-6.081689834590001",
+              "longitude": "145.391998291"
+            },
+            {
+              "airport_id": "2",
+              "name": "Madang Airport",
+              "country": "Papua New Guinea",
+              "iata": "MAG",
+              "latitude": "-5.20707988739",
+              "longitude": "145.789001465"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+          "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "291bcd52008265279cfbe33aa1163a40faecb0a55ba08fcf7eddf285d6703174",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "airport_id",
+            "name",
+            "city",
+            "country",
+            "iata",
+            "icao",
+            "latitude",
+            "longitude",
+            "altitude",
+            "timezone",
+            "dst",
+            "tz_database",
+            "type",
+            "source"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 5.231
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:51:46+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "airline": "2B",
+              "airline_id": "410",
+              "source_airport": "AER",
+              "source_id": "2965",
+              "dest_airport": "KZN",
+              "dest_id": "2990",
+              "codeshare": "",
+              "stops": "0",
+              "equipment": "CR2"
+            },
+            {
+              "airline": "2B",
+              "airline_id": "410",
+              "source_airport": "ASF",
+              "source_id": "2966",
+              "dest_airport": "KZN",
+              "dest_id": "2990",
+              "codeshare": "",
+              "stops": "0",
+              "equipment": "CR2"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+          "final_url": "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "dfdaef7edba725b2dd54259329b49e4ddbb6e8aa3f3e599d4670401f46a32713",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "airline",
+            "airline_id",
+            "source_airport",
+            "source_id",
+            "dest_airport",
+            "dest_id",
+            "codeshare",
+            "stops",
+            "equipment"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 3.454
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "bts-puntualidad-vuelos",
+      "name": "Puntualidad, cancelaciones y demoras aéreas",
+      "status": "DOC_ONLY",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:41+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "On-Time Index pageLockU.S. Department of TransportationUnited States Department of Transportation"
+            }
+          ],
+          "requested_url": "https://transtats.bts.gov/ONTIME/",
+          "final_url": "https://transtats.bts.gov/ONTIME/",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 59532,
+          "truncated": false,
+          "sha256": "c51d708a11c2f28172b9e44eab22c1d7ade6500f78b72f327dbcc636824b15fd",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 4.982
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "apple-apps",
+      "name": "Catálogo público de apps de Apple",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:41+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "trackId": 912390687,
+              "trackName": "TREBEL Music - Download Songs",
+              "primaryGenreName": "Music",
+              "price": 0.0,
+              "currency": "MXN",
+              "averageUserRating": 4.70673,
+              "userRatingCount": 470548,
+              "version": "7.9.9"
+            },
+            {
+              "trackId": 427916203,
+              "trackName": "Expedia: hoteles y vuelos",
+              "primaryGenreName": "Travel",
+              "price": 0.0,
+              "currency": "MXN",
+              "averageUserRating": 4.852,
+              "userRatingCount": 371599,
+              "version": "2026.44"
+            }
+          ],
+          "requested_url": "https://itunes.apple.com/search?term=travel&entity=software&country=mx&limit=3",
+          "final_url": "https://itunes.apple.com/search?term=travel&entity=software&country=mx&limit=3",
+          "http_status": 200,
+          "content_type": "text/javascript; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 33441,
+          "truncated": false,
+          "sha256": "2bf56660460a6dbb8b2eafdf33faab5907ae53829c3f405b559e5a90fee66322",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 4.707
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "apple-resenas-apps",
+      "name": "Reseñas públicas de apps por tienda",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:45+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id.label": "14746272762",
+              "im:rating.label": "1",
+              "im:version.label": "26.43.75",
+              "title.label": "Hackean"
+            }
+          ],
+          "requested_url": "https://itunes.apple.com/mx/rss/customerreviews/id=310633997/sortBy=mostRecent/json",
+          "final_url": "https://itunes.apple.com/mx/rss/customerreviews/id=310633997/sortBy=mostRecent/json",
+          "http_status": 200,
+          "content_type": "text/javascript; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 38785,
+          "truncated": false,
+          "sha256": "800d9a16e53b1f67a52de54fab8e1c4b63f9fa75c5fc4e90d154d79356dfbdaa",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 50,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.811
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "insideairbnb-cdmx",
+      "name": "Alojamiento turístico: Inside Airbnb CDMX",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:46+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "35797",
+              "neighbourhood": "Cuajimalpa de Morelos",
+              "room_type": "Private room",
+              "price": "8874",
+              "minimum_nights": "1",
+              "number_of_reviews": "0",
+              "availability_365": "363"
+            },
+            {
+              "id": "44616",
+              "neighbourhood": "Cuauhtémoc",
+              "room_type": "Entire home/apt",
+              "price": "21950",
+              "minimum_nights": "1",
+              "number_of_reviews": "67",
+              "availability_365": "361"
+            }
+          ],
+          "requested_url": "https://data.insideairbnb.com/mexico/df/mexico-city/2026-09-23/visualisations/listings.csv",
+          "final_url": "https://data.insideairbnb.com/mexico/df/mexico-city/2026-09-23/visualisations/listings.csv",
+          "http_status": 200,
+          "content_type": "application/csv",
+          "last_modified": "Tue, 29 Sep 2026 23:41:02 GMT",
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "3be588f5cd8c60fb30be69bf85391c6f42d9e9eea28771f18360979befd312c5",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "id",
+            "name",
+            "host_id",
+            "host_profile_id",
+            "host_name",
+            "neighbourhood_group",
+            "neighbourhood",
+            "latitude",
+            "longitude",
+            "room_type",
+            "price",
+            "minimum_nights",
+            "number_of_reviews",
+            "last_review",
+            "reviews_per_month",
+            "calculated_host_listings_count",
+            "availability_365",
+            "number_of_reviews_ltm",
+            "license"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 4.238
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "napoleonica-cartas",
+      "name": "Correspondencia general de Napoleón",
+      "status": "DOC_ONLY",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:49+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "correspondance (Napoleonica les archives)"
+            }
+          ],
+          "requested_url": "https://www.napoleonica.org/collection/9457",
+          "final_url": "https://www.napoleonica.org/collection/9457",
+          "http_status": 200,
+          "content_type": "text/html;charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 167335,
+          "truncated": false,
+          "sha256": "27b1259d2a0f1c81393fb45d4fc21034c10a177758da26a605c2b91f672085d6",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 5.716
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "gallica-napoleon",
+      "name": "Gallica: libros históricos sobre Napoleón y su correspondencia",
+      "status": "BLOCKED",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:49+00:00",
+          "kind": "sru",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://gallica.bnf.fr/SRU?version=1.2&operation=searchRetrieve&query=dc.title%20all%20%22correspondance%20Napoleon%22&maximumRecords=3",
+          "http_status": 403,
+          "status": "BLOCKED",
+          "detail": "HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 3.887
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "pepys-diarios",
+      "name": "Diario de Samuel Pepys: vida cotidiana, enfermedad y ciudad",
+      "status": "DOCUMENT_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:50+00:00",
+          "kind": "text",
+          "scope": "live_public",
+          "sample": [
+            {
+              "excerpt": "The Project Gutenberg eBook of Diary of Samuel Pepys — Complete 1667 N.S. This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever. You may copy it, give it away or re-use it under the terms of the Project Gutenberg License"
+            }
+          ],
+          "requested_url": "https://www.gutenberg.org/cache/epub/4184/pg4184.txt",
+          "final_url": "https://www.gutenberg.org/cache/epub/4184/pg4184.txt",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": "Mon, 02 Nov 2026 14:42:35 GMT",
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "4455f45727059c2cc3859556d2700bada77bdf8ad5ef50edf084256672137da5",
+          "hash_scope": "response_prefix",
+          "status": "DOCUMENT_SAMPLE",
+          "detail": "Prefijo de documento real; no se descargó el corpus completo.",
+          "elapsed_seconds": 3.255
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "musicbrainz-conciertos",
+      "name": "Eventos, artistas y lugares de conciertos",
+      "status": "DOC_ONLY",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:53:47+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3",
+          "final_url": "https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Tue, 22 Sep 2026 04:56:25 GMT",
+          "bytes_read": 195,
+          "truncated": false,
+          "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7",
+          "hash_scope": "complete_response",
+          "status": "PARSE_ERROR",
+          "detail": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+          "elapsed_seconds": 3.49
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:53:50+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Site Unavailable"
+            }
+          ],
+          "requested_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+          "final_url": "https://musicbrainz.org/doc/MusicBrainz_API",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Tue, 22 Sep 2026 04:56:25 GMT",
+          "bytes_read": 195,
+          "truncated": false,
+          "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 4.701
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "83341695421e30bb43fa0c16ea0894165c7069454c3e5f3bf9ea4f7dca0aa1ed"
+    },
+    {
+      "id": "setlist-conciertos",
+      "name": "Repertorios y orden de canciones en conciertos",
+      "status": "DOC_ONLY",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:53+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "setlist.fm API"
+            }
+          ],
+          "requested_url": "https://api.setlist.fm/docs/1.0/index.html",
+          "final_url": "https://api.setlist.fm/docs/1.0/index.html",
+          "http_status": 200,
+          "content_type": "text/html",
+          "last_modified": "Thu, 09 Jul 2026 06:55:53 GMT",
+          "bytes_read": 25681,
+          "truncated": false,
+          "sha256": "5755d24f8616fa11215a3f989f2f40604ef75c0e5e65424bb032d80a45a87cf3",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 4.019
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "osm-mapas-restaurantes",
+      "name": "OpenStreetMap / Overpass: lugares y mapas vivos",
+      "status": "HTTP_ERROR",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:53+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A15%5D%3Bnode%5Bamenity%3Drestaurant%5D%2819.42%2C-99.18%2C19.44%2C-99.15%29%3Bout%203%3B",
+          "http_status": 502,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 502: Bad Gateway. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 3.666
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "loc-mapas-historicos",
+      "name": "Mapas históricos digitalizados",
+      "status": "METADATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:54+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "http://www.loc.gov/item/sanborn03483_002/",
+              "title": "Sanborn Fire Insurance Map from Jonesport, Washington County, Maine.",
+              "date": "1895-09",
+              "original_format": [
+                "map"
+              ]
+            }
+          ],
+          "requested_url": "https://www.loc.gov/maps/?fo=json&c=3",
+          "final_url": "https://www.loc.gov/maps/?fo=json&c=3",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 54622,
+          "truncated": false,
+          "sha256": "48a1473343f617236116eae46e6cf4337ef31fc44778def2caf3cbcef222b1ed",
+          "hash_scope": "complete_response",
+          "status": "METADATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.225
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "gsm8k-examenes",
+      "name": "GSM8K: problemas matemáticos con soluciones",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:55+00:00",
+          "kind": "gsm_jsonl",
+          "scope": "live_public",
+          "sample": [
+            {
+              "question_excerpt": "Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for",
+              "answer_numeric": "18"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl",
+          "final_url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "5c025c0c85589f547d4b3c568a09cdccefb20a02e31f0e45a9db582f3652639f",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "detail": "Una línea JSONL real: fragmento breve de pregunta y respuesta final de referencia, sin ejecutar un modelo ni evaluar todo el benchmark.",
+          "elapsed_seconds": 2.848
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "unam-colecciones",
+      "name": "Colecciones universitarias abiertas UNAM",
+      "status": "HTTP_ERROR",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:57+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://datosabiertos.unam.mx/IBUNAM%3AMEXU%3A1210262",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 8.544
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "unam-agenda-estadistica",
+      "name": "Agenda Estadística y numeralia UNAM",
+      "status": "DOC_ONLY",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:53:47+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://estadistica.unam.mx/numeralia/",
+          "final_url": "https://estadistica.unam.mx/numeralia/",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": "Mon, 10 Feb 2025 19:02:49 GMT",
+          "bytes_read": 76,
+          "truncated": false,
+          "sha256": "404c9611c195b4ad702da19a1dc368b28118a4c024d6b8395bc71ac468f2abe0",
+          "hash_scope": "complete_response",
+          "status": "PARSE_ERROR",
+          "detail": "ValueError: Página vacía sin título ni contenido suficiente",
+          "elapsed_seconds": 4.392
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:53:51+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "Agenda Estadística – Coordinación de Planeación, Evaluación y Simplificación de la Gestión Institucional"
+            }
+          ],
+          "requested_url": "https://web.planeacion.unam.mx/direccion-de-sistemas-de-informacion-estadistica/agenda/",
+          "final_url": "https://web.planeacion.unam.mx/direccion-de-sistemas-de-informacion-estadistica/agenda/",
+          "http_status": 200,
+          "content_type": "text/html; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 123882,
+          "truncated": false,
+          "sha256": "ac631e6c1659e05038d8bbe0206e060cb32e90f446a79f8881cd7a94713c6c3a",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 5.66
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "83341695421e30bb43fa0c16ea0894165c7069454c3e5f3bf9ea4f7dca0aa1ed"
+    },
+    {
+      "id": "unam-guias-examenes",
+      "name": "Guías públicas de exámenes extraordinarios CCH",
+      "status": "DOCUMENT_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:57+00:00",
+          "kind": "pdf",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page": 1,
+              "excerpt": "UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO COLEGIO DE CIENCIAS Y HUMANIDADES PLANTEL ORIENTE GUÍA PARA EL EXAMEN EXTRAORDINARIO DE CÁLCULO DIFERENCIAL"
+            }
+          ],
+          "requested_url": "https://portalacademico.cch.unam.mx/materiales/al/Guias_extras/Matematicas/cal1_ori.pdf",
+          "final_url": "https://portalacademico.cch.unam.mx/materiales/al/Guias_extras/Matematicas/cal1_ori.pdf",
+          "http_status": 200,
+          "content_type": "application/pdf",
+          "last_modified": "Tue, 29 Sep 2015 18:01:02 GMT",
+          "bytes_read": 332663,
+          "truncated": false,
+          "sha256": "5a93285e5184a65acc4aaced180cf372c5abad0502d3045f37dfd49c8a1c3771",
+          "hash_scope": "complete_response",
+          "status": "DOCUMENT_SAMPLE",
+          "pages": 7,
+          "detail": "Firma PDF y extracción de una página validadas; sin OCR ni auditoría de todas sus tablas.",
+          "elapsed_seconds": 3.68
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "ct-ventas-inmuebles",
+      "name": "Ventas inmobiliarias registradas en Connecticut",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:51:58+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "serialnumber": "24079",
+              "listyear": "2024",
+              "daterecorded": "2025-09-26T00:00:00.000",
+              "town": "Ashford",
+              "assessedvalue": "54460",
+              "saleamount": "95000",
+              "salesratio": "0.5732",
+              "propertytype": "Vacant Land"
+            },
+            {
+              "serialnumber": "240171",
+              "listyear": "2024",
+              "daterecorded": "2025-06-06T00:00:00.000",
+              "town": "Berlin",
+              "assessedvalue": "251400",
+              "saleamount": "350000",
+              "salesratio": "0.7182",
+              "propertytype": "Commercial",
+              "nonusecode": "25 - Other"
+            }
+          ],
+          "requested_url": "https://data.ct.gov/resource/5mzw-sjtu.json?$limit=3",
+          "final_url": "https://data.ct.gov/resource/5mzw-sjtu.json?$limit=3",
+          "http_status": 200,
+          "content_type": "application/json;charset=utf-8",
+          "last_modified": "Wed, 12 Aug 2026 16:56:15 GMT",
+          "bytes_read": 765,
+          "truncated": false,
+          "sha256": "692b732398a482da12f48c35d25229e15efc9ae1f70badb0d5dca6b6b2bea3c8",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.717
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "cmu-movimiento-baile",
+      "name": "Movimiento humano y secuencias de baile CMU MoCap",
+      "status": "HTTP_ERROR",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:00+00:00",
+          "kind": "amc",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://mocap.cs.cmu.edu/subjects/05/05_02.amc",
+          "http_status": 503,
+          "status": "HTTP_ERROR",
+          "detail": "HTTP 503: Service Unavailable. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 3.788
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "aist-dance",
+      "name": "AIST++: baile, música y movimiento 3D",
+      "status": "DOC_ONLY",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:01+00:00",
+          "kind": "html",
+          "scope": "live_public",
+          "sample": [
+            {
+              "page_title": "AIST++ Dataset - Description"
+            }
+          ],
+          "requested_url": "https://google.github.io/aistplusplus_dataset/factsfigures.html",
+          "final_url": "https://google.github.io/aistplusplus_dataset/factsfigures.html",
+          "http_status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "last_modified": "Wed, 08 Apr 2026 21:25:55 GMT",
+          "bytes_read": 9192,
+          "truncated": false,
+          "sha256": "722da74be9b0c4b2138e1c0b4dc63ffcf2e8f2e159c03485d3283259d5b53e12",
+          "hash_scope": "complete_response",
+          "status": "DOC_ONLY",
+          "detail": "Ejemplo de página; no son registros del dataset. Los enlaces pueden requerir JavaScript, sesión o descarga adicional.",
+          "elapsed_seconds": 4.482
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "artic-pintura",
+      "name": "Obras, textos e imágenes del Art Institute of Chicago",
+      "status": "BLOCKED",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:01+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [],
+          "requested_url": "https://api.artic.edu/api/v1/artworks/search?q=Monet&fields=id,title,artist_title,date_display,image_id,is_public_domain&limit=3",
+          "http_status": 403,
+          "status": "BLOCKED",
+          "detail": "HTTP 403: Forbidden. No se sorteó el bloqueo ni se usaron credenciales personales.",
+          "elapsed_seconds": 2.934
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "dracor-teatro",
+      "name": "DraCor: teatro, personajes y redes de diálogo",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:04+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "ger000243",
+              "title": "Faust",
+              "name": "goethe-faust-eine-tragoedie",
+              "allInSegment": 28,
+              "segments": [
+                {
+                  "type": "scene",
+                  "title": "Zueignung.",
+                  "number": 1
+                },
+                {
+                  "type": "scene",
+                  "title": "Vorspiel auf dem Theater.",
+                  "speakers": [
+                    "direktor",
+                    "dichter",
+                    "lustige_person"
+                  ],
+                  "number": 2
+                },
+                {
+                  "type": "scene",
+                  "title": "Prolog im Himmel.",
+                  "speakers": [
+                    "raphael",
+                    "gabriel",
+                    "michael",
+                    "mephistopheles",
+                    "der_herr"
+                  ],
+                  "number": 3
+                },
+                {
+                  "type": "scene",
+                  "title": "Nacht.",
+                  "speakers": [
+                    "faust",
+                    "geist",
+                    "wagner",
+                    "chor_der_engel",
+                    "chor_der_weiber",
+                    "chor_der_juenger"
+                  ],
+                  "number": 4
+                },
+                {
+                  "type": "scene",
+                  "title": "Vor dem Tor.",
+                  "speakers": [
+                    "einige_handwerksburschen",
+                    "andre_handwerksburschen",
+                    "ein_handwerksbursch",
+                    "zweiter_handwerksbursch",
+                    "ein_dritter_handwerksbursch",
+                    "vierter_handwerksbursch",
+                    "fuenfter_handwerksbursch",
+                    "erstes_dienstmaedchen"
+                  ],
+                  "number": 5
+                },
+                {
+                  "type": "scene",
+                  "title": "Studierzimmer.",
+                  "speakers": [
+                    "faust",
+                    "geister",
+                    "mephistopheles"
+                  ],
+                  "number": 6
+                },
+                {
+                  "type": "scene",
+                  "title": "Studierzimmer.",
+                  "speakers": [
+                    "faust",
+                    "mephistopheles",
+                    "geisterchor",
+                    "schueler"
+                  ],
+                  "number": 7
+                },
+                {
+                  "type": "scene",
+                  "title": "Auerbachs Keller in Leipzig.",
+                  "speakers": [
+                    "frosch",
+                    "brander",
+                    "siebel",
+                    "altmayer",
+                    "mephistopheles",
+                    "faust"
+                  ],
+                  "number": 8
+                }
+              ]
+            }
+          ],
+          "requested_url": "https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie",
+          "final_url": "https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie",
+          "http_status": 200,
+          "content_type": "application/json;charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 18424,
+          "truncated": false,
+          "sha256": "1110d24b853bfe0dc65970895869b8442f976c44200f19538bde69f45ab4b84d",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 1,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 4.592
+        },
+        {
+          "checked_at_utc": "2026-11-05T00:52:09+00:00",
+          "kind": "tei",
+          "scope": "live_public",
+          "sample": [
+            {
+              "title": "Faust",
+              "speaker_examples": [
+                "Direktor.",
+                "Dichter."
+              ],
+              "passage_excerpt": "Im Elend! Verzweifelnd! Erbärmlich auf der Erde lange verirrt und nun gefangen! Als Missetäterin im Kerker zu entsetzlichen Qualen eingesperrt"
+            }
+          ],
+          "requested_url": "https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/tei",
+          "final_url": "https://dracor.org/api/v1/corpora/ger/plays/goethe-faust-eine-tragoedie/tei",
+          "http_status": 200,
+          "content_type": "application/xml; charset=UTF-8",
+          "last_modified": null,
+          "bytes_read": 398630,
+          "truncated": false,
+          "sha256": "24069c0cf849d19a18badfcb7ac0b2e013ac2f9b77111b3a879b71d32ff2aaa4",
+          "hash_scope": "complete_response",
+          "status": "DOCUMENT_SAMPLE",
+          "detail": "Documento TEI con título e intervenciones; no se calculó todavía la red completa de personajes.",
+          "elapsed_seconds": 3.941
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "uci-retail",
+      "name": "Online Retail: facturas y líneas de pedido reales",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:04+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "InvoiceNo": "536365",
+              "StockCode": "85123A",
+              "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+              "Quantity": "6",
+              "InvoiceDate": "12/1/2010 8:26",
+              "UnitPrice": "2.55",
+              "CustomerID": "17850",
+              "Country": "United Kingdom"
+            },
+            {
+              "InvoiceNo": "536365",
+              "StockCode": "71053",
+              "Description": "WHITE METAL LANTERN",
+              "Quantity": "6",
+              "InvoiceDate": "12/1/2010 8:26",
+              "UnitPrice": "3.39",
+              "CustomerID": "17850",
+              "Country": "United Kingdom"
+            }
+          ],
+          "requested_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+          "final_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+          "http_status": 200,
+          "content_type": "",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "680d1c90acbeab501bbbc68cf71c6e7953908385079afb4baca047a3a23198a7",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "InvoiceNo",
+            "StockCode",
+            "Description",
+            "Quantity",
+            "InvoiceDate",
+            "UnitPrice",
+            "CustomerID",
+            "Country"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 3.337
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "openfda-etiquetas",
+      "name": "Etiquetas y documentación farmacéutica pública",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:05+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "ca7bbcc8-2354-375c-e053-2995a90a72a0",
+              "set_id": "0000025c-6dbf-4af7-a741-5cbacaed519a",
+              "effective_time": "20210902",
+              "openfda.brand_name": [
+                "SILICEA"
+              ],
+              "openfda.generic_name": [
+                "SILICEA"
+              ]
+            }
+          ],
+          "requested_url": "https://api.fda.gov/drug/label.json?limit=1",
+          "final_url": "https://api.fda.gov/drug/label.json?limit=1",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 3933,
+          "truncated": false,
+          "sha256": "7e2ebff25791965749e02fd1c7b022a5fbf72d874563d321783c5193ab6ac98f",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 1,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.58
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "wellcome-medicina-antigua",
+      "name": "Libros, archivos e ilustraciones de medicina histórica",
+      "status": "METADATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:05+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "gvybrs3w",
+              "title": "Sleep and dreams.",
+              "production": [
+                {
+                  "label": "London : Longman, Brown, [1857]",
+                  "agents": [
+                    {
+                      "label": "Longman, Brown",
+                      "type": "Agent"
+                    }
+                  ],
+                  "dates": [
+                    {
+                      "label": "[1857]",
+                      "type": "Period"
+                    }
+                  ],
+                  "function": {
+                    "label": "Publication",
+                    "type": "Concept"
+                  },
+                  "type": "ProductionEvent",
+                  "places": [
+                    {
+                      "label": "London",
+                      "type": "Place"
+                    }
+                  ]
+                }
+              ],
+              "workType": {
+                "id": "a",
+                "type": "Format",
+                "label": "Books"
+              }
+            }
+          ],
+          "requested_url": "https://api.wellcomecollection.org/catalogue/v2/works?query=sleep&production.dates.to=1900-01-01&pageSize=3&include=production,items",
+          "final_url": "https://api.wellcomecollection.org/catalogue/v2/works?query=sleep&production.dates.to=1900-01-01&pageSize=3&include=production,items",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": null,
+          "bytes_read": 4838,
+          "truncated": false,
+          "sha256": "f1aeebed56885a15eafaf1d2934f4e7add518125faeee04ac68b46d9ae2cbdb8",
+          "hash_scope": "complete_response",
+          "status": "METADATA_SAMPLE",
+          "observed_rows": 3,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.383
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "bob-ross-elementos",
+      "name": "Elementos que aparecen en los cuadros de Bob Ross",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:08+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "EPISODE": "S01E01",
+              "TITLE": "\"A WALK IN THE WOODS\"",
+              "TREE": "1",
+              "TREES": "1",
+              "MOUNTAIN": "0",
+              "MOUNTAINS": "0",
+              "CLOUDS": "0",
+              "GUEST": "0"
+            },
+            {
+              "EPISODE": "S01E02",
+              "TITLE": "\"MT. MCKINLEY\"",
+              "TREE": "1",
+              "TREES": "1",
+              "MOUNTAIN": "1",
+              "MOUNTAINS": "0",
+              "CLOUDS": "1",
+              "GUEST": "0"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv",
+          "final_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "1eab5ca2d2acc1ba9657189aa702dc9e35af46653273b332c4044298464ca50f",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "EPISODE",
+            "TITLE",
+            "APPLE_FRAME",
+            "AURORA_BOREALIS",
+            "BARN",
+            "BEACH",
+            "BOAT",
+            "BRIDGE",
+            "BUILDING",
+            "BUSHES",
+            "CABIN",
+            "CACTUS",
+            "CIRCLE_FRAME",
+            "CIRRUS",
+            "CLIFF",
+            "CLOUDS",
+            "CONIFER",
+            "CUMULUS",
+            "DECIDUOUS",
+            "DIANE_ANDRE",
+            "DOCK",
+            "DOUBLE_OVAL_FRAME",
+            "FARM",
+            "FENCE",
+            "FIRE",
+            "FLORIDA_FRAME",
+            "FLOWERS",
+            "FOG",
+            "FRAMED",
+            "GRASS",
+            "GUEST",
+            "HALF_CIRCLE_FRAME",
+            "HALF_OVAL_FRAME",
+            "HILLS",
+            "LAKE",
+            "LAKES",
+            "LIGHTHOUSE",
+            "MILL",
+            "MOON",
+            "MOUNTAIN",
+            "MOUNTAINS",
+            "NIGHT",
+            "OCEAN",
+            "OVAL_FRAME",
+            "PALM_TREES",
+            "PATH",
+            "PERSON",
+            "PORTRAIT",
+            "RECTANGLE_3D_FRAME",
+            "RECTANGULAR_FRAME",
+            "RIVER",
+            "ROCKS",
+            "SEASHELL_FRAME",
+            "SNOW",
+            "SNOWY_MOUNTAIN",
+            "SPLIT_FRAME",
+            "STEVE_ROSS",
+            "STRUCTURE",
+            "SUN",
+            "TOMB_FRAME",
+            "TREE",
+            "TREES",
+            "TRIPLE_FRAME",
+            "WATERFALL",
+            "WAVES",
+            "WINDMILL",
+            "WINDOW_FRAME",
+            "WINTER",
+            "WOOD_FRAMED"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 3.885
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+    },
+    {
+      "id": "bob-ross-paletas",
+      "name": "Cuadros, paletas y episodios de Bob Ross",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-05T00:52:09+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "painting_index": "282",
+              "painting_title": "A Walk in the Woods",
+              "season": "1",
+              "episode": "1",
+              "num_colors": "8",
+              "colors": "\"['Alizarin Crimson'",
+              "color_hex": " 'Bright Red'"
+            },
+            {
+              "painting_index": "283",
+              "painting_title": "Mt. McKinley",
+              "season": "1",
+              "episode": "2",
+              "num_colors": "8",
+              "colors": "\"['Alizarin Crimson'",
+              "color_hex": " 'Bright Red'"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv",
+          "final_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "c6c7e09c6be482982f8834383547548bb0733ee4c2fb3ba01276cce7a4f2e797",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "",
+            "painting_index",
+            "img_src",
+            "painting_title",
+            "season",
+            "episode",
+            "num_colors",
+            "youtube_src",
+            "colors",
+            "color_hex",
+            "tags",
+            "Black_Gesso",
+            "Bright_Red",
+            "Burnt_Umber",
+            "Cadmium_Yellow",
+            "Dark_Sienna",
+            "Indian_Red",
+            "Indian_Yellow",
+            "Liquid_Black",
+            "Liquid_Clear",
+            "Midnight_Black",
+            "Phthalo_Blue",
+            "Phthalo_Green",
+            "Prussian_Blue",
+            "Sap_Green",
+            "Titanium_White",
+            "Van_Dyke_Brown",
+            "Yellow_Ochre",
+            "Alizarin_Crimson"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 2.773
+        }
+      ],
+      "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+      "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
     }
   ],
   "rechecks": [
@@ -1974,5 +3325,118 @@
       }
     }
   ],
-  "report_generated_at_utc": "2026-11-05T00:10:09+00:00"
+  "report_generated_at_utc": "2026-11-05T00:53:57+00:00",
+  "extensions": [
+    {
+      "run": {
+        "started_at_utc": "2026-11-05T00:51:41+00:00",
+        "started_at_local": "2026-11-04T18:51:41-06:00",
+        "timeout_seconds": 18,
+        "workers": 4,
+        "max_bytes": 8388608,
+        "python_version": "3.12.14",
+        "probe_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+        "probe_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671",
+        "finished_at_utc": "2026-11-05T00:52:13+00:00"
+      },
+      "source_ids": [
+        "nyc-restaurantes",
+        "openflights-red-aerea",
+        "bts-puntualidad-vuelos",
+        "apple-apps",
+        "apple-resenas-apps",
+        "insideairbnb-cdmx",
+        "napoleonica-cartas",
+        "gallica-napoleon",
+        "pepys-diarios",
+        "musicbrainz-conciertos",
+        "setlist-conciertos",
+        "osm-mapas-restaurantes",
+        "loc-mapas-historicos",
+        "gsm8k-examenes",
+        "unam-colecciones",
+        "unam-agenda-estadistica",
+        "unam-guias-examenes",
+        "ct-ventas-inmuebles",
+        "cmu-movimiento-baile",
+        "aist-dance",
+        "artic-pintura",
+        "dracor-teatro",
+        "uci-retail",
+        "openfda-etiquetas",
+        "wellcome-medicina-antigua",
+        "bob-ross-elementos",
+        "bob-ross-paletas"
+      ],
+      "recheck_run": {
+        "started_at_utc": "2026-11-05T00:53:47+00:00",
+        "started_at_local": "2026-11-04T18:53:47-06:00",
+        "timeout_seconds": 18,
+        "workers": 4,
+        "max_bytes": 8388608,
+        "python_version": "3.12.14",
+        "probe_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+        "probe_definitions_sha256": "83341695421e30bb43fa0c16ea0894165c7069454c3e5f3bf9ea4f7dca0aa1ed",
+        "finished_at_utc": "2026-11-05T00:53:57+00:00"
+      },
+      "previous_rechecked_results": [
+        {
+          "id": "musicbrainz-conciertos",
+          "name": "Eventos, artistas y lugares de conciertos",
+          "status": "PARSE_ERROR",
+          "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+          "checks": [
+            {
+              "checked_at_utc": "2026-11-05T00:51:51+00:00",
+              "kind": "json",
+              "scope": "live_public",
+              "sample": [],
+              "requested_url": "https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3",
+              "final_url": "https://musicbrainz.org/ws/2/event/?query=type:Concert&fmt=json&limit=3",
+              "http_status": 200,
+              "content_type": "text/html",
+              "last_modified": "Tue, 22 Sep 2026 04:56:25 GMT",
+              "bytes_read": 195,
+              "truncated": false,
+              "sha256": "5b131ca14aa96311d3432b0062c7443d3b0e6346ec279bd376a75f0a76bcd5d7",
+              "hash_scope": "complete_response",
+              "status": "PARSE_ERROR",
+              "detail": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+              "elapsed_seconds": 3.14
+            }
+          ],
+          "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+          "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+        },
+        {
+          "id": "unam-agenda-estadistica",
+          "name": "Agenda Estadística y numeralia UNAM",
+          "status": "PARSE_ERROR",
+          "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito.",
+          "checks": [
+            {
+              "checked_at_utc": "2026-11-05T00:51:57+00:00",
+              "kind": "html",
+              "scope": "live_public",
+              "sample": [],
+              "requested_url": "https://estadistica.unam.mx/numeralia/",
+              "final_url": "https://estadistica.unam.mx/numeralia/",
+              "http_status": 200,
+              "content_type": "text/html; charset=UTF-8",
+              "last_modified": "Mon, 10 Feb 2025 19:02:49 GMT",
+              "bytes_read": 76,
+              "truncated": false,
+              "sha256": "404c9611c195b4ad702da19a1dc368b28118a4c024d6b8395bc71ac468f2abe0",
+              "hash_scope": "complete_response",
+              "status": "PARSE_ERROR",
+              "detail": "ValueError: Página vacía sin título ni contenido suficiente",
+              "elapsed_seconds": 3.508
+            }
+          ],
+          "captured_with_script_sha256": "e1d3b80c426a636d069c42fe0e03e13a037399ad4749fc98799e91d941d9ddf4",
+          "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
+        }
+      ]
+    }
+  ]
 }

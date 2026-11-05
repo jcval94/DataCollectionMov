@@ -20,6 +20,7 @@ import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -94,7 +95,7 @@ def run_check(spec,args):
     out=dict(checked_at_utc=now(),kind=spec['kind'],scope=spec.get('scope','live_public'),sample=[])
     start=time.monotonic()
     kind=spec['kind']
-    prefix=kind in ('csv','text','noaa_fixed','media') and not spec.get('full_read')
+    prefix=kind in ('csv','text','noaa_fixed','media','gsm_jsonl','amc') and not spec.get('full_read')
     limit=65536 if prefix else args.max_bytes
     try:
         data,metadata=fetch(spec['url'],args.timeout,limit,prefix)
@@ -142,7 +143,8 @@ def run_check(spec,args):
             if not rows:out.update(status='EMPTY',detail='Estructura válida, muestra vacía.');return out
             for field in spec.get('required',[]):
                 if any(not isinstance(r,dict) or getpath(r,field) in (None,'') for r in rows[:2]):raise ValueError('Falta campo requerido: '+field)
-            out.update(status=spec.get('sample_status','DATA_SAMPLE'),sample=[pick(r,spec.get('fields')) for r in rows[:2]],observed_rows=len(rows),detail='Formato y campos de la muestra validados; no implica calidad de toda la fuente.')
+            count=min(3,max(1,spec.get('sample_rows',2)))
+            out.update(status=spec.get('sample_status','DATA_SAMPLE'),sample=[pick(r,spec.get('fields')) for r in rows[:count]],observed_rows=len(rows),detail='Formato y campos de la muestra validados; no implica calidad de toda la fuente.')
             if not any(out['sample']):raise ValueError('La selección no encontró campos de ejemplo')
             if spec.get('follow_media'):
                 target=getpath(rows[0],spec['follow_media'])
@@ -153,7 +155,7 @@ def run_check(spec,args):
             if '<html' in lower or '<!doctype html' in lower:raise ValueError('Se esperaba CSV y se recibió HTML')
             if out['truncated']:text=text.rsplit('\n',1)[0]
             dialect=csv.Sniffer().sniff(text[:16000],delimiters=',;\t|')
-            reader=csv.DictReader(io.StringIO(text),dialect=dialect)
+            reader=csv.DictReader(io.StringIO(text),fieldnames=spec.get('columns'),dialect=dialect)
             rows=[]
             for row in reader:
                 rows.append(row)
@@ -163,6 +165,35 @@ def run_check(spec,args):
             for f in spec.get('required',[]):
                 if f not in reader.fieldnames:raise ValueError('Columna requerida ausente: '+f)
             out.update(status='CACHED_SAMPLE' if spec.get('scope')=='repository_snapshot' else 'DATA_SAMPLE',columns=reader.fieldnames,sample=[pick(r,spec.get('fields')) for r in rows],detail='Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.')
+        elif kind=='gsm_jsonl':
+            first=next((line for line in text.splitlines() if line.strip()),None)
+            row=json.loads(first or '{}')
+            if not isinstance(row.get('question'),str) or '####' not in row.get('answer',''):raise ValueError('No se reconoce esquema question/answer de GSM8K')
+            out.update(status='DATA_SAMPLE',sample=[dict(question_excerpt=' '.join(row['question'].split()[:18]),answer_numeric=row['answer'].split('####')[-1].strip())],detail='Una línea JSONL real: fragmento breve de pregunta y respuesta final de referencia, sin ejecutar un modelo ni evaluar todo el benchmark.')
+        elif kind in ('sru','tei'):
+            root=ET.fromstring(data)
+            if kind=='sru':
+                records=root.findall('.//{*}recordData')
+                if not records:raise ValueError('SRU sin recordData; revisar diagnósticos o consulta')
+                rows=[]
+                for record in records[:2]:
+                    rows.append({field:[brief(e.text or '') for e in record.findall('.//{http://purl.org/dc/elements/1.1/}'+field)][:2] for field in ['title','creator','date','identifier']})
+                out.update(status='METADATA_SAMPLE',sample=rows,detail='XML SRU válido con metadatos bibliográficos; no se recuperó OCR ni el contenido completo de los volúmenes.')
+            else:
+                if root.tag.split('}')[-1]!='TEI':raise ValueError('La raíz no es TEI')
+                titles=root.findall('.//{*}titleStmt/{*}title')
+                speakers=root.findall('.//{*}speaker')
+                paragraphs=root.findall('.//{*}body//{*}p')
+                excerpt=' '.join(' '.join(paragraphs[0].itertext()).split()[:20]) if paragraphs else ''
+                out.update(status='DOCUMENT_SAMPLE',sample=[dict(title=' '.join(titles[0].itertext()) if titles else '',speaker_examples=[' '.join(e.itertext()) for e in speakers[:2]],passage_excerpt=excerpt)],detail='Documento TEI con título e intervenciones; no se calculó todavía la red completa de personajes.')
+        elif kind=='amc':
+            if ':DEGREES' not in text:raise ValueError('No se encontró cabecera AMC en grados')
+            lines=text.splitlines();frame=next((i for i,line in enumerate(lines) if line.strip().isdigit()),None)
+            if frame is None:raise ValueError('AMC sin frame numérico')
+            samples=[]
+            for line in lines[frame+1:frame+3]:
+                values=line.split();samples.append(dict(channel=values[0],values=[float(x) for x in values[1:]]))
+            out.update(status='DATA_SAMPLE',sample=samples,detail='Prefijo AMC de un frame; interpretar canales con el esqueleto ASF correspondiente.')
         elif kind=='noaa_fixed':
             rows=[]
             for line in text.splitlines()[:2]:
