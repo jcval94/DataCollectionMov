@@ -198,3 +198,7 @@ La guia completa de lectura por tabla esta en `docs/README_LECTURA_TABLAS.md`.
 ## Primer descubrimiento ejecutado
 
 Ya está disponible el [piloto retail: bruto frente a neto](examples/retail_discovery/README.md), con 541,909 filas leídas, controles, ranking, sensibilidad a duplicados y gráfica incrustada. El [avance de implementación](docs/exploration/IMPLEMENTACION.md) documenta las cuatro skills instaladas y el primer arnés ejecutable.
+
+## Integración a las clases
+
+El [plan docente de datasets e IA](docs/exploration/PLAN_DOCENTE_DATASETS.md) propone cómo llevar las 72 fuentes a las 22 clases: pregunta recomendada, justificación curricular, duración, guion de acción, preparación docente y contingencias. Incluye una primera actividad de retail de 30 minutos para la clase 11 y una secuencia inicial de seis cápsulas dentro de las horas existentes.
