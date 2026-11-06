@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-11-06T06:36:37Z",
+  "source": "metrobus",
+  "snapshot_id": "20261106T063634Z",
+  "snapshot_date": "2026-11-06",
+  "tables": [
+    {
+      "table": "metrobus_alerts",
+      "source": "metrobus",
+      "snapshot_id": "20261106T063634Z",
+      "snapshot_date": "2026-11-06",
+      "rows": 0,
+      "columns": 5,
+      "hash_sha256": "1282eed20001822c4b7ee0d00a4bc6afbea9c9b01eee33ef39fc389f82847466",
+      "cadence": "hourly_weekdays",
+      "current_path": "data/current/metrobus_alerts.csv",
+      "snapshot_path": "data/history/metrobus_alerts/20261106T063634Z.csv"
+    },
+    {
+      "table": "metrobus_trip_updates",
+      "source": "metrobus",
+      "snapshot_id": "20261106T063634Z",
+      "snapshot_date": "2026-11-06",
+      "rows": 0,
+      "columns": 5,
+      "hash_sha256": "1282eed20001822c4b7ee0d00a4bc6afbea9c9b01eee33ef39fc389f82847466",
+      "cadence": "hourly_weekdays",
+      "current_path": "data/current/metrobus_trip_updates.csv",
+      "snapshot_path": "data/history/metrobus_trip_updates/20261106T063634Z.csv"
+    },
+    {
+      "table": "metrobus_vehicle_positions",
+      "source": "metrobus",
+      "snapshot_id": "20261106T063634Z",
+      "snapshot_date": "2026-11-06",
+      "rows": 830,
+      "columns": 26,
+      "hash_sha256": "3545ec0f4c3b937f8bfad1e1b98b0bcbf5f898c817e9ae42ba30e3cecc1a0dab",
+      "cadence": "hourly_weekdays",
+      "current_path": "data/current/metrobus_vehicle_positions.csv",
+      "snapshot_path": "data/history/metrobus_vehicle_positions/20261106T063634Z.csv"
+    },
+    {
+      "table": "metrobus_vehicle_positions_enriched",
+      "source": "metrobus",
+      "snapshot_id": "20261106T063634Z",
+      "snapshot_date": "2026-11-06",
+      "rows": 830,
+      "columns": 38,
+      "hash_sha256": "f35f7e8cd411cf0552652c22e8035c99fc57cec1e979019463d3e30433b52453",
+      "cadence": "hourly_weekdays",
+      "current_path": "data/current/metrobus_vehicle_positions_enriched.csv",
+      "snapshot_path": "data/history/metrobus_vehicle_positions_enriched/20261106T063634Z.csv"
+    }
+  ]
+}
