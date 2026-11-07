@@ -215,3 +215,7 @@ python -m pytest -q tests
 python scripts/render_exploration_plan.py --check
 python scripts/run_discovery.py --self-check
 ```
+
+## Demo preparada para clase: clustering con Bob Ross
+
+[Cuatro salas para Bob Ross](examples/bob_ross_clustering/README.md) convierte el catálogo en un problema de aula de 60 minutos (o una demo guiada de 35): tarjetas, trabajo con Codex/Claude, doce familias de motivos, clustering calculado y una trampa con el ID que cuestiona una métrica aparentemente mejor. Incluye [presentación HTML](examples/bob_ross_clustering/demo.html), material separado de alumno/docente y [tests con ejemplos e imágenes](examples/bob_ross_clustering/reference/README.md).

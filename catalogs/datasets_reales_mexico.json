@@ -13,7 +13,7 @@
     "priority": "P1/P2 expresa recomendación de valor y factibilidad para este repo; no es un compromiso de implementación.",
     "effort": "Estimación editorial: Baja/Media/Alta.",
     "verification": "opened_primary: contenido primario leído; indexed_primary: fuente primaria localizada mediante búsqueda; indexed_primary_fetch_blocked: localizada pero apertura bloqueada/fallida; repository_inspected: código/árbol del repo revisado. Ninguna implica descarga masiva probada. primary_documentation_located: documentación del productor localizada durante la ampliación; consultar prueba HTTP fechada por separado.",
-    "integration": "existing: código y al menos un CSV current vistos; partial: subconjunto implementado; collector_only: código presente sin CSV current de la tabla objetivo; not_ingested: sin integración identificada.",
+    "integration": "existing: código y al menos un CSV current vistos; partial: subconjunto implementado; collector_only: código presente sin CSV current de la tabla objetivo; not_ingested: sin integración identificada. example_snapshot: copia original fijada y análisis didáctico reproducible; no implica recolección programada.",
     "data_structure": "Estructurado, no estructurado o mixto describe el contenido analizable, no sólo su contenedor JSON/HTML.",
     "smoke_test": "Cada ficha tiene prueba definida en catalogs/source_probes.json y evidencia fechada en source_tests/results.json.",
     "discovery": "Pregunta de investigación, papel de IA y validación mínima. hypothesis_not_tested no equivale a insight observado."
@@ -4423,8 +4423,12 @@
       "priority": "P2",
       "effort": "Baja",
       "repository": {
-        "integration": "not_ingested",
-        "paths": []
+        "integration": "example_snapshot",
+        "paths": [
+          "examples/bob_ross_clustering/data/elements-by-episode.csv",
+          "examples/bob_ross_clustering/run.py",
+          "examples/bob_ross_clustering/reference/README.md"
+        ]
       },
       "variables": [
         "EPISODE",
@@ -4460,7 +4464,8 @@
           "Comparar probabilidad conjunta con frecuencias base; controlar búsquedas múltiples si se exploran muchos motivos."
         ],
         "status": "descriptive_pilot_calculated",
-        "evidence": "examples/bob_ross_discovery/README.md"
+        "evidence": "examples/bob_ross_discovery/README.md",
+        "classroom_demo": "examples/bob_ross_clustering/README.md"
       }
     },
     {

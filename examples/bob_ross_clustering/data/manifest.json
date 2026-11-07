@@ -1,0 +1,18 @@
+{
+  "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+  "final_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+  "http_status": 200,
+  "content_type": "text/plain; charset=utf-8",
+  "captured_at_utc": "2026-11-07T15:43:48+00:00",
+  "bytes": 66315,
+  "sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "hash_scope": "complete_response",
+  "repository": "fivethirtyeight/data",
+  "commit": "4c1ff5e3aef1816ae04af63218015066e186c147",
+  "local_path": "data/elements-by-episode.csv",
+  "license": "CC BY 4.0; applies to dataset, not paintings or video",
+  "license_url": "https://github.com/fivethirtyeight/data/blob/4c1ff5e3aef1816ae04af63218015066e186c147/LICENSE",
+  "transformations": "None: original bytes, including original encoding and line endings.",
+  "authentication": "none",
+  "capture_limit_bytes": 1048576
+}

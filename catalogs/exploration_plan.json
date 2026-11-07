@@ -4096,10 +4096,31 @@
         "2026-11-05T00:52:08+00:00"
       ],
       "source_test_link": "source_tests/README.md#bob-ross-elementos",
-      "plan_status": "proposed_not_executed",
+      "plan_status": "partially_executed",
       "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
       "first_question_id": "bob-ross-elementos.q1",
-      "execution_harness": "E1"
+      "execution_harness": "E1",
+      "implementations": [
+        {
+          "name": "Cuatro salas para Bob Ross",
+          "question_id": "bob-ross-elementos.q3",
+          "status": "partial_exploratory_demo",
+          "path": "examples/bob_ross_clustering/README.md",
+          "evidence": "examples/bob_ross_clustering/reference/report.json",
+          "method": "K-means / twelve binary motif families / Euclidean",
+          "harnesses": [
+            "H0",
+            "TAB"
+          ],
+          "execution_harness": "E1",
+          "optional_visual_source_ids": [
+            "bob-ross-paletas"
+          ],
+          "executed_scope": "Four-room exploratory grouping, k grid, seeds, guest inclusion and tree-family ablation; deliberately incorrect sequential-ID experiment.",
+          "pending_scope": "Comparison under a different distance, visual verification of every label, audience validation and any claim of true artistic styles.",
+          "reviewed_on": "2026-11-07"
+        }
+      ]
     },
     {
       "id": "bob-ross-paletas",

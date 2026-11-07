@@ -1762,7 +1762,7 @@ Esquema **propuesto**, todavía sin registros extraídos:
 - **Variables de interés:** EPISODE; TITLE; TREE; TREES; MOUNTAIN; MOUNTAINS; CLOUDS; GUEST.
 - **Llaves propuestas:** EPISODE; comprobar unicidad.
 - **CP:** No asumir. **Prioridad:** P2. **Esfuerzo:** Baja.
-- **Integración:** `not_ingested`.
+- **Integración:** `example_snapshot`: CSV original fijado y demo didáctica; sin recolección programada.
 - **Análisis:** ¿Qué elementos aparecen juntos más de lo que esperaríamos al conocer su frecuencia por separado?
 - **Límites:** Son etiquetas humanas, no verdad visual perfecta. Coocurrencia no explica intención artística ni causalidad.
 - **Uso:** Conservar atribución FiveThirtyEight y licencia del repositorio; derechos de vídeos/obras aparte.
@@ -1774,6 +1774,8 @@ Esquema **propuesto**, todavía sin registros extraídos:
 **Fuentes y antecedente de verificación:**
 
 - [Fuente 1](https://github.com/fivethirtyeight/data/tree/master/bob-ross) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://raw.githubusercontent.com/fivethirtyeight/data/master/bob-ross/elements-by-episode.csv).
+
+[Demo de clustering para clase: Cuatro salas para Bob Ross](../examples/bob_ross_clustering/README.md) · [Tests y ejemplos de la demo](../examples/bob_ross_clustering/reference/README.md).
 
 #### bob-ross-paletas
 

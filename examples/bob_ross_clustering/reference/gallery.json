@@ -1,0 +1,118 @@
+{
+  "source": {
+    "requested_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/f8741b2ba36d7b7a6e3fc87cb757ea73c9da6e1f/data/bob_ross_paintings.csv",
+    "final_url": "https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/f8741b2ba36d7b7a6e3fc87cb757ea73c9da6e1f/data/bob_ross_paintings.csv",
+    "http_status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 249479,
+    "checked_at_utc": "2026-11-07T15:46:39+00:00",
+    "sha256": "8e9171c246a7638f5e51d0ae3722a2a7ff89f00b51e8e2f8e45384a8fad559cd",
+    "hash_scope": "complete_response"
+  },
+  "source_commit": "f8741b2ba36d7b7a6e3fc87cb757ea73c9da6e1f",
+  "source_dataset_id": "bob-ross-paletas",
+  "model_dataset_id": "bob-ross-elementos",
+  "scope": "Illustration of actual representative episodes; images and palettes did not enter the model. No vision verification of every motif.",
+  "gallery": [
+    {
+      "room": 1,
+      "episode": "S01E01",
+      "elements_title": "A WALK IN THE WOODS",
+      "palette_title": "A Walk in the Woods",
+      "image_url": "https://www.twoinchbrush.com/images/painting282.webp",
+      "join_key": "season + episode; exactly one palette row for this element episode",
+      "title_note": "Titles preserved independently; Dawn/Down and singular/plural differences are not silently corrected.",
+      "attribution": "Bob Ross; image hosted by Two Inch Brush, linked by jwilber/Bob_Ross_Paintings.",
+      "rights": "Rights of their holders; no open image licence confirmed. Remote link only; image bytes are not saved in this repository.",
+      "test": {
+        "requested_url": "https://www.twoinchbrush.com/images/painting282.webp",
+        "final_url": "https://twoinchbrush.com/images/painting282.webp",
+        "http_status": 200,
+        "content_type": "image/webp",
+        "bytes": 21240,
+        "checked_at_utc": "2026-11-07T15:46:48+00:00",
+        "sha256": "d3aa6c9f407ce8de32cf94f9dbccd05e0b319f17686bf24036b8fc74aab67b49",
+        "hash_scope": "complete_response",
+        "status": "IMAGE_DECODED",
+        "format": "WEBP",
+        "width": 450,
+        "height": 337
+      }
+    },
+    {
+      "room": 2,
+      "episode": "S15E10",
+      "elements_title": "FOREST DAWN OVAL",
+      "palette_title": "Forest Down Oval",
+      "image_url": "https://www.twoinchbrush.com/images/painting107.webp",
+      "join_key": "season + episode; exactly one palette row for this element episode",
+      "title_note": "Titles preserved independently; Dawn/Down and singular/plural differences are not silently corrected.",
+      "attribution": "Bob Ross; image hosted by Two Inch Brush, linked by jwilber/Bob_Ross_Paintings.",
+      "rights": "Rights of their holders; no open image licence confirmed. Remote link only; image bytes are not saved in this repository.",
+      "test": {
+        "requested_url": "https://www.twoinchbrush.com/images/painting107.webp",
+        "final_url": "https://twoinchbrush.com/images/painting107.webp",
+        "http_status": 200,
+        "content_type": "image/webp",
+        "bytes": 18580,
+        "checked_at_utc": "2026-11-07T15:46:56+00:00",
+        "sha256": "3e733f0d49992e6a00ab44ca59dcf8581c365eba528860f309df495110e0ecc4",
+        "hash_scope": "complete_response",
+        "status": "IMAGE_DECODED",
+        "format": "WEBP",
+        "width": 450,
+        "height": 337
+      }
+    },
+    {
+      "room": 3,
+      "episode": "S01E07",
+      "elements_title": "AUTUMN MOUNTAINS",
+      "palette_title": "Autumn Mountain",
+      "image_url": "https://www.twoinchbrush.com/images/painting288.webp",
+      "join_key": "season + episode; exactly one palette row for this element episode",
+      "title_note": "Titles preserved independently; Dawn/Down and singular/plural differences are not silently corrected.",
+      "attribution": "Bob Ross; image hosted by Two Inch Brush, linked by jwilber/Bob_Ross_Paintings.",
+      "rights": "Rights of their holders; no open image licence confirmed. Remote link only; image bytes are not saved in this repository.",
+      "test": {
+        "requested_url": "https://www.twoinchbrush.com/images/painting288.webp",
+        "final_url": "https://twoinchbrush.com/images/painting288.webp",
+        "http_status": 200,
+        "content_type": "image/webp",
+        "bytes": 14848,
+        "checked_at_utc": "2026-11-07T15:47:04+00:00",
+        "sha256": "e99021cffce58f5f91f58be7176c69bd194ac952267779b460707fafa647a7bc",
+        "hash_scope": "complete_response",
+        "status": "IMAGE_DECODED",
+        "format": "WEBP",
+        "width": 450,
+        "height": 337
+      }
+    },
+    {
+      "room": 4,
+      "episode": "S09E02",
+      "elements_title": "SURF'S UP",
+      "palette_title": "Surf's Up",
+      "image_url": "https://www.twoinchbrush.com/images/painting178.webp",
+      "join_key": "season + episode; exactly one palette row for this element episode",
+      "title_note": "Titles preserved independently; Dawn/Down and singular/plural differences are not silently corrected.",
+      "attribution": "Bob Ross; image hosted by Two Inch Brush, linked by jwilber/Bob_Ross_Paintings.",
+      "rights": "Rights of their holders; no open image licence confirmed. Remote link only; image bytes are not saved in this repository.",
+      "test": {
+        "requested_url": "https://www.twoinchbrush.com/images/painting178.webp",
+        "final_url": "https://twoinchbrush.com/images/painting178.webp",
+        "http_status": 200,
+        "content_type": "image/webp",
+        "bytes": 14322,
+        "checked_at_utc": "2026-11-07T15:47:15+00:00",
+        "sha256": "02627f3f275c0cf836ab69c0b3cc915ed503e40b3f7cbfd733dc27228ef6714f",
+        "hash_scope": "complete_response",
+        "status": "IMAGE_DECODED",
+        "format": "WEBP",
+        "width": 450,
+        "height": 337
+      }
+    }
+  ]
+}

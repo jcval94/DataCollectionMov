@@ -46,3 +46,7 @@ Imagen incrustada desde el proveedor; su visualización depende de que esa URL s
 
 GET completo y decodificación de píxeles comprobados. SHA-256 completo: `d3aa6c9f407ce8de32cf94f9dbccd05e0b319f17686bf24036b8fc74aab67b49`. [Metadatos de origen](https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv).
 <!-- VISUAL_EXAMPLE:END -->
+
+## Continuación para el aula
+
+La [demo de clustering Cuatro salas para Bob Ross](../bob_ross_clustering/README.md) usa una edición fijada del mismo CSV de motivos, con otra pregunta: organizar una exposición y comprobar cómo las variables cambian los grupos. Incluye material del alumno, guía docente, presentación HTML, resultados calculados y tests. No reemplaza los conteos de coocurrencia de este piloto.

@@ -1,0 +1,30 @@
+name: Validar demo de clustering Bob Ross
+on:
+  push:
+    paths: ['examples/bob_ross_clustering/**', '.github/workflows/bob-ross-demo.yml']
+  pull_request:
+    paths: ['examples/bob_ross_clustering/**', '.github/workflows/bob-ross-demo.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-case:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            examples/bob_ross_clustering
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: examples/bob_ross_clustering/requirements.txt
+      - run: python -m pip install -r examples/bob_ross_clustering/requirements.txt
+      - run: python -m unittest discover -s examples/bob_ross_clustering/tests -v
+      - run: python examples/bob_ross_clustering/run.py --check
+      - name: Comprobar que el HTML corresponde a la referencia
+        run: |
+          python examples/bob_ross_clustering/build_demo.py
+          git diff --exit-code -- examples/bob_ross_clustering/demo.html

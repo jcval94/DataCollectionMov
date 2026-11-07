@@ -2,7 +2,7 @@
 
 Propuesta revisada el **2026-11-07**, America/Mexico_City. **78 fuentes · 234 preguntas · 17 temáticas.**
 
-El objetivo es descubrir relaciones inesperadas usando IA y comprobarlas con datos. Esta propuesta conecta cada fuente con preguntas específicas, skills reutilizables, herramientas/MCP y un arnés de evaluación. Las preguntas son hipótesis abiertas salvo el piloto retail Q1, ya ejecutado. Ver [avance de implementación](IMPLEMENTACION.md) y [resultado retail](../../examples/retail_discovery/README.md).
+El objetivo es descubrir relaciones inesperadas usando IA y comprobarlas con datos. Esta propuesta conecta cada fuente con preguntas específicas, skills reutilizables, herramientas/MCP y un arnés de evaluación. Las preguntas siguen abiertas salvo los alcances ejecutados del piloto retail Q1 y la [demo acotada de clustering de Bob Ross](../../examples/bob_ross_clustering/README.md), que no verifica estilos ni otra medida de distancia. Ver [avance de implementación](IMPLEMENTACION.md) y [resultado retail](../../examples/retail_discovery/README.md).
 
 **Interpretación de la sigla:** se toma «MCC» como **MCP**, Model Context Protocol. Si la intención era otra, sólo habría que ajustar la capa de herramientas.
 

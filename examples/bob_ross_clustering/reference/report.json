@@ -1,0 +1,434 @@
+{
+  "question": "¿Cómo organizar cuatro salas de Bob Ross por elementos representados y defender la decisión?",
+  "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "population": {
+    "raw_episodes": 403,
+    "excluded_guest": 22,
+    "included_episodes": 381,
+    "all_zero_profiles": 3,
+    "unique_profiles": 122
+  },
+  "model": {
+    "algorithm": "KMeans",
+    "k": 4,
+    "random_state": 42,
+    "n_init": 50,
+    "initialization": "k-means++",
+    "metric": "euclidean",
+    "objective": "within-cluster sum of squared Euclidean distances",
+    "scaling": "none; twelve binary motif families, equal weights",
+    "k_reason": "Four exhibition rooms: an external teaching/design constraint, not a claim of four natural styles."
+  },
+  "feature_mapping": {
+    "arboles": [
+      "TREE",
+      "TREES"
+    ],
+    "montanas": [
+      "MOUNTAIN",
+      "MOUNTAINS",
+      "SNOWY_MOUNTAIN"
+    ],
+    "lagos": [
+      "LAKE",
+      "LAKES"
+    ],
+    "rios": [
+      "RIVER"
+    ],
+    "mar": [
+      "OCEAN"
+    ],
+    "nieve": [
+      "SNOW",
+      "SNOWY_MOUNTAIN"
+    ],
+    "cascadas": [
+      "WATERFALL"
+    ],
+    "estructuras": [
+      "STRUCTURE"
+    ],
+    "nubes": [
+      "CLOUDS"
+    ],
+    "rocas": [
+      "ROCKS"
+    ],
+    "sol": [
+      "SUN"
+    ],
+    "flores": [
+      "FLOWERS"
+    ]
+  },
+  "rooms": [
+    {
+      "room": 1,
+      "size": 124,
+      "counts": {
+        "arboles": 124,
+        "montanas": 47,
+        "lagos": 2,
+        "rios": 123,
+        "mar": 0,
+        "nieve": 37,
+        "cascadas": 34,
+        "estructuras": 13,
+        "nubes": 49,
+        "rocas": 38,
+        "sol": 9,
+        "flores": 4
+      },
+      "frequencies": {
+        "arboles": 1.0,
+        "montanas": 0.37903226,
+        "lagos": 0.01612903,
+        "rios": 0.99193548,
+        "mar": 0.0,
+        "nieve": 0.2983871,
+        "cascadas": 0.27419355,
+        "estructuras": 0.10483871,
+        "nubes": 0.39516129,
+        "rocas": 0.30645161,
+        "sol": 0.07258065,
+        "flores": 0.03225806
+      },
+      "medoid": {
+        "episode": "S01E01",
+        "title": "A WALK IN THE WOODS",
+        "features": [
+          "arboles",
+          "rios"
+        ],
+        "distance_to_medoid": 0.0
+      },
+      "boundary_example": {
+        "episode": "S11E05",
+        "title": "TOWERING GLACIER",
+        "features": [
+          "arboles",
+          "montanas",
+          "rios",
+          "nieve",
+          "cascadas",
+          "nubes",
+          "rocas"
+        ],
+        "distance_to_medoid": 2.23606798
+      }
+    },
+    {
+      "room": 2,
+      "size": 118,
+      "counts": {
+        "arboles": 115,
+        "montanas": 4,
+        "lagos": 51,
+        "rios": 0,
+        "mar": 0,
+        "nieve": 35,
+        "cascadas": 0,
+        "estructuras": 54,
+        "nubes": 32,
+        "rocas": 9,
+        "sol": 16,
+        "flores": 3
+      },
+      "frequencies": {
+        "arboles": 0.97457627,
+        "montanas": 0.03389831,
+        "lagos": 0.43220339,
+        "rios": 0.0,
+        "mar": 0.0,
+        "nieve": 0.29661017,
+        "cascadas": 0.0,
+        "estructuras": 0.45762712,
+        "nubes": 0.27118644,
+        "rocas": 0.07627119,
+        "sol": 0.13559322,
+        "flores": 0.02542373
+      },
+      "medoid": {
+        "episode": "S15E10",
+        "title": "FOREST DAWN OVAL",
+        "features": [
+          "arboles"
+        ],
+        "distance_to_medoid": 0.0
+      },
+      "boundary_example": {
+        "episode": "S10E13",
+        "title": "LAKESIDE CABIN",
+        "features": [
+          "arboles",
+          "lagos",
+          "estructuras",
+          "nubes",
+          "rocas"
+        ],
+        "distance_to_medoid": 2.0
+      }
+    },
+    {
+      "room": 3,
+      "size": 100,
+      "counts": {
+        "arboles": 99,
+        "montanas": 96,
+        "lagos": 78,
+        "rios": 1,
+        "mar": 1,
+        "nieve": 74,
+        "cascadas": 4,
+        "estructuras": 16,
+        "nubes": 50,
+        "rocas": 8,
+        "sol": 3,
+        "flores": 1
+      },
+      "frequencies": {
+        "arboles": 0.99,
+        "montanas": 0.96,
+        "lagos": 0.78,
+        "rios": 0.01,
+        "mar": 0.01,
+        "nieve": 0.74,
+        "cascadas": 0.04,
+        "estructuras": 0.16,
+        "nubes": 0.5,
+        "rocas": 0.08,
+        "sol": 0.03,
+        "flores": 0.01
+      },
+      "medoid": {
+        "episode": "S01E07",
+        "title": "AUTUMN MOUNTAINS",
+        "features": [
+          "arboles",
+          "montanas",
+          "lagos",
+          "nieve"
+        ],
+        "distance_to_medoid": 0.0
+      },
+      "boundary_example": {
+        "episode": "S09E01",
+        "title": "WINTER EVERGREENS",
+        "features": [
+          "arboles",
+          "montanas",
+          "nieve",
+          "nubes",
+          "sol"
+        ],
+        "distance_to_medoid": 1.73205081
+      }
+    },
+    {
+      "room": 4,
+      "size": 39,
+      "counts": {
+        "arboles": 7,
+        "montanas": 3,
+        "lagos": 0,
+        "rios": 0,
+        "mar": 33,
+        "nieve": 0,
+        "cascadas": 0,
+        "estructuras": 1,
+        "nubes": 36,
+        "rocas": 22,
+        "sol": 10,
+        "flores": 0
+      },
+      "frequencies": {
+        "arboles": 0.17948718,
+        "montanas": 0.07692308,
+        "lagos": 0.0,
+        "rios": 0.0,
+        "mar": 0.84615385,
+        "nieve": 0.0,
+        "cascadas": 0.0,
+        "estructuras": 0.02564103,
+        "nubes": 0.92307692,
+        "rocas": 0.56410256,
+        "sol": 0.25641026,
+        "flores": 0.0
+      },
+      "medoid": {
+        "episode": "S09E02",
+        "title": "SURF'S UP",
+        "features": [
+          "mar",
+          "nubes",
+          "rocas"
+        ],
+        "distance_to_medoid": 0.0
+      },
+      "boundary_example": {
+        "episode": "S02E03",
+        "title": "EBONY SEA",
+        "features": [
+          "arboles",
+          "mar",
+          "nubes",
+          "sol"
+        ],
+        "distance_to_medoid": 1.73205081
+      }
+    }
+  ],
+  "diagnostics": {
+    "silhouette_k4": 0.22698154,
+    "inertia_k4": 431.7803795,
+    "k_grid": [
+      {
+        "k": 2,
+        "silhouette_euclidean": 0.18295521,
+        "smallest_room": 175,
+        "inertia": 582.94446602,
+        "sizes": [
+          206,
+          175
+        ]
+      },
+      {
+        "k": 3,
+        "silhouette_euclidean": 0.19633412,
+        "smallest_room": 107,
+        "inertia": 503.27853567,
+        "sizes": [
+          151,
+          123,
+          107
+        ]
+      },
+      {
+        "k": 4,
+        "silhouette_euclidean": 0.22698154,
+        "smallest_room": 39,
+        "inertia": 431.7803795,
+        "sizes": [
+          124,
+          118,
+          100,
+          39
+        ]
+      },
+      {
+        "k": 5,
+        "silhouette_euclidean": 0.24302946,
+        "smallest_room": 39,
+        "inertia": 385.33201868,
+        "sizes": [
+          117,
+          84,
+          77,
+          64,
+          39
+        ]
+      },
+      {
+        "k": 6,
+        "silhouette_euclidean": 0.26495034,
+        "smallest_room": 39,
+        "inertia": 349.9975057,
+        "sizes": [
+          84,
+          74,
+          73,
+          56,
+          55,
+          39
+        ]
+      },
+      {
+        "k": 7,
+        "silhouette_euclidean": 0.26645953,
+        "smallest_room": 36,
+        "inertia": 327.44111865,
+        "sizes": [
+          76,
+          66,
+          53,
+          51,
+          51,
+          48,
+          36
+        ]
+      },
+      {
+        "k": 8,
+        "silhouette_euclidean": 0.27074897,
+        "smallest_room": 28,
+        "inertia": 307.86979819,
+        "sizes": [
+          66,
+          53,
+          51,
+          51,
+          51,
+          45,
+          36,
+          28
+        ]
+      }
+    ]
+  },
+  "sensitivity": {
+    "seed_runs": [
+      {
+        "seed": 0,
+        "ari": 0.96952475
+      },
+      {
+        "seed": 1,
+        "ari": 0.96952475
+      },
+      {
+        "seed": 2,
+        "ari": 1.0
+      },
+      {
+        "seed": 3,
+        "ari": 0.96952475
+      },
+      {
+        "seed": 4,
+        "ari": 0.97788983
+      },
+      {
+        "seed": 5,
+        "ari": 0.97788983
+      },
+      {
+        "seed": 6,
+        "ari": 0.96952475
+      },
+      {
+        "seed": 7,
+        "ari": 0.99173017
+      },
+      {
+        "seed": 8,
+        "ari": 0.96952475
+      },
+      {
+        "seed": 9,
+        "ari": 0.96952475
+      }
+    ],
+    "min_seed_ari": 0.96952475,
+    "no_trees_ari": 0.75793659,
+    "with_guests_common_episodes_ari": 0.96952475
+  },
+  "bad_experiment": {
+    "definition": "Add 10 * (season * 13 + episode_number) as a thirteenth feature.",
+    "deliberately_constructed": true,
+    "ari_vs_main": 0.01022505,
+    "silhouette_in_contaminated_space": 0.57132349,
+    "warning": "Scores in different feature spaces are not a common quality scale. This high score can reward chronological grouping."
+  },
+  "interpretation": "Exploratory grouping of twelve human-coded motif families, not artistic intent, quality, popularity or a validated taxonomy of styles."
+}

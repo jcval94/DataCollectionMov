@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "DOM and scripted-state checks in jsdom; no browser pixels, mobile layout, native clipboard or native file download verified.",
+  "checks": 17,
+  "passed": [
+    "opening_hides_later_scenes",
+    "six_real_cards_and_twelve_bits",
+    "title_reveal_preserves_manual_allocation",
+    "clear_manual_allocation",
+    "distance_recalculates_from_real_profiles",
+    "copy_agent_prompt",
+    "four_reference_episodes_and_embedded_chart",
+    "centroid_denominator_changes",
+    "k_control_reads_computed_grid",
+    "trap_hidden_before_reveal",
+    "trap_reveal_and_numbers",
+    "empty_decision_has_validation_message",
+    "decision_download_dom_hook",
+    "arrow_keys_preserve_text_editing",
+    "arrow_navigation_works_outside_fields",
+    "restart_resets_all_exercise_state",
+    "no_embedded_javascript_exceptions"
+  ],
+  "html_sha256": "abdb5663877110539b882239f53801df9f90fa6060a13844ce51fb85d9508ad1",
+  "node_version": "v24.22.1",
+  "browser_visual_status": "NOT_TESTED_BY_THIS_DOM_HARNESS",
+  "checked_at_utc": "2026-11-07T16:04:59.673Z"
+}

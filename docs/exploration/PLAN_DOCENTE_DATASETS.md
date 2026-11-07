@@ -969,6 +969,8 @@ Los tiempos siguientes son relativos al inicio de cada cápsula, no al inicio de
 
 **Skills y arnés detrás del paquete:** BASE, INGEST, VISION; ejecución E4; controles H0, TAB, VISION. [Definiciones y situación de implementación](README.md). La asignación viene de la fuente; el docente activa sólo lo necesario para este objetivo, no todos los perfiles a la vez.
 
+**Actualización 2026-11-07 — demo de aula preparada:** [Cuatro salas para Bob Ross](../../examples/bob_ross_clustering/README.md) ofrece una alternativa con **motivos**, no paletas: K-means sobre 381 episodios sin invitados, doce familias binarias, datos locales y una prueba deliberadamente incorrecta con ID secuencial. Tiene versión de 60 minutos y demostración de 35 que cabe en esta cápsula. Incluye problema del alumno, guion docente, presentación y referencia calculada; ensayo con alumnos pendiente. No cambia los casos principales ni el calendario.
+
 <a id="c18"></a>
 ### C18 · Pronosticar la próxima ola
 
