@@ -1,6 +1,6 @@
 # De las fuentes a preguntas, herramientas y pruebas
 
-Propuesta revisada el **2026-11-04**, America/Mexico_City. **72 fuentes · 216 preguntas · 16 temáticas.**
+Propuesta revisada el **2026-11-07**, America/Mexico_City. **78 fuentes · 234 preguntas · 17 temáticas.**
 
 El objetivo es descubrir relaciones inesperadas usando IA y comprobarlas con datos. Esta propuesta conecta cada fuente con preguntas específicas, skills reutilizables, herramientas/MCP y un arnés de evaluación. Las preguntas son hipótesis abiertas salvo el piloto retail Q1, ya ejecutado. Ver [avance de implementación](IMPLEMENTACION.md) y [resultado retail](../../examples/retail_discovery/README.md).
 
@@ -448,6 +448,12 @@ En cada ficha, la fecha y estado de acceso proceden de las pruebas guardadas; no
 | [wellcome-medicina-antigua](#wellcome-medicina-antigua) | CORPUS, VISION | [E2](#execution-e2) | TEXT, VISION | `METADATA_SAMPLE` |
 | [bob-ross-elementos](#bob-ross-elementos) | GRAPH | [E1](#execution-e1) | TAB, GRAPH | `DATA_SAMPLE` |
 | [bob-ross-paletas](#bob-ross-paletas) | VISION | [E4](#execution-e4) | TAB, VISION | `DATA_SAMPLE` |
+| [pgnmentor-ajedrez](#pgnmentor-ajedrez) | CORPUS | [E1](#execution-e1) | TAB, TEXT | `DATA_SAMPLE` |
+| [statsbomb-futbol](#statsbomb-futbol) | GRAPH | [E1](#execution-e1) | TAB, GRAPH | `DATA_SAMPLE` |
+| [cross-tables-scrabble](#cross-tables-scrabble) | CORPUS | [E1](#execution-e1) | TAB, TEXT | `DATA_SAMPLE` |
+| [nba-elo](#nba-elo) | BASE/INGEST | [E1](#execution-e1) | TAB | `DATA_SAMPLE` |
+| [jolpica-f1](#jolpica-f1) | BASE/INGEST | [E1](#execution-e1) | TAB | `DATA_SAMPLE` |
+| [opendota-partidas](#opendota-partidas) | GRAPH | [E1](#execution-e1) | TAB, GRAPH | `DATA_SAMPLE` |
 
 ## Rifa del avión
 
@@ -2360,12 +2366,171 @@ En cada ficha, la fecha y estado de acceso proceden de las pruebas guardadas; no
 
 **Primer resultado revisable:** Corpus de pasajes con contexto, contraejemplos y genealogía de citas.
 
+
+## Deportes y juegos
+
+### pgnmentor-ajedrez
+
+**Ajedrez: grandes maestros, campeonatos y aperturas en PGN**. Unidad: Una partida; cabeceras PGN y secuencia de movimientos.
+
+**Skills:** [BASE](#skill-base), [INGEST](#skill-ingest), [CORPUS](#skill-corpus) · **Herramientas/MCP:** [REPO](#tool-repo), [FILES](#tool-files), [HTTP](#tool-http).
+
+**Arnés de ejecución:** [E1](#execution-e1) · **Perfiles de validación:** [H0](#harness-h0), [TAB](#harness-tab), [TEXT](#harness-text).
+
+**Acceso registrado:** `DATA_SAMPLE`. [Test y ejemplos](../../source_tests/README.md#pgnmentor-ajedrez). Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.
+
+**Preguntas:**
+
+1. ¿Cómo cambia el repertorio de aperturas de Carlsen a lo largo de su carrera al separar ritmo de juego y fuerza del rival cuando estén documentados? (`pgnmentor-ajedrez.q1`)
+2. ¿En qué aperturas cambia más la proporción de tablas al comparar torneos y décadas con cobertura suficiente? (`pgnmentor-ajedrez.q2`)
+3. ¿Qué posiciones de partidas de grandes maestros producen desacuerdos entre la explicación de una IA y una evaluación reproducible de Stockfish? (`pgnmentor-ajedrez.q3`)
+
+**Insumos pendientes o que deben fijarse:** PGN de eventos/jugadores seleccionados; control de tiempo y títulos de fuentes oficiales si se comparan estratos; python-chess y Stockfish sólo para análisis posterior.
+
+**Controles específicos:**
+
+- Validar movimientos con python-chess, normalizar resultados y fechas parciales y deduplicar partidas.
+- El archivo de un gran maestro puede incluir su infancia: no etiquetar toda su carrera ni todos sus rivales como GM; separar controles de tiempo y títulos por fecha.
+- Para evaluar explicaciones fijar versión de Stockfish, posición FEN, profundidad y perspectiva de la evaluación; el smoke test sólo lee notación.
+
+**Primer resultado revisable:** Repertorio de aperturas por periodo, con conteos, cobertura y partidas de ejemplo.
+
+### statsbomb-futbol
+
+**Fútbol soccer: partidos, eventos y xG de StatsBomb Open Data**. Unidad: Tablas separadas: competición–temporada, partido, evento y alineación.
+
+**Skills:** [BASE](#skill-base), [INGEST](#skill-ingest), [GRAPH](#skill-graph) · **Herramientas/MCP:** [REPO](#tool-repo), [FILES](#tool-files), [HTTP](#tool-http).
+
+**Arnés de ejecución:** [E1](#execution-e1) · **Perfiles de validación:** [H0](#harness-h0), [TAB](#harness-tab), [GRAPH](#harness-graph).
+
+**Acceso registrado:** `DATA_SAMPLE`. [Test y ejemplos](../../source_tests/README.md#statsbomb-futbol). Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.
+
+**Preguntas:**
+
+1. ¿Qué equipos generan más peligro por tiro aunque disparen menos, al comparar goles esperados y volumen en una misma competición? (`statsbomb-futbol.q1`)
+2. ¿Cómo cambia la red de pases de un equipo cuando va ganando o perdiendo, sin confundir el marcador con el tiempo de juego? (`statsbomb-futbol.q2`)
+3. ¿Qué estilos de ataque se repiten entre partidos y cuáles sólo parecen distintos por mezclar competiciones y temporadas? (`statsbomb-futbol.q3`)
+
+**Insumos pendientes o que deben fijarse:** Partidos y eventos completos de una misma competición/temporada, diccionario StatsBomb y, para redes, alineaciones.
+
+**Controles específicos:**
+
+- Mantener separados grano partido/evento; los autogoles y cambios de periodo exigen reglas explícitas para reconstruir marcador.
+- xG es una estimación del productor, no un gol observado; normalizar orientación y escala de coordenadas con su documentación.
+- Separar entrenamiento/evaluación por partido y tiempo para evitar que eventos del mismo encuentro aparezcan en ambos.
+
+**Primer resultado revisable:** Mapa de tiros y ranking volumen/calidad de ocasiones por equipo, con denominadores y cobertura.
+
+### cross-tables-scrabble
+
+**Scrabble: partidas anotadas y turnos en GCG**. Unidad: Una partida GCG; turnos con jugador, atril/jugada, puntos y total, más comentarios opcionales.
+
+**Skills:** [BASE](#skill-base), [INGEST](#skill-ingest), [CORPUS](#skill-corpus) · **Herramientas/MCP:** [REPO](#tool-repo), [FILES](#tool-files), [HTTP](#tool-http).
+
+**Arnés de ejecución:** [E1](#execution-e1) · **Perfiles de validación:** [H0](#harness-h0), [TAB](#harness-tab), [TEXT](#harness-text).
+
+**Acceso registrado:** `DATA_SAMPLE`. [Test y ejemplos](../../source_tests/README.md#cross-tables-scrabble). Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.
+
+**Preguntas:**
+
+1. ¿Cuándo conviene sacrificar puntos inmediatos para conservar un mejor atril, según simulaciones de alternativas con el mismo tablero y bolsa? (`cross-tables-scrabble.q1`)
+2. ¿Qué proporción de la diferencia de puntos se concentra en jugadas que usan las siete fichas, frente a otras jugadas, en partidas comparables? (`cross-tables-scrabble.q2`)
+3. ¿Los comentarios humanos sobre jugadas arriesgadas concuerdan con la pérdida de equidad estimada por un simulador con reglas fijadas? (`cross-tables-scrabble.q3`)
+
+**Insumos pendientes o que deben fijarse:** Muestra autorizada de GCG, reglas/lexicón con acceso permitido y un simulador como Quackle para la pregunta de decisiones.
+
+**Controles específicos:**
+
+- Reconstruir tablero, atril, bolsa, comodines, pases, cambios, challenges y ajustes finales antes de simular alternativas.
+- Fijar idioma, edición del lexicón y reglas; una palabra de una partida en inglés no prueba validez en español.
+- Archivo comunitario seleccionado: no generalizar sus frecuencias a todos los jugadores ni asumir que comentarios son etiquetas objetivas.
+
+**Primer resultado revisable:** Desglose de puntos por tipo de turno y una partida reconstruida para contrastar alternativas.
+
+### nba-elo
+
+**Básquetbol: historia NBA/ABA y pronósticos Elo**. Unidad: Equipo–partido: normalmente dos filas espejo por encuentro.
+
+**Skills:** [BASE](#skill-base), [INGEST](#skill-ingest) · **Herramientas/MCP:** [REPO](#tool-repo), [FILES](#tool-files), [HTTP](#tool-http).
+
+**Arnés de ejecución:** [E1](#execution-e1) · **Perfiles de validación:** [H0](#harness-h0), [TAB](#harness-tab).
+
+**Acceso registrado:** `DATA_SAMPLE`. [Test y ejemplos](../../source_tests/README.md#nba-elo). Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.
+
+**Preguntas:**
+
+1. ¿Las probabilidades Elo están bien calibradas en playoffs y temporada regular al usar sólo información anterior al encuentro? (`nba-elo.q1`)
+2. ¿Cuánto cambia la ventaja de jugar en casa por época después de ajustar por diferencia de Elo antes del partido? (`nba-elo.q2`)
+3. ¿Qué franquicias muestran más continuidad competitiva al agrupar cambios de nombre con fran_id en vez de team_id? (`nba-elo.q3`)
+
+**Insumos pendientes o que deben fijarse:** CSV completo y diccionario de variables; partición temporal y definición explícita de liga, localía y unidad de evaluación.
+
+**Controles específicos:**
+
+- Evitar contar dos veces un encuentro: contrastar filas espejo, _iscopy y consistencia pts/opp_pts.
+- elo_n y resultado son posteriores al partido: no usarlos para predecirlo; validar por orden temporal.
+- Separar NBA/ABA, temporada/playoffs y franquicia/equipo; comprobar límites históricos del archivo completo.
+
+**Primer resultado revisable:** Curva de calibración de forecast por época y fase, con un registro por encuentro.
+
+### jolpica-f1
+
+**Fórmula 1: carreras, clasificación y resultados vía Jolpica**. Unidad: Piloto–carrera en results; tablas separadas para clasificación, vueltas y paradas.
+
+**Skills:** [BASE](#skill-base), [INGEST](#skill-ingest) · **Herramientas/MCP:** [REPO](#tool-repo), [FILES](#tool-files), [HTTP](#tool-http).
+
+**Arnés de ejecución:** [E1](#execution-e1) · **Perfiles de validación:** [H0](#harness-h0), [TAB](#harness-tab).
+
+**Acceso registrado:** `DATA_SAMPLE`. [Test y ejemplos](../../source_tests/README.md#jolpica-f1). Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.
+
+**Preguntas:**
+
+1. ¿En qué circuitos cambia más la relación entre posición de salida y llegada al separar abandonos y temporadas? (`jolpica-f1.q1`)
+2. ¿Cómo cambia la comparación entre compañeros de escudería si medimos posiciones ganadas en lugar de puntos? (`jolpica-f1.q2`)
+3. ¿Qué paradas en boxes parecen asociarse con ganar posiciones al controlar vuelta de entrada y posición previa, sin atribuirles causalidad? (`jolpica-f1.q3`)
+
+**Insumos pendientes o que deben fijarse:** Temporadas completas paginadas, clasificación y resultados; vueltas/paradas para estrategia. No se requiere cuenta en las peticiones de muestra.
+
+**Controles específicos:**
+
+- Paginar limit/offset y contrastar MRData.total; dos resultados no representan toda la parrilla.
+- No confundir status de abandono con una posición de llegada comparable; registrar clasificados, vueltas completadas y reglas de puntos por año.
+- Para analizar boxes se necesitan endpoints de laps/pitstops; results no incluye neumáticos, safety car ni todo el contexto causal.
+
+**Primer resultado revisable:** Salida frente a llegada por circuito, con abandonos separados y cobertura por temporada.
+
+### opendota-partidas
+
+**Videojuegos: partidas competitivas de Dota 2 en OpenDota**. Unidad: Una partida profesional; detalles de jugadores, héroes y picks/bans requieren endpoints adicionales.
+
+**Skills:** [BASE](#skill-base), [INGEST](#skill-ingest), [GRAPH](#skill-graph) · **Herramientas/MCP:** [REPO](#tool-repo), [FILES](#tool-files), [HTTP](#tool-http).
+
+**Arnés de ejecución:** [E1](#execution-e1) · **Perfiles de validación:** [H0](#harness-h0), [TAB](#harness-tab), [GRAPH](#harness-graph).
+
+**Acceso registrado:** `DATA_SAMPLE`. [Test y ejemplos](../../source_tests/README.md#opendota-partidas). Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.
+
+**Preguntas:**
+
+1. ¿La ventaja del bando Radiant cambia según torneo y parche al comparar equipos de fuerza semejante? (`opendota-partidas.q1`)
+2. ¿Qué combinaciones de héroes se asocian con victorias después de controlar parche y nivel de los equipos, usando detalles de draft? (`opendota-partidas.q2`)
+3. ¿Qué tan bien predice la diferencia de oro al minuto diez el desenlace en partidas futuras, frente a un pronóstico basado sólo en fuerza previa? (`opendota-partidas.q3`)
+
+**Insumos pendientes o que deben fijarse:** Capturas reproducibles de proMatches; detalles /matches/{match_id}, metadatos de parches y métricas de fuerza calculadas sólo con el pasado.
+
+**Controles específicos:**
+
+- Snapshot y paginación con less_than_match_id: la ventana reciente cambia; deduplicar match_id y convertir start_time desde Unix UTC.
+- proMatches no contiene drafts, parche ni series de oro: adquirir /matches/{match_id} y verificar presencia de campos antes de esas preguntas.
+- Separar evaluación por fecha/parche/equipo y excluir marcador final o radiant_win como predictores; equipos y torneos pueden cambiar de nombre.
+
+**Primer resultado revisable:** Tasa Radiant por torneo y periodo con intervalos, conteos y porcentaje de datos de parche disponibles.
+
 ## Validación estructural de esta propuesta
 
 | Comprobación | Resultado |
 | --- | --- |
-| Cobertura exacta del catálogo, sin IDs repetidos | PASS — 72 fuentes |
-| Tres preguntas como mínimo por fuente; IDs/textos únicos | PASS — 216 preguntas |
+| Cobertura exacta del catálogo, sin IDs repetidos | PASS — 78 fuentes |
+| Tres preguntas como mínimo por fuente; IDs/textos únicos | PASS — 234 preguntas |
 | Referencias a skills, herramientas y perfiles existentes en el plan | PASS |
 | Dependencias de otras fuentes pertenecen al catálogo | PASS |
 | Todas las fichas conservan estado propuesto o parcial, insumos, controles y salida | PASS |

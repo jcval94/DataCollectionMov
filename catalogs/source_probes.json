@@ -1155,6 +1155,160 @@
         }
       ],
       "note": "Ampliación para descubrimiento: los ejemplos verifican acceso/formato; la pregunta de investigación sigue siendo una hipótesis salvo resultado calculado explícito."
+    },
+    {
+      "id": "pgnmentor-ajedrez",
+      "name": "Ajedrez: grandes maestros, campeonatos y aperturas en PGN",
+      "checks": [
+        {
+          "url": "https://www.pgnmentor.com/events/WorldChamp2021.pgn",
+          "kind": "pgn"
+        },
+        {
+          "url": "https://www.pgnmentor.com/players/Carlsen.zip",
+          "kind": "pgn_zip"
+        }
+      ],
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados."
+    },
+    {
+      "id": "statsbomb-futbol",
+      "name": "Fútbol soccer: partidos, eventos y xG de StatsBomb Open Data",
+      "checks": [
+        {
+          "url": "https://raw.githubusercontent.com/hudl/open-data/master/data/matches/43/106.json",
+          "kind": "json",
+          "fields": [
+            "match_id",
+            "match_date",
+            "home_team.home_team_name",
+            "away_team.away_team_name",
+            "home_score",
+            "away_score"
+          ],
+          "required": [
+            "match_id",
+            "match_date",
+            "home_team",
+            "away_team"
+          ]
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hudl/open-data/master/data/events/3857276.json",
+          "kind": "json",
+          "fields": [
+            "id",
+            "index",
+            "period",
+            "timestamp",
+            "type.name",
+            "team.name",
+            "tactics.formation"
+          ],
+          "required": [
+            "id",
+            "index",
+            "type"
+          ]
+        }
+      ],
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados."
+    },
+    {
+      "id": "cross-tables-scrabble",
+      "name": "Scrabble: partidas anotadas y turnos en GCG",
+      "checks": [
+        {
+          "url": "https://www.cross-tables.com/annotated/selfgcg/566/anno56686.gcg",
+          "kind": "gcg"
+        }
+      ],
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados."
+    },
+    {
+      "id": "nba-elo",
+      "name": "Básquetbol: historia NBA/ABA y pronósticos Elo",
+      "checks": [
+        {
+          "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+          "kind": "csv",
+          "delimiter": ",",
+          "fields": [
+            "game_id",
+            "date_game",
+            "team_id",
+            "opp_id",
+            "pts",
+            "opp_pts",
+            "elo_i",
+            "forecast",
+            "_iscopy"
+          ],
+          "required": [
+            "game_id",
+            "date_game",
+            "team_id",
+            "elo_i",
+            "forecast",
+            "_iscopy"
+          ]
+        }
+      ],
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados."
+    },
+    {
+      "id": "jolpica-f1",
+      "name": "Fórmula 1: carreras, clasificación y resultados vía Jolpica",
+      "checks": [
+        {
+          "url": "https://api.jolpi.ca/ergast/f1/2024/1/results.json?limit=2",
+          "kind": "json",
+          "path": "MRData.RaceTable.Races",
+          "fields": [
+            "season",
+            "round",
+            "raceName",
+            "date",
+            "Circuit.circuitName",
+            "Results"
+          ],
+          "required": [
+            "season",
+            "round",
+            "raceName",
+            "Results"
+          ]
+        }
+      ],
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados."
+    },
+    {
+      "id": "opendota-partidas",
+      "name": "Videojuegos: partidas competitivas de Dota 2 en OpenDota",
+      "checks": [
+        {
+          "url": "https://api.opendota.com/api/proMatches",
+          "kind": "json",
+          "fields": [
+            "match_id",
+            "start_time",
+            "duration",
+            "radiant_name",
+            "dire_name",
+            "radiant_win",
+            "radiant_score",
+            "dire_score",
+            "league_name"
+          ],
+          "required": [
+            "match_id",
+            "start_time",
+            "duration",
+            "radiant_win"
+          ]
+        }
+      ],
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados."
     }
   ]
 }

@@ -2,11 +2,11 @@
 
 Revisión: **4 de noviembre de 2026**, zona `America/Mexico_City`. Repositorio: `jcval94/DataCollectionMov`.
 
-72 fichas de datasets, productos y fuentes documentales reales. La selección busca preguntas sorprendentes y verificables sobre vida cotidiana, historia, cultura, ciencia, educación, comercio y territorio. Incluye fuentes del sorteo alusivo al avión presidencial.
+78 fichas de datasets, productos y fuentes documentales reales. La selección busca preguntas sorprendentes y verificables sobre vida cotidiana, historia, cultura, ciencia, educación, comercio y territorio. Incluye fuentes del sorteo alusivo al avión presidencial.
 
 **Alcance:** catálogo con enlaces y propuestas; las nuevas fuentes todavía no están ingeridas. Sólo se identifican como existentes las integraciones comprobadas en el código y el árbol del repo. La ampliación incorpora pruebas públicas acotadas, sin credenciales personales; no es una ingesta masiva ni una evaluación de la salud de los workflows.
 
-- [Versión estructurada JSON](../catalogs/datasets_reales_mexico.json): mismos 72 registros, fuentes, acceso, periodicidad, variables, llaves de cruce y limitaciones.
+- [Versión estructurada JSON](../catalogs/datasets_reales_mexico.json): mismos 78 registros, fuentes, acceso, periodicidad, variables, llaves de cruce y limitaciones.
 - [Tablas operativas existentes](tablas.md) y [configuración de recolección](../configs/tables.yml): describen las extracciones ya implementadas; este catálogo no las modifica.
 
 ## Prioridades del núcleo territorial original
@@ -49,6 +49,8 @@ La [guía de descubrimientos](GUIA_DESCUBRIMIENTOS_IA.md) enlaza todas las temá
 
 El [piloto de Bob Ross](../examples/bob_ross_discovery/README.md) ya contiene un hallazgo descriptivo calculado. El caso de sueño histórico se presenta como investigación abierta con fuentes y contraargumentos; no se da por probado antes de leer el corpus.
 
+
+Ampliación de **7 de noviembre de 2026**: seis fuentes de [deportes y juegos](#deportes-y-juegos), con [tests y muestras reales](../source_tests/by_topic/deportes-y-juegos/README.md) y tres preguntas por fuente. Las fechas de revisión anteriores se conservan.
 
 ## Índice
 
@@ -126,6 +128,12 @@ El [piloto de Bob Ross](../examples/bob_ross_discovery/README.md) ya contiene un
 | [wellcome-medicina-antigua](#wellcome-medicina-antigua) | Libros, archivos e ilustraciones de medicina histórica | mixto | P2 / Alta | No asumir |
 | [bob-ross-elementos](#bob-ross-elementos) | Elementos que aparecen en los cuadros de Bob Ross | estructurado | P2 / Baja | No asumir |
 | [bob-ross-paletas](#bob-ross-paletas) | Cuadros, paletas y episodios de Bob Ross | mixto | P2 / Media | No asumir |
+| [pgnmentor-ajedrez](#pgnmentor-ajedrez) | Ajedrez: grandes maestros, campeonatos y aperturas en PGN | mixto | P2 / Media | No asumir |
+| [statsbomb-futbol](#statsbomb-futbol) | Fútbol soccer: partidos, eventos y xG de StatsBomb Open Data | estructurado | P2 / Media | No asumir |
+| [cross-tables-scrabble](#cross-tables-scrabble) | Scrabble: partidas anotadas y turnos en GCG | mixto | P2 / Media | No asumir |
+| [nba-elo](#nba-elo) | Básquetbol: historia NBA/ABA y pronósticos Elo | estructurado | P2 / Media | No asumir |
+| [jolpica-f1](#jolpica-f1) | Fórmula 1: carreras, clasificación y resultados vía Jolpica | estructurado | P2 / Media | No asumir |
+| [opendota-partidas](#opendota-partidas) | Videojuegos: partidas competitivas de Dota 2 en OpenDota | estructurado | P2 / Media | No asumir |
 
 ## Reglas para combinar los datos
 
@@ -1790,6 +1798,211 @@ Esquema **propuesto**, todavía sin registros extraídos:
 **Fuentes y antecedente de verificación:**
 
 - [Fuente 1](https://github.com/jwilber/Bob_Ross_Paintings) — `primary_documentation_located`. Fuente del productor localizada; acceso y ejemplos medidos en la prueba de esta ampliación. [Recurso localizado](https://raw.githubusercontent.com/jwilber/Bob_Ross_Paintings/master/data/bob_ross_paintings.csv).
+
+## Deportes y juegos
+
+Seis fuentes añadidas el **2026-11-07**. Las consultas de muestra fueron públicas y sin credenciales. Los análisis siguen propuestos; los tests verifican acceso y formato. [README de tests y ejemplos](../source_tests/by_topic/deportes-y-juegos/README.md) · [Corrida acotada](../source_tests/sports_2026_11_07/README.md) · [Preguntas, skills, herramientas y arneses](exploration/README.md#deportes-y-juegos).
+
+### pgnmentor-ajedrez
+
+**Ajedrez: grandes maestros, campeonatos y aperturas en PGN** — PGN Mentor / 64 Squares (recopilación).
+
+- **Fuente:** [PGN Mentor / 64 Squares (recopilación)](https://www.pgnmentor.com/files.html) · [Recurso probado](https://www.pgnmentor.com/events/WorldChamp2021.pgn).
+- **Archivo de Magnus Carlsen:** [Recurso adicional](https://www.pgnmentor.com/players/Carlsen.zip).
+- **Contenido:** mixto; formatos: PGN, ZIP.
+- **Cobertura:** Partidas internacionales seleccionadas por jugador, apertura y torneo; muestra del mundial Carlsen–Nepomniachtchi 2021 y del archivo Carlsen.
+- **Unidad:** Una partida; cabeceras PGN y secuencia de movimientos.
+- **Periodo / actualización:** Archivo histórico; mundial 2021 como muestra fija. Según actualización del recopilador.
+- **Acceso:** público en las muestras; sin activar recolección automática. Prioridad P2; esfuerzo medio; integración `not_ingested`.
+- **Variables:** Event; Site; Date; Round; White; Black; Result; WhiteElo; BlackElo; ECO; movetext.
+- **Llaves:** Evento + fecha + ronda + blancas + negras; comprobar duplicados y transposiciones.
+- **Uso y condiciones:** Descargas gratuitas anunciadas por PGN Mentor; no se comprobó una licencia abierta general. Atribuir al recopilador; revisar condiciones antes de redistribuir el corpus o anotaciones.
+- **Test:** [`DATA_SAMPLE`, con ejemplos](../source_tests/README.md#pgnmentor-ajedrez).
+
+**Tres preguntas para investigar:**
+
+1. ¿Cómo cambia el repertorio de aperturas de Carlsen a lo largo de su carrera al separar ritmo de juego y fuerza del rival cuando estén documentados?
+2. ¿En qué aperturas cambia más la proporción de tablas al comparar torneos y décadas con cobertura suficiente?
+3. ¿Qué posiciones de partidas de grandes maestros producen desacuerdos entre la explicación de una IA y una evaluación reproducible de Stockfish?
+
+**Papel de la IA:** Explicar decisiones con movimientos citados y contrastar afirmaciones con un motor de ajedrez fijado por versión y profundidad; la explicación debe distinguir cálculo de narración.
+
+**Comprobaciones antes de concluir:**
+
+- Validar movimientos con python-chess, normalizar resultados y fechas parciales y deduplicar partidas.
+- El archivo de un gran maestro puede incluir su infancia: no etiquetar toda su carrera ni todos sus rivales como GM; separar controles de tiempo y títulos por fecha.
+- Para evaluar explicaciones fijar versión de Stockfish, posición FEN, profundidad y perspectiva de la evaluación; el smoke test sólo lee notación.
+
+**Primer resultado propuesto:** Repertorio de aperturas por periodo, con conteos, cobertura y partidas de ejemplo.
+
+**Estado:** `hypothesis_not_tested`.
+
+### statsbomb-futbol
+
+**Fútbol soccer: partidos, eventos y xG de StatsBomb Open Data** — Hudl StatsBomb.
+
+- **Fuente:** [Hudl StatsBomb](https://github.com/hudl/open-data) · [Recurso probado](https://raw.githubusercontent.com/hudl/open-data/master/data/matches/43/106.json).
+- **Eventos de Canadá–Marruecos, Mundial 2022:** [Recurso adicional](https://raw.githubusercontent.com/hudl/open-data/master/data/events/3857276.json).
+- **Contenido:** estructurado; formatos: JSON.
+- **Cobertura:** Selección de competiciones y temporadas masculinas y femeninas; no equivale a todo el fútbol mundial.
+- **Unidad:** Tablas separadas: competición–temporada, partido, evento y alineación.
+- **Periodo / actualización:** Según competición/temporada; muestra del Mundial masculino 2022. Según publicación del productor.
+- **Acceso:** público en las muestras; sin activar recolección automática. Prioridad P2; esfuerzo medio; integración `not_ingested`.
+- **Variables:** match_id; match_date; home_team; away_team; home_score; away_score; event.id; type; location; shot.statsbomb_xg.
+- **Llaves:** competition_id + season_id para partidos; match_id para eventos/alineaciones; event.id como llave de evento.
+- **Uso y condiciones:** Aplican los términos de StatsBomb Open Data y LICENSE.pdf; al publicar análisis se exige atribución StatsBomb y su logo. No asumir licencia genérica CC ni derechos ilimitados de uso comercial.
+- **Test:** [`DATA_SAMPLE`, con ejemplos](../source_tests/README.md#statsbomb-futbol).
+
+**Tres preguntas para investigar:**
+
+1. ¿Qué equipos generan más peligro por tiro aunque disparen menos, al comparar goles esperados y volumen en una misma competición?
+2. ¿Cómo cambia la red de pases de un equipo cuando va ganando o perdiendo, sin confundir el marcador con el tiempo de juego?
+3. ¿Qué estilos de ataque se repiten entre partidos y cuáles sólo parecen distintos por mezclar competiciones y temporadas?
+
+**Papel de la IA:** Clasificar secuencias ofensivas, describir redes de pase y proponer patrones; verificar cada relato contra eventos fechados y métricas recalculadas.
+
+**Comprobaciones antes de concluir:**
+
+- Mantener separados grano partido/evento; los autogoles y cambios de periodo exigen reglas explícitas para reconstruir marcador.
+- xG es una estimación del productor, no un gol observado; normalizar orientación y escala de coordenadas con su documentación.
+- Separar entrenamiento/evaluación por partido y tiempo para evitar que eventos del mismo encuentro aparezcan en ambos.
+
+**Primer resultado propuesto:** Mapa de tiros y ranking volumen/calidad de ocasiones por equipo, con denominadores y cobertura.
+
+**Estado:** `hypothesis_not_tested`.
+
+### cross-tables-scrabble
+
+**Scrabble: partidas anotadas y turnos en GCG** — cross-tables.com y colaboradores de partidas.
+
+- **Fuente:** [cross-tables.com y colaboradores de partidas](https://www.cross-tables.com/annotated.php?u=56686) · [Recurso probado](https://www.cross-tables.com/annotated/selfgcg/566/anno56686.gcg).
+- **Contenido:** mixto; formatos: GCG, HTML.
+- **Cobertura:** Partidas compartidas por jugadores, principalmente del circuito competitivo en inglés; muestra Samuel Kaplan–Joey Krafchick.
+- **Unidad:** Una partida GCG; turnos con jugador, atril/jugada, puntos y total, más comentarios opcionales.
+- **Periodo / actualización:** Archivo de partidas publicadas; no asumir fecha de juego si falta en GCG. Aportaciones de la comunidad.
+- **Acceso:** público en las muestras; sin activar recolección automática. Prioridad P2; esfuerzo medio; integración `not_ingested`.
+- **Variables:** player1; player2; jugador; atril; coordenada; jugada; puntos del turno; total acumulado; comentarios.
+- **Llaves:** ID público de partida + índice de turno; conservar orden y correcciones/challenges.
+- **Uso y condiciones:** No se confirmó licencia abierta del corpus ni de los comentarios. Enlazar y atribuir; no redistribuir diccionarios propietarios ni anotaciones completas sin autorización.
+- **Test:** [`DATA_SAMPLE`, con ejemplos](../source_tests/README.md#cross-tables-scrabble).
+
+**Tres preguntas para investigar:**
+
+1. ¿Cuándo conviene sacrificar puntos inmediatos para conservar un mejor atril, según simulaciones de alternativas con el mismo tablero y bolsa?
+2. ¿Qué proporción de la diferencia de puntos se concentra en jugadas que usan las siete fichas, frente a otras jugadas, en partidas comparables?
+3. ¿Los comentarios humanos sobre jugadas arriesgadas concuerdan con la pérdida de equidad estimada por un simulador con reglas fijadas?
+
+**Papel de la IA:** Relacionar comentarios con jugadas concretas y explicar alternativas calculadas; separar opinión del anotador, puntos observados y valor esperado simulado.
+
+**Comprobaciones antes de concluir:**
+
+- Reconstruir tablero, atril, bolsa, comodines, pases, cambios, challenges y ajustes finales antes de simular alternativas.
+- Fijar idioma, edición del lexicón y reglas; una palabra de una partida en inglés no prueba validez en español.
+- Archivo comunitario seleccionado: no generalizar sus frecuencias a todos los jugadores ni asumir que comentarios son etiquetas objetivas.
+
+**Primer resultado propuesto:** Desglose de puntos por tipo de turno y una partida reconstruida para contrastar alternativas.
+
+**Estado:** `hypothesis_not_tested`.
+
+### nba-elo
+
+**Básquetbol: historia NBA/ABA y pronósticos Elo** — FiveThirtyEight, con resultados de Basketball-Reference.
+
+- **Fuente:** [FiveThirtyEight, con resultados de Basketball-Reference](https://github.com/fivethirtyeight/data/tree/master/nba-elo) · [Recurso probado](https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv).
+- **Contenido:** estructurado; formatos: CSV.
+- **Cobertura:** Equipos y encuentros incluidos en el archivo histórico NBA/ABA de FiveThirtyEight; incluye franquicias renombradas.
+- **Unidad:** Equipo–partido: normalmente dos filas espejo por encuentro.
+- **Periodo / actualización:** Archivo histórico, con primeras filas de 1946; verificar min/max al descargar completo. Archivo histórico; no asumir actualización en vivo.
+- **Acceso:** público en las muestras; sin activar recolección automática. Prioridad P2; esfuerzo medio; integración `not_ingested`.
+- **Variables:** game_id; date_game; year_id; lg_id; team_id; fran_id; pts; opp_pts; elo_i; elo_n; forecast; game_location; is_playoffs; _iscopy.
+- **Llaves:** game_id + team_id por fila; game_id una vez por encuentro si se deduplica explícitamente.
+- **Uso y condiciones:** Repositorio de datos FiveThirtyEight bajo CC BY 4.0; atribuir y conservar referencia al proveedor original de resultados. Ver LICENSE del repositorio.
+- **Test:** [`DATA_SAMPLE`, con ejemplos](../source_tests/README.md#nba-elo).
+
+**Tres preguntas para investigar:**
+
+1. ¿Las probabilidades Elo están bien calibradas en playoffs y temporada regular al usar sólo información anterior al encuentro?
+2. ¿Cuánto cambia la ventaja de jugar en casa por época después de ajustar por diferencia de Elo antes del partido?
+3. ¿Qué franquicias muestran más continuidad competitiva al agrupar cambios de nombre con fran_id en vez de team_id?
+
+**Papel de la IA:** Proponer periodos y anomalías para revisar; contrastar las narraciones con calibración, errores y fechas del conjunto de prueba.
+
+**Comprobaciones antes de concluir:**
+
+- Evitar contar dos veces un encuentro: contrastar filas espejo, _iscopy y consistencia pts/opp_pts.
+- elo_n y resultado son posteriores al partido: no usarlos para predecirlo; validar por orden temporal.
+- Separar NBA/ABA, temporada/playoffs y franquicia/equipo; comprobar límites históricos del archivo completo.
+
+**Primer resultado propuesto:** Curva de calibración de forecast por época y fase, con un registro por encuentro.
+
+**Estado:** `hypothesis_not_tested`.
+
+### jolpica-f1
+
+**Fórmula 1: carreras, clasificación y resultados vía Jolpica** — Proyecto comunitario Jolpica F1, sucesor de Ergast.
+
+- **Fuente:** [Proyecto comunitario Jolpica F1, sucesor de Ergast](https://github.com/jolpica/jolpica-f1/blob/main/docs/README.md) · [Recurso probado](https://api.jolpi.ca/ergast/f1/2024/1/results.json?limit=2).
+- **Contenido:** estructurado; formatos: JSON, XML.
+- **Cobertura:** Resultados históricos de Fórmula 1 disponibles en la API; la muestra es Bahréin 2024.
+- **Unidad:** Piloto–carrera en results; tablas separadas para clasificación, vueltas y paradas.
+- **Periodo / actualización:** Historia F1 según endpoint; muestra fija temporada 2024, ronda 1. Actualización del proyecto y correcciones históricas.
+- **Acceso:** público en las muestras; sin activar recolección automática. Prioridad P2; esfuerzo medio; integración `not_ingested`.
+- **Variables:** season; round; raceName; Driver.driverId; Constructor.constructorId; grid; position; points; laps; status; Time.
+- **Llaves:** season + round + driverId; distinguir carrera principal, sprint, clasificación y vuelta.
+- **Uso y condiciones:** Revisar condiciones de uso de datos del servicio y atribuir Jolpica/Ergast. Apache-2.0 del código del servidor no demuestra la licencia de cada dato. Respetar rate_limits.md y usar User-Agent identificable.
+- **Test:** [`DATA_SAMPLE`, con ejemplos](../source_tests/README.md#jolpica-f1).
+
+**Tres preguntas para investigar:**
+
+1. ¿En qué circuitos cambia más la relación entre posición de salida y llegada al separar abandonos y temporadas?
+2. ¿Cómo cambia la comparación entre compañeros de escudería si medimos posiciones ganadas en lugar de puntos?
+3. ¿Qué paradas en boxes parecen asociarse con ganar posiciones al controlar vuelta de entrada y posición previa, sin atribuirles causalidad?
+
+**Papel de la IA:** Proponer comparaciones entre circuitos y resumir carreras con resultados verificables; distinguir estrategia observada de explicaciones que requieren clima o banderas.
+
+**Comprobaciones antes de concluir:**
+
+- Paginar limit/offset y contrastar MRData.total; dos resultados no representan toda la parrilla.
+- No confundir status de abandono con una posición de llegada comparable; registrar clasificados, vueltas completadas y reglas de puntos por año.
+- Para analizar boxes se necesitan endpoints de laps/pitstops; results no incluye neumáticos, safety car ni todo el contexto causal.
+
+**Primer resultado propuesto:** Salida frente a llegada por circuito, con abandonos separados y cobertura por temporada.
+
+**Estado:** `hypothesis_not_tested`.
+
+### opendota-partidas
+
+**Videojuegos: partidas competitivas de Dota 2 en OpenDota** — The OpenDota Project; resultados procedentes de Valve y replays.
+
+- **Fuente:** [The OpenDota Project; resultados procedentes de Valve y replays](https://docs.opendota.com/) · [Recurso probado](https://api.opendota.com/api/proMatches).
+- **Documentación del productor:** [Recurso adicional](https://github.com/odota/core/blob/master/README.md).
+- **Contenido:** estructurado; formatos: JSON.
+- **Cobertura:** Partidas profesionales/competitivas incluidas por OpenDota; endpoint reciente, no censo de todos los jugadores.
+- **Unidad:** Una partida profesional; detalles de jugadores, héroes y picks/bans requieren endpoints adicionales.
+- **Periodo / actualización:** Ventana reciente móvil de proMatches, fechada en cada captura. Según disponibilidad y procesamiento de OpenDota.
+- **Acceso:** público en las muestras; sin activar recolección automática. Prioridad P2; esfuerzo medio; integración `not_ingested`.
+- **Variables:** match_id; start_time; duration; radiant_team_id; dire_team_id; radiant_name; dire_name; radiant_win; radiant_score; dire_score; leagueid.
+- **Llaves:** match_id; team_id y leagueid para cruces, no el nombre visible del equipo.
+- **Uso y condiciones:** API pública comunitaria: respetar límites/cuotas publicados y condiciones OpenDota/Valve. Licencia del código de OpenDota no concede por sí sola derechos sobre todos los datos o medios de Dota 2.
+- **Test:** [`DATA_SAMPLE`, con ejemplos](../source_tests/README.md#opendota-partidas).
+
+**Tres preguntas para investigar:**
+
+1. ¿La ventaja del bando Radiant cambia según torneo y parche al comparar equipos de fuerza semejante?
+2. ¿Qué combinaciones de héroes se asocian con victorias después de controlar parche y nivel de los equipos, usando detalles de draft?
+3. ¿Qué tan bien predice la diferencia de oro al minuto diez el desenlace en partidas futuras, frente a un pronóstico basado sólo en fuerza previa?
+
+**Papel de la IA:** Describir drafts y patrones del juego que luego se contrasten con tasas ajustadas y evaluación temporal; ninguna recomendación se da por probada con dos partidas.
+
+**Comprobaciones antes de concluir:**
+
+- Snapshot y paginación con less_than_match_id: la ventana reciente cambia; deduplicar match_id y convertir start_time desde Unix UTC.
+- proMatches no contiene drafts, parche ni series de oro: adquirir /matches/{match_id} y verificar presencia de campos antes de esas preguntas.
+- Separar evaluación por fecha/parche/equipo y excluir marcador final o radiant_win como predictores; equipos y torneos pueden cambiar de nombre.
+
+**Primer resultado propuesto:** Tasa Radiant por torneo y periodo con intervalos, conteos y porcentaje de datos de parche disponibles.
+
+**Estado:** `hypothesis_not_tested`.
 
 ## Incorporación posterior y mantenimiento
 

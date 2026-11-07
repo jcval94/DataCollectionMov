@@ -71,6 +71,9 @@ def check_lines(check, index):
            f'Captura UTC: `{check.get("checked_at_utc", "no registrada")}`; duración: {check.get("elapsed_seconds", "?")} s.', '', check['detail'], '']
     if check.get('bytes_read') is not None:
         out += [f'Contenido: `{check.get("content_type", "no informado")}`; {check["bytes_read"]:,} bytes leídos; alcance del hash: `{check.get("hash_scope", "no informado")}`.', '']
+    if check.get('archive_member'):
+        member=check['archive_member']
+        out += [f'Miembro del ZIP: `{member["name"]}`; {member["bytes_read"]:,} bytes leídos de {member["declared_bytes"]:,} declarados. SHA-256 `{member["sha256"]}`; alcance `{member["hash_scope"]}`. Se leyó dentro del archivo, sin extraer rutas al disco.', '']
     out += samples(check.get('sample', []))
     if check.get('child'):
         out += ['**Recurso enlazado: comprobación independiente**', '']

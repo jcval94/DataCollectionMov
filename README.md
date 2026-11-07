@@ -18,22 +18,24 @@ Este repositorio genera historicos versionados de tablas provenientes de Metrob�
 
 ## Catálogo de datasets para nuevos análisis
 
-El [catálogo de 72 datasets y fuentes reales de México y del mundo](docs/CATALOGO_DATASETS_REALES.md) reúne rifa del avión presidencial (GSE 235), APIs INEGI, presupuesto, códigos postales, educación, movilidad social, transporte, salud y seguridad. Incluye DOF para explicar Git y fuentes sobre exoplanetas, ondas gravitacionales, cantos de aves, arte, literatura, ovnis y más. La ampliación incluye restaurantes, apps, vuelos, viajes, Napoleón, diarios, literatura, conciertos, mapas, exámenes, UNAM, inmuebles, baile, teatro, retail y medicina histórica. Cada ficha incluye enlaces, cobertura, periodicidad, variables, llaves para cruces, ideas de análisis y límites de acceso/verificación.
+El [catálogo de 78 datasets y fuentes reales de México y del mundo](docs/CATALOGO_DATASETS_REALES.md) reúne rifa del avión presidencial (GSE 235), APIs INEGI, presupuesto, códigos postales, educación, movilidad social, transporte, salud y seguridad. Incluye DOF para explicar Git y fuentes sobre exoplanetas, ondas gravitacionales, cantos de aves, arte, literatura, ovnis y más. La ampliación incluye restaurantes, apps, vuelos, viajes, Napoleón, diarios, literatura, conciertos, mapas, exámenes, UNAM, inmuebles, baile, teatro, retail y medicina histórica. Cada ficha incluye enlaces, cobertura, periodicidad, variables, llaves para cruces, ideas de análisis y límites de acceso/verificación.
 
 La [versión estructurada JSON](catalogs/datasets_reales_mexico.json) permite filtrar y reutilizar las fichas. Cada ficha distingue datos estructurados, no estructurados y mixtos. Las [pruebas de acceso](source_tests/README.md) muestran resultados fechados, registros o ejemplos reales y errores; su [JSON de evidencia](source_tests/results.json) registra cada solicitud. El [ejemplo DOF/Git](examples/dof_git/README.md) incluye dos commits locales comprobados y su diff. La [guía de descubrimientos con IA](docs/GUIA_DESCUBRIMIENTOS_IA.md) conecta las temáticas con preguntas y validación. El [piloto de Bob Ross](examples/bob_ross_discovery/README.md) muestra un resultado calculado, con programa y evidencia. Es un catálogo de oportunidades: las nuevas fuentes no activan recolección programada; las pruebas son acotadas y bajo demanda. Revisión: 4 de noviembre de 2026.
 
-La [matriz de exploración con IA](docs/exploration/README.md) propone **216 preguntas (tres por cada fuente)**, skills reutilizables, MCP/herramientas y un arnés por método, con insumos pendientes y criterios de validación. Incluye su [plan estructurado](catalogs/exploration_plan.json).
+**Deportes y juegos — ampliación del 7 de noviembre de 2026:** ajedrez con partidas de grandes maestros y archivo general por jugadores/aperturas, fútbol soccer, Scrabble, básquetbol, Fórmula 1 y Dota 2. [Ver las seis fichas](docs/CATALOGO_DATASETS_REALES.md#deportes-y-juegos) · [Tests y registros reales](source_tests/by_topic/deportes-y-juegos/README.md).
+
+La [matriz de exploración con IA](docs/exploration/README.md) propone **234 preguntas (tres por cada fuente)**, skills reutilizables, MCP/herramientas y un arnés por método, con insumos pendientes y criterios de validación. Incluye su [plan estructurado](catalogs/exploration_plan.json).
 
 <!-- SOURCE_TESTS:START -->
 ## Tests y ejemplos visibles
 
-**72 fuentes probadas** y **9 ejemplos visuales descargados y decodificados**. Resultados guardados con fecha, URL y evidencia; no todas las fuentes entregaron datos.
+**78 fuentes probadas** y **9 ejemplos visuales descargados y decodificados**. Resultados guardados con fecha, URL y evidencia; no todas las fuentes entregaron datos.
 
 | Resultado | Fuentes |
 | --- | ---: |
 | `BLOCKED` — Acceso bloqueado | 6 |
 | `CACHED_SAMPLE` — Registros publicados en el repo | 2 |
-| `DATA_SAMPLE` — Registros recuperados | 22 |
+| `DATA_SAMPLE` — Registros recuperados | 28 |
 | `DOCUMENT_SAMPLE` — Documento recuperado | 5 |
 | `DOC_ONLY` — Sólo portal o documentación | 22 |
 | `HTTP_ERROR` — Error HTTP | 10 |
@@ -201,7 +203,7 @@ Ya está disponible el [piloto retail: bruto frente a neto](examples/retail_disc
 
 ## Integración a las clases
 
-El [plan docente de datasets e IA](docs/exploration/PLAN_DOCENTE_DATASETS.md) propone cómo llevar las 72 fuentes a las 22 clases: pregunta recomendada, justificación curricular, duración, guion de acción, preparación docente y contingencias. Incluye una primera actividad de retail de 30 minutos para la clase 11 y una secuencia inicial de seis cápsulas dentro de las horas existentes.
+El [plan docente de datasets e IA](docs/exploration/PLAN_DOCENTE_DATASETS.md) propone cómo llevar las 72 fuentes del catálogo original a las 22 clases: pregunta recomendada, justificación curricular, duración, guion de acción, preparación docente y contingencias. Incluye una primera actividad de retail de 30 minutos para la clase 11 y una secuencia inicial de seis cápsulas dentro de las horas existentes.
 
 ## Auditoría y validación
 

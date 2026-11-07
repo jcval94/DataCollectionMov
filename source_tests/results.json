@@ -17,7 +17,7 @@
     "DOCUMENT_SAMPLE": 5,
     "DOC_ONLY": 22,
     "CACHED_SAMPLE": 2,
-    "DATA_SAMPLE": 22,
+    "DATA_SAMPLE": 28,
     "METADATA_SAMPLE": 5
   },
   "results": [
@@ -3253,6 +3253,484 @@
       ],
       "captured_with_script_sha256": "3b538dbf5c66410c7309d8bbb424be59f74bed55b8d98dfa8d7b2d51c7349243",
       "captured_with_definitions_sha256": "06cd81f032ce5164c273b8b1afb5427d04e48d4e1386f13f308dbf9ae9bda5df"
+    },
+    {
+      "id": "pgnmentor-ajedrez",
+      "name": "Ajedrez: grandes maestros, campeonatos y aperturas en PGN",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-07T06:03:55+00:00",
+          "kind": "pgn",
+          "scope": "live_public",
+          "sample": [
+            {
+              "Event": "WCh 2021",
+              "Site": "Dubai UAE",
+              "Date": "2021.11.26",
+              "Round": "1",
+              "White": "Nepomniachtchi,I",
+              "Black": "Carlsen,M",
+              "Result": "1/2-1/2",
+              "WhiteElo": "2782",
+              "BlackElo": "2855",
+              "ECO": "C88",
+              "moves_excerpt": "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 O-O 8.h3 Na5 9.Nxe5 Nxb3 10.axb3 Bb7 11.d3 d5 12.exd5 Qxd5 13.Qf3 Bd6 14.Kf1 Rfb8 15.Qxd5 Nxd5 16.Bd2 c5 17.Nf3 Rd8 18…"
+            },
+            {
+              "Event": "WCh 2021",
+              "Site": "Dubai UAE",
+              "Date": "2021.11.27",
+              "Round": "2",
+              "White": "Carlsen,M",
+              "Black": "Nepomniachtchi,I",
+              "Result": "1/2-1/2",
+              "WhiteElo": "2855",
+              "BlackElo": "2782",
+              "ECO": "E06",
+              "moves_excerpt": "1.d4 Nf6 2.c4 e6 3.Nf3 d5 4.g3 Be7 5.Bg2 O-O 6.O-O dxc4 7.Qc2 b5 8.Ne5 c6 9.a4 Nd5 10.Nc3 f6 11.Nf3 Qd7 12.e4 Nb4 13.Qe2 Nd3 14.e5 Bb7 15.exf6 Bxf6 16.Ne4 Na6 17.Ne5 Bxe5 18.dxe5 N…"
+            }
+          ],
+          "requested_url": "https://www.pgnmentor.com/events/WorldChamp2021.pgn",
+          "final_url": "https://www.pgnmentor.com/events/WorldChamp2021.pgn",
+          "http_status": 200,
+          "content_type": "application/x-chess-pgn",
+          "last_modified": "Sat, 19 Feb 2022 17:55:43 GMT",
+          "bytes_read": 8438,
+          "truncated": false,
+          "sha256": "eaff21a63d82803f413199378fa8722733949cae52c3d0ce531bb409b64b250d",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "detail": "Cabeceras y fragmentos de jugadas de las dos primeras partidas del PGN; no se validó la legalidad de movimientos ni el corpus completo. El archivo por jugador puede incluir etapas anteriores a su título GM.",
+          "elapsed_seconds": 3.593
+        },
+        {
+          "checked_at_utc": "2026-11-07T06:03:58+00:00",
+          "kind": "pgn_zip",
+          "scope": "live_public",
+          "sample": [
+            {
+              "Event": "Troll Masters",
+              "Site": "Gausdal NOR",
+              "Date": "2001.01.05",
+              "Round": "1",
+              "White": "Edvardsen,R",
+              "Black": "Carlsen,Magnus",
+              "Result": "1/2-1/2",
+              "WhiteElo": "2055",
+              "BlackElo": "",
+              "ECO": "D12",
+              "moves_excerpt": "1.d4 Nf6 2.Nf3 d5 3.e3 Bf5 4.c4 c6 5.Nc3 e6 6.Bd3 Bxd3 7.Qxd3 Nbd7 8.b3 Bd6 9.O-O O-O 10.Bb2 Qe7 11.Rad1 Rad8 12.Rfe1 dxc4 13.bxc4 e5 14.dxe5 Nxe5 15.Nxe5 Bxe5 16.Qe2 Rxd1 17.Rxd1 …"
+            },
+            {
+              "Event": "Troll Masters",
+              "Site": "Gausdal NOR",
+              "Date": "2001.01.06",
+              "Round": "2",
+              "White": "Carlsen,Magnus",
+              "Black": "Brameld,A",
+              "Result": "0-1",
+              "WhiteElo": "",
+              "BlackElo": "2095",
+              "ECO": "B05",
+              "moves_excerpt": "1.e4 Nf6 2.e5 Nd5 3.d4 d6 4.Nf3 Bg4 5.Bc4 e6 6.O-O Nb6 7.Be2 Be7 8.h3 Bh5 9.Bf4 Nc6 10.c3 O-O 11.Nbd2 d5 12.b4 a5 13.a3 Qd7 14.Qc2 Bg6 15.Bd3 Rfc8 16.Rfb1 Bf8 17.h4 Ne7 18.g3 Qa4 1…"
+            }
+          ],
+          "requested_url": "https://www.pgnmentor.com/players/Carlsen.zip",
+          "final_url": "https://www.pgnmentor.com/players/Carlsen.zip",
+          "http_status": 200,
+          "content_type": "application/zip",
+          "last_modified": "Sat, 11 Jul 2026 15:46:46 GMT",
+          "bytes_read": 1849084,
+          "truncated": false,
+          "sha256": "29347942a512b260814717592c82cf6f3cd5975925a0b1732ef60f734651553d",
+          "hash_scope": "complete_response",
+          "archive_member": {
+            "name": "Carlsen.pgn",
+            "declared_bytes": 5732853,
+            "bytes_read": 65536,
+            "truncated": true,
+            "sha256": "8983c98e1d3aab0f8bae7a421b64546dfd3aa268f6c5a54d068821851a5cd132",
+            "hash_scope": "member_prefix"
+          },
+          "status": "DATA_SAMPLE",
+          "detail": "Cabeceras y fragmentos de jugadas de las dos primeras partidas del PGN; no se validó la legalidad de movimientos ni el corpus completo. El archivo por jugador puede incluir etapas anteriores a su título GM.",
+          "elapsed_seconds": 3.319
+        }
+      ],
+      "captured_with_script_sha256": "479263873c78760e3d100117b4a40f8ac72ce38fdc532d9d77961e9c761e0aee",
+      "captured_with_definitions_sha256": "7ddbcd5d53d5bd6e15b04768c2907f4ecf1f7b2b5c4948a12ce3fa515d4a0f6e"
+    },
+    {
+      "id": "statsbomb-futbol",
+      "name": "Fútbol soccer: partidos, eventos y xG de StatsBomb Open Data",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-07T06:03:55+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "match_id": 3857276,
+              "match_date": "2022-12-01",
+              "home_team.home_team_name": "Canada",
+              "away_team.away_team_name": "Morocco",
+              "home_score": 1,
+              "away_score": 2
+            },
+            {
+              "match_id": 3857271,
+              "match_date": "2022-11-21",
+              "home_team.home_team_name": "England",
+              "away_team.away_team_name": "Iran",
+              "home_score": 6,
+              "away_score": 2
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/hudl/open-data/master/data/matches/43/106.json",
+          "final_url": "https://raw.githubusercontent.com/hudl/open-data/master/data/matches/43/106.json",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 119132,
+          "truncated": false,
+          "sha256": "b9d7516dc9919a825f04c204ca85487958c8a2431e84140a48e944934661efc7",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 64,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.394
+        },
+        {
+          "checked_at_utc": "2026-11-07T06:03:58+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "id": "1f60fe1e-0340-49e2-975e-f16f54c5da1a",
+              "index": 1,
+              "period": 1,
+              "timestamp": "00:00:00.000",
+              "type.name": "Starting XI",
+              "team.name": "Canada",
+              "tactics.formation": 4411
+            },
+            {
+              "id": "d5ffdab0-a19a-497e-a0f6-d5403bfcc2b5",
+              "index": 2,
+              "period": 1,
+              "timestamp": "00:00:00.000",
+              "type.name": "Starting XI",
+              "team.name": "Morocco",
+              "tactics.formation": 433
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/hudl/open-data/master/data/events/3857276.json",
+          "final_url": "https://raw.githubusercontent.com/hudl/open-data/master/data/events/3857276.json",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 2811450,
+          "truncated": false,
+          "sha256": "8320cf567b912bac1ff9f5a49deb1263ba5aa2610cf6f3dcf6db60f065bf1e99",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 3388,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 3.186
+        }
+      ],
+      "captured_with_script_sha256": "479263873c78760e3d100117b4a40f8ac72ce38fdc532d9d77961e9c761e0aee",
+      "captured_with_definitions_sha256": "7ddbcd5d53d5bd6e15b04768c2907f4ecf1f7b2b5c4948a12ce3fa515d4a0f6e"
+    },
+    {
+      "id": "cross-tables-scrabble",
+      "name": "Scrabble: partidas anotadas y turnos en GCG",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-07T06:03:55+00:00",
+          "kind": "gcg",
+          "scope": "live_public",
+          "sample": [
+            {
+              "player": "Samuel Kaplan",
+              "action": "CDFIIOO 8E FOCI",
+              "points": 18,
+              "total": 18
+            },
+            {
+              "player": "Joey Krafchick",
+              "action": "?DEILNY H8 .NEDIbLY",
+              "points": 86,
+              "total": 86
+            }
+          ],
+          "requested_url": "https://www.cross-tables.com/annotated/selfgcg/566/anno56686.gcg",
+          "final_url": "https://www.cross-tables.com/annotated/selfgcg/566/anno56686.gcg",
+          "http_status": 200,
+          "content_type": "",
+          "last_modified": "Sun, 12 Oct 2025 22:37:35 GMT",
+          "bytes_read": 4646,
+          "truncated": false,
+          "sha256": "f2453c0d1cf20f0e08484c1a88ea3d5471fba5c1fa2d36786fb0a2fbf471e211",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "detail": "Dos primeros turnos puntuados del GCG; no se verificaron tablero, diccionario, ganador ni legalidad de las palabras.",
+          "elapsed_seconds": 3.093
+        }
+      ],
+      "captured_with_script_sha256": "479263873c78760e3d100117b4a40f8ac72ce38fdc532d9d77961e9c761e0aee",
+      "captured_with_definitions_sha256": "7ddbcd5d53d5bd6e15b04768c2907f4ecf1f7b2b5c4948a12ce3fa515d4a0f6e"
+    },
+    {
+      "id": "nba-elo",
+      "name": "Básquetbol: historia NBA/ABA y pronósticos Elo",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-07T06:03:55+00:00",
+          "kind": "csv",
+          "scope": "live_public",
+          "sample": [
+            {
+              "game_id": "194611010TRH",
+              "date_game": "11/1/1946",
+              "team_id": "TRH",
+              "opp_id": "NYK",
+              "pts": "66",
+              "opp_pts": "68",
+              "elo_i": "1300",
+              "forecast": "0.64006501",
+              "_iscopy": "0"
+            },
+            {
+              "game_id": "194611010TRH",
+              "date_game": "11/1/1946",
+              "team_id": "NYK",
+              "opp_id": "TRH",
+              "pts": "68",
+              "opp_pts": "66",
+              "elo_i": "1300",
+              "forecast": "0.35993499",
+              "_iscopy": "1"
+            }
+          ],
+          "requested_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+          "final_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+          "http_status": 200,
+          "content_type": "text/plain; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 65536,
+          "truncated": true,
+          "sha256": "b703c539ba9dcefe1a5ce2e720fb169af74f94ba2cc18a3008b7077af092cbe6",
+          "hash_scope": "response_prefix",
+          "status": "DATA_SAMPLE",
+          "columns": [
+            "gameorder",
+            "game_id",
+            "lg_id",
+            "_iscopy",
+            "year_id",
+            "date_game",
+            "seasongame",
+            "is_playoffs",
+            "team_id",
+            "fran_id",
+            "pts",
+            "elo_i",
+            "elo_n",
+            "win_equiv",
+            "opp_id",
+            "opp_fran",
+            "opp_pts",
+            "opp_elo_i",
+            "opp_elo_n",
+            "game_location",
+            "game_result",
+            "forecast",
+            "notes"
+          ],
+          "detail": "Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.",
+          "elapsed_seconds": 3.42
+        }
+      ],
+      "captured_with_script_sha256": "479263873c78760e3d100117b4a40f8ac72ce38fdc532d9d77961e9c761e0aee",
+      "captured_with_definitions_sha256": "7ddbcd5d53d5bd6e15b04768c2907f4ecf1f7b2b5c4948a12ce3fa515d4a0f6e"
+    },
+    {
+      "id": "jolpica-f1",
+      "name": "Fórmula 1: carreras, clasificación y resultados vía Jolpica",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-07T06:03:58+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "season": "2024",
+              "round": "1",
+              "raceName": "Bahrain Grand Prix",
+              "date": "2024-03-02",
+              "Circuit.circuitName": "Bahrain International Circuit",
+              "Results": [
+                {
+                  "number": "1",
+                  "position": "1",
+                  "positionText": "1",
+                  "points": "26",
+                  "Driver": {
+                    "driverId": "max_verstappen",
+                    "permanentNumber": "3",
+                    "code": "VER",
+                    "url": "http://en.wikipedia.org/wiki/Max_Verstappen",
+                    "givenName": "Max",
+                    "familyName": "Verstappen",
+                    "dateOfBirth": "1997-09-30",
+                    "nationality": "Dutch"
+                  },
+                  "Constructor": {
+                    "constructorId": "red_bull",
+                    "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
+                    "name": "Red Bull",
+                    "nationality": "Austrian"
+                  },
+                  "grid": "1",
+                  "laps": "57",
+                  "status": "Finished",
+                  "Time": {
+                    "millis": "5504742",
+                    "time": "1:31:44.742"
+                  },
+                  "FastestLap": {
+                    "rank": "1",
+                    "lap": "39",
+                    "Time": {
+                      "time": "1:32.608"
+                    },
+                    "AverageSpeed": {
+                      "units": "kph",
+                      "speed": "210.383"
+                    }
+                  }
+                },
+                {
+                  "number": "11",
+                  "position": "2",
+                  "positionText": "2",
+                  "points": "18",
+                  "Driver": {
+                    "driverId": "perez",
+                    "permanentNumber": "11",
+                    "code": "PER",
+                    "url": "http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez",
+                    "givenName": "Sergio",
+                    "familyName": "Pérez",
+                    "dateOfBirth": "1990-01-26",
+                    "nationality": "Mexican"
+                  },
+                  "Constructor": {
+                    "constructorId": "red_bull",
+                    "url": "https://en.wikipedia.org/wiki/Red_Bull_Racing",
+                    "name": "Red Bull",
+                    "nationality": "Austrian"
+                  },
+                  "grid": "5",
+                  "laps": "57",
+                  "status": "Finished",
+                  "Time": {
+                    "millis": "5527199",
+                    "time": "+22.457"
+                  },
+                  "FastestLap": {
+                    "rank": "4",
+                    "lap": "40",
+                    "Time": {
+                      "time": "1:34.364"
+                    },
+                    "AverageSpeed": {
+                      "units": "kph",
+                      "speed": "206.468"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "requested_url": "https://api.jolpi.ca/ergast/f1/2024/1/results.json?limit=2",
+          "final_url": "https://api.jolpi.ca/ergast/f1/2024/1/results.json?limit=2",
+          "http_status": 200,
+          "content_type": "application/json",
+          "last_modified": "Sat, 07 Nov 2026 05:58:37 GMT",
+          "bytes_read": 1842,
+          "truncated": false,
+          "sha256": "0fc8fb868af2b10d4b6bc3d39a7b1872c03189b1d2c50d7ad8a3fe133b09c5e4",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 1,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 2.995
+        }
+      ],
+      "captured_with_script_sha256": "479263873c78760e3d100117b4a40f8ac72ce38fdc532d9d77961e9c761e0aee",
+      "captured_with_definitions_sha256": "7ddbcd5d53d5bd6e15b04768c2907f4ecf1f7b2b5c4948a12ce3fa515d4a0f6e"
+    },
+    {
+      "id": "opendota-partidas",
+      "name": "Videojuegos: partidas competitivas de Dota 2 en OpenDota",
+      "status": "DATA_SAMPLE",
+      "note": "Ampliación de deportes y juegos: pruebas acotadas de notación o registros reales; las tres preguntas son propuestas de investigación, sin hallazgos calculados.",
+      "checks": [
+        {
+          "checked_at_utc": "2026-11-07T06:03:58+00:00",
+          "kind": "json",
+          "scope": "live_public",
+          "sample": [
+            {
+              "match_id": 9078923915,
+              "start_time": 1793988383,
+              "duration": 2924,
+              "radiant_name": "ветмо",
+              "dire_name": "Party 2 play",
+              "radiant_win": false,
+              "radiant_score": 37,
+              "dire_score": 61,
+              "league_name": "Party To Play league"
+            },
+            {
+              "match_id": 9078644458,
+              "start_time": 1793977350,
+              "duration": 2195,
+              "radiant_win": true,
+              "radiant_score": 67,
+              "dire_score": 24,
+              "league_name": "护鼠宝"
+            }
+          ],
+          "requested_url": "https://api.opendota.com/api/proMatches",
+          "final_url": "https://api.opendota.com/api/proMatches",
+          "http_status": 200,
+          "content_type": "application/json; charset=utf-8",
+          "last_modified": null,
+          "bytes_read": 31144,
+          "truncated": false,
+          "sha256": "87f8d5f8989cf0543ee89b238936f43df22f975530f0f98d0613dacc973d2942",
+          "hash_scope": "complete_response",
+          "status": "DATA_SAMPLE",
+          "observed_rows": 100,
+          "detail": "Formato y campos de la muestra validados; no implica calidad de toda la fuente.",
+          "elapsed_seconds": 2.995
+        }
+      ],
+      "captured_with_script_sha256": "479263873c78760e3d100117b4a40f8ac72ce38fdc532d9d77961e9c761e0aee",
+      "captured_with_definitions_sha256": "7ddbcd5d53d5bd6e15b04768c2907f4ecf1f7b2b5c4948a12ce3fa515d4a0f6e"
     }
   ],
   "rechecks": [
@@ -3458,7 +3936,7 @@
       }
     }
   ],
-  "report_generated_at_utc": "2026-11-05T03:21:39+00:00",
+  "report_generated_at_utc": "2026-11-07T06:04:02+00:00",
   "extensions": [
     {
       "run": {
@@ -3570,6 +4048,28 @@
           "captured_with_definitions_sha256": "db9692399efd5dd989389b4a9e59bc4bba8e5855f9de7ac83829b972120d7671"
         }
       ]
+    },
+    {
+      "run": {
+        "started_at_utc": "2026-11-07T06:03:55+00:00",
+        "started_at_local": "2026-11-07T00:03:55-06:00",
+        "timeout_seconds": 18,
+        "workers": 4,
+        "max_bytes": 8388608,
+        "python_version": "3.12.14",
+        "probe_script_sha256": "479263873c78760e3d100117b4a40f8ac72ce38fdc532d9d77961e9c761e0aee",
+        "probe_definitions_sha256": "7ddbcd5d53d5bd6e15b04768c2907f4ecf1f7b2b5c4948a12ce3fa515d4a0f6e",
+        "finished_at_utc": "2026-11-07T06:04:02+00:00"
+      },
+      "added_source_ids": [
+        "pgnmentor-ajedrez",
+        "statsbomb-futbol",
+        "cross-tables-scrabble",
+        "nba-elo",
+        "jolpica-f1",
+        "opendota-partidas"
+      ],
+      "reason": "Seis fuentes de deportes y juegos; sin volver a fechar las 72 fuentes anteriores."
     }
   ]
 }

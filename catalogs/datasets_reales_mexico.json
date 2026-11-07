@@ -4534,6 +4534,494 @@
         ],
         "status": "hypothesis_not_tested"
       }
+    },
+    {
+      "id": "pgnmentor-ajedrez",
+      "category": "Deportes y juegos",
+      "name": "Ajedrez: grandes maestros, campeonatos y aperturas en PGN",
+      "publisher": "PGN Mentor / 64 Squares (recopilación)",
+      "sources": [
+        {
+          "url": "https://www.pgnmentor.com/files.html",
+          "resource_url": "https://www.pgnmentor.com/events/WorldChamp2021.pgn",
+          "verification": {
+            "checked_on": "2026-11-07",
+            "method": "public_resource_probe",
+            "detail": "Ver fecha, HTTP, formato y muestras en el README de pruebas; no es ingesta completa.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://www.pgnmentor.com/players/Carlsen.zip",
+          "label": "Archivo de Magnus Carlsen"
+        }
+      ],
+      "coverage": "Partidas internacionales seleccionadas por jugador, apertura y torneo; muestra del mundial Carlsen–Nepomniachtchi 2021 y del archivo Carlsen.",
+      "grain": "Una partida; cabeceras PGN y secuencia de movimientos",
+      "reference_period": "Archivo histórico; mundial 2021 como muestra fija",
+      "source_frequency": "Según actualización del recopilador",
+      "formats": [
+        "PGN",
+        "ZIP"
+      ],
+      "access": "Recursos públicos consultados sin credenciales; ver pruebas fechadas y límites del productor.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "Event",
+        "Site",
+        "Date",
+        "Round",
+        "White",
+        "Black",
+        "Result",
+        "WhiteElo",
+        "BlackElo",
+        "ECO",
+        "movetext"
+      ],
+      "join_keys": [
+        "Evento + fecha + ronda + blancas + negras; comprobar duplicados y transposiciones"
+      ],
+      "analysis_ideas": [
+        "¿Cómo cambia el repertorio de aperturas de Carlsen a lo largo de su carrera al separar ritmo de juego y fuerza del rival cuando estén documentados?",
+        "¿En qué aperturas cambia más la proporción de tablas al comparar torneos y décadas con cobertura suficiente?",
+        "¿Qué posiciones de partidas de grandes maestros producen desacuerdos entre la explicación de una IA y una evaluación reproducible de Stockfish?"
+      ],
+      "caveats": [
+        "Validar movimientos con python-chess, normalizar resultados y fechas parciales y deduplicar partidas.",
+        "El archivo de un gran maestro puede incluir su infancia: no etiquetar toda su carrera ni todos sus rivales como GM; separar controles de tiempo y títulos por fecha.",
+        "Para evaluar explicaciones fijar versión de Stockfish, posición FEN, profundidad y perspectiva de la evaluación; el smoke test sólo lee notación."
+      ],
+      "usage_terms": "Descargas gratuitas anunciadas por PGN Mentor; no se comprobó una licencia abierta general. Atribuir al recopilador; revisar condiciones antes de redistribuir el corpus o anotaciones.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "sequential"
+      ],
+      "smoke_test": "source_tests/README.md#pgnmentor-ajedrez",
+      "discovery": {
+        "question": "¿Cómo cambia el repertorio de aperturas de Carlsen a lo largo de su carrera al separar ritmo de juego y fuerza del rival cuando estén documentados?",
+        "ai_role": "Explicar decisiones con movimientos citados y contrastar afirmaciones con un motor de ajedrez fijado por versión y profundidad; la explicación debe distinguir cálculo de narración.",
+        "minimum_validation": [
+          "Validar movimientos con python-chess, normalizar resultados y fechas parciales y deduplicar partidas.",
+          "El archivo de un gran maestro puede incluir su infancia: no etiquetar toda su carrera ni todos sus rivales como GM; separar controles de tiempo y títulos por fecha.",
+          "Para evaluar explicaciones fijar versión de Stockfish, posición FEN, profundidad y perspectiva de la evaluación; el smoke test sólo lee notación."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "statsbomb-futbol",
+      "category": "Deportes y juegos",
+      "name": "Fútbol soccer: partidos, eventos y xG de StatsBomb Open Data",
+      "publisher": "Hudl StatsBomb",
+      "sources": [
+        {
+          "url": "https://github.com/hudl/open-data",
+          "resource_url": "https://raw.githubusercontent.com/hudl/open-data/master/data/matches/43/106.json",
+          "verification": {
+            "checked_on": "2026-11-07",
+            "method": "public_resource_probe",
+            "detail": "Ver fecha, HTTP, formato y muestras en el README de pruebas; no es ingesta completa.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/hudl/open-data/master/data/events/3857276.json",
+          "label": "Eventos de Canadá–Marruecos, Mundial 2022"
+        }
+      ],
+      "coverage": "Selección de competiciones y temporadas masculinas y femeninas; no equivale a todo el fútbol mundial.",
+      "grain": "Tablas separadas: competición–temporada, partido, evento y alineación",
+      "reference_period": "Según competición/temporada; muestra del Mundial masculino 2022",
+      "source_frequency": "Según publicación del productor",
+      "formats": [
+        "JSON"
+      ],
+      "access": "Recursos públicos consultados sin credenciales; ver pruebas fechadas y límites del productor.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "match_id",
+        "match_date",
+        "home_team",
+        "away_team",
+        "home_score",
+        "away_score",
+        "event.id",
+        "type",
+        "location",
+        "shot.statsbomb_xg"
+      ],
+      "join_keys": [
+        "competition_id + season_id para partidos",
+        "match_id para eventos/alineaciones; event.id como llave de evento"
+      ],
+      "analysis_ideas": [
+        "¿Qué equipos generan más peligro por tiro aunque disparen menos, al comparar goles esperados y volumen en una misma competición?",
+        "¿Cómo cambia la red de pases de un equipo cuando va ganando o perdiendo, sin confundir el marcador con el tiempo de juego?",
+        "¿Qué estilos de ataque se repiten entre partidos y cuáles sólo parecen distintos por mezclar competiciones y temporadas?"
+      ],
+      "caveats": [
+        "Mantener separados grano partido/evento; los autogoles y cambios de periodo exigen reglas explícitas para reconstruir marcador.",
+        "xG es una estimación del productor, no un gol observado; normalizar orientación y escala de coordenadas con su documentación.",
+        "Separar entrenamiento/evaluación por partido y tiempo para evitar que eventos del mismo encuentro aparezcan en ambos."
+      ],
+      "usage_terms": "Aplican los términos de StatsBomb Open Data y LICENSE.pdf; al publicar análisis se exige atribución StatsBomb y su logo. No asumir licencia genérica CC ni derechos ilimitados de uso comercial.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "spatial",
+        "sequential"
+      ],
+      "smoke_test": "source_tests/README.md#statsbomb-futbol",
+      "discovery": {
+        "question": "¿Qué equipos generan más peligro por tiro aunque disparen menos, al comparar goles esperados y volumen en una misma competición?",
+        "ai_role": "Clasificar secuencias ofensivas, describir redes de pase y proponer patrones; verificar cada relato contra eventos fechados y métricas recalculadas.",
+        "minimum_validation": [
+          "Mantener separados grano partido/evento; los autogoles y cambios de periodo exigen reglas explícitas para reconstruir marcador.",
+          "xG es una estimación del productor, no un gol observado; normalizar orientación y escala de coordenadas con su documentación.",
+          "Separar entrenamiento/evaluación por partido y tiempo para evitar que eventos del mismo encuentro aparezcan en ambos."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "cross-tables-scrabble",
+      "category": "Deportes y juegos",
+      "name": "Scrabble: partidas anotadas y turnos en GCG",
+      "publisher": "cross-tables.com y colaboradores de partidas",
+      "sources": [
+        {
+          "url": "https://www.cross-tables.com/annotated.php?u=56686",
+          "resource_url": "https://www.cross-tables.com/annotated/selfgcg/566/anno56686.gcg",
+          "verification": {
+            "checked_on": "2026-11-07",
+            "method": "public_resource_probe",
+            "detail": "Ver fecha, HTTP, formato y muestras en el README de pruebas; no es ingesta completa.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Partidas compartidas por jugadores, principalmente del circuito competitivo en inglés; muestra Samuel Kaplan–Joey Krafchick.",
+      "grain": "Una partida GCG; turnos con jugador, atril/jugada, puntos y total, más comentarios opcionales",
+      "reference_period": "Archivo de partidas publicadas; no asumir fecha de juego si falta en GCG",
+      "source_frequency": "Aportaciones de la comunidad",
+      "formats": [
+        "GCG",
+        "HTML"
+      ],
+      "access": "Recursos públicos consultados sin credenciales; ver pruebas fechadas y límites del productor.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "player1",
+        "player2",
+        "jugador",
+        "atril",
+        "coordenada",
+        "jugada",
+        "puntos del turno",
+        "total acumulado",
+        "comentarios"
+      ],
+      "join_keys": [
+        "ID público de partida + índice de turno; conservar orden y correcciones/challenges"
+      ],
+      "analysis_ideas": [
+        "¿Cuándo conviene sacrificar puntos inmediatos para conservar un mejor atril, según simulaciones de alternativas con el mismo tablero y bolsa?",
+        "¿Qué proporción de la diferencia de puntos se concentra en jugadas que usan las siete fichas, frente a otras jugadas, en partidas comparables?",
+        "¿Los comentarios humanos sobre jugadas arriesgadas concuerdan con la pérdida de equidad estimada por un simulador con reglas fijadas?"
+      ],
+      "caveats": [
+        "Reconstruir tablero, atril, bolsa, comodines, pases, cambios, challenges y ajustes finales antes de simular alternativas.",
+        "Fijar idioma, edición del lexicón y reglas; una palabra de una partida en inglés no prueba validez en español.",
+        "Archivo comunitario seleccionado: no generalizar sus frecuencias a todos los jugadores ni asumir que comentarios son etiquetas objetivas."
+      ],
+      "usage_terms": "No se confirmó licencia abierta del corpus ni de los comentarios. Enlazar y atribuir; no redistribuir diccionarios propietarios ni anotaciones completas sin autorización.",
+      "data_structure": "mixto",
+      "data_modalities": [
+        "tabular",
+        "text",
+        "sequential"
+      ],
+      "smoke_test": "source_tests/README.md#cross-tables-scrabble",
+      "discovery": {
+        "question": "¿Cuándo conviene sacrificar puntos inmediatos para conservar un mejor atril, según simulaciones de alternativas con el mismo tablero y bolsa?",
+        "ai_role": "Relacionar comentarios con jugadas concretas y explicar alternativas calculadas; separar opinión del anotador, puntos observados y valor esperado simulado.",
+        "minimum_validation": [
+          "Reconstruir tablero, atril, bolsa, comodines, pases, cambios, challenges y ajustes finales antes de simular alternativas.",
+          "Fijar idioma, edición del lexicón y reglas; una palabra de una partida en inglés no prueba validez en español.",
+          "Archivo comunitario seleccionado: no generalizar sus frecuencias a todos los jugadores ni asumir que comentarios son etiquetas objetivas."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "nba-elo",
+      "category": "Deportes y juegos",
+      "name": "Básquetbol: historia NBA/ABA y pronósticos Elo",
+      "publisher": "FiveThirtyEight, con resultados de Basketball-Reference",
+      "sources": [
+        {
+          "url": "https://github.com/fivethirtyeight/data/tree/master/nba-elo",
+          "resource_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+          "verification": {
+            "checked_on": "2026-11-07",
+            "method": "public_resource_probe",
+            "detail": "Ver fecha, HTTP, formato y muestras en el README de pruebas; no es ingesta completa.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Equipos y encuentros incluidos en el archivo histórico NBA/ABA de FiveThirtyEight; incluye franquicias renombradas.",
+      "grain": "Equipo–partido: normalmente dos filas espejo por encuentro",
+      "reference_period": "Archivo histórico, con primeras filas de 1946; verificar min/max al descargar completo",
+      "source_frequency": "Archivo histórico; no asumir actualización en vivo",
+      "formats": [
+        "CSV"
+      ],
+      "access": "Recursos públicos consultados sin credenciales; ver pruebas fechadas y límites del productor.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "game_id",
+        "date_game",
+        "year_id",
+        "lg_id",
+        "team_id",
+        "fran_id",
+        "pts",
+        "opp_pts",
+        "elo_i",
+        "elo_n",
+        "forecast",
+        "game_location",
+        "is_playoffs",
+        "_iscopy"
+      ],
+      "join_keys": [
+        "game_id + team_id por fila; game_id una vez por encuentro si se deduplica explícitamente"
+      ],
+      "analysis_ideas": [
+        "¿Las probabilidades Elo están bien calibradas en playoffs y temporada regular al usar sólo información anterior al encuentro?",
+        "¿Cuánto cambia la ventaja de jugar en casa por época después de ajustar por diferencia de Elo antes del partido?",
+        "¿Qué franquicias muestran más continuidad competitiva al agrupar cambios de nombre con fran_id en vez de team_id?"
+      ],
+      "caveats": [
+        "Evitar contar dos veces un encuentro: contrastar filas espejo, _iscopy y consistencia pts/opp_pts.",
+        "elo_n y resultado son posteriores al partido: no usarlos para predecirlo; validar por orden temporal.",
+        "Separar NBA/ABA, temporada/playoffs y franquicia/equipo; comprobar límites históricos del archivo completo."
+      ],
+      "usage_terms": "Repositorio de datos FiveThirtyEight bajo CC BY 4.0; atribuir y conservar referencia al proveedor original de resultados. Ver LICENSE del repositorio.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular"
+      ],
+      "smoke_test": "source_tests/README.md#nba-elo",
+      "discovery": {
+        "question": "¿Las probabilidades Elo están bien calibradas en playoffs y temporada regular al usar sólo información anterior al encuentro?",
+        "ai_role": "Proponer periodos y anomalías para revisar; contrastar las narraciones con calibración, errores y fechas del conjunto de prueba.",
+        "minimum_validation": [
+          "Evitar contar dos veces un encuentro: contrastar filas espejo, _iscopy y consistencia pts/opp_pts.",
+          "elo_n y resultado son posteriores al partido: no usarlos para predecirlo; validar por orden temporal.",
+          "Separar NBA/ABA, temporada/playoffs y franquicia/equipo; comprobar límites históricos del archivo completo."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "jolpica-f1",
+      "category": "Deportes y juegos",
+      "name": "Fórmula 1: carreras, clasificación y resultados vía Jolpica",
+      "publisher": "Proyecto comunitario Jolpica F1, sucesor de Ergast",
+      "sources": [
+        {
+          "url": "https://github.com/jolpica/jolpica-f1/blob/main/docs/README.md",
+          "resource_url": "https://api.jolpi.ca/ergast/f1/2024/1/results.json?limit=2",
+          "verification": {
+            "checked_on": "2026-11-07",
+            "method": "public_resource_probe",
+            "detail": "Ver fecha, HTTP, formato y muestras en el README de pruebas; no es ingesta completa.",
+            "bulk_download_tested": false
+          }
+        }
+      ],
+      "coverage": "Resultados históricos de Fórmula 1 disponibles en la API; la muestra es Bahréin 2024.",
+      "grain": "Piloto–carrera en results; tablas separadas para clasificación, vueltas y paradas",
+      "reference_period": "Historia F1 según endpoint; muestra fija temporada 2024, ronda 1",
+      "source_frequency": "Actualización del proyecto y correcciones históricas",
+      "formats": [
+        "JSON",
+        "XML"
+      ],
+      "access": "Recursos públicos consultados sin credenciales; ver pruebas fechadas y límites del productor.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "season",
+        "round",
+        "raceName",
+        "Driver.driverId",
+        "Constructor.constructorId",
+        "grid",
+        "position",
+        "points",
+        "laps",
+        "status",
+        "Time"
+      ],
+      "join_keys": [
+        "season + round + driverId; distinguir carrera principal, sprint, clasificación y vuelta"
+      ],
+      "analysis_ideas": [
+        "¿En qué circuitos cambia más la relación entre posición de salida y llegada al separar abandonos y temporadas?",
+        "¿Cómo cambia la comparación entre compañeros de escudería si medimos posiciones ganadas en lugar de puntos?",
+        "¿Qué paradas en boxes parecen asociarse con ganar posiciones al controlar vuelta de entrada y posición previa, sin atribuirles causalidad?"
+      ],
+      "caveats": [
+        "Paginar limit/offset y contrastar MRData.total; dos resultados no representan toda la parrilla.",
+        "No confundir status de abandono con una posición de llegada comparable; registrar clasificados, vueltas completadas y reglas de puntos por año.",
+        "Para analizar boxes se necesitan endpoints de laps/pitstops; results no incluye neumáticos, safety car ni todo el contexto causal."
+      ],
+      "usage_terms": "Revisar condiciones de uso de datos del servicio y atribuir Jolpica/Ergast. Apache-2.0 del código del servidor no demuestra la licencia de cada dato. Respetar rate_limits.md y usar User-Agent identificable.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "sequential"
+      ],
+      "smoke_test": "source_tests/README.md#jolpica-f1",
+      "discovery": {
+        "question": "¿En qué circuitos cambia más la relación entre posición de salida y llegada al separar abandonos y temporadas?",
+        "ai_role": "Proponer comparaciones entre circuitos y resumir carreras con resultados verificables; distinguir estrategia observada de explicaciones que requieren clima o banderas.",
+        "minimum_validation": [
+          "Paginar limit/offset y contrastar MRData.total; dos resultados no representan toda la parrilla.",
+          "No confundir status de abandono con una posición de llegada comparable; registrar clasificados, vueltas completadas y reglas de puntos por año.",
+          "Para analizar boxes se necesitan endpoints de laps/pitstops; results no incluye neumáticos, safety car ni todo el contexto causal."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    },
+    {
+      "id": "opendota-partidas",
+      "category": "Deportes y juegos",
+      "name": "Videojuegos: partidas competitivas de Dota 2 en OpenDota",
+      "publisher": "The OpenDota Project; resultados procedentes de Valve y replays",
+      "sources": [
+        {
+          "url": "https://docs.opendota.com/",
+          "resource_url": "https://api.opendota.com/api/proMatches",
+          "verification": {
+            "checked_on": "2026-11-07",
+            "method": "public_resource_probe",
+            "detail": "Ver fecha, HTTP, formato y muestras en el README de pruebas; no es ingesta completa.",
+            "bulk_download_tested": false
+          }
+        },
+        {
+          "url": "https://github.com/odota/core/blob/master/README.md",
+          "label": "Documentación del productor"
+        }
+      ],
+      "coverage": "Partidas profesionales/competitivas incluidas por OpenDota; endpoint reciente, no censo de todos los jugadores.",
+      "grain": "Una partida profesional; detalles de jugadores, héroes y picks/bans requieren endpoints adicionales",
+      "reference_period": "Ventana reciente móvil de proMatches, fechada en cada captura",
+      "source_frequency": "Según disponibilidad y procesamiento de OpenDota",
+      "formats": [
+        "JSON"
+      ],
+      "access": "Recursos públicos consultados sin credenciales; ver pruebas fechadas y límites del productor.",
+      "postal_code_relation": "none",
+      "priority": "P2",
+      "effort": "Media",
+      "repository": {
+        "integration": "not_ingested",
+        "paths": []
+      },
+      "variables": [
+        "match_id",
+        "start_time",
+        "duration",
+        "radiant_team_id",
+        "dire_team_id",
+        "radiant_name",
+        "dire_name",
+        "radiant_win",
+        "radiant_score",
+        "dire_score",
+        "leagueid"
+      ],
+      "join_keys": [
+        "match_id; team_id y leagueid para cruces, no el nombre visible del equipo"
+      ],
+      "analysis_ideas": [
+        "¿La ventaja del bando Radiant cambia según torneo y parche al comparar equipos de fuerza semejante?",
+        "¿Qué combinaciones de héroes se asocian con victorias después de controlar parche y nivel de los equipos, usando detalles de draft?",
+        "¿Qué tan bien predice la diferencia de oro al minuto diez el desenlace en partidas futuras, frente a un pronóstico basado sólo en fuerza previa?"
+      ],
+      "caveats": [
+        "Snapshot y paginación con less_than_match_id: la ventana reciente cambia; deduplicar match_id y convertir start_time desde Unix UTC.",
+        "proMatches no contiene drafts, parche ni series de oro: adquirir /matches/{match_id} y verificar presencia de campos antes de esas preguntas.",
+        "Separar evaluación por fecha/parche/equipo y excluir marcador final o radiant_win como predictores; equipos y torneos pueden cambiar de nombre."
+      ],
+      "usage_terms": "API pública comunitaria: respetar límites/cuotas publicados y condiciones OpenDota/Valve. Licencia del código de OpenDota no concede por sí sola derechos sobre todos los datos o medios de Dota 2.",
+      "data_structure": "estructurado",
+      "data_modalities": [
+        "tabular",
+        "sequential"
+      ],
+      "smoke_test": "source_tests/README.md#opendota-partidas",
+      "discovery": {
+        "question": "¿La ventaja del bando Radiant cambia según torneo y parche al comparar equipos de fuerza semejante?",
+        "ai_role": "Describir drafts y patrones del juego que luego se contrasten con tasas ajustadas y evaluación temporal; ninguna recomendación se da por probada con dos partidas.",
+        "minimum_validation": [
+          "Snapshot y paginación con less_than_match_id: la ventana reciente cambia; deduplicar match_id y convertir start_time desde Unix UTC.",
+          "proMatches no contiene drafts, parche ni series de oro: adquirir /matches/{match_id} y verificar presencia de campos antes de esas preguntas.",
+          "Separar evaluación por fecha/parche/equipo y excluir marcador final o radiant_win como predictores; equipos y torneos pueden cambiar de nombre."
+        ],
+        "status": "hypothesis_not_tested"
+      }
+    }
+  ],
+  "extensions": [
+    {
+      "added_on": "2026-11-07",
+      "source_ids": [
+        "pgnmentor-ajedrez",
+        "statsbomb-futbol",
+        "cross-tables-scrabble",
+        "nba-elo",
+        "jolpica-f1",
+        "opendota-partidas"
+      ],
+      "scope": "Seis fuentes de deportes y juegos; las fechas de fichas anteriores se conservan."
     }
   ]
 }

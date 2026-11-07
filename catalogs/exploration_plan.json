@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "title": "Plan de exploración con skills, MCP/herramientas y arneses",
-  "reviewed_on": "2026-11-04",
+  "reviewed_on": "2026-11-07",
   "timezone": "America/Mexico_City",
-  "scope": "Plan para 72 fuentes: cuatro skills instaladas y primer adaptador retail ejecutado; las otras preguntas y perfiles especializados siguen pendientes.",
+  "scope": "Plan para 78 fuentes: cuatro skills instaladas y primer adaptador retail ejecutado; las otras preguntas y perfiles especializados siguen pendientes.",
   "terminology": {
     "MCC": "Se interpreta como MCP (Model Context Protocol). Si el autor se refería a otra sigla, revisar sólo la capa de herramientas.",
     "skill": "Procedimiento reutilizable y criterios de trabajo.",
@@ -4154,6 +4154,316 @@
       "access_gate": "Hay registros/documento de muestra; adquirir y validar el corpus completo necesario antes de inferir resultados.",
       "first_question_id": "bob-ross-paletas.q1",
       "execution_harness": "E4"
+    },
+    {
+      "id": "pgnmentor-ajedrez",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "pgnmentor-ajedrez.q1",
+          "text": "¿Cómo cambia el repertorio de aperturas de Carlsen a lo largo de su carrera al separar ritmo de juego y fuerza del rival cuando estén documentados?"
+        },
+        {
+          "id": "pgnmentor-ajedrez.q2",
+          "text": "¿En qué aperturas cambia más la proporción de tablas al comparar torneos y décadas con cobertura suficiente?"
+        },
+        {
+          "id": "pgnmentor-ajedrez.q3",
+          "text": "¿Qué posiciones de partidas de grandes maestros producen desacuerdos entre la explicación de una IA y una evaluación reproducible de Stockfish?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "PGN de eventos/jugadores seleccionados; control de tiempo y títulos de fuentes oficiales si se comparan estratos; python-chess y Stockfish sólo para análisis posterior.",
+      "specific_checks": [
+        "Validar movimientos con python-chess, normalizar resultados y fechas parciales y deduplicar partidas.",
+        "El archivo de un gran maestro puede incluir su infancia: no etiquetar toda su carrera ni todos sus rivales como GM; separar controles de tiempo y títulos por fecha.",
+        "Para evaluar explicaciones fijar versión de Stockfish, posición FEN, profundidad y perspectiva de la evaluación; el smoke test sólo lee notación."
+      ],
+      "first_output": "Repertorio de aperturas por periodo, con conteos, cobertura y partidas de ejemplo.",
+      "name": "Ajedrez: grandes maestros, campeonatos y aperturas en PGN",
+      "category": "Deportes y juegos",
+      "grain": "Una partida; cabeceras PGN y secuencia de movimientos",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-07T06:03:55+00:00",
+        "2026-11-07T06:03:58+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#pgnmentor-ajedrez",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.",
+      "first_question_id": "pgnmentor-ajedrez.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "statsbomb-futbol",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GRAPH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "statsbomb-futbol.q1",
+          "text": "¿Qué equipos generan más peligro por tiro aunque disparen menos, al comparar goles esperados y volumen en una misma competición?"
+        },
+        {
+          "id": "statsbomb-futbol.q2",
+          "text": "¿Cómo cambia la red de pases de un equipo cuando va ganando o perdiendo, sin confundir el marcador con el tiempo de juego?"
+        },
+        {
+          "id": "statsbomb-futbol.q3",
+          "text": "¿Qué estilos de ataque se repiten entre partidos y cuáles sólo parecen distintos por mezclar competiciones y temporadas?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Partidos y eventos completos de una misma competición/temporada, diccionario StatsBomb y, para redes, alineaciones.",
+      "specific_checks": [
+        "Mantener separados grano partido/evento; los autogoles y cambios de periodo exigen reglas explícitas para reconstruir marcador.",
+        "xG es una estimación del productor, no un gol observado; normalizar orientación y escala de coordenadas con su documentación.",
+        "Separar entrenamiento/evaluación por partido y tiempo para evitar que eventos del mismo encuentro aparezcan en ambos."
+      ],
+      "first_output": "Mapa de tiros y ranking volumen/calidad de ocasiones por equipo, con denominadores y cobertura.",
+      "name": "Fútbol soccer: partidos, eventos y xG de StatsBomb Open Data",
+      "category": "Deportes y juegos",
+      "grain": "Tablas separadas: competición–temporada, partido, evento y alineación",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-07T06:03:55+00:00",
+        "2026-11-07T06:03:58+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#statsbomb-futbol",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.",
+      "first_question_id": "statsbomb-futbol.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "cross-tables-scrabble",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "CORPUS"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "TEXT"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "cross-tables-scrabble.q1",
+          "text": "¿Cuándo conviene sacrificar puntos inmediatos para conservar un mejor atril, según simulaciones de alternativas con el mismo tablero y bolsa?"
+        },
+        {
+          "id": "cross-tables-scrabble.q2",
+          "text": "¿Qué proporción de la diferencia de puntos se concentra en jugadas que usan las siete fichas, frente a otras jugadas, en partidas comparables?"
+        },
+        {
+          "id": "cross-tables-scrabble.q3",
+          "text": "¿Los comentarios humanos sobre jugadas arriesgadas concuerdan con la pérdida de equidad estimada por un simulador con reglas fijadas?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Muestra autorizada de GCG, reglas/lexicón con acceso permitido y un simulador como Quackle para la pregunta de decisiones.",
+      "specific_checks": [
+        "Reconstruir tablero, atril, bolsa, comodines, pases, cambios, challenges y ajustes finales antes de simular alternativas.",
+        "Fijar idioma, edición del lexicón y reglas; una palabra de una partida en inglés no prueba validez en español.",
+        "Archivo comunitario seleccionado: no generalizar sus frecuencias a todos los jugadores ni asumir que comentarios son etiquetas objetivas."
+      ],
+      "first_output": "Desglose de puntos por tipo de turno y una partida reconstruida para contrastar alternativas.",
+      "name": "Scrabble: partidas anotadas y turnos en GCG",
+      "category": "Deportes y juegos",
+      "grain": "Una partida GCG; turnos con jugador, atril/jugada, puntos y total, más comentarios opcionales",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-07T06:03:55+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#cross-tables-scrabble",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.",
+      "first_question_id": "cross-tables-scrabble.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "nba-elo",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "nba-elo.q1",
+          "text": "¿Las probabilidades Elo están bien calibradas en playoffs y temporada regular al usar sólo información anterior al encuentro?"
+        },
+        {
+          "id": "nba-elo.q2",
+          "text": "¿Cuánto cambia la ventaja de jugar en casa por época después de ajustar por diferencia de Elo antes del partido?"
+        },
+        {
+          "id": "nba-elo.q3",
+          "text": "¿Qué franquicias muestran más continuidad competitiva al agrupar cambios de nombre con fran_id en vez de team_id?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "CSV completo y diccionario de variables; partición temporal y definición explícita de liga, localía y unidad de evaluación.",
+      "specific_checks": [
+        "Evitar contar dos veces un encuentro: contrastar filas espejo, _iscopy y consistencia pts/opp_pts.",
+        "elo_n y resultado son posteriores al partido: no usarlos para predecirlo; validar por orden temporal.",
+        "Separar NBA/ABA, temporada/playoffs y franquicia/equipo; comprobar límites históricos del archivo completo."
+      ],
+      "first_output": "Curva de calibración de forecast por época y fase, con un registro por encuentro.",
+      "name": "Básquetbol: historia NBA/ABA y pronósticos Elo",
+      "category": "Deportes y juegos",
+      "grain": "Equipo–partido: normalmente dos filas espejo por encuentro",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-07T06:03:55+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#nba-elo",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.",
+      "first_question_id": "nba-elo.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "jolpica-f1",
+      "skills": [
+        "BASE",
+        "INGEST"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "jolpica-f1.q1",
+          "text": "¿En qué circuitos cambia más la relación entre posición de salida y llegada al separar abandonos y temporadas?"
+        },
+        {
+          "id": "jolpica-f1.q2",
+          "text": "¿Cómo cambia la comparación entre compañeros de escudería si medimos posiciones ganadas en lugar de puntos?"
+        },
+        {
+          "id": "jolpica-f1.q3",
+          "text": "¿Qué paradas en boxes parecen asociarse con ganar posiciones al controlar vuelta de entrada y posición previa, sin atribuirles causalidad?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Temporadas completas paginadas, clasificación y resultados; vueltas/paradas para estrategia. No se requiere cuenta en las peticiones de muestra.",
+      "specific_checks": [
+        "Paginar limit/offset y contrastar MRData.total; dos resultados no representan toda la parrilla.",
+        "No confundir status de abandono con una posición de llegada comparable; registrar clasificados, vueltas completadas y reglas de puntos por año.",
+        "Para analizar boxes se necesitan endpoints de laps/pitstops; results no incluye neumáticos, safety car ni todo el contexto causal."
+      ],
+      "first_output": "Salida frente a llegada por circuito, con abandonos separados y cobertura por temporada.",
+      "name": "Fórmula 1: carreras, clasificación y resultados vía Jolpica",
+      "category": "Deportes y juegos",
+      "grain": "Piloto–carrera en results; tablas separadas para clasificación, vueltas y paradas",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-07T06:03:58+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#jolpica-f1",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.",
+      "first_question_id": "jolpica-f1.q1",
+      "execution_harness": "E1"
+    },
+    {
+      "id": "opendota-partidas",
+      "skills": [
+        "BASE",
+        "INGEST",
+        "GRAPH"
+      ],
+      "harnesses": [
+        "H0",
+        "TAB",
+        "GRAPH"
+      ],
+      "tools": [
+        "REPO",
+        "FILES",
+        "HTTP"
+      ],
+      "questions": [
+        {
+          "id": "opendota-partidas.q1",
+          "text": "¿La ventaja del bando Radiant cambia según torneo y parche al comparar equipos de fuerza semejante?"
+        },
+        {
+          "id": "opendota-partidas.q2",
+          "text": "¿Qué combinaciones de héroes se asocian con victorias después de controlar parche y nivel de los equipos, usando detalles de draft?"
+        },
+        {
+          "id": "opendota-partidas.q3",
+          "text": "¿Qué tan bien predice la diferencia de oro al minuto diez el desenlace en partidas futuras, frente a un pronóstico basado sólo en fuerza previa?"
+        }
+      ],
+      "additional_source_ids": [],
+      "needed_inputs": "Capturas reproducibles de proMatches; detalles /matches/{match_id}, metadatos de parches y métricas de fuerza calculadas sólo con el pasado.",
+      "specific_checks": [
+        "Snapshot y paginación con less_than_match_id: la ventana reciente cambia; deduplicar match_id y convertir start_time desde Unix UTC.",
+        "proMatches no contiene drafts, parche ni series de oro: adquirir /matches/{match_id} y verificar presencia de campos antes de esas preguntas.",
+        "Separar evaluación por fecha/parche/equipo y excluir marcador final o radiant_win como predictores; equipos y torneos pueden cambiar de nombre."
+      ],
+      "first_output": "Tasa Radiant por torneo y periodo con intervalos, conteos y porcentaje de datos de parche disponibles.",
+      "name": "Videojuegos: partidas competitivas de Dota 2 en OpenDota",
+      "category": "Deportes y juegos",
+      "grain": "Una partida profesional; detalles de jugadores, héroes y picks/bans requieren endpoints adicionales",
+      "latest_source_test_status": "DATA_SAMPLE",
+      "source_test_at_utc": [
+        "2026-11-07T06:03:58+00:00"
+      ],
+      "source_test_link": "source_tests/README.md#opendota-partidas",
+      "plan_status": "proposed_not_executed",
+      "access_gate": "Registros de muestra recuperados. Adquirir y validar el corpus completo y los insumos adicionales de cada pregunta antes de calcular conclusiones.",
+      "first_question_id": "opendota-partidas.q1",
+      "execution_harness": "E1"
     }
   ],
   "based_on": {
@@ -4192,5 +4502,22 @@
       "state": "Pillow ya se usó en pruebas de imagen; dependencias y corpus de cada análisis deben validarse.",
       "acceptance": "Cada salida enlaza a medio/versión/intervalo; se fijan reproducción, FPS o frecuencia, y los grupos no se filtran entre particiones."
     }
-  }
+  },
+  "extensions": [
+    {
+      "added_on": "2026-11-07",
+      "source_ids": [
+        "pgnmentor-ajedrez",
+        "statsbomb-futbol",
+        "cross-tables-scrabble",
+        "nba-elo",
+        "jolpica-f1",
+        "opendota-partidas"
+      ],
+      "based_on_commit": "73ccf41e8e950eb6e0456e3e6b45c323a79b6d21",
+      "catalog_sha256": "7e17341c21a058ce8d38ca742e90f901bdf3718d30791597f44f8141057599da",
+      "source_tests_sha256": "8c4aa7e3bfb3f1f0fd0c7bf254ac7d485f301f3397ff88cb615367c8167cb3fd",
+      "scope": "18 preguntas propuestas de deportes y juegos; no se ejecutaron análisis ni se instalaron perfiles especializados."
+    }
+  ]
 }

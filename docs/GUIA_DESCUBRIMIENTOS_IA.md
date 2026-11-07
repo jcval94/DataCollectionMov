@@ -4,7 +4,7 @@ El objetivo de este catálogo es encontrar preguntas que no se nos habrían ocur
 
 Las preguntas siguientes son **hipótesis abiertas**, no hallazgos ya demostrados. El [piloto de Bob Ross](../examples/bob_ross_discovery/README.md) es una excepción explícita: incluye cálculos ejecutados y verificaciones. Las [pruebas de acceso](../source_tests/README.md) indican qué material se recuperó realmente.
 
-La [matriz de exploración por fuente](exploration/README.md) amplía esta guía con **216 preguntas**, skills, MCP/herramientas, arneses y controles concretos para las 72 fuentes. Es un plan de trabajo; las respuestas y evaluaciones de método siguen pendientes.
+La [matriz de exploración por fuente](exploration/README.md) amplía esta guía con **234 preguntas**, skills, MCP/herramientas, arneses y controles concretos para las 78 fuentes. Es un plan de trabajo; las respuestas y evaluaciones de método siguen pendientes.
 
 ## Mapa de temas y preguntas
 
@@ -73,3 +73,7 @@ Para trabajar con un agente:
 > Explora esta pregunta usando únicamente las fuentes indicadas. Propón explicaciones alternativas, extrae evidencia con identificadores verificables y calcula con un programa los conteos que uses. Separa hipótesis de resultados. Busca contraejemplos y no generalices fuera del corpus ni conviertas correlaciones en causas. Si falta acceso al contenido, registra la limitación y no lo sustituyas con memoria o citas inventadas.
 
 El catálogo contiene acceso y posibilidades. El informe de pruebas demuestra qué se pudo recuperar. Una conclusión sobre el mundo requiere además validar el análisis.
+
+## Deportes y juegos
+
+La ampliación añade ajedrez de grandes maestros y archivos generales, fútbol soccer, Scrabble, básquetbol, Fórmula 1 y Dota 2: seis fuentes y 18 preguntas. Ver [fichas y controles específicos](CATALOGO_DATASETS_REALES.md#deportes-y-juegos) y [README de tests con registros reales](../source_tests/by_topic/deportes-y-juegos/README.md). El interés común es distinguir habilidad, estrategia y azar sin usar información del resultado para predecirlo.

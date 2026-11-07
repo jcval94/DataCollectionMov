@@ -18,6 +18,7 @@ import re
 import sys
 import time
 import unicodedata
+import zipfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -92,11 +93,44 @@ def decode(data):
         except UnicodeDecodeError:pass
     return data.decode('utf-8','replace')
 
+def pgn_samples(text):
+    """Read headers and a short movetext excerpt, without claiming legal moves."""
+    rows=[]
+    for game in re.split(r'(?m)(?=^\[Event\s)',text):
+        if not game.strip():continue
+        headers=dict(re.findall(r'^\[(\w+)\s+"((?:\\.|[^"\\])*)"\]\s*$',game,re.M))
+        if not {'Event','White','Black','Result'} <= headers.keys():
+            raise ValueError('PGN sin cabeceras Event/White/Black/Result')
+        if headers['Result'] not in ('1-0','0-1','1/2-1/2','*'):
+            raise ValueError('Resultado PGN inesperado')
+        moves=re.sub(r'^\[.*\]\s*$','',game,flags=re.M).strip()
+        if not moves:raise ValueError('PGN sin movetext')
+        rows.append({**pick(headers,['Event','Site','Date','Round','White','Black','Result','WhiteElo','BlackElo','ECO']),
+                     'moves_excerpt':brief(' '.join(moves.split()),180)})
+        if len(rows)==2:break
+    if not rows:raise ValueError('No se encontraron partidas PGN')
+    return rows
+
+def gcg_samples(text):
+    """Read scored turns; do not infer word legality, winner or strategy."""
+    players={nick:name.strip() for nick,name in re.findall(r'^#player[12]\s+(\S+)\s+(.+)$',text,re.M)}
+    if len(players)!=2:raise ValueError('GCG sin dos jugadores declarados')
+    rows=[]
+    for line in text.splitlines():
+        match=re.match(r'^>([^:]+):\s*(.*?)\s+([+-]\d+)\s+(-?\d+)\s*$',line)
+        if not match:continue
+        nick,action,points,total=match.groups()
+        if nick not in players:raise ValueError('Turno GCG de jugador no declarado')
+        rows.append(dict(player=players[nick],action=action,points=int(points),total=int(total)))
+        if len(rows)==2:break
+    if not rows:raise ValueError('GCG sin turnos puntuados reconocibles')
+    return rows
+
 def run_check(spec,args):
     out=dict(checked_at_utc=now(),kind=spec['kind'],scope=spec.get('scope','live_public'),sample=[])
     start=time.monotonic()
     kind=spec['kind']
-    prefix=kind in ('csv','text','noaa_fixed','media','gsm_jsonl','amc') and not spec.get('full_read')
+    prefix=kind in ('csv','text','noaa_fixed','media','gsm_jsonl','amc','pgn','gcg') and not spec.get('full_read')
     limit=65536 if prefix else args.max_bytes
     try:
         data,metadata=fetch(spec['url'],args.timeout,limit,prefix)
@@ -174,6 +208,24 @@ def run_check(spec,args):
             for f in spec.get('required',[]):
                 if f not in reader.fieldnames:raise ValueError('Columna requerida ausente: '+f)
             out.update(status='CACHED_SAMPLE' if spec.get('scope')=='repository_snapshot' else 'DATA_SAMPLE',columns=reader.fieldnames,sample=[pick(r,spec.get('fields')) for r in rows],detail='Primeras filas completas del archivo; no se contó el total ni se comprobaron llaves globales.')
+        elif kind in ('pgn','pgn_zip','gcg'):
+            if '<html' in lower or '<!doctype html' in lower:raise ValueError('Se esperaba notación de juego y se recibió HTML')
+            if kind=='pgn_zip':
+                with zipfile.ZipFile(io.BytesIO(data)) as archive:
+                    members=[m for m in archive.infolist() if m.filename.lower().endswith('.pgn') and not m.is_dir()]
+                    if not members:raise ValueError('ZIP sin miembro PGN')
+                    member=members[0]
+                    # Never extract paths or inflate a whole untrusted archive.
+                    with archive.open(member) as stream:raw=stream.read(65537)
+                    text=decode(raw[:65536])
+                    out['archive_member']=dict(name=member.filename,declared_bytes=member.file_size,
+                        bytes_read=min(len(raw),65536),truncated=len(raw)>65536,
+                        sha256=hashlib.sha256(raw[:65536]).hexdigest(),
+                        hash_scope='member_prefix' if len(raw)>65536 else 'complete_member')
+            rows=gcg_samples(text) if kind=='gcg' else pgn_samples(text)
+            out.update(status='DATA_SAMPLE',sample=rows,detail=(
+                'Dos primeros turnos puntuados del GCG; no se verificaron tablero, diccionario, ganador ni legalidad de las palabras.' if kind=='gcg' else
+                'Cabeceras y fragmentos de jugadas de las dos primeras partidas del PGN; no se validó la legalidad de movimientos ni el corpus completo. El archivo por jugador puede incluir etapas anteriores a su título GM.'))
         elif kind=='gsm_jsonl':
             first=next((line for line in text.splitlines() if line.strip()),None)
             row=json.loads(first or '{}')
