@@ -15,9 +15,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `campus_cdmx_base` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-10-08T16:27:52Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-10-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261008T162625Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-08T15:57:39Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261108T155630Z` |
 | `campus_id` | `str` | Pendiente de documentar | `unam_cu` |
 | `universidad` | `str` | Pendiente de documentar | `UNAM` |
 | `campus` | `str` | Pendiente de documentar | `Ciudad Universitaria` |
@@ -38,9 +38,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_cdmx_educacion_superior_universitaria` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-10-08T16:27:52Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-10-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261008T162625Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-08T15:57:39Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261108T155630Z` |
 | `clee` | `str` | Pendiente de documentar | `09015611312000136000000000U1` |
 | `id_establecimiento` | `int64` | Pendiente de documentar | `1059370` |
 | `nombre` | `str` | Pendiente de documentar | `ACADEMIA DE SAN CARLOS` |
@@ -53,7 +53,7 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | `num_interior` | `float64` | Pendiente de documentar | `4.0` |
 | `colonia` | `str` | Pendiente de documentar | `CENTRO` |
 | `cp` | `int64` | Pendiente de documentar | `6060` |
-| `ubicacion` | `str` | Pendiente de documentar | `CUAUHTÉMOC                                                                                                    , Cuauhtém` |
+| `ubicacion` | `str` | Pendiente de documentar | `CUAUHTÉMOC,Cuauhtémoc,CIUDAD DE MÉXICO` |
 | `telefono` | `float64` | Pendiente de documentar | `5556220601.0` |
 | `correo_e` | `str` | Pendiente de documentar | `DIANA.PACHECO@SC.NACER-GLOBAL.COM.MX` |
 | `sitio_internet` | `str` | Pendiente de documentar | `ACADEMIASANCARLOS.UNAM.MX` |
@@ -80,7 +80,7 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | `clase_actividad_clean` | `str` | Pendiente de documentar | `escuelas de educacion superior del sector publico` |
 | `estrato_clean` | `str` | Pendiente de documentar | `101 a 250 personas` |
 | `colonia_clean` | `str` | Pendiente de documentar | `centro` |
-| `ubicacion_clean` | `str` | Pendiente de documentar | `cuauhtemoc , cuauhtemoc, ciudad de mexico` |
+| `ubicacion_clean` | `str` | Pendiente de documentar | `cuauhtemoc,cuauhtemoc,ciudad de mexico` |
 | `nivel_educativo_estimado` | `str` | Pendiente de documentar | `superior_universitaria` |
 | `flag_universidad` | `bool` | Pendiente de documentar | `True` |
 | `flag_media_superior` | `bool` | Pendiente de documentar | `False` |
@@ -99,9 +99,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_cdmx_sector_61_servicios_educativos` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-10-08T16:27:52Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-10-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261008T162625Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-08T15:57:39Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261108T155630Z` |
 | `clee` | `str` | Pendiente de documentar | `09005611621001441000000000U9` |
 | `id_establecimiento` | `int64` | Pendiente de documentar | `9496872` |
 | `nombre` | `str` | Pendiente de documentar | `12 ROUNDS` |
@@ -114,7 +114,7 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | `num_interior` | `float64` | Pendiente de documentar | `11.0` |
 | `colonia` | `str` | Pendiente de documentar | `LA PRADERA` |
 | `cp` | `int64` | Pendiente de documentar | `7500` |
-| `ubicacion` | `str` | Pendiente de documentar | `GUSTAVO A. MADERO                                                                                             , Gustavo ` |
+| `ubicacion` | `str` | Pendiente de documentar | `GUSTAVO A. MADERO,Gustavo A. Madero,CIUDAD DE MÉXICO` |
 | `telefono` | `float64` | Pendiente de documentar | `5620137765.0` |
 | `correo_e` | `str` | Pendiente de documentar | `E09DPR2087X@AEFCM.GOB.MX` |
 | `sitio_internet` | `str` | Pendiente de documentar | `SIKHCENTERMEXICO.ORG` |
@@ -141,7 +141,7 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | `clase_actividad_clean` | `str` | Pendiente de documentar | `escuelas de deporte del sector privado` |
 | `estrato_clean` | `str` | Pendiente de documentar | `0 a 5 personas` |
 | `colonia_clean` | `str` | Pendiente de documentar | `la pradera` |
-| `ubicacion_clean` | `str` | Pendiente de documentar | `gustavo a. madero , gustavo a. madero, ciudad de mexico` |
+| `ubicacion_clean` | `str` | Pendiente de documentar | `gustavo a. madero,gustavo a. madero,ciudad de mexico` |
 | `nivel_educativo_estimado` | `str` | Pendiente de documentar | `capacitacion_otros` |
 | `flag_universidad` | `bool` | Pendiente de documentar | `False` |
 | `flag_media_superior` | `bool` | Pendiente de documentar | `False` |
@@ -160,9 +160,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_establecimientos_alrededor_campus` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-10-08T16:27:52Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-10-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261008T162625Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-08T15:57:40Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261108T155630Z` |
 | `clee` | `str` | Pendiente de documentar | `09003491110000063000041638S6` |
 | `id_establecimiento` | `int64` | Pendiente de documentar | `8631657` |
 | `nombre` | `str` | Pendiente de documentar | `CIUDAD UNIVERSITARIA CDMX` |
@@ -217,9 +217,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_metadata_reporte` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-10-08T16:27:53Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-10-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261008T162625Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-08T15:57:40Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261108T155630Z` |
 | `table_name` | `str` | Pendiente de documentar | `campus_cdmx_base` |
 | `column` | `str` | Pendiente de documentar | `campus_id` |
 | `dtype` | `str` | Pendiente de documentar | `str` |
@@ -241,9 +241,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_resumen_por_nivel_educativo` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-10-08T16:27:53Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-10-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261008T162625Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-08T15:57:40Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261108T155630Z` |
 | `campus_id` | `str` | Pendiente de documentar | `ibero_santa_fe` |
 | `universidad_base` | `str` | Pendiente de documentar | `Universidad Iberoamericana` |
 | `campus_base` | `str` | Pendiente de documentar | `Santa Fe` |
@@ -264,9 +264,9 @@ Complete en el catalogo los significados de columnas cuando el valor aparezca co
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `denue` |
 | `_source_table` | `str` | Pendiente de documentar | `denue_resumen_zonas_universitarias` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-10-08T16:27:53Z` |
-| `_snapshot_date` | `str` | Pendiente de documentar | `2026-10-08` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261008T162625Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-08T15:57:40Z` |
+| `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-08` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261108T155630Z` |
 | `campus_id` | `str` | Pendiente de documentar | `unam_cu` |
 | `universidad_base` | `str` | Pendiente de documentar | `UNAM` |
 | `campus_base` | `str` | Pendiente de documentar | `Ciudad Universitaria` |

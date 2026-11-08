@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-11-08T15:57:40Z",
+  "source": "denue",
+  "snapshot_id": "20261108T155630Z",
+  "snapshot_date": "2026-11-08",
+  "tables": [
+    {
+      "table": "campus_cdmx_base",
+      "source": "denue",
+      "snapshot_id": "20261108T155630Z",
+      "snapshot_date": "2026-11-08",
+      "rows": 12,
+      "columns": 12,
+      "hash_sha256": "3c9f3bdf151d2c9f734db19916660b858e8c5e23c3356944d832254246443a33",
+      "cadence": "quarterly",
+      "current_path": "data/current/campus_cdmx_base.csv",
+      "snapshot_path": "data/history/campus_cdmx_base/20261108T155630Z.csv"
+    },
+    {
+      "table": "denue_cdmx_educacion_superior_universitaria",
+      "source": "denue",
+      "snapshot_id": "20261108T155630Z",
+      "snapshot_date": "2026-11-08",
+      "rows": 881,
+      "columns": 50,
+      "hash_sha256": "404acce439ac7aac50eb9dcd1565a770f25fc2c47ebad4477ad372f2faa36e51",
+      "cadence": "monthly",
+      "current_path": "data/current/denue_cdmx_educacion_superior_universitaria.csv",
+      "snapshot_path": "data/history/denue_cdmx_educacion_superior_universitaria/20261108T155630Z.csv"
+    },
+    {
+      "table": "denue_cdmx_sector_61_servicios_educativos",
+      "source": "denue",
+      "snapshot_id": "20261108T155630Z",
+      "snapshot_date": "2026-11-08",
+      "rows": 10591,
+      "columns": 50,
+      "hash_sha256": "d78a372c6f1c481313ea5d0f3f690ace1622393a644b8cff7a6b9e84a8d3dcde",
+      "cadence": "monthly",
+      "current_path": "data/current/denue_cdmx_sector_61_servicios_educativos.csv",
+      "snapshot_path": "data/history/denue_cdmx_sector_61_servicios_educativos/20261108T155630Z.csv"
+    },
+    {
+      "table": "denue_establecimientos_alrededor_campus",
+      "source": "denue",
+      "snapshot_id": "20261108T155630Z",
+      "snapshot_date": "2026-11-08",
+      "rows": 5728,
+      "columns": 46,
+      "hash_sha256": "071c12b13558f30713a54e14a5d92b0dd6fb37c4f32a97b1cb4cb6eead5e411f",
+      "cadence": "monthly",
+      "current_path": "data/current/denue_establecimientos_alrededor_campus.csv",
+      "snapshot_path": "data/history/denue_establecimientos_alrededor_campus/20261108T155630Z.csv"
+    },
+    {
+      "table": "denue_metadata_reporte",
+      "source": "denue",
+      "snapshot_id": "20261108T155630Z",
+      "snapshot_date": "2026-11-08",
+      "rows": 159,
+      "columns": 13,
+      "hash_sha256": "d7ba3d2b4536e9b75ba61ca6298c2008885d49ff97c3370ca704cc94871302f0",
+      "cadence": "monthly",
+      "current_path": "data/current/denue_metadata_reporte.csv",
+      "snapshot_path": "data/history/denue_metadata_reporte/20261108T155630Z.csv"
+    },
+    {
+      "table": "denue_resumen_por_nivel_educativo",
+      "source": "denue",
+      "snapshot_id": "20261108T155630Z",
+      "snapshot_date": "2026-11-08",
+      "rows": 186,
+      "columns": 12,
+      "hash_sha256": "f00f84a40b0dcdd4175ff9087bbef0a7a6496eabc1bfa2a1c64c279de780ec99",
+      "cadence": "monthly",
+      "current_path": "data/current/denue_resumen_por_nivel_educativo.csv",
+      "snapshot_path": "data/history/denue_resumen_por_nivel_educativo/20261108T155630Z.csv"
+    },
+    {
+      "table": "denue_resumen_zonas_universitarias",
+      "source": "denue",
+      "snapshot_id": "20261108T155630Z",
+      "snapshot_date": "2026-11-08",
+      "rows": 32,
+      "columns": 19,
+      "hash_sha256": "b222fff64e5caf9497e6cefebaa2ec88b72460602a99036c8997b930fcb0ae32",
+      "cadence": "monthly",
+      "current_path": "data/current/denue_resumen_zonas_universitarias.csv",
+      "snapshot_path": "data/history/denue_resumen_zonas_universitarias/20261108T155630Z.csv"
+    }
+  ]
+}
