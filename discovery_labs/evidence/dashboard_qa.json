@@ -17,6 +17,6 @@
     "escaped_dataset_payload"
   ],
   "scope": "Lógica JavaScript y marcado con adaptador de documento; NO validación visual ni smoke en navegador.",
-  "browser_verification": "BLOCKED_ENVIRONMENT: Chromium no puede crear socket de perfil; distribución Playwright no se pudo descargar.",
-  "responsive_css": "Presente; comportamiento visual PENDIENTE de navegador."
+  "browser_verification": "Prueba de navegador independiente en tests/dashboard_browser.py; consultar su evidencia de CI.",
+  "responsive_css": "Presente; este test no valida renderizado."
 }

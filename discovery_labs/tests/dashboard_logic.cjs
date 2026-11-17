@@ -24,5 +24,5 @@ ok('top10_and_13_category_tops',()=>{assert.equal((get('top10').innerHTML.match(
 ok('3_embedded_pilot_images',()=>assert.equal((get('pilotcards').innerHTML.match(/data:image\/png;base64,/g)||[]).length,3));
 ok('no_remote_scripts_css_images',()=>assert(!/<(?:script|link|img)\b[^>]*(?:src|href)=["']https?:/i.test(html)));
 ok('escaped_dataset_payload',()=>assert(!data.includes('</script>')));
-const report={status:'PASS',checks,scope:'Lógica JavaScript y marcado con adaptador de documento; NO validación visual ni smoke en navegador.',browser_verification:'BLOCKED_ENVIRONMENT: Chromium no puede crear socket de perfil; distribución Playwright no se pudo descargar.',responsive_css:'Presente; comportamiento visual PENDIENTE de navegador.'};
+const report={status:'PASS',checks,scope:'Lógica JavaScript y marcado con adaptador de documento; NO validación visual ni smoke en navegador.',browser_verification:'Prueba de navegador independiente en tests/dashboard_browser.py; consultar su evidencia de CI.',responsive_css:'Presente; este test no valida renderizado.'};
 fs.writeFileSync(path.join(root,'evidence/dashboard_qa.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

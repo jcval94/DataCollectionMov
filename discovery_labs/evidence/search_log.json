@@ -1413,8 +1413,9 @@
     "hits": [
       {
         "title": "State of the Climate Update for COP31",
-        "url": "https://wmo.int/resources/publication-series/state-of-climate-update-cop/state-of-climate-update-cop31?access-token=mJDg5BlTBjUJ12HdY6R1r1gNfTe0gjT_obPhTg-DYTM",
-        "locator": "turn58search0"
+        "url": "https://wmo.int/resources/publication-series/state-of-climate-update-cop/state-of-climate-update-cop31",
+        "locator": "turn58search0",
+        "url_normalization": "Removed public search query credential-like parameters; canonical resource URL retained."
       },
       {
         "title": "Global | Cumbres del clima: de las promesas a la implementación | BBVA Research",
