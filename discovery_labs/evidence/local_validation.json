@@ -1,0 +1,36 @@
+{
+  "integrity_and_pilot_tests": {
+    "status": "PASS",
+    "tests": 6,
+    "offline": true,
+    "identical_numerical_and_png_repetition": true,
+    "negative_checks": [
+      "snapshot_hash_tampering",
+      "nonbinary_motif",
+      "missing_mirror_row"
+    ]
+  },
+  "original_retail_metrics": "PASS: full metrics.json equality on 541909 original rows",
+  "original_bob_reference": "PASS: run.py --check exact equality",
+  "notebooks": "PASS: all 3 executed with marked test prediction, no saved outputs",
+  "dashboard_logic": "PASS: 14 checks using a document adapter; rendering not verified",
+  "course_harness": {
+    "validate": "PASS",
+    "build": "PASS: 453 files, 9.51 MB",
+    "check": "PASS",
+    "smoke": "BLOCKED_ENVIRONMENT: Playwright browser absent; system Chromium socket creation denied",
+    "all": "NOT_PASS; no validator relaxed"
+  },
+  "pedagogical_review": "PENDIENTE",
+  "real_45min_rehearsal": "PENDIENTE",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8",
+    "playwright": "1.62.0; course pins 1.56.0, so environment is not canonical"
+  },
+  "date_local": "2026-11-16"
+}

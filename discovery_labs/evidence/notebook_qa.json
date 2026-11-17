@@ -1,0 +1,17 @@
+[
+  {
+    "notebook": "pilots/uci-retail/alumno.ipynb",
+    "status": "PASS",
+    "scope": "Celdas Python ejecutadas con predicción de prueba explícita; cuaderno entregado sin outputs ni respuesta real de alumno."
+  },
+  {
+    "notebook": "pilots/bob-ross-elementos/alumno.ipynb",
+    "status": "PASS",
+    "scope": "Celdas Python ejecutadas con predicción de prueba explícita; cuaderno entregado sin outputs ni respuesta real de alumno."
+  },
+  {
+    "notebook": "pilots/nba-elo/alumno.ipynb",
+    "status": "PASS",
+    "scope": "Celdas Python ejecutadas con predicción de prueba explícita; cuaderno entregado sin outputs ni respuesta real de alumno."
+  }
+]

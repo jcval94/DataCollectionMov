@@ -1,0 +1,50 @@
+{
+  "sources": 86,
+  "questions": 516,
+  "questions_revised_from_original": 270,
+  "new_questions": 246,
+  "source_categories": 13,
+  "source_statuses": {
+    "DATA_SAMPLE": 26,
+    "TECHNICALLY_VERIFIED": 3,
+    "CACHED_SAMPLE": 2,
+    "DOC_ONLY": 26,
+    "HTTP_ERROR": 11,
+    "NETWORK_ERROR": 2,
+    "METADATA_SAMPLE": 6,
+    "DOCUMENT_SAMPLE": 3,
+    "BLOCKED": 6,
+    "LIMIT_REACHED": 1
+  },
+  "question_statuses": {
+    "DESIGNED_UNTESTED": 507,
+    "TECHNICALLY_EXECUTED": 9
+  },
+  "antecedent_statuses": {
+    "PROPUESTO": 239,
+    "DOCUMENTADO_EXTERNAMENTE": 19,
+    "REPRODUCIDO": 5
+  },
+  "public_queries": 86,
+  "pilot_technical_count": 3,
+  "ready_for_class": 0,
+  "top10": [
+    "uci-retail",
+    "nba-elo",
+    "bob-ross-elementos",
+    "ecobici-viajes",
+    "statsbomb-futbol",
+    "nyc-ratas",
+    "openflights-red-aerea",
+    "gsm8k-examenes",
+    "nasa-exoplanetas",
+    "nasa-bolidos"
+  ],
+  "unfulfilled": [
+    "Ficha física, licencia y QA integral de las 83 fuentes sin snapshot de piloto.",
+    "Al menos tres antecedentes sustantivos revisados por cada fuente cuando existan: los candidatos no cuentan.",
+    "Validación de campo de las 507 preguntas diseñadas sin ejecución.",
+    "Ensayo humano de 45 minutos y revisión docente independiente para los tres pilotos."
+  ],
+  "anti_overclaim": "Un conteo de registros o un GET correcto no es aprobación pedagógica ni valida representatividad."
+}

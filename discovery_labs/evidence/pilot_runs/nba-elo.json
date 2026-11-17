@@ -1,0 +1,137 @@
+{
+  "question_ids": [
+    "D10-D2",
+    "D10-E"
+  ],
+  "routes": {
+    "D2": "Comparar victoria local por fase",
+    "E": "Calibración de forecast previo y filas espejo"
+  },
+  "team_game_rows": 2622,
+  "unique_games": 1311,
+  "home_games": 1309,
+  "home_win_rate": 0.5760122230710466,
+  "block_bootstrap_date_95": [
+    0.5490612478210672,
+    0.6042353968432257
+  ],
+  "phases": [
+    {
+      "phase": "Regular",
+      "wins": 706,
+      "n": 1228,
+      "rate": 0.5749185667752443,
+      "wilson_descriptive_only": [
+        0.5470775379978563,
+        0.6022923331673444
+      ]
+    },
+    {
+      "phase": "Playoffs",
+      "wins": 48,
+      "n": 81,
+      "rate": 0.5925925925925926,
+      "wilson_descriptive_only": [
+        0.4837631326834905,
+        0.6930372218660625
+      ]
+    }
+  ],
+  "phase_difference_playoffs_minus_regular": 0.017674025817348227,
+  "phase_difference_block_95": [
+    -0.1008192212965561,
+    0.1309285545561301
+  ],
+  "brier": 0.20844088198204247,
+  "baseline_brier": 0.25,
+  "mirror_brier": 0.208440881798883,
+  "mirror_game_count_inflation": 2.0,
+  "date_min": "2014-10-28 00:00:00",
+  "date_max": "2015-06-16 00:00:00",
+  "feature_allowlist": [
+    "forecast",
+    "elo_i",
+    "game_location",
+    "is_playoffs"
+  ],
+  "forbidden_postgame_features": [
+    "pts",
+    "opp_pts",
+    "elo_n"
+  ],
+  "adversarial_result": "Se deduplican partidos, se verifican probabilidades complementarias y se calcula sensibilidad del Brier por perspectiva. elo_n está prohibido como predictor: incorpora el resultado. Marcadores sólo son etiquetas.",
+  "inference": "El bootstrap por fecha es sensibilidad exploratoria; no captura toda dependencia por equipos/series ni estima efecto causal de jugar en casa. Wilson iid se muestra únicamente como contraste didáctico. La comparación por fase confunde composición de equipos y selección a playoffs.",
+  "checks": [
+    "hash",
+    "schema",
+    "mirror_pairs",
+    "unique_team_game",
+    "complementary_forecasts",
+    "one_row_per_game",
+    "independent_mirror_brier",
+    "prefeature_allowlist",
+    "date_block_bootstrap"
+  ],
+  "source_id": "nba-elo",
+  "snapshot_sha256": "c960cfbeca7b5449ea675b64421b99b224047fbc898eccd56113ef344a9ca6e2",
+  "quality": {
+    "rows": 2622,
+    "columns": 23,
+    "blank_by_column": {
+      "gameorder": 0,
+      "game_id": 0,
+      "lg_id": 0,
+      "_iscopy": 0,
+      "year_id": 0,
+      "date_game": 0,
+      "seasongame": 0,
+      "is_playoffs": 0,
+      "team_id": 0,
+      "fran_id": 0,
+      "pts": 0,
+      "elo_i": 0,
+      "elo_n": 0,
+      "win_equiv": 0,
+      "opp_id": 0,
+      "opp_fran": 0,
+      "opp_pts": 0,
+      "opp_elo_i": 0,
+      "opp_elo_n": 0,
+      "game_location": 0,
+      "game_result": 0,
+      "forecast": 0,
+      "notes": 2618
+    },
+    "exact_duplicate_rows": 0,
+    "schema": [
+      "gameorder",
+      "game_id",
+      "lg_id",
+      "_iscopy",
+      "year_id",
+      "date_game",
+      "seasongame",
+      "is_playoffs",
+      "team_id",
+      "fran_id",
+      "pts",
+      "elo_i",
+      "elo_n",
+      "win_equiv",
+      "opp_id",
+      "opp_fran",
+      "opp_pts",
+      "opp_elo_i",
+      "opp_elo_n",
+      "game_location",
+      "game_result",
+      "forecast",
+      "notes"
+    ]
+  },
+  "seed": 20261116,
+  "technical_status": "EXECUTED_OFFLINE",
+  "classroom_status": "PENDIENTE_ENSAYO_HUMANO_45_MIN",
+  "real_data": true,
+  "rights_reviewed": true
+}

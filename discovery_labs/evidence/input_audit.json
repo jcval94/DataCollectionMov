@@ -1,0 +1,22 @@
+{
+  "questions_v1_v2_identical": true,
+  "question_count": 270,
+  "examples_v1": {
+    "rows": 45,
+    "states": {
+      "NO DOCUMENTADO": 44,
+      "REPRODUCIDO EN REPO": 1
+    }
+  },
+  "qa_v1": {
+    "rows": 45,
+    "readiness": "45 NO LISTO"
+  },
+  "sha256_inputs": {
+    "AI_Discovery_Labs_86_Fuentes_Categorizadas.md": "49fab3cdfd400894f4b59bf3f4730aabf0407f623f64d2c9c92fc38f0fab817b",
+    "AI_Discovery_Labs_Matriz_Maestra(1).xlsx": "b0bf44bd3d2d158662e3bd9d7238cd58556951e313dee73e1da6222008517d0c",
+    "AI_Discovery_Labs_45_casos_270_preguntas.md": "733587746eb4ce69c1d677a7a09fb5268d46b1ab9790e770c16275bcb5d3994e",
+    "PROMPT_AI_DISCOVERY_LABS_V2_86_FUENTES.md": "74c84997b6a505d72e28bbe17d01b6a2fda68f9417519db76429b839c8251f63",
+    "AI_Discovery_Labs_Matriz_86_Fuentes_516_Rutas.xlsx": "ee42f7ac490e82de1a2d2f9aac504fbe4914fc7bb9680213344cf58b57be0ed4"
+  }
+}
