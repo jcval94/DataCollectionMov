@@ -953,10 +953,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_flow` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-17T04:41:33Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-17T08:08:48Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-17` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261117T044129Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-11-17T04:41:30.047741` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261117T080845Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-11-17T08:08:45.667939` |
 | `point_name` | `str` | Punto estrategico consultado. | `Universidad - CU` |
 | `input_lat` | `float64` | Pendiente de documentar | `19.432608` |
 | `input_lon` | `float64` | Pendiente de documentar | `-99.133209` |
@@ -991,10 +991,10 @@ No existe snapshot actual para esta tabla.
 | --- | --- | --- | --- |
 | `_source_system` | `str` | Pendiente de documentar | `tomtom` |
 | `_source_table` | `str` | Pendiente de documentar | `tomtom_cdmx_incidents` |
-| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-17T04:41:33Z` |
+| `_extracted_at_utc` | `str` | Pendiente de documentar | `2026-11-17T08:08:51Z` |
 | `_snapshot_date` | `str` | Pendiente de documentar | `2026-11-17` |
-| `_snapshot_id` | `str` | Pendiente de documentar | `20261117T044129Z` |
-| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-11-17T04:41:30.018069` |
+| `_snapshot_id` | `str` | Pendiente de documentar | `20261117T080845Z` |
+| `extraction_timestamp` | `str` | Pendiente de documentar | `2026-11-17T08:08:45.621831` |
 | `incident_id` | `str` | Identificador de incidente reportado por TomTom. | `123456` |
 | `incident_type` | `str` | Pendiente de documentar | `Feature` |
 | `geometry_type` | `str` | Pendiente de documentar | `LineString` |
@@ -1012,7 +1012,7 @@ No existe snapshot actual para esta tabla.
 | `probability` | `str` | Pendiente de documentar | `probable` |
 | `number_of_reports` | `float64` | Pendiente de documentar | `` |
 | `start_time` | `str` | Pendiente de documentar | `2026-10-11T03:50:30Z` |
-| `end_time` | `str` | Pendiente de documentar | `2026-11-17T04:52:15Z` |
+| `end_time` | `str` | Pendiente de documentar | `2026-11-17T08:29:15Z` |
 | `last_report_time` | `float64` | Ultimo reporte del incidente segun TomTom. | `2026-06-04T13:30:00Z` |
 | `event_descriptions` | `str` | Pendiente de documentar | `Cerrado` |
 | `event_codes` | `int64` | Pendiente de documentar | `401` |
