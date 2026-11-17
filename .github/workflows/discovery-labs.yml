@@ -20,8 +20,8 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-          cache-dependency-path: discovery_labs/requirements.txt
-      - run: python -m pip install -r discovery_labs/requirements.txt
+          cache-dependency-path: discovery_labs/requirements-ci.txt
+      - run: python -m pip install -r discovery_labs/requirements-ci.txt
       - run: python discovery_labs/scripts/run_pilots.py
       - run: python discovery_labs/scripts/build_catalog.py
       - run: python discovery_labs/scripts/finalize_evidence.py
@@ -30,3 +30,12 @@ jobs:
       - run: node discovery_labs/tests/dashboard_logic.cjs
       - name: Catálogos reproducibles
         run: git diff --exit-code -- discovery_labs/catalog
+      - run: python -m playwright install --with-deps chromium
+      - run: python discovery_labs/tests/dashboard_browser.py
+      - name: Evidencia de navegador
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-dashboard-browser-qa
+          path: discovery_labs/test-output/
+          if-no-files-found: ignore
