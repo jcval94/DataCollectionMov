@@ -1,0 +1,138 @@
+[
+  {
+    "id": "retail-ranking",
+    "question_ids": [
+      "D31-A",
+      "D31-E"
+    ],
+    "title": "Bruto y neto por producto",
+    "denominator": "6 productos con mayor bruto; líneas elegibles de 300 facturas.",
+    "period": "noviembre 2011",
+    "source_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "f3c895e068c4267a24aafb5ab097b03105a4376fab87028647841fe5eaeae8bc",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/ranking.csv",
+    "table_sha256": "9c74f06c18b11a2b887d99566d650b807300246b0a586f766b4f8114c422a771",
+    "alt": "Barras emparejadas para los mismos productos; comparan bruto positivo y neto después de créditos.",
+    "note": "No hay costos: neto no mide utilidad. Créditos sin vínculo a su venta original.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "retail-ranking-projection.png",
+        "svg": "retail-ranking-projection.svg",
+        "denominator": "10 productos con mayor bruto; líneas elegibles de 300 facturas.",
+        "note": "No hay costos: neto no mide utilidad. Créditos sin vínculo a su venta original.",
+        "png_sha256": "ce1762d8b57d37f92228287ba4216aff774ea60206b427a90ed61f1fc9b56442",
+        "svg_sha256": "64ec0ff450caf0a162ff52e9e52f27676984d819eb8bc4e1e1fe2cb60c66bd1d",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "retail-ranking-mobile.png",
+        "svg": "retail-ranking-mobile.svg",
+        "denominator": "6 productos con mayor bruto; líneas elegibles de 300 facturas.",
+        "note": "No hay costos: neto no mide utilidad. Créditos sin vínculo a su venta original.",
+        "png_sha256": "8e2779bee2893b96740191506f3610b8d124bc1d594e33a5c4f8fd183e5d843a",
+        "svg_sha256": "678d8ddb6e22e7186c6b1e01510a7ff7bb6f0b6f6d3ba7aaee1e185f7b2f9c06",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "retail-missing",
+    "question_ids": [
+      "D31-B"
+    ],
+    "title": "Una ausencia, dos denominadores",
+    "denominator": "Todas las líneas o todas las facturas del snapshot; sin filtrar productos.",
+    "period": "noviembre 2011",
+    "source_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "f3c895e068c4267a24aafb5ab097b03105a4376fab87028647841fe5eaeae8bc",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/denominators.csv",
+    "table_sha256": "313dfe854322b563ebed93d62e2696ee3302eed274b2cda5f663d21cb075304d",
+    "alt": "Dos barras muestran la ausencia de ID por línea y por factura, con sus tamaños de muestra.",
+    "note": "Un ID ausente no identifica un perfil social ni permite seguir clientes.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "retail-missing-projection.png",
+        "svg": "retail-missing-projection.svg",
+        "denominator": "Todas las líneas o todas las facturas del snapshot; sin filtrar productos.",
+        "note": "Un ID ausente no identifica un perfil social ni permite seguir clientes.",
+        "png_sha256": "77434844bcaf6c606c49870d67ca24a0dcd468c009e4125fd250f5f621024c3a",
+        "svg_sha256": "f0b0bc893709011699a34922c8e72ca35180ec15bd4c62bbac6aeba7f35184c9",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "retail-missing-mobile.png",
+        "svg": "retail-missing-mobile.svg",
+        "denominator": "Todas las líneas o todas las facturas del snapshot; sin filtrar productos.",
+        "note": "Un ID ausente no identifica un perfil social ni permite seguir clientes.",
+        "png_sha256": "7e68386e05b011bba795ad6e9d9467a29457eb9bc13e69d5e548daace73c13ed",
+        "svg_sha256": "9baa376aae8e97acefc6d022f946b2ed84c8e47e1d6b82ec0209011b6309ab41",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "retail-duplicates",
+    "question_ids": [
+      "D31-E"
+    ],
+    "title": "¿Cuánto pesa deduplicar?",
+    "denominator": "Misma política económica; cambia sólo conservación de líneas exactamente iguales.",
+    "period": "noviembre 2011",
+    "source_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "f3c895e068c4267a24aafb5ab097b03105a4376fab87028647841fe5eaeae8bc",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/duplicate_sensitivity.csv",
+    "table_sha256": "3edc565444d9c3a04917bf398bebb55fa93785087bc428ed5c85b939d587a77f",
+    "alt": "Sensibilidad del neto a retirar duplicados exactos. El eje de barras comienza en cero.",
+    "note": "Repetición exacta no demuestra error. Se conservan ambos resultados.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "retail-duplicates-projection.png",
+        "svg": "retail-duplicates-projection.svg",
+        "denominator": "Misma política económica; cambia sólo conservación de líneas exactamente iguales.",
+        "note": "Repetición exacta no demuestra error. Se conservan ambos resultados.",
+        "png_sha256": "b3fa1419ff2f40146dcc54db254da0f5cd2d804e084ce568298b2cab33639cc5",
+        "svg_sha256": "252933a19924f400a766380dcdfd611bfea7b04388cc522861e4534377f7b1ca",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "retail-duplicates-mobile.png",
+        "svg": "retail-duplicates-mobile.svg",
+        "denominator": "Misma política económica; cambia sólo conservación de líneas exactamente iguales.",
+        "note": "Repetición exacta no demuestra error. Se conservan ambos resultados.",
+        "png_sha256": "790750b01476b914c77c97edd3ad3cbfe2041ba944ce77707a7f2dab0acaf883",
+        "svg_sha256": "a4112017c9b398c233f45111413b80038c20140f9253639bdae77ed6fc51eefd",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  }
+]

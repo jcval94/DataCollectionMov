@@ -1,0 +1,92 @@
+[
+  {
+    "rule": "nonempty",
+    "passed": true,
+    "detail": "Snapshot no vacío."
+  },
+  {
+    "rule": "finite_pts",
+    "passed": true,
+    "detail": "Numérico finito."
+  },
+  {
+    "rule": "finite_opp_pts",
+    "passed": true,
+    "detail": "Numérico finito."
+  },
+  {
+    "rule": "finite_elo_i",
+    "passed": true,
+    "detail": "Numérico finito."
+  },
+  {
+    "rule": "finite_elo_n",
+    "passed": true,
+    "detail": "Numérico finito."
+  },
+  {
+    "rule": "finite_opp_elo_i",
+    "passed": true,
+    "detail": "Numérico finito."
+  },
+  {
+    "rule": "finite_opp_elo_n",
+    "passed": true,
+    "detail": "Numérico finito."
+  },
+  {
+    "rule": "finite_forecast",
+    "passed": true,
+    "detail": "Numérico finito."
+  },
+  {
+    "rule": "season",
+    "passed": true,
+    "detail": "Una temporada NBA, no eras."
+  },
+  {
+    "rule": "unique_team_game",
+    "passed": true,
+    "detail": "Llave equipo-partido."
+  },
+  {
+    "rule": "mirror_count",
+    "passed": true,
+    "detail": "Dos perspectivas por partido."
+  },
+  {
+    "rule": "mirror_flag",
+    "passed": true,
+    "detail": "Exactamente un original y una copia por partido."
+  },
+  {
+    "rule": "domains",
+    "passed": true,
+    "detail": "Incluye campo neutral N."
+  },
+  {
+    "rule": "score_domain",
+    "passed": true,
+    "detail": "Puntos enteros no negativos; sin empate final."
+  },
+  {
+    "rule": "probabilities",
+    "passed": true,
+    "detail": "Probabilidades previas válidas."
+  },
+  {
+    "rule": "reciprocal_pairs",
+    "passed": true,
+    "detail": "Equipos, marcador, fecha, localía, fase, Elo y probabilidades cotejados."
+  },
+  {
+    "rule": "row_conservation",
+    "passed": true,
+    "detail": "Ninguna fila desaparece de silver."
+  },
+  {
+    "rule": "eligible_reconciliation",
+    "passed": true,
+    "detail": "1311 elegibles + 1311 fuera del alcance = 2622."
+  }
+]

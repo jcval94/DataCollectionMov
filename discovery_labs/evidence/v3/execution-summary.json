@@ -1,0 +1,133 @@
+{
+  "runs": [
+    {
+      "source_id": "uci-retail",
+      "fingerprint": {
+        "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+        "contract_sha256": "435ba46d4d3de86cb4a89731adc3086eea0ebfbed5dc4f166f2e07f34a46643b",
+        "manifest_sha256": "6c81a78cb3f52fed94c7d81108dd896a61b7ae41ac5a1d63272ed8aab106d080",
+        "snapshot_sha256": "f3c895e068c4267a24aafb5ab097b03105a4376fab87028647841fe5eaeae8bc",
+        "v2_reference_sha256": "6c49709f8f5e9771faece4d8217bdfb3ca1240fde4c8aaea9cdb1e6c5be6b3b7",
+        "dictionary_sha256": "5de64d00352eb540c36585389f361a916327f2919468a09c9c8daed9d3ff0a41",
+        "visual_review_sha256": "20ed82314bb9a655e83c6c706480ae2dead9b5ee4de5aa717bba5ac9cdf7545e",
+        "python": "3.12.14",
+        "dependencies": {
+          "numpy": "2.3.5",
+          "pandas": "2.2.3",
+          "scipy": "1.17.0",
+          "scikit-learn": "1.8.0",
+          "matplotlib": "3.10.8"
+        },
+        "seed": 20261116
+      },
+      "route_ids": [
+        "D31-A",
+        "D31-B",
+        "D31-E"
+      ],
+      "figure_count": 3,
+      "DATA_READY": true,
+      "runtime": {
+        "seconds": 1.348994376000519,
+        "network": "DISABLED",
+        "seed": 20261116
+      },
+      "student_package_sha256": "a0a477570478e60899aef40179aa20a64d4add857f2c851d2cae25f1af0c846a"
+    },
+    {
+      "source_id": "nba-elo",
+      "fingerprint": {
+        "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+        "contract_sha256": "435ba46d4d3de86cb4a89731adc3086eea0ebfbed5dc4f166f2e07f34a46643b",
+        "manifest_sha256": "209304ca985e52a4b2a8e433c05beadf3f4b9d94e9bdea2d846ccd09e3ac29ca",
+        "snapshot_sha256": "c960cfbeca7b5449ea675b64421b99b224047fbc898eccd56113ef344a9ca6e2",
+        "v2_reference_sha256": "47a68b4a96e556b1a6f7880051def25064abfa52f94bf81b35c5ccece881e135",
+        "dictionary_sha256": "1e93cd294a9f47406f6df1c0dc054ca51290ccda5fb544c574c4ea58340a293b",
+        "visual_review_sha256": "20ed82314bb9a655e83c6c706480ae2dead9b5ee4de5aa717bba5ac9cdf7545e",
+        "python": "3.12.14",
+        "dependencies": {
+          "numpy": "2.3.5",
+          "pandas": "2.2.3",
+          "scipy": "1.17.0",
+          "scikit-learn": "1.8.0",
+          "matplotlib": "3.10.8"
+        },
+        "seed": 20261116
+      },
+      "route_ids": [
+        "D10-D1",
+        "D10-D2",
+        "D10-E"
+      ],
+      "figure_count": 4,
+      "DATA_READY": true,
+      "runtime": {
+        "seconds": 1.7382227930002045,
+        "network": "DISABLED",
+        "seed": 20261116
+      },
+      "student_package_sha256": "5aa75c97b758b577aa8889e020bafe2112be3503e3712272dde648618e7b9df1"
+    },
+    {
+      "source_id": "bob-ross-elementos",
+      "fingerprint": {
+        "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+        "contract_sha256": "435ba46d4d3de86cb4a89731adc3086eea0ebfbed5dc4f166f2e07f34a46643b",
+        "manifest_sha256": "7d485cb281bb76ef1881df06673dbac370285e96a0675eb5997f7c24a1b9350f",
+        "snapshot_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+        "v2_reference_sha256": "42087f5d3792495cfc86d9414f3ba27e623ab97e6c65e6b0efe55885db4c2717",
+        "dictionary_sha256": "cf569bf19eea25ec4578b895628a30a2d77f9a67a4cc3842145feec31f63ff8d",
+        "visual_review_sha256": "20ed82314bb9a655e83c6c706480ae2dead9b5ee4de5aa717bba5ac9cdf7545e",
+        "python": "3.12.14",
+        "dependencies": {
+          "numpy": "2.3.5",
+          "pandas": "2.2.3",
+          "scipy": "1.17.0",
+          "scikit-learn": "1.8.0",
+          "matplotlib": "3.10.8"
+        },
+        "seed": 20261116
+      },
+      "route_ids": [
+        "D85-A",
+        "D85-B",
+        "D85-C",
+        "D85-D1",
+        "D85-D2",
+        "D85-E"
+      ],
+      "figure_count": 7,
+      "DATA_READY": true,
+      "runtime": {
+        "seconds": 2.6485461479996957,
+        "network": "DISABLED",
+        "seed": 20261116
+      },
+      "student_package_sha256": "91b8e66bb13e4d505f07b1b3071c008dc89da05b4d2c23643c6def9d20f1e050"
+    }
+  ],
+  "local_tests": {
+    "unittest_count": 11,
+    "failures": 0,
+    "exact_offline_replay": true,
+    "standalone_student_zip_replayed": true,
+    "legacy_evidence_unchanged": true,
+    "bounded_agent_executed": true
+  },
+  "browser": {
+    "route_viewport_checks": 24,
+    "figure_screenshots": 28,
+    "js_errors": 0,
+    "remote_requests": 0
+  },
+  "course_harness": {
+    "validate": "PASS",
+    "build": "PASS",
+    "check": "PASS",
+    "smoke": "PASS",
+    "all": "PASS",
+    "student_build_files": 453
+  },
+  "human_45_min_rehearsal": "NOT_OBSERVED",
+  "independent_teacher_review": "NOT_OBSERVED"
+}

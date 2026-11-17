@@ -1,0 +1,62 @@
+{
+  "source_id": "bob-ross-elementos",
+  "DATA_READY": true,
+  "questions": {
+    "D85-A": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D85-B": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D85-C": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D85-D1": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D85-D2": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D85-E": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    }
+  },
+  "visual_approval_scope": "Sólo hashes de PNG inspeccionados; controles automatizados adicionales no sustituyen observación.",
+  "classroom_release": {
+    "required_executable_routes": 6,
+    "actual_executable_routes": 6,
+    "all_six_routes_technically_ready": true,
+    "human_rehearsal": "NOT_OBSERVED",
+    "independent_teacher_review": "NOT_OBSERVED"
+  }
+}

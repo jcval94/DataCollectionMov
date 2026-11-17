@@ -1,0 +1,16 @@
+{
+  "checked_local_date": "2026-11-16",
+  "url": "https://raw.githubusercontent.com/hudl/open-data/master/LICENSE.pdf",
+  "bytes": 165130,
+  "sha256": "a5462e69aeb71a39268b760b110c5c2190a2e0cee3015ba976f66bd71f6c2bb4",
+  "pages_read": 5,
+  "license_date_observed": "8 September 2023",
+  "locators": [
+    "p1 clauses 1.2.1 and 1.2.2",
+    "p2 clause 1.4",
+    "p4 section 7"
+  ],
+  "paraphrase": "El acuerdo permite investigación bajo condiciones; restringe redistribución a terceros y explotación comercial de datos o análisis. Publicaciones requieren marca/logo. No se ha concedido permiso específico para kits redistribuidos de un curso comercial.",
+  "decision": "BLOCKED_FOR_REDISTRIBUTED_COURSE_KIT",
+  "action": "Conservar candidato en inventario; sustituir en lote operativo o conseguir permiso escrito. No se contactó a terceros."
+}

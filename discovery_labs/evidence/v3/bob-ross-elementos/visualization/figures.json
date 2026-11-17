@@ -1,0 +1,317 @@
+[
+  {
+    "id": "bob-prevalence",
+    "question_ids": [
+      "D85-B"
+    ],
+    "title": "¿Cambia el paisaje con invitados?",
+    "denominator": "381 episodios del anfitrión y 22 de invitados; cada motivo usa su propio grupo.",
+    "period": "S01–S31; sin fechas de emisión verificadas",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/prevalence.csv",
+    "table_sha256": "ace4bfa4de450ab22fdbd5c35cf11da67a8c9c7bf65f544eb1c4254ec7ba4331",
+    "alt": "Dotplot de prevalencia por motivo y autoría. Formas y colores separan anfitrión e invitados.",
+    "note": "Etiquetas humanas, sin incertidumbre muestral inventada. Tamaños de grupo desiguales.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "bob-prevalence-projection.png",
+        "svg": "bob-prevalence-projection.svg",
+        "denominator": "381 episodios del anfitrión y 22 de invitados; cada motivo usa su propio grupo.",
+        "note": "Etiquetas humanas, sin incertidumbre muestral inventada. Tamaños de grupo desiguales.",
+        "png_sha256": "ed060f228fb2a33294a6072001a2e98be4de17b689320a36ed4e7b84bdccbf02",
+        "svg_sha256": "094ea036351d7de3f099912bab87de6397984015f0c44c099f69e5ab3e440a44",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "bob-prevalence-mobile.png",
+        "svg": "bob-prevalence-mobile.svg",
+        "denominator": "381 episodios del anfitrión y 22 de invitados; cada motivo usa su propio grupo.",
+        "note": "Etiquetas humanas, sin incertidumbre muestral inventada. Tamaños de grupo desiguales.",
+        "png_sha256": "443658f6076f02ec48e810ff0ad7a13dfda7719cdd50de2036e8672d30fa427c",
+        "svg_sha256": "eb98a0dbc2199c559a1d83a19e50f62d740389992b394d0d6f4328b97834cfab",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "bob-clusters",
+    "question_ids": [
+      "D85-C"
+    ],
+    "title": "Cuatro salas, ninguna verdad natural",
+    "denominator": "381 episodios anfitrión; 12 motivos para clustering Jaccard, k=4 fijo.",
+    "period": "S01–S31; sin fechas de emisión verificadas",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/profiles.csv",
+    "table_sha256": "7d8fed3910900d482be66b78497f571c04a7beabe21c28be7146dd09e51eea37",
+    "alt": "Heatmap de proporciones de motivos por grupo propuesto, con número de episodios y escala de cero a uno.",
+    "note": "Versión móvil: se muestran 6 de los 12 motivos; asignaciones idénticas. Comparar con distancia alternativa y baseline de marginales permutadas.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "bob-clusters-projection.png",
+        "svg": "bob-clusters-projection.svg",
+        "denominator": "381 episodios anfitrión; 12 motivos para clustering Jaccard, k=4 fijo.",
+        "note": "Comparar con distancia alternativa y baseline de marginales permutadas.",
+        "png_sha256": "1f64cb98438475b33e5b0b09b8972b734a5c138d81f3fa02a8c5b5ceb96b4abd",
+        "svg_sha256": "482c7b3e80fc98e3830c884872fc936680f6f9cd21aa7d02dbe7a04df3cf5093",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "bob-clusters-mobile.png",
+        "svg": "bob-clusters-mobile.svg",
+        "denominator": "381 episodios anfitrión; 12 motivos para clustering Jaccard, k=4 fijo.",
+        "note": "Versión móvil: se muestran 6 de los 12 motivos; asignaciones idénticas. Comparar con distancia alternativa y baseline de marginales permutadas.",
+        "png_sha256": "aad89b48c86d6201fbba5022e2f3bcac55ae35db60ffdad55a6b8c50c37ab789",
+        "svg_sha256": "878ffe4df546541db548b3e07c9805815a20f3f977fae29054e2cb2eb35bc685",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "bob-distances",
+    "question_ids": [
+      "D85-C"
+    ],
+    "title": "¿La estructura supera una base simple?",
+    "denominator": "381 episodios; 30 permutaciones independientes por motivo, preservando sus prevalencias.",
+    "period": "S01–S31; sin fechas de emisión verificadas",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/null_silhouettes.csv",
+    "table_sha256": "b9b33efc82916adfdad85fd180be43cfc98771abbc654a27710d4ee580b2c74f",
+    "alt": "Distribución de silueta bajo marginales permutadas y línea para datos observados; la nota contrasta distancia alternativa.",
+    "note": "ARI Jaccard vs Euclídea = -0.046. No es una prueba confirmatoria ni prueba de cuatro estilos naturales.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "bob-distances-projection.png",
+        "svg": "bob-distances-projection.svg",
+        "denominator": "381 episodios; 30 permutaciones independientes por motivo, preservando sus prevalencias.",
+        "note": "ARI Jaccard vs Euclídea = -0.046. No es una prueba confirmatoria ni prueba de cuatro estilos naturales.",
+        "png_sha256": "370b71a58d60e9b123328b07815bfacba9d299fae098d32e9867614ac5328cc4",
+        "svg_sha256": "028bc10dcaf21dcd8d95b2609f073860bd175d7ddc4960a056ea672a3b61ac5a",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "bob-distances-mobile.png",
+        "svg": "bob-distances-mobile.svg",
+        "denominator": "381 episodios; 30 permutaciones independientes por motivo, preservando sus prevalencias.",
+        "note": "ARI Jaccard vs Euclídea = -0.046. No es una prueba confirmatoria ni prueba de cuatro estilos naturales.",
+        "png_sha256": "50f6dbef7323187f4d6325ecff8f2718a069bdd4c47985d0aadf84ce2a90b082",
+        "svg_sha256": "f8a092425f50381417bb82083d6d5c553f4262ddd19766cc04975b618bfcbe6f",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "bob-trees",
+    "question_ids": [
+      "D85-D1"
+    ],
+    "title": "La afirmación «todos» bajo prueba",
+    "denominator": "Episodios separados por anfitrión e invitados; unión de TREE y TREES.",
+    "period": "S01–S31; sin fechas de emisión verificadas",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/trees.csv",
+    "table_sha256": "97cac951af89ddfde9eea31bfa0c205928091980da9a10a2f5ab4b8dd97662f4",
+    "alt": "Dos barras de fracción de episodios con TREE o TREES; se muestran conteos y alcance exacto de la etiqueta.",
+    "note": "Ausencia de etiqueta no prueba ausencia visual de todo tipo de árbol; PALM_TREES no se incluye en esta definición.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "bob-trees-projection.png",
+        "svg": "bob-trees-projection.svg",
+        "denominator": "Episodios separados por anfitrión e invitados; unión de TREE y TREES.",
+        "note": "Ausencia de etiqueta no prueba ausencia visual de todo tipo de árbol; PALM_TREES no se incluye en esta definición.",
+        "png_sha256": "39831f1416b81d0e721866aef1ef6c3a49f7e82f88cf38f4f6c40d3c7019a98c",
+        "svg_sha256": "6e0afb0a408b219261f30485b992a27da421d65e3dfdfe617740a7f8c3242fe1",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "bob-trees-mobile.png",
+        "svg": "bob-trees-mobile.svg",
+        "denominator": "Episodios separados por anfitrión e invitados; unión de TREE y TREES.",
+        "note": "Ausencia de etiqueta no prueba ausencia visual de todo tipo de árbol; PALM_TREES no se incluye en esta definición.",
+        "png_sha256": "598b45970198268367604e046ed04eea604deb8d0a6345d8f8fefd61f4ef60c2",
+        "svg_sha256": "158f14d3dd7b9d8644f0aed7a2d350ff57d1ad568255d30689bc18f44a986587",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "bob-snow",
+    "question_ids": [
+      "D85-D2"
+    ],
+    "title": "Montaña no define nieve por sí sola",
+    "denominator": "150 episodios con MOUNTAIN o MOUNTAINS; nieve = SNOW o SNOWY_MOUNTAIN.",
+    "period": "S01–S31; sin fechas de emisión verificadas",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/snow_counterexamples.csv",
+    "table_sha256": "f0b5a0262c4ccac2b254b00cdaa912d8e919399ec374fac458db20448b8a126d",
+    "alt": "Conteos de episodios con y sin nieve registrados, condicionados a que exista etiqueta de montaña.",
+    "note": "Conteos del archivo de etiquetas; buscar los contraejemplos antes de generalizar.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "bob-snow-projection.png",
+        "svg": "bob-snow-projection.svg",
+        "denominator": "150 episodios con MOUNTAIN o MOUNTAINS; nieve = SNOW o SNOWY_MOUNTAIN.",
+        "note": "Conteos del archivo de etiquetas; buscar los contraejemplos antes de generalizar.",
+        "png_sha256": "2bc897cddf8fad5e0585127921eb90c0c9498aef02e091a81bda11f0f30f3c2c",
+        "svg_sha256": "8116128c21e26aa59916f85dac39d4a86cc881ba55e8a8bfa8f8d651959b3a4d",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "bob-snow-mobile.png",
+        "svg": "bob-snow-mobile.svg",
+        "denominator": "150 episodios con MOUNTAIN o MOUNTAINS; nieve = SNOW o SNOWY_MOUNTAIN.",
+        "note": "Conteos del archivo de etiquetas; buscar los contraejemplos antes de generalizar.",
+        "png_sha256": "ee220d2012836835f10b3924f9989650c0181dae0202813a514e9a58af323211",
+        "svg_sha256": "167e44ad2614715e672cb6e41a889126a60f5d71201289f196cdf7a8b0a570e2",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "bob-selection",
+    "question_ids": [
+      "D85-A"
+    ],
+    "title": "Una exposición con espacio limitado",
+    "denominator": "Hasta 12 episodios del anfitrión; 64 etiquetas sin banderas de autoría.",
+    "period": "S01–S31; sin fechas de emisión verificadas",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/selection_curve.csv",
+    "table_sha256": "347358e4138cde50ae87671b075cd040538eabf7ee05d2a9cf511bb964311c88",
+    "alt": "Curvas de cobertura de motivos al elegir hasta doce episodios: algoritmo voraz y baseline cronológico.",
+    "note": "Baseline cronológico y 100 selecciones aleatorias en tablas. Cobertura no significa equilibrio, calidad ni demanda.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "bob-selection-projection.png",
+        "svg": "bob-selection-projection.svg",
+        "denominator": "Hasta 12 episodios del anfitrión; 64 etiquetas sin banderas de autoría.",
+        "note": "Baseline cronológico y 100 selecciones aleatorias en tablas. Cobertura no significa equilibrio, calidad ni demanda.",
+        "png_sha256": "34b85f2464942c0e817fd67f0dd26799d2eb875d9b8b5a2e0ff3b9e1f17dc370",
+        "svg_sha256": "c84f4ed7cb16ad5f19d6f4dbdec49b125328753648ce3e3d4ec32082b4ea3a56",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "bob-selection-mobile.png",
+        "svg": "bob-selection-mobile.svg",
+        "denominator": "Hasta 12 episodios del anfitrión; 64 etiquetas sin banderas de autoría.",
+        "note": "Baseline cronológico y 100 selecciones aleatorias en tablas. Cobertura no significa equilibrio, calidad ni demanda.",
+        "png_sha256": "339f6bb53a5082ed906f715b2011eb2d9df4e8c7f10d8ae70e5f9d5331df5c75",
+        "svg_sha256": "7e8d969f997f15d6b16016b2a5251e17547fa286e58a87983116963f65d7fdb5",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "bob-id",
+    "question_ids": [
+      "D85-E"
+    ],
+    "title": "Cuando el identificador decide",
+    "denominator": "381 episodios; misma Euclídea, muestra y k=4; cambia sólo escala de temporada.",
+    "period": "S01–S31; sin fechas de emisión verificadas",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/id_sensitivity.csv",
+    "table_sha256": "1a8d0cbc933f5c6c7ba11f472d28a0787888cbf796a569bd8f18f20f3ee6c028",
+    "alt": "Estabilidad ARI al añadir temporada normalizada o sin escalar. La referencia conserva sólo motivos.",
+    "note": "Control negativo deliberado. Siluetas con distancias diferentes no acreditan mejor calidad artística.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "bob-id-projection.png",
+        "svg": "bob-id-projection.svg",
+        "denominator": "381 episodios; misma Euclídea, muestra y k=4; cambia sólo escala de temporada.",
+        "note": "Control negativo deliberado. Siluetas con distancias diferentes no acreditan mejor calidad artística.",
+        "png_sha256": "73ae439fd0538ba70f0bb189040878fb8d517713490d2df49a691f32da83cb52",
+        "svg_sha256": "0f7f5f9445ff7e231df00122bfca8229b56cbf23982cee679e26504699096ed4",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "bob-id-mobile.png",
+        "svg": "bob-id-mobile.svg",
+        "denominator": "381 episodios; misma Euclídea, muestra y k=4; cambia sólo escala de temporada.",
+        "note": "Control negativo deliberado. Siluetas con distancias diferentes no acreditan mejor calidad artística.",
+        "png_sha256": "fe0c21b4317be1f779d8ba33205fda22577c9649d331ccd8877915fd29ae9428",
+        "svg_sha256": "37ce591db4e22772ddc5cbc07e4272beabf7b4b9a77cb86644335863f456cdf0",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  }
+]

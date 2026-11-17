@@ -1,0 +1,163 @@
+{
+  "purpose": "Evaluar calidad de investigaciones; no calificar estudiantes. No hay puntuación global asignada sin revisión independiente.",
+  "dimensions": [
+    {
+      "name": "Calidad y trazabilidad de datos",
+      "points": 20,
+      "criteria": [
+        {
+          "points": 6,
+          "observable": "URL, atribución, licencia y alcance por campo/medio archivados."
+        },
+        {
+          "points": 5,
+          "observable": "Snapshot con bytes, SHA256, fecha de adquisición y selección reproducible."
+        },
+        {
+          "points": 4,
+          "observable": "Perfil medido separado de metadata declarada; cobertura, grano y faltantes explícitos."
+        },
+        {
+          "points": 5,
+          "observable": "Exclusiones y conservación de filas auditables; privacidad verificada."
+        }
+      ]
+    },
+    {
+      "name": "Rigor estadístico y metodológico",
+      "points": 20,
+      "criteria": [
+        {
+          "points": 6,
+          "observable": "Pregunta, hipótesis rival, unidad, métrica y denominador específicos."
+        },
+        {
+          "points": 4,
+          "observable": "Baseline evaluado en datos y exposición comparables."
+        },
+        {
+          "points": 5,
+          "observable": "Supuestos, dependencias, confusores y alcance de inferencia documentados."
+        },
+        {
+          "points": 5,
+          "observable": "Refutación ejecutada, incertidumbre apropiada y resultados inconclusos admitidos."
+        }
+      ]
+    },
+    {
+      "name": "Preprocesamiento y reproducibilidad",
+      "points": 15,
+      "criteria": [
+        {
+          "points": 6,
+          "observable": "Bronze intacto, Silver preserva filas y Gold reconcilia agregados."
+        },
+        {
+          "points": 5,
+          "observable": "Repetición sin red produce mismas métricas y figuras con entorno fijado."
+        },
+        {
+          "points": 4,
+          "observable": "Tests rechazan corrupción de dominio, hash, llaves y fuga de datos."
+        }
+      ]
+    },
+    {
+      "name": "Calidad y utilidad de visualizaciones",
+      "points": 15,
+      "criteria": [
+        {
+          "points": 4,
+          "observable": "Cada figura responde una pregunta y enlaza tabla/código/snapshot."
+        },
+        {
+          "points": 4,
+          "observable": "Escalas, etiquetas, unidades, fuente, periodo y denominador correctos."
+        },
+        {
+          "points": 4,
+          "observable": "Renderizados inspeccionados realmente en móvil y proyección; sin cortes."
+        },
+        {
+          "points": 3,
+          "observable": "Texto alternativo, contraste y canales redundantes cuando el color codifica categorías."
+        }
+      ]
+    },
+    {
+      "name": "Storytelling científico",
+      "points": 15,
+      "criteria": [
+        {
+          "points": 5,
+          "observable": "Siete actos con pregunta, apuesta, evidencia y cierre humano."
+        },
+        {
+          "points": 4,
+          "observable": "Complicación y giro enlazan resultados o limitaciones observados, sin drama inventado."
+        },
+        {
+          "points": 3,
+          "observable": "Preguntas participativas y bifurcaciones para confirmar/refutar/no concluir."
+        },
+        {
+          "points": 3,
+          "observable": "Guion de clase y screencast diferencian duración y profundidad."
+        }
+      ]
+    },
+    {
+      "name": "Experiencia educativa de 45 minutos",
+      "points": 10,
+      "criteria": [
+        {
+          "points": 3,
+          "observable": "Votación sólo entre rutas ejecutables con dos caminos explícitos."
+        },
+        {
+          "points": 3,
+          "observable": "Kit offline y referencias docentes separadas de alumno comprobados."
+        },
+        {
+          "points": 4,
+          "observable": "Ensayo humano observado y revisión docente independiente con incidentes corregidos."
+        }
+      ]
+    },
+    {
+      "name": "Eficiencia y mantenimiento",
+      "points": 5,
+      "criteria": [
+        {
+          "points": 2,
+          "observable": "Cache comprueba contenido, código, contrato y dependencias."
+        },
+        {
+          "points": 2,
+          "observable": "CI acotada y ejecución de agente con memoria/CPU/tiempo/red limitados."
+        },
+        {
+          "points": 1,
+          "observable": "Operación, errores y recuperación documentados."
+        }
+      ]
+    }
+  ],
+  "critical_vetoes": [
+    "Licencia ausente o fuera del alcance autorizado",
+    "Privacidad vulnerada",
+    "Snapshot o cálculo incorrecto",
+    "Fuga temporal o inferencia causal no sustentada",
+    "Gráfico contradictorio con tabla",
+    "Aprobación humana o publicación afirmadas sin evidencia"
+  ],
+  "gates": {
+    "DATA_READY": "Hash, contrato, perfil y validaciones de dominio pasan.",
+    "RESEARCH_READY": "Por pregunta: ejecución, baseline y sensibilidad comprobadas.",
+    "VISUAL_READY": "Figuras de la pregunta coherentes y hashes presentes en revisión observada.",
+    "STORY_READY": "Siete actos referencian evidencia real, figura pertinente y límites.",
+    "CLASS_READY": "Ensayo humano observado y revisión docente independiente; esta versión lo mantiene cerrado.",
+    "PUBLISHED": "Distribución expresamente autorizada e integrada; esta versión lo mantiene cerrado."
+  }
+}

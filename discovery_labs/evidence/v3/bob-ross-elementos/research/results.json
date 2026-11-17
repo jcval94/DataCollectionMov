@@ -1,0 +1,362 @@
+{
+  "D85-A": {
+    "slots": 12,
+    "possible_motifs": 64,
+    "greedy_coverage": 47,
+    "chronological_coverage": 24,
+    "random_coverage_100": [
+      28,
+      27,
+      21,
+      23,
+      31,
+      27,
+      28,
+      26,
+      32,
+      27,
+      21,
+      29,
+      25,
+      28,
+      32,
+      26,
+      26,
+      27,
+      31,
+      25,
+      31,
+      30,
+      33,
+      31,
+      28,
+      25,
+      22,
+      27,
+      31,
+      27,
+      33,
+      20,
+      29,
+      28,
+      32,
+      27,
+      32,
+      31,
+      27,
+      26,
+      27,
+      21,
+      28,
+      28,
+      29,
+      22,
+      25,
+      31,
+      31,
+      28,
+      34,
+      29,
+      24,
+      28,
+      30,
+      28,
+      25,
+      31,
+      29,
+      25,
+      28,
+      31,
+      34,
+      30,
+      31,
+      28,
+      32,
+      25,
+      29,
+      31,
+      30,
+      23,
+      30,
+      28,
+      28,
+      30,
+      31,
+      30,
+      33,
+      28,
+      27,
+      29,
+      30,
+      22,
+      29,
+      29,
+      30,
+      31,
+      29,
+      27,
+      31,
+      28,
+      26,
+      28,
+      31,
+      24,
+      32,
+      22,
+      22,
+      29
+    ],
+    "metric": "Motivos distintos cubiertos; no rentabilidad ni equilibrio estético."
+  },
+  "D85-B": {
+    "prevalence": [
+      {
+        "group": "Anfitrión",
+        "motif": "TREE",
+        "count": 345,
+        "denominator": 381,
+        "fraction": 0.905511811023622
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "TREES",
+        "count": 322,
+        "denominator": 381,
+        "fraction": 0.8451443569553806
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "MOUNTAIN",
+        "count": 149,
+        "denominator": 381,
+        "fraction": 0.3910761154855643
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "MOUNTAINS",
+        "count": 91,
+        "denominator": 381,
+        "fraction": 0.2388451443569554
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "SNOW",
+        "count": 72,
+        "denominator": 381,
+        "fraction": 0.1889763779527559
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "SNOWY_MOUNTAIN",
+        "count": 98,
+        "denominator": 381,
+        "fraction": 0.2572178477690289
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "LAKE",
+        "count": 131,
+        "denominator": 381,
+        "fraction": 0.3438320209973753
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "RIVER",
+        "count": 124,
+        "denominator": 381,
+        "fraction": 0.32545931758530183
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "OCEAN",
+        "count": 34,
+        "denominator": 381,
+        "fraction": 0.08923884514435695
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "CLOUDS",
+        "count": 167,
+        "denominator": 381,
+        "fraction": 0.43832020997375326
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "ROCKS",
+        "count": 77,
+        "denominator": 381,
+        "fraction": 0.2020997375328084
+      },
+      {
+        "group": "Anfitrión",
+        "motif": "FLOWERS",
+        "count": 8,
+        "denominator": 381,
+        "fraction": 0.02099737532808399
+      },
+      {
+        "group": "Invitados",
+        "motif": "TREE",
+        "count": 16,
+        "denominator": 22,
+        "fraction": 0.7272727272727273
+      },
+      {
+        "group": "Invitados",
+        "motif": "TREES",
+        "count": 15,
+        "denominator": 22,
+        "fraction": 0.6818181818181818
+      },
+      {
+        "group": "Invitados",
+        "motif": "MOUNTAIN",
+        "count": 11,
+        "denominator": 22,
+        "fraction": 0.5
+      },
+      {
+        "group": "Invitados",
+        "motif": "MOUNTAINS",
+        "count": 8,
+        "denominator": 22,
+        "fraction": 0.36363636363636365
+      },
+      {
+        "group": "Invitados",
+        "motif": "SNOW",
+        "count": 3,
+        "denominator": 22,
+        "fraction": 0.13636363636363635
+      },
+      {
+        "group": "Invitados",
+        "motif": "SNOWY_MOUNTAIN",
+        "count": 11,
+        "denominator": 22,
+        "fraction": 0.5
+      },
+      {
+        "group": "Invitados",
+        "motif": "LAKE",
+        "count": 12,
+        "denominator": 22,
+        "fraction": 0.5454545454545454
+      },
+      {
+        "group": "Invitados",
+        "motif": "RIVER",
+        "count": 2,
+        "denominator": 22,
+        "fraction": 0.09090909090909091
+      },
+      {
+        "group": "Invitados",
+        "motif": "OCEAN",
+        "count": 2,
+        "denominator": 22,
+        "fraction": 0.09090909090909091
+      },
+      {
+        "group": "Invitados",
+        "motif": "CLOUDS",
+        "count": 12,
+        "denominator": 22,
+        "fraction": 0.5454545454545454
+      },
+      {
+        "group": "Invitados",
+        "motif": "ROCKS",
+        "count": 0,
+        "denominator": 22,
+        "fraction": 0.0
+      },
+      {
+        "group": "Invitados",
+        "motif": "FLOWERS",
+        "count": 4,
+        "denominator": 22,
+        "fraction": 0.18181818181818182
+      }
+    ]
+  },
+  "D85-C": {
+    "k": 4,
+    "silhouette": 0.34185460400569645,
+    "permuted_marginals_silhouettes": [
+      0.1837368952268389,
+      0.11200721036618622,
+      0.21764288085534167,
+      0.15538585273740685,
+      0.125445120676959,
+      0.1692378593840858,
+      0.22400859035956946,
+      0.2528019946786257,
+      0.2050292159070873,
+      0.21528385413099801,
+      0.1926283687434876,
+      0.14486604687329926,
+      0.15193232558902908,
+      0.15222642215585605,
+      0.1340510087435391,
+      0.13393027905616842,
+      0.18395191608601993,
+      0.15306360408132308,
+      0.13804134956324773,
+      0.18373216380853666,
+      0.13687273656917368,
+      0.14198851916688873,
+      0.1583989434955503,
+      0.13034073332536825,
+      0.18367253872170314,
+      0.1596542452929736,
+      0.18338172256382887,
+      0.1372769212006691,
+      0.13325309140902694,
+      0.16779870052220813
+    ],
+    "distance_ARI": -0.04581489800510563
+  },
+  "D85-D1": {
+    "groups": [
+      {
+        "group": "Anfitrión",
+        "count": 345,
+        "denominator": 381,
+        "fraction": 0.905511811023622
+      },
+      {
+        "group": "Invitados",
+        "count": 16,
+        "denominator": 22,
+        "fraction": 0.7272727272727273
+      }
+    ],
+    "host_counterexamples": 36
+  },
+  "D85-D2": {
+    "mountain_episodes": 150,
+    "with_snow": 102,
+    "without_snow": 48
+  },
+  "D85-E": {
+    "sensitivity": [
+      {
+        "season_scale": 0.0,
+        "ARI_vs_clean_euclidean": 1.0,
+        "silhouette_own_distance": 0.19015366737946984
+      },
+      {
+        "season_scale": 0.03225806451612903,
+        "ARI_vs_clean_euclidean": -0.026516297827161472,
+        "silhouette_own_distance": 0.14200795530412758
+      },
+      {
+        "season_scale": 1.0,
+        "ARI_vs_clean_euclidean": 0.0012806467357365462,
+        "silhouette_own_distance": 0.45478613213584784
+      }
+    ],
+    "control": "Misma muestra, k=4 y distancia Euclídea; cambia sólo escala de temporada."
+  }
+}
