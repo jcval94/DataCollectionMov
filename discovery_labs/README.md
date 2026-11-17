@@ -27,7 +27,7 @@ node discovery_labs/tests/dashboard_logic.cjs
 
 Abrir `discovery_labs/dashboard/index.html` en un navegador. Es un archivo autocontenido: datos y gráficos embebidos, sin servicios externos, cuentas o seguimiento. Ofrece categoría, técnica, dificultad y viabilidad; muestra ranking, top por categoría, preguntas, antecedentes y bloqueadores. El HTML generado se regenera, no se versiona.
 
-La lógica del dashboard tiene pruebas automatizadas. La revisión visual y el smoke en navegador quedaron bloqueados en el entorno de construcción por indisponibilidad de Chromium/creación de sockets. No se declaran aprobados. [Evidencia de QA](evidence/dashboard_qa.json).
+La lógica del dashboard pasó 14 checks. La prueba en Chromium real pasó en CI con Playwright 1.56.0 y Ubuntu 24.04: escritorio 1440×1000, móvil 390×844, filtros, exportación, imágenes y cero llamadas remotas o errores JavaScript. Se inspeccionaron las capturas. El navegador local quedó bloqueado por el entorno, por lo que esa limitación se resolvió mediante CI, sin relajar pruebas. [Lógica](evidence/dashboard_qa.json) · [Evidencia de navegador](evidence/dashboard_browser_ci.json).
 
 ## Navegar el sistema
 

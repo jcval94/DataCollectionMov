@@ -32,5 +32,17 @@
     "matplotlib": "3.10.8",
     "playwright": "1.62.0; course pins 1.56.0, so environment is not canonical"
   },
-  "date_local": "2026-11-16"
+  "date_local": "2026-11-16",
+  "dashboard_browser_ci": {
+    "status": "PASS",
+    "run_id": 43999000122,
+    "tested_commit": "096239a2ce1e47183407508b811e7ab77d0b5141",
+    "browser": "Playwright 1.56.0 Chromium",
+    "runner": "ubuntu-24.04",
+    "desktop": "1440x1000",
+    "mobile": "390x844",
+    "checks": 14,
+    "evidence": "evidence/dashboard_browser_ci.json",
+    "manual_visual_review": true
+  }
 }

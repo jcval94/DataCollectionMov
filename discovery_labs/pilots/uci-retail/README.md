@@ -7,6 +7,8 @@ Una tienda quiere destacar sus productos estrella. ¿Lo que más factura sigue s
 - [Alumno](ALUMNO.md) · [Cuaderno Python](alumno.ipynb) · [Docente](DOCENTE.md)
 - [Snapshot](data/snapshot.csv) · [Procedencia, licencia y hash](data/manifest.json)
 
+[Diccionario y unidades](DICCIONARIO.md).
+
 ## Elecciones disponibles
 
 D31-A · neto por producto; D31-E · ranking bruto/neto; D31-B · líneas frente a facturas sin ID.

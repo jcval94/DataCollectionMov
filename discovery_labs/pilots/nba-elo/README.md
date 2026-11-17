@@ -7,6 +7,8 @@ Un pronóstico parece tener miles de observaciones. Antes de confiar en él, ave
 - [Alumno](ALUMNO.md) · [Cuaderno Python](alumno.ipynb) · [Docente](DOCENTE.md)
 - [Snapshot](data/snapshot.csv) · [Procedencia, licencia y hash](data/manifest.json)
 
+[Diccionario y unidades](DICCIONARIO.md).
+
 ## Elecciones disponibles
 
 D10-D2 · victoria local por fase; D10-E · calibración del pronóstico y filas espejo.

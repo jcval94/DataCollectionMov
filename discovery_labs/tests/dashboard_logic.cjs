@@ -21,7 +21,7 @@ input('search','');input('category','Sociedad, desigualdad y demografía');ok('c
 input('category','');input('technique','Redes');ok('technique_filter',()=>assert(!get('count').textContent.startsWith('0 ')));input('technique','');input('difficulty','Inicial guiado');ok('difficulty_filter',()=>assert(!get('count').textContent.startsWith('0 ')));input('difficulty','');
 buttons[1].click();ok('navigation_ranking',()=>{assert.equal(get('ranking').hidden,false);assert.equal(get('library').hidden,true)});
 ok('top10_and_13_category_tops',()=>{assert.equal((get('top10').innerHTML.match(/<tr>/g)||[]).length,10);assert.equal((get('categorytops').innerHTML.match(/<tr>/g)||[]).length,13)});
-ok('3_embedded_pilot_images',()=>assert.equal((get('pilotcards').innerHTML.match(/data:image\/png;base64,/g)||[]).length,3));
+ok('6_embedded_pilot_images',()=>assert.equal((get('pilotcards').innerHTML.match(/data:image\/png;base64,/g)||[]).length,6));
 ok('no_remote_scripts_css_images',()=>assert(!/<(?:script|link|img)\b[^>]*(?:src|href)=["']https?:/i.test(html)));
 ok('escaped_dataset_payload',()=>assert(!data.includes('</script>')));
 const report={status:'PASS',checks,scope:'Lógica JavaScript y marcado con adaptador de documento; NO validación visual ni smoke en navegador.',browser_verification:'Prueba de navegador independiente en tests/dashboard_browser.py; consultar su evidencia de CI.',responsive_css:'Presente; este test no valida renderizado.'};

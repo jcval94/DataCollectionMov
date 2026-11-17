@@ -7,6 +7,8 @@ La intuición dice que todos sus cuadros tienen árboles. ¿Basta mirar algunos 
 - [Alumno](ALUMNO.md) · [Cuaderno Python](alumno.ipynb) · [Docente](DOCENTE.md)
 - [Snapshot](data/snapshot.csv) · [Procedencia, licencia y hash](data/manifest.json)
 
+[Diccionario y unidades](DICCIONARIO.md).
+
 ## Elecciones disponibles
 
 D85-D1 · árboles; D85-D2 · montañas y nieve; D85-C · grupos de motivos; D85-B · invitados frente al anfitrión.
