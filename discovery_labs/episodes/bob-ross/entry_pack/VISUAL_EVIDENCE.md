@@ -30,7 +30,7 @@ La gráfica debe permitir responder **«¿qué cambió en mi interpretación?»*
 - **Cuadro real en la tarjeta, únicamente si la URL y el permiso están verificados**. Si los derechos son inciertos, mostrar ficha y un enlace externo para abrir la obra, nunca alojar imagen ni simular una licencia. No descargar copias.
 - En móvil: tap abre tarjeta fija; botón cerrar y navegación previa/siguiente; nunca depender únicamente de hover.
 - Fallback offline: metadatos y mini-ilustración ORIGINAL genérica («sin vista previa autorizada»), no una pintura falsa.
-- Se puede reutilizar el cruce season+episode de \`jwilber/Bob_Ross_Paintings\` y el manifiesto \`examples/bob_ross_clustering/reference/gallery.json\` como **pistas**, no como permiso de reproducción. Cuatro imágenes ya se probaron técnicamente en 2026-11-07; disponibilidad ≠ derechos.
+- Se puede reutilizar el cruce season+episode de `jwilber/Bob_Ross_Paintings` y el manifiesto `examples/bob_ross_clustering/reference/gallery.json` como **pistas**, no como permiso de reproducción. Cuatro imágenes ya se probaron técnicamente en 2026-11-07; disponibilidad ≠ derechos.
 
 ## 4. La paradoja de medir estilo con etiquetas
 - Seleccionar dos episodios con doce motivos idénticos o cercanos.
@@ -54,7 +54,7 @@ En cada sección de la guía HTML:
 6. Expansión técnica con código, versión, muestra, fuente y fecha.
 
 ## Política de interacción y QA
-- \`pointerenter\`, \`focusin\`, \`click\`, \`touch\` equivalentes; teclado Escape/cerrar; aria-label descriptiva.
+- `pointerenter`, `focusin`, `click`, `touch` equivalentes; teclado Escape/cerrar; aria-label descriptiva.
 - No usar tooltip como único acceso a información importante; mantener tabla accesible y texto alternativo.
 - Latencia aceptable en móvil sin bloquear el scroll; interacción progresiva, posibilidad de desactivar animación.
 - SVG/Canvas debe mapear coordenadas a registros con IDs estables, no por índice de array tras filtros.
@@ -65,4 +65,4 @@ En cada sección de la guía HTML:
 ## Derechos de imagen
 Verificar proveedor, autor/titular, condiciones de uso, hotlinking y atribución. Si el uso remoto es permitido, conservar URL y comprobación con fecha; si no, ofrecer enlace a catálogo y alternativa textual. Nunca asumir que CC BY 4.0 de FiveThirtyEight se aplica a cuadros o videos.
 
-**Salida Fase 1:** visualizaciones y fichas dentro de \`research_guide.html\` con criterio científico. Este brief no autoriza producir guion de video, intro, voz ni MP4.
+**Salida Fase 1:** visualizaciones y fichas dentro de `research_guide.html` con criterio científico. Este brief no autoriza producir guion de video, intro, voz ni MP4.
