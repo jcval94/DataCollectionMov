@@ -59,7 +59,7 @@
   },
   "sample": {
     "file": "data_sample.csv",
-    "rows": 11,
+    "rows": 12,
     "representative": false,
     "criteria": [
       {
@@ -105,6 +105,10 @@
       {
         "episode": "S16E01",
         "why": "temporada intermedia"
+      },
+      {
+        "episode": "S20E01",
+        "why": "periodo medio-tardío para comparar temporadas"
       }
     ],
     "warning": "Muestra intencional, NO estimador poblacional y NO base de conclusiones científicas."
