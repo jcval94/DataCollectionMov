@@ -8,7 +8,7 @@ scope: "Reusable across AI Discovery Labs: copy this skill or publish it as a sh
 # Research Question Architect — Skill de preguntas de alto impacto
 
 ## Cuándo activarla
-Al comenzar cualquier investigación con una fuente de datos; antes de diseñar gráficos, narrativas de video o scripts definitivos. Puede emplearse en una segunda auditoría cuando el inventario está lleno de preguntas que se resuelven con un simple \`GROUP BY\`.
+Al comenzar cualquier investigación con una fuente de datos; antes de diseñar gráficos, narrativas de video o scripts definitivos. Puede emplearse en una segunda auditoría cuando el inventario está lleno de preguntas que se resuelven con un simple `GROUP BY`.
 
 ## Inputs obligatorios
 1. Dataset: muestra real, diccionario, grano, cobertura, calidad, restricciones y fuente primaria.
@@ -56,7 +56,7 @@ Umbrales:
 - Cualquier afirmación causal sin identificación, denuncia sin evidencia, lesión de derechos o ausencia de datos críticos BLOQUEA por encima del puntaje.
 
 ## Contrato de salida por pregunta
-\`\`\`json
+```json
 {
   "id": "estable",
   "headline": "curiosa pero no engañosa",
@@ -74,7 +74,7 @@ Umbrales:
   "anti_claims": [],
   "score": {"total": 0, "rationale": "..."}
 }
-\`\`\`
+```
 
 ## QA antes de enviar al analista
 1. La pregunta **no** se contesta completamente con COUNT, MIN, MAX o un gráfico de frecuencia.
@@ -93,4 +93,4 @@ Umbrales:
 No escribas intro de video, teaser ni storyboard hasta aprobar la guía científica. Una ruta de investigación de 45 minutos puede ser una selección del árbol, no todo el árbol completo.
 
 ## Generalización
-El skill no debe contener datos hardcodeados de Bob Ross. Cada nuevo episodio aporta un archivo de contexto + dataset + análisis exploratorio y genera un árbol de preguntas nuevo. En el episodio Bob Ross, leer \`entry_pack/QUESTION_BANK.md\` para ejemplos, pero no trasplantarlos ciegamente a los demás temas.
+El skill no debe contener datos hardcodeados de Bob Ross. Cada nuevo episodio aporta un archivo de contexto + dataset + análisis exploratorio y genera un árbol de preguntas nuevo. En el episodio Bob Ross, leer `entry_pack/QUESTION_BANK.md` para ejemplos, pero no trasplantarlos ciegamente a los demás temas.
