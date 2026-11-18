@@ -7,6 +7,9 @@ BASE=Path(__file__).resolve().parents[1]
 REPO=BASE.parent
 DATE='2026-11-16'
 ROUTES=['A','B','C','D1','D2','E']
+# This reconstructs the archived V2 catalog. V3 adapters apply typed overlays through agent_tools.
+# A new manifest must not inherit the old single-table schema, 538 license evidence or question readiness.
+LEGACY_SNAPSHOT_CASES={'uci-retail','nba-elo','bob-ross-elementos'}
 def read(p):return json.loads(Path(p).read_text())
 def write(p,x):Path(p).write_text(json.dumps(x,ensure_ascii=False,indent=2)+'\n')
 def pending(how):return {'status':'PENDIENTE','how_to_obtain':how}
@@ -97,7 +100,8 @@ def main():
         if sid=='bts-kpop-musica':s['entity_disambiguation']='BTS, grupo musical, MBID 0d79fe8e-ba27-4859-bb8c-2f255f346853. No Bureau of Transportation Statistics.'
         if sid=='bts-puntualidad-vuelos':s['entity_disambiguation']='Bureau of Transportation Statistics, U.S. DOT. No grupo musical.'
         data=BASE/'pilots'/sid/'data/manifest.json'
-        if data.exists():
+        legacy_snapshot=data.exists() and sid in LEGACY_SNAPSHOT_CASES
+        if legacy_snapshot:
             m=read(data);s['snapshot']={'status':'SNAPSHOT_HASHED','manifest_path':str(data.relative_to(BASE)),**m};s['license']={'status':'REVIEWED','name':m['license'],'url':m['license_url'],'evidence':'evidence/538-LICENSE.txt' if sid!='uci-retail' else 'https://archive.ics.uci.edu/dataset/352/online-retail','scope':'Sólo datos del snapshot, sin imágenes, vídeos ni otros medios.'};s['authentication']={'status':'VERIFIED','value':'Sin autenticación para snapshot offline'}
             s['privacy']={'status':'REVIEWED','policy':m['personal_fields']};s['evidence_status']='SNAPSHOT_HASHED'
         sources.append(s)
@@ -111,7 +115,7 @@ def main():
             if qid=='D85-C':denominator='episodios del anfitrión y 12 motivos seleccionados, no todos los 67 indicadores'
             tech=technique(s,route,metric);simple,advanced,visual,adversarial=METHODS[tech]
             block=[]
-            if not data.exists():block.append('PENDIENTE: snapshot de alcance suficiente, derechos, esquema y QA para esta pregunta.')
+            if not legacy_snapshot:block.append('PENDIENTE: snapshot de alcance suficiente, derechos, esquema y QA para esta pregunta.')
             if re.search(r'extern[oa]|no presente|ausente|realmente vendid|riesgo|todos los|marco externo|censura|conciertos reales|costos|salario|rentabil|margen',contract+' '+text,re.I):block.append('PENDIENTE: dato adicional específico que exige el contrato de métrica/denominador; no estimarlo con un proxy sin aprobación.')
             if route=='A' and any(x in (contract+' '+text).lower() for x in ['costo','ingreso','rentab','salario','ahorro','inversión']):block.append('Decisión de negocio condicionada: costos, demanda o impacto causal no medidos no se convierten en ROI.')
             if sid in ['cop31-2026','elecciones-eeuu-2026']:block.append('PENDIENTE: identificar versión final o certificado oficial por unidad; corte provisional debe quedar explícito.')

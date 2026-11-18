@@ -49,6 +49,8 @@ Resultados de referencia del snapshot, sin inferencia de tráfico actual:
 - En resolución 1.0 aparecen 25 comunidades y modularidad aproximadamente 0.659; el número cambia con resolución. El contraste aleatorio es exploratorio después de optimizar Louvain, no un p-valor confirmatorio ni prueba de regiones naturales.
 - Al retirar diez hubs del ranking original quedan 75 de 3,204 aeropuertos fuera del mayor componente. Se muestran también el escenario inicial y los denominadores; no se llama colapso al resultado ni se simula una reacción de aerolíneas.
 
+La CI detectó que el constructor V2 adoptaba cualquier manifiesto de una carpeta nueva y suponía su esquema de tabla única. Se restringió su registro a los tres pilotos V2: el catálogo archivado se reconstruye sin diferencias y los adaptadores nuevos entran por la interfaz tipada V3. Una regresión aislada prueba que OpenFlights no hereda esquema, derechos ni disponibilidad del constructor antiguo. No se relajaron validadores.
+
 Las cifras completas, incluidos cambios de política, están en los JSON de evidencia y CSV regenerables. No se estima rentabilidad, demanda no atendida, pasajeros afectados, causalidad o conectividad actual.
 
 ## Figuras y materiales producidos
@@ -79,7 +81,7 @@ La cache verifica manifiesto, snapshots, contrato, diccionario, código propio/c
 
 ## Validación y puertas
 
-Los 16 tests combinan las 11 comprobaciones anteriores y cinco pruebas nuevas: hashes comprimidos/originales, llaves y colapso, coordenadas/dominios, antimeridiano, denominador tras retiro, preservación de catálogo, rutas bloqueadas, repetición exacta y ejecución del ZIP fuera del repositorio con otra semilla de hash. Chromium comprueba cinco preguntas en dos tamaños: diez combinaciones, veinte capturas, imágenes, enlaces CSV, apuesta previa, cero red, cero errores JS y sin overflow horizontal. Los renderizados fueron inspeccionados; los hashes se guardan en `evidence/v3/batch1a/visual-review.json`.
+Los 17 tests combinan las 11 comprobaciones anteriores y seis pruebas nuevas: hashes comprimidos/originales, llaves y colapso, coordenadas/dominios, antimeridiano, denominador tras retiro, preservación de catálogo, rutas bloqueadas, repetición exacta y ejecución del ZIP fuera del repositorio con otra semilla de hash. Chromium comprueba cinco preguntas en dos tamaños: diez combinaciones, veinte capturas, imágenes, enlaces CSV, apuesta previa, cero red, cero errores JS y sin overflow horizontal. Los renderizados fueron inspeccionados; los hashes se guardan en `evidence/v3/batch1a/visual-review.json`.
 
 La revisión visual del asistente no es ensayo humano ni revisión docente independiente. Hay cinco rutas con `RESEARCH_READY`, `VISUAL_READY` y `STORY_READY`; `CLASS_READY` y `PUBLISHED` permanecen cerradas. D16-A no recibe aprobación por compartir fuente. Este candidato tiene cinco opciones, no una clase aprobada con seis preguntas votables.
 

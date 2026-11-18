@@ -1,7 +1,9 @@
 """Graph-domain and packaging failures with material consequences, not style snapshots."""
 import copy
+import contextlib
 import gzip
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -24,6 +26,22 @@ from agent_tools import dispatch
 
 
 class GraphDataTests(unittest.TestCase):
+    def test_legacy_catalog_does_not_adopt_a_new_manifest(self):
+        import build_catalog
+        with tempfile.TemporaryDirectory() as tmp:
+            sandbox=Path(tmp)
+            for name in ['imports','evidence','pilots']:(sandbox/name).symlink_to(BASE/name,target_is_directory=True)
+            (sandbox/'catalog').mkdir()
+            (sandbox/'catalog/reconciliation.json').write_bytes((BASE/'catalog/reconciliation.json').read_bytes())
+            with patch.object(build_catalog,'BASE',sandbox),contextlib.redirect_stdout(io.StringIO()):build_catalog.main()
+            sources={s['id']:s for s in json.loads((sandbox/'catalog/sources.json').read_text())}
+            self.assertEqual(len(sources),86)
+            self.assertEqual(sources[CASE]['snapshot']['status'],'PENDIENTE')
+            self.assertNotEqual(sources[CASE]['license'].get('evidence'),'evidence/538-LICENSE.txt')
+            for legacy in ['uci-retail','nba-elo','bob-ross-elementos']:
+                self.assertEqual(sources[legacy]['snapshot']['status'],'SNAPSHOT_HASHED')
+            self.assertEqual(len(json.loads((sandbox/'catalog/questions.json').read_text())),516)
+
     def test_lossless_raw_hash_and_composite_rejected(self):
         _,manifest=load()
         with tempfile.TemporaryDirectory() as tmp:
