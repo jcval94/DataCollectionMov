@@ -1,0 +1,41 @@
+name: Bob Ross - compare models from issue
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+  issues: write
+jobs:
+  compare:
+    # Only the repository owner's exact request title can start compute.
+    if: github.event.issue.user.login == github.repository_owner && github.event.issue.title == 'Bob Ross: comparar modelos'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    concurrency:
+      group: bob-ross-on-demand
+      cancel-in-progress: false
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      ISSUE_BODY: ${{ github.event.issue.body }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: services/bob_ross_mcp/requirements.txt
+      - run: python -m pip install -r services/bob_ross_mcp/requirements.txt
+      - name: Compute and format bounded comparison
+        run: python services/bob_ross_mcp/issue_runner.py > comparison.md
+      - name: Publish verified result to the same issue
+        run: gh issue comment "$ISSUE_NUMBER" --body-file comparison.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bob-ross-issue-${{ github.event.issue.number }}
+          path: comparison.md
+          retention-days: 7
