@@ -1,0 +1,187 @@
+{
+  "schema": "ai-discovery-intake-v1",
+  "snapshot": {
+    "source_id": "bob-ross-elementos",
+    "source": "Walt Hickey / FiveThirtyEight",
+    "original_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+    "captured_at_utc": "2026-11-07T15:43:48+00:00",
+    "license": "CC BY 4.0 (datos; NO imágenes o videos)",
+    "sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+    "size_bytes": 66315,
+    "format": "CSV",
+    "rows": 403,
+    "columns": 69,
+    "record_grain": "episodio etiquetado",
+    "id": "EPISODE",
+    "binary_labels": 67,
+    "show_period": "1983–1994 (contexto biográfico externo; no hay fecha completa por episodio en CSV)",
+    "season_range": [
+      1,
+      31
+    ],
+    "guest_rows": 22,
+    "host_rows": 381,
+    "season_rows": {
+      "1": 13,
+      "2": 13,
+      "3": 13,
+      "4": 13,
+      "5": 13,
+      "6": 13,
+      "7": 13,
+      "8": 13,
+      "9": 13,
+      "10": 13,
+      "11": 13,
+      "12": 13,
+      "13": 13,
+      "14": 13,
+      "15": 13,
+      "16": 13,
+      "17": 13,
+      "18": 13,
+      "19": 13,
+      "20": 13,
+      "21": 13,
+      "22": 13,
+      "23": 13,
+      "24": 13,
+      "25": 13,
+      "26": 13,
+      "27": 13,
+      "28": 13,
+      "29": 13,
+      "30": 13,
+      "31": 13
+    },
+    "null_labels": 0,
+    "unique_episode_ids": 403
+  },
+  "sample": {
+    "file": "data_sample.csv",
+    "rows": 11,
+    "representative": false,
+    "criteria": [
+      {
+        "episode": "S01E01",
+        "why": "inicio"
+      },
+      {
+        "episode": "S01E02",
+        "why": "inicio"
+      },
+      {
+        "episode": "S31E13",
+        "why": "última temporada"
+      },
+      {
+        "episode": "S09E02",
+        "why": "caso mar/no árboles"
+      },
+      {
+        "episode": "S03E13",
+        "why": "GUEST=1"
+      },
+      {
+        "episode": "S31E11",
+        "why": "GUEST=1 últimos"
+      },
+      {
+        "episode": "S21E11",
+        "why": "contraejemplo sin árboles, tardío"
+      },
+      {
+        "episode": "S08E13",
+        "why": "motivo raro: aurora"
+      },
+      {
+        "episode": "S17E08",
+        "why": "motivo raro: marco"
+      },
+      {
+        "episode": "S11E03",
+        "why": "motivo: flores"
+      },
+      {
+        "episode": "S16E01",
+        "why": "temporada intermedia"
+      }
+    ],
+    "warning": "Muestra intencional, NO estimador poblacional y NO base de conclusiones científicas."
+  },
+  "label_positive_counts_all_403": {
+    "APPLE_FRAME": 1,
+    "AURORA_BOREALIS": 2,
+    "BARN": 17,
+    "BEACH": 27,
+    "BOAT": 2,
+    "BRIDGE": 7,
+    "BUILDING": 1,
+    "BUSHES": 120,
+    "CABIN": 69,
+    "CACTUS": 4,
+    "CIRCLE_FRAME": 2,
+    "CIRRUS": 28,
+    "CLIFF": 8,
+    "CLOUDS": 179,
+    "CONIFER": 212,
+    "CUMULUS": 86,
+    "DECIDUOUS": 227,
+    "DIANE_ANDRE": 1,
+    "DOCK": 1,
+    "DOUBLE_OVAL_FRAME": 1,
+    "FARM": 1,
+    "FENCE": 24,
+    "FIRE": 1,
+    "FLORIDA_FRAME": 1,
+    "FLOWERS": 12,
+    "FOG": 23,
+    "FRAMED": 53,
+    "GRASS": 142,
+    "GUEST": 22,
+    "HALF_CIRCLE_FRAME": 1,
+    "HALF_OVAL_FRAME": 1,
+    "HILLS": 18,
+    "LAKE": 143,
+    "LAKES": 0,
+    "LIGHTHOUSE": 1,
+    "MILL": 2,
+    "MOON": 3,
+    "MOUNTAIN": 160,
+    "MOUNTAINS": 99,
+    "NIGHT": 11,
+    "OCEAN": 36,
+    "OVAL_FRAME": 38,
+    "PALM_TREES": 9,
+    "PATH": 49,
+    "PERSON": 1,
+    "PORTRAIT": 3,
+    "RECTANGLE_3D_FRAME": 1,
+    "RECTANGULAR_FRAME": 1,
+    "RIVER": 126,
+    "ROCKS": 77,
+    "SEASHELL_FRAME": 1,
+    "SNOW": 75,
+    "SNOWY_MOUNTAIN": 109,
+    "SPLIT_FRAME": 1,
+    "STEVE_ROSS": 11,
+    "STRUCTURE": 85,
+    "SUN": 40,
+    "TOMB_FRAME": 1,
+    "TREE": 361,
+    "TREES": 337,
+    "TRIPLE_FRAME": 1,
+    "WATERFALL": 39,
+    "WAVES": 34,
+    "WINDMILL": 1,
+    "WINDOW_FRAME": 1,
+    "WINTER": 69,
+    "WOOD_FRAMED": 1
+  },
+  "flags": {
+    "no_automatic_medical_inference": true,
+    "episode_airdate_not_in_csv": true,
+    "documented_biography_separate": true,
+    "images_copyright_independent": true
+  }
+}
