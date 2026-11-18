@@ -36,7 +36,10 @@ def dispatch(action, case=None, question=None):
     if action == 'schema':
         if case in BATCH1_CASES:
             from batch1.openflights import load as load_batch1
-            _,m=load_batch1();return m
+            raw,m=load_batch1()
+            return dict(manifest=m,columns={name:list(frame.columns) for name,frame in raw.items()},
+                        keys=dict(airports=['airport_id'],routes='Airline route records; raw perspective need not be unique',gold_edges=['source_id','destination_id']),
+                        units=dict(latitude='WGS84 degrees',longitude='WGS84 degrees',altitude_ft='feet',stops='integer stop count'))
         _, m = load(case); return m
     if action == 'run':
         matches = [c for c in contracts if c['source_id']==case and c['id']==question]
@@ -57,7 +60,8 @@ def dispatch(action, case=None, question=None):
         results = json.loads((output/'research/results.json').read_text())
         if question:
             require(question in results, 'No hay resultado ejecutado para esta pregunta')
-            return dict(question=question, result=results[question], figures=json.loads((output/'visualization/figures.json').read_text()))
+            figures=json.loads((output/'visualization/figures.json').read_text())
+            return dict(question=question, result=results[question], figures=[f for f in figures if question in f['question_ids']])
         return results
     paths = {'quality':'quality/profile.json', 'storyboard':'education/storyboards.json', 'verify':'receipt.json'}
     require(action in paths, 'Herramienta desconocida')
