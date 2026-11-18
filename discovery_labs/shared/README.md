@@ -30,6 +30,14 @@ python discovery_labs/shared/validators/validate_entry_pack.py \
   --guide discovery_labs/episodes/bob-ross/research_guide.html
 ```
 
+**Pruebas del validador compartido (seis casos sintéticos):**
+
+```bash
+python -m unittest discover -s discovery_labs/shared/validators/tests -v
+```
+
+**Estado de QA:** las seis pruebas están codificadas, pero no se ha registrado una ejecución real ni un workflow CI en esta rama. La integración de Bob Ross se prueba después de disponer en una misma rama de los PR #5, #10 y #11.
+
 **Importante:** si esta infraestructura está todavía en un PR independiente, no estará disponible en otras ramas hasta fusionarla o incorporar el commit como dependencia. Ver [INTEGRATION_PLAN.md](INTEGRATION_PLAN.md).
 
 ## Qué NO hace
