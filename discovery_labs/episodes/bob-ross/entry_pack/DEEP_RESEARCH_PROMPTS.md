@@ -2,7 +2,7 @@
 
 **Propósito:** generar contexto externo que permita preguntas verdaderamente importantes ANTES de preprocesar, graficar o contar una historia. **No es el guion de video ni un relato ficticio.** Cada investigación se puede ejecutar en un agente de investigación especializado; no reemplazar verificación de fuentes por una respuesta persuasiva.
 
-**Insumos compartidos:** \`metadata.json\`, \`data_sample.csv\`, \`QUESTION_BANK.md\`, \`PLANNING.md\`, \`data/manifest.json\` y el CSV original en la carpeta padre. Publicar un informe con tabla de afirmaciones, evidencia en enlaces originales y niveles de confianza. Fechas de ejecución y fechas de los eventos por separado.
+**Insumos compartidos:** `metadata.json`, `data_sample.csv`, `QUESTION_BANK.md`, `PLANNING.md`, `data/manifest.json` y el CSV original en la carpeta padre. Publicar un informe con tabla de afirmaciones, evidencia en enlaces originales y niveles de confianza. Fechas de ejecución y fechas de los eventos por separado.
 
 ## DR-1 · BIOGRAFÍA, CRONOLOGÍA Y CONTEXTO DE BOB ROSS
 
@@ -33,7 +33,7 @@
 >
 > Para cada antecedente: título, autor, año, DOI/URL, dataset utilizado, unidad de análisis, definición de variables, método, figuras, resultados, limitaciones, licencia y viabilidad de reproducirlo. Distingue trabajo primario, tutorial derivado, agregador y duplicado. Identifica al menos 5 vacíos de investigación que podamos cubrir sin exagerar novedad.
 >
-> Investiga datasets complementarios: jwilber/Bob_Ross_Paintings, Two Inch Brush, catálogo PBS, archivos de temporadas y fechas de emisión, entrevistas, reseñas y registros de imágenes. Para cada join propone claves (\`season\`, \`episode\`, \`EPISODE\`), unicidad, cobertura, ambigüedad de títulos y riesgos por licencia. No copies ni rehostees imágenes protegidas. Separa etiquetas humanas, píxeles, paleta de colores y recepción social.
+> Investiga datasets complementarios: jwilber/Bob_Ross_Paintings, Two Inch Brush, catálogo PBS, archivos de temporadas y fechas de emisión, entrevistas, reseñas y registros de imágenes. Para cada join propone claves (`season`, `episode`, `EPISODE`), unicidad, cobertura, ambigüedad de títulos y riesgos por licencia. No copies ni rehostees imágenes protegidas. Separa etiquetas humanas, píxeles, paleta de colores y recepción social.
 >
 > El resultado debe ser un **mapa de evidencia** y un ranking de enriquecimientos que realmente permiten preguntas de segundo y tercer orden, no una lista de enlaces.
 
@@ -50,7 +50,7 @@
 
 > Actúa como investigador, metodólogo causal y diseñador de preguntas. Recibe la muestra, diccionario, cronología validada y antecedentes. Quiero preguntas con misterio real, importancia humana y suficiente profundidad para 45 minutos, no SQL trivial ni conteos sin historia.
 >
-> Aplica la skill \`research-question-architect\`: genera al menos 12 preguntas candidatas de orden 1, con ramificaciones de orden 2 activadas por resultados concretos y al menos un tercer orden que discuta explicaciones rivales. Incluye al menos: evolución por temporadas, cambio de régimen, eventos externos, anomalías de varios niveles, diversidad/entropía, falsación de creencias sofisticadas, diferencias invitados/anfitrión y un experimento adversarial sobre definición de similitud.
+> Aplica la skill `research-question-architect`: genera al menos 12 preguntas candidatas de orden 1, con ramificaciones de orden 2 activadas por resultados concretos y al menos un tercer orden que discuta explicaciones rivales. Incluye al menos: evolución por temporadas, cambio de régimen, eventos externos, anomalías de varios niveles, diversidad/entropía, falsación de creencias sofisticadas, diferencias invitados/anfitrión y un experimento adversarial sobre definición de similitud.
 >
 > Para cada una aporta tensión narrativa, variable/denominador, fuente original y datos externos, comparador, método y una visualización original; limita cualquier hipótesis causal a un análisis descriptivo si no existe identificación. Reserva resultados imaginarios como escenarios, no hallazgos.
 >
@@ -74,7 +74,7 @@
 
 > Actúa como editor científico jefe y revisor adversarial. Dispones de cuatro informes: cronología, antecedentes y fuentes, preguntas profundas, y derechos/visualización. Cruza las afirmaciones por URL, fecha, unidad y método; detecta contradicciones y conclusiones injustificadas.
 >
-> Produce un \`claims_registry\`: id, afirmación, fuente, cita, fecha, estado (CONFIRMADO_EXTERNAMENTE / CALCULADO / HIPOTESIS / BLOQUEADO / CONFLICTO), variable disponible, contraargumento, uso permitido en texto, figura y posible prueba. No permitas que una afirmación de enfermedad se convierta en causa de cambio artístico por coincidencia temporal.
+> Produce un `claims_registry`: id, afirmación, fuente, cita, fecha, estado (CONFIRMADO_EXTERNAMENTE / CALCULADO / HIPOTESIS / BLOQUEADO / CONFLICTO), variable disponible, contraargumento, uso permitido en texto, figura y posible prueba. No permitas que una afirmación de enfermedad se convierta en causa de cambio artístico por coincidencia temporal.
 >
 > Devuelve: cronología consolidada, gaps prioritarios, ocho+ preguntas con 1→2→3, plan de uniones de datos, storyboard CIENTÍFICO de visualizaciones (no audiovisual), riesgos de derechos y criterios de aprobación.
 >
