@@ -12,6 +12,7 @@
 | [data_sample.csv](data_sample.csv) | ¿Cómo se ven sus registros reales? Pequeña muestra **intencional**, no aleatoria |
 | [sources.json](sources.json) | ¿Qué fuentes y permisos investigar y cómo verificar las afirmaciones? |
 | [DEEP_RESEARCH_PROMPTS.md](DEEP_RESEARCH_PROMPTS.md) | ¿Qué investigaciones contextuales lanzar y cómo sintetizarlas? DR-1 a DR-5 |
+| [DEEP_RESEARCH_GENERAL_TEMPLATE.md](DEEP_RESEARCH_GENERAL_TEMPLATE.md) | Plantilla transferible a los demás datasets, con historia, fuentes, preguntas multinivel y QA |
 | [QUESTION_BANK.md](QUESTION_BANK.md) | ¿Cuáles son las 12 investigaciones profundas propuestas con 1.º → 2.º → 3.er orden? |
 | [question_graph.json](question_graph.json) | Contrato estructurado para que un agente recorra preguntas y pruebas |
 | [skills/research-question-architect/SKILL.md](skills/research-question-architect/SKILL.md) | Skill reusable para diseñar preguntas no triviales en futuros datasets |
