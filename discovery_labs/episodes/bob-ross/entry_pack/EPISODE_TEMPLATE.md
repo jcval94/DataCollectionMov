@@ -1,5 +1,8 @@
 # Plantilla reutilizable del Paquete de Entrada — cualquier episodio AI Discovery Labs
 
+> **Copia heredada/compatibilidad.** La plantilla central para otros episodios ahora se desarrolla en [discovery_labs/shared/templates/ENTRY_PACK_TEMPLATE.md](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/templates/ENTRY_PACK_TEMPLATE.md) (PR #11, pendiente). **NO copies la skill ni el catálogo de modelos** desde esta plantilla antigua. Conservar hasta integración y actualización de referencias.
+
+
 > Copiar/adaptar este contrato a cada nuevo dataset. La skill `skills/question-forge/SKILL.md` lo consume. **No** construir guion ni video antes de aprobar el primer HTML.
 
 ## 0. Identidad del caso
