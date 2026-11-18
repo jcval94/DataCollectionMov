@@ -13,6 +13,10 @@ El sujeto es **la historia documentada de Bob Ross y de su obra televisiva**. La
 5. **Obra no emitida:** existen siete pinturas preparadas para la temporada 32 (AP); no están necesariamente representadas en este CSV: una frontera de cobertura.
 6. **Espontaneidad versus producción:** entrevistas cuentan que podía preparar tres versiones de un cuadro; el CSV no registra ensayos/guiones.
 
+## Contrato de modelos y pruebas estadísticas (planeación antes de ejecutar)
+
+**Cada una de las 14 preguntas canónicas** de `QUESTIONS_MASTER.md` debe incluir **al menos un modelo** y **un ejercicio estadístico diferente**, con qué, por qué, dónde, fuente, baseline, validación, riesgos y figura. La selección debe proceder de `MODEL_SET.md` (24 familias). No se entrena ninguno en este Paquete de Entrada. El HTML de Fase 1 muestra un bloque único de preguntas; las seis anteriores son subejercicios, no una sección «2B».
+
 ## Etapas de investigación dentro de Fase 1
 | Lote | Trabajo | Salidas | Gate |
 |---|---|---|---|
