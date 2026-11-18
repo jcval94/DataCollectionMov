@@ -34,7 +34,7 @@ No crear video, intro, Remotion, voz o storyboard antes de aprobación.
 9. **`entry_pack/RESEARCH_PLAN.md`** — secuencia de investigación de Fase 1, metodología y gates.
 10. **`entry_pack/VISUAL_DESIGN.md`** — gráficos fuertes, matrices 31×12, outliers, cluster explorer con preview condicional y QA.
 11. **`entry_pack/PROMPT_FASE1_V2.md`** — prompt para iniciar Fase 1 con otra IA.
-12. **`entry_pack/validate_pack.py`** — comprobaciones estáticas del paquete, sin modelos entrenados. **`research_guide.html`** — primera guía científica V3 **ya incorporada al repo**, con UNA sección de 14 preguntas y enfermedad visible; pendiente de aprobación.
+12. **`entry_pack/QA_PACK_STATUS.md`** — validaciones estáticas y lo que falta probar. **`entry_pack/validate_pack.py`** — comprobaciones estáticas del paquete, sin modelos entrenados. **`research_guide.html`** — primera guía científica V3 **ya incorporada al repo**, con UNA sección de 14 preguntas y enfermedad visible; pendiente de aprobación.
 13. Documentos de apoyo históricos: `entry_pack/QUESTION_ARCS.md` y `entry_pack/question_graph.json` son **borradores de ideas anteriores** para trazabilidad; **no son un segundo banco de preguntas**.
 14. Archivos de datos: `entry_pack/metadata.json`, `entry_pack/sample_raw.csv` (13 filas originales), `entry_pack/sample_features.csv` (mismas filas, 12 motivos). Los 13 ejemplos **no** son una muestra representativa ni deben usarse para métricas poblacionales.
 
