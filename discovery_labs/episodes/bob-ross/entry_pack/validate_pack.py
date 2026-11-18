@@ -42,6 +42,7 @@ def main():
                      "model_validation", "stat_why", "stat_where"):
             assert isinstance(q.get(attr), str) and len(q[attr].strip()) > 15, f"{q['id']} lacks methodological field {attr}"
         assert q["design_status"] == "PLAN_ONLY", f"{q['id']} must remain unexecuted"
+        assert q["o2_trigger"].startswith("CONDICIONAL:") and q["o3_trigger"].startswith("CONDICIONAL:"), f"{q['id']} lacks explicit conditional activation"
         estimand = q.get("estimand", {})
         for attr in ("grain", "population", "measure", "denominator", "time_basis"):
             assert isinstance(estimand.get(attr), str) and estimand[attr].strip(), f"{q['id']} lacks estimand.{attr}"
