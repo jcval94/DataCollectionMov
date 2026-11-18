@@ -1,5 +1,8 @@
 # Model Set v1 — menú razonado de modelos + ejercicios estadísticos
 
+> **COMPATIBILIDAD TEMPORAL:** este catálogo local se conserva para que el PR apilado de Bob Ross funcione sin depender todavía del PR #11. La fuente generalizable oficial propuesta es [shared/model_catalog/MODEL_SET.md](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/model_catalog/MODEL_SET.md). No mantener dos catálogos en paralelo. Consultar `MODEL_FIT_BOB_ROSS.md` para detalles específicos. Eliminar/reemplazar esta copia solo después de integrar shared y comprobar el validador.
+
+
 **Propósito:** ofrecer a Question Forge un repertorio **transferible** que permita seleccionar, para CADA pregunta principal, **al menos un modelo concreto y un ejercicio estadístico distinto**, indicar qué responde cada uno, cuándo usarlo, dónde situarlo en el pipeline, cómo validarlo y por qué descartarlo. **Este archivo no ejecuta ni entrena modelos.**
 
 ## Selección antes de sofisticación
