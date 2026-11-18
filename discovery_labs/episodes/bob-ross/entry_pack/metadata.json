@@ -1,0 +1,89 @@
+{
+  "schema": "ai-discovery-entry-pack-v1",
+  "dataset_id": "bob-ross-elementos",
+  "episode_id": "ADL-BOB-ROSS-001",
+  "source_title": "The Joy of Painting: Elements by Episode",
+  "dataset_owner": "Walt Hickey / FiveThirtyEight",
+  "format": "CSV",
+  "bytes": 66315,
+  "rows": 403,
+  "columns": 69,
+  "binary_columns": 67,
+  "unit": "episodio de TV con motivos codificados",
+  "primary_keys": [
+    "EPISODE"
+  ],
+  "season_ids": "S01..S31",
+  "season_count": 31,
+  "host_rows": 381,
+  "guest_rows": 22,
+  "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+  "upstream_commit": "4c1ff5e3aef1816ae04af63218015066e186c147",
+  "sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "license": "CC BY 4.0 applies to dataset only; no granted painting/video rights",
+  "available_time_basis": "season/episode ordinal; CSV lacks precise recording and broadcast date fields",
+  "external_historical_period": "1983–1994 original broadcast, externally sourced, requires episode-wise verification",
+  "profile_status": "original manifest and key counts confirmed in prior episode analysis; deep profile needed per question",
+  "sample_rows": 13,
+  "sampling": "purposive, seasons 1/3/6/9/15/20/24/28/31, tree-free examples, and two guests; not statistically representative",
+  "derived_features": [
+    "arboles",
+    "montanas",
+    "lagos",
+    "rios",
+    "mar",
+    "nieve",
+    "cascadas",
+    "estructuras",
+    "nubes",
+    "rocas",
+    "sol",
+    "flores"
+  ],
+  "known_overlap": "SNOWY_MOUNTAIN activates mountain and snow, so derived features are dependent by construction",
+  "verified_reference": {
+    "host_trees": 345,
+    "host_without_trees": 36,
+    "host_mountains": 150,
+    "host_mountains_without_snow": 48,
+    "guest_trees": 16
+  },
+  "not_measured": [
+    "artistic quality",
+    "psychological condition",
+    "disease effect",
+    "painting date",
+    "audience preferences",
+    "painting sales",
+    "production costs",
+    "color in primary CSV",
+    "pixel-level imagery"
+  ],
+  "rights_of_images": "PENDING; implement only licensed local assets or source link/metadata fallback",
+  "sources_for_context": [
+    {
+      "publisher": "NPR via KPBS",
+      "url": "https://www.kpbs.org/news/2016/08/28/the-real-bob-ross-meet-the-meticulous-artist",
+      "purpose": "career, production, three paintings per episode, illness"
+    },
+    {
+      "publisher": "AP",
+      "url": "https://apnews.com/article/bob-ross-painting-unfinished-season-nichola-hankins-cd50203eb6b3cf4f1893364cfae472be",
+      "purpose": "seven paintings for unproduced 32nd season"
+    },
+    {
+      "publisher": "Outside/Walt Hickey",
+      "url": "https://www.outsideonline.com/podcast/bob-ross-strategies-survival/",
+      "purpose": "cultural and methodological context"
+    },
+    {
+      "publisher": "jwilber",
+      "url": "https://github.com/jwilber/Bob_Ross_Paintings",
+      "purpose": "episode painting metadata and palettes, verify join and license"
+    }
+  ],
+  "research_approval": "PENDING",
+  "storytelling_approval": "BLOCKED",
+  "video_approval": "BLOCKED",
+  "usage_warning": "Sample and question arcs are entry-stage scaffolding, not validated historical or causal findings."
+}
