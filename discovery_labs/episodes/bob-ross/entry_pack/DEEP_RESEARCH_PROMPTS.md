@@ -1,93 +1,75 @@
-# Deep Research — cuatro investigaciones independientes y una síntesis
+# Deep Research — cuatro investigaciones paralelas + síntesis
 
-**Propósito:** generar contexto externo que permita preguntas verdaderamente importantes ANTES de preprocesar, graficar o contar una historia. **No es el guion de video ni un relato ficticio.** Cada investigación se puede ejecutar en un agente de investigación especializado; no reemplazar verificación de fuentes por una respuesta persuasiva.
+**Caso:** Bob Ross · `bob-ross-elementos` · `The Joy of Painting` · 31 temporadas etiquetadas · 403 episodios (381 anfitrión, 22 invitados).
 
-**Insumos compartidos:** `metadata.json`, `data_sample.csv`, `QUESTION_BANK.md`, `PLANNING.md`, `data/manifest.json` y el CSV original en la carpeta padre. Publicar un informe con tabla de afirmaciones, evidencia en enlaces originales y niveles de confianza. Fechas de ejecución y fechas de los eventos por separado.
+Estas son instrucciones para una **IA con navegación y acceso a fuentes**. No sustituyen los resultados de una investigación efectivamente realizada. Los hechos externos se marcarán `VERIFIED`, `DISPUTED`, `CONTEXT_ONLY`, `PENDING` o `NOT_SUPPORTED`.
 
-## DR-1 · BIOGRAFÍA, CRONOLOGÍA Y CONTEXTO DE BOB ROSS
+## DR-01 — Biografía, trayectoria y contexto histórico
 
-**Pega este prompt en Deep Research:**
-
-> Actúa como historiador audiovisual y verificador de hechos. Reconstruye la historia de Bob Ross en relación con la producción de *The Joy of Painting*: origen de su técnica, formación, carrera y su experiencia en Alaska, creación del programa, evolución de la televisión educativa, invitados, empresas colaboradoras, sucesos personales relevantes, enfermedad y etapa final. Diferencia nacimiento de la idea, grabación, fecha de emisión, reedición y publicación digital. Distingue biografía comprobada de recuerdos de terceros, especulación o mitos.
+> Eres historiador de medios y científico social. Investiga la **historia de Bob Ross**, su aprendizaje, los años en Alaska, la influencia de Bill Alexander, el nacimiento y funcionamiento de *The Joy of Painting*, las decisiones de producción de los años 1983–1994, el entorno de PBS, su negocio de materiales, sus colaboradores y los principales eventos personales documentados.
 >
-> Busca fuentes primarias (PBS, archivos, entrevistas, catálogos oficiales, periódicos de época) y secundarias independientes, sin depender únicamente de Bob Ross Inc. Genera una cronología con: fecha exacta o intervalo, acontecimiento, fuente primaria, segunda fuente si existe, calidad de respaldo, controversias, grado de certeza, correspondencia provisional con temporadas/episodios y sesgos.
+> Construye una línea de tiempo **con fecha, precisión, tipo de fecha (grabación/emisión/evento), fuente primaria o secundaria y nivel de confianza**, distinguiendo lo verificable de lo legendario.
 >
-> Estudia con sensibilidad la hipótesis: «¿La enfermedad de Bob Ross coincidió con un cambio medible en su obra televisiva?». No presupongas que sí ocurrió ni que un cambio sería consecuencia de la enfermedad. Averigua fechas con cautela y marca lo incierto. **No infieras diagnóstico, capacidad o estado mental desde pinturas o apariencia.** Incluye causas alternativas: selección de episodios, invitados, cambios de producción, guiones, tendencias previas, cambios de etiquetas, fechas de emisión diferentes de fechas de pintado.
+> Investiga con particular cuidado el diagnóstico de linfoma y el final de la serie: **NO des por hecho que un cambio en motivos, color o complejidad fue causado por la enfermedad**. Verifica qué es realmente conocido sobre la fecha del diagnóstico, tratamientos, continuidad de grabación, cuánto duraba la producción por temporada y cuál fue el último episodio filmado versus emitido. Cuando no se conozca, marca PENDIENTE. No infieras estados emocionales ni síntomas del arte.
 >
-> Entrega fuentes, citas breves, cronología y seis hipótesis testables; destaca qué datos no existen. No redactes un guion cinematográfico.
-
-**Pistas iniciales para verificar (no autoridad exclusiva):**
-- https://www.bobross.com/about-bob-ross/
-- https://dos.fl.gov/cultural/programs/florida-artists-hall-of-fame/bob-ross/
-- https://apnews.com/article/cd50203eb6b3cf4f1893364cfae472be
-- https://people.com/bob-ross-death-what-to-know-7558507
-- https://www.washingtonpost.com/arts-entertainment/2021/08/27/bob-ross-netflix-documentary/
-
-**Nota crucial:** referencias públicas difieren en detalles y fechas de producción. No convertir año de estreno en fecha de pintura sin comprobar episodios. La aparición de nuevas producciones con pinturas preparadas para una supuesta temporada 32 NO es parte del CSV original de 403 episodios.
-
-## DR-2 · INVESTIGACIONES, FUENTES DE DATOS Y ANTECEDENTES VISUALES
-
-**Pega este prompt en Deep Research:**
-
-> Investiga de forma exhaustiva qué han descubierto otros sobre las pinturas de *The Joy of Painting* y qué puede descubrirse de forma independiente. Localiza y evalúa críticamente análisis de Walt Hickey/FiveThirtyEight, artículos de visualización científica, análisis con R/Python, trabajos sobre coocurrencia de motivos, paletas de color, técnicas pictóricas y cronologías.
+> Contrasta al menos dos fuentes periodísticas independientes y, cuando existan, entrevistas, archivos PBS, documentación de Smithsonian y fuentes de producción; no trates a una wiki o un documental promocional como confirmación suficiente.
 >
-> Para cada antecedente: título, autor, año, DOI/URL, dataset utilizado, unidad de análisis, definición de variables, método, figuras, resultados, limitaciones, licencia y viabilidad de reproducirlo. Distingue trabajo primario, tutorial derivado, agregador y duplicado. Identifica al menos 5 vacíos de investigación que podamos cubrir sin exagerar novedad.
+> Incluye la información sobre las **siete pinturas preparadas para la temporada 32**, explica por qué podrían no estar entre los 403 episodios y qué sesgo de cobertura introduce. Investiga los derechos para mostrar pinturas.
 >
-> Investiga datasets complementarios: jwilber/Bob_Ross_Paintings, Two Inch Brush, catálogo PBS, archivos de temporadas y fechas de emisión, entrevistas, reseñas y registros de imágenes. Para cada join propone claves (`season`, `episode`, `EPISODE`), unicidad, cobertura, ambigüedad de títulos y riesgos por licencia. No copies ni rehostees imágenes protegidas. Separa etiquetas humanas, píxeles, paleta de colores y recepción social.
+> Entrega `timeline_events.csv`, `biography_sources.md`, `claims_registry.json`, `contextual_hypotheses.md` y 10 preguntas científicas de contexto que NO sean afirmaciones causales sin prueba.
+
+**Pistas iniciales, no sustitutos de verificación:** [NPR/KPBS, 2016](https://www.kpbs.org/news/2016/08/28/the-real-bob-ross-meet-the-meticulous-artist), [Outside + Walt Hickey](https://www.outsideonline.com/podcast/bob-ross-strategies-survival/), [AP, siete pinturas de la temporada 32](https://apnews.com/article/bob-ross-painting-unfinished-season-nichola-hankins-cd50203eb6b3cf4f1893364cfae472be), [Smithsonian](https://amhistory.si.edu/docs/NMAH_report_2019.pdf).
+
+## DR-02 — Arqueología del dataset, cronología y fuentes complementarias
+
+> Eres Data Archaeologist y Senior Data Engineer. Audita el CSV `elements-by-episode.csv` (403 filas, 69 columnas, 67 etiquetas binarias) contra su commit original fijado por hash. Documenta qué constituye una observación y qué NO puede inferirse de esas etiquetas. Revisa nombres, duplicados semánticos, coetiquetado, episodios invitados y variables derivadas por OR. Busca cómo se produjo la codificación y sus limitaciones.
 >
-> El resultado debe ser un **mapa de evidencia** y un ranking de enriquecimientos que realmente permiten preguntas de segundo y tercer orden, no una lista de enlaces.
-
-**Pistas:**
-- https://github.com/fivethirtyeight/data/tree/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross
-- https://fivethirtyeight.datasettes.com/fivethirtyeight/bob-ross~2Felements-by-episode
-- https://github.com/jwilber/Bob_Ross_Paintings
-- https://asistdl.onlinelibrary.wiley.com/doi/10.1002/meet.2014.14505101084
-- https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bob_ross.html
-
-## DR-3 · PREGUNTAS PROFUNDAS, EVENTOS EXTERNOS Y DISEÑO DE PRUEBAS
-
-**Pega este prompt en Deep Research:**
-
-> Actúa como investigador, metodólogo causal y diseñador de preguntas. Recibe la muestra, diccionario, cronología validada y antecedentes. Quiero preguntas con misterio real, importancia humana y suficiente profundidad para 45 minutos, no SQL trivial ni conteos sin historia.
+> Crea una tabla de episodios con temporada, episodio, fecha de emisión **verificada** y fecha de grabación si se encuentra; no conviertas SnnEnn automáticamente en un calendario. Anota diferencia entre fecha de grabación y emisión, riesgos de sindicación/reemisiones y datos faltantes. Si la fecha falta, conserva el orden de temporadas como secuencia ordinal.
 >
-> Aplica la skill `research-question-architect`: genera al menos 12 preguntas candidatas de orden 1, con ramificaciones de orden 2 activadas por resultados concretos y al menos un tercer orden que discuta explicaciones rivales. Incluye al menos: evolución por temporadas, cambio de régimen, eventos externos, anomalías de varios niveles, diversidad/entropía, falsación de creencias sofisticadas, diferencias invitados/anfitrión y un experimento adversarial sobre definición de similitud.
+> Investiga, separadamente, los datasets de **paleta/color**, metadatos de pinturas, enlaces a episodios y obra visual, por ejemplo `jwilber/Bob_Ross_Paintings` y los catálogos del mismo DataCollectionMov. Propón joins mediante `(season,episode)` con test 1:1, cobertura y casos no coincidentes. La licencia CC BY 4.0 de FiveThirtyEight NO se traslada a reproducciones visuales.
 >
-> Para cada una aporta tensión narrativa, variable/denominador, fuente original y datos externos, comparador, método y una visualización original; limita cualquier hipótesis causal a un análisis descriptivo si no existe identificación. Reserva resultados imaginarios como escenarios, no hallazgos.
+> Produce: diccionario exhaustivo, perfilado, matriz de completitud, posibles `snapshots` enriquecidos y contratos Silver/Gold; scripts reproducibles de unión y un informe de riesgos. **No descargues ni versiones imágenes sin permiso.** Evita mezclar datos de episodios emitidos con obras alternativas no equivalentes.
+
+**Fuentes base:** [FiveThirtyEight](https://github.com/fivethirtyeight/data/tree/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross), [jwilber/Bob_Ross_Paintings](https://github.com/jwilber/Bob_Ross_Paintings), [investigación bibliográfica 2014](https://doi.org/10.1002/meet.2014.14505101084).
+
+## DR-03 — Mitos, recepción, antecedentes y mecanismos
+
+> Eres investigador de cultura popular, métodos históricos y diseño de hipótesis. Identifica afirmaciones **REALMENTE documentadas** sobre Bob Ross: árboles felices; espontaneidad; paisajes de Alaska; originalidad versus repetición; evolución de motivos, técnica y paleta; el negocio de materiales; relación entre show y obras; y otras observaciones con evidencia.
 >
-> Evalúa individualmente las preguntas con 10 dimensiones y penaliza fuertemente afirmaciones que no se puedan verificar. Devuelve un árbol, matriz de viabilidad y una shortlist de 3–4 preguntas protagonistas. No produzcas el video ni el guion del video.
-
-## DR-4 · DERECHOS, REPRESENTACIÓN VISUAL Y EXPERIENCIA DEL ESPECTADOR
-
-**Pega este prompt en Deep Research:**
-
-> Eres especialista en visualización científica, derechos de autor y diseño de interfaces accesibles. Investiga cómo mostrar cada pintura real de Bob Ross al pasar el cursor por un punto de un cluster, con alternativa por clic/tap, teclado y lector de pantalla. Proporciona enlaces de catálogo de imágenes por temporada/episodio, fecha de consulta, relación con los datos, titular/licencia/términos, restricciones de hotlinking y alternativas. No presupongas que el dataset CC BY 4.0 autoriza las imágenes.
+> Para cada creencia, captura **quién la dijo, cuándo, dónde, cita breve o paráfrasis precisa, URL, popularidad demostrable o no, contraafirmación y dataset capaz de contrastarla**. No fabriques mitos porque sean fáciles de comprobar. Si solo es provocadora, etiquétala `PROVOCACION_NO_MITO`.
 >
-> Propón: (a) mostrar imagen si existe permiso verificable, (b) vista previa desde URL remota cuando las condiciones lo permitan, con consentimiento de red y atribución, (c) ficha enlazada y placeholder sin copiar imagen cuando no exista permiso. Nunca evadir controles ni automatizar scraping de obras protegidas.
+> Busca análisis previos con resultados y métodos (FiveThirtyEight/Walt Hickey, trabajos de visualización de 2014, comunidades de análisis) y registra si son `DOCUMENTADO`, `REPRODUCIDO`, `PROPUESTO` o `NO_ENCONTRADO`. Distingue análisis de fuente primaria de copias y visualizaciones sin investigación.
 >
-> Diseña un sistema de visualización para 31 temporadas y 403 episodios, con intervalos, pequeñas múltiples, anotaciones de eventos históricos con incertidumbre, outliers detectados en tres niveles de agregación, clusters interpretables con perfiles y medoids, conexiones entre motivos y una comparación de cambios robusta. Cada gráfico requiere unidad, denominador, limitaciones y alt text. Evalúa estética, legibilidad móvil, selección de color y animaciones útiles (no decorativas).
+> Investiga explicaciones rivales para cambios aparentes: demanda didáctica, producción del programa, recomendaciones de materiales, invitación de artistas, tendencias de época, disponibilidad de pinturas, etiquetado y sesgos de selección. Evita postular causalidad clínica/psicológica.
 >
-> Entrega un **brief visual verificable**, contratos de interacción, inventario de activos autorizados y criterios de QA. No desarrolles Remotion ni video en esta fase.
+> Entrega `myths_claims.csv`, `antecedents.csv`, `rival_explanations.md`, `questions_to_test.json`.
 
-## DR-5 · SÍNTESIS / RED TEAM DE LOS CUATRO INFORMES
+**Fuentes iniciales:** [NPR/KPBS](https://www.kpbs.org/news/2016/08/28/the-real-bob-ross-meet-the-meticulous-artist), [FiveThirtyEight/Data](https://fivethirtyeight.datasettes.com/fivethirtyeight/bob-ross~2Felements-by-episode), [Wiley poster sobre visualización](https://doi.org/10.1002/meet.2014.14505101084).
 
-**Pega este prompt después de recibir DR-1 a DR-4:**
+## DR-04 — Investigación visual, imágenes, diseño y licencias
 
-> Actúa como editor científico jefe y revisor adversarial. Dispones de cuatro informes: cronología, antecedentes y fuentes, preguntas profundas, y derechos/visualización. Cruza las afirmaciones por URL, fecha, unidad y método; detecta contradicciones y conclusiones injustificadas.
+> Eres investigador en cultura visual, diseñador de visualizaciones y especialista en derechos. Diseña una colección de **visualizaciones que hagan visibles relaciones reales**, no que decoren cifras. Propón: línea temporal por temporada con incertidumbre; heatmap de motivos por temporada; contribución de huéspedes; coocurrencias frente a baseline; outliers por episodio/temporada; cambios de composición; cluster explorer con representantes reales; tarjetas de evidencias; vistas de sensibilidad (Jaccard vs Euclídea; K-means vs k-medoids cuando proceda).
 >
-> Produce un `claims_registry`: id, afirmación, fuente, cita, fecha, estado (CONFIRMADO_EXTERNAMENTE / CALCULADO / HIPOTESIS / BLOQUEADO / CONFLICTO), variable disponible, contraargumento, uso permitido en texto, figura y posible prueba. No permitas que una afirmación de enfermedad se convierta en causa de cambio artístico por coincidencia temporal.
+> Para cada gráfico especifica pregunta, variable, unidad, denominador, cálculo exacto, baseline, incertidumbre o prueba adversarial, acción de usuario, texto alternativo, resolución y fuente. Diseña un *hover/focus card* por episodio: código, título, temporada, motivos y pertenencia al grupo; incluir la pintura real **solo si sus derechos permiten mostrarla**, y en ese caso describir archivo, licencia y autor. En caso contrario, mostrar una tarjeta de motivos derivada del CSV y un enlace al proveedor original (no incrustar ni descargar su imagen).
 >
-> Devuelve: cronología consolidada, gaps prioritarios, ocho+ preguntas con 1→2→3, plan de uniones de datos, storyboard CIENTÍFICO de visualizaciones (no audiovisual), riesgos de derechos y criterios de aprobación.
+> Investiga licencias y términos de Three sources: FiveThirtyEight (etiquetas CC BY 4.0), Two Inch Brush (reproducciones) y jwilber (metadata/rutas). Comprueba restricciones de redistribución, hotlinking y capturas de pantalla; una URL pública no equivale a una licencia libre.
 >
-> Prepara material para **Fase 1: guía científica HTML**. No escribas Fase 2 (storytelling de video) ni Fase 3 (video) hasta aprobación humana explícita.
+> Entrega `visuals_spec.md`, `preview_rights.csv`, `charts_evidence.json`, una maqueta técnica de explorador (sin inventar imágenes) y criterios QA de escritorio/móvil/teclado.
 
-## Contrato mínimo de cada informe
+## DR-05 — Síntesis, triangulación y preguntas de orden superior (ejecutar DESPUÉS de DR-01 a DR-04)
 
-- Resumen de hallazgos; fecha de investigación; fuentes primarias/secundarias.
-- Tabla de afirmaciones importantes con enlaces reales; distinguir certeza factual y certeza causal.
-- Material crítico faltante y plan concreto de obtención.
-- Ideas originales derivadas del contexto, no del resultado que «sería bonito encontrar».
-- Hallazgos negativos y controversias sin maquillar.
-- Metodologías y pruebas que otro agente puede ejecutar.
-- Dictamen honesto: ¿qué preguntas son aptas para el primer HTML y cuáles necesitan más datos?
+**Nueva regla editorial V2:** Produce **un solo banco** `QUESTIONS_MASTER.md` y `questions_master.json`; las preguntas viejas A/B/C/D1/D2/E son subejercicios integrados, no sección aparte. Cada pregunta principal debe **proponer** (no entrenar) un modelo tomado de `MODEL_SET.md` y un ejercicio estadístico formal, declarando qué/por qué/dónde/condiciones y validación. Debe haber O1→O2→O3, con O2/O3 condicionales. La hipótesis de enfermedad ha de estar en el núcleo y su cronología es DISPUTADA: cotejar Outside, Washington Post, NPR y fuentes primarias antes de situar un evento en la línea temporal o sugerir causalidad.
 
-**Regla de salida:** todos los informes quedan dentro del paquete de entrada hasta que la guía de investigación sea revisada y aprobada. El paquete puede tener múltiples DR; aquí recomendamos cuatro especializados y una síntesis adversarial.
+
+> Actúa como editor científico adversarial. Lee las cuatro investigaciones, clasifica afirmaciones en `VERIFIED`/`DISPUTED`/`PENDING`, concilia fechas y poblaciones, elimina leyendas sin respaldo, detecta información que **no está** en el CSV y exige evidencia externa antes de convertirla en un hallazgo.
+>
+> Ejecuta la skill `question-forge`. Genera al menos doce preguntas raíz, con rutas O1→O2 y **al menos cuatro arcos que culminen en O3**, sin fingir resultados: cada O2/O3 indica el resultado previo que podría activarla. Selecciona de tres a cinco arcos prioritarios por potencial científico, visual, histórico y factibilidad.
+>
+> Construye un **mapa narrativo científico, no un guion audiovisual**: historia de Bob Ross en primer plano, eventos históricos como contexto, datos como prueba y tensiones derivadas de hallazgos observados. Entrega hipótesis rivales, DAG causal si resulta útil, matriz de triangulación entre fuentes, registro de creencias, diseños de análisis y planes de reproducción.
+>
+> No atribuyas un cambio estilístico a su enfermedad sin cronología verificable, controles, alternativas y estrategia de inferencia adecuada; si no es posible, presenta una investigación descriptiva de cambios y un apartado «lo que no podemos atribuir». No infieras estilos pictóricos a partir de etiquetas sin verificación visual independiente.
+>
+> Entrega `synthesis.md`, `question_graph.json`, `research_plan.md`, `source_claim_matrix.csv`, y criterios para construir `research_guide.html`. **DETENTE al llegar al límite de Fase 1: no escribir el guion de video ni producir video.**
+
+## Regla transversal de las cinco investigaciones
+Cada afirmación no trivial exige fuente, fecha o periodo, tipo de evidencia, nivel de confianza y uso previsto. Un reporte `VERIFIED` debe guardar URL estable, evidencia breve, fecha de consulta y posibilidad de refutación. Investigaciones inconclusas son resultados legítimos. Prioriza fuentes primarias y prensa de calidad; documenta desacuerdos sin forzar consenso.
