@@ -39,6 +39,16 @@ Cada uno de los 12 arcos tiene:
 
 Los 12 arcos son candidatos; **no** se han ejecutado ni convertido todavía en las seis rutas de `../episode.html`.
 
+## Verificación del paquete (sin red)
+
+Con Node.js instalado y desde la carpeta `intake/`:
+
+```bash
+node qa_intake.cjs
+```
+
+El verificador compara el SHA original, exige 12 muestras realmente presentes en el CSV, 12 arcos Q1, al menos 24 Q2 y 12 Q3 y confirma la presencia de los cinco prompts. **No reemplaza Deep Research ni prueba derechos de imágenes**. Si se incorpora al pipeline local, guardar sus salidas y commit como evidencia antes de afirmar que la fase está lista.
+
 ## Flujo de aprobación (estándar general)
 
 **Fase 0 Intake → Fase 1 Guía HTML científica → Fase 2 Storytelling HTML → Fase 3 Video.**
