@@ -1,0 +1,120 @@
+{
+  "source_id": "openflights-red-aerea",
+  "source_count": 1,
+  "contracts": 6,
+  "executed_questions": 5,
+  "figures": 10,
+  "png_variants": 20,
+  "svg_exports": 20,
+  "storyboards": 5,
+  "fingerprint": {
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "snapshot_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "manifest_sha256": "d41973e147b28a568a90ff21a48f9eb82e201b010444d1b1fce816479762a412",
+    "contracts_sha256": "3c758eca7e0a4dc25b8e79c3423be3d3e61c9daa7f70e0e6d2554ec0503eab64",
+    "dictionary_sha256": "ce9ca527359cd39a4ed506ff60e252062b6fb056b29030b28bdfc32c6aa6efc9",
+    "visual_review_sha256": "5e21f3dde2ce1b732d645ab938771543040765521a2e6fc13af824de4494d0e3",
+    "python": "3.12.14",
+    "dependencies": {
+      "networkx": "3.5",
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.10.8",
+      "pillow": "13.0.0"
+    },
+    "seed": 20261117
+  },
+  "runtime": {
+    "seconds": 15.08748925299983,
+    "network": "DISABLED",
+    "seed": 20261117
+  },
+  "student_package_sha256": "e89ee1923852dffcbe118d0070f4d3d672ced96d4b0744e6bde0804ff364b263",
+  "local_checks": {
+    "all_tests": 17,
+    "openflights_tests": 6,
+    "failures": 0,
+    "independent_hash_seed_replay": true,
+    "standalone_student_zip_replay": true,
+    "pinned_original_download_reproduced": true,
+    "bounded_agent_executed": true,
+    "browser_route_viewport_checks": 10,
+    "browser_screenshots": 20,
+    "js_errors": 0,
+    "remote_requests": 0,
+    "legacy_catalog_rebuild_identical": true,
+    "legacy_catalog_new_manifest_isolation": true
+  },
+  "gates": {
+    "source_id": "openflights-red-aerea",
+    "DATA_READY": true,
+    "questions": {
+      "D16-A": {
+        "RESEARCH_READY": false,
+        "VISUAL_READY": false,
+        "STORY_READY": false,
+        "CLASS_READY": false,
+        "PUBLISHED": false,
+        "reason": "El archivo carece de pasajeros, frecuencia, tarifas, capacidad y costos; rutas históricas no permiten recomendar una inversión actual."
+      },
+      "D16-B": {
+        "RESEARCH_READY": true,
+        "VISUAL_READY": true,
+        "STORY_READY": true,
+        "CLASS_READY": false,
+        "PUBLISHED": false,
+        "reason": "Ensayo humano y revisión docente independiente no observados."
+      },
+      "D16-C": {
+        "RESEARCH_READY": true,
+        "VISUAL_READY": true,
+        "STORY_READY": true,
+        "CLASS_READY": false,
+        "PUBLISHED": false,
+        "reason": "Ensayo humano y revisión docente independiente no observados."
+      },
+      "D16-D1": {
+        "RESEARCH_READY": true,
+        "VISUAL_READY": true,
+        "STORY_READY": true,
+        "CLASS_READY": false,
+        "PUBLISHED": false,
+        "reason": "Ensayo humano y revisión docente independiente no observados."
+      },
+      "D16-D2": {
+        "RESEARCH_READY": true,
+        "VISUAL_READY": true,
+        "STORY_READY": true,
+        "CLASS_READY": false,
+        "PUBLISHED": false,
+        "reason": "Ensayo humano y revisión docente independiente no observados."
+      },
+      "D16-E": {
+        "RESEARCH_READY": true,
+        "VISUAL_READY": true,
+        "STORY_READY": true,
+        "CLASS_READY": false,
+        "PUBLISHED": false,
+        "reason": "Ensayo humano y revisión docente independiente no observados."
+      }
+    },
+    "independent_teacher_review": false,
+    "human_rehearsal": false,
+    "all_six_routes_technically_ready": false
+  },
+  "legacy_preservation": "V2 catalogs/snapshots/evidence and Batch 0 domain modules/runner unchanged; shared agent CLI extended explicitly.",
+  "library_totals": {
+    "sources_processed": 4,
+    "questions_executed": 17,
+    "figures": 24,
+    "classroom_approved": 0
+  },
+  "course_ci": {
+    "commit": "74042f3a1973ab8379ecac4bb489749f7ffb4be1",
+    "run_id": 44031984325,
+    "conclusion": "success"
+  },
+  "integration_issue_fixed": "Legacy V2 builder treated every new adapter manifest as its old single-table schema. Explicit V2 registry preserves archived catalog; V3 uses typed overlays."
+}

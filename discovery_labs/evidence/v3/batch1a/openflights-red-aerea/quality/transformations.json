@@ -1,0 +1,46 @@
+[
+  {
+    "step": "source_id_unresolved",
+    "affected_rows": 483,
+    "excluded_only_from": "Gold zero-stop graph",
+    "consequence": "Graph scope changes; rows remain in Silver and may have several flags."
+  },
+  {
+    "step": "destination_id_unresolved",
+    "affected_rows": 488,
+    "excluded_only_from": "Gold zero-stop graph",
+    "consequence": "Graph scope changes; rows remain in Silver and may have several flags."
+  },
+  {
+    "step": "nonzero_stops",
+    "affected_rows": 11,
+    "excluded_only_from": "Gold zero-stop graph",
+    "consequence": "Graph scope changes; rows remain in Silver and may have several flags."
+  },
+  {
+    "step": "self_loop",
+    "affected_rows": 19,
+    "excluded_only_from": "Gold zero-stop graph",
+    "consequence": "Graph scope changes; rows remain in Silver and may have several flags."
+  },
+  {
+    "step": "coordinate_types",
+    "affected_rows": 7698,
+    "columns": [
+      "latitude",
+      "longitude"
+    ],
+    "consequence": "Parse WGS84 degrees without rounding or zero imputation; exact raw bytes retained in Bronze."
+  },
+  {
+    "step": "collapse_airline_records",
+    "input_rows": 66759,
+    "output_edges": 36906,
+    "consequence": "Distinct airlines and codeshares do not become additional binary edges or passenger volume."
+  },
+  {
+    "step": "iata_metadata_disagreement",
+    "affected_rows": 1075,
+    "consequence": "IDs kept as supplied. Metadata vintage and recycled codes limit interpretation."
+  }
+]

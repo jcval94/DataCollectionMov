@@ -1,0 +1,255 @@
+[
+  {
+    "id": "D16-A",
+    "canonical_id": "openflights-red-aerea.A",
+    "source_id": "openflights-red-aerea",
+    "perspective": "A",
+    "question": "¿Qué rutas o aeropuertos ofrecen oportunidades de conectividad no atendida? Demanda y costos externos requeridos.",
+    "original_contract_path": "catalog/questions.json#openflights-red-aerea.A",
+    "hypothesis": "Una conexión ausente de la red podría representar una oportunidad económica.",
+    "alternative_hypothesis": "La ausencia responde a falta de demanda o costos y no justifica inversión.",
+    "required_variables": [
+      "source_id",
+      "destination_id",
+      "passenger_demand_NOT_AVAILABLE",
+      "fares_NOT_AVAILABLE",
+      "operating_costs_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Par de aeropuertos y periodo comercial común",
+    "metric_and_denominator": "Demanda no atendida y margen esperado; ausentes.",
+    "descriptive_method": "Diseño de unión de demanda, tarifas, capacidad y costos a la red; no ejecutado.",
+    "additional_method": "Una arista ausente no demuestra demanda ni rentabilidad.",
+    "baseline": "Conectividad observada sin inferencia monetaria",
+    "visualizations": [],
+    "adversarial_test": "Una arista ausente no demuestra demanda ni rentabilidad.",
+    "limitations": [
+      "El archivo carece de pasajeros, frecuencia, tarifas, capacidad y costos; rutas históricas no permiten recomendar una inversión actual."
+    ],
+    "deliverable_type": "Diagnóstico de información faltante; ningún ranking de oportunidades monetarias.",
+    "execution_status": "BLOCKED",
+    "blocking_reason": "El archivo carece de pasajeros, frecuencia, tarifas, capacidad y costos; rutas históricas no permiten recomendar una inversión actual.",
+    "how_to_unblock": "Obtener demanda y costos de periodo compatible, con licencia, llaves y denominadores comprobados; no sustituir con grado.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Red histórica cuyo proveedor dejó de actualizar rutas en junio de 2014; metadata de aeropuertos del commit fijado.",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D16-B",
+    "canonical_id": "openflights-red-aerea.B",
+    "source_id": "openflights-red-aerea",
+    "perspective": "B",
+    "question": "¿Qué regiones dependen de pocos aeropuertos para conectarse?",
+    "original_contract_path": "catalog/questions.json#openflights-red-aerea.B",
+    "hypothesis": "Algunas regiones pierden más accesibilidad estructural al retirar su principal aeropuerto que al retirar uno local al azar.",
+    "alternative_hypothesis": "El impacto del principal nodo no supera la referencia de retiros locales en la métrica elegida.",
+    "required_variables": [
+      "airport_id",
+      "country",
+      "source_id",
+      "destination_id"
+    ],
+    "unit_of_analysis": "País con al menos cinco aeropuertos en el componente gigante inicial",
+    "metric_and_denominator": "Otros aeropuertos del país que abandonan el componente gigante global / aeropuertos del país restantes tras retirar uno.",
+    "descriptive_method": "Retirar el nodo local de mayor grado; medir componentes, sin contar el nodo retirado como aislado.",
+    "additional_method": "Comparar retiros individuales y de hubs; excluir del denominador el nodo retirado y mostrar n por país.",
+    "baseline": "Hasta 20 retiros uniformes locales sin reemplazo, semilla fija; referencia exploratoria, no intervalo.",
+    "visualizations": [
+      "country-fragility",
+      "hub-removal"
+    ],
+    "adversarial_test": "Comparar retiros individuales y de hubs; excluir del denominador el nodo retirado y mostrar n por país.",
+    "limitations": [
+      "Topología histórica binaria, no pasajeros ni respuesta de aerolíneas. País es región administrativa; no todos los países tienen cinco nodos en el gigante."
+    ],
+    "deliverable_type": "Tabla de fragilidad por país, contraste con retiros locales y mapa de alcance.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Red histórica cuyo proveedor dejó de actualizar rutas en junio de 2014; metadata de aeropuertos del commit fijado.",
+    "code_entrypoint": "scripts/run_batch1.py --case openflights-red-aerea"
+  },
+  {
+    "id": "D16-C",
+    "canonical_id": "openflights-red-aerea.C",
+    "source_id": "openflights-red-aerea",
+    "perspective": "C",
+    "question": "¿Qué nodos y comunidades estructuran la red mundial de rutas?",
+    "original_contract_path": "catalog/questions.json#openflights-red-aerea.C",
+    "hypothesis": "La red presenta estructura de comunidades más marcada que particiones aleatorias de los mismos tamaños.",
+    "alternative_hypothesis": "La estructura depende fuertemente de resolución o no supera una partición con membresías aleatorias.",
+    "required_variables": [
+      "source_id",
+      "destination_id",
+      "airport_id",
+      "latitude",
+      "longitude",
+      "country"
+    ],
+    "unit_of_analysis": "Grafo simple de aeropuertos activos y conexiones de cero escalas",
+    "metric_and_denominator": "Modularidad Louvain, ARI entre resoluciones 0.8/1/1.2, número de nodos y aristas.",
+    "descriptive_method": "Louvain sobre proyección no dirigida y sin pesos; centralidades sobre grafo dirigido registradas aparte.",
+    "additional_method": "Cambiar resolución, distinguir dirección y comparar la partición aleatoria sin inventar comunidades verdaderas.",
+    "baseline": "20 particiones de membresías aleatorias del mismo tamaño sobre el mismo grafo; exploratorio.",
+    "visualizations": [
+      "route-atlas",
+      "community-network",
+      "community-sensitivity"
+    ],
+    "adversarial_test": "Cambiar resolución, distinguir dirección y comparar la partición aleatoria sin inventar comunidades verdaderas.",
+    "limitations": [
+      "Agrupamientos algorítmicos con semilla fija; ni peso de tráfico ni regiones oficiales. Mapa equirectangular no mide distancias de pantalla."
+    ],
+    "deliverable_type": "Mapa geográfico, red agregada por comunidades, tabla de tamaños y sensibilidad.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Red histórica cuyo proveedor dejó de actualizar rutas en junio de 2014; metadata de aeropuertos del commit fijado.",
+    "code_entrypoint": "scripts/run_batch1.py --case openflights-red-aerea"
+  },
+  {
+    "id": "D16-D1",
+    "canonical_id": "openflights-red-aerea.D1",
+    "source_id": "openflights-red-aerea",
+    "perspective": "D1",
+    "question": "¿El aeropuerto con más rutas es siempre el más importante?",
+    "original_contract_path": "catalog/questions.json#openflights-red-aerea.D1",
+    "hypothesis": "El grado y la intermediación producen la misma definición operativa de importancia.",
+    "alternative_hypothesis": "Hay aeropuertos cuyo orden o primer puesto cambia al pasar de grado a intermediación.",
+    "required_variables": [
+      "airport_id",
+      "source_id",
+      "destination_id"
+    ],
+    "unit_of_analysis": "Mismos aeropuertos activos del grafo",
+    "metric_and_denominator": "Spearman de grado frente a intermediación, Jaccard top10 y primer puesto con desempate por ID.",
+    "descriptive_method": "Grado exacto de vecinos distintos; intermediación dirigida aproximada con k=128 y semilla fija.",
+    "additional_method": "Repetir intermediación k=64; comparar top10 y correlación, sin llamar exacta a la aproximación.",
+    "baseline": "Ranking por grado, sin contar registros repetidos de aerolíneas como vecinos nuevos.",
+    "visualizations": [
+      "degree-betweenness",
+      "ranking-sensitivity"
+    ],
+    "adversarial_test": "Repetir intermediación k=64; comparar top10 y correlación, sin llamar exacta a la aproximación.",
+    "limitations": [
+      "Importancia depende de la pregunta. Betweenness usa caminos mínimos sin ponderar y muestreo de pivotes; no ventas ni pasajeros."
+    ],
+    "deliverable_type": "Dispersión de métricas y tabla de cambios de ranking.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": "No verificada; afirmación candidata, no consenso.",
+    "period_scope": "Red histórica cuyo proveedor dejó de actualizar rutas en junio de 2014; metadata de aeropuertos del commit fijado.",
+    "code_entrypoint": "scripts/run_batch1.py --case openflights-red-aerea"
+  },
+  {
+    "id": "D16-D2",
+    "canonical_id": "openflights-red-aerea.D2",
+    "source_id": "openflights-red-aerea",
+    "perspective": "D2",
+    "question": "¿Los aeropuertos geográficamente cercanos están bien conectados entre sí?",
+    "original_contract_path": "catalog/questions.json#openflights-red-aerea.D2",
+    "hypothesis": "Los pares geográficamente próximos están conectados en la red observada.",
+    "alternative_hypothesis": "Existen pares de aeropuertos a menos de 250 km sin conexión directa observada.",
+    "required_variables": [
+      "airport_id",
+      "latitude",
+      "longitude",
+      "source_id",
+      "destination_id"
+    ],
+    "unit_of_analysis": "Par no ordenado de aeropuertos activos",
+    "metric_and_denominator": "Pares con arista en al menos una dirección / todos los pares a ≤250 km; sensibilidad 100/500 km.",
+    "descriptive_method": "Haversine con radio 6371.0088 km, WGS84; conectividad binaria no dirigida para este contraste.",
+    "additional_method": "Cambiar umbral registrado a 100 y 500 km; exportar contraejemplos sin reemplazar IDs por IATA.",
+    "baseline": "Fracción conectada entre todos los pares del mismo universo; mostrar exposición desigual.",
+    "visualizations": [
+      "nearby-connections",
+      "metadata-sensitivity"
+    ],
+    "adversarial_test": "Cambiar umbral registrado a 100 y 500 km; exportar contraejemplos sin reemplazar IDs por IATA. Mantener nodos y pares fijos y exigir también coincidencia de códigos de ruta con metadata, sin remapear IDs.",
+    "limitations": [
+      "Sólo aeropuertos presentes en el grafo; ausencia de arista no prueba ausencia actual de servicio. Distancia no supone demanda ni sustitución terrestre."
+    ],
+    "deliverable_type": "Curva de proporciones por distancia y contraejemplos con coordenadas.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": "No verificada; afirmación candidata, no consenso.",
+    "period_scope": "Red histórica cuyo proveedor dejó de actualizar rutas en junio de 2014; metadata de aeropuertos del commit fijado.",
+    "code_entrypoint": "scripts/run_batch1.py --case openflights-red-aerea"
+  },
+  {
+    "id": "D16-E",
+    "canonical_id": "openflights-red-aerea.E",
+    "source_id": "openflights-red-aerea",
+    "perspective": "E",
+    "question": "¿Qué ranking cambia si retiramos aeropuertos o distinguimos rutas dirigidas?",
+    "original_contract_path": "catalog/questions.json#openflights-red-aerea.E",
+    "hypothesis": "El ranking permanece estable al cambiar dirección o retirar nodos centrales.",
+    "alternative_hypothesis": "La proyección no dirigida o la pérdida de hubs cambia centralidades y cobertura del gigante.",
+    "required_variables": [
+      "airport_id",
+      "source_id",
+      "destination_id"
+    ],
+    "unit_of_analysis": "Aeropuerto y grafo perturbado",
+    "metric_and_denominator": "Spearman de intermediación dirigida/no dirigida; fracción del componente gigante entre nodos restantes al retirar 0/1/5/10 hubs.",
+    "descriptive_method": "Mismos pivotes y semilla para aproximación dirigida/no dirigida; retiros desde ranking original fijo.",
+    "additional_method": "No recalcular retrospectivamente la lista de nodos a retirar; denominador de nodos restantes explícito.",
+    "baseline": "Red original con todos los nodos; grado como referencia de ranking.",
+    "visualizations": [
+      "ranking-sensitivity",
+      "hub-removal",
+      "metadata-sensitivity"
+    ],
+    "adversarial_test": "No recalcular retrospectivamente la lista de nodos a retirar; denominador de nodos restantes explícito. Mantener nodos y pares fijos y exigir también coincidencia de códigos de ruta con metadata, sin remapear IDs.",
+    "limitations": [
+      "Simulación de borrado topológico, no causalidad ni pronóstico operativo. Las rutas y metadata son de vintages distintos declarados."
+    ],
+    "deliverable_type": "Tabla de sensibilidad y curva de pérdida de conectividad.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Red histórica cuyo proveedor dejó de actualizar rutas en junio de 2014; metadata de aeropuertos del commit fijado.",
+    "code_entrypoint": "scripts/run_batch1.py --case openflights-red-aerea"
+  }
+]

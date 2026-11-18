@@ -1,0 +1,42 @@
+[
+  {
+    "rule": "airport_primary_key",
+    "passed": true,
+    "detail": "Join by airport ID, never by a guessed IATA code."
+  },
+  {
+    "rule": "coordinates",
+    "passed": true,
+    "detail": "Finite WGS84 angular coordinates; no zero-as-null heuristic."
+  },
+  {
+    "rule": "stops_domain",
+    "passed": true,
+    "detail": "Nonnegative integer number of stops."
+  },
+  {
+    "rule": "codeshare_domain",
+    "passed": true,
+    "detail": "Empty codeshare flag means not flagged, not an absent route."
+  },
+  {
+    "rule": "row_conservation",
+    "passed": true,
+    "detail": "All raw records retained in Silver with row IDs."
+  },
+  {
+    "rule": "edge_reconciliation",
+    "passed": true,
+    "detail": "Collapsed edges preserve count of eligible airline records."
+  },
+  {
+    "rule": "edge_primary_key",
+    "passed": true,
+    "detail": "One unique directed connection, not a flight count."
+  },
+  {
+    "rule": "referential_integrity",
+    "passed": true,
+    "detail": "Both endpoints present in fixed airport metadata."
+  }
+]

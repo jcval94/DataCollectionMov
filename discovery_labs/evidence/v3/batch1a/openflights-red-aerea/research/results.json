@@ -1,0 +1,332 @@
+{
+  "D16-B": {
+    "countries_evaluated": 99,
+    "minimum_airports_in_initial_giant": 5,
+    "method": "Delete own highest-degree airport; count other country airports leaving global giant. Denominator excludes deleted node. Compare with up to 20 uniform random local deletions.",
+    "largest_loss": [
+      {
+        "country": "Cook Islands",
+        "initial_airports_in_giant": 6,
+        "removed_hub": "1959",
+        "remaining_denominator": 5,
+        "other_airports_disconnected": 5,
+        "loss_fraction": 1.0,
+        "baseline_removals": 6,
+        "baseline_mean_other_disconnected": 0.8333333333333334,
+        "baseline_max_other_disconnected": 5
+      },
+      {
+        "country": "French Polynesia",
+        "initial_airports_in_giant": 27,
+        "removed_hub": "4075",
+        "remaining_denominator": 26,
+        "other_airports_disconnected": 26,
+        "loss_fraction": 1.0,
+        "baseline_removals": 20,
+        "baseline_mean_other_disconnected": 1.3,
+        "baseline_max_other_disconnected": 26
+      },
+      {
+        "country": "Ghana",
+        "initial_airports_in_giant": 5,
+        "removed_hub": "248",
+        "remaining_denominator": 4,
+        "other_airports_disconnected": 4,
+        "loss_fraction": 1.0,
+        "baseline_removals": 5,
+        "baseline_mean_other_disconnected": 0.8,
+        "baseline_max_other_disconnected": 4
+      },
+      {
+        "country": "Nepal",
+        "initial_airports_in_giant": 9,
+        "removed_hub": "3125",
+        "remaining_denominator": 8,
+        "other_airports_disconnected": 8,
+        "loss_fraction": 1.0,
+        "baseline_removals": 9,
+        "baseline_mean_other_disconnected": 0.8888888888888888,
+        "baseline_max_other_disconnected": 8
+      },
+      {
+        "country": "Solomon Islands",
+        "initial_airports_in_giant": 16,
+        "removed_hub": "4074",
+        "remaining_denominator": 15,
+        "other_airports_disconnected": 15,
+        "loss_fraction": 1.0,
+        "baseline_removals": 16,
+        "baseline_mean_other_disconnected": 0.9375,
+        "baseline_max_other_disconnected": 15
+      },
+      {
+        "country": "Mongolia",
+        "initial_airports_in_giant": 9,
+        "removed_hub": "3380",
+        "remaining_denominator": 8,
+        "other_airports_disconnected": 7,
+        "loss_fraction": 0.875,
+        "baseline_removals": 9,
+        "baseline_mean_other_disconnected": 0.8888888888888888,
+        "baseline_max_other_disconnected": 7
+      },
+      {
+        "country": "Congo (Kinshasa)",
+        "initial_airports_in_giant": 18,
+        "removed_hub": "1020",
+        "remaining_denominator": 17,
+        "other_airports_disconnected": 13,
+        "loss_fraction": 0.7647058823529411,
+        "baseline_removals": 18,
+        "baseline_mean_other_disconnected": 0.9444444444444444,
+        "baseline_max_other_disconnected": 13
+      },
+      {
+        "country": "Costa Rica",
+        "initial_airports_in_giant": 13,
+        "removed_hub": "1885",
+        "remaining_denominator": 12,
+        "other_airports_disconnected": 9,
+        "loss_fraction": 0.75,
+        "baseline_removals": 13,
+        "baseline_mean_other_disconnected": 0.7692307692307693,
+        "baseline_max_other_disconnected": 9
+      },
+      {
+        "country": "Ethiopia",
+        "initial_airports_in_giant": 13,
+        "removed_hub": "1107",
+        "remaining_denominator": 12,
+        "other_airports_disconnected": 9,
+        "loss_fraction": 0.75,
+        "baseline_removals": 13,
+        "baseline_mean_other_disconnected": 0.7692307692307693,
+        "baseline_max_other_disconnected": 9
+      },
+      {
+        "country": "Israel",
+        "initial_airports_in_giant": 5,
+        "removed_hub": "1590",
+        "remaining_denominator": 4,
+        "other_airports_disconnected": 3,
+        "loss_fraction": 0.75,
+        "baseline_removals": 5,
+        "baseline_mean_other_disconnected": 1.0,
+        "baseline_max_other_disconnected": 3
+      }
+    ],
+    "scope": "Structural fragility in the historical graph, not demand, passengers or current resilience."
+  },
+  "D16-C": {
+    "nodes": 3214,
+    "directed_edges": 36906,
+    "undirected_edges": 18858,
+    "communities": 25,
+    "modularity": 0.6589088529990892,
+    "resolution_sensitivity": [
+      {
+        "resolution": 0.8,
+        "communities": 29,
+        "ARI_vs_resolution1": 0.9144533138849501
+      },
+      {
+        "resolution": 1.0,
+        "communities": 25,
+        "ARI_vs_resolution1": 1.0
+      },
+      {
+        "resolution": 1.2,
+        "communities": 28,
+        "ARI_vs_resolution1": 0.8745252505468483
+      }
+    ],
+    "null_partition_modularity": [
+      {
+        "replicate": 0,
+        "modularity": -0.002497569315902853
+      },
+      {
+        "replicate": 1,
+        "modularity": -0.003306832378240765
+      },
+      {
+        "replicate": 2,
+        "modularity": -0.002478720765442705
+      },
+      {
+        "replicate": 3,
+        "modularity": -0.0052210906568205115
+      },
+      {
+        "replicate": 4,
+        "modularity": -0.0044740758954726215
+      },
+      {
+        "replicate": 5,
+        "modularity": 0.0027590518286603133
+      },
+      {
+        "replicate": 6,
+        "modularity": -0.0017742874750209681
+      },
+      {
+        "replicate": 7,
+        "modularity": -0.0022737178230667256
+      },
+      {
+        "replicate": 8,
+        "modularity": 0.001750973536207732
+      },
+      {
+        "replicate": 9,
+        "modularity": -0.003950741097559394
+      },
+      {
+        "replicate": 10,
+        "modularity": 0.00037264903067722396
+      },
+      {
+        "replicate": 11,
+        "modularity": -0.003421908922926858
+      },
+      {
+        "replicate": 12,
+        "modularity": 0.002220232987317467
+      },
+      {
+        "replicate": 13,
+        "modularity": -0.0011936013999318742
+      },
+      {
+        "replicate": 14,
+        "modularity": -0.0017670466847129148
+      },
+      {
+        "replicate": 15,
+        "modularity": -0.003329544558170131
+      },
+      {
+        "replicate": 16,
+        "modularity": -0.0018404176832033338
+      },
+      {
+        "replicate": 17,
+        "modularity": -0.0030115937228607573
+      },
+      {
+        "replicate": 18,
+        "modularity": 0.0019991611143724093
+      },
+      {
+        "replicate": 19,
+        "modularity": -0.0001556559019426018
+      }
+    ],
+    "scope": "Louvain groups at fixed seed; compare fixed-size random memberships on the same graph. Modularity alone does not establish real communities."
+  },
+  "D16-D1": {
+    "degree_leader": "580",
+    "betweenness_leader": "3484",
+    "betweenness_leader_k64": "1382",
+    "first_place_stable_k64_k128": false,
+    "spearman_degree_betweenness": 0.762773584014355,
+    "top10_jaccard": 0.3333333333333333,
+    "betweenness_k64_k128_spearman": 0.9853257864928479,
+    "top10_k64_k128_jaccard": 0.8181818181818182,
+    "counterexamples": "Different rankings or first places refute metric invariance; neither centrality is a universal definition of importance."
+  },
+  "D16-D2": {
+    "thresholds": [
+      {
+        "threshold_km": 100,
+        "unordered_pairs": 1842,
+        "connected_either_direction": 362,
+        "fraction": 0.1965255157437568
+      },
+      {
+        "threshold_km": 250,
+        "unordered_pairs": 10594,
+        "connected_either_direction": 1507,
+        "fraction": 0.14225033037568435
+      },
+      {
+        "threshold_km": 500,
+        "unordered_pairs": 35265,
+        "connected_either_direction": 4074,
+        "fraction": 0.11552530837941302
+      }
+    ],
+    "registered_primary_threshold_km": 250,
+    "world_unordered_pairs": 5163291,
+    "world_connected_pairs": 18858,
+    "world_fraction": 0.0036523217459562126,
+    "metadata_policy_sensitivity": [
+      {
+        "policy": "Llaves ID resueltas",
+        "nodes": 3214,
+        "directed_edges": 36906,
+        "undirected_edges": 18858,
+        "nearby250_connected": 1507,
+        "nearby250_denominator": 10594
+      },
+      {
+        "policy": "Además códigos coinciden",
+        "nodes": 3214,
+        "directed_edges": 36255,
+        "undirected_edges": 18523,
+        "nearby250_connected": 1496,
+        "nearby250_denominator": 10594
+      }
+    ],
+    "scope": "Active graph airports only. Short great-circle distance does not imply an observed direct route; nearby unconnected examples exported."
+  },
+  "D16-E": {
+    "spearman_directed_undirected_betweenness": 0.9545698479744706,
+    "metadata_policy_sensitivity": [
+      {
+        "policy": "Llaves ID resueltas",
+        "nodes": 3214,
+        "directed_edges": 36906,
+        "undirected_edges": 18858,
+        "nearby250_connected": 1507,
+        "nearby250_denominator": 10594
+      },
+      {
+        "policy": "Además códigos coinciden",
+        "nodes": 3214,
+        "directed_edges": 36255,
+        "undirected_edges": 18523,
+        "nearby250_connected": 1496,
+        "nearby250_denominator": 10594
+      }
+    ],
+    "degree_spearman_code_agreement_policy": 0.9893636513820433,
+    "fixed_ranking_removals": [
+      {
+        "removed_nodes": 0,
+        "remaining_nodes": 3214,
+        "largest_component": 3188,
+        "largest_component_fraction": 0.9919103920348475
+      },
+      {
+        "removed_nodes": 1,
+        "remaining_nodes": 3213,
+        "largest_component": 3187,
+        "largest_component_fraction": 0.9919078742608154
+      },
+      {
+        "removed_nodes": 5,
+        "remaining_nodes": 3209,
+        "largest_component": 3167,
+        "largest_component_fraction": 0.9869118105328762
+      },
+      {
+        "removed_nodes": 10,
+        "remaining_nodes": 3204,
+        "largest_component": 3129,
+        "largest_component_fraction": 0.9765917602996255
+      }
+    ],
+    "scope": "Unweighted topology; sampled betweenness, seed fixed. Refitting a network is not a prediction of airline response."
+  }
+}
