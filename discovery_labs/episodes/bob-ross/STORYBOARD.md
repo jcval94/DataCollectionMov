@@ -66,7 +66,7 @@ Paleta oscura, acento terracota, verde salvia y azul; contraste legible. Todo gr
 - Si la respuesta inicial era correcta, mostrar evidencia que **la apoye**, no forzar una contradicción.
 - Si no hay tamaño de muestra suficiente, presentar el límite como hallazgo metodológico.
 - Si el clustering produce salas muy desbalanceadas, no ocultarlo con etiquetas bonitas.
-- Si falla el entorno, usar \`episode.html\` offline con resultados embebidos y decir que no se calculan de nuevo en ese momento.
+- Si falla el entorno, usar `episode.html` offline con resultados embebidos y decir que no se calculan de nuevo en ese momento.
 - Si un alumno cuestiona la definición TREE/TREES, abrir el diccionario y mostrar el OR.
 
 ## Nota editorial
