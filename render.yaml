@@ -1,0 +1,21 @@
+# New Blueprint; an EXISTING Render template service must change its repo/build/start commands manually.
+services:
+  - type: web
+    name: datacollectionmov-bob-ross-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r services/bob_ross_mcp/requirements.txt
+    startCommand: python services/bob_ross_mcp/server.py
+    healthCheckPath: /health
+    autoDeploy: false
+    envVars:
+      - key: MCP_API_TOKEN
+        generateValue: true
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: MKL_NUM_THREADS
+        value: "1"
+      - key: PORT
+        value: "10000"
