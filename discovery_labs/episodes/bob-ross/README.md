@@ -54,6 +54,18 @@ El análisis agrega doce familias binarias mediante **OR** (véase [DICCIONARIO.
 
 El CSV en esta carpeta es copia byte por byte del ya verificado en \`examples/bob_ross_clustering/data/\` del mismo repositorio. Se mantiene aislado para no depender de archivos externos a esta carpeta al ejecutar.
 
+## Vista de las primeras visualizaciones
+
+Las figuras siguientes son **referencias estáticas derivadas del CSV fijado**. El script `run.py --write` genera versiones SVG reproducibles en `output/` para revisar el análisis.
+
+![Frecuencia de doce familias de motivos en episodios del anfitrión](figures/01-frecuencias.svg)
+
+![Porcentajes y denominadores: árboles del anfitrión, de invitados y nieve entre montañas](figures/02-denominadores.svg)
+
+![Escenario ficticio: reparto de episodios en cuatro salas de museo](figures/03-salas-hipoteticas.svg)
+
+Las gráficas respetan que las doce familias no son mutuamente excluyentes, que invitados tienen `n=22` y que el museo ficticio no dispone de ingresos o costos.
+
 ## Pipeline reproducible (sin dependencias adicionales)
 
 Desde la raíz del repositorio:
