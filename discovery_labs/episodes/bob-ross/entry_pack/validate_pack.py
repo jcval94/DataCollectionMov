@@ -39,7 +39,7 @@ def main():
                      "data", "visual", "note", "status"):
             assert isinstance(q.get(attr), str) and q[attr].strip(), f"{q['id']} lacks {attr}"
         for attr in ("o2_trigger", "o3_trigger", "rival_hypothesis", "model_baseline",
-                     "model_validation", "stat_why", "stat_where", "design_status"):
+                     "model_validation", "stat_why", "stat_where"):
             assert isinstance(q.get(attr), str) and len(q[attr].strip()) > 15, f"{q['id']} lacks methodological field {attr}"
         assert q["design_status"] == "PLAN_ONLY", f"{q['id']} must remain unexecuted"
         estimand = q.get("estimand", {})
