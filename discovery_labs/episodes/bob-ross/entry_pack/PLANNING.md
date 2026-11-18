@@ -9,8 +9,8 @@
 | Puerta | Entregable | Aprobación |
 |---|---|---|
 | 0 | Este paquete de entrada: datos de muestra, metadata, prompts DR, mapa de preguntas profundas, fuentes, brief visual y plan | Revisión editorial / datos |
-| 1 | \`research_guide.html\`: historia, hechos, análisis reproducidos, código, gráficos, pruebas y límites | **Aprobación EXPLÍCITA del usuario sobre versión/commit** |
-| 2 | \`video_storytelling.html\`: guion audiovisual, introducción, escenas, voz, ritmo, storyboard y transición | **Bloqueada hasta aprobación fase 1**; después aprobación EXPLÍCITA adicional |
+| 1 | `research_guide.html`: historia, hechos, análisis reproducidos, código, gráficos, pruebas y límites | **Aprobación EXPLÍCITA del usuario sobre versión/commit** |
+| 2 | `video_storytelling.html`: guion audiovisual, introducción, escenas, voz, ritmo, storyboard y transición | **Bloqueada hasta aprobación fase 1**; después aprobación EXPLÍCITA adicional |
 | 3 | Video renderizado MP4, subtítulos y audio | **Bloqueada hasta aprobación fase 2** |
 
 No producir intro de video, spritesheet, storyboard audiovisual, música, Remotion ni MP4 durante fases 0/1.
@@ -37,7 +37,7 @@ No producir intro de video, spritesheet, storyboard audiovisual, música, Remoti
 
 ### Bloque B · Data readiness
 1. Validar SHA de Bronze y esquema binario; conservar original.
-2. Construir Silver por episodio y temporada, dejando \`GUEST\` explícito.
+2. Construir Silver por episodio y temporada, dejando `GUEST` explícito.
 3. Enriquecer con fechas de emisión y, si existen, grabación; validar 403/403 relaciones o reportar faltantes. Nunca asumir que año de emisión es fecha de pintura.
 4. Enriquecer con paletas para investigar color; verificar unidades, cobertura, licencias y join uno-a-uno.
 5. Preparar dataset de imágenes/vínculos con derechos por registro; imágenes remotas sólo bajo términos permitidos.
@@ -59,7 +59,7 @@ No producir intro de video, spritesheet, storyboard audiovisual, música, Remoti
 4. Vincular cada claim a su script, snapshot, output, definición, denominador, fecha y fuente.
 5. Alternar modo lector y modo técnico; captions/alt/teclado/tap.
 6. Registrar QA visual escritorio/móvil y revisión científica independiente.
-7. Entregar \`research_guide.html\` con estado \`PENDIENTE_DE_APROBACIÓN\`.
+7. Entregar `research_guide.html` con estado `PENDIENTE_DE_APROBACIÓN`.
 **STOP:** solicitar aprobación humana y NO comenzar storytelling audiovisual.
 
 ## Quality gate de una pregunta
@@ -80,4 +80,4 @@ No producir intro de video, spritesheet, storyboard audiovisual, música, Remoti
 El investigador reporta: fuentes verificadas, claims confirmados/conflictivos, tablas reproducidas, preguntas o ramas ejecutadas, gráficos inspeccionados, evidencia faltante, cambios del repositorio y estado de la puerta. Un plan no cuenta como descubrimiento.
 
 ## Regla de aislamiento
-Mantener cambios dentro de \`discovery_labs/episodes/bob-ross/\`; no tocar pipelines de movilidad ni el portal. La skill es portable, pero copiarla fuera de la carpeta queda para un cambio autorizado separado.
+Mantener cambios dentro de `discovery_labs/episodes/bob-ross/`; no tocar pipelines de movilidad ni el portal. La skill es portable, pero copiarla fuera de la carpeta queda para un cambio autorizado separado.
