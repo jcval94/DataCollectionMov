@@ -1,5 +1,8 @@
 # AI Discovery Labs — Paquete de Entrada 001 (Bob Ross)
 
+> **Infraestructura compartida (PR #11):** usar [Question Forge v2.1](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/skills/question-forge/SKILL.md), [catálogo único de modelos](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/model_catalog/MODEL_SET.md) y [plantilla general](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/templates/ENTRY_PACK_TEMPLATE.md). Las copias locales anteriores se mantienen **solo por compatibilidad** mientras shared no esté integrado. Consulta [MODEL_FIT_BOB_ROSS.md](MODEL_FIT_BOB_ROSS.md) para las limitaciones propias de este caso. No abrir un segundo catálogo.
+
+
 > **Objetivo:** conocer el caso *antes* de preparar el informe científico, construir preguntas profundas y descubrir qué evidencia externa falta. **No es el guion de video.**
 
 ## INICIO en nueva conversación
