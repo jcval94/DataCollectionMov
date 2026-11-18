@@ -14,7 +14,7 @@
 | [EPISODE_TEMPLATE.md](EPISODE_TEMPLATE.md) | **Plantilla general** para los otros 85 casos y futuros |
 | [skills/question-forge/SKILL.md](skills/question-forge/SKILL.md) | **Skill reutilizable v2**: preguntas de 3 órdenes, un modelo y un ejercicio estadístico por pregunta |
 | [QUESTIONS_MASTER.md](QUESTIONS_MASTER.md) | **Único bloque editorial de 14 investigaciones**; incluye enfermedad y trazabilidad de las seis rutas antiguas |
-| [questions_master.json](questions_master.json) | Única fuente estructurada de preguntas; alimentará la guía HTML integrada |
+| [questions_master.json](questions_master.json) | Única fuente estructurada de preguntas; **deberá** alimentar la guía HTML integrada cuando se automatice la Fase 1 (V3 es snapshot estático) |
 | [MODEL_SET.md](MODEL_SET.md) | 24 modelos/familias con adecuación, ejercicios estadísticos, validación, restricciones y ubicación |
 | [DEEP_RESEARCH_PROMPTS.md](DEEP_RESEARCH_PROMPTS.md) | DR-01…DR-04 y DR-05 de síntesis |
 | [CONTEXT_CLAIMS.md](CONTEXT_CLAIMS.md) | Evidencia externa y fechas contradictorias sobre enfermedad: NO atribución causal |
