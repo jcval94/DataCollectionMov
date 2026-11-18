@@ -44,7 +44,7 @@ python discovery_labs/episodes/bob-ross/clustering.py --write
 
 El primer comando verifica la fuente. Los otros generan tablas, figuras y el análisis de cuatro salas en la carpeta \`output/\`.
 
-Si no tienes Python preparado, la página \`episode.html\` muestra gráficas precalculadas con datos reales y no necesita internet.
+Si no tienes Python preparado, la página \`episode.html\` calcula visualizaciones descriptivas en el navegador a partir de datos reales embebidos y no necesita internet.
 
 Observa qué está midiendo el gráfico: n, rango, definición de árbol/montaña y si se excluyeron invitados.
 
