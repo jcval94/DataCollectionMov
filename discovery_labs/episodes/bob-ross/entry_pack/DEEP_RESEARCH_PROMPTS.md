@@ -58,6 +58,9 @@ Estas son instrucciones para una **IA con navegación y acceso a fuentes**. No s
 
 ## DR-05 — Síntesis, triangulación y preguntas de orden superior (ejecutar DESPUÉS de DR-01 a DR-04)
 
+**Nueva regla editorial V2:** Produce **un solo banco** `QUESTIONS_MASTER.md` y `questions_master.json`; las preguntas viejas A/B/C/D1/D2/E son subejercicios integrados, no sección aparte. Cada pregunta principal debe **proponer** (no entrenar) un modelo tomado de `MODEL_SET.md` y un ejercicio estadístico formal, declarando qué/por qué/dónde/condiciones y validación. Debe haber O1→O2→O3, con O2/O3 condicionales. La hipótesis de enfermedad ha de estar en el núcleo y su cronología es DISPUTADA: cotejar Outside, Washington Post, NPR y fuentes primarias antes de situar un evento en la línea temporal o sugerir causalidad.
+
+
 > Actúa como editor científico adversarial. Lee las cuatro investigaciones, clasifica afirmaciones en `VERIFIED`/`DISPUTED`/`PENDING`, concilia fechas y poblaciones, elimina leyendas sin respaldo, detecta información que **no está** en el CSV y exige evidencia externa antes de convertirla en un hallazgo.
 >
 > Ejecuta la skill `question-forge`. Genera al menos doce preguntas raíz, con rutas O1→O2 y **al menos cuatro arcos que culminen en O3**, sin fingir resultados: cada O2/O3 indica el resultado previo que podría activarla. Selecciona de tres a cinco arcos prioritarios por potencial científico, visual, histórico y factibilidad.
