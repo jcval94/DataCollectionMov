@@ -111,7 +111,7 @@ Instalación, descarga y prerrequisitos ocurren antes de clase. Si hay problemas
 Se reutilizan ideas y evidencia verificadas de:
 
 - [Cuatro salas para Bob Ross](../../../examples/bob_ross_clustering/README.md): doce motivos, k=4, medoids reales, experimento de ID contaminante.
-- [Piloto V2](../../pilots/bob-ross-elementos/README.md), aún en PR #2: árbol, nieve/montaña, invitados y dependencia de distancia.
+- [Piloto V2](https://github.com/jcval94/DataCollectionMov/blob/feat/ai-discovery-labs-v2/discovery_labs/pilots/bob-ross-elementos/README.md), aún en PR #2: árbol, nieve/montaña, invitados y dependencia de distancia.
 
 **No se modifica ninguna carpeta anterior, ningún workflow de GitHub Actions, ningún archivo de datos histórico, ni el portal de \`mvp-ds-course\`.**
 
