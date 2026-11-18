@@ -36,7 +36,7 @@ No crear video, intro, Remotion, voz o storyboard antes de aprobación.
 11. **`entry_pack/PROMPT_FASE1_V2.md`** — prompt para iniciar Fase 1 con otra IA.
 12. **`entry_pack/validate_pack.py`** — comprobaciones estáticas del paquete, sin modelos entrenados. **`research_guide.html`** — primera guía científica V3 **ya incorporada al repo**, con UNA sección de 14 preguntas y enfermedad visible; pendiente de aprobación.
 13. Documentos de apoyo históricos: `entry_pack/QUESTION_ARCS.md` y `entry_pack/question_graph.json` son **borradores de ideas anteriores** para trazabilidad; **no son un segundo banco de preguntas**.
-13. Archivos de datos: `entry_pack/metadata.json`, `entry_pack/sample_raw.csv` (13 filas originales), `entry_pack/sample_features.csv` (mismas filas, 12 motivos). Los 13 ejemplos **no** son una muestra representativa ni deben usarse para métricas poblacionales.
+14. Archivos de datos: `entry_pack/metadata.json`, `entry_pack/sample_raw.csv` (13 filas originales), `entry_pack/sample_features.csv` (mismas filas, 12 motivos). Los 13 ejemplos **no** son una muestra representativa ni deben usarse para métricas poblacionales.
 
 ## 4) Evidencia y límites técnicos
 - Fuente original: FiveThirtyEight/Walt Hickey, 403 episodios etiquetados (S01–S31), 69 columnas (EPISODE, TITLE, 67 indicadores binarios), CSV de 66,315 bytes, hash SHA-256 `42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf`. CC BY 4.0 **para datos, no para pinturas ni videos**.
