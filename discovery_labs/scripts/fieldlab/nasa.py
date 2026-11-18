@@ -150,7 +150,7 @@ def draw(name,ax,t,c,mobile):
             'Barras por método comparan todos los planetas del catálogo seleccionado con los que tienen las tres variables utilizables.')
     if name=='period-radius':
         z=t['clustered']
-        for k,g in z.groupby('cluster'):ax.scatter(g.pl_orbper,g.pl_rade,s=9,alpha=.4,color=COLORS[k],label=f'G{k+1}: n={len(g)}',edgecolor='none')
+        for k,g in z.groupby('cluster'):ax.scatter(g.pl_orbper,g.pl_rade,s=9,alpha=.4,color=COLORS[k],marker=['o','s','^'][k],label=f'G{k+1}: n={len(g)}',edgecolor='none')
         ax.set(xscale='log',yscale='log',xlabel='Periodo orbital (días, log)',ylabel='Radio (radios terrestres, log)')
         ax.legend(fontsize=8,loc='upper center',bbox_to_anchor=(.5,-.22),ncol=1 if mobile else 3,frameon=False)
         return ('Un mapa de semejanzas observadas',f'{len(z):,} casos completos. K-means k=3 sobre log10 de radio, periodo y temperatura, estandarizados.',

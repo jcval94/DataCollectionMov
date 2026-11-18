@@ -1,0 +1,57 @@
+{
+  "source_id": "nyc-ratas",
+  "DATA_READY": true,
+  "questions": {
+    "D04-A": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "No hay costos ni horas de personal; no se recomienda una asignación presupuestal."
+    },
+    "D04-B": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D04-C": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D04-D1": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D04-D2": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "No se observa población real de roedores ni todos los periodos; comparar inspecciones no responde a siempre más infestación."
+    },
+    "D04-E": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    }
+  },
+  "independent_teacher_review": false,
+  "human_rehearsal": false,
+  "all_six_routes_technically_ready": false
+}

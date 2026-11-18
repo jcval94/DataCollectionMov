@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "case": "nyc-ratas",
+  "browser": "Chromium / Playwright 1.56.0",
+  "route_viewport_checks": [
+    {
+      "question": "D04-B",
+      "variant": "projection",
+      "visible_figures": 3,
+      "overflow": false
+    },
+    {
+      "question": "D04-C",
+      "variant": "projection",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D04-D1",
+      "variant": "projection",
+      "visible_figures": 3,
+      "overflow": false
+    },
+    {
+      "question": "D04-E",
+      "variant": "projection",
+      "visible_figures": 4,
+      "overflow": false
+    },
+    {
+      "question": "D04-B",
+      "variant": "mobile",
+      "visible_figures": 3,
+      "overflow": false
+    },
+    {
+      "question": "D04-C",
+      "variant": "mobile",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D04-D1",
+      "variant": "mobile",
+      "visible_figures": 3,
+      "overflow": false
+    },
+    {
+      "question": "D04-E",
+      "variant": "mobile",
+      "visible_figures": 4,
+      "overflow": false
+    }
+  ],
+  "screenshots": [
+    "test-output/fieldlab/nyc-ratas/inspection-scope-projection-browser.png",
+    "test-output/fieldlab/nyc-ratas/borough-positivity-projection-browser.png",
+    "test-output/fieldlab/nyc-ratas/month-heatmap-projection-browser.png",
+    "test-output/fieldlab/nyc-ratas/season-comparison-projection-browser.png",
+    "test-output/fieldlab/nyc-ratas/paired-seasons-projection-browser.png",
+    "test-output/fieldlab/nyc-ratas/ranking-denominator-projection-browser.png",
+    "test-output/fieldlab/nyc-ratas/monthly-volume-projection-browser.png",
+    "test-output/fieldlab/nyc-ratas/inspection-scope-mobile-browser.png",
+    "test-output/fieldlab/nyc-ratas/borough-positivity-mobile-browser.png",
+    "test-output/fieldlab/nyc-ratas/month-heatmap-mobile-browser.png",
+    "test-output/fieldlab/nyc-ratas/season-comparison-mobile-browser.png",
+    "test-output/fieldlab/nyc-ratas/paired-seasons-mobile-browser.png",
+    "test-output/fieldlab/nyc-ratas/ranking-denominator-mobile-browser.png",
+    "test-output/fieldlab/nyc-ratas/monthly-volume-mobile-browser.png"
+  ],
+  "js_errors": [],
+  "remote_requests": [],
+  "scope": "Browser checks only; visual inspection and human teaching review are separate."
+}

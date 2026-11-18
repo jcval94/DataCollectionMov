@@ -1,0 +1,36 @@
+{
+  "checked_local_date": "2026-11-17",
+  "scope": "Local verification of current source and typed adapters; remote CI tracked on PR.",
+  "tests": {
+    "discovery": {
+      "command": "python -m unittest discover -s discovery_labs/tests -v",
+      "status": "PASS",
+      "count": 27,
+      "log_sha256": "4b974439075ab00c39d5cae09a7daf9a0b796a3c13c7751029e9a5333c26fe58"
+    },
+    "repository": {
+      "command": "python -m pytest -q tests",
+      "status": "PASS",
+      "count": 24,
+      "log_sha256": "bebe8d4aa616d6cf296da00a73a2f04c39e28dde8aebc356bf0bea0111245a96"
+    }
+  },
+  "browser": {
+    "new_route_viewport_combinations": 14,
+    "new_figure_screenshots": 28,
+    "js_errors": 0,
+    "network_requests": 0,
+    "horizontal_overflows": 0
+  },
+  "agent": {
+    "nasa": "D05-D1 executed within fixed-tool bounds",
+    "nyc": "D04-D1 executed within fixed-tool bounds",
+    "arbitrary_code": false
+  },
+  "teaching": {
+    "approved_classes": 0,
+    "published_classes": 0,
+    "human_rehearsal": false,
+    "independent_teacher_review": false
+  }
+}

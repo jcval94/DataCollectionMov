@@ -3,27 +3,27 @@
   "reviewer": "Codex assistant; actual rendered PNGs and Chromium screenshots",
   "rendered_inspection": true,
   "reviewed_png_sha256": [
-    "0a7cf5d6705c59212c5845c9bd04fb5fb01b9ef4b2befcf47d99e9a2fb25550f",
-    "0ea6654565511dbaf8f50216d4dd5ca962627976f6169b67af0176935a872b08",
-    "23e11cdfb41925ea0095ad3406b3b4189fa66a9813181d854f1430339e87f06b",
-    "2a77e0acf763321fc97ebd3d9bbaa8ce9d270c7bed63d51f82c288091726ddb6",
-    "2b7eea84a2077fa28ad777883e92e827921e4587751c314ad0409f61f965b458",
-    "3334244c0eb6a9e06d8ffb918cd55677229766062fabf93288fca553838c3a04",
-    "5d90a9aeedf2a53b2a054ee69d71f530a6e73a26c4a28ecffc61f4dca4b6ab47",
-    "73b52bb97a5775c9a5f82f82cc578d093ef59778a00dc2d054d653698cb4a705",
-    "7af452b377ffc3784d3d40ef3737e774fc1e7b031c2ad9e39c6735ba15c5e192",
-    "966c61dc6e0f270b409e6d19823ffb2f3a0e1f1c4234563d47950de4e9cfc6df",
-    "9fffdabe29e99d681e049c704a9bbcc5852a0faa119cd65f7a8c0659b3ef6c7a",
-    "c914f2e0d2dd588976eddeaf6d9ac01f897185bcfa41af8aa65edb8e7937cfc1",
-    "e49eef7f726a93c4886fce42dee0fa2fcd2c94e3740ccf5ca37080c8e9d45c05",
-    "fbd60271e8b9c41d0653d3fd08a657b57c10ffea35cd734c5648957216b0f861"
+    "19642639ac056fc6d2f760314815a2a5adc9cc4f17d510c63240fa3d97bca2a3",
+    "2d3d0e2431b4792faa8deedd326861b752fe4a9a76b2ff64c5f61a1ea4821212",
+    "2ed3069066c96799fe0ec31e118dfbd1a5aa04fbb1ca7ded3b103fe84ab1a643",
+    "426c9911e6a02f85da632dc05dcc389d3e1c1b28b5c70594362e19a26141d3c8",
+    "4e7d54edb2b8525845cdd511bb0403c27f3f49732eaec011f3902cb974e87a83",
+    "7af3b89e0efb1cffef4eca19cdea04ef837ea8b8c66bd68e96ed6121b7b40622",
+    "b6e3f6993183e65c913532ba29146de3e4229891b4a258c1cb04a4c7d3821540",
+    "cfbdbac034eb2f5ba2d422ccf088588ea592c40d186b85b41b3590a5776ea604",
+    "d87dde9a42f08a14ca88253da7998aa917df3f858ecbf88528e2116a65abca0d",
+    "d90d7cec502baecd8c18f7d2745c8c831c3bba2a8439b41a471e3c03f66e8322",
+    "ebe48d96006525d5bdc6ff100a683ad6958d09059455711585ddf2f6d97cd3d4",
+    "ec7bcba578d639fb5c31c3e1503b9133e880a14645cae5bb13102c738189407a",
+    "fac0a03d75e926068f0bd53c9c7bb9a355efe124db885fb974ef216479d002d0",
+    "fbb1de0f5b297b2da609407c6e5022c67949b866837b5fb4aefe50c376609d4a"
   ],
   "observed": [
-    "All seven figures inspected in mobile and projection contact sheets.",
-    "Coverage mobile and asymmetric-radius interval Chromium screenshots inspected at full size.",
-    "Long method label wrapped after text-bounds failure; legends, axes, denominators and footer remain visible.",
-    "Weak method association retained; no invented causal explanation or surprising separation."
+    "Seven figures inspected in mobile/projection after shared runner version changed.",
+    "Marker shapes added alongside color for exploratory clusters; numerical results and Gold tables unchanged.",
+    "Weak method association and sensitivity preserved; no invented physical family or causal explanation."
   ],
   "independent_teacher_approval": false,
-  "human_rehearsal": false
+  "human_rehearsal": false,
+  "prior_review_in_git_history": true
 }

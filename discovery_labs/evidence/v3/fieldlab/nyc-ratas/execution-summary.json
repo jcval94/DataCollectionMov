@@ -1,0 +1,24 @@
+{
+  "source_id": "nyc-ratas",
+  "contracts": 6,
+  "executed_questions": [
+    "D04-B",
+    "D04-C",
+    "D04-D1",
+    "D04-E"
+  ],
+  "blocked_questions": [
+    "D04-A",
+    "D04-D2"
+  ],
+  "figures": 7,
+  "reviewed_PNG_variants": 14,
+  "narratives": 4,
+  "classroom_approved": 0,
+  "published": 0,
+  "offline_student_bytes": 3948903,
+  "source_snapshot_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+  "gates": "gates.json",
+  "browser": "browser-qa.json",
+  "visual_review": "visual-review.json"
+}

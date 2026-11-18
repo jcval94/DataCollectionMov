@@ -1,0 +1,175 @@
+{
+  "checked_local_date": "2026-11-17",
+  "scope": "Operational overlay after OpenFlights, NASA and NYC; original inventory/preflight and previous evidence preserved. Source flags summarize only listed executed routes.",
+  "entries": [
+    {
+      "source_id": "ecobici-viajes",
+      "status": "DOCUMENTATION_CHECKED_RIGHTS_SCOPE_OPEN",
+      "primary_urls": [
+        "https://ecobici.cdmx.gob.mx/datos-abiertos/"
+      ],
+      "observed": "Portal con CSV mensuales, separado del feed GBFS en tiempo real.",
+      "gate_before_download": "Archivar términos del CSV concreto, fijar mes, comprobar cambios de esquema y derechos de redistribución.",
+      "quality_plan": "Duración no negativa, estaciones existentes en versión compatible, cruces de medianoche y huso local; sin IDs personales.",
+      "visual_plan": "Flujos por estación agregados, mapa y ciclo horario; sin trayectorias de individuos.",
+      "DATA_READY": false,
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "download_executed_this_batch": false
+    },
+    {
+      "source_id": "statsbomb-futbol",
+      "status": "BLOCKED_FOR_REDISTRIBUTED_COURSE_KIT",
+      "primary_urls": [
+        "https://github.com/hudl/open-data/blob/master/LICENSE.pdf"
+      ],
+      "observed": "PDF completo leído y hash registrado en statsbomb-rights.json; restricciones explícitas a redistribución y explotación comercial.",
+      "gate_before_download": "No empaquetar datos ni análisis para curso comercial sin permiso escrito específico.",
+      "substitute": {
+        "candidate_id": "wyscout-pappalardo-2019",
+        "inventory_policy": "Sustituye el slot operativo; no elimina StatsBomb ni altera los 86 IDs canónicos.",
+        "source": "https://figshare.com/collections/Soccer_match_event_dataset/4415000/2",
+        "paper": "https://www.nature.com/articles/s41597-019-0247-7",
+        "declared_license": "CC BY 4.0 según descriptor de datos; verificar licencia/versión del ítem exacto antes de congelarlo."
+      },
+      "quality_plan": "Evento/match/team IDs, coordenadas normalizadas, periodo y segundos relativos; no unir extra time sin redefinir reloj.",
+      "visual_plan": "Mapas de tiros y redes de pases con ventanas y volumen explícitos.",
+      "DATA_READY": false,
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "download_executed_this_batch": false
+    },
+    {
+      "source_id": "openflights-red-aerea",
+      "status": "TECHNICALLY_EXECUTED",
+      "primary_urls": [
+        "https://openflights.org/data.php"
+      ],
+      "observed": "Originals and license downloaded at a fixed commit, reproduced by hash; full quality profile, five research routes and ten figures executed. Source-level gates summarize only the listed executed questions.",
+      "gate_before_download": "Fijar commit de aeropuertos/rutas y reproducir atribución/condiciones ODbL.",
+      "quality_plan": "IDs de aeropuerto vs IATA, valores \\N faltantes, destinos huérfanos, coordenadas WGS84 y rutas repetidas por aerolínea.",
+      "visual_plan": "Mapa histórico de rutas y red por aeropuerto, distinguiendo arista de frecuencia real de vuelos.",
+      "DATA_READY": true,
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "download_executed_this_batch": true,
+      "executed_question_ids": [
+        "D16-B",
+        "D16-C",
+        "D16-D1",
+        "D16-D2",
+        "D16-E"
+      ],
+      "blocked_question_ids": [
+        "D16-A"
+      ],
+      "evidence": "evidence/v3/batch1a/openflights-red-aerea/"
+    },
+    {
+      "source_id": "nasa-exoplanetas",
+      "status": "TECHNICALLY_EXECUTED_PARTIAL_ROUTES",
+      "primary_urls": [
+        "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+        "https://exoplanetarchive.ipac.caltech.edu/docs/acknowledge.html"
+      ],
+      "observed": "Complete bounded query received, server count reconciled, quality/research/figures/storytelling executed; only listed routes have technical gates.",
+      "gate_before_download": "Fijar consulta TAP, fecha, tabla, default_flag, referencias y atribución; verificar derechos del recurso concreto.",
+      "quality_plan": "Múltiples referencias por planeta, límites superiores vs medidas, incertidumbres asimétricas, unidades y sesgos del método de detección.",
+      "visual_plan": "Masa/radio con límites y errores, facetas por método y cronología de descubrimiento; no prevalencias del universo.",
+      "DATA_READY": true,
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "download_executed_this_batch": true,
+      "executed_question_ids": [
+        "D05-C",
+        "D05-D1",
+        "D05-E"
+      ],
+      "blocked_question_ids": [
+        "D05-A",
+        "D05-B",
+        "D05-D2"
+      ],
+      "evidence": "evidence/v3/fieldlab/nasa-exoplanetas/"
+    },
+    {
+      "source_id": "nyc-ratas",
+      "status": "TECHNICALLY_EXECUTED_PARTIAL_ROUTES",
+      "primary_urls": [
+        "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+        "https://www.nyc.gov/site/doh/health/health-topics/rat-inspections.page"
+      ],
+      "observed": "Complete bounded query received, server count reconciled, quality/research/figures/storytelling executed; only listed routes have technical gates.",
+      "gate_before_download": "Fijar consulta por ventana cerrada e incluir términos de NYC Open Data; no usar vista pública derivada de terceros como fuente canónica.",
+      "quality_plan": "Job/inspection IDs, BBL, tipo de inspección, fecha, coordenadas y denominador de propiedades inspeccionadas.",
+      "visual_plan": "Mapa agregado y tasas condicionadas a inspección; no ranking de población real de ratas.",
+      "DATA_READY": true,
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "download_executed_this_batch": true,
+      "executed_question_ids": [
+        "D04-B",
+        "D04-C",
+        "D04-D1",
+        "D04-E"
+      ],
+      "blocked_question_ids": [
+        "D04-A",
+        "D04-D2"
+      ],
+      "evidence": "evidence/v3/fieldlab/nyc-ratas/"
+    },
+    {
+      "source_id": "openfoodfacts-alimentos",
+      "status": "DOCUMENTATION_CHECKED_SNAPSHOT_NOT_PREPARED",
+      "primary_urls": [
+        "https://openfoodfacts.github.io/openfoodfacts-server/api/"
+      ],
+      "observed": "Documentación distingue ODbL de base, DbCL de contenidos y CC BY-SA de imágenes; API con límites y preferencia por descarga para grandes lotes.",
+      "gate_before_download": "Resolver ID canónico existente, fijar selección/fecha/versiones y conservar licencias por campo; evitar imágenes en primer snapshot.",
+      "quality_plan": "Unidades por 100 g vs por porción, campos faltantes, códigos de barras como texto, versiones y normalización de categorías.",
+      "visual_plan": "Distribuciones y agrupamientos con tasas de completitud; sin consejo nutricional individual.",
+      "DATA_READY": false,
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "download_executed_this_batch": false
+    },
+    {
+      "source_id": "insideairbnb-cdmx",
+      "status": "DOCUMENTATION_CHECKED_DISTRIBUTION_POLICY_REVIEW_OPEN",
+      "primary_urls": [
+        "https://insideairbnb.com/data-policies/",
+        "https://insideairbnb.com/get-the-data/"
+      ],
+      "observed": "La política anuncia CC BY 4.0 y pide evitar republicar archivos y descargar sólo lo necesario; resolver distribución concreta con esa política antes de empaquetar.",
+      "gate_before_download": "Fijar corte CDMX, descargar una vez fuera de clase, minimizar identificadores/direcciones y decidir distribución de derivados.",
+      "quality_plan": "Una fila por listing_id y corte, moneda/precio, ceros reales vs faltantes; disponibilidad no equivale a ocupación ni ingreso.",
+      "visual_plan": "Mapas agregados por barrio, precio y cobertura; no localizar anfitriones.",
+      "DATA_READY": false,
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "download_executed_this_batch": false
+    }
+  ]
+}
