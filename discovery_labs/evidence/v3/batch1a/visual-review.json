@@ -1,0 +1,42 @@
+{
+  "checked_local_date": "2026-11-17",
+  "reviewer": "Codex assistant: actual PNG and Chromium screenshot inspection",
+  "rendered_inspection": true,
+  "reviewed_png_sha256": [
+    "0b5432c9025c5a4669057a78100e0697e38752f76766141fb162d080073d3917",
+    "0c0d4412304df1d5deebd573ba908239fd46cf1d9b4bed152b06ba7b508ab5e7",
+    "10e74cb964e1b6f465ca53cf14bc59b6c191fee2aa22bbc2dcc2bfb3a4249dc5",
+    "1b1ac0eb0568f94c0a5d80e13cf29222e218a21c49273a669697a19ddf76b9d4",
+    "2bb00ca1dd9feb29927e2d07855c0d3dcd4ef910ae0c002b526fbf553c2e5ab7",
+    "38aa92fd9524ccc5a13bab8a92f2bdb4fa77007e9e7d68aba9f282571cddb0cb",
+    "3b5cf010bf6bbe38aa0f0b3ecab7ffb305df20d2d450ea9177ef82254e2b76e0",
+    "5fd31bad529186c22a83c575e663fca3155a222f3820158d3d44e89553f1f211",
+    "6c8bc6bd345b1e178d5ed9ffd699d67e5f47b48b9de64ac22cf54c70ffa2b938",
+    "7ba8363bcf2619ac65d65ba89e3ee477529716bcb96fe192d7900ddfe3fa2278",
+    "81384ccfb71a90bf76eaece83ce149bae372c2c74c54730cc645f56b40ab56a4",
+    "8ee1c19d9519b87c901c8dc1f1da53bcda47fc952f7fe8ccd681210d84cf2062",
+    "ab57562f848f22e76052ff92c7164859b0a8fee521c4fefeb79aa687b8c8a16e",
+    "b2ce63476e995e4fb4842a9feac438f8727d0c55a0bcea49172af909452f7399",
+    "be88ee63b0a3b46f57cca284f126acee7073232a7f76d758b74a26342afa2c47",
+    "d7362a773ddb20efa381f7fb8e4df65886186001b5dc2eff27b73036ec2b2e8b",
+    "d775d8105046eae0c0e50d7fab2aba3362747493b35a27c42936d65ade17897a",
+    "dd4fb17c29255ae501003019abfa7ab1dbcb04c3d13d3554e245d4945459bcc6",
+    "eadb7f3a3f266a032b0542a7cfabd5cd2b2d2fdd51574149f114072949cb5300",
+    "fd2c20eddbc96515151146771ccd8211576d0a490c94f77aa9b93f61768f78f5"
+  ],
+  "viewports": [
+    "1440x1000",
+    "390x844"
+  ],
+  "figure_count": 10,
+  "fixes": [
+    "Mobile title and legend clipping/overlap corrected",
+    "Community null comparison changed to annotated mean/range so the baseline remains visible",
+    "Network drawing restricted and disclosed as twenty largest inter-community flows",
+    "Nearby and removal annotations spaced to avoid collisions",
+    "IATA metadata disagreement receives an explicit fixed-denominator adversarial figure"
+  ],
+  "independent_teacher_review": false,
+  "human_class_rehearsal": false,
+  "scope": "Twenty PNG layouts observed; SVG uses the same figure and structured export, without a separate browser SVG review."
+}

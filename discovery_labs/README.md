@@ -1,6 +1,6 @@
 # AI Discovery Labs · V3
 
-La ampliación V3 es aditiva: [operación y resultados del Lote 0](docs/V3_BATCH0.md). Conserva sin modificación los snapshots, catálogos, evidencias y pilotos V2 descritos más abajo. El catálogo unificado para agentes aplica los contratos V3 sobre las 516 preguntas sin borrar sus diseños originales. V3 ejecuta 12 preguntas; seis de los 18 contratos del lote quedan bloqueados por datos ausentes. Los kits candidatos y la CI son verificables; ninguna clase está aprobada.
+La ampliación V3 es aditiva: [operación y resultados del Lote 0](docs/V3_BATCH0.md) y [Lote 1A: OpenFlights](docs/V3_BATCH1A.md). Conserva sin modificación los snapshots, catálogos, evidencias y pilotos V2 descritos más abajo. El catálogo unificado para agentes aplica los contratos V3 sobre las 516 preguntas sin borrar sus diseños originales. El Lote 0 ejecuta 12 preguntas; OpenFlights añade cinco investigaciones de grafos y diez figuras. Total: cuatro fuentes procesadas y 17 preguntas ejecutadas. Los kits son candidatos técnicos; ninguna clase está aprobada.
 
 ```sh
 python discovery_labs/scripts/run_research.py

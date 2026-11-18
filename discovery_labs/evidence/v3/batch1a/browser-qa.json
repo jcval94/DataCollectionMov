@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "browser": "Chromium / pinned Playwright 1.56.0",
+  "route_viewport_checks": [
+    {
+      "question": "D16-B",
+      "variant": "projection",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D16-C",
+      "variant": "projection",
+      "visible_figures": 4,
+      "overflow": false
+    },
+    {
+      "question": "D16-D1",
+      "variant": "projection",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D16-D2",
+      "variant": "projection",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D16-E",
+      "variant": "projection",
+      "visible_figures": 3,
+      "overflow": false
+    },
+    {
+      "question": "D16-B",
+      "variant": "mobile",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D16-C",
+      "variant": "mobile",
+      "visible_figures": 4,
+      "overflow": false
+    },
+    {
+      "question": "D16-D1",
+      "variant": "mobile",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D16-D2",
+      "variant": "mobile",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D16-E",
+      "variant": "mobile",
+      "visible_figures": 3,
+      "overflow": false
+    }
+  ],
+  "screenshots": [
+    "test-output/batch1a/route-atlas-projection-browser.png",
+    "test-output/batch1a/community-network-projection-browser.png",
+    "test-output/batch1a/community-sensitivity-projection-browser.png",
+    "test-output/batch1a/community-null-projection-browser.png",
+    "test-output/batch1a/country-fragility-projection-browser.png",
+    "test-output/batch1a/degree-betweenness-projection-browser.png",
+    "test-output/batch1a/ranking-sensitivity-projection-browser.png",
+    "test-output/batch1a/nearby-connections-projection-browser.png",
+    "test-output/batch1a/metadata-sensitivity-projection-browser.png",
+    "test-output/batch1a/hub-removal-projection-browser.png",
+    "test-output/batch1a/route-atlas-mobile-browser.png",
+    "test-output/batch1a/community-network-mobile-browser.png",
+    "test-output/batch1a/community-sensitivity-mobile-browser.png",
+    "test-output/batch1a/community-null-mobile-browser.png",
+    "test-output/batch1a/country-fragility-mobile-browser.png",
+    "test-output/batch1a/degree-betweenness-mobile-browser.png",
+    "test-output/batch1a/ranking-sensitivity-mobile-browser.png",
+    "test-output/batch1a/nearby-connections-mobile-browser.png",
+    "test-output/batch1a/metadata-sensitivity-mobile-browser.png",
+    "test-output/batch1a/hub-removal-mobile-browser.png"
+  ],
+  "js_errors": [],
+  "remote_requests": [],
+  "all_classroom_approvals": false,
+  "scope": "Browser checks only; figures require separate observed inspection linked to hashes."
+}

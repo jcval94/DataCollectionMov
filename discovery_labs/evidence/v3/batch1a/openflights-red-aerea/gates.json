@@ -1,0 +1,57 @@
+{
+  "source_id": "openflights-red-aerea",
+  "DATA_READY": true,
+  "questions": {
+    "D16-A": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "El archivo carece de pasajeros, frecuencia, tarifas, capacidad y costos; rutas históricas no permiten recomendar una inversión actual."
+    },
+    "D16-B": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D16-C": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D16-D1": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D16-D2": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D16-E": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    }
+  },
+  "independent_teacher_review": false,
+  "human_rehearsal": false,
+  "all_six_routes_technically_ready": false
+}

@@ -1,0 +1,435 @@
+[
+  {
+    "id": "route-atlas",
+    "question_ids": [
+      "D16-C"
+    ],
+    "title": "Un atlas de conexiones históricas",
+    "denominator": "3,214 aeropuertos activos; color por comunidad. Líneas: hasta 100 aristas seleccionadas, sin cruces de antimeridiano.",
+    "note": "Equirectangular sin mapa base externo. Líneas esquemáticas, no trayectorias de vuelo. Rutas anteriores a julio 2014; metadata no es un censo de 2014.",
+    "alt": "Mapa de aeropuertos por longitud y latitud, coloreados por comunidades. Las líneas muestran una selección de conexiones de alto grado, no todo el tráfico.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/nodes.csv",
+    "table_sha256": "382d8116e8436e16a120d86e093baf531e76b7a696abcca793c7bbac1036e387",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "route-atlas-projection.png",
+        "svg": "route-atlas-projection.svg",
+        "png_sha256": "10e74cb964e1b6f465ca53cf14bc59b6c191fee2aa22bbc2dcc2bfb3a4249dc5",
+        "svg_sha256": "75cd776382d0a2e7b973a59843f8f34c5bf1a4948600a8ca81bc6cb985708f2a",
+        "width": 1380,
+        "height": 936,
+        "denominator": "3,214 aeropuertos activos; color por comunidad. Líneas: hasta 250 aristas seleccionadas, sin cruces de antimeridiano.",
+        "note": "Equirectangular sin mapa base externo. Líneas esquemáticas, no trayectorias de vuelo. Rutas anteriores a julio 2014; metadata no es un censo de 2014.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "route-atlas-mobile.png",
+        "svg": "route-atlas-mobile.svg",
+        "png_sha256": "7ba8363bcf2619ac65d65ba89e3ee477529716bcb96fe192d7900ddfe3fa2278",
+        "svg_sha256": "0a611dbd05081aa9d2fb9bc8d15fa0224601fa5c122c9683f94b11181f0ad047",
+        "width": 540,
+        "height": 996,
+        "denominator": "3,214 aeropuertos activos; color por comunidad. Líneas: hasta 100 aristas seleccionadas, sin cruces de antimeridiano.",
+        "note": "Equirectangular sin mapa base externo. Líneas esquemáticas, no trayectorias de vuelo. Rutas anteriores a julio 2014; metadata no es un censo de 2014.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "community-network",
+    "question_ids": [
+      "D16-C"
+    ],
+    "title": "La red vista a otra escala",
+    "denominator": "20 flujos dirigidos mayores entre 8 comunidades principales y otras; cifras en nodos = aeropuertos.",
+    "note": "Anchura = conexiones distintas entre grupos, no pasajeros. Dibujo omite flujos menores y lazos internos; tabla conserva todas las aristas.",
+    "alt": "Diagrama de los veinte mayores flujos dirigidos entre comunidades de aeropuertos. Nodos coloreados y con conteos; flechas y ancho representan conexiones únicas entre grupos.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/community_flows.csv",
+    "table_sha256": "3088793f39d0d52c78cfd76b0c0888306952b5d1cade084eb954114ba42431f1",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "community-network-projection.png",
+        "svg": "community-network-projection.svg",
+        "png_sha256": "d7362a773ddb20efa381f7fb8e4df65886186001b5dc2eff27b73036ec2b2e8b",
+        "svg_sha256": "a1cdc81681659226db852fd5850ce4b662896acabc650b31b61bc3cc1f85262d",
+        "width": 1380,
+        "height": 936,
+        "denominator": "20 flujos dirigidos mayores entre 8 comunidades principales y otras; cifras en nodos = aeropuertos.",
+        "note": "Anchura = conexiones distintas entre grupos, no pasajeros. Dibujo omite flujos menores y lazos internos; tabla conserva todas las aristas.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "community-network-mobile.png",
+        "svg": "community-network-mobile.svg",
+        "png_sha256": "be88ee63b0a3b46f57cca284f126acee7073232a7f76d758b74a26342afa2c47",
+        "svg_sha256": "a49ee81a8e849624366db58588954941300e05f65b903a329d439ac0f7e9eb77",
+        "width": 540,
+        "height": 996,
+        "denominator": "20 flujos dirigidos mayores entre 8 comunidades principales y otras; cifras en nodos = aeropuertos.",
+        "note": "Anchura = conexiones distintas entre grupos, no pasajeros. Dibujo omite flujos menores y lazos internos; tabla conserva todas las aristas.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "community-sensitivity",
+    "question_ids": [
+      "D16-C"
+    ],
+    "title": "¿Qué sobrevive al cambiar resolución?",
+    "denominator": "Los mismos 3,214 nodos y 18,858 conexiones no dirigidas; semilla fija.",
+    "note": "ARI mide acuerdo de asignaciones. Resolución 1.0 es una referencia elegida; no una clasificación geográfica verdadera.",
+    "alt": "Curva de estabilidad de comunidades para tres resoluciones, con número de grupos y escala de acuerdo de cero a uno.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/community_stability.csv",
+    "table_sha256": "aa7e78d7a140487bfbb046e0d2439f4fcda79bd20ff9e1f7e4435621347f75df",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "community-sensitivity-projection.png",
+        "svg": "community-sensitivity-projection.svg",
+        "png_sha256": "d775d8105046eae0c0e50d7fab2aba3362747493b35a27c42936d65ade17897a",
+        "svg_sha256": "60f1a2e7382c633bb4a19264548d66582ca3e72b1b17eeb705c36139452ac085",
+        "width": 1380,
+        "height": 936,
+        "denominator": "Los mismos 3,214 nodos y 18,858 conexiones no dirigidas; semilla fija.",
+        "note": "ARI mide acuerdo de asignaciones. Resolución 1.0 es una referencia elegida; no una clasificación geográfica verdadera.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "community-sensitivity-mobile.png",
+        "svg": "community-sensitivity-mobile.svg",
+        "png_sha256": "dd4fb17c29255ae501003019abfa7ab1dbcb04c3d13d3554e245d4945459bcc6",
+        "svg_sha256": "17deb5d5cad5f4158db749f9d43114585354808db4b6aadd5850c0b2205f6948",
+        "width": 540,
+        "height": 996,
+        "denominator": "Los mismos 3,214 nodos y 18,858 conexiones no dirigidas; semilla fija.",
+        "note": "ARI mide acuerdo de asignaciones. Resolución 1.0 es una referencia elegida; no una clasificación geográfica verdadera.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "community-null",
+    "question_ids": [
+      "D16-C"
+    ],
+    "title": "Una referencia que conserva tamaños",
+    "denominator": "20 particiones aleatorias con los mismos tamaños de comunidades sobre el mismo grafo de 3,214 aeropuertos.",
+    "note": "Membresías aleatorias, no redes de vuelos simuladas. Contraste exploratorio después de optimizar Louvain; no p-valor confirmatorio.",
+    "alt": "Dos puntos comparan modularidad: la media y rango de veinte particiones aleatorias frente al valor de Louvain, con anotaciones numéricas.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/null_modularity.csv",
+    "table_sha256": "f8cb8189d5cca5a89abc1bc3e54e5dd91e5b969f683d7b2ac8b582c5715248cb",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "community-null-projection.png",
+        "svg": "community-null-projection.svg",
+        "png_sha256": "1b1ac0eb0568f94c0a5d80e13cf29222e218a21c49273a669697a19ddf76b9d4",
+        "svg_sha256": "0272c9eae54d821d05ed5defef37855ee6399fc211237a03e36212e2166893d4",
+        "width": 1380,
+        "height": 936,
+        "denominator": "20 particiones aleatorias con los mismos tamaños de comunidades sobre el mismo grafo de 3,214 aeropuertos.",
+        "note": "Membresías aleatorias, no redes de vuelos simuladas. Contraste exploratorio después de optimizar Louvain; no p-valor confirmatorio.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "community-null-mobile.png",
+        "svg": "community-null-mobile.svg",
+        "png_sha256": "6c8bc6bd345b1e178d5ed9ffd699d67e5f47b48b9de64ac22cf54c70ffa2b938",
+        "svg_sha256": "256f0b083b91bfa0596d8bb706de2fac87b7febc7dcd3c8ac33a66aa3efe4eb9",
+        "width": 540,
+        "height": 996,
+        "denominator": "20 particiones aleatorias con los mismos tamaños de comunidades sobre el mismo grafo de 3,214 aeropuertos.",
+        "note": "Membresías aleatorias, no redes de vuelos simuladas. Contraste exploratorio después de optimizar Louvain; no p-valor confirmatorio.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "country-fragility",
+    "question_ids": [
+      "D16-B"
+    ],
+    "title": "La conectividad depende de dónde se corta",
+    "denominator": "6 países con mayor pérdida; universo con ≥5 aeropuertos dentro del gigante inicial. El nodo retirado no se cuenta como perdido.",
+    "note": "Referencia: hasta 20 retiros locales sin reemplazo. Lista ordenada exploratoriamente; topología histórica, sin volumen de personas afectadas.",
+    "alt": "Dotplot por país: pérdida de accesibilidad de otros aeropuertos tras retirar el hub local frente a la media de retiros locales aleatorios; denominadores visibles.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/country_resilience.csv",
+    "table_sha256": "188817ce5f731ff64817c05e2c6c572a2a6efdc4f57ffcbb05ec8a430dbdc5e2",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "country-fragility-projection.png",
+        "svg": "country-fragility-projection.svg",
+        "png_sha256": "fd2c20eddbc96515151146771ccd8211576d0a490c94f77aa9b93f61768f78f5",
+        "svg_sha256": "a5bb7dce11c780295cdaf91cf8d1394428acc0402472ece46976a22d4db73779",
+        "width": 1380,
+        "height": 936,
+        "denominator": "10 países con mayor pérdida; universo con ≥5 aeropuertos dentro del gigante inicial. El nodo retirado no se cuenta como perdido.",
+        "note": "Referencia: hasta 20 retiros locales sin reemplazo. Lista ordenada exploratoriamente; topología histórica, sin volumen de personas afectadas.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "country-fragility-mobile.png",
+        "svg": "country-fragility-mobile.svg",
+        "png_sha256": "0b5432c9025c5a4669057a78100e0697e38752f76766141fb162d080073d3917",
+        "svg_sha256": "3006de93c90c24d16830155c1b1f6cbf5da5c082360378f70601552978be54af",
+        "width": 540,
+        "height": 996,
+        "denominator": "6 países con mayor pérdida; universo con ≥5 aeropuertos dentro del gigante inicial. El nodo retirado no se cuenta como perdido.",
+        "note": "Referencia: hasta 20 retiros locales sin reemplazo. Lista ordenada exploratoriamente; topología histórica, sin volumen de personas afectadas.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "degree-betweenness",
+    "question_ids": [
+      "D16-D1"
+    ],
+    "title": "Muchos vecinos, otra clase de importancia",
+    "denominator": "Los mismos 3,214 aeropuertos. Grado exacto; intermediación con 128 pivotes y semilla fija.",
+    "note": "Spearman = 0.763. No existe una importancia única; k=64 se contrasta en la tabla de sensibilidad.",
+    "alt": "Dispersión del grado de vecinos y centralidad de intermediación aproximada por aeropuerto; se anotan líderes de cada métrica.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/nodes.csv",
+    "table_sha256": "382d8116e8436e16a120d86e093baf531e76b7a696abcca793c7bbac1036e387",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "degree-betweenness-projection.png",
+        "svg": "degree-betweenness-projection.svg",
+        "png_sha256": "8ee1c19d9519b87c901c8dc1f1da53bcda47fc952f7fe8ccd681210d84cf2062",
+        "svg_sha256": "a256a6955b51ae8b31c396e233369fe6b06b6e09f42958c2153bfd0cce42fd50",
+        "width": 1380,
+        "height": 936,
+        "denominator": "Los mismos 3,214 aeropuertos. Grado exacto; intermediación con 128 pivotes y semilla fija.",
+        "note": "Spearman = 0.763. No existe una importancia única; k=64 se contrasta en la tabla de sensibilidad.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "degree-betweenness-mobile.png",
+        "svg": "degree-betweenness-mobile.svg",
+        "png_sha256": "5fd31bad529186c22a83c575e663fca3155a222f3820158d3d44e89553f1f211",
+        "svg_sha256": "5761a32a0d97ca864a629301b3cf11ce61f9e07ee43c0a4ed15ae7772cbf4145",
+        "width": 540,
+        "height": 996,
+        "denominator": "Los mismos 3,214 aeropuertos. Grado exacto; intermediación con 128 pivotes y semilla fija.",
+        "note": "Spearman = 0.763. No existe una importancia única; k=64 se contrasta en la tabla de sensibilidad.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "ranking-sensitivity",
+    "question_ids": [
+      "D16-D1",
+      "D16-E"
+    ],
+    "title": "El ranking puesto a prueba",
+    "denominator": "6 líderes de intermediación dirigida k=128; las tres columnas usan el universo completo de 3,214 aeropuertos.",
+    "note": "Cambian pivotes o dirección, no el conjunto de aeropuertos. Rangos con desempate por ID; consultar también valores numéricos y empates.",
+    "alt": "Comparación de posiciones de los principales aeropuertos en tres versiones de intermediación: dirigida con 128 o 64 pivotes y proyección no dirigida.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/nodes.csv",
+    "table_sha256": "382d8116e8436e16a120d86e093baf531e76b7a696abcca793c7bbac1036e387",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "ranking-sensitivity-projection.png",
+        "svg": "ranking-sensitivity-projection.svg",
+        "png_sha256": "3b5cf010bf6bbe38aa0f0b3ecab7ffb305df20d2d450ea9177ef82254e2b76e0",
+        "svg_sha256": "3f869cd8464a00d52251cfee781091e9880596a758b7fcfcc9fd24d8d6548b27",
+        "width": 1380,
+        "height": 936,
+        "denominator": "10 líderes de intermediación dirigida k=128; las tres columnas usan el universo completo de 3,214 aeropuertos.",
+        "note": "Cambian pivotes o dirección, no el conjunto de aeropuertos. Rangos con desempate por ID; consultar también valores numéricos y empates.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "ranking-sensitivity-mobile.png",
+        "svg": "ranking-sensitivity-mobile.svg",
+        "png_sha256": "eadb7f3a3f266a032b0542a7cfabd5cd2b2d2fdd51574149f114072949cb5300",
+        "svg_sha256": "cc2af40e2256f86b13b56cfd9e74229df73a07a50fd3151160cf807f35479e6b",
+        "width": 540,
+        "height": 996,
+        "denominator": "6 líderes de intermediación dirigida k=128; las tres columnas usan el universo completo de 3,214 aeropuertos.",
+        "note": "Cambian pivotes o dirección, no el conjunto de aeropuertos. Rangos con desempate por ID; consultar también valores numéricos y empates.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "nearby-connections",
+    "question_ids": [
+      "D16-D2"
+    ],
+    "title": "Cerca en el mapa, ¿cerca en la red?",
+    "denominator": "Pares no ordenados de 3,214 aeropuertos activos. Conexión = arista en al menos una dirección; umbral principal 250 km.",
+    "note": "Sensibilidad 100/500 km; distancia Haversine, no separación en pantalla. Red histórica y sin horarios; ausencia de arista no prueba ausencia de servicio actual.",
+    "alt": "Fracción de pares cercanos con conexión observada para tres umbrales, con numeradores y denominadores; referencia de todos los pares activos.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/nearby_pairs.csv",
+    "table_sha256": "ba0cbbb864211ce33e195651913eeef33a7543c79ce3ac7195277d4c1c0249c2",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "nearby-connections-projection.png",
+        "svg": "nearby-connections-projection.svg",
+        "png_sha256": "2bb00ca1dd9feb29927e2d07855c0d3dcd4ef910ae0c002b526fbf553c2e5ab7",
+        "svg_sha256": "07ee94b95a2d8fffb8234dac01c8e36d227def89406a9f90783acc60e433b38e",
+        "width": 1380,
+        "height": 936,
+        "denominator": "Pares no ordenados de 3,214 aeropuertos activos. Conexión = arista en al menos una dirección; umbral principal 250 km.",
+        "note": "Sensibilidad 100/500 km; distancia Haversine, no separación en pantalla. Red histórica y sin horarios; ausencia de arista no prueba ausencia de servicio actual.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "nearby-connections-mobile.png",
+        "svg": "nearby-connections-mobile.svg",
+        "png_sha256": "81384ccfb71a90bf76eaece83ce149bae372c2c74c54730cc645f56b40ab56a4",
+        "svg_sha256": "2acd4c920ec124bd795e5b9d46ed97ef9a685ef82fcafaa11e58ee6adf15e6ff",
+        "width": 540,
+        "height": 996,
+        "denominator": "Pares no ordenados de 3,214 aeropuertos activos. Conexión = arista en al menos una dirección; umbral principal 250 km.",
+        "note": "Sensibilidad 100/500 km; distancia Haversine, no separación en pantalla. Red histórica y sin horarios; ausencia de arista no prueba ausencia de servicio actual.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "metadata-sensitivity",
+    "question_ids": [
+      "D16-D2",
+      "D16-E"
+    ],
+    "title": "¿Cuánto cambia exigir códigos coincidentes?",
+    "denominator": "Mismos 3,214 nodos y 10,594 pares a ≤250 km; cambia sólo política de aristas.",
+    "note": "IATA y metadata histórica pueden discrepar. No se remapean IDs a partir de códigos; ambas políticas se conservan, sin afirmar que una sea verdad completa.",
+    "alt": "Dos proporciones comparan conectividad de pares próximos bajo llaves ID resueltas y bajo coincidencia adicional de códigos, con denominador fijo.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/metadata_sensitivity.csv",
+    "table_sha256": "1724c95f8fb63b01ebbb3410b313d5df5353f82c43305e9229ac8a8157e04ebb",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "metadata-sensitivity-projection.png",
+        "svg": "metadata-sensitivity-projection.svg",
+        "png_sha256": "b2ce63476e995e4fb4842a9feac438f8727d0c55a0bcea49172af909452f7399",
+        "svg_sha256": "118bca594cf31c2142ee86172e65d2bffcf4af2862556fab1c818bf047bb8852",
+        "width": 1380,
+        "height": 936,
+        "denominator": "Mismos 3,214 nodos y 10,594 pares a ≤250 km; cambia sólo política de aristas.",
+        "note": "IATA y metadata histórica pueden discrepar. No se remapean IDs a partir de códigos; ambas políticas se conservan, sin afirmar que una sea verdad completa.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "metadata-sensitivity-mobile.png",
+        "svg": "metadata-sensitivity-mobile.svg",
+        "png_sha256": "0c0d4412304df1d5deebd573ba908239fd46cf1d9b4bed152b06ba7b508ab5e7",
+        "svg_sha256": "1a81dead7b42e4620cf6cc783486367ba3e90340cdca9bd71ca1cdcd186266ab",
+        "width": 540,
+        "height": 996,
+        "denominator": "Mismos 3,214 nodos y 10,594 pares a ≤250 km; cambia sólo política de aristas.",
+        "note": "IATA y metadata histórica pueden discrepar. No se remapean IDs a partir de códigos; ambas políticas se conservan, sin afirmar que una sea verdad completa.",
+        "text_bounds_pass": true
+      }
+    ]
+  },
+  {
+    "id": "hub-removal",
+    "question_ids": [
+      "D16-E",
+      "D16-B"
+    ],
+    "title": "Después del corte, contar lo que queda",
+    "denominator": "Retiros de 0/1/5/10 nodos de mayor grado original. Cada etiqueta usa el número de nodos restantes como denominador.",
+    "note": "No se retira el nodo y se lo cuenta como desconectado. No se recalcula la lista de hubs durante el ataque; no es una predicción de reacciones de aerolíneas.",
+    "alt": "Curva del número de aeropuertos restantes fuera del mayor componente conectado tras retirar nodos del ranking original, con denominadores por escenario.",
+    "period": "Routes provider ceased updates June 2014 according to producer. Airport metadata retrieved at fixed repository commit, not a verified 2014 census. No schedules, traffic, fares, capacity or demand.",
+    "source_url": "https://github.com/jpatokal/openflights/tree/cd163fa17710f3135540651626ad719dd5322a05/data",
+    "license": "ODbL-1.0; database contents ODC-DbCL-1.0",
+    "source_sha256": "ce69cc22a433356e0c3e97bf0ceacbbafb2b1ca653fcd72980f37b3a34f8def4",
+    "code_sha256": "8ace33e42d53de6b6ed1b6c09f625cdde7e03c83068d587b3080826ca0d650b1",
+    "table": "gold/hub_removal.csv",
+    "table_sha256": "87cae1086952246aae341a7b12b3ec2c400dd35b782bda751c23f27010f40fec",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "hub-removal-projection.png",
+        "svg": "hub-removal-projection.svg",
+        "png_sha256": "ab57562f848f22e76052ff92c7164859b0a8fee521c4fefeb79aa687b8c8a16e",
+        "svg_sha256": "28aecd6948bf3aac8f9aa408cc9b289588a4b78066cb4695bb249aed76110a14",
+        "width": 1380,
+        "height": 936,
+        "denominator": "Retiros de 0/1/5/10 nodos de mayor grado original. Cada etiqueta usa el número de nodos restantes como denominador.",
+        "note": "No se retira el nodo y se lo cuenta como desconectado. No se recalcula la lista de hubs durante el ataque; no es una predicción de reacciones de aerolíneas.",
+        "text_bounds_pass": true
+      },
+      {
+        "variant": "mobile",
+        "png": "hub-removal-mobile.png",
+        "svg": "hub-removal-mobile.svg",
+        "png_sha256": "38aa92fd9524ccc5a13bab8a92f2bdb4fa77007e9e7d68aba9f282571cddb0cb",
+        "svg_sha256": "c59201eda82641bf967e3f7f55e33ac8e82a5f2aa36c46a3292591838e798e33",
+        "width": 540,
+        "height": 996,
+        "denominator": "Retiros de 0/1/5/10 nodos de mayor grado original. Cada etiqueta usa el número de nodos restantes como denominador.",
+        "note": "No se retira el nodo y se lo cuenta como desconectado. No se recalcula la lista de hubs durante el ataque; no es una predicción de reacciones de aerolíneas.",
+        "text_bounds_pass": true
+      }
+    ]
+  }
+]

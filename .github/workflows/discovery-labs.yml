@@ -20,14 +20,21 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-          cache-dependency-path: discovery_labs/requirements-ci.txt
-      - run: python -m pip install -r discovery_labs/requirements-ci.txt
+          cache-dependency-path: |
+            discovery_labs/requirements-ci.txt
+            discovery_labs/requirements-batch1.txt
+      - run: python -m pip install -r discovery_labs/requirements-batch1.txt
       - run: python discovery_labs/scripts/run_pilots.py
       - name: Pipeline V3 sin red
         env:
           OPENBLAS_NUM_THREADS: '1'
           OMP_NUM_THREADS: '1'
         run: python discovery_labs/scripts/run_research.py
+      - name: Lote 1A · red histórica OpenFlights
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: python discovery_labs/scripts/run_batch1.py
       - run: python discovery_labs/scripts/build_catalog.py
       - run: python discovery_labs/scripts/finalize_evidence.py
       - run: python discovery_labs/scripts/build_delivery.py
@@ -38,6 +45,7 @@ jobs:
       - run: python -m playwright install --with-deps chromium
       - run: python discovery_labs/tests/dashboard_browser.py
       - run: python discovery_labs/tests/research_browser.py
+      - run: python discovery_labs/tests/batch1_browser.py
       - name: Evidencia de navegador
         if: always()
         uses: actions/upload-artifact@v4

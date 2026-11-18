@@ -10,6 +10,8 @@ import sys
 
 from v3.data import BASE, CASES, load, require
 
+BATCH1_CASES=('openflights-red-aerea',)
+
 
 def limits():
     resource.setrlimit(resource.RLIMIT_AS, (4*1024**3, 4*1024**3))
@@ -21,6 +23,7 @@ def limits():
 
 def dispatch(action, case=None, question=None):
     contracts = json.loads((BASE/'contracts/batch0.json').read_text())
+    if (BASE/'contracts/batch1a.json').exists():contracts+=json.loads((BASE/'contracts/batch1a.json').read_text())
     if action == 'catalog':
         overrides = {c['id']:c for c in contracts}
         sources = json.loads((BASE/'catalog/sources.json').read_text())
@@ -28,9 +31,12 @@ def dispatch(action, case=None, question=None):
         return dict(sources=[dict(id=s['id'], name=s['name'], resource_type=s['resource_type']) for s in sources],
                     questions=[dict(id=q['id'], source=q['source_id'], question=q['question'],
                                     status=overrides[q['id']]['execution_status'] if q['id'] in overrides else q['status']) for q in questions])
-    require(case in CASES, 'case obligatorio y permitido')
+    require(case in (*CASES,*BATCH1_CASES), 'case obligatorio y permitido')
     output = BASE/'output/v3'/case
     if action == 'schema':
+        if case in BATCH1_CASES:
+            from batch1.openflights import load as load_batch1
+            _,m=load_batch1();return m
         _, m = load(case); return m
     if action == 'run':
         matches = [c for c in contracts if c['source_id']==case and c['id']==question]
@@ -38,10 +44,14 @@ def dispatch(action, case=None, question=None):
         # Do not inherit API tokens or arbitrary runtime configuration.
         env = {key:os.environ[key] for key in ['PATH','HOME','LANG','LD_LIBRARY_PATH','MPLCONFIGDIR'] if key in os.environ}
         env.update(OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTHONHASHSEED='0')
-        result = subprocess.run([sys.executable, str(BASE/'scripts/run_research.py'), '--case', case],
+        script='run_batch1.py' if case in BATCH1_CASES else 'run_research.py'
+        result = subprocess.run([sys.executable, str(BASE/'scripts'/script), '--case', case],
             env=env, cwd=BASE.parent, capture_output=True, text=True, timeout=60, preexec_fn=limits)
         require(result.returncode==0, 'Ejecución falló: '+result.stderr[-1500:])
-    from run_research import verify
+    if case in BATCH1_CASES:
+        from run_batch1 import verify
+    else:
+        from run_research import verify
     verify(output)
     if action in ['results','run']:
         results = json.loads((output/'research/results.json').read_text())
@@ -57,7 +67,7 @@ def dispatch(action, case=None, question=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['catalog','schema','quality','run','results','storyboard','verify'])
-    parser.add_argument('--case', choices=CASES)
+    parser.add_argument('--case', choices=(*CASES,*BATCH1_CASES))
     parser.add_argument('--question')
     args = parser.parse_args()
     try:
