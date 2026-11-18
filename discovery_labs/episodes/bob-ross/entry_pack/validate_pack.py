@@ -2,7 +2,8 @@
 """Validate the portable Question Forge entry pack, with no model execution.
 
 Usage: python discovery_labs/episodes/bob-ross/entry_pack/validate_pack.py
-Only reads files in the Bob Ross episode; no network, pip or generated outputs.
+Reads the shared catalog/skill if available, otherwise uses legacy local snapshots.
+No network, pip or generated outputs.
 """
 import csv
 import json
@@ -11,6 +12,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 EPISODE = ROOT.parent
+SHARED = ROOT.parents[2] / "shared"
+SHARED_CATALOG = SHARED / "model_catalog" / "MODEL_SET.md"
+SHARED_SKILL = SHARED / "skills" / "question-forge" / "SKILL.md"
 REQUIRED = [
     "START_HERE_NEW_CHAT.md", "README.md", "EPISODE_TEMPLATE.md",
     "skills/question-forge/SKILL.md", "QUESTIONS_MASTER.md",
@@ -30,7 +34,8 @@ def main():
     assert all(re.fullmatch(r"BR-\d{2}", qid) for qid in ids)
 
     text = (ROOT / "QUESTIONS_MASTER.md").read_text(encoding="utf-8")
-    model_text = (ROOT / "MODEL_SET.md").read_text(encoding="utf-8")
+    catalog_path = SHARED_CATALOG if SHARED_CATALOG.is_file() else ROOT / "MODEL_SET.md"
+    model_text = catalog_path.read_text(encoding="utf-8")
     models = set(re.findall(r"^\|\s*(M\d{2})\s*\|", model_text, re.M))
     assert len(models) >= 20, "Model catalog unexpectedly small"
     for q in questions:
@@ -64,8 +69,9 @@ def main():
     assert len(raw[0]) == 69 and len(feat[0]) == 16
     assert any(int(x["GUEST"]) for x in raw)
 
-    skill = (ROOT / "skills/question-forge/SKILL.md").read_text(encoding="utf-8")
-    assert "version: 2.0.0" in skill
+    skill_path = SHARED_SKILL if SHARED_SKILL.is_file() else ROOT / "skills/question-forge/SKILL.md"
+    skill = skill_path.read_text(encoding="utf-8")
+    assert "version: 2.0.0" in skill or "version: 2.1.0" in skill
     assert "único bloque" in skill.lower() or "un único bloque" in skill.lower()
     assert "ejercicio estadístico" in skill
     assert "NO" in (ROOT / "CONTEXT_CLAIMS.md").read_text(encoding="utf-8")
@@ -81,6 +87,8 @@ def main():
     assert "PENDIENTE DE APROBACIÓN" in guide
     print(json.dumps({
         "status": "PASS", "questions": len(questions), "models": len(models),
+        "catalog_source": str(catalog_path), "skill_source": str(skill_path),
+        "shared_core_active": SHARED_CATALOG.is_file() and SHARED_SKILL.is_file(),
         "statistical_exercises": len(questions), "sample_raw_rows": len(raw),
         "one_html_question_section": True,
         "research_guide_status": "PENDING_HUMAN_APPROVAL",
