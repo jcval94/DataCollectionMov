@@ -1,0 +1,9 @@
+# Lightweight server + exactly the analysis dependencies used by the pinned case.
+mcp>=1.22,<2
+uvicorn>=0.30,<1
+starlette>=0.40,<1
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+scikit-learn==1.8.0
+threadpoolctl>=3.5,<4
