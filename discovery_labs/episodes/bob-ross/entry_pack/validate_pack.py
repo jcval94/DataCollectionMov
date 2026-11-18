@@ -38,9 +38,18 @@ def main():
                      "model_name", "model_why", "model_where", "stat",
                      "data", "visual", "note", "status"):
             assert isinstance(q.get(attr), str) and q[attr].strip(), f"{q['id']} lacks {attr}"
+        for attr in ("o2_trigger", "o3_trigger", "rival_hypothesis", "model_baseline",
+                     "model_validation", "stat_why", "stat_where", "design_status"):
+            assert isinstance(q.get(attr), str) and len(q[attr].strip()) > 15, f"{q['id']} lacks methodological field {attr}"
+        assert q["design_status"] == "PLAN_ONLY", f"{q['id']} must remain unexecuted"
+        estimand = q.get("estimand", {})
+        for attr in ("grain", "population", "measure", "denominator", "time_basis"):
+            assert isinstance(estimand.get(attr), str) and estimand[attr].strip(), f"{q['id']} lacks estimand.{attr}"
+        assert q["model_baseline"] != q["stat_why"]
         assert q["model"] in models, f"{q['id']} references missing model"
         assert f"### {q['id']}" in text, f"Question missing from canonical markdown: {q['id']}"
     assert text.count("### BR-") == len(questions)
+    assert text.count("**Contrato metodológico adicional (sin ejecutar):**") == len(questions)
     assert "LSTM" in model_text and "Optuna" in model_text and "refuerzo" in model_text.lower()
 
     metadata = json.loads((ROOT / "metadata.json").read_text(encoding="utf-8"))
