@@ -1,0 +1,151 @@
+{
+  "schema": "episode-questions-v1",
+  "source_id": "bob-ross-elementos",
+  "duration_minutes": 45,
+  "question_ids": [
+    "D85-A",
+    "D85-B",
+    "D85-C",
+    "D85-D1",
+    "D85-D2",
+    "D85-E"
+  ],
+  "questions": [
+    {
+      "id": "D85-A",
+      "perspective": "NEGOCIO",
+      "title": "El museo de cuatro salas",
+      "question": "Un museo ficticio tiene cuatro salas: ¿cómo repartir episodios para cubrir motivos distintos sin saturar una sala?",
+      "hypotheses": [
+        "Una asignación interpretable logra equilibrio razonable.",
+        "Las reglas de asignación pueden producir salas desbalanceadas."
+      ],
+      "metric": "N episodios por sala y diversidad de motivos, sin ingresos, entradas ni costos observados",
+      "data": [
+        "EPISODE",
+        "GUEST",
+        "TREE",
+        "TREES",
+        "MOUNTAIN",
+        "MOUNTAINS",
+        "SNOWY_MOUNTAIN",
+        "OCEAN",
+        "WATERFALL"
+      ],
+      "path_simple": "Asignación por reglas explícitas: agua/costa, montañas, árboles, otros. Contrastar tamaños.",
+      "path_advanced": "Comparar con agrupamientos basados en las doce familias, revisar representatividad de salas y sensibilidad.",
+      "adversary": "Cambiar orden de prioridad; las mismas etiquetas pueden producir otra asignación.",
+      "status": "TECNICAMENTE_EJECUTADO_REGLAS; COSTOS_NO_OBSERVADOS",
+      "teaching_point": "La utilidad operacional es una decisión; no se puede estimar ROI sin costos, demanda o preferencias."
+    },
+    {
+      "id": "D85-B",
+      "perspective": "SOCIAL",
+      "title": "¿Hay diferencias entre anfitrión e invitados?",
+      "question": "¿Qué cambia en los motivos representados entre episodios del anfitrión e invitados?",
+      "hypotheses": [
+        "La frecuencia de árboles difiere entre grupos.",
+        "La diferencia puede ser sensible al denominador pequeño de invitados."
+      ],
+      "metric": "Proporción de episodios con árboles por GUEST (381 frente a 22), con n visibles",
+      "data": [
+        "GUEST",
+        "TREE",
+        "TREES",
+        "EPISODE"
+      ],
+      "path_simple": "Tabla 2×2 y barras con conteos y denominadores.",
+      "path_advanced": "Examinar incertidumbre y sensibilidad; discutir selección de quién fue invitado.",
+      "adversary": "Repetir mostrando los números absolutos y no sólo porcentajes; no inferir causas ni representación social.",
+      "status": "TECNICAMENTE_EJECUTADO_DESCRIPTIVO",
+      "teaching_point": "La comparación descriptiva no demuestra preferencias ni discriminación."
+    },
+    {
+      "id": "D85-C",
+      "perspective": "DESCUBRIMIENTO",
+      "title": "Cuatro salas y doce motivos",
+      "question": "¿Qué agrupamientos aparecen usando doce motivos y qué ocurre al cambiar la distancia?",
+      "hypotheses": [
+        "Algunos motivos coocurren en perfiles recurrentes.",
+        "Los grupos dependen de decisiones de representación y métrica."
+      ],
+      "metric": "Tamaños de grupos, frecuencia de motivos, silhouettes dentro de su distancia y ARI entre particiones",
+      "data": [
+        "EPISODE",
+        "GUEST",
+        "doce familias OR"
+      ],
+      "path_simple": "Describir doce motivos y asignar salas por reglas.",
+      "path_advanced": "k-medoids Jaccard vs Euclídea, representantes reales, ARI y quitar árboles.",
+      "adversary": "Comparar cambios de distancia y sin árboles. No proclamar estilos verdaderos.",
+      "status": "TECNICAMENTE_EJECUTADO_CLUSTERING",
+      "teaching_point": "Una agrupación es una forma de organizar datos, no descubrir un estilo real."
+    },
+    {
+      "id": "D85-D1",
+      "perspective": "CREENCIA_POPULAR_1",
+      "title": "¿Todos los cuadros tienen árboles?",
+      "question": "¿Es verdad que todos los episodios de Bob Ross presentan árboles?",
+      "hypotheses": [
+        "Todos los episodios codificados contienen al menos un motivo árbol.",
+        "Existen contraejemplos en el archivo."
+      ],
+      "metric": "N episodios sin TREE ni TREES sobre 381 episodios del anfitrión",
+      "data": [
+        "EPISODE",
+        "TREE",
+        "TREES",
+        "GUEST"
+      ],
+      "path_simple": "OR TREE/TREES; buscar primer contraejemplo y porcentaje.",
+      "path_advanced": "Comparar por temporada y huéspedes; revisar casos con título o enlace ilustrativo.",
+      "adversary": "No extrapolar a cada pintura ni confundir ausencia de etiqueta con verificación visual exhaustiva.",
+      "status": "TECNICAMENTE_EJECUTADO_DESCRIPTIVO",
+      "teaching_point": "Un solo contraejemplo falsaría una afirmación universal dentro de la codificación."
+    },
+    {
+      "id": "D85-D2",
+      "perspective": "CREENCIA_POPULAR_2",
+      "title": "¿Montaña significa nieve?",
+      "question": "¿Todos los episodios que incluyen montañas presentan nieve?",
+      "hypotheses": [
+        "Toda montaña tiene SNOW o SNOWY_MOUNTAIN.",
+        "Existen montañas etiquetadas sin nieve."
+      ],
+      "metric": "N con montañas sin nieve sobre episodios con montañas (anfitrión)",
+      "data": [
+        "MOUNTAIN",
+        "MOUNTAINS",
+        "SNOWY_MOUNTAIN",
+        "SNOW",
+        "GUEST"
+      ],
+      "path_simple": "Construir OR para montañas y nieve; tabla condicional.",
+      "path_advanced": "Examinar estaciones y etiquetas correlacionadas por construcción.",
+      "adversary": "SNOWY_MOUNTAIN cuenta en las dos familias: no hay independencia entre variables.",
+      "status": "TECNICAMENTE_EJECUTADO_DESCRIPTIVO",
+      "teaching_point": "La definición de feature puede incorporar parte de la respuesta."
+    },
+    {
+      "id": "D85-E",
+      "perspective": "DETECTIVE",
+      "title": "Cuando una métrica te engaña",
+      "question": "¿Por qué un clustering puede parecer mejor cuando añadimos el número de episodio, aunque el museo sólo busca motivos?",
+      "hypotheses": [
+        "Los metadatos cronológicos dominan distancias si reciben peso muy grande.",
+        "Una métrica más alta no demuestra más relevancia artística."
+      ],
+      "metric": "Agrupamiento por motivos frente a orden cronológico; no comparar silhouette entre espacios como si midiera calidad universal",
+      "data": [
+        "EPISODE",
+        "GUEST",
+        "doce familias OR"
+      ],
+      "path_simple": "Clasificar por temporadas y contrastar motivos dentro de grupos.",
+      "path_advanced": "Reproducir experimento controlado de K-means con variable ID artificial del caso anterior.",
+      "adversary": "Señalar que el ID es un número construido, no evidencia estética. Verificar exclusión de features prohibidas.",
+      "status": "REFERENCIA_EXISTENTE; NO_REEJECUTADO_EN_ESTE_PIPELINE",
+      "teaching_point": "Mejor puntuación matemática puede significar peor respuesta a la pregunta."
+    }
+  ]
+}
