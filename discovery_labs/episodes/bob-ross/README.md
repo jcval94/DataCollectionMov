@@ -17,6 +17,14 @@
 
 **No basta con seis consultas o seis tarjetas**: los arcos de `intake/QUESTION_GRAPH.md` plantean preguntas de segundo y tercer orden. Son propuestas condicionadas a resultados y fuentes; **no** se han implementado ni aprobado todavía. No deducir causalidad médica o artística a partir de las temporadas.
 
+## Nuevo flujo: primero el paquete de entrada
+
+Antes de cerrar la guía científica, revisar **[entry_pack/README.md](entry_pack/README.md)**. Contiene una pequeña muestra real, metadatos, cuatro prompts Deep Research más una síntesis crítica, 12 preguntas profundas de primer/segundo/tercer orden, una skill reutilizable, plan de trabajo y brief de visualización. La fuente original y sus derechos permanecen intactos.
+
+El archivo `questions.json` conserva las seis rutas iniciales compatibles con la interfaz; **no son necesariamente las preguntas científicas finales**. Las propuestas de mayor profundidad están en `entry_pack/question_graph.json`. Requieren ejecutar investigación y revisar datos externos antes de reemplazar titulares.
+
+El proceso obligatorio es **paquete de entrada → `research_guide.html` (aprobación explícita) → storytelling audiovisual HTML (aprobación explícita) → video**. No iniciar fase audiovisual sin revisión.
+
 ## Abrir en un minuto
 
 1. Descarga **solamente esta carpeta**.
