@@ -2,7 +2,7 @@
 
 > **Antes de producir la guía científica:** comprender el mundo, las fuentes, las posibles historias y qué no puede medirse. Este paquete es el estándar portable de AI Discovery Labs. No autoriza video ni guion audiovisual.
 
-**Estado:** \`PHASE_0_DRAFT\`. La investigación externa tiene prompts y un registro inicial de enlaces; los cuatro Deep Research especializados **NO** están ejecutados ni aprobados por este paquete.
+**Estado:** `PHASE_0_DRAFT`. La investigación externa tiene prompts y un registro inicial de enlaces; los cuatro Deep Research especializados **NO** están ejecutados ni aprobados por este paquete.
 
 ## Abrir en orden
 
@@ -55,4 +55,4 @@ Datos de etiquetas FiveThirtyEight CC BY 4.0, la obra pictórica y las imágenes
 - **Fase 2:** **BLOQUEADA** hasta la aprobación explícita de una versión concreta de la guía.
 - **Fase 3:** **BLOQUEADA** hasta la aprobación explícita de una versión concreta del storytelling audiovisual.
 
-Mantener modificaciones en \`discovery_labs/episodes/bob-ross/\`. Material de este paquete no debe confundirse con resultados ya computados, ni sustituye los tests de \`run.py\`.
+Mantener modificaciones en `discovery_labs/episodes/bob-ross/`. Material de este paquete no debe confundirse con resultados ya computados, ni sustituye los tests de `run.py`.
