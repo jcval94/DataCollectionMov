@@ -8,7 +8,9 @@ permissions:
 jobs:
   compare:
     # Only the repository owner's exact request title can start compute.
-    if: github.event.issue.user.login == github.repository_owner && github.event.issue.title == 'Bob Ross: comparar modelos'
+    if: >-
+      github.event.issue.user.login == github.repository_owner &&
+      github.event.issue.title == 'Bob Ross: comparar modelos'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     concurrency:
