@@ -23,6 +23,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Ejercicio estadístico (distinto del modelo):** Prueba de quiebre por bootstrap/permutación de bloques con corrección de búsqueda; intervalos por temporada.
 
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Ruptura descriptiva de tasas temporales reproducible frente a intervalos por temporada; si no aparece, investigar la ausencia del cambio. O3 se activa cuando: Si el supuesto quiebre persiste al excluir invitados y mover cortes/ventanas. **Hipótesis rival:** Calendario de producción y reordenamiento de emisión, sin inferir efecto de enfermedad. **Baseline:** GLM binomial sin quiebre y tasas constantes por temporada como referencias. **Validación del modelo:** Bootstrap por bloques de temporadas; penalizar selección de quiebres; sensibilidad a ventanas y definición de motivos. **Por qué el ejercicio estadístico:** Para distinguir una ruptura reproducible del máximo espurio que produce buscar cortes en 31 temporadas. **Dónde:** Research / contrastes temporales; después de describir O1 y sin imponer fechas clínicas. **Estimando:** proporción de episodios con cada motivo y diversidad de motivos; unidad: episodio; denominador: n de episodios por temporada; separar GUEST.
+
 **Datos necesarios:** CSV entero; FECHAS externas grabación/emisión y cronología médica como contexto separable.
 
 **Visualización que cuenta la evidencia:** Heatmap de temporadas con banda de eventos biográficos etiquetados por fuente y precisión; dos paneles antes/después, sin flecha causal.
@@ -44,6 +46,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Modelo propuesto (M02):** GAM binomial penalizado. **Por qué:** Permite estudiar trayectorias no lineales sin fingir rupturas puntuales. **Dónde:** Gold episodio-temporada → Research evolutivo.
 
 **Ejercicio estadístico (distinto del modelo):** Tendencia binomial e intervalos por temporada, comparación contra un GLM lineal por remuestreo.
+
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Patrón temporal no lineal de montaña/nieve/bosque frente a modelo lineal, o ausencia del mismo. O3 se activa cuando: Si la diferencia sobrevive definiciones alternativas y al restringir anfitrión. **Hipótesis rival:** Formato de producción y etiquetado de montaña/nieve frente a recuerdos de Alaska. **Baseline:** GLM binomial lineal y tasa global por motivo. **Validación del modelo:** Suavizado penalizado, CV bloqueada por temporada, excluir etiquetas constructivamente redundantes. **Por qué el ejercicio estadístico:** La incertidumbre y comparación lineal evitan atribuir a biografía una curvatura producida por ruido. **Dónde:** Research / evolución de motivos; intervalos y contraste de suavidad. **Estimando:** prevalencia de montaña, nieve y bosque; unidad: episodio; denominador: n por temporada y por grupo; no contar tags como episodios.
 
 **Datos necesarios:** CSV; entrevistas verificables sobre Alaska y aprendizaje de pintura.
 
@@ -67,6 +71,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Ejercicio estadístico (distinto del modelo):** Contrastes de tasas con intervalos/predicción posterior y sensibilidad a definición de eras.
 
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Diferencia descriptiva en repertorio o diversidad entre periodos predefinidos. O3 se activa cuando: Si persisten los periodos distinguidos al separar motivos e invitados. **Hipótesis rival:** Definición del diccionario, selección de motivos y composición de episodios; estilo pictórico no observado. **Baseline:** Tasas agrupadas por temporada sin shrinkage y modelo de ausencia de cambio. **Validación del modelo:** Leave-one-season-out, grupos alternativos de eras predefinidas y comprobación predictiva. **Por qué el ejercicio estadístico:** Permutar etiquetas de era bajo un nulo explícito comprueba una diferencia agregada independiente del ajuste jerárquico. **Dónde:** Research / comparación de periodos y matriz de motivos. **Estimando:** prevalencias multivariadas de 12 familias y diversidad; unidad: temporada; denominador: episodios de cada temporada, no total fijo para todas las celdas.
+
 **Datos necesarios:** CSV S01–S31, paleta e imágenes con derechos solo si autorizadas.
 
 **Visualización que cuenta la evidencia:** River chart de motivos por era + heatmap de 31×12 con pequeñas multiples e incertidumbre.
@@ -88,6 +94,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Modelo propuesto (M05):** Isolation Forest con comparador por distancia Jaccard. **Por qué:** Prioriza perfiles inusuales sin inventar una variable objetivo. **Dónde:** Gold por episodio → Research anomalies; luego agregación por temporada/era.
 
 **Ejercicio estadístico (distinto del modelo):** Test por permutación de concentración estacional e intervalos bootstrap de rankings.
+
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Episodios con rareza más alta que un baseline transparente de distancia. O3 se activa cuando: Si la concentración de rareza por temporada excede una asignación aleatoria con n preservado. **Hipótesis rival:** Errores de codificación, combinaciones escasas o cambios de métrica frente a excepcionalidad histórica. **Baseline:** Ranking por Jaccard a vecinos y prevalencia de patrones sin Isolation Forest. **Validación del modelo:** Variar contaminación, Jaccard/Hamming, excluir invitados y bootstrap por temporada. **Por qué el ejercicio estadístico:** Permutar la distribución estacional con tamaños fijos separa una agrupación temporal de episodios raros al azar. **Dónde:** Research / outliers episodio → temporada → era. **Estimando:** score de rareza y concentración por temporada; unidad: episodio y temporada; denominador: n episodios por temporada y por grupo.
 
 **Datos necesarios:** 403 episodios, GUEST, doce familias; fotografías verificadas opcionales.
 
@@ -111,6 +119,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Ejercicio estadístico (distinto del modelo):** IC binomial exacto para proporción sin árboles y contraste de tendencia por temporada.
 
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Subconjunto de episodios sin TREE ni TREES y su tasa con incertidumbre. O3 se activa cuando: Si esos contraejemplos forman subgrupos temáticos o temporales. **Hipótesis rival:** Definiciones alternativas de árbol y sesgo de codificación; arquetipo cultural requiere fuentes. **Baseline:** Prevalencia global de TREE OR TREES (anfitrión 345/381) sin predictores. **Validación del modelo:** IC exacto con denominador host; sensibilidades TREE vs TREES, invitados y ventanas. **Por qué el ejercicio estadístico:** Un intervalo exacto y tendencia por temporada dimensionan la excepción observada, separándola del GLM explicativo. **Dónde:** Research / iconografía, mito cultural y contraejemplos. **Estimando:** presencia/ausencia de TREE OR TREES; unidad: episodio; denominador: 381 anfitrión; declarar 22 invitados por separado.
+
 **Datos necesarios:** TREE,TREES, GUEST,temporada, otras etiquetas; fuentes culturales que acrediten la asociación popular.
 
 **Visualización que cuenta la evidencia:** Mosaico completo de 403 episodios y zoom en 36 contraejemplos del anfitrión con hover/focus.
@@ -132,6 +142,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Modelo propuesto (M17):** Modelo de simulación Monte Carlo de escenarios de diseño/selección. **Por qué:** Muestra qué conclusiones dependerían de supuestos sobre versiones no observadas, sin afirmar haberlas medido. **Dónde:** Research de sensibilidad y datos faltantes; solo propuesto, depende de evidencia documental.
 
 **Ejercicio estadístico (distinto del modelo):** Análisis de sensibilidad y límites de identificación para versiones no observadas; sin p-values ficticios.
+
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Fuentes primarias documentan o no versiones preparadas; motivos repetidos no prueban improvisación. O3 se activa cuando: Si aparecen registros de versiones, contrastar explicaciones de producción y espontaneidad. **Hipótesis rival:** Sesgo documental y versiones no localizadas; ninguna etiqueta identifica improvisación. **Baseline:** Escenario sin versiones observadas; no presentar como estimación empírica. **Validación del modelo:** Triangular testimonios independientes y presentar rango de supuestos; sin cuantificar lo no observado. **Por qué el ejercicio estadístico:** Los límites parciales muestran cuánto depende la conclusión de obras preparatorias ausentes. **Dónde:** Research / auditoría documental y sensibilidad, no métrica de creatividad. **Estimando:** cobertura documental de versiones preparadas; unidad: episodio y versión de obra (fuentes separadas); denominador: n episodios en CSV y n versiones documentalmente corroboradas, sin 3×403 inventado.
 
 **Datos necesarios:** Archivo original; entrevistas de producción y posible correspondencia entre tres versiones externas.
 
@@ -155,6 +167,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Ejercicio estadístico (distinto del modelo):** Fisher exacto por par y FDR, con lift e IC para asociaciones elegidas.
 
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Coocurrencia observada de pares/tríos contra su esperanza bajo independencia. O3 se activa cuando: Si el lift no trivial persiste por temporada y fuera de relaciones constructivas. **Hipótesis rival:** Dependencia lógica de etiquetas y mezcla de temporadas frente a afinidad real de motivos. **Baseline:** Producto de prevalencias marginales para coocurrencia esperada. **Validación del modelo:** FDR tras registrar pares explorados; sensibilidad a motivos colineales y estratos. **Por qué el ejercicio estadístico:** Fisher y corrección múltiple separan una coincidencia aparente del exceso frente a marginales. **Dónde:** Research / asociaciones por pares sobre Silver binario. **Estimando:** frecuencia conjunta de pares de motivos; unidad: episodio; denominador: 381 episodios anfitrión; frecuencia marginal por motivo.
+
 **Datos necesarios:** Matriz binaria de 12 familias, dependencia explícita SNOWY_MOUNTAIN.
 
 **Visualización que cuenta la evidencia:** Heatmap de lift vs esperado con tooltips de episodios y anotación de asociaciones mecánicas.
@@ -176,6 +190,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Modelo propuesto (M19):** Modelo multinivel regularizado por temporada. **Por qué:** Permite explorar diferencias controlando composición temporal sin sobreinterpretar n=22. **Dónde:** Gold episodio+GUEST → Research contraste grupos.
 
 **Ejercicio estadístico (distinto del modelo):** Fisher exacto e intervalos para diferencia de proporciones (n pequeño).
+
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Diferencia descriptiva de prevalencias host–GUEST, con n pequeño visible. O3 se activa cuando: Si se reduce o revierte la diferencia dentro de temporadas comparables. **Hipótesis rival:** Selección editorial de invitados y tareas distintas, no efecto causal de identidad. **Baseline:** Proporción total por grupo sin ajuste de temporada. **Validación del modelo:** Prueba exacta, IC para diferencia de proporciones; sensibilidad restringida a temporadas con ambos tipos. **Por qué el ejercicio estadístico:** Fisher exacto es adecuado al grupo de 22 episodios y no depende del modelo multinivel. **Dónde:** Research / invitado frente a anfitrión; contrastes estratificados. **Estimando:** diferencia de proporciones por motivo; unidad: episodio; denominador: 381 y 22, con n efectivo por temporada al estratificar.
 
 **Datos necesarios:** GUEST,temporada,motivos, identidad invitado si se obtiene externa.
 
@@ -199,6 +215,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Ejercicio estadístico (distinto del modelo):** ARI entre particiones e intervalos bootstrap de estabilidad por grupo.
 
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Agrupamiento aparente en cuatro grupos de etiquetas binarias. O3 se activa cuando: Si asignación y representantes cambian con métrica, k o presencia de árboles. **Hipótesis rival:** El clustering captura la ontología de etiquetas y no estilos humanos. **Baseline:** Asignación por reglas simples, k-medoids alternativo y aleatorio con mismos tamaños. **Validación del modelo:** Remuestreo bootstrap; comparar ARI de particiones sobre conjunto fijo, medoids y silhouette con métrica coherente. **Por qué el ejercicio estadístico:** La estabilidad entre particiones cuantifica robustez sin convertir las salas en estilos estéticos. **Dónde:** Research / evaluación adversarial de clustering. **Estimando:** asignación a cluster y estabilidad entre réplicas; unidad: episodio; denominador: 381 observaciones; por cluster informar n.
+
 **Datos necesarios:** 12 familias de 381 episodios; obras reales solo derechos y mapping verificados.
 
 **Visualización que cuenta la evidencia:** Alluvial de cambios de sala + medoids/episodios interactivos con preview sujeto a licencia.
@@ -220,6 +238,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Modelo propuesto (M09):** Análisis de correspondencias múltiples para paletas categóricas. **Por qué:** Explora asociaciones latentes entre colores etiquetados y motivos sin confundirlas con estilo. **Dónde:** Enriched Gold (join validado) → Research paletas.
 
 **Ejercicio estadístico (distinto del modelo):** Permutación para cambio de composición por era y corrección de multiplicidad.
+
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Si existe unión exacta de paletas externas con episodios, medir cambios de composición. O3 se activa cuando: Si una diferencia cromática persiste al mantener constantes los motivos. **Hipótesis rival:** Fotografía, iluminación, digitalización y cobertura desigual por temporada. **Baseline:** Distribución cromática global sin diferencia temporal. **Validación del modelo:** Auditar join 1:1 y n no emparejados; sensibilidad por fuente y ausencia; evitar inferir emoción del color. **Por qué el ejercicio estadístico:** La permutación de eras separa un cambio de paleta etiquetada del ruido de selección temporal. **Dónde:** Research / enriquecimiento externo, solo tras licencia y join. **Estimando:** frecuencia de etiquetas cromáticas por era y motivo; unidad: episodio unido 1:1; denominador: n de matches por temporada y motivo; no asumir cobertura completa.
 
 **Datos necesarios:** Datos de paletas externos con licencia y claves temporada/episodio; CSV original no contiene colores.
 
@@ -243,6 +263,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Ejercicio estadístico (distinto del modelo):** Análisis de sensibilidad de prevalencias con límites superior/inferior bajo escenarios declarados.
 
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Mapa de cobertura entre episodios emitidos y obras preparatorias no emitidas. O3 se activa cuando: Si la cobertura selectiva altera potencialmente prevalencias del corpus. **Hipótesis rival:** Sobrevivencia documental, archivo incompleto y versiones repetidas frente a obra distinta. **Baseline:** Corpus observado de 403 episodios; obras externas como tipos separados. **Validación del modelo:** Escenarios de pérdida documentada, sensibilidad a mecanismo de selección; cero filas imputadas sin evidencia. **Por qué el ejercicio estadístico:** Límites de identificación muestran qué afirmaciones del corpus siguen siendo válidas sin piezas externas. **Dónde:** Research / corpus audit y límites de inferencia. **Estimando:** cobertura y rangos plausibles de frecuencia por universo definido; unidad: episodio televisado vs obra física (granos distintos); denominador: n episodios observados; denominadores externos desconocidos.
+
 **Datos necesarios:** 403 episodios, fuentes NPR sobre tres versiones, AP sobre siete obras temporada 32.
 
 **Visualización que cuenta la evidencia:** Diagrama de conjuntos y capas de versiones con cobertura y huecos explícitos.
@@ -264,6 +286,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Modelo propuesto (M21):** Optimización discreta/simulación de asignación con restricciones declaradas. **Por qué:** Distingue un problema de diseño operativo de una predicción de ingresos ausente del dataset. **Dónde:** Gold motivos → Simulation hypothetical.
 
 **Ejercicio estadístico (distinto del modelo):** Monte Carlo de sensibilidad de tamaños y prueba de permutación de diferencia frente a asignación aleatoria.
+
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Balance y diversidad de salas bajo reglas explícitas de asignación hipotética. O3 se activa cuando: Si restricciones y pesos de curaduría producen salones desequilibrados. **Hipótesis rival:** Parámetros arbitrarios de visitantes y capacidad, ausentes del dataset. **Baseline:** Asignación aleatoria equilibrada o regla fija de motivos. **Validación del modelo:** Sensibilidad a demanda/capacidad hipotéticas, escenarios reproducibles y prohibición de ROI. **Por qué el ejercicio estadístico:** Una comparación por permutación frente al azar identifica mejora de balance, no de rentabilidad. **Dónde:** Simulation / diseño de museo hipotético, después de preparar clusters. **Estimando:** diversidad de motivos y desviación de tamaños de salas; unidad: episodio asignado a sala hipotética; denominador: n episodios asignados por sala; parámetros simulados declarados.
 
 **Datos necesarios:** 381 episodios anfitrión y escenarios explícitamente hipotéticos; costos no observados.
 
@@ -287,6 +311,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Ejercicio estadístico (distinto del modelo):** Test de permutación de performance OOS e intervalos por bootstrap de grupo.
 
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Diferencia entre score ingenuo y score de validación agrupada por temporada. O3 se activa cuando: Si la mejora desaparece tras retirar IDs y variables proxy del target. **Hipótesis rival:** Fuga de información y overfitting frente a señal genuina de motivos. **Baseline:** Mayoría/prevalencia y regresión logística sin ID, temporada futura ni variables derivadas del target. **Validación del modelo:** Splits por temporada, CV anidada solo si se autoriza, test intacto y pipeline sin fuga. **Por qué el ejercicio estadístico:** Test de permutación OOS y bootstrap por grupos contrastan si la aparente mejora supera al azar. **Dónde:** Research / evaluación de predictores; aún no entrenar. **Estimando:** score predictivo OOS, calibración y delta frente a baseline; unidad: episodio; denominador: n del holdout por temporada y clase; no incluir target derivado en features.
+
 **Datos necesarios:** 67 etiquetas originales, target definido SIN derivadas equivalentes, fechas si disponibles.
 
 **Visualización que cuenta la evidencia:** Comparación de scores en validación ingenua vs temporal y muestra de fugas.
@@ -308,6 +334,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Modelo propuesto (M14):** Cadena de Markov de estados de motivos agregados, HMM opcional si datos lo permiten. **Por qué:** Investiga dependencia temporal sin requerir LSTM con 31 temporadas. **Dónde:** Research secuencias a partir de orden verificable.
 
 **Ejercicio estadístico (distinto del modelo):** Permutación del orden dentro de temporada + intervalo para diferencias de transición vs prevalencia base.
+
+**Contrato metodológico adicional (sin ejecutar):** O2 se activa cuando: Transiciones de motivos que superan un baseline de independencia. O3 se activa cuando: Si la dependencia se concentra en temporadas o se pierde al permutar el orden. **Hipótesis rival:** Secuencia de producción vs emisión y grupos de episodios planificados. **Baseline:** Transiciones IID según prevalencia marginal por motivo/estado. **Validación del modelo:** Permutación intratemporada preservando composición, no transferir orden de emisión a grabación. **Por qué el ejercicio estadístico:** Comparar con permutaciones del orden detecta si hay secuencia más allá del repertorio total. **Dónde:** Research / secuencia de episodios con orden validado. **Estimando:** probabilidad de transición de estados de motivos; unidad: par de episodios consecutivos; denominador: n transiciones válidas por temporada, no 403 independientes.
 
 **Datos necesarios:** IDs de episodios y familias, calendario de emisión para validar orden.
 
