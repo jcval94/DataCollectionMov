@@ -4,7 +4,8 @@
 
 ## Lectura recomendada
 
-1. [DEEP_RESEARCH_MASTER.md](DEEP_RESEARCH_MASTER.md) — prompt coordinador: cinco investigaciones documentales que se complementan.
+1. [HISTORIA_BASE.md](HISTORIA_BASE.md) — hilo humano de la investigación, con hechos, incógnitas y riesgos de causalidad.
+2. [DEEP_RESEARCH_MASTER.md](DEEP_RESEARCH_MASTER.md) — prompt coordinador: cinco investigaciones documentales que se complementan.
 2. [prompts/01_BIOGRAFIA_EVENTOS.md](prompts/01_BIOGRAFIA_EVENTOS.md) — biografía y cronología médica sin inferencias indebidas.
 3. [prompts/02_HISTORIA_CONTEXTO.md](prompts/02_HISTORIA_CONTEXTO.md) — contexto cultural, televisivo e histórico.
 4. [prompts/03_CIENCIA_ANTECEDENTES.md](prompts/03_CIENCIA_ANTECEDENTES.md) — investigaciones, métodos y reproducciones existentes.
