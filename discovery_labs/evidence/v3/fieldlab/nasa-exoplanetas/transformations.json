@@ -1,0 +1,26 @@
+[
+  {
+    "step": "pl_rade_measurement_policy",
+    "affected_rows": 1548,
+    "action": "Retain all rows in Silver; exclude missing/limit/unknown flag only from analyses needing that measurement.",
+    "statistical_consequence": "Complete cases depend on detection method; no imputation or completeness correction."
+  },
+  {
+    "step": "pl_orbper_measurement_policy",
+    "affected_rows": 340,
+    "action": "Retain all rows in Silver; exclude missing/limit/unknown flag only from analyses needing that measurement.",
+    "statistical_consequence": "Complete cases depend on detection method; no imputation or completeness correction."
+  },
+  {
+    "step": "pl_eqt_measurement_policy",
+    "affected_rows": 4432,
+    "action": "Retain all rows in Silver; exclude missing/limit/unknown flag only from analyses needing that measurement.",
+    "statistical_consequence": "Complete cases depend on detection method; no imputation or completeness correction."
+  },
+  {
+    "step": "pl_bmasse_measurement_policy",
+    "affected_rows": 3226,
+    "action": "Retain all rows in Silver; exclude missing/limit/unknown flag only from analyses needing that measurement.",
+    "statistical_consequence": "Complete cases depend on detection method; no imputation or completeness correction."
+  }
+]

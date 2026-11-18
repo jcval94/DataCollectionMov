@@ -1,0 +1,274 @@
+[
+  {
+    "id": "D05-A",
+    "canonical_id": "nasa-exoplanetas.A",
+    "source_id": "nasa-exoplanetas",
+    "perspective": "A",
+    "question": "¿Qué instrumentos o métodos parecen detectar mayor variedad de planetas por campaña? Costos externos requeridos.",
+    "original_contract_path": "catalog/questions.json#nasa-exoplanetas.A",
+    "hypothesis": "Algunos métodos detectan más variedad por recurso de campaña.",
+    "alternative_hypothesis": "La diferencia se debe al objetivo de búsqueda y presupuesto.",
+    "required_variables": [
+      "disc_facility",
+      "discoverymethod",
+      "campaign_cost_NOT_AVAILABLE",
+      "survey_exposure_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Campaña con costo y exposición medidos",
+    "metric_and_denominator": "Diversidad por costo/exposición; no disponible",
+    "descriptive_method": "Especificar campaña antes de comparar conteos.",
+    "additional_method": "No ejecutar eficiencia sin exposición.",
+    "baseline": "Conteos descriptivos no son rendimiento por inversión.",
+    "visualizations": [],
+    "adversarial_test": "Igualar objetivos y costos; no sustituir costos por número de planetas.",
+    "limitations": [
+      "Archivo de detecciones confirmadas, no muestra aleatoria de planetas.",
+      "El corte por año de descubrimiento no congela históricamente los parámetros."
+    ],
+    "deliverable_type": "Diagnóstico de datos necesarios.",
+    "execution_status": "BLOCKED",
+    "blocking_reason": "No hay campañas, exposición observacional ni costos; variedad de detecciones no mide eficiencia económica.",
+    "how_to_unblock": "Obtener la información externa citada con licencia, cobertura y llaves compatibles; registrar una nueva versión del contrato.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D05-B",
+    "canonical_id": "nasa-exoplanetas.B",
+    "source_id": "nasa-exoplanetas",
+    "perspective": "B",
+    "question": "¿Qué descubrimientos provienen de programas con acceso o cobertura desigual a observatorios?",
+    "original_contract_path": "catalog/questions.json#nasa-exoplanetas.B",
+    "hypothesis": "El acceso desigual a observatorios modifica quién puede descubrir planetas.",
+    "alternative_hypothesis": "Las diferencias observadas responden a otras condiciones.",
+    "required_variables": [
+      "disc_facility",
+      "researcher_access_NOT_AVAILABLE",
+      "proposal_outcomes_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Programa y población de investigadores elegibles",
+    "metric_and_denominator": "Acceso concedido / solicitudes comparables; ausente",
+    "descriptive_method": "Diseñar registro de acceso, no inferirlo de un nombre de instalación.",
+    "additional_method": "Requerir denominador y diseño de selección.",
+    "baseline": "Archivo de instalaciones sin medida de acceso.",
+    "visualizations": [],
+    "adversarial_test": "Separar instalación de nacionalidad, recursos o acceso de investigadores.",
+    "limitations": [
+      "Archivo de detecciones confirmadas, no muestra aleatoria de planetas.",
+      "El corte por año de descubrimiento no congela históricamente los parámetros."
+    ],
+    "deliverable_type": "Contrato para fuente complementaria.",
+    "execution_status": "BLOCKED",
+    "blocking_reason": "La tabla no registra solicitudes, acceso, investigadores elegibles ni condiciones de participación.",
+    "how_to_unblock": "Obtener la información externa citada con licencia, cobertura y llaves compatibles; registrar una nueva versión del contrato.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D05-C",
+    "canonical_id": "nasa-exoplanetas.C",
+    "source_id": "nasa-exoplanetas",
+    "perspective": "C",
+    "question": "¿Qué familias de planetas aparecen según radio, periodo y temperatura?",
+    "original_contract_path": "catalog/questions.json#nasa-exoplanetas.C",
+    "hypothesis": "Se observan agrupamientos bajo una representación física definida.",
+    "alternative_hypothesis": "Las particiones dependen de selección, escalado y número de grupos.",
+    "required_variables": [
+      "pl_name",
+      "discoverymethod",
+      "pl_rade",
+      "pl_radelim",
+      "pl_orbper",
+      "pl_orbperlim",
+      "pl_eqt",
+      "pl_eqtlim"
+    ],
+    "unit_of_analysis": "Planeta con tres valores positivos sin límites",
+    "metric_and_denominator": "Grupos y tamaños / casos completos; cobertura / todas las filas",
+    "descriptive_method": "Perfil de completitud por método y dispersión logarítmica radio-periodo.",
+    "additional_method": "K-means k=3, n_init=20, semilla1729; log10 y StandardScaler; silhouette en muestra fija de hasta800.",
+    "baseline": "Mismos casos completos con k2/k4, RobustScaler o sin temperatura.",
+    "visualizations": [
+      "coverage",
+      "period-radius",
+      "cluster-sensitivity",
+      "discovery-timeline"
+    ],
+    "adversarial_test": "Mantener exactamente las filas al cambiar representación; contrastar ARI y mezcla por método.",
+    "limitations": [
+      "Archivo de detecciones confirmadas, no muestra aleatoria de planetas.",
+      "El corte por año de descubrimiento no congela históricamente los parámetros.",
+      "Temperatura de equilibrio modelada, no superficie; puede estar ligada matemáticamente a la órbita.",
+      "Grupos exploratorios sin etiquetas físicas externas ni validación de prevalencia."
+    ],
+    "deliverable_type": "Tablas de grupos, cobertura, sensibilidad y figuras reproducibles.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "code_entrypoint": "scripts/run_fieldlab.py --case nasa-exoplanetas"
+  },
+  {
+    "id": "D05-D1",
+    "canonical_id": "nasa-exoplanetas.D1",
+    "source_id": "nasa-exoplanetas",
+    "perspective": "D1",
+    "question": "¿Más de la mitad de planetas con radio medido en la tabla seleccionada tiene radio entre 0.8 y 1.25 radios terrestres? Este rango operativo no prueba habitabilidad.",
+    "original_contract_path": "catalog/questions.json#nasa-exoplanetas.D1",
+    "hypothesis": "Más de la mitad de radios medidos cae entre0.8 y1.25 R Tierra.",
+    "alternative_hypothesis": "La fracción es como máximo la mitad.",
+    "required_variables": [
+      "pl_rade",
+      "pl_radelim",
+      "pl_radeerr1",
+      "pl_radeerr2",
+      "pl_refname"
+    ],
+    "unit_of_analysis": "Planeta con radio medido; universo completo para cotas",
+    "metric_and_denominator": "Radios centrales dentro del rango / radios positivos con lim=0",
+    "descriptive_method": "Contar radios, ausentes y límites por separado.",
+    "additional_method": "Cotas extremas asignando no medidos fuera/dentro; auditar errores asimétricos publicados.",
+    "baseline": "50%; rangos0.9–1.1 y0.75–1.5 R Tierra.",
+    "visualizations": [
+      "earth-radius",
+      "radius-uncertainty"
+    ],
+    "adversarial_test": "Cambiar rango y denominador; separar radio puntual de error y no inferir habitabilidad.",
+    "limitations": [
+      "Archivo de detecciones confirmadas, no muestra aleatoria de planetas.",
+      "El corte por año de descubrimiento no congela históricamente los parámetros.",
+      "Los errores publicados no tienen necesariamente igual confianza; no se convierten en un intervalo poblacional.",
+      "Ningún radio prueba atmósfera, agua o vida."
+    ],
+    "deliverable_type": "Fracción con denominador, cotas y auditoría de incertidumbre.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": {
+      "status": "NOT_VERIFIED",
+      "rule": "Es una hipótesis para apostar, no una creencia popular demostrada."
+    },
+    "period_scope": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "code_entrypoint": "scripts/run_fieldlab.py --case nasa-exoplanetas"
+  },
+  {
+    "id": "D05-D2",
+    "canonical_id": "nasa-exoplanetas.D2",
+    "source_id": "nasa-exoplanetas",
+    "perspective": "D2",
+    "question": "¿La aparente abundancia de planetas grandes se mantiene tras corregir la completitud de detección con una fuente externa?",
+    "original_contract_path": "catalog/questions.json#nasa-exoplanetas.D2",
+    "hypothesis": "La abundancia de tamaños persiste al corregir completitud.",
+    "alternative_hypothesis": "La aparente abundancia cambia con la selección instrumental.",
+    "required_variables": [
+      "discoverymethod",
+      "pl_rade",
+      "survey_completeness_NOT_AVAILABLE",
+      "survey_non_detections_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Estrella objetivo y campaña con no detecciones",
+    "metric_and_denominator": "Ocurrencia corregida por completitud; no disponible",
+    "descriptive_method": "Mostrar por qué el catálogo de detecciones no basta.",
+    "additional_method": "Necesita función de selección, inyección-recuperación y universo observado.",
+    "baseline": "Distribución observada sin corrección; no es equivalente.",
+    "visualizations": [],
+    "adversarial_test": "No usar ponderación por método como sustituto de completitud.",
+    "limitations": [
+      "Archivo de detecciones confirmadas, no muestra aleatoria de planetas.",
+      "El corte por año de descubrimiento no congela históricamente los parámetros."
+    ],
+    "deliverable_type": "Diagnóstico de imposibilidad con la fuente actual.",
+    "execution_status": "BLOCKED",
+    "blocking_reason": "Faltan denominadores de búsqueda, no detecciones y funciones de completitud; no se corrige sólo con este catálogo.",
+    "how_to_unblock": "Obtener la información externa citada con licencia, cobertura y llaves compatibles; registrar una nueva versión del contrato.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": {
+      "status": "NOT_VERIFIED",
+      "rule": "Es una hipótesis para apostar, no una creencia popular demostrada."
+    },
+    "period_scope": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D05-E",
+    "canonical_id": "nasa-exoplanetas.E",
+    "source_id": "nasa-exoplanetas",
+    "perspective": "E",
+    "question": "¿El método de detección explica la forma aparente de los clusters?",
+    "original_contract_path": "catalog/questions.json#nasa-exoplanetas.E",
+    "hypothesis": "Los grupos están asociados con el método de descubrimiento.",
+    "alternative_hypothesis": "La asociación no excede una referencia de mezcla de etiquetas.",
+    "required_variables": [
+      "discoverymethod",
+      "pl_rade",
+      "pl_orbper",
+      "pl_eqt",
+      "pl_radelim",
+      "pl_orbperlim",
+      "pl_eqtlim"
+    ],
+    "unit_of_analysis": "Mismos casos completos queD05-C",
+    "metric_and_denominator": "NMI entre grupo y método; composición / tamaño de cada grupo",
+    "descriptive_method": "Tabla cruzada de grupos y método, con proporciones dentro de grupo.",
+    "additional_method": "50 barajados de método con tamaños fijos y semilla1729; comparación exploratoria.",
+    "baseline": "NMI de etiquetas de método barajadas en los mismos planetas.",
+    "visualizations": [
+      "coverage",
+      "period-radius",
+      "cluster-method",
+      "cluster-sensitivity"
+    ],
+    "adversarial_test": "Cambiar k, escala o temperatura y auditar cobertura por método; asociación no es explicación causal.",
+    "limitations": [
+      "Archivo de detecciones confirmadas, no muestra aleatoria de planetas.",
+      "El corte por año de descubrimiento no congela históricamente los parámetros.",
+      "No se identifica efecto causal del método ni clases físicas verdaderas.",
+      "Comparación exploratoria; no p-valor confirmatorio tras elegir representación."
+    ],
+    "deliverable_type": "Tabla de asociación, baseline y sensibilidad con figuras.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "code_entrypoint": "scripts/run_fieldlab.py --case nasa-exoplanetas"
+  }
+]

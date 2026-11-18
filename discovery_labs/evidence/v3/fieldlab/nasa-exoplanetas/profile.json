@@ -1,0 +1,635 @@
+{
+  "scope": "Measured downloaded query, not entire producer catalogue.",
+  "rows": 6090,
+  "columns": {
+    "pl_name": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 6090,
+      "unit": "category / reference",
+      "frequent_values": {
+        "11 Com b": 1,
+        "11 UMi b": 1,
+        "14 And b": 1,
+        "14 Her b": 1,
+        "16 Cyg B b": 1
+      }
+    },
+    "hostname": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 4547,
+      "unit": "category / reference",
+      "frequent_values": {
+        "KOI-351": 8,
+        "TRAPPIST-1": 7,
+        "HD 34445": 6,
+        "Kepler-80": 6,
+        "Kepler-20": 6
+      }
+    },
+    "default_flag": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1,
+      "unit": "category / reference",
+      "frequent_values": {
+        "1": 6090
+      },
+      "quantiles": {
+        "0.0": 1.0,
+        "0.25": 1.0,
+        "0.5": 1.0,
+        "0.75": 1.0,
+        "1.0": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "discoverymethod": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 11,
+      "unit": "category / reference",
+      "frequent_values": {
+        "Transit": 4507,
+        "Radial Velocity": 1159,
+        "Microlensing": 263,
+        "Imaging": 91,
+        "Transit Timing Variations": 27
+      }
+    },
+    "disc_year": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 33,
+      "unit": "year",
+      "frequent_values": {
+        "2016": 1504,
+        "2014": 872,
+        "2021": 564,
+        "2022": 367,
+        "2023": 323
+      },
+      "quantiles": {
+        "0.0": 1992.0,
+        "0.25": 2014.0,
+        "0.5": 2016.0,
+        "0.75": 2021.0,
+        "1.0": 2025.0
+      },
+      "outside_1_5_IQR_count": 109,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "disc_facility": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 73,
+      "unit": "category / reference",
+      "frequent_values": {
+        "Kepler": 2786,
+        "Transiting Exoplanet Survey Satellite (TESS)": 739,
+        "K2": 549,
+        "Multiple Observatories": 334,
+        "La Silla Observatory": 304
+      }
+    },
+    "pl_controv_flag": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "unit": "category / reference",
+      "frequent_values": {
+        "0": 6032,
+        "1": 58
+      },
+      "quantiles": {
+        "0.0": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "1.0": 1.0
+      },
+      "outside_1_5_IQR_count": 58,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_orbper": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 334,
+      "missing_pct": 5.48440065681445,
+      "cardinality": 5744,
+      "unit": "days",
+      "frequent_values": {
+        "1460.00000000000": 2,
+        "1919.00000000000": 2,
+        "273.10000000000": 2,
+        "330.00000000000": 2,
+        "1333.00000000000": 2
+      },
+      "quantiles": {
+        "0.0": 0.090706293,
+        "0.25": 4.3520925,
+        "0.5": 11.131518660000001,
+        "0.75": 39.6879463275,
+        "1.0": 8040000.0
+      },
+      "outside_1_5_IQR_count": 1002,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_orbpererr1": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 826,
+      "missing_pct": 13.563218390804598,
+      "cardinality": 2633,
+      "unit": "category / reference",
+      "frequent_values": {
+        "0.00001000000": 66,
+        "0.00000300000": 45,
+        "0.00000400000": 45,
+        "0.00000100000": 42,
+        "0.00000500000": 38
+      },
+      "quantiles": {
+        "0.0": 0.0,
+        "0.25": 1.2e-05,
+        "0.5": 8.3675e-05,
+        "0.75": 0.001457,
+        "1.0": 3650000.0
+      },
+      "outside_1_5_IQR_count": 1114,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_orbpererr2": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 826,
+      "missing_pct": 13.563218390804598,
+      "cardinality": 2629,
+      "unit": "category / reference",
+      "frequent_values": {
+        "-0.00001000000": 65,
+        "-0.00000300000": 46,
+        "-0.00000400000": 44,
+        "-0.00002000000": 42,
+        "-0.00000100000": 40
+      },
+      "quantiles": {
+        "0.0": -4000000.0,
+        "0.25": -0.001461,
+        "0.5": -8.4165e-05,
+        "0.75": -1.1995e-05,
+        "1.0": 0.0
+      },
+      "outside_1_5_IQR_count": 1117,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_orbperlim": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 334,
+      "missing_pct": 5.48440065681445,
+      "cardinality": 2,
+      "unit": "category / reference",
+      "frequent_values": {
+        "0": 5750,
+        "-1": 6
+      },
+      "quantiles": {
+        "0.0": -1.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "1.0": 0.0
+      },
+      "outside_1_5_IQR_count": 6,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_rade": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 1544,
+      "missing_pct": 25.353037766830873,
+      "cardinality": 2001,
+      "unit": "Earth radii",
+      "frequent_values": {
+        "2.00000000": 22,
+        "1.64000000": 21,
+        "1.33000000": 21,
+        "1.32000000": 19,
+        "1.77000000": 19
+      },
+      "quantiles": {
+        "0.0": 0.3098,
+        "0.25": 1.62,
+        "0.5": 2.43,
+        "0.75": 4.077500000000001,
+        "1.0": 87.20586985
+      },
+      "outside_1_5_IQR_count": 868,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_radeerr1": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 1923,
+      "missing_pct": 31.576354679802954,
+      "cardinality": 770,
+      "unit": "category / reference",
+      "frequent_values": {
+        "0.10000000": 121,
+        "0.12000000": 97,
+        "0.20000000": 90,
+        "0.08000000": 89,
+        "0.09000000": 82
+      },
+      "quantiles": {
+        "0.0": 0.0,
+        "0.25": 0.12,
+        "0.5": 0.26901554,
+        "0.75": 0.56,
+        "1.0": 68.91
+      },
+      "outside_1_5_IQR_count": 332,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_radeerr2": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 1923,
+      "missing_pct": 31.576354679802954,
+      "cardinality": 721,
+      "unit": "category / reference",
+      "frequent_values": {
+        "-0.10000000": 142,
+        "-0.08000000": 115,
+        "-0.11000000": 112,
+        "-0.12000000": 99,
+        "-0.14000000": 95
+      },
+      "quantiles": {
+        "0.0": -32.5061,
+        "0.25": -0.45,
+        "0.5": -0.21,
+        "0.75": -0.11,
+        "1.0": 0.0
+      },
+      "outside_1_5_IQR_count": 372,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_radelim": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 1544,
+      "missing_pct": 25.353037766830873,
+      "cardinality": 2,
+      "unit": "category / reference",
+      "frequent_values": {
+        "0": 4542,
+        "-1": 4
+      },
+      "quantiles": {
+        "0.0": -1.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "1.0": 0.0
+      },
+      "outside_1_5_IQR_count": 4,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_eqt": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 4430,
+      "missing_pct": 72.74220032840722,
+      "cardinality": 1212,
+      "unit": "kelvin; modeled equilibrium temperature, not surface temperature",
+      "frequent_values": {
+        "1500.00": 6,
+        "1000.00": 6,
+        "543.00": 5,
+        "347.00": 5,
+        "750.00": 4
+      },
+      "quantiles": {
+        "0.0": 50.0,
+        "0.25": 583.95,
+        "0.5": 911.5,
+        "0.75": 1384.25,
+        "1.0": 3921.0
+      },
+      "outside_1_5_IQR_count": 12,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_eqterr1": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 4583,
+      "missing_pct": 75.25451559934318,
+      "cardinality": 276,
+      "unit": "category / reference",
+      "frequent_values": {
+        "14.00": 57,
+        "16.00": 52,
+        "20.00": 49,
+        "10.00": 48,
+        "12.00": 44
+      },
+      "quantiles": {
+        "0.0": 0.0,
+        "0.25": 11.0,
+        "0.5": 19.41,
+        "0.75": 35.0,
+        "1.0": 400.0
+      },
+      "outside_1_5_IQR_count": 114,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_eqterr2": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 4583,
+      "missing_pct": 75.25451559934318,
+      "cardinality": 283,
+      "unit": "category / reference",
+      "frequent_values": {
+        "-14.00": 60,
+        "-16.00": 49,
+        "-20.00": 47,
+        "-11.00": 47,
+        "-10.00": 46
+      },
+      "quantiles": {
+        "0.0": -400.0,
+        "0.25": -34.0,
+        "0.5": -19.0,
+        "0.75": -11.0,
+        "1.0": -0.7
+      },
+      "outside_1_5_IQR_count": 120,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_eqtlim": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 4430,
+      "missing_pct": 72.74220032840722,
+      "cardinality": 2,
+      "unit": "category / reference",
+      "frequent_values": {
+        "0": 1658,
+        "1": 2
+      },
+      "quantiles": {
+        "0.0": 0.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "1.0": 1.0
+      },
+      "outside_1_5_IQR_count": 2,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_bmasse": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 3071,
+      "missing_pct": 50.42692939244663,
+      "cardinality": 2249,
+      "unit": "Earth masses; provenance retained",
+      "frequent_values": {
+        "8.00000000": 10,
+        "6674.39654700": 9,
+        "4.00000000": 9,
+        "9.20000000": 7,
+        "4.30000000": 6
+      },
+      "quantiles": {
+        "0.0": 0.02,
+        "0.25": 11.870000000000001,
+        "0.5": 171.0,
+        "0.75": 698.2595100000001,
+        "1.0": 9534.85221
+      },
+      "outside_1_5_IQR_count": 401,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_bmasseerr1": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 3263,
+      "missing_pct": 53.57963875205255,
+      "cardinality": 1170,
+      "unit": "category / reference",
+      "frequent_values": {
+        "1.30000000": 28,
+        "1.10000000": 21,
+        "25.42640000": 19,
+        "1.00000000": 19,
+        "1.50000000": 18
+      },
+      "quantiles": {
+        "0.0": 0.0,
+        "0.25": 2.1,
+        "0.5": 18.1162192,
+        "0.75": 74.68985884,
+        "1.0": 12652.74888267
+      },
+      "outside_1_5_IQR_count": 437,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_bmasseerr2": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 3263,
+      "missing_pct": 53.57963875205255,
+      "cardinality": 1107,
+      "unit": "category / reference",
+      "frequent_values": {
+        "-1.30000000": 26,
+        "-1.10000000": 21,
+        "-38.13960000": 21,
+        "-1.00000000": 21,
+        "-1.40000000": 21
+      },
+      "quantiles": {
+        "0.0": -6038.739733,
+        "0.25": -69.92224954,
+        "0.5": -16.84499,
+        "0.75": -2.00088151,
+        "1.0": 0.0
+      },
+      "outside_1_5_IQR_count": 395,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_bmasselim": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 3071,
+      "missing_pct": 50.42692939244663,
+      "cardinality": 3,
+      "unit": "category / reference",
+      "frequent_values": {
+        "0": 2864,
+        "1": 144,
+        "-1": 11
+      },
+      "quantiles": {
+        "0.0": -1.0,
+        "0.25": 0.0,
+        "0.5": 0.0,
+        "0.75": 0.0,
+        "1.0": 1.0
+      },
+      "outside_1_5_IQR_count": 155,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_bmassprov": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 3071,
+      "missing_pct": 50.42692939244663,
+      "cardinality": 3,
+      "unit": "category / reference",
+      "frequent_values": {
+        "Mass": 2060,
+        "Msini": 949,
+        "Msin(i)/sin(i)": 10
+      }
+    },
+    "sy_dist": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 127,
+      "missing_pct": 2.0853858784893267,
+      "cardinality": 4366,
+      "unit": "parsec",
+      "frequent_values": {
+        "848.25400000": 8,
+        "202.58500000": 6,
+        "38.96070000": 6,
+        "32.15850000": 6,
+        "369.45100000": 6
+      },
+      "quantiles": {
+        "0.0": 1.30119,
+        "0.25": 101.694,
+        "0.5": 384.542,
+        "0.75": 838.595,
+        "1.0": 8240.0
+      },
+      "outside_1_5_IQR_count": 309,
+      "outlier_policy": "Flag only; no automatic deletion."
+    },
+    "pl_refname": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1392,
+      "unit": "category / reference",
+      "frequent_values": {
+        "<a refstr=MORTON_ET_AL__2016 href=https://ui.adsabs.harvard.edu/abs/2016ApJ...822...86M/abstract target=ref>Morton et al. 2016</a>": 1257,
+        "<a refstr=ROWE_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014ApJ...784...45R/abstract target=ref> Rowe et al. 2014</a>": 667,
+        "<a refstr=VALIZADEGAN_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022ApJ...926..120V/abstract target=ref>Valizadegan et al. 2022</a>": 299,
+        "<a refstr=STASSUN_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017AJ....153..136S/abstract target=ref>Stassun et al. 2017</a>": 183,
+        "<a refstr=FENG_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022ApJS..262...21F/abstract target=ref>Feng et al. 2022</a>": 135
+      }
+    },
+    "st_refname": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 8,
+      "missing_pct": 0.13136288998357964,
+      "cardinality": 1377,
+      "unit": "category / reference",
+      "frequent_values": {
+        "<a refstr=MORTON_ET_AL__2016 href=https://ui.adsabs.harvard.edu/abs/2016ApJ...822...86M/abstract target=ref>Morton et al. 2016</a>": 1256,
+        "<a refstr=ROWE_ET_AL__2014 href=https://ui.adsabs.harvard.edu/abs/2014ApJ...784...45R/abstract target=ref> Rowe et al. 2014</a>": 667,
+        "<a refstr=Q1_Q17_DR25_KOI_TABLE href=https://exoplanetarchive.ipac.caltech.edu/docs/Kepler_KOI_docs.html target=ref>Q1-Q17 DR25 KOI Table</a>": 369,
+        "<a refstr=STASSUN_ET_AL__2017 href=https://ui.adsabs.harvard.edu/abs/2017AJ....153..136S/abstract target=ref>Stassun et al. 2017</a>": 183,
+        "<a refstr=FENG_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022ApJS..262...21F/abstract target=ref>Feng et al. 2022</a>": 135
+      }
+    },
+    "sy_refname": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 189,
+      "unit": "category / reference",
+      "frequent_values": {
+        "<a refstr=STASSUN_ET_AL__2019 href=https://ui.adsabs.harvard.edu/abs/2019AJ....158..138S/abstract target=ref>TICv8</a>": 5811,
+        "<a refstr=ZANG_ET_AL__2023 href=https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract target=ref>Zang et al. 2023</a>": 7,
+        "<a refstr=JUNG_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022AJ....164..262J/abstract target=ref>Jung et al. 2022</a>": 6,
+        "<a refstr=HWANG_ET_AL__2022 href=https://ui.adsabs.harvard.edu/abs/2022AJ....163...43H/abstract target=ref>Hwang et al. 2022</a>": 6,
+        "<a refstr=HAN_ET_AL__2025 href=https://ui.adsabs.harvard.edu/abs/2025A&A...702A.152H/abstract target=ref>Han et al. 2025</a>": 6
+      }
+    },
+    "rowupdate": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 1,
+      "missing_pct": 0.016420361247947456,
+      "cardinality": 438,
+      "unit": "category / reference",
+      "frequent_values": {
+        "2016-05-06": 1257,
+        "2014-05-14": 923,
+        "2021-12-05": 299,
+        "2018-09-04": 103,
+        "2023-06-12": 93
+      }
+    }
+  },
+  "column_count": 29,
+  "physical_compressed_bytes": 338532,
+  "physical_original_bytes": 3549129,
+  "raw_memory_bytes": 11922747,
+  "silver_memory_bytes": 6531422,
+  "exact_duplicates": 0,
+  "business_key": [
+    "pl_name"
+  ],
+  "business_key_repetitions": 0,
+  "selection": "All PS rows satisfying default_flag=1 and disc_year<=2025; ordered by pl_name; MAXREC=20000; independent server count reconciled.",
+  "representativeness": [
+    "No detecciones negativas, población observada total ni función de selección; no estimar frecuencia en el universo.",
+    "Parámetros actualizados al corte de adquisición, no un snapshot disponible al final de 2025.",
+    "default_flag selecciona un conjunto por referencia; no rellena faltantes con PSCompPars."
+  ],
+  "temporal": {
+    "discovery_year_min": 1992,
+    "discovery_year_max": 2025,
+    "rowupdate_min": "",
+    "rowupdate_max": "2026-11-12",
+    "frequency": "Irregular discoveries, updates at acquisition; no forecasting."
+  },
+  "coverage": {
+    "radius_measured": 4542,
+    "cluster_complete": 1468,
+    "mass_provenance_counts": {
+      "": 3071,
+      "Mass": 2060,
+      "Msini": 949,
+      "Msin(i)/sin(i)": 10
+    }
+  },
+  "target_and_leakage": "Unsupervised/descriptive only. No training target, no forecast, no prevalence of undiscovered planets. Temperature is model-derived and can correlate mechanically with orbit."
+}

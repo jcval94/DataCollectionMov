@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "case": "nasa-exoplanetas",
+  "browser": "Chromium / Playwright 1.56.0",
+  "route_viewport_checks": [
+    {
+      "question": "D05-C",
+      "variant": "projection",
+      "visible_figures": 4,
+      "overflow": false
+    },
+    {
+      "question": "D05-D1",
+      "variant": "projection",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D05-E",
+      "variant": "projection",
+      "visible_figures": 4,
+      "overflow": false
+    },
+    {
+      "question": "D05-C",
+      "variant": "mobile",
+      "visible_figures": 4,
+      "overflow": false
+    },
+    {
+      "question": "D05-D1",
+      "variant": "mobile",
+      "visible_figures": 2,
+      "overflow": false
+    },
+    {
+      "question": "D05-E",
+      "variant": "mobile",
+      "visible_figures": 4,
+      "overflow": false
+    }
+  ],
+  "screenshots": [
+    "test-output/fieldlab/nasa-exoplanetas/coverage-projection-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/period-radius-projection-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/cluster-method-projection-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/cluster-sensitivity-projection-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/earth-radius-projection-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/radius-uncertainty-projection-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/discovery-timeline-projection-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/coverage-mobile-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/period-radius-mobile-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/cluster-method-mobile-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/cluster-sensitivity-mobile-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/earth-radius-mobile-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/radius-uncertainty-mobile-browser.png",
+    "test-output/fieldlab/nasa-exoplanetas/discovery-timeline-mobile-browser.png"
+  ],
+  "js_errors": [],
+  "remote_requests": [],
+  "scope": "Browser checks only; visual inspection and human teaching review are separate."
+}

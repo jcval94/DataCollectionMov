@@ -11,6 +11,7 @@ import sys
 from v3.data import BASE, CASES, load, require
 
 BATCH1_CASES=('openflights-red-aerea',)
+FIELD_CASES=('nasa-exoplanetas',)
 
 
 def limits():
@@ -24,6 +25,8 @@ def limits():
 def dispatch(action, case=None, question=None):
     contracts = json.loads((BASE/'contracts/batch0.json').read_text())
     if (BASE/'contracts/batch1a.json').exists():contracts+=json.loads((BASE/'contracts/batch1a.json').read_text())
+    for source in FIELD_CASES:
+        contracts+=json.loads((BASE/'contracts'/f'{source}.json').read_text())
     if action == 'catalog':
         overrides = {c['id']:c for c in contracts}
         sources = json.loads((BASE/'catalog/sources.json').read_text())
@@ -31,9 +34,13 @@ def dispatch(action, case=None, question=None):
         return dict(sources=[dict(id=s['id'], name=s['name'], resource_type=s['resource_type']) for s in sources],
                     questions=[dict(id=q['id'], source=q['source_id'], question=q['question'],
                                     status=overrides[q['id']]['execution_status'] if q['id'] in overrides else q['status']) for q in questions])
-    require(case in (*CASES,*BATCH1_CASES), 'case obligatorio y permitido')
+    require(case in (*CASES,*BATCH1_CASES,*FIELD_CASES), 'case obligatorio y permitido')
     output = BASE/'output/v3'/case
     if action == 'schema':
+        if case in FIELD_CASES:
+            from run_fieldlab import REGISTRY
+            raw,m=REGISTRY[case].load()
+            return dict(manifest=m,columns=list(raw.columns),grain=m['selection'],dictionary=f'pilots/{case}/DICCIONARIO.md')
         if case in BATCH1_CASES:
             from batch1.openflights import load as load_batch1
             raw,m=load_batch1()
@@ -47,11 +54,13 @@ def dispatch(action, case=None, question=None):
         # Do not inherit API tokens or arbitrary runtime configuration.
         env = {key:os.environ[key] for key in ['PATH','HOME','LANG','LD_LIBRARY_PATH','MPLCONFIGDIR'] if key in os.environ}
         env.update(OPENBLAS_NUM_THREADS='1', OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTHONHASHSEED='0')
-        script='run_batch1.py' if case in BATCH1_CASES else 'run_research.py'
+        script='run_fieldlab.py' if case in FIELD_CASES else 'run_batch1.py' if case in BATCH1_CASES else 'run_research.py'
         result = subprocess.run([sys.executable, str(BASE/'scripts'/script), '--case', case],
             env=env, cwd=BASE.parent, capture_output=True, text=True, timeout=60, preexec_fn=limits)
         require(result.returncode==0, 'Ejecución falló: '+result.stderr[-1500:])
-    if case in BATCH1_CASES:
+    if case in FIELD_CASES:
+        from run_fieldlab import verify
+    elif case in BATCH1_CASES:
         from run_batch1 import verify
     else:
         from run_research import verify
@@ -71,7 +80,7 @@ def dispatch(action, case=None, question=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['catalog','schema','quality','run','results','storyboard','verify'])
-    parser.add_argument('--case', choices=(*CASES,*BATCH1_CASES))
+    parser.add_argument('--case', choices=(*CASES,*BATCH1_CASES,*FIELD_CASES))
     parser.add_argument('--question')
     args = parser.parse_args()
     try:
