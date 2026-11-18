@@ -1,0 +1,28 @@
+{
+  "checked_local_date": "2026-11-17",
+  "reviewer": "Codex assistant; actual rendered PNGs and Chromium screenshots",
+  "rendered_inspection": true,
+  "reviewed_png_sha256": [
+    "0b575a782f160b6e71f323d0fad7e70e6cbf0017591a24356ed652ba41fbd567",
+    "12d468ea0aec3aa88bb968d196daf6d681e87aa32ec89fc35b4ec0849ab44b6f",
+    "20d418fe379305d0a6f0f61aa1cfdb003d64a100def3f6b82b709fc34bd06f5c",
+    "283fe876697c25b14b2e071500e3f6c3fbf67c4b6d8381bb0dada29b3c7251b7",
+    "4237bcaa6c5d71fd62eed928edc981ddf7abc08b628657af1ff4180bc7c3f825",
+    "87f7519e05081442b45a4afcf7d52dc6a723fad097364643845f37dd6581e713",
+    "8ad4b681ec67993440fbb37a87d2fb8e68f80a9fc107589349762ee380be7620",
+    "8d5e4dbf532e6fdc99701ea3c873481090e128791c65d4bf83f6e5d91efe439c",
+    "b312eb5755ed2b9c0bca070b3af6564949d9081152537bdfe5eb4c043ddc7a0a",
+    "b463fb979cae1f71aaa972d9129af4dbb9c474cdb25e4a203ffbf3dbf42f5c8d",
+    "d1b637452cc901a20dfebd7b0d589c09ab0728c8325e91c09c7dff13594eff2b",
+    "df4466b9e9cb4191499b79c71c5b4005c9e0b2161d890d4ac89d6d30d98c4c8a",
+    "e2bc77b0cdf8acdb52bbd3f5de1b3bfd2f43aaf16b9b42de51f78e7c221b9a62",
+    "fad95465deadb1c05828f8793fd5c00da1ee5e9dbab89125996458dcb774f333"
+  ],
+  "observed": [
+    "Seven figures inspected in mobile/projection; ticks and horizontal colorbar corrected after observed rendering issues.",
+    "Paired-cohort forest plot inspected in Chromium mobile at full size; intervals, denominators and conditional-IID limitation visible.",
+    "No rat population inference, causal heat effect, neighborhood-resolution claim or chronological winter/summer transition."
+  ],
+  "independent_teacher_approval": false,
+  "human_rehearsal": false
+}

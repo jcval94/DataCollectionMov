@@ -1,0 +1,32 @@
+[
+  {
+    "step": "exact_duplicates",
+    "affected_rows": 10,
+    "action": "Flag in Silver; one copy only in Gold event denominators.",
+    "statistical_consequence": "Avoid double-counting the same received event."
+  },
+  {
+    "step": "not_initial",
+    "affected_rows": 79961,
+    "action": "Keep all in Silver and type profile; exclude follow-ups/treatment from main comparisons.",
+    "statistical_consequence": "Main denominator describes initial surveillance, not all interventions."
+  },
+  {
+    "step": "invalid_bbl",
+    "affected_rows": 5830,
+    "action": "Retain in event analyses; exclude only from property matching.",
+    "statistical_consequence": "Property and all-event universes differ; report both."
+  },
+  {
+    "step": "bbl_borough_disagreement",
+    "affected_rows": 202,
+    "action": "Flag; do not relocate or repair from cadastral prefix; exclude from property matching.",
+    "statistical_consequence": "Do not silently join a property to contradictory geography."
+  },
+  {
+    "step": "first_initial_per_property",
+    "affected_rows": 50531,
+    "action": "For property policy choose earliest Initial date, then lexicographic job ID; never choose by result.",
+    "statistical_consequence": "One observed initial event per property; not an estimate for uninspected properties."
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "rule": "calendar_window",
+    "passed": true,
+    "detail": "Closed calendar 2024, floating timestamps, no invented UTC offset."
+  },
+  {
+    "rule": "categories",
+    "passed": true,
+    "detail": "Unknown categories stop this version rather than disappear."
+  },
+  {
+    "rule": "administrative_id",
+    "passed": true,
+    "detail": "Administrative job ID present; not a unique event by itself."
+  },
+  {
+    "rule": "minimal_projection",
+    "passed": true,
+    "detail": "No addresses, precise coordinates or free text requested."
+  },
+  {
+    "rule": "business_conflicts",
+    "passed": true,
+    "detail": "Conflicting rows with same business key would stop instead of choosing an outcome."
+  },
+  {
+    "rule": "initial_outcomes",
+    "passed": true,
+    "detail": "All Initial results map explicitly to rat-sign binary outcome."
+  },
+  {
+    "rule": "record_conservation",
+    "passed": true,
+    "detail": "All original records retained in Silver, including exact duplicates and unresolved keys."
+  }
+]

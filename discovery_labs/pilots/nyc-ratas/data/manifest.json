@@ -1,0 +1,64 @@
+{
+  "source_id": "nyc-ratas",
+  "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+  "download_url": "https://data.cityofnewyork.us/resource/p937-wjvj.csv?%24select=job_id%2Cinspection_date%2Cinspection_type%2Cborough%2Cresult%2Cbbl&%24where=inspection_date+%3E%3D+%272024-01-01T00%3A00%3A00%27+AND+inspection_date+%3C+%272025-01-01T00%3A00%3A00%27&%24order=inspection_date%2Cjob_id%2Cinspection_type%2Cbbl%2Cresult%2Cborough&%24limit=500000",
+  "query_parameters": {
+    "$select": "job_id,inspection_date,inspection_type,borough,result,bbl",
+    "$where": "inspection_date >= '2024-01-01T00:00:00' AND inspection_date < '2025-01-01T00:00:00'",
+    "$order": "inspection_date,job_id,inspection_type,bbl,result,borough",
+    "$limit": "500000"
+  },
+  "acquired_at_utc": "2026-11-18T02:25:43.858628+00:00",
+  "version": "Bundled immutable bytes of retrospective 2024 window; producer can revise old records.",
+  "dataset": "p937-wjvj",
+  "snapshot_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+  "snapshot_bytes": 20791476,
+  "rows": 234596,
+  "columns": [
+    "job_id",
+    "inspection_date",
+    "inspection_type",
+    "borough",
+    "result",
+    "bbl"
+  ],
+  "server_count": 234596,
+  "server_count_receipt": "count.csv",
+  "files": {
+    "RIGHTS.md": {
+      "bytes": 1667,
+      "sha256": "2ca4543590699b0e924e7b2917e27bc5f7ad6d30dd71bf6318b9cd68b7ee0d2f"
+    },
+    "count.csv": {
+      "bytes": 13,
+      "sha256": "382b6c2ff366b06657170bde890edf0c74d80e8cab16c2115d32d9198fa8cac8"
+    },
+    "snapshot.csv.gz": {
+      "bytes": 2644798,
+      "sha256": "1885db145a3e57630b06f038bc9737c8fdb4c1f7c433fb67abf9913a86046725"
+    }
+  },
+  "attribution_short": "NYC DOHMH / NYC Open Data; p937-wjvj",
+  "period_label": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+  "selection": "All received 2024 inspection/intervention rows for six selected fields; stable ordered query; limit500000; independent count234596 proves no limit truncation.",
+  "license": "LicenseRef-NYC-Open-Data; public tabular facts, see RIGHTS.md",
+  "metadata_receipt": {
+    "url": "https://data.cityofnewyork.us/api/views/p937-wjvj.json",
+    "producer_rows_updated_at": 1794914554,
+    "scope": "Hash of normalized JSON metadata, not original HTTP response bytes; used to review schema and producer limitations.",
+    "normalized_metadata_sha256": "93a714566d4b188dce3e240461af3a987e918927bac2c4aa22cee0a675895ea7"
+  },
+  "documentation_receipts": [
+    {
+      "url": "https://www.nyc.gov/content/dam/nycgov/opendata/downloads/open-data-coordinators/NYC_OpenData_TechnicalStandardsManual.pdf",
+      "bytes": 480616,
+      "sha256": "efd0e814fdf603d1e6d9f2b2b718f5ca5f65768607068ad6a95a9dd983f25937",
+      "scope": "Complete official manual fetched, section2.3.2 read; website imagery not republished."
+    }
+  ],
+  "limitations": [
+    "Inspections are complaint-driven/proactive surveillance, not random sampling or a census of animals.",
+    "No neighborhood geometry, costs, temperatures, uninspected property denominator or total rat population.",
+    "A one-year retrospective window can be revised by the producer; no recurring seasonality or causal heat effect."
+  ]
+}

@@ -11,7 +11,7 @@ import sys
 from v3.data import BASE, CASES, load, require
 
 BATCH1_CASES=('openflights-red-aerea',)
-FIELD_CASES=('nasa-exoplanetas',)
+FIELD_CASES=('nasa-exoplanetas','nyc-ratas')
 
 
 def limits():
@@ -32,7 +32,7 @@ def dispatch(action, case=None, question=None):
         sources = json.loads((BASE/'catalog/sources.json').read_text())
         questions = json.loads((BASE/'catalog/questions.json').read_text())
         return dict(sources=[dict(id=s['id'], name=s['name'], resource_type=s['resource_type']) for s in sources],
-                    questions=[dict(id=q['id'], source=q['source_id'], question=q['question'],
+                    questions=[dict(id=q['id'], source=q['source_id'], question=overrides[q['id']]['question'] if q['id'] in overrides else q['question'],
                                     status=overrides[q['id']]['execution_status'] if q['id'] in overrides else q['status']) for q in questions])
     require(case in (*CASES,*BATCH1_CASES,*FIELD_CASES), 'case obligatorio y permitido')
     output = BASE/'output/v3'/case

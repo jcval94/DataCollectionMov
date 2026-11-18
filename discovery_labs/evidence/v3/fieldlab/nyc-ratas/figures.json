@@ -1,0 +1,287 @@
+[
+  {
+    "id": "inspection-scope",
+    "title": "Primero, distinguir qué se hizo",
+    "alt": "Barras de conteos por tipo de intervención muestran por qué el análisis principal se limita a inspecciones iniciales.",
+    "question_ids": [
+      "D04-B",
+      "D04-E"
+    ],
+    "table": "../gold/type_counts.csv",
+    "table_sha256": "ddc1dd9f33bd7cf38da49283c6d774a42038e153c78916a9acdd0bc074b14465",
+    "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+    "source_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+    "code_sha256": "d6ff5c2ee7d64ec677b6f23847686c629f984791ab411373ba8c1ebc4f89176c",
+    "period": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "inspection-scope-projection.png",
+        "svg": "inspection-scope-projection.svg",
+        "png_sha256": "d1b637452cc901a20dfebd7b0d589c09ab0728c8325e91c09c7dff13594eff2b",
+        "svg_sha256": "01e2c0eb9d3141e3793d3675d0280c9f9e7bbd5875398bb439c7bd7a46e21a7a",
+        "width": 1380,
+        "height": 960,
+        "denominator": "234,586 eventos tras retirar copias exactas de 234,596 filas. Azul: universo principal.",
+        "note": "Seguimiento, tratamiento, sellado y limpieza no son visitas iniciales intercambiables. La escala es lineal y conserva acciones pequeñas.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "inspection-scope-mobile.png",
+        "svg": "inspection-scope-mobile.svg",
+        "png_sha256": "20d418fe379305d0a6f0f61aa1cfdb003d64a100def3f6b82b709fc34bd06f5c",
+        "svg_sha256": "7c8b41d8ed3789f672556cecd8efd30d028a5d1d16f79f9064ab5eaa6ede8ced",
+        "width": 576,
+        "height": 1056,
+        "denominator": "234,586 eventos tras retirar copias exactas de 234,596 filas. Azul: universo principal.",
+        "note": "Seguimiento, tratamiento, sellado y limpieza no son visitas iniciales intercambiables. La escala es lineal y conserva acciones pequeñas.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "borough-positivity",
+    "title": "El mismo nombre, tres denominadores",
+    "alt": "Puntos por borough comparan positividad de eventos iniciales, eventos con llave coherente y primeras visitas por predio; etiquetas muestran numerador y denominador de predios.",
+    "question_ids": [
+      "D04-B",
+      "D04-E"
+    ],
+    "table": "../gold/policy_rates.csv",
+    "table_sha256": "e9d4f12e60d767ef4481359ca38e04cbece7d146311811312ad5198574ff39c0",
+    "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+    "source_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+    "code_sha256": "d6ff5c2ee7d64ec677b6f23847686c629f984791ab411373ba8c1ebc4f89176c",
+    "period": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "borough-positivity-projection.png",
+        "svg": "borough-positivity-projection.svg",
+        "png_sha256": "fad95465deadb1c05828f8793fd5c00da1ee5e9dbab89125996458dcb774f333",
+        "svg_sha256": "be45a0bb4250e21c86d04f005386099511fbb5b859c0fda03c0b08a76986cc3e",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Iniciales: 154,631 eventos; política por predio: 99,462 llaves coherentes, primera visita observada.",
+        "note": "La política intermedia separa el filtro de llaves de la deduplicación por predio. No se estima prevalencia fuera de lo inspeccionado.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "borough-positivity-mobile.png",
+        "svg": "borough-positivity-mobile.svg",
+        "png_sha256": "87f7519e05081442b45a4afcf7d52dc6a723fad097364643845f37dd6581e713",
+        "svg_sha256": "5a72053953b9ccf7beade232db87cd4a6adaab3bc6053ff1e32d07a08fc5a61f",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Iniciales: 154,631 eventos; política por predio: 99,462 llaves coherentes, primera visita observada.",
+        "note": "La política intermedia separa el filtro de llaves de la deduplicación por predio. No se estima prevalencia fuera de lo inspeccionado.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "month-heatmap",
+    "title": "Un año de vigilancia, mes a mes",
+    "alt": "Heatmap de positividad de inspecciones iniciales para cinco boroughs y doce meses con escala lineal común declarada y denominadores en tabla.",
+    "question_ids": [
+      "D04-C",
+      "D04-D1"
+    ],
+    "table": "../gold/monthly.csv",
+    "table_sha256": "3af8de861516b9944bf05f38fa789741c5479f6ff60fe04b6b6cfb7d3124842c",
+    "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+    "source_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+    "code_sha256": "d6ff5c2ee7d64ec677b6f23847686c629f984791ab411373ba8c1ebc4f89176c",
+    "period": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "month-heatmap-projection.png",
+        "svg": "month-heatmap-projection.svg",
+        "png_sha256": "4237bcaa6c5d71fd62eed928edc981ddf7abc08b628657af1ff4180bc7c3f825",
+        "svg_sha256": "ae5da20062f0471de5b4247e086c8c148cd8d7ebe9bf91417938dbe4df1802de",
+        "width": 1380,
+        "height": 960,
+        "denominator": "60 celdas borough/mes; cada tasa usa positivos / inspecciones iniciales del mismo borough/mes. Total 154,631.",
+        "note": "Escala común 0–40%; cada celda conserva su denominador en CSV. Un solo año no demuestra un ciclo recurrente ni abundancia de animales.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "month-heatmap-mobile.png",
+        "svg": "month-heatmap-mobile.svg",
+        "png_sha256": "8d5e4dbf532e6fdc99701ea3c873481090e128791c65d4bf83f6e5d91efe439c",
+        "svg_sha256": "9ce2bcae9d937fe512d0fabc0ea33e880dcab55eba9d58d36aea1770ce5ad428",
+        "width": 576,
+        "height": 1056,
+        "denominator": "60 celdas borough/mes; cada tasa usa positivos / inspecciones iniciales del mismo borough/mes. Total 154,631.",
+        "note": "Escala común 0–40%; cada celda conserva su denominador en CSV. Un solo año no demuestra un ciclo recurrente ni abundancia de animales.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "season-comparison",
+    "title": "La diferencia dentro de cada distrito",
+    "alt": "Diagrama de diferencias verano menos invierno dentro de cada borough en puntos porcentuales; línea de referencia en cero y sin interpretación causal.",
+    "question_ids": [
+      "D04-D1"
+    ],
+    "table": "../gold/season_rates.csv",
+    "table_sha256": "b9b5ee633811027cdc1e835a82c3bef9c64b98b627d74c312d922a1bc1faa769",
+    "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+    "source_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+    "code_sha256": "d6ff5c2ee7d64ec677b6f23847686c629f984791ab411373ba8c1ebc4f89176c",
+    "period": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "season-comparison-projection.png",
+        "svg": "season-comparison-projection.svg",
+        "png_sha256": "df4466b9e9cb4191499b79c71c5b4005c9e0b2161d890d4ac89d6d30d98c4c8a",
+        "svg_sha256": "36ba6758cec2bb5797490d7e68ccb9165418beba60ea04dbc43eeed7ef8f1de3",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Visitas iniciales de 2024. Verano: jun/jul/ago; invierno: ene/feb/dic. Diferencia de tasas, no conteo de animales.",
+        "note": "Cada estación conserva su denominador. Invierno no es una secuencia cronológica única; se contrasta composición y cohorte pareada en tablas.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "season-comparison-mobile.png",
+        "svg": "season-comparison-mobile.svg",
+        "png_sha256": "0b575a782f160b6e71f323d0fad7e70e6cbf0017591a24356ed652ba41fbd567",
+        "svg_sha256": "e60aa5d38968337d64612f74e1be3b7371aa2ea425ba2eb619ce18e9ccc22acc",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Visitas iniciales de 2024. Verano: jun/jul/ago; invierno: ene/feb/dic. Diferencia de tasas, no conteo de animales.",
+        "note": "Cada estación conserva su denominador. Invierno no es una secuencia cronológica única; se contrasta composición y cohorte pareada en tablas.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "paired-seasons",
+    "title": "Comparar los mismos predios cambia la pregunta",
+    "alt": "Gráfico de diferencias e intervalos compara eventos iniciales con los mismos predios, 500 y 2000 remuestreos, y una cohorte sin diciembre; denominadores y línea cero visibles.",
+    "question_ids": [
+      "D04-D1"
+    ],
+    "table": "../gold/paired_sensitivity.csv",
+    "table_sha256": "a25e8ca7dc3e3f2e8543244eede1d30ee19138a795f44f2183c47e67d020c9d8",
+    "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+    "source_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+    "code_sha256": "d6ff5c2ee7d64ec677b6f23847686c629f984791ab411373ba8c1ebc4f89176c",
+    "period": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "paired-seasons-projection.png",
+        "svg": "paired-seasons-projection.svg",
+        "png_sha256": "283fe876697c25b14b2e071500e3f6c3fbf67c4b6d8381bb0dada29b3c7251b7",
+        "svg_sha256": "f28aaa6f7b371d7214572c64b060ee751e9b46b25baaf1b94ad96b134757279e",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Iniciales: visitas invierno/verano. Pareados: primera visita por estación en 18,007 predios; sin diciembre cambia la cohorte.",
+        "note": "Intervalos bootstrap 95% condicionales, supuesto IID. 500/2000 usan la misma cohorte; sin diciembre usa enero/febrero. Iniciales: sólo punto descriptivo, sin intervalo. No causalidad.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "paired-seasons-mobile.png",
+        "svg": "paired-seasons-mobile.svg",
+        "png_sha256": "b312eb5755ed2b9c0bca070b3af6564949d9081152537bdfe5eb4c043ddc7a0a",
+        "svg_sha256": "1e7d9106e12db02d6c351c5ec00df755e8fc6b951b3a1eb4ff255c5660560d20",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Iniciales: visitas invierno/verano. Pareados: primera visita por estación en 18,007 predios; sin diciembre cambia la cohorte.",
+        "note": "Intervalos bootstrap 95% condicionales, supuesto IID. 500/2000 usan la misma cohorte; sin diciembre usa enero/febrero. Iniciales: sólo punto descriptivo, sin intervalo. No causalidad.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "ranking-denominator",
+    "title": "Un ranking depende de lo que cuentas",
+    "alt": "Comparación de posiciones por conteo de inspecciones iniciales positivas y por tasa de positividad de la primera inspección por predio.",
+    "question_ids": [
+      "D04-B",
+      "D04-E"
+    ],
+    "table": "../gold/borough_summary.csv",
+    "table_sha256": "c8f9bc8642a64b86fae16b9883bf3911bee8ecd8c99e2362f599fdfb20e62a01",
+    "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+    "source_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+    "code_sha256": "d6ff5c2ee7d64ec677b6f23847686c629f984791ab411373ba8c1ebc4f89176c",
+    "period": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "ranking-denominator-projection.png",
+        "svg": "ranking-denominator-projection.svg",
+        "png_sha256": "e2bc77b0cdf8acdb52bbd3f5de1b3bfd2f43aaf16b9b42de51f78e7c221b9a62",
+        "svg_sha256": "2486f51152d04db4b781c326287c20af10d98637fef80f6aaf8178abac8e6e2d",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Cinco boroughs; conteo de positivos sobre 154,631 eventos frente a fracción en 99,462 primeros predios.",
+        "note": "Las métricas y universos cambian explícitamente; la tabla conserva números y políticas intermedias. Ranking de vigilancia, no población de ratas.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "ranking-denominator-mobile.png",
+        "svg": "ranking-denominator-mobile.svg",
+        "png_sha256": "b463fb979cae1f71aaa972d9129af4dbb9c474cdb25e4a203ffbf3dbf42f5c8d",
+        "svg_sha256": "94237c813d0ed596f5161dfe1925d673e770532b7b21e981e256aa4703e183c3",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Cinco boroughs; conteo de positivos sobre 154,631 eventos frente a fracción en 99,462 primeros predios.",
+        "note": "Las métricas y universos cambian explícitamente; la tabla conserva números y políticas intermedias. Ranking de vigilancia, no población de ratas.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "monthly-volume",
+    "title": "Más hallazgos también pueden ser más visitas",
+    "alt": "Dos líneas con una sola escala comparan volumen mensual de inspecciones iniciales y positivas, conservando el denominador visible.",
+    "question_ids": [
+      "D04-C",
+      "D04-E"
+    ],
+    "table": "../gold/monthly.csv",
+    "table_sha256": "3af8de861516b9944bf05f38fa789741c5479f6ff60fe04b6b6cfb7d3124842c",
+    "source_url": "https://data.cityofnewyork.us/Health/Rodent-Inspection/p937-wjvj/about_data",
+    "source_sha256": "3fc482fefe5f137956dc70e15d4f1aee63666150a92f2bd78aea4bed75146e0d",
+    "code_sha256": "d6ff5c2ee7d64ec677b6f23847686c629f984791ab411373ba8c1ebc4f89176c",
+    "period": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "monthly-volume-projection.png",
+        "svg": "monthly-volume-projection.svg",
+        "png_sha256": "12d468ea0aec3aa88bb968d196daf6d681e87aa32ec89fc35b4ec0849ab44b6f",
+        "svg_sha256": "f461a2ce4846be68b6150835991f013ed73dd8ab98df3291a6fcbdf68ffc56ff",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Cada punto suma los cinco boroughs. Total anual: 35,355 positivas / 154,631 iniciales únicas.",
+        "note": "Se muestran conteos con el mismo eje; las tasas por mes están en el heatmap y CSV. No se imputa actividad entre meses ni se ajusta por clima.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "monthly-volume-mobile.png",
+        "svg": "monthly-volume-mobile.svg",
+        "png_sha256": "8ad4b681ec67993440fbb37a87d2fb8e68f80a9fc107589349762ee380be7620",
+        "svg_sha256": "eb2c1a45d9b6bb3430e6779e49eb88bfbfd1e45ac92924a6cae92bde3dc595c5",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Cada punto suma los cinco boroughs. Total anual: 35,355 positivas / 154,631 iniciales únicas.",
+        "note": "Se muestran conteos con el mismo eje; las tasas por mes están en el heatmap y CSV. No se imputa actividad entre meses ni se ajusta por clima.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  }
+]

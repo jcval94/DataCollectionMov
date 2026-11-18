@@ -40,6 +40,11 @@ jobs:
           OPENBLAS_NUM_THREADS: '1'
           OMP_NUM_THREADS: '1'
         run: python discovery_labs/scripts/run_fieldlab.py --case nasa-exoplanetas
+      - name: Lote 1C · NYC inspecciones
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: python discovery_labs/scripts/run_fieldlab.py --case nyc-ratas
       - run: python discovery_labs/scripts/build_catalog.py
       - run: python discovery_labs/scripts/finalize_evidence.py
       - run: python discovery_labs/scripts/build_delivery.py
@@ -52,6 +57,7 @@ jobs:
       - run: python discovery_labs/tests/research_browser.py
       - run: python discovery_labs/tests/batch1_browser.py
       - run: python discovery_labs/tests/fieldlab_browser.py --case nasa-exoplanetas
+      - run: python discovery_labs/tests/fieldlab_browser.py --case nyc-ratas
       - name: Evidencia de navegador
         if: always()
         uses: actions/upload-artifact@v4

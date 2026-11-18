@@ -30,5 +30,5 @@ def replay(case,download=False):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--case',choices=['nasa-exoplanetas'],required=True);p.add_argument('--download',action='store_true')
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--case',choices=['nasa-exoplanetas','nyc-ratas'],required=True);p.add_argument('--download',action='store_true')
     args=p.parse_args();print(json.dumps(replay(args.case,args.download)))

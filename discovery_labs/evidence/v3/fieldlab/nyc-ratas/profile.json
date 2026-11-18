@@ -1,0 +1,130 @@
+{
+  "scope": "Measured downloaded query, not entire producer catalogue.",
+  "rows": 234596,
+  "columns": {
+    "job_id": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 168260,
+      "unit": "category / reference",
+      "frequent_values": {
+        "PC8156087": 25,
+        "PC8138191": 24,
+        "PC7938762": 24,
+        "PC8228345": 23,
+        "PC8033817": 23
+      }
+    },
+    "inspection_date": {
+      "raw_type": "string",
+      "silver_type": "datetime64[ns]",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 214301,
+      "unit": "NYC floating local calendar; no offset supplied",
+      "frequent_values": {
+        "2024-03-08T11:13:00.000": 8,
+        "2024-04-04T10:40:00.000": 7,
+        "2024-06-04T11:45:00.000": 7,
+        "2024-01-24T11:45:00.000": 7,
+        "2024-01-08T11:35:00.000": 7
+      }
+    },
+    "inspection_type": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 5,
+      "unit": "category / reference",
+      "frequent_values": {
+        "Initial": 154635,
+        "Compliance": 44251,
+        "Treatments": 32837,
+        "Stoppage": 2815,
+        "Clean Ups": 58
+      }
+    },
+    "borough": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 5,
+      "unit": "category / reference",
+      "frequent_values": {
+        "Brooklyn": 92669,
+        "Manhattan": 76181,
+        "Bronx": 47589,
+        "Queens": 16454,
+        "Staten Island": 1703
+      }
+    },
+    "result": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 8,
+      "unit": "category / reference",
+      "frequent_values": {
+        "Passed": 125831,
+        "Failed for Rat Activity": 46052,
+        "Bait applied": 30106,
+        "Failed for Rat Activity and Other Reason": 14466,
+        "Failed for Other Reason": 12537
+      }
+    },
+    "bbl": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 5824,
+      "missing_pct": 2.4825657726474453,
+      "cardinality": 101831,
+      "unit": "10-digit public tax-lot code, kept as string",
+      "frequent_values": {
+        "5010080061": 59,
+        "2039387501": 35,
+        "2037160032": 32,
+        "1017710005": 31,
+        "1018440025": 31
+      }
+    }
+  },
+  "column_count": 6,
+  "physical_compressed_bytes": 2644798,
+  "physical_original_bytes": 20791476,
+  "raw_memory_bytes": 85551682,
+  "silver_memory_bytes": 87773453,
+  "exact_duplicates": 10,
+  "business_key": [
+    "job_id",
+    "inspection_date",
+    "inspection_type",
+    "bbl"
+  ],
+  "business_key_repetitions": 10,
+  "selection": "All received 2024 inspection/intervention rows for six selected fields; stable ordered query; limit500000; independent count234596 proves no limit truncation.",
+  "representativeness": [
+    "Inspections are complaint-driven/proactive surveillance, not random sampling or a census of animals.",
+    "No neighborhood geometry, costs, temperatures, uninspected property denominator or total rat population.",
+    "A one-year retrospective window can be revised by the producer; no recurring seasonality or causal heat effect."
+  ],
+  "temporal": {
+    "min": "2024-01-02T08:00:22",
+    "max": "2024-12-31T13:50:35",
+    "frequency": "Irregular events; all 12 months present.",
+    "timezone": "Floating producer timestamps; use calendar month, do not claim timezone conversion."
+  },
+  "coverage": {
+    "duplicate_exact": 10,
+    "invalid_bbl": 5830,
+    "bbl_borough_disagreement": 202,
+    "initial_events": 154631,
+    "property_eligible_events": 149993,
+    "unique_property_keys": 99462
+  },
+  "target_and_leakage": "No forecasting or supervised target. Follow-ups selected by prior outcomes are excluded from main surveillance denominator; no causal intervention effect or rat-population estimate."
+}

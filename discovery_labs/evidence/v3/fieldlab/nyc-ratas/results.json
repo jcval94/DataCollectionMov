@@ -1,0 +1,490 @@
+{
+  "D04-B": {
+    "rows": 234596,
+    "deduplicated_events": 234586,
+    "initial_events": 154631,
+    "property_eligible_events": 149993,
+    "first_properties": 99462,
+    "property_excluded_initial_events": 4638,
+    "initial_positive": 35355,
+    "first_property_positive": 19962,
+    "geographic_scope": "Boroughs only, not neighborhoods; operational narrowing of catalogue question.",
+    "by_borough": [
+      {
+        "borough": "Bronx",
+        "first_positive": 4217,
+        "first_properties": 16650,
+        "first_fraction": 0.25327327327327326
+      },
+      {
+        "borough": "Brooklyn",
+        "first_positive": 8855,
+        "first_properties": 42528,
+        "first_fraction": 0.2082157637321294
+      },
+      {
+        "borough": "Manhattan",
+        "first_positive": 4676,
+        "first_properties": 30737,
+        "first_fraction": 0.15212935549988613
+      },
+      {
+        "borough": "Queens",
+        "first_positive": 2122,
+        "first_properties": 8486,
+        "first_fraction": 0.2500589205750648
+      },
+      {
+        "borough": "Staten Island",
+        "first_positive": 92,
+        "first_properties": 1061,
+        "first_fraction": 0.08671065032987747
+      }
+    ],
+    "interpretation": "Positivity among first observed Initial inspections of key-consistent properties in 2024; not prevalence in all properties."
+  },
+  "D04-C": {
+    "rows": 234596,
+    "deduplicated_events": 234586,
+    "initial_events": 154631,
+    "property_eligible_events": 149993,
+    "first_properties": 99462,
+    "property_excluded_initial_events": 4638,
+    "initial_positive": 35355,
+    "first_property_positive": 19962,
+    "months": 12,
+    "borough_month_cells": 60,
+    "monthly_total": [
+      {
+        "month": 1,
+        "positive": 2776,
+        "denominator": 10377
+      },
+      {
+        "month": 2,
+        "positive": 3162,
+        "denominator": 11522
+      },
+      {
+        "month": 3,
+        "positive": 3171,
+        "denominator": 14879
+      },
+      {
+        "month": 4,
+        "positive": 3595,
+        "denominator": 15050
+      },
+      {
+        "month": 5,
+        "positive": 3701,
+        "denominator": 16278
+      },
+      {
+        "month": 6,
+        "positive": 3057,
+        "denominator": 14245
+      },
+      {
+        "month": 7,
+        "positive": 2968,
+        "denominator": 14457
+      },
+      {
+        "month": 8,
+        "positive": 2771,
+        "denominator": 13334
+      },
+      {
+        "month": 9,
+        "positive": 3194,
+        "denominator": 14249
+      },
+      {
+        "month": 10,
+        "positive": 3386,
+        "denominator": 14346
+      },
+      {
+        "month": 11,
+        "positive": 2085,
+        "denominator": 8350
+      },
+      {
+        "month": 12,
+        "positive": 1489,
+        "denominator": 7544
+      }
+    ],
+    "interpretation": "One observed calendar year. Temporal/geographic surveillance pattern, not recurring seasonality or rat population."
+  },
+  "D04-D1": {
+    "rows": 234596,
+    "deduplicated_events": 234586,
+    "initial_events": 154631,
+    "property_eligible_events": 149993,
+    "first_properties": 99462,
+    "property_excluded_initial_events": 4638,
+    "initial_positive": 35355,
+    "first_property_positive": 19962,
+    "year": 2024,
+    "winter_months": [
+      1,
+      2,
+      12
+    ],
+    "summer_months": [
+      6,
+      7,
+      8
+    ],
+    "borough_differences": {
+      "Bronx": -0.02360380707033566,
+      "Brooklyn": -0.05092679065048408,
+      "Manhattan": -0.026921382096504187,
+      "Queens": -0.04663846547436312,
+      "Staten Island": -0.04686754054533303
+    },
+    "weighting_sensitivity": [
+      {
+        "policy": "Observed event mix",
+        "season": "Winter",
+        "fraction": 0.2522501103827735,
+        "events": 29443
+      },
+      {
+        "policy": "Equal borough weights",
+        "season": "Winter",
+        "fraction": 0.24567729850743802,
+        "events": 29443
+      },
+      {
+        "policy": "Observed event mix",
+        "season": "Summer",
+        "fraction": 0.2092492149586069,
+        "events": 42036
+      },
+      {
+        "policy": "Equal borough weights",
+        "season": "Summer",
+        "fraction": 0.206685701340034,
+        "events": 42036
+      }
+    ],
+    "paired": {
+      "properties": 18007,
+      "winter_positive": 3951,
+      "summer_positive": 3833,
+      "winter_fraction": 0.21941467207197202,
+      "summer_fraction": 0.2128616649080913,
+      "difference": -0.006553007163880713,
+      "bootstrap_percentile95": [
+        -0.013217082245793302,
+        0.00011662131393346528
+      ],
+      "repetitions": 500,
+      "seed": 1729,
+      "assumption": "Resampling the selected paired properties as IID units; spatial dependence and nonrandom inspection selection are not corrected. Conditional uncertainty only, not population coverage."
+    },
+    "paired_bootstrap2000": {
+      "properties": 18007,
+      "winter_positive": 3951,
+      "summer_positive": 3833,
+      "winter_fraction": 0.21941467207197202,
+      "summer_fraction": 0.2128616649080913,
+      "difference": -0.006553007163880713,
+      "bootstrap_percentile95": [
+        -0.012829732881657134,
+        0.0
+      ],
+      "repetitions": 2000,
+      "seed": 1729,
+      "assumption": "Resampling the selected paired properties as IID units; spatial dependence and nonrandom inspection selection are not corrected. Conditional uncertainty only, not population coverage."
+    },
+    "paired_winter_jan_feb_only": {
+      "properties": 12687,
+      "winter_positive": 3138,
+      "summer_positive": 2979,
+      "winter_fraction": 0.2473397966422322,
+      "summer_fraction": 0.23480728304563728,
+      "difference": -0.01253251359659494,
+      "bootstrap_percentile95": [
+        -0.020775202963663593,
+        -0.0040198628517379995
+      ],
+      "repetitions": 500,
+      "seed": 1729,
+      "assumption": "Resampling the selected paired properties as IID units; spatial dependence and nonrandom inspection selection are not corrected. Conditional uncertainty only, not population coverage."
+    },
+    "paired_cross": [
+      {
+        "winter": 0,
+        "summer": 0,
+        "properties": 12301
+      },
+      {
+        "winter": 0,
+        "summer": 1,
+        "properties": 1755
+      },
+      {
+        "winter": 1,
+        "summer": 0,
+        "properties": 1873
+      },
+      {
+        "winter": 1,
+        "summer": 1,
+        "properties": 2078
+      }
+    ],
+    "paired_first_winter_december": 5320,
+    "interpretation": "Descriptive seasonal contrast in 2024, not causal heat effect. Jan/Feb/Dec winter is not a chronological transition; paired cohort is selected."
+  },
+  "D04-E": {
+    "rows": 234596,
+    "deduplicated_events": 234586,
+    "initial_events": 154631,
+    "property_eligible_events": 149993,
+    "first_properties": 99462,
+    "property_excluded_initial_events": 4638,
+    "initial_positive": 35355,
+    "first_property_positive": 19962,
+    "rank_count_vs_property_fraction_spearman": 0.19999999999999998,
+    "rankings": [
+      {
+        "borough": "Bronx",
+        "initial_positive": 8541,
+        "initial_events": 29633,
+        "initial_fraction": 0.2882259642965613,
+        "first_positive": 4217,
+        "first_properties": 16650,
+        "first_fraction": 0.25327327327327326,
+        "rank_positive_count": 3,
+        "rank_first_property_fraction": 1
+      },
+      {
+        "borough": "Brooklyn",
+        "initial_positive": 13887,
+        "initial_events": 61741,
+        "initial_fraction": 0.2249234706272979,
+        "first_positive": 8855,
+        "first_properties": 42528,
+        "first_fraction": 0.2082157637321294,
+        "rank_positive_count": 1,
+        "rank_first_property_fraction": 3
+      },
+      {
+        "borough": "Manhattan",
+        "initial_positive": 10172,
+        "initial_events": 52337,
+        "initial_fraction": 0.19435580946557884,
+        "first_positive": 4676,
+        "first_properties": 30737,
+        "first_fraction": 0.15212935549988613,
+        "rank_positive_count": 2,
+        "rank_first_property_fraction": 4
+      },
+      {
+        "borough": "Queens",
+        "initial_positive": 2643,
+        "initial_events": 9719,
+        "initial_fraction": 0.2719415577734335,
+        "first_positive": 2122,
+        "first_properties": 8486,
+        "first_fraction": 0.2500589205750648,
+        "rank_positive_count": 4,
+        "rank_first_property_fraction": 2
+      },
+      {
+        "borough": "Staten Island",
+        "initial_positive": 112,
+        "initial_events": 1201,
+        "initial_fraction": 0.093255620316403,
+        "first_positive": 92,
+        "first_properties": 1061,
+        "first_fraction": 0.08671065032987747,
+        "rank_positive_count": 5,
+        "rank_first_property_fraction": 5
+      }
+    ],
+    "policies": [
+      {
+        "policy": "All Initial events",
+        "borough": "Bronx",
+        "positive": 8541,
+        "denominator": 29633,
+        "fraction": 0.2882259642965613
+      },
+      {
+        "policy": "All Initial events",
+        "borough": "Brooklyn",
+        "positive": 13887,
+        "denominator": 61741,
+        "fraction": 0.2249234706272979
+      },
+      {
+        "policy": "All Initial events",
+        "borough": "Manhattan",
+        "positive": 10172,
+        "denominator": 52337,
+        "fraction": 0.19435580946557884
+      },
+      {
+        "policy": "All Initial events",
+        "borough": "Queens",
+        "positive": 2643,
+        "denominator": 9719,
+        "fraction": 0.2719415577734335
+      },
+      {
+        "policy": "All Initial events",
+        "borough": "Staten Island",
+        "positive": 112,
+        "denominator": 1201,
+        "fraction": 0.093255620316403
+      },
+      {
+        "policy": "Key-consistent Initial events",
+        "borough": "Bronx",
+        "positive": 8037,
+        "denominator": 28178,
+        "fraction": 0.28522251401802823
+      },
+      {
+        "policy": "Key-consistent Initial events",
+        "borough": "Brooklyn",
+        "positive": 13616,
+        "denominator": 60438,
+        "fraction": 0.22528872563618915
+      },
+      {
+        "policy": "Key-consistent Initial events",
+        "borough": "Manhattan",
+        "positive": 9540,
+        "denominator": 50642,
+        "fraction": 0.1883811855771889
+      },
+      {
+        "policy": "Key-consistent Initial events",
+        "borough": "Queens",
+        "positive": 2580,
+        "denominator": 9561,
+        "fraction": 0.2698462503922184
+      },
+      {
+        "policy": "Key-consistent Initial events",
+        "borough": "Staten Island",
+        "positive": 107,
+        "denominator": 1174,
+        "fraction": 0.09114139693356048
+      },
+      {
+        "policy": "First Initial per property",
+        "borough": "Bronx",
+        "positive": 4217,
+        "denominator": 16650,
+        "fraction": 0.25327327327327326
+      },
+      {
+        "policy": "First Initial per property",
+        "borough": "Brooklyn",
+        "positive": 8855,
+        "denominator": 42528,
+        "fraction": 0.2082157637321294
+      },
+      {
+        "policy": "First Initial per property",
+        "borough": "Manhattan",
+        "positive": 4676,
+        "denominator": 30737,
+        "fraction": 0.15212935549988613
+      },
+      {
+        "policy": "First Initial per property",
+        "borough": "Queens",
+        "positive": 2122,
+        "denominator": 8486,
+        "fraction": 0.2500589205750648
+      },
+      {
+        "policy": "First Initial per property",
+        "borough": "Staten Island",
+        "positive": 92,
+        "denominator": 1061,
+        "fraction": 0.08671065032987747
+      },
+      {
+        "policy": "Any positive per property",
+        "borough": "Bronx",
+        "positive": 5560,
+        "denominator": 16650,
+        "fraction": 0.33393393393393395
+      },
+      {
+        "policy": "Any positive per property",
+        "borough": "Brooklyn",
+        "positive": 10886,
+        "denominator": 42528,
+        "fraction": 0.25597253574115875
+      },
+      {
+        "policy": "Any positive per property",
+        "borough": "Manhattan",
+        "positive": 6455,
+        "denominator": 30737,
+        "fraction": 0.21000748283827309
+      },
+      {
+        "policy": "Any positive per property",
+        "borough": "Queens",
+        "positive": 2256,
+        "denominator": 8486,
+        "fraction": 0.2658496346924346
+      },
+      {
+        "policy": "Any positive per property",
+        "borough": "Staten Island",
+        "positive": 102,
+        "denominator": 1061,
+        "fraction": 0.09613572101790764
+      },
+      {
+        "policy": "Initial + Compliance events",
+        "borough": "Bronx",
+        "positive": 14313,
+        "denominator": 40265,
+        "fraction": 0.3554700111759593
+      },
+      {
+        "policy": "Initial + Compliance events",
+        "borough": "Brooklyn",
+        "positive": 24850,
+        "denominator": 79524,
+        "fraction": 0.3124842814747749
+      },
+      {
+        "policy": "Initial + Compliance events",
+        "borough": "Manhattan",
+        "positive": 17019,
+        "denominator": 64324,
+        "fraction": 0.2645824264660158
+      },
+      {
+        "policy": "Initial + Compliance events",
+        "borough": "Queens",
+        "positive": 4149,
+        "denominator": 13192,
+        "fraction": 0.31450879320800484
+      },
+      {
+        "policy": "Initial + Compliance events",
+        "borough": "Staten Island",
+        "positive": 181,
+        "denominator": 1575,
+        "fraction": 0.11492063492063492
+      }
+    ],
+    "interpretation": "Counts, event rates and first-property rates answer different surveillance questions. No claim about total rats or uninspected locations."
+  }
+}

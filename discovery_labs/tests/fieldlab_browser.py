@@ -44,4 +44,4 @@ def main(case):
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--case',required=True,choices=['nasa-exoplanetas']);main(p.parse_args().case)
+    p=argparse.ArgumentParser();p.add_argument('--case',required=True,choices=['nasa-exoplanetas','nyc-ratas']);main(p.parse_args().case)

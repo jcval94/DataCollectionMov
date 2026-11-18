@@ -15,10 +15,10 @@ import zipfile
 from v3.data import BASE, require, sha, write
 from v3.delivery import HOOKS, build, gallery
 from run_research import artifact_hashes, disable_network
-from fieldlab import nasa
+from fieldlab import nasa, nyc
 from fieldlab.common import export
 
-REGISTRY={nasa.CASE:nasa}
+REGISTRY={nasa.CASE:nasa,nyc.CASE:nyc}
 
 
 def code_hash(case):
@@ -30,7 +30,9 @@ def code_hash(case):
 
 def fingerprint(case):
     _,m=REGISTRY[case].load();review=BASE/'evidence/v3/fieldlab'/case/'visual-review.json'
+    shipped=[*sorted((BASE/'scripts/fieldlab').glob('*.py')),BASE/'requirements.txt',BASE/'requirements-ci.txt',BASE/'requirements-batch1.txt']
     return dict(code_sha256=code_hash(case),snapshot_sha256=m['snapshot_sha256'],
+        packaged_code_sha256=hashlib.sha256(''.join(str(p.relative_to(BASE))+sha(p) for p in shipped).encode()).hexdigest(),
         manifest_sha256=sha(BASE/'pilots'/case/'data/manifest.json'),contracts_sha256=sha(BASE/'contracts'/f'{case}.json'),
         dictionary_sha256=sha(BASE/'pilots'/case/'DICCIONARIO.md'),visual_review_sha256=sha(review) if review.exists() else None,
         python=sys.version.split()[0],dependencies={name:version(name) for name in ['numpy','pandas','scipy','scikit-learn','matplotlib','pillow']},seed=REGISTRY[case].SEED)

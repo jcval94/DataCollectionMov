@@ -1,0 +1,295 @@
+[
+  {
+    "id": "D04-A",
+    "canonical_id": "nyc-ratas.A",
+    "source_id": "nyc-ratas",
+    "perspective": "A",
+    "question": "¿Dónde priorizar inspecciones para obtener más hallazgos por recurso invertido? Requiere costos por intervención.",
+    "original_question": "¿Dónde priorizar inspecciones para obtener más hallazgos por recurso invertido? Requiere costos por intervención.",
+    "scope_change": "Calendar2024 only; no claim across all years.",
+    "original_contract_path": "catalog/questions.json#nyc-ratas.A",
+    "hypothesis": "Se pueden priorizar hallazgos por recurso.",
+    "alternative_hypothesis": "La selección y costos cambian el ranking.",
+    "required_variables": [
+      "job_id",
+      "inspection_date",
+      "inspection_type",
+      "borough",
+      "result",
+      "bbl",
+      "inspection_cost_NOT_AVAILABLE",
+      "staff_hours_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Intervención con costo",
+    "metric_and_denominator": "Hallazgos / costo; ausente",
+    "descriptive_method": "Diseñar costeo antes de recomendar.",
+    "additional_method": "Requiere exposición y costos comparables.",
+    "baseline": "Tasas descriptivas no son eficiencia monetaria.",
+    "visualizations": [],
+    "adversarial_test": "No sustituir costos por visitas o hallazgos.",
+    "limitations": [
+      "Vigilancia dirigida: no estima población real de ratas o prevalencia en predios no inspeccionados.",
+      "Un solo año, ventanas y cohortes seleccionadas; no identificación causal."
+    ],
+    "deliverable_type": "Diagnóstico de datos faltantes.",
+    "execution_status": "BLOCKED",
+    "blocking_reason": "No hay costos ni horas de personal; no se recomienda una asignación presupuestal.",
+    "how_to_unblock": "Obtener datos externos con licencia, ventana y denominadores compatibles; no usar conteo de hallazgos como reemplazo.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D04-B",
+    "canonical_id": "nyc-ratas.B",
+    "source_id": "nyc-ratas",
+    "perspective": "B",
+    "question": "¿Qué boroughs concentran primeras inspecciones positivas tras normalizar por predios inspeccionados en2024?",
+    "original_question": "¿Qué barrios concentran inspecciones positivas tras normalizar por inspecciones realizadas?",
+    "scope_change": "Boroughs, not neighborhoods; calendar2024 only.",
+    "original_contract_path": "catalog/questions.json#nyc-ratas.B",
+    "hypothesis": "La tasa difiere entre boroughs incluso al contar un primer evento por predio.",
+    "alternative_hypothesis": "Las diferencias dependen del filtro de llaves y repetición de visitas.",
+    "required_variables": [
+      "job_id",
+      "inspection_date",
+      "inspection_type",
+      "borough",
+      "result",
+      "bbl"
+    ],
+    "unit_of_analysis": "Primer Initial observado por BBL coherente en2024",
+    "metric_and_denominator": "Primera inspección con señales / predios con BBL válido y borough coherente",
+    "descriptive_method": "Contar iniciales por borough y auditar llaves; geografía máxima borough.",
+    "additional_method": "Comparar todos los eventos iniciales, eventos con llave coherente, primera visita y cualquier positivo por predio.",
+    "baseline": "Eventos iniciales con la misma política de llaves separan filtrado de repetición.",
+    "visualizations": [
+      "inspection-scope",
+      "borough-positivity",
+      "ranking-denominator"
+    ],
+    "adversarial_test": "Cambiar unidad y política sin esconder cambio de universo.",
+    "limitations": [
+      "Vigilancia dirigida: no estima población real de ratas o prevalencia en predios no inspeccionados.",
+      "Un solo año, ventanas y cohortes seleccionadas; no identificación causal.",
+      "No se resuelven barrios: la pregunta se acota explícitamente a boroughs; los predios con llaves inválidas siguen en Silver."
+    ],
+    "deliverable_type": "Tasas condicionadas con numeradores, denominadores y auditoría de filtros.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "code_entrypoint": "scripts/run_fieldlab.py --case nyc-ratas"
+  },
+  {
+    "id": "D04-C",
+    "canonical_id": "nyc-ratas.C",
+    "source_id": "nyc-ratas",
+    "perspective": "C",
+    "question": "¿Qué patrones estacionales y geográficos surgen de las inspecciones?",
+    "original_question": "¿Qué patrones estacionales y geográficos surgen de las inspecciones?",
+    "scope_change": "Calendar2024 only; no claim across all years.",
+    "original_contract_path": "catalog/questions.json#nyc-ratas.C",
+    "hypothesis": "Conteos y tasas varían por mes y borough.",
+    "alternative_hypothesis": "La variación se explica por volumen y composición de vigilancia.",
+    "required_variables": [
+      "job_id",
+      "inspection_date",
+      "inspection_type",
+      "borough",
+      "result",
+      "bbl"
+    ],
+    "unit_of_analysis": "Inspección inicial única dentro de borough/mes",
+    "metric_and_denominator": "Positivas / iniciales de la misma celda;60 celdas",
+    "descriptive_method": "Series mensuales de volumen y positivos con el mismo eje.",
+    "additional_method": "Heatmap de tasas con denominadores explícitos por celda.",
+    "baseline": "Conteos frente a tasas en el mismo2024.",
+    "visualizations": [
+      "month-heatmap",
+      "monthly-volume"
+    ],
+    "adversarial_test": "Separar borough y tipo; no afirmar estacionalidad recurrente con un solo año.",
+    "limitations": [
+      "Vigilancia dirigida: no estima población real de ratas o prevalencia en predios no inspeccionados.",
+      "Un solo año, ventanas y cohortes seleccionadas; no identificación causal."
+    ],
+    "deliverable_type": "Tabla temporal completa y heatmap, sin extrapolación.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "code_entrypoint": "scripts/run_fieldlab.py --case nyc-ratas"
+  },
+  {
+    "id": "D04-D1",
+    "canonical_id": "nyc-ratas.D1",
+    "source_id": "nyc-ratas",
+    "perspective": "D1",
+    "question": "¿Es mayor la positividad de inspecciones iniciales en verano que en invierno al comparar los mismos boroughs y años?",
+    "original_question": "¿Es mayor la positividad de inspecciones iniciales en verano que en invierno al comparar los mismos boroughs y años?",
+    "scope_change": "Calendar2024 only; no claim across all years.",
+    "original_contract_path": "catalog/questions.json#nyc-ratas.D1",
+    "hypothesis": "La positividad inicial es mayor en verano que en invierno2024.",
+    "alternative_hypothesis": "La diferencia no persiste al comparar boroughs o los mismos predios.",
+    "required_variables": [
+      "job_id",
+      "inspection_date",
+      "inspection_type",
+      "borough",
+      "result",
+      "bbl"
+    ],
+    "unit_of_analysis": "Evento inicial por borough/estación y predio observado en ambas estaciones",
+    "metric_and_denominator": "Positivas / iniciales; diferencia verano-invierno y diferencia pareada de primera visita por estación",
+    "descriptive_method": "Comparar tasas por borough: veranojun/jul/ago, inviernoene/feb/dic del mismo año.",
+    "additional_method": "Pesos iguales por borough y cohorte pareada;500 bootstrap de predios seleccionados, semilla1729. Sensibilidad con2000 remuestreos en la misma cohorte y con invierno restringido aene/feb, declarando el nuevo n.",
+    "baseline": "Invierno y diferencia cero; mismos predios al comparar estaciones.",
+    "visualizations": [
+      "month-heatmap",
+      "season-comparison",
+      "paired-seasons"
+    ],
+    "adversarial_test": "Cruzar las dos primeras visitas estacionales de cada BBL; invierno de este calendario no siempre precede al verano. Contrastar2000 remuestreos y retirar diciembre, sin ocultar el cambio de cohorte.",
+    "limitations": [
+      "Vigilancia dirigida: no estima población real de ratas o prevalencia en predios no inspeccionados.",
+      "Un solo año, ventanas y cohortes seleccionadas; no identificación causal.",
+      "Bootstrap condicional supone predios IID; no corrige dependencia espacial o selección.",
+      "Ventana de un año; la cohorte con dos estaciones no representa todos los predios."
+    ],
+    "deliverable_type": "Contraste estacional descriptivo, cohorte pareada e incertidumbre condicional.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": {
+      "status": "NOT_VERIFIED",
+      "rule": "Hipótesis didáctica, no popularidad demostrada."
+    },
+    "period_scope": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "code_entrypoint": "scripts/run_fieldlab.py --case nyc-ratas"
+  },
+  {
+    "id": "D04-D2",
+    "canonical_id": "nyc-ratas.D2",
+    "source_id": "nyc-ratas",
+    "perspective": "D2",
+    "question": "¿Manhattan tiene siempre más infestación que cualquier otro distrito?",
+    "original_question": "¿Manhattan tiene siempre más infestación que cualquier otro distrito?",
+    "scope_change": "Calendar2024 only; no claim across all years.",
+    "original_contract_path": "catalog/questions.json#nyc-ratas.D2",
+    "hypothesis": "Manhattan siempre tiene más infestación que los demás.",
+    "alternative_hypothesis": "La comparación no persiste con otros periodos o una medida de población.",
+    "required_variables": [
+      "job_id",
+      "inspection_date",
+      "inspection_type",
+      "borough",
+      "result",
+      "bbl",
+      "rat_population_NOT_AVAILABLE",
+      "uninspected_properties_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Población de roedores por distrito y todos los periodos",
+    "metric_and_denominator": "Infestación poblacional; ausente",
+    "descriptive_method": "No traducir positividad de inspección a infestación real.",
+    "additional_method": "Se necesita diseño de muestreo, conteo o medida comparable independiente.",
+    "baseline": "Tasa observada en predios seleccionados no es censo.",
+    "visualizations": [],
+    "adversarial_test": "El cuantificador siempre requiere una cobertura temporal mayor; no se prueba con2024.",
+    "limitations": [
+      "Vigilancia dirigida: no estima población real de ratas o prevalencia en predios no inspeccionados.",
+      "Un solo año, ventanas y cohortes seleccionadas; no identificación causal."
+    ],
+    "deliverable_type": "Diagnóstico de pregunta no respondible; sin ranking de infestación.",
+    "execution_status": "BLOCKED",
+    "blocking_reason": "No se observa población real de roedores ni todos los periodos; comparar inspecciones no responde a siempre más infestación.",
+    "how_to_unblock": "Obtener datos externos con licencia, ventana y denominadores compatibles; no usar conteo de hallazgos como reemplazo.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": {
+      "status": "NOT_VERIFIED",
+      "rule": "Hipótesis didáctica, no popularidad demostrada."
+    },
+    "period_scope": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D04-E",
+    "canonical_id": "nyc-ratas.E",
+    "source_id": "nyc-ratas",
+    "perspective": "E",
+    "question": "¿Confundimos más inspecciones con más infestación?",
+    "original_question": "¿Confundimos más inspecciones con más infestación?",
+    "scope_change": "Calendar2024 only; no claim across all years.",
+    "original_contract_path": "catalog/questions.json#nyc-ratas.E",
+    "hypothesis": "Un ranking por conteos cambia al normalizar y separar seguimientos.",
+    "alternative_hypothesis": "Las posiciones permanecen bajo las políticas probadas.",
+    "required_variables": [
+      "job_id",
+      "inspection_date",
+      "inspection_type",
+      "borough",
+      "result",
+      "bbl"
+    ],
+    "unit_of_analysis": "Borough bajo cada política de evento/predio",
+    "metric_and_denominator": "Conteo, fracción y rango con denominador explícito; empates comparten rango",
+    "descriptive_method": "Comparar conteos de iniciales positivas y tasa de primeros predios.",
+    "additional_method": "Cinco políticas: iniciales, iniciales con llave, primer predio, cualquier positivo por predio e iniciales+seguimientos.",
+    "baseline": "La política intermedia mantiene llaves coherentes antes de cambiar unidad.",
+    "visualizations": [
+      "inspection-scope",
+      "borough-positivity",
+      "ranking-denominator",
+      "monthly-volume"
+    ],
+    "adversarial_test": "Conservar todas las filas de Silver, auditar duplicados y no considerar tratamientos como negativos.",
+    "limitations": [
+      "Vigilancia dirigida: no estima población real de ratas o prevalencia en predios no inspeccionados.",
+      "Un solo año, ventanas y cohortes seleccionadas; no identificación causal."
+    ],
+    "deliverable_type": "Tabla de políticas y gráfico de posiciones con límites.",
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "belief_popularity": null,
+    "period_scope": "Inspecciones de enero–diciembre 2024; snapshot adquirido en noviembre 2026",
+    "code_entrypoint": "scripts/run_fieldlab.py --case nyc-ratas"
+  }
+]

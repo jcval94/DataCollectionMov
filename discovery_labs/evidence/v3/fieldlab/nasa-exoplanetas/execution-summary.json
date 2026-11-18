@@ -1,0 +1,24 @@
+{
+  "source_id": "nasa-exoplanetas",
+  "contracts": 6,
+  "executed_questions": [
+    "D05-C",
+    "D05-D1",
+    "D05-E"
+  ],
+  "blocked_questions": [
+    "D05-A",
+    "D05-B",
+    "D05-D2"
+  ],
+  "figures": 7,
+  "reviewed_PNG_variants": 14,
+  "narratives": 3,
+  "classroom_approved": 0,
+  "published": 0,
+  "offline_student_bytes": 1878071,
+  "source_snapshot_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+  "gates": "gates.json",
+  "browser": "browser-qa.json",
+  "visual_review": "visual-review.json"
+}
