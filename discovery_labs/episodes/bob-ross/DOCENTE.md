@@ -30,8 +30,8 @@ Fuente FiveThirtyEight original fijada por hash:
 - Entre los 22 invitados: **16** con TREE o TREES.
 - Entre el anfitrión: **150** con MOUNTAIN, MOUNTAINS o SNOWY_MOUNTAIN; **48** de esos 150 sin SNOW ni SNOWY_MOUNTAIN.
 - Clasificación operacional **por reglas, no por aprendizaje**: agua/costa **72**, montañas **135**, bosques **169**, otros **5**. El orden de prioridad importa.
-- La fuente anterior \`examples/bob_ross_clustering/\` ejecutó otro experimento de KMeans con distancias euclídeas en 12 familias y cuatro salas: tamaños **124, 118, 100, 39**. **No confundir con** la clasificación por reglas de este episodio o con k-medoids Jaccard.
-- El nuevo \`clustering.py\` obtiene las salas de k-medoids para Jaccard/Euclídea. **Verificar sus cifras tras ejecutar el comando**; no presentarlas como patrones naturales ni como equivalentes al KMeans de otro proyecto.
+- La fuente anterior `examples/bob_ross_clustering/` ejecutó otro experimento de KMeans con distancias euclídeas en 12 familias y cuatro salas: tamaños **124, 118, 100, 39**. **No confundir con** la clasificación por reglas de este episodio o con k-medoids Jaccard.
+- El nuevo `clustering.py` obtiene las salas de k-medoids para Jaccard/Euclídea. **Verificar sus cifras tras ejecutar el comando**; no presentarlas como patrones naturales ni como equivalentes al KMeans de otro proyecto.
 
 Los números hacen referencia a la **codificación del archivo**. No atribuirlos a una revisión manual exhaustiva de 403 cuadros.
 
@@ -51,7 +51,7 @@ Crear tabla de conteos con 381 y 22 denominadores. Mostrar por qué las barras d
 
 ### C — Descubrimiento: cuatro salas
 
-Primero ver las doce familias, luego discutir si deberían pesar igual. El docente puede ejecutar \`python clustering.py --write\`, mostrar k-medoids Jaccard vs Euclídea y el ARI. Pedir representantes reales y explicar que una distancia para binarios es una elección metodológica.
+Primero ver las doce familias, luego discutir si deberían pesar igual. El docente puede ejecutar `python clustering.py --write`, mostrar k-medoids Jaccard vs Euclídea y el ARI. Pedir representantes reales y explicar que una distancia para binarios es una elección metodológica.
 
 **Trampa:** aumentar un score no demuestra validez artística. Elegir k=4 es el encargo del museo, no un resultado científico de «cuatro estilos».
 
@@ -59,17 +59,17 @@ Primero ver las doce familias, luego discutir si deberían pesar igual. El docen
 
 Si los alumnos creen que sí, basta mostrar uno de los **36** contraejemplos codificados en el grupo anfitrión; luego revisar el resto. Reconocer que el archivo codificado no equivale a ver cada cuadro.
 
-**Trampa:** \`TREE\` y \`TREES\` deben combinarse por OR. Presencia codificada ≠ número de árboles.
+**Trampa:** `TREE` y `TREES` deben combinarse por OR. Presencia codificada ≠ número de árboles.
 
 ### D2 — Creencia popular: montaña implica nieve
 
 Población condicional: 150 episodios con montaña. Entre ellos 48 no tienen nieve codificada. Interpretar 48/150, no 48/381.
 
-**Trampa:** \`SNOWY_MOUNTAIN\` forma parte simultáneamente de montaña y nieve. Correlación parcialmente mecánica.
+**Trampa:** `SNOWY_MOUNTAIN` forma parte simultáneamente de montaña y nieve. Correlación parcialmente mecánica.
 
 ### E — Detective de datos: ID como feature
 
-Definir «similitud visual» con las doce familias. Preguntar qué representa la temporada y por qué un número grande puede dominar la distancia. Referenciar el experimento existente en \`examples/bob_ross_clustering/reference/README.md\` que añadió un identificador secuencial artificial.
+Definir «similitud visual» con las doce familias. Preguntar qué representa la temporada y por qué un número grande puede dominar la distancia. Referenciar el experimento existente en `examples/bob_ross_clustering/reference/README.md` que añadió un identificador secuencial artificial.
 
 **Trampa:** los silhouette de distintos espacios no son una escala universal de «mejor». Aquí el ID no responde a la pregunta del museo.
 
@@ -79,11 +79,11 @@ Definir «similitud visual» con las doce familias. Preguntar qué representa la
 
 ## Antes de impartir
 
-- [ ] Ejecutar \`python run.py --check\` con hash correcto.
-- [ ] Ejecutar \`python run.py --write\` y \`python clustering.py --write\`.
-- [ ] Ejecutar \`python -m unittest discover -s .../tests -v\`.
+- [ ] Ejecutar `python run.py --check` con hash correcto.
+- [ ] Ejecutar `python run.py --write` y `python clustering.py --write`.
+- [ ] Ejecutar `python -m unittest discover -s .../tests -v`.
 - [ ] Inspeccionar gráficas SVG en proyector/móvil y contraste/legibilidad.
-- [ ] Probar keyboard-only y lector de pantalla en \`episode.html\`.
+- [ ] Probar keyboard-only y lector de pantalla en `episode.html`.
 - [ ] Cronometrar una sesión con alumnos principiantes: instalación fuera de clase.
 - [ ] Documentar revisores, errores, tiempos por acto y resultados; no publicar como clase aprobada antes.
 
