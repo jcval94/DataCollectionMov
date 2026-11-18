@@ -5,6 +5,9 @@ version: 2.0.0
 ---
 # Question Forge — habilidad reusable de preguntas científicas y narrativas
 
+> **COPIA DE COMPATIBILIDAD v2.0:** la skill canónica generalizada v2.1 se propone en [shared/skills/question-forge/SKILL.md](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/skills/question-forge/SKILL.md) (PR #11). Conservar esta copia solo hasta que el núcleo compartido esté integrado y pase validación; no editar ambas en paralelo.
+
+
 ## NUEVO CONTRATO V2 — obligatorio en TODO episodio
 
 1. **Un único bloque editorial:** no presentar «seis preguntas básicas» más «preguntas nuevas» aparte; no usar «2B». Leer preguntas heredadas como insumos, no como contenido inmovible. **Fusionar, descartar o elevar** las consultas simples a evidencia o ejercicios de las preguntas profundas. Entregar **un solo banco canónico** `QUESTIONS_MASTER.md` + `questions_master.json`. El HTML muestra UNA sola sección de preguntas con tarjetas de todos los casos y facetas de exploración. No debe mostrar dos listas paralelas.
