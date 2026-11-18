@@ -142,3 +142,10 @@ Entregar: el único banco canónico `QUESTIONS_MASTER.md` + `questions_master.js
 
 ## Control de las tres etapas
 Esta skill sólo prepara el **Paquete de Entrada y la Guía Científica (Fase 1)**. No genera guion audiovisual, voz, storyboard de video, Remotion ni MP4 hasta que el usuario apruebe explícitamente la versión de la guía. El contenido de historia que produce es científico/editorial, no un guion definitivo de video.
+
+
+## Implementación canónica V2 y control de contratos
+
+La representación de un arco puede ser **un objeto con O1/O2/O3** (caso Bob Ross, `questions_master.json`) o tres nodos enlazados; no deben mezclarse dos bancos editoriales. En el formato de arco se requieren `o2_trigger`, `o3_trigger`, `rival_hypothesis`, `model`, `model_name`, `model_why`, `model_where`, `model_baseline`, `model_validation`, `stat`, `stat_why`, `stat_where`, `estimand.{grain,population,measure,denominator,time_basis}` y `design_status=PLAN_ONLY`. Las claves de trigger son **condiciones a comprobar**, nunca un resultado observado. Las referencias externas no convierten una hipótesis en causalidad.
+
+**QA de coherencia:** comprobar que los 14 IDs coincidan en MD y JSON; que cada contrato tenga modelo y prueba estadística con motivos y ubicaciones independientes; que O2/O3 contengan condiciones; y que ninguna tarjeta de HTML estática se presuma sincronizada automáticamente con el JSON. La guía HTML preliminar V3 contiene una instantánea editorial de los 14 arcos; hasta automatizar la generación (tras aprobar el Paquete de Entrada) debe cotejarse manualmente por ID y texto al modificar el banco.
