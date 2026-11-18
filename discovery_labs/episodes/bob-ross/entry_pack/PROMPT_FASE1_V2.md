@@ -13,9 +13,21 @@ NO quiero seis simples preguntas de consulta. El CSV es el punto de partida; deb
 
 **Bloqueo de gobernanza:** NO crear ni actualizar guion audiovisual, storyboard de video, intro, voz, subtítulos, Remotion ni MP4. Eso es Fase 2/3 y requiere aprobación humana de la guía.
 
+## DIRECTRICES DE ACTUALIZACIÓN DE PREGUNTAS (PRIORIDAD MÁXIMA)
+
+**Existe UN SOLO banco editorial canónico:** `entry_pack/QUESTIONS_MASTER.md` y `entry_pack/questions_master.json` (14 investigaciones). Son sustituto del listado anterior de seis preguntas A/B/C/D1/D2/E y de los 12 arcos exploratorios previos. Las rutas antiguas siguen únicamente como entradas de la interfaz existente, y deben integrarse como consultas subordinadas de la investigación, **nunca como un bloque 02 y otro 02B**.
+
+La siguiente versión de `research_guide.html` debe mostrar **una única sección de preguntas**, todas con la misma jerarquía visual/editorial; no ocultar nuevas preguntas en una nota después. La investigación `BR-01`, «¿Cambió la pintura cuando cambió la vida de Bob Ross?», debe ocupar un lugar central al hablar de su biografía, con una discusión explícita de la cronología **DISPUTADA** (Outside sitúa diagnóstico en primavera de 1994, Washington Post se refiere a semanas después de la muerte de Jane, atribuida a 1992). No convertir la hipótesis en afirmación de efecto de enfermedad.
+
+**Por cada pregunta principal:** proponer al menos **un modelo** y **un ejercicio estadístico formal distinto** con qué/por qué/dónde/datos/baseline/supuestos/validación y figura. Consultar `MODEL_SET.md`, que contiene 24 familias. No elegir LSTM, RL, riesgos colectivos, Optuna o modelos causales si las observaciones, targets, calendario, reward y controles no los justifican. Diseñar **sin entrenar** cuando el encargo sea solo Paquete de Entrada: modelos y ejercicios en `PLAN_ONLY`.
+
+Estructura obligatoria de cada tarjeta: historia/hook, pregunta madre, O1, O2 condicional al resultado O1, O3 condicional a O2, modelo y propósito, ejercicio estadístico, ruta de datos, visualización, fuentes externas, límites y estado. Las antiguas seis preguntas son subexperimentos, no preguntas editoriales adicionales.
+
+**Primera prioridad de esta conversación:** revisar skill `skills/question-forge/SKILL.md`, `EPISODE_TEMPLATE.md`, `MODEL_SET.md`, `QUESTIONS_MASTER.*`, `CONTEXT_CLAIMS.md`, `START_HERE_NEW_CHAT.md`. No crear video, guion, intro ni storyboard antes de aprobación humana de la guía.
+
 ## 0. Aterrizaje y auditoría (obligatoria)
 1. Detecta carpeta local, rama, PR #5 y cambios sin guardar. No hagas reset destructivo.
-2. Revisa `entry_pack/README.md`, `metadata.json`, ambos CSV de muestra, `QUESTION_ARCS.md`, `question_graph.json`, `RESEARCH_PLAN.md`, `VISUAL_DESIGN.md`, y `skills/question-forge/SKILL.md`.
+2. Revisa `entry_pack/START_HERE_NEW_CHAT.md`, `README.md`, `EPISODE_TEMPLATE.md`, `metadata.json`, ambos CSV de muestra, `QUESTIONS_MASTER.md`, `questions_master.json`, `MODEL_SET.md`, `CONTEXT_CLAIMS.md`, `RESEARCH_PLAN.md`, `VISUAL_DESIGN.md`, y `skills/question-forge/SKILL.md`. `QUESTION_ARCS.md` queda solo como historial de ideación.
 3. Ejecuta `run.py --check`, tests del episodio, verifica hash del original, licencias y fechas; distingue resultados previamente calculados de los tuyos.
 4. Inspecciona la guía HTML preliminar si está disponible. **No la apruebes por su apariencia**.
 5. Establece una matriz de errores/faltantes y dependencias.
@@ -34,10 +46,11 @@ Cita URLs y fecha de acceso en un registro. Establece `VERIFIED`, `DISPUTED`, `P
 **Caso crítico:** explorar si aparece algún cambio pictórico tardío y qué evidencia contextual existe sobre la enfermedad de Bob Ross. No afirmes que la enfermedad lo causó. Verifica fecha del diagnóstico y orden de grabación de cada episodio antes de situar eventos sobre un gráfico. La temporada ordinal no es una fecha clínica. Puede ser imposible inferir el efecto: decirlo explícitamente.
 
 ## 2. Preguntas que atrapen (skill Question Forge)
-Usa `entry_pack/skills/question-forge/SKILL.md` y **rehaz la selección editorial**. Lee los 12 arcos existentes como candidatos, no verdades.
+Usa `entry_pack/skills/question-forge/SKILL.md` y **rehaz la selección editorial**. Lee las 14 investigaciones del único banco `QUESTIONS_MASTER.*` como candidatas (no verdades), y conserva las seis preguntas heredadas solo como subejercicios.
 
 Para cada historia principal:
 - Una pregunta raíz O1 no reducible a un conteo plano.
+- Un modelo explícito y una prueba estadística **distinta**, con por qué, dónde, datos, baseline, validación y estado PLAN_ONLY si no han sido ejecutados.
 - Una segunda pregunta O2 **gatillada por un resultado medido**, no inventada.
 - Al menos una pregunta O3 que cuestione O2 por heterogeneidad, fuente externa, robustez o mecanismo.
 - Métricas/estimandos, denominadores, baseline, filtros, métodos, pruebas adversariales.
