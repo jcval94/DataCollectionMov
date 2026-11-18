@@ -47,3 +47,12 @@ No se requiere entorno de entrenamiento; las comprobaciones de Paquete de Entrad
 - **Guía científica V3:** documento estructuralmente preparado; **PENDIENTE_DE_APROBACION_CIENTIFICA**.
 - **Storytelling audiovisual:** BLOQUEADO.
 - **Video:** BLOQUEADO.
+
+
+## Auditoría metodológica adicional (18 noviembre de 2026)
+
+Se detectó que el esquema original `questions_master.json` validaba la presencia de texto para O1/O2/O3, pero no exigía por separado desencadenantes, hipótesis rivales, baseline, validación ni el **por qué/dónde de la prueba estadística**. Se ampliaron las 14 fichas con esos contratos en JSON y Markdown y se endureció `validate_pack.py` para evitar falsos positivos. Las nuevas especificaciones son diseño editorial, **no resultados empíricos**.
+
+**Advertencia de sincronización:** `research_guide.html` V3 es una instantánea estática de las tarjetas, NO una plantilla dinámica que lee `questions_master.json`. La correspondencia semántica completa y la automatización de su regeneración siguen pendientes de la Fase 1 autorizada. Esta reparación no modifica la guía HTML, ni inicia modelos ni investigaciones audiovisuales.
+
+**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La divergencia del PR #10 con su rama base (#5) permanece pendiente de conciliación segura; no fusionar automáticamente.
