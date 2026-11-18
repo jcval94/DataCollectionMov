@@ -2,6 +2,9 @@
 
 **Leer este archivo primero en una conversación nueva. Es autocontenido.**
 
+**ACTUALIZACIÓN DE ARQUITECTURA:** el motor compartido de todos los episodios está propuesto en [PR #11](https://github.com/jcval94/DataCollectionMov/pull/11), rama `feat/discovery-labs-shared-research-core`. Su skill y modelo son las fuentes canónicas propuestas: `discovery_labs/shared/skills/question-forge/SKILL.md` y `discovery_labs/shared/model_catalog/MODEL_SET.md`. Antes de que PR #11 se integre, usar copias locales de este paquete **solo como respaldo**. El validador de Bob Ross detecta ambos casos. Los detalles de factibilidad del episodio ahora viven en `entry_pack/MODEL_FIT_BOB_ROSS.md`. **Orden seguro:** PR #11 revisado e integrado primero; luego se eliminan duplicados del PR #10 tras actualizar referencias y pruebas. No prometer que shared ya está en main.
+
+
 ## 1) Qué es y qué se quiere
 Proyecto educativo **AI Discovery Labs**, dentro del repositorio público [jcval94/DataCollectionMov](https://github.com/jcval94/DataCollectionMov). Se busca convertir 86 fuentes en investigaciones científicas memorables, reproducibles y aptas para clases de ~45 minutos, con una futura adaptación audiovisual.
 
