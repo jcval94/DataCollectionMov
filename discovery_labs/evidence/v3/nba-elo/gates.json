@@ -1,0 +1,62 @@
+{
+  "source_id": "nba-elo",
+  "DATA_READY": true,
+  "questions": {
+    "D10-A": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "No hay jugadores ni salarios. Se requiere fuente licenciada, llaves y grano compatibles."
+    },
+    "D10-B": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Una temporada sin historia de ciudades no responde cambio histórico ni impacto social."
+    },
+    "D10-C": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Sólo temporada 2014–2015; se requiere snapshot multitemporada verificado."
+    },
+    "D10-D1": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D10-D2": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D10-E": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    }
+  },
+  "visual_approval_scope": "Sólo hashes de PNG inspeccionados; controles automatizados adicionales no sustituyen observación.",
+  "classroom_release": {
+    "required_executable_routes": 6,
+    "actual_executable_routes": 3,
+    "all_six_routes_technically_ready": false,
+    "human_rehearsal": "NOT_OBSERVED",
+    "independent_teacher_review": "NOT_OBSERVED"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "status": "PASS",
+  "browser": "Chromium / Playwright 1.56.0",
+  "route_viewport_checks": [
+    {
+      "case": "uci-retail",
+      "question": "D31-A",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "uci-retail",
+      "question": "D31-B",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "uci-retail",
+      "question": "D31-E",
+      "variant": "projection",
+      "decoded_figures": 2,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "uci-retail",
+      "question": "D31-A",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "uci-retail",
+      "question": "D31-B",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "uci-retail",
+      "question": "D31-E",
+      "variant": "mobile",
+      "decoded_figures": 2,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "nba-elo",
+      "question": "D10-D1",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "nba-elo",
+      "question": "D10-D2",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "nba-elo",
+      "question": "D10-E",
+      "variant": "projection",
+      "decoded_figures": 2,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "nba-elo",
+      "question": "D10-D1",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "nba-elo",
+      "question": "D10-D2",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "nba-elo",
+      "question": "D10-E",
+      "variant": "mobile",
+      "decoded_figures": 2,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-A",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-B",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-C",
+      "variant": "projection",
+      "decoded_figures": 2,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-D1",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-D2",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-E",
+      "variant": "projection",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-A",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-B",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-C",
+      "variant": "mobile",
+      "decoded_figures": 2,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-D1",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-D2",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    },
+    {
+      "case": "bob-ross-elementos",
+      "question": "D85-E",
+      "variant": "mobile",
+      "decoded_figures": 1,
+      "horizontal_overflow": false
+    }
+  ],
+  "screenshots": [
+    "test-output/v3/uci-retail-0-projection.png",
+    "test-output/v3/uci-retail-1-projection.png",
+    "test-output/v3/uci-retail-2-projection.png",
+    "test-output/v3/uci-retail-0-mobile.png",
+    "test-output/v3/uci-retail-1-mobile.png",
+    "test-output/v3/uci-retail-2-mobile.png",
+    "test-output/v3/nba-elo-0-projection.png",
+    "test-output/v3/nba-elo-1-projection.png",
+    "test-output/v3/nba-elo-2-projection.png",
+    "test-output/v3/nba-elo-3-projection.png",
+    "test-output/v3/nba-elo-0-mobile.png",
+    "test-output/v3/nba-elo-1-mobile.png",
+    "test-output/v3/nba-elo-2-mobile.png",
+    "test-output/v3/nba-elo-3-mobile.png",
+    "test-output/v3/bob-ross-elementos-0-projection.png",
+    "test-output/v3/bob-ross-elementos-1-projection.png",
+    "test-output/v3/bob-ross-elementos-2-projection.png",
+    "test-output/v3/bob-ross-elementos-3-projection.png",
+    "test-output/v3/bob-ross-elementos-4-projection.png",
+    "test-output/v3/bob-ross-elementos-5-projection.png",
+    "test-output/v3/bob-ross-elementos-6-projection.png",
+    "test-output/v3/bob-ross-elementos-0-mobile.png",
+    "test-output/v3/bob-ross-elementos-1-mobile.png",
+    "test-output/v3/bob-ross-elementos-2-mobile.png",
+    "test-output/v3/bob-ross-elementos-3-mobile.png",
+    "test-output/v3/bob-ross-elementos-4-mobile.png",
+    "test-output/v3/bob-ross-elementos-5-mobile.png",
+    "test-output/v3/bob-ross-elementos-6-mobile.png"
+  ],
+  "js_errors": [],
+  "remote_requests": [],
+  "human_class_rehearsal": "NOT_OBSERVED",
+  "visual_inspection": "Screenshots require separate observed review."
+}

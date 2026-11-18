@@ -1,0 +1,147 @@
+{
+  "scope": "Snapshot medido; no universo declarado por productor.",
+  "rows": 7293,
+  "column_count": 7,
+  "physical_bytes": 414094,
+  "raw_memory_bytes": 2864595,
+  "silver_memory_bytes": 4242462,
+  "exact_duplicates": 118,
+  "business_key": [
+    "InvoiceNo"
+  ],
+  "business_key_repetitions": 6993,
+  "key_interpretation": "Repetir una factura es normal en líneas; no demuestra duplicado de negocio.",
+  "columns": {
+    "InvoiceNo": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 300,
+      "frequent_values": {
+        "579777": 687,
+        "578347": 606,
+        "578065": 494,
+        "574561": 347,
+        "575602": 147
+      }
+    },
+    "StockCode": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1903,
+      "frequent_values": {
+        "23084": 46,
+        "22086": 35,
+        "85123A": 30,
+        "22423": 30,
+        "23344": 27
+      }
+    },
+    "Quantity": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 92,
+      "frequent_values": {
+        "1": 2402,
+        "2": 1252,
+        "12": 661,
+        "3": 577,
+        "4": 493
+      },
+      "numeric_measured": {
+        "min": -408.0,
+        "q25": 1.0,
+        "median": 2.0,
+        "q75": 6.0,
+        "max": 480.0
+      },
+      "outside_1_5_IQR_count": 698,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "InvoiceDate": {
+      "raw_type": "string",
+      "silver_type": "datetime64[ns]",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 295,
+      "frequent_values": {
+        "2011-11-30T15:13:00": 687,
+        "2011-11-24T09:26:00": 606,
+        "2011-11-22T15:41:00": 494,
+        "2011-11-04T15:52:00": 347,
+        "2011-11-10T12:27:00": 147
+      }
+    },
+    "UnitPrice": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 158,
+      "frequent_values": {
+        "1.25": 686,
+        "1.65": 460,
+        "0.83": 363,
+        "2.46": 359,
+        "0.42": 345
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 1.25,
+        "median": 2.08,
+        "q75": 4.13,
+        "max": 888.42
+      },
+      "outside_1_5_IQR_count": 459,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "Country": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 14,
+      "frequent_values": {
+        "United Kingdom": 6796,
+        "France": 136,
+        "Germany": 118,
+        "Norway": 65,
+        "EIRE": 39
+      }
+    },
+    "customer_id_missing": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 5096,
+        "1": 2197
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    }
+  },
+  "temporal": {
+    "min": "2011-11-01T10:04:00",
+    "max": "2011-11-30T17:14:00",
+    "frequency": "Eventos irregulares; no imputar días sin evento como faltantes.",
+    "observed_dates": 26,
+    "timezone": "No verificada; mantener fecha local sin conversión."
+  },
+  "selection": "Noviembre 2011 completo como marco. Selección determinista de 300 facturas por menor SHA256 de InvoiceNo; conservar todas sus líneas. No es muestra representativa de clientes ni permite unir devolución con venta original. Campo customer_id_missing derivado antes de retirar CustomerID.",
+  "representativeness": "No se infiere representatividad ni causalidad desde este archivo."
+}

@@ -1,0 +1,42 @@
+{
+  "D31-A": {
+    "totals": {
+      "gross": "95755.66",
+      "credits": "4426.64",
+      "net": "91329.02"
+    },
+    "leader": "23084",
+    "products": 1885
+  },
+  "D31-B": {
+    "by_unit": [
+      {
+        "unit": "Líneas",
+        "missing": 2197,
+        "denominator": 7293,
+        "fraction": 0.30124777183600715
+      },
+      {
+        "unit": "Facturas",
+        "missing": 38,
+        "denominator": 300,
+        "fraction": 0.12666666666666668
+      }
+    ]
+  },
+  "D31-E": {
+    "changed_positions": 1875,
+    "policies": [
+      {
+        "policy": "Conservar duplicados",
+        "lines": 7229,
+        "net_gbp": "91329.02"
+      },
+      {
+        "policy": "Sin duplicados exactos",
+        "lines": 7111,
+        "net_gbp": "90836.09"
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "audit_date_local": "2026-11-16",
+  "data_repository": {
+    "pr": 2,
+    "branch": "feat/ai-discovery-labs-v2",
+    "head": "0c5a0c555dc5f3a006d2bd7d16b904b463e95757",
+    "draft": true,
+    "ci": [
+      {
+        "run_id": 44000651376,
+        "conclusion": "success"
+      },
+      {
+        "run_id": 44000651478,
+        "conclusion": "success"
+      }
+    ]
+  },
+  "course_repository": {
+    "pr": 101,
+    "branch": "docs/ai-discovery-labs-v2-integration",
+    "head": "d702482bef99b12f19d0a3116a5aed6d7fc5f5ad",
+    "draft": true,
+    "ci": [
+      {
+        "run_id": 43997864702,
+        "conclusion": "success"
+      }
+    ]
+  },
+  "local_baseline": {
+    "unittest": {
+      "tests": 6,
+      "failures": 0
+    },
+    "prior_outputs_compared_to_evidence": true
+  },
+  "preservation": "V2 snapshots, evidence/pilot_runs and numeric results remain immutable. V3 is additive, with explicit scope contracts.",
+  "blocking_findings": [
+    "Retail: one month, no customer identifiers or costs; annual seasonality, recurrence and margins cannot be inferred.",
+    "NBA: one season, no salaries or city history; cannot infer eras or salary efficiency.",
+    "Bob Ross: episode motif annotations, not pixels, paintings, demand or sales.",
+    "V2 Bob Ross guest question points at a figure without guest comparison; V3 must supply an actual stratified figure.",
+    "V2 figures omit full source/period/hash/alt metadata; V3 must attach and verify them.",
+    "CLASS_READY requires observed human rehearsal and independent teacher review."
+  ]
+}

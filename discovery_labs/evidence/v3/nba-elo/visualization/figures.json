@@ -1,0 +1,182 @@
+[
+  {
+    "id": "nba-calibration",
+    "question_ids": [
+      "D10-E"
+    ],
+    "title": "Pronóstico frente a resultado",
+    "denominator": "1,311 partidos únicos; área de cada punto proporcional al número de partidos.",
+    "period": "temporada 2014–2015",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "c960cfbeca7b5449ea675b64421b99b224047fbc898eccd56113ef344a9ca6e2",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/calibration.csv",
+    "table_sha256": "1cd219ffee00c93ee5300139ab8d32e3f1833bf693a7d62a6f9a2e4cbcb669ff",
+    "alt": "Curva de calibración con conteos por intervalo y diagonal de igualdad; sólo pronóstico anterior al partido.",
+    "note": "Cinco bins fijados. Comparación descriptiva; dependencia por equipo/serie.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "nba-calibration-projection.png",
+        "svg": "nba-calibration-projection.svg",
+        "denominator": "1,311 partidos únicos; área de cada punto proporcional al número de partidos.",
+        "note": "Cinco bins fijados. Comparación descriptiva; dependencia por equipo/serie.",
+        "png_sha256": "d96ac8f77ddd833e24910aabc0b4366f0584e046cf60cd3457493f64598095c0",
+        "svg_sha256": "b736cd957c5eaafc739af3a663ae2ae16cc12083b77573c19c56e4dd692e1c88",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "nba-calibration-mobile.png",
+        "svg": "nba-calibration-mobile.svg",
+        "denominator": "1,311 partidos únicos; área de cada punto proporcional al número de partidos.",
+        "note": "Cinco bins fijados. Comparación descriptiva; dependencia por equipo/serie.",
+        "png_sha256": "4b35e8a9d6558fa52e46bc84842999e26ec39b9f8415f4e6dcbba810bf61a917",
+        "svg_sha256": "4a550c16ecde8b014c54eef30d67ca5ab3ea501074b5dcce5429bc344bad630d",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "nba-phases",
+    "question_ids": [
+      "D10-D2"
+    ],
+    "title": "La localía según la fase",
+    "denominator": "1309 partidos con equipo local; 2 neutrales fuera del denominador.",
+    "period": "temporada 2014–2015",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "c960cfbeca7b5449ea675b64421b99b224047fbc898eccd56113ef344a9ca6e2",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/phases.csv",
+    "table_sha256": "081dc1d1c41d9bd0b59a098a436ca51e4b60eaf9a2d3f89ec1d0b230469d7d68",
+    "alt": "Tasas de victoria del local por fase con conteos y sensibilidad del contraste por bloques de fecha.",
+    "note": "Diferencia playoffs−regular: 1.8 pp; sensibilidad por fecha 95% [-10.1, 13.1] pp. No causal.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "nba-phases-projection.png",
+        "svg": "nba-phases-projection.svg",
+        "denominator": "1309 partidos con equipo local; 2 neutrales fuera del denominador.",
+        "note": "Diferencia playoffs−regular: 1.8 pp; sensibilidad por fecha 95% [-10.1, 13.1] pp. No causal.",
+        "png_sha256": "dfacb2566de601c841ec886b2aecf75d968fe97d000a41f8da9b31c3379621ab",
+        "svg_sha256": "a72fc50e4ddf8930ce1a87712464b6eacd684fba120e9652172b6972d48dbdd8",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "nba-phases-mobile.png",
+        "svg": "nba-phases-mobile.svg",
+        "denominator": "1309 partidos con equipo local; 2 neutrales fuera del denominador.",
+        "note": "Diferencia playoffs−regular: 1.8 pp; sensibilidad por fecha 95% [-10.1, 13.1] pp. No causal.",
+        "png_sha256": "f757ccdfdba3df0be7e8a71c57eec2d8b345c579cde8a4991026bcfadc72874b",
+        "svg_sha256": "45bb1f03bcc4c9dffdcb23cfd59d16993aaefa3d4a0d2a192b7a80ca06af7b1a",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "nba-series",
+    "question_ids": [
+      "D10-D1"
+    ],
+    "title": "¿Qué pasó con cada favorito?",
+    "denominator": "15 series completas; favorito definido con Elo previo al primer partido.",
+    "period": "temporada 2014–2015",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "c960cfbeca7b5449ea675b64421b99b224047fbc898eccd56113ef344a9ca6e2",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/series.csv",
+    "table_sha256": "51fc1b2df33bc29d4d6074b87abd5dc6bfdc9502e0a89690bfeacbd11f9674de",
+    "alt": "Quince barras: diferencia Elo inicial por serie. Color y leyenda distinguen si ganó o perdió el favorito.",
+    "note": "El ganador se etiqueta después. No se usa elo_n para elegir favorito; una temporada no es toda la historia.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "nba-series-projection.png",
+        "svg": "nba-series-projection.svg",
+        "denominator": "15 series completas; favorito definido con Elo previo al primer partido.",
+        "note": "El ganador se etiqueta después. No se usa elo_n para elegir favorito; una temporada no es toda la historia.",
+        "png_sha256": "f4f1c9998974783c68ea83fd7c73f25c7d409f9a2212d12975665badd2c3e39a",
+        "svg_sha256": "14b2c4babc72b97ae2d94fb662717a184c097e5060291111c187861dd868fb8f",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "nba-series-mobile.png",
+        "svg": "nba-series-mobile.svg",
+        "denominator": "15 series completas; favorito definido con Elo previo al primer partido.",
+        "note": "El ganador se etiqueta después. No se usa elo_n para elegir favorito; una temporada no es toda la historia.",
+        "png_sha256": "8b216a37fd255e056f8532b0d893d86beca47f816b58646e377c2cbbea25c035",
+        "svg_sha256": "a9a860c239cee4c5f2d31da0fee691e4a4c376157c0d5ba10a49e977e710114a",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  },
+  {
+    "id": "nba-scores",
+    "question_ids": [
+      "D10-E"
+    ],
+    "title": "¿Mejora una base sencilla?",
+    "denominator": "Los mismos 1,311 partidos únicos; promedio del error cuadrático de probabilidad.",
+    "period": "temporada 2014–2015",
+    "source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/nba-elo/nbaallelo.csv",
+    "license": "CC BY 4.0",
+    "source_sha256": "c960cfbeca7b5449ea675b64421b99b224047fbc898eccd56113ef344a9ca6e2",
+    "code_sha256": "627c1da6a19adbb17bd88c22117248f1bc5a0cb84064d45d96e40a6c6957ad3b",
+    "table": "gold/score_sensitivity.csv",
+    "table_sha256": "f0a4fef64b318effa92bc0fd3d585fdd55c8a52190aa95de7ce4141d3a2808ba",
+    "alt": "Brier del forecast histórico y de probabilidad constante. La nota muestra la diferencia emparejada y su sensibilidad por fecha.",
+    "note": "Delta emparejado -0.0416; sensibilidad por fecha 95% [-0.0510, -0.0319]. No captura toda dependencia entre equipos.",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "nba-scores-projection.png",
+        "svg": "nba-scores-projection.svg",
+        "denominator": "Los mismos 1,311 partidos únicos; promedio del error cuadrático de probabilidad.",
+        "note": "Delta emparejado -0.0416; sensibilidad por fecha 95% [-0.0510, -0.0319]. No captura toda dependencia entre equipos.",
+        "png_sha256": "c75d2c89067fa918e213028418434acdcd7c1abe8d2eaaf1080c2b8fbf2f9a6f",
+        "svg_sha256": "8b21a2da71e9aa46fa6744ccc06b1a1405c835b4bf1286296c2138023f5410db",
+        "width": 1584,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      },
+      {
+        "variant": "mobile",
+        "png": "nba-scores-mobile.png",
+        "svg": "nba-scores-mobile.svg",
+        "denominator": "Los mismos 1,311 partidos únicos; promedio del error cuadrático de probabilidad.",
+        "note": "Delta emparejado -0.0416; sensibilidad por fecha 95% [-0.0510, -0.0319]. No captura toda dependencia entre equipos.",
+        "png_sha256": "93a841674a2d6c24348dbc8c63039627cd2af12b0889894f6b6cdd11c5ee8153",
+        "svg_sha256": "613613c1432764eb9a41d1c34003aa7db66cb4545ea6a582bcb4bc97b34cc747",
+        "width": 777,
+        "height": 1036,
+        "text_bounds_pass": true,
+        "rendered_review": "REQUIRES_OBSERVED_REVIEW"
+      }
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "rule": "nonempty",
+    "passed": true,
+    "detail": "Snapshot no vacío."
+  },
+  {
+    "rule": "privacy",
+    "passed": true,
+    "detail": "Identificador eliminado antes de distribuir el snapshot."
+  },
+  {
+    "rule": "period",
+    "passed": true,
+    "detail": "Sólo noviembre 2011."
+  },
+  {
+    "rule": "quantity",
+    "passed": true,
+    "detail": "Cantidad entera firmada."
+  },
+  {
+    "rule": "price",
+    "passed": true,
+    "detail": "Precio finito, sin ocultar no positivos."
+  },
+  {
+    "rule": "missing_flag",
+    "passed": true,
+    "detail": "Indicador binario de ausencia."
+  },
+  {
+    "rule": "invoice_missing_coherence",
+    "passed": true,
+    "detail": "Indicador consistente por factura."
+  },
+  {
+    "rule": "row_conservation",
+    "passed": true,
+    "detail": "Ninguna fila desaparece de silver."
+  },
+  {
+    "rule": "eligible_reconciliation",
+    "passed": true,
+    "detail": "7229 elegibles + 64 fuera del alcance = 7293."
+  }
+]

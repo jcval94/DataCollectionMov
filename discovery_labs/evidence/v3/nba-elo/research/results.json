@@ -1,0 +1,100 @@
+{
+  "D10-D1": {
+    "series": 15,
+    "favorite_wins": 12,
+    "counterexamples": [
+      {
+        "pair": "HOU:LAC",
+        "first_game": "201505040HOU",
+        "favorite": "LAC",
+        "winner": "HOU"
+      },
+      {
+        "pair": "LAC:SAS",
+        "first_game": "201504190LAC",
+        "favorite": "SAS",
+        "winner": "LAC"
+      },
+      {
+        "pair": "TOR:WAS",
+        "first_game": "201504180TOR",
+        "favorite": "TOR",
+        "winner": "WAS"
+      }
+    ]
+  },
+  "D10-D2": {
+    "phases": [
+      {
+        "phase": "Regular",
+        "wins": 706,
+        "n": 1228,
+        "rate": 0.5749185667752443,
+        "wilson_descriptive_only": [
+          0.5470775379978563,
+          0.6022923331673444
+        ]
+      },
+      {
+        "phase": "Playoffs",
+        "wins": 48,
+        "n": 81,
+        "rate": 0.5925925925925926,
+        "wilson_descriptive_only": [
+          0.4837631326834905,
+          0.6930372218660625
+        ]
+      }
+    ],
+    "difference": 0.017674025817348227,
+    "block_interval": [
+      -0.1008192212965561,
+      0.1309285545561301
+    ],
+    "neutral_games_excluded": 2
+  },
+  "D10-E": {
+    "brier": 0.20844088198204247,
+    "constant_half_brier": 0.25,
+    "paired_date_delta": -0.04155911801795752,
+    "paired_date_delta_95": [
+      -0.05095877056976829,
+      -0.0318710333530987
+    ],
+    "unique_games": 1311,
+    "mirror_rows": 2622,
+    "neutral_games": 2,
+    "calibration": [
+      {
+        "bin": "(-0.001, 0.2]",
+        "predicted": 0.16100187533333335,
+        "observed": 0.2,
+        "n": 15
+      },
+      {
+        "bin": "(0.2, 0.4]",
+        "predicted": 0.31876313005494505,
+        "observed": 0.2802197802197802,
+        "n": 182
+      },
+      {
+        "bin": "(0.4, 0.6]",
+        "predicted": 0.5107412079614325,
+        "observed": 0.4380165289256198,
+        "n": 363
+      },
+      {
+        "bin": "(0.6, 0.8]",
+        "predicted": 0.7024404635294117,
+        "observed": 0.6612576064908722,
+        "n": 493
+      },
+      {
+        "bin": "(0.8, 1.0]",
+        "predicted": 0.8604762305813953,
+        "observed": 0.8372093023255814,
+        "n": 258
+      }
+    ]
+  }
+}

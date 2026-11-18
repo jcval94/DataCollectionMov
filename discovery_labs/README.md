@@ -1,4 +1,14 @@
-# AI Discovery Labs · V2
+# AI Discovery Labs · V3
+
+La ampliación V3 es aditiva: [operación y resultados del Lote 0](docs/V3_BATCH0.md). Conserva sin modificación los snapshots, catálogos, evidencias y pilotos V2 descritos más abajo. El catálogo unificado para agentes aplica los contratos V3 sobre las 516 preguntas sin borrar sus diseños originales. V3 ejecuta 12 preguntas; seis de los 18 contratos del lote quedan bloqueados por datos ausentes. Los kits candidatos y la CI son verificables; ninguna clase está aprobada.
+
+```sh
+python discovery_labs/scripts/run_research.py
+python discovery_labs/scripts/agent_tools.py catalog
+python discovery_labs/tests/research_browser.py
+```
+
+## Base V2 preservada
 
 Una biblioteca para transformar una pregunta en una investigación responsable con IA. Público: principiantes, práctica opcional de aproximadamente 45 minutos, con preparación fuera de clase. Corte editorial: 16 de noviembre de 2026.
 
