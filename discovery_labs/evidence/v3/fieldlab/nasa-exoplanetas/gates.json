@@ -1,0 +1,57 @@
+{
+  "source_id": "nasa-exoplanetas",
+  "DATA_READY": true,
+  "questions": {
+    "D05-A": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "No hay campañas, exposición observacional ni costos; variedad de detecciones no mide eficiencia económica."
+    },
+    "D05-B": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "La tabla no registra solicitudes, acceso, investigadores elegibles ni condiciones de participación."
+    },
+    "D05-C": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D05-D1": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    },
+    "D05-D2": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Faltan denominadores de búsqueda, no detecciones y funciones de completitud; no se corrige sólo con este catálogo."
+    },
+    "D05-E": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Ensayo humano y revisión docente independiente no observados."
+    }
+  },
+  "independent_teacher_review": false,
+  "human_rehearsal": false,
+  "all_six_routes_technically_ready": false
+}

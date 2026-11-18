@@ -1,0 +1,98 @@
+{
+  "D05-C": {
+    "rows": 6090,
+    "complete_cases": 1468,
+    "excluded_from_clustering": 4622,
+    "k": 3,
+    "seed": 1729,
+    "silhouette_sample800": 0.4181274310055933,
+    "cluster_counts": {
+      "0": 468,
+      "1": 448,
+      "2": 552
+    },
+    "feature_columns": [
+      "log10_pl_rade",
+      "log10_pl_orbper",
+      "log10_pl_eqt"
+    ],
+    "sensitivity": [
+      {
+        "policy": "k=2",
+        "k": 2,
+        "scaler": "standard",
+        "features": "log10_pl_rade,log10_pl_orbper,log10_pl_eqt",
+        "rows": 1468,
+        "ARI_vs_base": 0.46558816863871005,
+        "silhouette": 0.4094432926656682
+      },
+      {
+        "policy": "k=3 base",
+        "k": 3,
+        "scaler": "standard",
+        "features": "log10_pl_rade,log10_pl_orbper,log10_pl_eqt",
+        "rows": 1468,
+        "ARI_vs_base": 1.0,
+        "silhouette": 0.4181274310055933
+      },
+      {
+        "policy": "k=4",
+        "k": 4,
+        "scaler": "standard",
+        "features": "log10_pl_rade,log10_pl_orbper,log10_pl_eqt",
+        "rows": 1468,
+        "ARI_vs_base": 0.643137616334487,
+        "silhouette": 0.4155594228223235
+      },
+      {
+        "policy": "Escala robusta",
+        "k": 3,
+        "scaler": "robust",
+        "features": "log10_pl_rade,log10_pl_orbper,log10_pl_eqt",
+        "rows": 1468,
+        "ARI_vs_base": 0.3780370162450244,
+        "silhouette": 0.3660438536543863
+      },
+      {
+        "policy": "Sin temperatura",
+        "k": 3,
+        "scaler": "standard",
+        "features": "log10_pl_rade,log10_pl_orbper",
+        "rows": 1468,
+        "ARI_vs_base": 0.7443547272570994,
+        "silhouette": 0.5015061276490271
+      }
+    ],
+    "interpretation": "Exploratory groups of observed complete cases, not proven physical families. No external validity or occurrence rate."
+  },
+  "D05-D1": {
+    "in_range": 471,
+    "measured_denominator": 4542,
+    "fraction": 0.1036988110964333,
+    "more_than_half": false,
+    "total": 6090,
+    "unmeasured_or_limits": 1548,
+    "missing_value_bounds_all_rows": [
+      0.07733990147783251,
+      0.3315270935960591
+    ],
+    "radius_interval": [
+      0.8,
+      1.25
+    ],
+    "with_usable_asymmetric_errors": 4161,
+    "published_intervals_wholly_in_range": 188,
+    "published_intervals_overlapping_range": 759,
+    "interpretation": "Descriptive archive fraction, no sampling confidence or habitability inference. Error columns are as published, not a common calibrated probability interval."
+  },
+  "D05-E": {
+    "complete_cases": 1468,
+    "NMI_cluster_discovery_method": 0.009404687876463215,
+    "permutation_repetitions": 50,
+    "shuffled_NMI_mean": 0.0052483644167752135,
+    "shuffled_NMI_min": 0.003249701306764261,
+    "shuffled_NMI_max": 0.010783942106893098,
+    "seed": 1729,
+    "interpretation": "Association and sensitivity audit, not causal explanation or detection-completeness correction. Shuffling preserves labels/counts and is exploratory, not a confirmatory p-value."
+  }
+}

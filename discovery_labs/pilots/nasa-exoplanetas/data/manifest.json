@@ -1,0 +1,94 @@
+{
+  "source_id": "nasa-exoplanetas",
+  "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+  "download_url": "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name%2Chostname%2Cdefault_flag%2Cdiscoverymethod%2Cdisc_year%2Cdisc_facility%2Cpl_controv_flag%2Cpl_orbper%2Cpl_orbpererr1%2Cpl_orbpererr2%2Cpl_orbperlim%2Cpl_rade%2Cpl_radeerr1%2Cpl_radeerr2%2Cpl_radelim%2Cpl_eqt%2Cpl_eqterr1%2Cpl_eqterr2%2Cpl_eqtlim%2Cpl_bmasse%2Cpl_bmasseerr1%2Cpl_bmasseerr2%2Cpl_bmasselim%2Cpl_bmassprov%2Csy_dist%2Cpl_refname%2Cst_refname%2Csy_refname%2Crowupdate+from+ps+where+default_flag%3D1+and+disc_year%3C%3D2025+order+by+pl_name&format=csv&MAXREC=20000",
+  "query": "select pl_name,hostname,default_flag,discoverymethod,disc_year,disc_facility,pl_controv_flag,pl_orbper,pl_orbpererr1,pl_orbpererr2,pl_orbperlim,pl_rade,pl_radeerr1,pl_radeerr2,pl_radelim,pl_eqt,pl_eqterr1,pl_eqterr2,pl_eqtlim,pl_bmasse,pl_bmasseerr1,pl_bmasseerr2,pl_bmasselim,pl_bmassprov,sy_dist,pl_refname,st_refname,sy_refname,rowupdate from ps where default_flag=1 and disc_year<=2025 order by pl_name",
+  "acquired_at_utc": "2026-11-18T02:13:06.194239+00:00",
+  "version": "Bundled immutable query bytes; live TAP table can change.",
+  "table": "ps",
+  "snapshot_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+  "snapshot_bytes": 3549129,
+  "rows": 6090,
+  "columns": [
+    "pl_name",
+    "hostname",
+    "default_flag",
+    "discoverymethod",
+    "disc_year",
+    "disc_facility",
+    "pl_controv_flag",
+    "pl_orbper",
+    "pl_orbpererr1",
+    "pl_orbpererr2",
+    "pl_orbperlim",
+    "pl_rade",
+    "pl_radeerr1",
+    "pl_radeerr2",
+    "pl_radelim",
+    "pl_eqt",
+    "pl_eqterr1",
+    "pl_eqterr2",
+    "pl_eqtlim",
+    "pl_bmasse",
+    "pl_bmasseerr1",
+    "pl_bmasseerr2",
+    "pl_bmasselim",
+    "pl_bmassprov",
+    "sy_dist",
+    "pl_refname",
+    "st_refname",
+    "sy_refname",
+    "rowupdate"
+  ],
+  "server_count": 6090,
+  "server_count_receipt": "count.csv",
+  "files": {
+    "RIGHTS.md": {
+      "bytes": 1467,
+      "sha256": "5355a4be8c1efdf1980a99dd8009331349fe1ca6ccc00acf1b800e3b414825cb"
+    },
+    "count.csv": {
+      "bytes": 7,
+      "sha256": "1ec18115cec2cccfffc5ed75acb4c336a23ae04bfd35ecf7423d2c47d022d45b"
+    },
+    "snapshot.csv.gz": {
+      "bytes": 338532,
+      "sha256": "3f9ab54aa49452e13404bab56868ee8da65e9f6d161a1540f435666339f38c17"
+    }
+  },
+  "attribution_short": "NASA Exoplanet Archive / Caltech-IPAC; referencias por fila",
+  "period_label": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+  "selection": "All PS rows satisfying default_flag=1 and disc_year<=2025; ordered by pl_name; MAXREC=20000; independent server count reconciled.",
+  "license": "LicenseRef-NEA-Published-Numerical-Data; see RIGHTS.md, not a blanket NASA media license",
+  "documentation_receipts": [
+    {
+      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/acknowledge.html",
+      "bytes": 26812,
+      "sha256": "2592d1ca6ec4ac3631419bdaaf00967710db828e8366b705fdad715ea2fc0f16",
+      "scope": "Documentation fetched in full; hash is not a license for copied website content."
+    },
+    {
+      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/faq.html",
+      "bytes": 55518,
+      "sha256": "b09422bc2e70e0579a98fd56b8bb317f64a8f30594cb71eb091b0a68aa88cf4a",
+      "scope": "Documentation fetched in full; hash is not a license for copied website content."
+    },
+    {
+      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+      "bytes": 113264,
+      "sha256": "0cc989641b384aed9fc16981a8e1a1598bd589ed51693f4ff1f53c24d2e62ba6",
+      "scope": "Documentation fetched in full; hash is not a license for copied website content."
+    },
+    {
+      "url": "https://exoplanetarchive.ipac.caltech.edu/docs/privacy.html",
+      "bytes": 26862,
+      "sha256": "23aabd3a0f7089e4e028ef28292e59fd1bca1f3f92c13df9e93f0a2520055571",
+      "scope": "Documentation fetched in full; hash is not a license for copied website content."
+    }
+  ],
+  "limitations": [
+    "No detecciones negativas, población observada total ni función de selección; no estimar frecuencia en el universo.",
+    "Parámetros actualizados al corte de adquisición, no un snapshot disponible al final de 2025.",
+    "default_flag selecciona un conjunto por referencia; no rellena faltantes con PSCompPars."
+  ]
+}

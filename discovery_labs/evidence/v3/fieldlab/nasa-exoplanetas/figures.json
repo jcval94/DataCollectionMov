@@ -1,0 +1,285 @@
+[
+  {
+    "id": "coverage",
+    "title": "Lo que falta también selecciona",
+    "alt": "Barras por método comparan todos los planetas del catálogo seleccionado con los que tienen las tres variables utilizables.",
+    "question_ids": [
+      "D05-C",
+      "D05-E"
+    ],
+    "table": "../gold/coverage.csv",
+    "table_sha256": "0982651aa4634e1f1af1aff0e9b963f32e438f9f3545936b960cc7ac802fb327",
+    "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "source_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+    "code_sha256": "f64aec615d5c8410380334d93727b511f0e236f718a897ceaf138a482f63c865",
+    "period": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "coverage-projection.png",
+        "svg": "coverage-projection.svg",
+        "png_sha256": "e49eef7f726a93c4886fce42dee0fa2fcd2c94e3740ccf5ca37080c8e9d45c05",
+        "svg_sha256": "71c4d61c30ebc1ae7c4690bc242e841f950381b00d9f6138b83de0e1f013a6e2",
+        "width": 1380,
+        "height": 960,
+        "denominator": "6,090 planetas; cinco métodos de descubrimiento con más registros. Barras sobre el mismo universo.",
+        "note": "Casos completos exigen radio, periodo y temperatura positivos con lim=0. No se rellenan faltantes.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "coverage-mobile.png",
+        "svg": "coverage-mobile.svg",
+        "png_sha256": "966c61dc6e0f270b409e6d19823ffb2f3a0e1f1c4234563d47950de4e9cfc6df",
+        "svg_sha256": "b404905132270307cc5588d12438ce9f5faafab98c7644465e7a5922de9f7c77",
+        "width": 576,
+        "height": 1056,
+        "denominator": "6,090 planetas; cinco métodos de descubrimiento con más registros. Barras sobre el mismo universo.",
+        "note": "Casos completos exigen radio, periodo y temperatura positivos con lim=0. No se rellenan faltantes.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "period-radius",
+    "title": "Un mapa de semejanzas observadas",
+    "alt": "Dispersión logarítmica de radio y periodo, coloreada por tres grupos exploratorios y con conteos; no dibuja planetas a escala.",
+    "question_ids": [
+      "D05-C",
+      "D05-E"
+    ],
+    "table": "../gold/clustered.csv",
+    "table_sha256": "62e10eda577a07d719e0ce6a10be419b6ce6d4211b3d96840b4e7a3d78df08f6",
+    "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "source_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+    "code_sha256": "f64aec615d5c8410380334d93727b511f0e236f718a897ceaf138a482f63c865",
+    "period": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "period-radius-projection.png",
+        "svg": "period-radius-projection.svg",
+        "png_sha256": "0ea6654565511dbaf8f50216d4dd5ca962627976f6169b67af0176935a872b08",
+        "svg_sha256": "17d391cf2fe508f2e6c9671c0e82d50243f9f5a20da49297e24ae5b947dde318",
+        "width": 1380,
+        "height": 960,
+        "denominator": "1,468 casos completos. K-means k=3 sobre log10 de radio, periodo y temperatura, estandarizados.",
+        "note": "Sólo se proyectan dos de tres variables. Temperatura de equilibrio modelada; grupos exploratorios sin validación física externa.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "period-radius-mobile.png",
+        "svg": "period-radius-mobile.svg",
+        "png_sha256": "2b7eea84a2077fa28ad777883e92e827921e4587751c314ad0409f61f965b458",
+        "svg_sha256": "c6b525f2659958f42492dd7230388da562db1cd326ab22c3500a786fd437ef22",
+        "width": 576,
+        "height": 1056,
+        "denominator": "1,468 casos completos. K-means k=3 sobre log10 de radio, periodo y temperatura, estandarizados.",
+        "note": "Sólo se proyectan dos de tres variables. Temperatura de equilibrio modelada; grupos exploratorios sin validación física externa.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "cluster-method",
+    "title": "La huella del método de descubrimiento",
+    "alt": "Barras apiladas muestran la mezcla de métodos de descubrimiento dentro de cada grupo, con tamaño y denominador por barra.",
+    "question_ids": [
+      "D05-E"
+    ],
+    "table": "../gold/method_mix.csv",
+    "table_sha256": "e18ef9ce53902bcb67aedd66cbce3defe9e0e0f39ce16a9197fb1340d6bcc590",
+    "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "source_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+    "code_sha256": "f64aec615d5c8410380334d93727b511f0e236f718a897ceaf138a482f63c865",
+    "period": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "cluster-method-projection.png",
+        "svg": "cluster-method-projection.svg",
+        "png_sha256": "0a7cf5d6705c59212c5845c9bd04fb5fb01b9ef4b2befcf47d99e9a2fb25550f",
+        "svg_sha256": "8fce8a764683661be993d3c14752b7d56d77cc8b07b3d22684e1df3363b8ebbe",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Mismos 1,468 casos completos. Cada barra suma 100%; grupos ordenados por radio medio logarítmico.",
+        "note": "NMI observada 0.009; media de 50 barajados 0.005. Asociación, no efecto causal.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "cluster-method-mobile.png",
+        "svg": "cluster-method-mobile.svg",
+        "png_sha256": "73b52bb97a5775c9a5f82f82cc578d093ef59778a00dc2d054d653698cb4a705",
+        "svg_sha256": "4329957f1828edf1f585e97fcff530075c25c54ec81c68b55dac7e1f03795c7b",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Mismos 1,468 casos completos. Cada barra suma 100%; grupos ordenados por radio medio logarítmico.",
+        "note": "NMI observada 0.009; media de 50 barajados 0.005. Asociación, no efecto causal.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "cluster-sensitivity",
+    "title": "¿Cuánto depende de nuestra regla?",
+    "alt": "Diagrama de puntos compara el acuerdo de grupos bajo cinco decisiones de modelado manteniendo fijo el conjunto de planetas.",
+    "question_ids": [
+      "D05-C",
+      "D05-E"
+    ],
+    "table": "../gold/cluster_sensitivity.csv",
+    "table_sha256": "b2393282b15ee9bce2ac2992cf774ab26c841718eadffc920626eac106b97e30",
+    "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "source_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+    "code_sha256": "f64aec615d5c8410380334d93727b511f0e236f718a897ceaf138a482f63c865",
+    "period": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "cluster-sensitivity-projection.png",
+        "svg": "cluster-sensitivity-projection.svg",
+        "png_sha256": "23e11cdfb41925ea0095ad3406b3b4189fa66a9813181d854f1430339e87f06b",
+        "svg_sha256": "7565d8b1d37a26e50a78378d285455c0264f328bd38e6b83b0850b4df7ae90fc",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Los mismos 1,468 planetas en cada política; cambia k, escala o uso de temperatura.",
+        "note": "ARI mide acuerdo de asignaciones, no verdad física. Silhouette y parámetros completos están en la tabla; no se elige k después de ver una historia.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "cluster-sensitivity-mobile.png",
+        "svg": "cluster-sensitivity-mobile.svg",
+        "png_sha256": "c914f2e0d2dd588976eddeaf6d9ac01f897185bcfa41af8aa65edb8e7937cfc1",
+        "svg_sha256": "c95486523105a2dd9e2d264a9a839002e78382651c6ffaba2cde02bcb4412baf",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Los mismos 1,468 planetas en cada política; cambia k, escala o uso de temperatura.",
+        "note": "ARI mide acuerdo de asignaciones, no verdad física. Silhouette y parámetros completos están en la tabla; no se elige k después de ver una historia.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "earth-radius",
+    "title": "Parecido en radio, según el umbral",
+    "alt": "Tres definiciones de radio parecido muestran fracciones entre los medidos y cotas al cambiar el denominador al catálogo completo.",
+    "question_ids": [
+      "D05-D1"
+    ],
+    "table": "../gold/radius_share.csv",
+    "table_sha256": "4e931823af3a5226185d6dcc95a9093277e572688e07da4abaa6aee467a07a83",
+    "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "source_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+    "code_sha256": "f64aec615d5c8410380334d93727b511f0e236f718a897ceaf138a482f63c865",
+    "period": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "earth-radius-projection.png",
+        "svg": "earth-radius-projection.svg",
+        "png_sha256": "fbd60271e8b9c41d0653d3fd08a657b57c10ffea35cd734c5648957216b0f861",
+        "svg_sha256": "78ec47bc2ded7819bbac3c29a55513887b505412aadd372094f2a0813d516ecf",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Puntos: 4,542 radios medidos. Cotas: 6,090 filas, asignando todos los no medidos fuera/dentro.",
+        "note": "Cotas por datos no medidos, no intervalos de confianza. Radio similar no implica agua, atmósfera ni habitabilidad. Línea: 50%.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "earth-radius-mobile.png",
+        "svg": "earth-radius-mobile.svg",
+        "png_sha256": "7af452b377ffc3784d3d40ef3737e774fc1e7b031c2ad9e39c6735ba15c5e192",
+        "svg_sha256": "fce295775f004ca31b12a5a7a7fb76e37b3c87c9bbfe5cfd4146f1882bfa652b",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Puntos: 4,542 radios medidos. Cotas: 6,090 filas, asignando todos los no medidos fuera/dentro.",
+        "note": "Cotas por datos no medidos, no intervalos de confianza. Radio similar no implica agua, atmósfera ni habitabilidad. Línea: 50%.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "radius-uncertainty",
+    "title": "Cerca del umbral, mira los errores",
+    "alt": "Intervalos asimétricos de radios publicados para una selección explícita de planetas cerca del radio terrestre; umbrales sombreados.",
+    "question_ids": [
+      "D05-D1"
+    ],
+    "table": "../gold/radius_audit.csv",
+    "table_sha256": "bad8c0801d5b0a2276866d2a2847345802d9aad18814a836f8313b50087011e3",
+    "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "source_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+    "code_sha256": "f64aec615d5c8410380334d93727b511f0e236f718a897ceaf138a482f63c865",
+    "period": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "radius-uncertainty-projection.png",
+        "svg": "radius-uncertainty-projection.svg",
+        "png_sha256": "9fffdabe29e99d681e049c704a9bbcc5852a0faa119cd65f7a8c0659b3ef6c7a",
+        "svg_sha256": "7c103720e8895fa6cbb1b639cbf65be1dc185c2f87a79600e494329a266fc79b",
+        "width": 1380,
+        "height": 960,
+        "denominator": "12 planetas más próximos a 1 R Tierra con errores utilizables; selección ilustrativa, no muestra aleatoria.",
+        "note": "Errores asimétricos conservados de cada referencia, sin asumir mismo nivel de confianza. Sombreado: rango 0.8–1.25.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "radius-uncertainty-mobile.png",
+        "svg": "radius-uncertainty-mobile.svg",
+        "png_sha256": "2a77e0acf763321fc97ebd3d9bbaa8ce9d270c7bed63d51f82c288091726ddb6",
+        "svg_sha256": "cd438c270a775b8c2cd23c8f996a18f65158833b3ec71a9e6751cd37a00f3cca",
+        "width": 576,
+        "height": 1056,
+        "denominator": "8 planetas más próximos a 1 R Tierra con errores utilizables; selección ilustrativa, no muestra aleatoria.",
+        "note": "Errores asimétricos conservados de cada referencia, sin asumir mismo nivel de confianza. Sombreado: rango 0.8–1.25.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  },
+  {
+    "id": "discovery-timeline",
+    "title": "La colección cambió con el tiempo",
+    "alt": "Líneas de conteos anuales por tres métodos de descubrimiento, mostrando cambios en la composición temporal del archivo seleccionado.",
+    "question_ids": [
+      "D05-C"
+    ],
+    "table": "../gold/annual.csv",
+    "table_sha256": "1bd902be97ddc4d78b62ba4aee07ba1f4e9af32a0bce8a84b229e864829f7b43",
+    "source_url": "https://exoplanetarchive.ipac.caltech.edu/docs/API_PS_columns.html",
+    "source_sha256": "3e576b6d1776d1ee292f11b6244885757af746783f06ccef98e45787ab24a01d",
+    "code_sha256": "f64aec615d5c8410380334d93727b511f0e236f718a897ceaf138a482f63c865",
+    "period": "Descubrimientos hasta 2025; parámetros vigentes al adquirir en noviembre 2026",
+    "variants": [
+      {
+        "variant": "projection",
+        "png": "discovery-timeline-projection.png",
+        "svg": "discovery-timeline-projection.svg",
+        "png_sha256": "5d90a9aeedf2a53b2a054ee69d71f530a6e73a26c4a28ecffc61f4dca4b6ab47",
+        "svg_sha256": "8b27e054426d26a88914025f2d75bc21210aaf1e2afa3128aaed0031da2e0014",
+        "width": 1380,
+        "height": 960,
+        "denominator": "Tres métodos más numerosos. Años hasta 2025 en el catálogo recibido; año de descubrimiento, no recuento de anuncios diarios.",
+        "note": "Las mediciones por defecto pueden haberse actualizado después del descubrimiento. Saltos de catálogo no son frecuencia de formación de planetas.",
+        "text_bounds_check": "PASS"
+      },
+      {
+        "variant": "mobile",
+        "png": "discovery-timeline-mobile.png",
+        "svg": "discovery-timeline-mobile.svg",
+        "png_sha256": "3334244c0eb6a9e06d8ffb918cd55677229766062fabf93288fca553838c3a04",
+        "svg_sha256": "6432fc327183c5ce7b9aa1855cd14f4c99802a939c2433fb183b75a365c89c58",
+        "width": 576,
+        "height": 1056,
+        "denominator": "Tres métodos más numerosos. Años hasta 2025 en el catálogo recibido; año de descubrimiento, no recuento de anuncios diarios.",
+        "note": "Las mediciones por defecto pueden haberse actualizado después del descubrimiento. Saltos de catálogo no son frecuencia de formación de planetas.",
+        "text_bounds_check": "PASS"
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "checked_local_date": "2026-11-17",
+  "reviewer": "Codex assistant; actual rendered PNGs and Chromium screenshots",
+  "rendered_inspection": true,
+  "reviewed_png_sha256": [
+    "0a7cf5d6705c59212c5845c9bd04fb5fb01b9ef4b2befcf47d99e9a2fb25550f",
+    "0ea6654565511dbaf8f50216d4dd5ca962627976f6169b67af0176935a872b08",
+    "23e11cdfb41925ea0095ad3406b3b4189fa66a9813181d854f1430339e87f06b",
+    "2a77e0acf763321fc97ebd3d9bbaa8ce9d270c7bed63d51f82c288091726ddb6",
+    "2b7eea84a2077fa28ad777883e92e827921e4587751c314ad0409f61f965b458",
+    "3334244c0eb6a9e06d8ffb918cd55677229766062fabf93288fca553838c3a04",
+    "5d90a9aeedf2a53b2a054ee69d71f530a6e73a26c4a28ecffc61f4dca4b6ab47",
+    "73b52bb97a5775c9a5f82f82cc578d093ef59778a00dc2d054d653698cb4a705",
+    "7af452b377ffc3784d3d40ef3737e774fc1e7b031c2ad9e39c6735ba15c5e192",
+    "966c61dc6e0f270b409e6d19823ffb2f3a0e1f1c4234563d47950de4e9cfc6df",
+    "9fffdabe29e99d681e049c704a9bbcc5852a0faa119cd65f7a8c0659b3ef6c7a",
+    "c914f2e0d2dd588976eddeaf6d9ac01f897185bcfa41af8aa65edb8e7937cfc1",
+    "e49eef7f726a93c4886fce42dee0fa2fcd2c94e3740ccf5ca37080c8e9d45c05",
+    "fbd60271e8b9c41d0653d3fd08a657b57c10ffea35cd734c5648957216b0f861"
+  ],
+  "observed": [
+    "All seven figures inspected in mobile and projection contact sheets.",
+    "Coverage mobile and asymmetric-radius interval Chromium screenshots inspected at full size.",
+    "Long method label wrapped after text-bounds failure; legends, axes, denominators and footer remain visible.",
+    "Weak method association retained; no invented causal explanation or surprising separation."
+  ],
+  "independent_teacher_approval": false,
+  "human_rehearsal": false
+}

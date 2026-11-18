@@ -1,0 +1,72 @@
+[
+  {
+    "rule": "unique_planet",
+    "passed": true,
+    "detail": "PS default_flag=1 must have exactly one row per planet."
+  },
+  {
+    "rule": "default_parameter_set",
+    "passed": true,
+    "detail": "No mixing reference rows or composite columns."
+  },
+  {
+    "rule": "discovery_year",
+    "passed": true,
+    "detail": "Discovery years <=2025; measurements are at acquisition date, not a historical 2025 snapshot."
+  },
+  {
+    "rule": "required_metadata",
+    "passed": true,
+    "detail": "Host, discovery method and parameter publication retained."
+  },
+  {
+    "rule": "controversy_flag",
+    "passed": true,
+    "detail": "Preserve controversial status."
+  },
+  {
+    "rule": "pl_rade_finite_positive",
+    "passed": true,
+    "detail": "Positive values only; unexpected values stop rather than silently vanish."
+  },
+  {
+    "rule": "pl_rade_limit_domain",
+    "passed": true,
+    "detail": "0 measurement; +/-1 limits. Missing flag is not a measurement."
+  },
+  {
+    "rule": "pl_orbper_finite_positive",
+    "passed": true,
+    "detail": "Positive values only; unexpected values stop rather than silently vanish."
+  },
+  {
+    "rule": "pl_orbper_limit_domain",
+    "passed": true,
+    "detail": "0 measurement; +/-1 limits. Missing flag is not a measurement."
+  },
+  {
+    "rule": "pl_eqt_finite_positive",
+    "passed": true,
+    "detail": "Positive values only; unexpected values stop rather than silently vanish."
+  },
+  {
+    "rule": "pl_eqt_limit_domain",
+    "passed": true,
+    "detail": "0 measurement; +/-1 limits. Missing flag is not a measurement."
+  },
+  {
+    "rule": "pl_bmasse_finite_positive",
+    "passed": true,
+    "detail": "Positive values only; unexpected values stop rather than silently vanish."
+  },
+  {
+    "rule": "pl_bmasse_limit_domain",
+    "passed": true,
+    "detail": "0 measurement; +/-1 limits. Missing flag is not a measurement."
+  },
+  {
+    "rule": "record_conservation",
+    "passed": true,
+    "detail": "Every original row remains in Silver."
+  }
+]
