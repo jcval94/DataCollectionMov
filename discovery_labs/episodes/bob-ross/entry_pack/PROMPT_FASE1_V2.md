@@ -4,6 +4,9 @@
 
 **Repo:** https://github.com/jcval94/DataCollectionMov
 
+**Infraestructura común (nuevo PR #11, pendiente):** si `discovery_labs/shared/` existe en la rama local, carga `shared/skills/question-forge/SKILL.md`, `shared/model_catalog/MODEL_SET.md` y su validador; si no existe, lee las copias del entry_pack como respaldo, sin crear una versión adicional. Lee en ambos casos `entry_pack/MODEL_FIT_BOB_ROSS.md` para las restricciones específicas. No cambiar el orden ni fusionar PRs sin revisar dependencias.
+
+
 **Carpeta ÚNICA autorizada:** `discovery_labs/episodes/bob-ross/`. Trabaja sobre la rama más actual del episodio, preservando cambios locales y PRs concurrentes. No tocar `mvp-ds-course`, workflows globales ni otros proyectos.
 
 ## Resultado que quiero
