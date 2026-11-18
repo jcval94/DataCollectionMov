@@ -6,6 +6,17 @@
 > Faltan ejecutar/registrar tests del nuevo paquete en entorno canónico, revisión docente
 > independiente, ensayo humano de 45 minutos y evaluación de accesibilidad con alumnos.
 
+## Nuevo paso obligatorio: paquete de entrada antes del informe
+
+**[Abrir Discovery Intake](intake/README.md)** — preguntas profundas y de varios órdenes, cinco prompts especializados de Deep Research, la historia documentable de Bob Ross, metadatos, muestra real, plan de experimentos, visualizaciones y skill portátil para generar mejores preguntas.
+
+- **Fase 0:** investigación y selección de preguntas, aún sin guion ni video.
+- **Fase 1:** `research_guide.html`, guía científica y técnica; requiere aprobación explícita del usuario.
+- **Fase 2:** storytelling audiovisual HTML solo después de aprobar Fase 1.
+- **Fase 3:** video final solo después de aprobar Fase 2.
+
+**No basta con seis consultas o seis tarjetas**: los arcos de `intake/QUESTION_GRAPH.md` plantean preguntas de segundo y tercer orden. Son propuestas condicionadas a resultados y fuentes; **no** se han implementado ni aprobado todavía. No deducir causalidad médica o artística a partir de las temporadas.
+
 ## Abrir en un minuto
 
 1. Descarga **solamente esta carpeta**.
