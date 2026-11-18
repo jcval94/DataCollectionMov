@@ -45,14 +45,14 @@ La página contiene los 403 episodios en una representación autocontenida **der
 | Grupo anfitrión | 381 episodios (GUEST=0) |
 | Invitados | 22 episodios (GUEST=1) |
 | Formato | CSV UTF-8, 66,315 bytes |
-| Origen fijado | commit \`4c1ff5e3aef1816ae04af63218015066e186c147\` |
-| SHA-256 | \`42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf\` |
+| Origen fijado | commit `4c1ff5e3aef1816ae04af63218015066e186c147` |
+| SHA-256 | `42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf` |
 | Licencia del CSV | CC BY 4.0; **no cubre pinturas ni vídeos** |
 | Periodo | Temporadas S01–S31; no son fechas observadas en este CSV |
 
 El análisis agrega doce familias binarias mediante **OR** (véase [DICCIONARIO.md](DICCIONARIO.md)): árboles, montañas, lagos, ríos, mar, nieve, cascadas, estructuras, nubes, rocas, sol y flores. Una etiqueta TREE=1 indica presencia codificada, **no** número de árboles. SNOWY_MOUNTAIN participa en montaña y nieve; la correlación es en parte constructiva. Los ceros son ausencia codificada, no faltantes.
 
-El CSV en esta carpeta es copia byte por byte del ya verificado en \`examples/bob_ross_clustering/data/\` del mismo repositorio. Se mantiene aislado para no depender de archivos externos a esta carpeta al ejecutar.
+El CSV en esta carpeta es copia byte por byte del ya verificado en `examples/bob_ross_clustering/data/` del mismo repositorio. Se mantiene aislado para no depender de archivos externos a esta carpeta al ejecutar.
 
 ## Vista de las primeras visualizaciones
 
@@ -70,7 +70,7 @@ Las gráficas respetan que las doce familias no son mutuamente excluyentes, que 
 
 Desde la raíz del repositorio:
 
-\`\`\`bash
+```bash
 # Verificar SHA, 403 episodios, esquema, preguntas y controles
 python discovery_labs/episodes/bob-ross/run.py --check
 
@@ -85,9 +85,9 @@ python -m unittest discover -s discovery_labs/episodes/bob-ross/tests -v
 
 # Opcional, sin npm, si está instalado Node.js:
 node discovery_labs/episodes/bob-ross/qa_static.cjs
-\`\`\`
+```
 
-**Toda la escritura ocurre en \`discovery_labs/episodes/bob-ross/output/\`** y no toca tablas actuales, pipelines de movilidad, la plataforma del curso ni otros experimentos. La salida de cada comando debe contrastarse antes de anunciar que una ruta está lista para aula.
+**Toda la escritura ocurre en `discovery_labs/episodes/bob-ross/output/`** y no toca tablas actuales, pipelines de movilidad, la plataforma del curso ni otros experimentos. La salida de cada comando debe contrastarse antes de anunciar que una ruta está lista para aula.
 
 ### Archivos del episodio
 
@@ -107,7 +107,7 @@ node discovery_labs/episodes/bob-ross/qa_static.cjs
 | [qa_static.cjs](qa_static.cjs) | QA estático opcional de HTML, JavaScript y datos embebidos con Node |
 | [QA_STATUS.md](QA_STATUS.md) | Evidencias verificadas, pruebas aún no ejecutadas y puertas de aprobación |
 
-**No se versionan automáticamente outputs generados**: ejecutar los scripts produce archivos en \`output/\`, incluso sin red. El HTML funciona sin regenerarlos, porque incrusta un subconjunto semánticamente fiel de las columnas necesarias: identificador, título, invitado, temporada y doce motivos agregados. Los 67 campos originales no se eliminan del CSV raw.
+**No se versionan automáticamente outputs generados**: ejecutar los scripts produce archivos en `output/`, incluso sin red. El HTML funciona sin regenerarlos, porque incrusta un subconjunto semánticamente fiel de las columnas necesarias: identificador, título, invitado, temporada y doce motivos agregados. Los 67 campos originales no se eliminan del CSV raw.
 
 ## Una sesión de 45 minutos
 
@@ -130,7 +130,7 @@ Se reutilizan ideas y evidencia verificadas de:
 - [Cuatro salas para Bob Ross](../../../examples/bob_ross_clustering/README.md): doce motivos, k=4, medoids reales, experimento de ID contaminante.
 - [Piloto V2](https://github.com/jcval94/DataCollectionMov/blob/feat/ai-discovery-labs-v2/discovery_labs/pilots/bob-ross-elementos/README.md), aún en PR #2: árbol, nieve/montaña, invitados y dependencia de distancia.
 
-**No se modifica ninguna carpeta anterior, ningún workflow de GitHub Actions, ningún archivo de datos histórico, ni el portal de \`mvp-ds-course\`.**
+**No se modifica ninguna carpeta anterior, ningún workflow de GitHub Actions, ningún archivo de datos histórico, ni el portal de `mvp-ds-course`.**
 
 ## Puertas pendientes antes de publicar
 
