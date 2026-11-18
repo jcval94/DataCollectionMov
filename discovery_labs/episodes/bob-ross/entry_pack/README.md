@@ -25,6 +25,7 @@
 | [sample_features.csv](sample_features.csv) | Las mismas 13 filas derivadas con 12 familias |
 | [PROMPT_FASE1_V2.md](PROMPT_FASE1_V2.md) | Encargo local de guía científica y gates |
 | [validate_pack.py](validate_pack.py) | Comprobaciones sin entrenar modelos de una sola lista y 14 contratos modelo/estadística |
+| [QA_PACK_STATUS.md](QA_PACK_STATUS.md) | Validaciones estáticas realizadas y pruebas todavía pendientes |
 | [../research_guide.html](../research_guide.html) | Primera guía HTML V3, con las 14 preguntas en **una sola sección**; **pendiente de aprobación** |
 
 **Trazabilidad histórica, NO segundo banco:** [QUESTION_ARCS.md](QUESTION_ARCS.md) y [question_graph.json](question_graph.json) conservan 12 líneas previas y 33 nodos; se sustituyen editorialmente por `QUESTIONS_MASTER.*`. Las seis preguntas antiguas del `../questions.json` sirven a la interfaz actual, no se deben duplicar en la nueva guía.
