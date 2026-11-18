@@ -1,4 +1,4 @@
-.PHONY: check research clusters all
+.PHONY: check research clusters browser-qa all
 PYTHON ?= python
 check:
 	$(PYTHON) run.py --check
@@ -8,3 +8,6 @@ research:
 clusters:
 	$(PYTHON) clustering.py --write
 all: check research clusters
+
+browser-qa:
+	node qa_static.cjs
