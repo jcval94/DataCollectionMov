@@ -1,9 +1,58 @@
 ---
 name: question-forge
-description: Diseña preguntas de investigación memorables, falsables, contextuales y de varios órdenes a partir de datasets reales, hipótesis externas y evidencia verificada. Para AI Discovery Labs y cualquier dataset.
-version: 1.0.0
+description: Diseña un único banco de preguntas de investigación memorables, con contexto externo, niveles O1/O2/O3 y, para CADA pregunta, al menos un modelo y una prueba estadística planificados. Funciona con cualquier dataset y exige paquete de entrada y aprobación de la guía científica.
+version: 2.0.0
 ---
 # Question Forge — habilidad reusable de preguntas científicas y narrativas
+
+## NUEVO CONTRATO V2 — obligatorio en TODO episodio
+
+1. **Un único bloque editorial:** no presentar «seis preguntas básicas» más «preguntas nuevas» aparte; no usar «2B». Leer preguntas heredadas como insumos, no como contenido inmovible. **Fusionar, descartar o elevar** las consultas simples a evidencia o ejercicios de las preguntas profundas. Entregar **un solo banco canónico** `QUESTIONS_MASTER.md` + `questions_master.json`. El HTML muestra UNA sola sección de preguntas con tarjetas de todos los casos y facetas de exploración. No debe mostrar dos listas paralelas.
+2. **Cada pregunta principal (sin excepción) tiene dos diseños distintos, AÚN SIN EJECUTAR:** un modelo `model_primary_id/model_name` de `MODEL_SET.md` y un ejercicio estadístico formal (hipótesis y contraste, IC, bootstrap, permutación, Fisher, bondad de ajuste, CV/OOS, etc.) con `qué/por qué/dónde/variables/baseline/validación`. El ejercicio estadístico NO es sinónimo de simplemente elegir el modelo.
+3. **Sin entrenar nada durante el paquete:** no ejecutar modelos, tuning con Optuna, simulaciones, scraping o pruebas estadísticas nuevas cuando la solicitud sea solo de planeación. Registrar `PLAN_ONLY` o `BLOCKED`; los conteos previamente verificados son evidencia de contexto, no nuevos experimentos.
+4. **Relevancia antes de sofisticación:** no imponer LSTM, Transformers, RL, riesgo colectivo o Optuna en un dataset que no tenga secuencia suficiente, reward, pérdida, target o validación. Mencionar alternativas factibles con criterios; no ofrecer 24 modelos por pregunta.
+5. **Pregunta histórica/bio y causa:** un hecho fuera del dataset es un insumo legítimo para hipótesis potentes. Antes de afirmar una relación, investigar cronología, periodos de medición, tiempo de emisión vs creación, explicaciones rivales y evidencia de imposibilidad. Si contexto clave es sensible (p. ej. enfermedad de un sujeto histórico), usar fuentes verificadas y no especular sobre estados mentales, estado clínico por un gráfico ni mecanismo causal sin identificación válida.
+6. **O2 y O3 se activan por evidencia:** cada O2 requiere condición `trigger_from_O1`; cada O3 requiere `trigger_from_O2` + prueba rival independiente. Antes de tener el valor de activación, conservar como **CONDICIONAL**, no como descubrimiento.
+7. **Visualización científica obligatoria:** proponer por pregunta una figura que cambia la comprensión, una adversarial y un inspector detallado (hover, focus, tap; ID, método, fuente y derechos); imágenes ajenas solo con autorización. Vincular cada escena a cálculo y denominador.
+8. **Paquete de entrada antes de guía:** `START_HERE_NEW_CHAT.md`, `DEEP_RESEARCH_PROMPTS.md`, `metadata.json`, `sample_raw.csv`, `sample_features.csv`, `RESEARCH_PLAN.md`, `MODEL_SET.md`, `QUESTIONS_MASTER.md`, `questions_master.json`, `VISUAL_DESIGN.md`, y `sources/claims` (cuando se ejecuta Deep Research). El paquete incluye un checklist de faltantes y decisiones, y un prompt portable para una conversación nueva.
+9. **Fases bloqueadas:** Entrada → guía científica HTML → aprobación humana explícita de una versión → storytelling audiovisual → aprobación → video. La skill nunca crea guion/video de oficio.
+
+### Ficha de una pregunta (campos mínimos nuevos)
+```yaml
+id: BR-01
+title: ¿Cambió la pintura cuando cambió la vida de Bob Ross?
+research_question: ...
+order_1: {question: ..., metric: ..., denominator: ..., status: PLAN_ONLY}
+order_2: {question: ..., trigger_from_O1: "si ...", status: CONDITIONAL}
+order_3: {question: ..., trigger_from_O2: "si ...", rival_hypothesis: ..., status: CONDITIONAL}
+external_context: [{claim: ..., source_url: ..., status: VERIFIED|DISPUTED|PENDING}]
+model:
+  primary_id: M03
+  what: modelo binomial segmentado
+  why: detectar rupturas descriptivas sin inferir causalidad
+  where: Research / temporada
+  data: ...
+  baseline: ...
+  validation: ...
+statistical_exercise:
+  what: prueba de quiebre con bootstrap de bloques
+  why: evaluar si el patrón supera el ruido
+  where: Research / contrastes
+  design: ...
+visual: {main: ..., adversarial: ..., hover_card: ...}
+gates: {licenses: ..., adequate_n: ..., chronology: ..., image_rights: ...}
+status: PLANNED
+```
+
+### QA automático de salida
+- Cada ID es único. `questions_master.json` y `QUESTIONS_MASTER.md` expresan el mismo conjunto de preguntas.
+- Cero preguntas principales sin modelo **y** ejercicio estadístico. Ambas propuestas tienen nombre, razón, ubicación y datos.
+- Ninguna afirmación causal sin estrategia de identificación y evidencia.
+- Cero preguntas «orden 2/3» sin desencadenante condicional explícito o resultado medido.
+- Todas las preguntas históricas indican nivel de evidencia del dato externo.
+- Comparar el banco heredado y documentar dónde quedó integrado (tabla de trazabilidad), sin mantenerlo como segunda sección visible.
+- El primer HTML sólo tiene **una sección principal de preguntas** con todas las rutas y un filtro/índice opcional; la biografía no se esconde como apéndice.
+- La skill **no** ejecuta entrenamiento ni crea guion/video.
 
 ## Activación
 Usar ANTES de escribir el reporte científico HTML de cualquier episodio; nunca fabricar una historia cerrada antes de analizar los datos. Acepta el paquete de entrada (dataset, perfilado, fuentes externas, antecedentes, licencias, metadata y preguntas heredadas). Produce un **grafo investigable de preguntas**, no una lista decorativa.
@@ -89,7 +138,7 @@ Ejemplo: `COUNT(*) WHERE TREE=0` es evidencia para «¿Hasta qué punto la image
 ```
 
 ## Definición de terminado
-Entregar: `question_graph.json`, priorización; mapa de familias y arcos O1→O2→O3; tabla fuente-afirmación; 3–5 rutas de alta calidad; plan de visualizaciones y pruebas adversariales. Construir rutas alternativas para «apoya», «refuta» y «no alcanza la evidencia». Ninguna pregunta pasa a `EXECUTED` sin cálculo reproduccible ni a `APPROVED` sin revisión humana.
+Entregar: el único banco canónico `QUESTIONS_MASTER.md` + `questions_master.json`, `MODEL_SET.md`, `START_HERE_NEW_CHAT.md`, `question_graph.json` de dependencias (no un segundo banco visible), priorización; mapa de familias y arcos O1→O2→O3; tabla fuente-afirmación; 3–5 rutas de alta calidad; plan de visualizaciones y pruebas adversariales. Construir rutas alternativas para «apoya», «refuta» y «no alcanza la evidencia». Ninguna pregunta pasa a `EXECUTED` sin cálculo reproduccible ni a `APPROVED` sin revisión humana.
 
 ## Control de las tres etapas
 Esta skill sólo prepara el **Paquete de Entrada y la Guía Científica (Fase 1)**. No genera guion audiovisual, voz, storyboard de video, Remotion ni MP4 hasta que el usuario apruebe explícitamente la versión de la guía. El contenido de historia que produce es científico/editorial, no un guion definitivo de video.
