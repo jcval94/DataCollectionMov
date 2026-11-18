@@ -82,6 +82,9 @@ python discovery_labs/episodes/bob-ross/clustering.py --write
 
 # Tests (sólo unittest de la librería estándar)
 python -m unittest discover -s discovery_labs/episodes/bob-ross/tests -v
+
+# Opcional, sin npm, si está instalado Node.js:
+node discovery_labs/episodes/bob-ross/qa_static.cjs
 \`\`\`
 
 **Toda la escritura ocurre en \`discovery_labs/episodes/bob-ross/output/\`** y no toca tablas actuales, pipelines de movilidad, la plataforma del curso ni otros experimentos. La salida de cada comando debe contrastarse antes de anunciar que una ruta está lista para aula.
@@ -101,6 +104,8 @@ python -m unittest discover -s discovery_labs/episodes/bob-ross/tests -v
 | [DOCENTE.md](DOCENTE.md) | Guion, tiempos, preguntas y respuestas de referencia con advertencias |
 | [STORYBOARD.md](STORYBOARD.md) | Actos narrativos, tensión, visuales y bifurcaciones honestas |
 | [tests/test_episode.py](tests/test_episode.py) | Controles del dataset, método, interfaz y gráficos |
+| [qa_static.cjs](qa_static.cjs) | QA estático opcional de HTML, JavaScript y datos embebidos con Node |
+| [QA_STATUS.md](QA_STATUS.md) | Evidencias verificadas, pruebas aún no ejecutadas y puertas de aprobación |
 
 **No se versionan automáticamente outputs generados**: ejecutar los scripts produce archivos en \`output/\`, incluso sin red. El HTML funciona sin regenerarlos, porque incrusta un subconjunto semánticamente fiel de las columnas necesarias: identificador, título, invitado, temporada y doce motivos agregados. Los 67 campos originales no se eliminan del CSV raw.
 
