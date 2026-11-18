@@ -6,7 +6,7 @@
 
 Un equipo curatorial quiere investigar las pinturas de *The Joy of Painting*. No tienes que adivinar lo que piensa una IA: necesitas **elegir una pregunta, decidir qué contar, interpretar datos y defender una conclusión**.
 
-Abre \`episode.html\` directamente en el navegador. No se guardan ni envían tus respuestas. Al principio elige una de seis preguntas (A, B, C, D1, D2 o E). La clase trabaja **una**.
+Abre `episode.html` directamente en el navegador. No se guardan ni envían tus respuestas. Al principio elige una de seis preguntas (A, B, C, D1, D2 o E). La clase trabaja **una**.
 
 | Código | Perspectiva | Lo que vas a investigar |
 |---|---|---|
@@ -36,15 +36,15 @@ Elige el camino que mejor responda **tu** pregunta. Explica por qué descartaste
 
 Si utilizas la terminal, desde la raíz del repositorio:
 
-\`\`\`bash
+```bash
 python discovery_labs/episodes/bob-ross/run.py --check
 python discovery_labs/episodes/bob-ross/run.py --write
 python discovery_labs/episodes/bob-ross/clustering.py --write
-\`\`\`
+```
 
-El primer comando verifica la fuente. Los otros generan tablas, figuras y el análisis de cuatro salas en la carpeta \`output/\`.
+El primer comando verifica la fuente. Los otros generan tablas, figuras y el análisis de cuatro salas en la carpeta `output/`.
 
-Si no tienes Python preparado, la página \`episode.html\` calcula visualizaciones descriptivas en el navegador a partir de datos reales embebidos y no necesita internet.
+Si no tienes Python preparado, la página `episode.html` calcula visualizaciones descriptivas en el navegador a partir de datos reales embebidos y no necesita internet.
 
 Observa qué está midiendo el gráfico: n, rango, definición de árbol/montaña y si se excluyeron invitados.
 
