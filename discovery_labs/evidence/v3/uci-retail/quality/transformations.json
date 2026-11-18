@@ -1,0 +1,32 @@
+[
+  {
+    "step": "non_product_code",
+    "affected_rows": 37,
+    "action": "Excluir sólo del ranking económico; conservar en silver con motivos acumulables.",
+    "statistical_consequence": "Cambia el universo de productos elegibles; las notas negativas permanecen."
+  },
+  {
+    "step": "nonpositive_price",
+    "affected_rows": 28,
+    "action": "Excluir sólo del ranking económico; conservar en silver con motivos acumulables.",
+    "statistical_consequence": "Cambia el universo de productos elegibles; las notas negativas permanecen."
+  },
+  {
+    "step": "zero_quantity",
+    "affected_rows": 0,
+    "action": "Excluir sólo del ranking económico; conservar en silver con motivos acumulables.",
+    "statistical_consequence": "Cambia el universo de productos elegibles; las notas negativas permanecen."
+  },
+  {
+    "step": "cancel_positive",
+    "affected_rows": 0,
+    "action": "Excluir sólo del ranking económico; conservar en silver con motivos acumulables.",
+    "statistical_consequence": "Cambia el universo de productos elegibles; las notas negativas permanecen."
+  },
+  {
+    "step": "exact_duplicates",
+    "affected_rows": 118,
+    "action": "Conservar en análisis principal; retirar sólo en sensibilidad.",
+    "statistical_consequence": "No se puede probar que una línea repetida sea error de negocio."
+  }
+]

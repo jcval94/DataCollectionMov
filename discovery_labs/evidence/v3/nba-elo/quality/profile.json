@@ -1,0 +1,389 @@
+{
+  "scope": "Snapshot medido; no universo declarado por productor.",
+  "rows": 2622,
+  "column_count": 23,
+  "physical_bytes": 369469,
+  "raw_memory_bytes": 3264081,
+  "silver_memory_bytes": 2444633,
+  "exact_duplicates": 0,
+  "business_key": [
+    "game_id",
+    "team_id"
+  ],
+  "business_key_repetitions": 0,
+  "key_interpretation": "La llave debe ser única.",
+  "columns": {
+    "gameorder": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1311,
+      "frequent_values": {
+        "61847": 2,
+        "61848": 2,
+        "61849": 2,
+        "61850": 2,
+        "61851": 2
+      }
+    },
+    "game_id": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1311,
+      "frequent_values": {
+        "201410280LAL": 2,
+        "201410280NOP": 2,
+        "201410280SAS": 2,
+        "201410290BOS": 2,
+        "201410290CHO": 2
+      }
+    },
+    "lg_id": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1,
+      "frequent_values": {
+        "NBA": 2622
+      }
+    },
+    "_iscopy": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "1": 1311,
+        "0": 1311
+      }
+    },
+    "year_id": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1,
+      "frequent_values": {
+        "2015": 2622
+      }
+    },
+    "date_game": {
+      "raw_type": "string",
+      "silver_type": "datetime64[ns]",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 205,
+      "frequent_values": {
+        "2/27/2015": 28,
+        "4/15/2015": 28,
+        "3/4/2015": 26,
+        "1/7/2015": 26,
+        "11/26/2014": 26
+      }
+    },
+    "seasongame": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 103,
+      "frequent_values": {
+        "1": 30,
+        "2": 30,
+        "3": 30,
+        "4": 30,
+        "5": 30
+      }
+    },
+    "is_playoffs": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 2460,
+        "1": 162
+      }
+    },
+    "team_id": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 30,
+      "frequent_values": {
+        "GSW": 103,
+        "CLE": 102,
+        "HOU": 99,
+        "ATL": 98,
+        "LAC": 96
+      }
+    },
+    "fran_id": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 30,
+      "frequent_values": {
+        "Warriors": 103,
+        "Cavaliers": 102,
+        "Rockets": 99,
+        "Hawks": 98,
+        "Clippers": 96
+      }
+    },
+    "pts": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 76,
+      "frequent_values": {
+        "101": 100,
+        "100": 94,
+        "98": 94,
+        "99": 93,
+        "95": 92
+      },
+      "numeric_measured": {
+        "min": 65.0,
+        "q25": 92.0,
+        "median": 100.0,
+        "q75": 107.0,
+        "max": 144.0
+      },
+      "outside_1_5_IQR_count": 34,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "elo_i": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2622,
+      "frequent_values": {
+        "1596.4641": 1,
+        "1421.9985": 1,
+        "1457.2185": 1,
+        "1359.4265": 1,
+        "1699.5024": 1
+      },
+      "numeric_measured": {
+        "min": 1235.2067,
+        "q25": 1430.707325,
+        "median": 1512.7083,
+        "q75": 1608.9342000000001,
+        "max": 1813.6349
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "elo_n": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2622,
+      "frequent_values": {
+        "1607.8038": 1,
+        "1410.6588": 1,
+        "1463.354": 1,
+        "1353.291": 1,
+        "1701.1141": 1
+      },
+      "numeric_measured": {
+        "min": 1235.2067,
+        "q25": 1430.3656,
+        "median": 1512.2374,
+        "q75": 1609.0399750000001,
+        "max": 1822.2881
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "win_equiv": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2622,
+      "frequent_values": {
+        "51.586834": 1,
+        "31.337477": 1,
+        "36.695789": 1,
+        "25.881901": 1,
+        "60.040932": 1
+      }
+    },
+    "opp_id": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 30,
+      "frequent_values": {
+        "GSW": 103,
+        "CLE": 102,
+        "HOU": 99,
+        "ATL": 98,
+        "LAC": 96
+      }
+    },
+    "opp_fran": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 30,
+      "frequent_values": {
+        "Warriors": 103,
+        "Cavaliers": 102,
+        "Rockets": 99,
+        "Hawks": 98,
+        "Clippers": 96
+      }
+    },
+    "opp_pts": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 76,
+      "frequent_values": {
+        "101": 100,
+        "100": 94,
+        "98": 94,
+        "99": 93,
+        "95": 92
+      },
+      "numeric_measured": {
+        "min": 65.0,
+        "q25": 92.0,
+        "median": 100.0,
+        "q75": 107.0,
+        "max": 144.0
+      },
+      "outside_1_5_IQR_count": 34,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "opp_elo_i": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2622,
+      "frequent_values": {
+        "1421.9985": 1,
+        "1596.4641": 1,
+        "1359.4265": 1,
+        "1457.2185": 1,
+        "1592.0101": 1
+      },
+      "numeric_measured": {
+        "min": 1235.2067,
+        "q25": 1430.707325,
+        "median": 1512.7083,
+        "q75": 1608.9342000000001,
+        "max": 1813.6349
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "opp_elo_n": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2622,
+      "frequent_values": {
+        "1410.6588": 1,
+        "1607.8038": 1,
+        "1353.291": 1,
+        "1463.354": 1,
+        "1590.3984": 1
+      },
+      "numeric_measured": {
+        "min": 1235.2067,
+        "q25": 1430.3656,
+        "median": 1512.2374,
+        "q75": 1609.0399750000001,
+        "max": 1822.2881
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "game_location": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 3,
+      "frequent_values": {
+        "A": 1309,
+        "H": 1309,
+        "N": 4
+      }
+    },
+    "game_result": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "W": 1311,
+        "L": 1311
+      }
+    },
+    "forecast": {
+      "raw_type": "string",
+      "silver_type": "float64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2622,
+      "frequent_values": {
+        "0.60555327": 1,
+        "0.39444676": 1,
+        "0.75741923": 1,
+        "0.24258077": 1,
+        "0.76753098": 1
+      },
+      "numeric_measured": {
+        "min": 0.032247901,
+        "q25": 0.323113825,
+        "median": 0.5,
+        "q75": 0.676886205,
+        "max": 0.9677521
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "notes": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 2618,
+      "missing_pct": 99.84744469870328,
+      "cardinality": 2,
+      "frequent_values": {
+        "at Mexico City Arena, Mexico City, Mexico": 2,
+        "at The O2, London, England": 2
+      }
+    }
+  },
+  "temporal": {
+    "min": "2014-10-28T00:00:00",
+    "max": "2015-06-16T00:00:00",
+    "frequency": "Eventos irregulares; no imputar días sin evento como faltantes.",
+    "observed_dates": 205,
+    "timezone": "No verificada; mantener fecha local sin conversión."
+  },
+  "selection": "Todas las filas NBA de year_id=2015 (temporada 2014–2015), incluidos playoffs. Se preservan las filas espejo para demostrar el denominador. Resultados históricos; no describen NBA actual.",
+  "representativeness": "No se infiere representatividad ni causalidad desde este archivo."
+}

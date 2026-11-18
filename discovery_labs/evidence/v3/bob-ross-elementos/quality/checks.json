@@ -1,0 +1,27 @@
+[
+  {
+    "rule": "nonempty",
+    "passed": true,
+    "detail": "Snapshot no vacío."
+  },
+  {
+    "rule": "episode_key",
+    "passed": true,
+    "detail": "ID único; no feature artística."
+  },
+  {
+    "rule": "binary_labels",
+    "passed": true,
+    "detail": "Los ceros son ausencias registradas, no nulos."
+  },
+  {
+    "rule": "row_conservation",
+    "passed": true,
+    "detail": "Ninguna fila desaparece de silver."
+  },
+  {
+    "rule": "eligible_reconciliation",
+    "passed": true,
+    "detail": "381 elegibles + 22 fuera del alcance = 403."
+  }
+]

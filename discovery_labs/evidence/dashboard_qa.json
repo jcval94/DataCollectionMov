@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "checks": [
+    "86_sources_516_questions",
+    "13_categories",
+    "12_cards_first_page",
+    "3_technical_pilots_18_designs",
+    "0_ready_has_empty_state",
+    "BTS_disambiguated",
+    "category_filter",
+    "technique_filter",
+    "difficulty_filter",
+    "navigation_ranking",
+    "top10_and_13_category_tops",
+    "6_embedded_pilot_images",
+    "no_remote_scripts_css_images",
+    "escaped_dataset_payload"
+  ],
+  "scope": "Lógica JavaScript y marcado con adaptador de documento; NO validación visual ni smoke en navegador.",
+  "browser_verification": "Prueba de navegador independiente en tests/dashboard_browser.py; consultar su evidencia de CI.",
+  "responsive_css": "Presente; este test no valida renderizado."
+}

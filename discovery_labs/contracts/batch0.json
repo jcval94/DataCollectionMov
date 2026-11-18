@@ -1,0 +1,922 @@
+[
+  {
+    "id": "D10-A",
+    "canonical_id": "nba-elo.A",
+    "source_id": "nba-elo",
+    "perspective": "A",
+    "question": "¿Qué fichajes o periodos podrían haber tenido mejor rendimiento deportivo por salario? Requiere nóminas externas.",
+    "original_contract_path": "catalog/questions.json#nba-elo.A",
+    "hypothesis": "Comparar rendimiento por costo salarial",
+    "alternative_hypothesis": "El orden por rendimiento bruto cambia al dividir por salarios comparables.",
+    "required_variables": [
+      "player_or_team_id_NOT_AVAILABLE",
+      "salary_NOT_AVAILABLE",
+      "season",
+      "chosen_performance"
+    ],
+    "unit_of_analysis": "Jugador-temporada o equipo-temporada con salario",
+    "metric_and_denominator": "Rendimiento elegido / salario con moneda y periodo comunes",
+    "descriptive_method": "Join auditado de nóminas y resultados; no inferir efecto causal del fichaje",
+    "additional_method": "Contraste de refutación: Ajustar minutos, inflación, selección y composición",
+    "baseline": "Rendimiento bruto",
+    "visualizations": [],
+    "adversarial_test": "Ajustar minutos, inflación, selección y composición",
+    "limitations": [
+      "No hay jugadores ni salarios. Se requiere fuente licenciada, llaves y grano compatibles."
+    ],
+    "deliverable_type": "Diagnóstico de información faltante; no resultado calculado.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "BLOCKED",
+    "blocking_reason": "No hay jugadores ni salarios. Se requiere fuente licenciada, llaves y grano compatibles.",
+    "how_to_unblock": "No hay jugadores ni salarios. Se requiere fuente licenciada, llaves y grano compatibles.",
+    "feature_policy": {
+      "allowed": [
+        "forecast",
+        "elo_i",
+        "opp_elo_i",
+        "game_location",
+        "is_playoffs"
+      ],
+      "label_only": [
+        "pts",
+        "opp_pts",
+        "win"
+      ],
+      "forbidden_predictors": [
+        "elo_n",
+        "opp_elo_n",
+        "win_equiv",
+        "game_result"
+      ]
+    },
+    "belief_popularity": null,
+    "period_scope": "year_id=2015 (temporada 2014–2015)",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D10-B",
+    "canonical_id": "nba-elo.B",
+    "source_id": "nba-elo",
+    "perspective": "B",
+    "question": "¿Ha cambiado la representación de ciudades o franquicias dominantes en la liga?",
+    "original_contract_path": "catalog/questions.json#nba-elo.B",
+    "hypothesis": "Comparar concentración de victorias entre temporadas",
+    "alternative_hypothesis": "La concentración o representación no permanece estable entre periodos comparables.",
+    "required_variables": [
+      "fran_id",
+      "date_game",
+      "year_id",
+      "game_id",
+      "pts",
+      "opp_pts",
+      "city_history_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Franquicia-temporada y ciudad histórica",
+    "metric_and_denominator": "Victorias por franquicia / victorias de temporada",
+    "descriptive_method": "HHI por temporada; sensibilidad por cambio de franquicia y fase",
+    "additional_method": "Contraste de refutación: Excluir playoffs y reconciliar relocalizaciones",
+    "baseline": "Reparto uniforme de victorias",
+    "visualizations": [],
+    "adversarial_test": "Excluir playoffs y reconciliar relocalizaciones",
+    "limitations": [
+      "Una temporada sin historia de ciudades no responde cambio histórico ni impacto social."
+    ],
+    "deliverable_type": "Diagnóstico de información faltante; no resultado calculado.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "BLOCKED",
+    "blocking_reason": "Una temporada sin historia de ciudades no responde cambio histórico ni impacto social.",
+    "how_to_unblock": "Una temporada sin historia de ciudades no responde cambio histórico ni impacto social.",
+    "feature_policy": {
+      "allowed": [
+        "forecast",
+        "elo_i",
+        "opp_elo_i",
+        "game_location",
+        "is_playoffs"
+      ],
+      "label_only": [
+        "pts",
+        "opp_pts",
+        "win"
+      ],
+      "forbidden_predictors": [
+        "elo_n",
+        "opp_elo_n",
+        "win_equiv",
+        "game_result"
+      ]
+    },
+    "belief_popularity": null,
+    "period_scope": "year_id=2015 (temporada 2014–2015)",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D10-C",
+    "canonical_id": "nba-elo.C",
+    "source_id": "nba-elo",
+    "perspective": "C",
+    "question": "¿Qué eras muestran patrones distintos de ventaja local?",
+    "original_contract_path": "catalog/questions.json#nba-elo.C",
+    "hypothesis": "Comparar victoria local por eras",
+    "alternative_hypothesis": "Las eras no presentan diferencias robustas una vez ajustada exposición y composición.",
+    "required_variables": [
+      "date_game",
+      "game_id",
+      "game_location",
+      "pts",
+      "opp_pts",
+      "seasons_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Partido único por era fijada antes de analizar",
+    "metric_and_denominator": "Victorias locales / partidos con localía por era",
+    "descriptive_method": "Series temporales con bloques y exposición por era",
+    "additional_method": "Contraste de refutación: Cambiar cortes, reglas y composición de equipos",
+    "baseline": "Tasa agrupada sin eras",
+    "visualizations": [],
+    "adversarial_test": "Cambiar cortes, reglas y composición de equipos",
+    "limitations": [
+      "Sólo temporada 2014–2015; se requiere snapshot multitemporada verificado."
+    ],
+    "deliverable_type": "Diagnóstico de información faltante; no resultado calculado.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "BLOCKED",
+    "blocking_reason": "Sólo temporada 2014–2015; se requiere snapshot multitemporada verificado.",
+    "how_to_unblock": "Sólo temporada 2014–2015; se requiere snapshot multitemporada verificado.",
+    "feature_policy": {
+      "allowed": [
+        "forecast",
+        "elo_i",
+        "opp_elo_i",
+        "game_location",
+        "is_playoffs"
+      ],
+      "label_only": [
+        "pts",
+        "opp_pts",
+        "win"
+      ],
+      "forbidden_predictors": [
+        "elo_n",
+        "opp_elo_n",
+        "win_equiv",
+        "game_result"
+      ]
+    },
+    "belief_popularity": null,
+    "period_scope": "year_id=2015 (temporada 2014–2015)",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D10-D1",
+    "canonical_id": "nba-elo.D1",
+    "source_id": "nba-elo",
+    "perspective": "D1",
+    "question": "¿Gana todas las series el equipo con mayor Elo previo al primer partido? Una serie perdida refuta la versión universal en el corpus.",
+    "original_contract_path": "catalog/questions.json#nba-elo.D1",
+    "hypothesis": "¿Gana toda serie el favorito del primer partido?",
+    "alternative_hypothesis": "Hay al menos una serie completa perdida por el favorito Elo inicial.",
+    "required_variables": [
+      "game_id",
+      "date_game",
+      "is_playoffs",
+      "team_id",
+      "opp_id",
+      "elo_i",
+      "opp_elo_i",
+      "pts",
+      "opp_pts",
+      "_iscopy"
+    ],
+    "unit_of_analysis": "Serie playoffs de pareja de equipos",
+    "metric_and_denominator": "Series ganadas por favorito / series completas, con empates Elo separados",
+    "descriptive_method": "Reconstruir parejas, ordenar cronológicamente, confirmar cuatro victorias; exportar contraejemplos",
+    "additional_method": "Contraste de refutación: Favorito definido con elo_i anterior al primer partido; revisar cada serie perdida",
+    "baseline": "Afirmación universal de 100%",
+    "visualizations": [
+      "series"
+    ],
+    "adversarial_test": "Favorito definido con elo_i anterior al primer partido; revisar cada serie perdida",
+    "limitations": [
+      "Quince series de una temporada; no prueba universalidad ni popularidad de la creencia."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": {
+      "allowed": [
+        "forecast",
+        "elo_i",
+        "opp_elo_i",
+        "game_location",
+        "is_playoffs"
+      ],
+      "label_only": [
+        "pts",
+        "opp_pts",
+        "win"
+      ],
+      "forbidden_predictors": [
+        "elo_n",
+        "opp_elo_n",
+        "win_equiv",
+        "game_result"
+      ]
+    },
+    "belief_popularity": "No verificada; se presenta como afirmación candidata.",
+    "period_scope": "year_id=2015 (temporada 2014–2015)",
+    "code_entrypoint": "scripts/run_research.py --case nba-elo"
+  },
+  {
+    "id": "D10-D2",
+    "canonical_id": "nba-elo.D2",
+    "source_id": "nba-elo",
+    "perspective": "D2",
+    "question": "¿Jugar en casa vale igual en playoffs que en temporada regular?",
+    "original_contract_path": "catalog/questions.json#nba-elo.D2",
+    "hypothesis": "Comparar frecuencia local en regular y playoffs",
+    "alternative_hypothesis": "La diferencia descriptiva playoffs−regular se aleja de cero, con incertidumbre y confusión explícitas.",
+    "required_variables": [
+      "game_id",
+      "game_location",
+      "is_playoffs",
+      "date_game",
+      "pts",
+      "opp_pts"
+    ],
+    "unit_of_analysis": "Partido con equipo local por fase",
+    "metric_and_denominator": "Victorias del local / encuentros H por fase; excluir N",
+    "descriptive_method": "Tasas y sensibilidad bootstrap por fecha, 1000 réplicas semilla fija",
+    "additional_method": "Contraste de refutación: Contraste por bloques de fecha; separar neutrales y selección a playoffs",
+    "baseline": "50% y diferencia entre fases de cero",
+    "visualizations": [
+      "phases"
+    ],
+    "adversarial_test": "Contraste por bloques de fecha; separar neutrales y selección a playoffs",
+    "limitations": [
+      "Selección y composición de equipos; no identifica ventaja causal de jugar en casa."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": {
+      "allowed": [
+        "forecast",
+        "elo_i",
+        "opp_elo_i",
+        "game_location",
+        "is_playoffs"
+      ],
+      "label_only": [
+        "pts",
+        "opp_pts",
+        "win"
+      ],
+      "forbidden_predictors": [
+        "elo_n",
+        "opp_elo_n",
+        "win_equiv",
+        "game_result"
+      ]
+    },
+    "belief_popularity": "No verificada; se presenta como afirmación candidata.",
+    "period_scope": "year_id=2015 (temporada 2014–2015)",
+    "code_entrypoint": "scripts/run_research.py --case nba-elo"
+  },
+  {
+    "id": "D10-E",
+    "canonical_id": "nba-elo.E",
+    "source_id": "nba-elo",
+    "perspective": "E",
+    "question": "¿Un Elo parece bien calibrado después de eliminar filas espejo y evitar fuga temporal?",
+    "original_contract_path": "catalog/questions.json#nba-elo.E",
+    "hypothesis": "Evaluar forecast previo y revisar filas espejo",
+    "alternative_hypothesis": "El pronóstico previo no mejora Brier de p=0.5, o las métricas dependen de perspectiva o fuga.",
+    "required_variables": [
+      "game_id",
+      "_iscopy",
+      "forecast",
+      "pts",
+      "opp_pts",
+      "date_game",
+      "elo_i",
+      "elo_n"
+    ],
+    "unit_of_analysis": "Partido único",
+    "metric_and_denominator": "Brier = promedio (p-y)^2; bins con n explícito",
+    "descriptive_method": "Calibración de cinco bins y delta Brier emparejado por fechas",
+    "additional_method": "Contraste de refutación: Verificar complementariedad y rechazar elo_n como predictor; misma fecha en ambos métodos",
+    "baseline": "Probabilidad constante 0.5, Brier 0.25",
+    "visualizations": [
+      "calibration"
+    ],
+    "adversarial_test": "Verificar complementariedad y rechazar elo_n como predictor; misma fecha en ambos métodos",
+    "limitations": [
+      "Sensibilidad por fecha no captura toda dependencia por equipo/serie; no es evaluación de un modelo entrenado aquí."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": {
+      "allowed": [
+        "forecast",
+        "elo_i",
+        "opp_elo_i",
+        "game_location",
+        "is_playoffs"
+      ],
+      "label_only": [
+        "pts",
+        "opp_pts",
+        "win"
+      ],
+      "forbidden_predictors": [
+        "elo_n",
+        "opp_elo_n",
+        "win_equiv",
+        "game_result"
+      ]
+    },
+    "belief_popularity": null,
+    "period_scope": "year_id=2015 (temporada 2014–2015)",
+    "code_entrypoint": "scripts/run_research.py --case nba-elo"
+  },
+  {
+    "id": "D31-A",
+    "canonical_id": "uci-retail.A",
+    "source_id": "uci-retail",
+    "perspective": "A",
+    "question": "¿Qué productos lideran el importe neto firmado de las líneas de la muestra tras incorporar importes negativos registrados? No equivale a rentabilidad.",
+    "original_contract_path": "catalog/questions.json#uci-retail.A",
+    "hypothesis": "Ordenar neto firmado GBP; bruto como baseline",
+    "alternative_hypothesis": "El líder bruto no coincide con el líder de neto firmado; reportar empates y magnitudes.",
+    "required_variables": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "CustomerID",
+      "Country"
+    ],
+    "unit_of_analysis": "Producto sobre líneas elegibles",
+    "metric_and_denominator": "neto = suma Quantity × UnitPrice; no razón",
+    "descriptive_method": "Decimal groupby vs acumulador independiente",
+    "additional_method": "Contraste de refutación: La clasificación cambia con créditos o deduplicación; mostrar magnitud además de puestos",
+    "baseline": "Bruto positivo por producto",
+    "visualizations": [
+      "ranking"
+    ],
+    "adversarial_test": "La clasificación cambia con créditos o deduplicación; mostrar magnitud además de puestos",
+    "limitations": [
+      "Sin costos ni ventas originales vinculadas a créditos."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "2011-11; no ciclo anual",
+    "code_entrypoint": "scripts/run_research.py --case uci-retail"
+  },
+  {
+    "id": "D31-B",
+    "canonical_id": "uci-retail.B",
+    "source_id": "uci-retail",
+    "perspective": "B",
+    "question": "¿Cuánto cambia la fracción de datos sin ID de cliente al contar líneas o facturas? No permite describir perfiles individuales de clientes.",
+    "original_contract_path": "catalog/questions.json#uci-retail.B",
+    "hypothesis": "Comparar ausencia de ID por dos unidades",
+    "alternative_hypothesis": "La proporción cambia según se cuenten líneas o facturas, sin interpretar una como perfil social.",
+    "required_variables": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "CustomerID",
+      "Country"
+    ],
+    "unit_of_analysis": "Línea y factura, por separado",
+    "metric_and_denominator": "ausentes / total de líneas; ausentes / total de facturas",
+    "descriptive_method": "Conteo por línea vs agrupación y unicidad de indicador por factura",
+    "additional_method": "Contraste de refutación: Cambiar unidad sin cambiar selección de facturas",
+    "baseline": "Fracción por líneas",
+    "visualizations": [
+      "denominators"
+    ],
+    "adversarial_test": "Cambiar unidad sin cambiar selección de facturas",
+    "limitations": [
+      "Ausencia de ID no identifica un perfil de persona."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "2011-11; no ciclo anual",
+    "code_entrypoint": "scripts/run_research.py --case uci-retail"
+  },
+  {
+    "id": "D31-C",
+    "canonical_id": "uci-retail.C",
+    "source_id": "uci-retail",
+    "perspective": "C",
+    "question": "¿Qué productos suelen comprarse juntos y en qué temporadas?",
+    "original_contract_path": "catalog/questions.json#uci-retail.C",
+    "hypothesis": "Lift de coocurrencia y comparación estacional",
+    "alternative_hypothesis": "Las coocurrencias no superan independencia o cambian al ajustar soporte y periodo.",
+    "required_variables": [
+      "InvoiceNo",
+      "StockCode",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice"
+    ],
+    "unit_of_analysis": "Factura y periodo",
+    "metric_and_denominator": "P(A∩B)/(P(A)P(B)) por periodo y facturas válidas",
+    "descriptive_method": "Tabla de cestas; estratificación temporal si se recupera periodo suficiente",
+    "additional_method": "Contraste de refutación: Cambiar soporte mínimo; evitar pares raros de lift extremo",
+    "baseline": "Independencia de productos",
+    "visualizations": [],
+    "adversarial_test": "Cambiar soporte mínimo; evitar pares raros de lift extremo",
+    "limitations": [
+      "Un mes seleccionado no permite comparar temporadas; hace falta marco anual y selección comparable."
+    ],
+    "deliverable_type": "Diagnóstico de información faltante; no resultado calculado.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "BLOCKED",
+    "blocking_reason": "Un mes seleccionado no permite comparar temporadas; hace falta marco anual y selección comparable.",
+    "how_to_unblock": "Un mes seleccionado no permite comparar temporadas; hace falta marco anual y selección comparable.",
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "2011-11; no ciclo anual",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D31-D1",
+    "canonical_id": "uci-retail.D1",
+    "source_id": "uci-retail",
+    "perspective": "D1",
+    "question": "¿El producto más vendido es el más rentable? Faltan costos.",
+    "original_contract_path": "catalog/questions.json#uci-retail.D1",
+    "hypothesis": "Comparar unidades vendidas con margen neto real",
+    "alternative_hypothesis": "El líder en unidades no coincide con el de margen una vez incorporados costos reales.",
+    "required_variables": [
+      "StockCode",
+      "Quantity",
+      "UnitPrice",
+      "product_cost_gbp_NOT_AVAILABLE"
+    ],
+    "unit_of_analysis": "Producto",
+    "metric_and_denominator": "Ingreso menos costo por producto en periodo común",
+    "descriptive_method": "Unir costo versionado y ventas; reconciliar unidades",
+    "additional_method": "Contraste de refutación: Cambiar costos variables/fijos y tratamiento de créditos",
+    "baseline": "Ranking por unidades",
+    "visualizations": [],
+    "adversarial_test": "Cambiar costos variables/fijos y tratamiento de créditos",
+    "limitations": [
+      "No existen costos ni margen; neto no puede usarse como rentabilidad."
+    ],
+    "deliverable_type": "Diagnóstico de información faltante; no resultado calculado.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "BLOCKED",
+    "blocking_reason": "No existen costos ni margen; neto no puede usarse como rentabilidad.",
+    "how_to_unblock": "No existen costos ni margen; neto no puede usarse como rentabilidad.",
+    "feature_policy": null,
+    "belief_popularity": "No verificada; se presenta como afirmación candidata.",
+    "period_scope": "2011-11; no ciclo anual",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D31-D2",
+    "canonical_id": "uci-retail.D2",
+    "source_id": "uci-retail",
+    "perspective": "D2",
+    "question": "¿Los clientes que compran más veces generan necesariamente más ingreso neto?",
+    "original_contract_path": "catalog/questions.json#uci-retail.D2",
+    "hypothesis": "Contrastar recurrencia con importe neto por cliente",
+    "alternative_hypothesis": "Existen clientes con mayor frecuencia y menor neto; la afirmación universal falla.",
+    "required_variables": [
+      "CustomerID_REMOVED",
+      "InvoiceNo",
+      "Quantity",
+      "UnitPrice",
+      "InvoiceDate"
+    ],
+    "unit_of_analysis": "Cliente en ventana fija",
+    "metric_and_denominator": "Facturas por cliente y neto GBP por cliente",
+    "descriptive_method": "Cohortes con ID seudonimizado en entorno privado autorizado",
+    "additional_method": "Contraste de refutación: Cambiar ventana y cobertura de IDs; incluir clientes de neto negativo",
+    "baseline": "Clientes con una factura",
+    "visualizations": [],
+    "adversarial_test": "Cambiar ventana y cobertura de IDs; incluir clientes de neto negativo",
+    "limitations": [
+      "CustomerID se retiró por privacidad: no se puede reconstruir del indicador de ausencia."
+    ],
+    "deliverable_type": "Diagnóstico de información faltante; no resultado calculado.",
+    "feasibility_45_min": {
+      "technical_route": false,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "BLOCKED",
+    "blocking_reason": "CustomerID se retiró por privacidad: no se puede reconstruir del indicador de ausencia.",
+    "how_to_unblock": "CustomerID se retiró por privacidad: no se puede reconstruir del indicador de ausencia.",
+    "feature_policy": null,
+    "belief_popularity": "No verificada; se presenta como afirmación candidata.",
+    "period_scope": "2011-11; no ciclo anual",
+    "code_entrypoint": null
+  },
+  {
+    "id": "D31-E",
+    "canonical_id": "uci-retail.E",
+    "source_id": "uci-retail",
+    "perspective": "E",
+    "question": "¿Qué productos cambian de puesto al ordenar por importe bruto positivo o por neto firmado, con y sin duplicados exactos?",
+    "original_contract_path": "catalog/questions.json#uci-retail.E",
+    "hypothesis": "Comparar bruto/neto y duplicados con ranking",
+    "alternative_hypothesis": "La política de créditos o duplicados modifica posiciones y/o importes.",
+    "required_variables": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "CustomerID",
+      "Country"
+    ],
+    "unit_of_analysis": "Producto elegible",
+    "metric_and_denominator": "Orden ordinal con desempate lexicográfico; contar cambios y montos",
+    "descriptive_method": "Ranking Decimal; sensibilidad exacta sin duplicados",
+    "additional_method": "Contraste de refutación: Mostrar montos y número de líneas junto a cambios de posición",
+    "baseline": "Ranking bruto conservando repetidos",
+    "visualizations": [
+      "duplicate_sensitivity"
+    ],
+    "adversarial_test": "Mostrar montos y número de líneas junto a cambios de posición",
+    "limitations": [
+      "Empates con desempate por código pueden producir cambios poco materiales."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "2011-11; no ciclo anual",
+    "code_entrypoint": "scripts/run_research.py --case uci-retail"
+  },
+  {
+    "id": "D85-A",
+    "canonical_id": "bob-ross-elementos.A",
+    "source_id": "bob-ross-elementos",
+    "perspective": "A",
+    "question": "¿Qué motivos permitirían seleccionar una exposición equilibrada de episodios sin afirmar demanda comercial?",
+    "original_contract_path": "catalog/questions.json#bob-ross-elementos.A",
+    "hypothesis": "Seleccionar 12 episodios para cubrir motivos distintos",
+    "alternative_hypothesis": "La selección voraz no supera al baseline bajo la misma definición de cobertura.",
+    "required_variables": [
+      "EPISODE",
+      "GUEST",
+      "64 indicadores binarios: todas las columnas excepto EPISODE,TITLE,GUEST,STEVE_ROSS,DIANE_ANDRE"
+    ],
+    "unit_of_analysis": "Episodio anfitrión con etiquetas",
+    "metric_and_denominator": "Motivos presentes en ≥1 episodio seleccionado / 64 etiquetas elegibles",
+    "descriptive_method": "Cobertura máxima voraz con desempate por orden del archivo; comparación con primer bloque y 100 muestras aleatorias",
+    "additional_method": "Contraste de refutación: Comparar cobertura con baseline; no llamar equilibrio ni demanda a diversidad de etiquetas",
+    "baseline": "Primeros 12 episodios y 100 selecciones aleatorias",
+    "visualizations": [
+      "selection_curve"
+    ],
+    "adversarial_test": "Comparar cobertura con baseline; no llamar equilibrio ni demanda a diversidad de etiquetas",
+    "limitations": [
+      "No hay preferencias del público, precios ni derechos sobre pinturas para exposición real."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "S01–S31; no fechas de emisión verificadas",
+    "code_entrypoint": "scripts/run_research.py --case bob-ross-elementos"
+  },
+  {
+    "id": "D85-B",
+    "canonical_id": "bob-ross-elementos.B",
+    "source_id": "bob-ross-elementos",
+    "perspective": "B",
+    "question": "¿Qué cambia en la representación de motivos al separar episodios de invitados y del anfitrión?",
+    "original_contract_path": "catalog/questions.json#bob-ross-elementos.B",
+    "hypothesis": "Contrastar prevalencia de motivos de invitados y anfitrión",
+    "alternative_hypothesis": "Los perfiles de prevalencia cambian al separar invitados y anfitrión.",
+    "required_variables": [
+      "EPISODE",
+      "TITLE",
+      "TREE",
+      "TREES",
+      "MOUNTAIN",
+      "MOUNTAINS",
+      "CLOUDS",
+      "GUEST"
+    ],
+    "unit_of_analysis": "Episodio estratificado por autoría",
+    "metric_and_denominator": "Episodios con etiqueta / episodios de cada autoría",
+    "descriptive_method": "Dotplot y tabla con numeradores, denominadores y proporciones",
+    "additional_method": "Contraste de refutación: Comparar con y sin invitados, sin fingir tamaños iguales",
+    "baseline": "Prevalencia agrupada sin separar autoría",
+    "visualizations": [
+      "prevalence"
+    ],
+    "adversarial_test": "Comparar con y sin invitados, sin fingir tamaños iguales",
+    "limitations": [
+      "22 invitados; etiquetas humanas no muestreo aleatorio de artistas."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "S01–S31; no fechas de emisión verificadas",
+    "code_entrypoint": "scripts/run_research.py --case bob-ross-elementos"
+  },
+  {
+    "id": "D85-C",
+    "canonical_id": "bob-ross-elementos.C",
+    "source_id": "bob-ross-elementos",
+    "perspective": "C",
+    "question": "¿Qué grupos de episodios comparten combinaciones de motivos con distancia apropiada para binarios?",
+    "original_contract_path": "catalog/questions.json#bob-ross-elementos.C",
+    "hypothesis": "Explorar cuatro grupos y su fragilidad",
+    "alternative_hypothesis": "Los grupos no son estables frente a distancia o no superan el baseline de marginales independientes.",
+    "required_variables": [
+      "EPISODE",
+      "GUEST",
+      "TREE",
+      "TREES",
+      "MOUNTAIN",
+      "MOUNTAINS",
+      "SNOW",
+      "SNOWY_MOUNTAIN",
+      "LAKE",
+      "RIVER",
+      "OCEAN",
+      "CLOUDS",
+      "ROCKS",
+      "FLOWERS"
+    ],
+    "unit_of_analysis": "Episodio anfitrión; 12 motivos binarios",
+    "metric_and_denominator": "Silueta Jaccard; ARI respecto a Euclídea",
+    "descriptive_method": "Clustering jerárquico average k=4; 30 permutaciones que conservan marginales",
+    "additional_method": "Contraste de refutación: Cambiar distancia con mismo k; comparar silueta con permutaciones exploratorias",
+    "baseline": "Motivos independientes con mismas prevalencias marginales",
+    "visualizations": [
+      "profiles"
+    ],
+    "adversarial_test": "Cambiar distancia con mismo k; comparar silueta con permutaciones exploratorias",
+    "limitations": [
+      "k=4 impuesto; explorar varios análisis no equivale a confirmación; sin p-value de selección."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "S01–S31; no fechas de emisión verificadas",
+    "code_entrypoint": "scripts/run_research.py --case bob-ross-elementos"
+  },
+  {
+    "id": "D85-D1",
+    "canonical_id": "bob-ross-elementos.D1",
+    "source_id": "bob-ross-elementos",
+    "perspective": "D1",
+    "question": "¿Todos los episodios contienen al menos un árbol registrado?",
+    "original_contract_path": "catalog/questions.json#bob-ross-elementos.D1",
+    "hypothesis": "Buscar un contraejemplo a todos tienen TREE o TREES",
+    "alternative_hypothesis": "Existe al menos un episodio con TREE=TREES=0 dentro del alcance definido.",
+    "required_variables": [
+      "EPISODE",
+      "TITLE",
+      "TREE",
+      "TREES",
+      "MOUNTAIN",
+      "MOUNTAINS",
+      "CLOUDS",
+      "GUEST"
+    ],
+    "unit_of_analysis": "Episodio por autoría",
+    "metric_and_denominator": "Unión TREE∨TREES / episodios de cada autoría",
+    "descriptive_method": "Conteo exacto y exportación de IDs con ambas etiquetas cero",
+    "additional_method": "Contraste de refutación: Separar invitados; revisar títulos y ambigüedad PALM_TREES",
+    "baseline": "100% con TREE o TREES",
+    "visualizations": [
+      "counterexamples"
+    ],
+    "adversarial_test": "Separar invitados; revisar títulos y ambigüedad PALM_TREES",
+    "limitations": [
+      "No se han cotejado pinturas; ausencia de etiqueta no demuestra ausencia visual de todo árbol."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": "No verificada; se presenta como afirmación candidata.",
+    "period_scope": "S01–S31; no fechas de emisión verificadas",
+    "code_entrypoint": "scripts/run_research.py --case bob-ross-elementos"
+  },
+  {
+    "id": "D85-D2",
+    "canonical_id": "bob-ross-elementos.D2",
+    "source_id": "bob-ross-elementos",
+    "perspective": "D2",
+    "question": "¿Todos los episodios con montañas también contienen nieve registrada?",
+    "original_contract_path": "catalog/questions.json#bob-ross-elementos.D2",
+    "hypothesis": "Buscar montaña sin nieve registrada",
+    "alternative_hypothesis": "Existe al menos un episodio anfitrión con montaña y sin ambas etiquetas de nieve.",
+    "required_variables": [
+      "EPISODE",
+      "TITLE",
+      "TREE",
+      "TREES",
+      "MOUNTAIN",
+      "MOUNTAINS",
+      "CLOUDS",
+      "GUEST"
+    ],
+    "unit_of_analysis": "Episodio anfitrión con montaña etiquetada",
+    "metric_and_denominator": "(SNOW∨SNOWY_MOUNTAIN) / (MOUNTAIN∨MOUNTAINS)",
+    "descriptive_method": "Tabla condicional y exportación de contraejemplos",
+    "additional_method": "Contraste de refutación: Revisar definición de ambas uniones y conservar IDs de contraejemplos",
+    "baseline": "100% con nieve entre episodios con montaña",
+    "visualizations": [
+      "snow_counterexamples"
+    ],
+    "adversarial_test": "Revisar definición de ambas uniones y conservar IDs de contraejemplos",
+    "limitations": [
+      "Registro humano de motivos, no clima real, intención artística ni píxeles."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": "No verificada; se presenta como afirmación candidata.",
+    "period_scope": "S01–S31; no fechas de emisión verificadas",
+    "code_entrypoint": "scripts/run_research.py --case bob-ross-elementos"
+  },
+  {
+    "id": "D85-E",
+    "canonical_id": "bob-ross-elementos.E",
+    "source_id": "bob-ross-elementos",
+    "perspective": "E",
+    "question": "¿La calidad aparente del clustering cambia al introducir temporada o ID como si fueran rasgos de la pintura?",
+    "original_contract_path": "catalog/questions.json#bob-ross-elementos.E",
+    "hypothesis": "Medir contaminación del clustering por temporada usada como feature",
+    "alternative_hypothesis": "La escala de temporada modifica agrupamientos manteniendo muestra, k y distancia.",
+    "required_variables": [
+      "EPISODE",
+      "GUEST",
+      "TREE",
+      "TREES",
+      "MOUNTAIN",
+      "MOUNTAINS",
+      "SNOW",
+      "SNOWY_MOUNTAIN",
+      "LAKE",
+      "RIVER",
+      "OCEAN",
+      "CLOUDS",
+      "ROCKS",
+      "FLOWERS"
+    ],
+    "unit_of_analysis": "Mismos episodios anfitrión",
+    "metric_and_denominator": "ARI vs Euclídea limpia y silueta en cada distancia",
+    "descriptive_method": "Misma distancia Euclídea y k=4; temporada ×0, ×1/31 y ×1",
+    "additional_method": "Contraste de refutación: Controlar muestra y distancia; cambiar sólo escala de metadato",
+    "baseline": "Euclídea sobre motivos sin temporada",
+    "visualizations": [
+      "id_sensitivity"
+    ],
+    "adversarial_test": "Controlar muestra y distancia; cambiar sólo escala de metadato",
+    "limitations": [
+      "Temporada es metadato, no estilo; siluetas en espacios distintos no demuestran mejor representación."
+    ],
+    "deliverable_type": "Tabla, figura y argumento acotado; la conclusión se determina al ejecutar.",
+    "feasibility_45_min": {
+      "technical_route": true,
+      "human_rehearsal_approved": false,
+      "prepared_offline": true,
+      "estimated_analysis_minutes": 13
+    },
+    "execution_status": "EXECUTABLE",
+    "blocking_reason": null,
+    "how_to_unblock": null,
+    "feature_policy": null,
+    "belief_popularity": null,
+    "period_scope": "S01–S31; no fechas de emisión verificadas",
+    "code_entrypoint": "scripts/run_research.py --case bob-ross-elementos"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "step": "one_game_one_row",
+    "affected_rows": 1311,
+    "action": "Una fila _iscopy=0 en gold; conservar ambas en silver.",
+    "statistical_consequence": "Evita doblar tamaño de muestra. Las tasas locales excluyen explícitamente neutrales."
+  }
+]

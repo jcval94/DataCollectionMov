@@ -1,0 +1,62 @@
+{
+  "source_id": "uci-retail",
+  "DATA_READY": true,
+  "questions": {
+    "D31-A": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D31-B": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    },
+    "D31-C": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Un mes seleccionado no permite comparar temporadas; hace falta marco anual y selección comparable."
+    },
+    "D31-D1": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "No existen costos ni margen; neto no puede usarse como rentabilidad."
+    },
+    "D31-D2": {
+      "RESEARCH_READY": false,
+      "VISUAL_READY": false,
+      "STORY_READY": false,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "CustomerID se retiró por privacidad: no se puede reconstruir del indicador de ausencia."
+    },
+    "D31-E": {
+      "RESEARCH_READY": true,
+      "VISUAL_READY": true,
+      "STORY_READY": true,
+      "CLASS_READY": false,
+      "PUBLISHED": false,
+      "reason": "Falta ensayo humano observado y revisión docente independiente."
+    }
+  },
+  "visual_approval_scope": "Sólo hashes de PNG inspeccionados; controles automatizados adicionales no sustituyen observación.",
+  "classroom_release": {
+    "required_executable_routes": 6,
+    "actual_executable_routes": 3,
+    "all_six_routes_technically_ready": false,
+    "human_rehearsal": "NOT_OBSERVED",
+    "independent_teacher_review": "NOT_OBSERVED"
+  }
+}

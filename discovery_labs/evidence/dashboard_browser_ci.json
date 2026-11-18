@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Navegador real Chromium mediante Playwright 1.56.0 en CI; escritorio y móvil.",
+  "checks": [
+    "86_sources",
+    "3_technical_pilots",
+    "0_ready_empty_state",
+    "BTS_disambiguation",
+    "category_filter",
+    "technique_filter",
+    "difficulty_filter",
+    "filtered_export_516",
+    "top10",
+    "13_category_tops",
+    "3_pilot_images_decoded",
+    "mobile_no_horizontal_overflow",
+    "zero_js_errors",
+    "no_remote_requests"
+  ],
+  "js_errors": [],
+  "desktop": "1440x1000",
+  "mobile": "390x844",
+  "human_45min_rehearsal": "PENDIENTE",
+  "workflow_run_id": 43999000122,
+  "tested_commit": "096239a2ce1e47183407508b811e7ab77d0b5141",
+  "manual_visual_review": "Desktop y móvil inspeccionados; sin desbordamiento ni texto truncado observado en la vista capturada."
+}

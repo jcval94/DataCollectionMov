@@ -1,0 +1,25 @@
+[
+  {
+    "source_id": "uci-retail",
+    "title": "Retail bruto frente a neto · piloto original",
+    "source_path": "../examples/retail_discovery/README.md",
+    "question": "¿Cómo cambia el ranking al incorporar créditos registrados?",
+    "command": "python scripts/run_discovery.py --input ORIGINAL_VERIFICADO --output TEMPORAL; comparar metrics.json",
+    "status": "PASS",
+    "source_sha256": "a2f79bbdd4463df6db8a3f5a50b9c980ae8f645a370bf5e2c0d6097f9e817b05",
+    "result": "Igualdad exacta de todas las métricas originales; 541909 filas leídas.",
+    "visualizations": "gross_vs_net.png regenerado.",
+    "limitations": "Neto firmado no es margen; no replica resultados comerciales futuros."
+  },
+  {
+    "source_id": "bob-ross-elementos",
+    "title": "Cuatro salas para Bob Ross · piloto original",
+    "source_path": "../examples/bob_ross_clustering/README.md",
+    "question": "¿Qué grupos de motivos aparecen y qué ocurre al introducir el ID?",
+    "command": "python examples/bob_ross_clustering/run.py --check",
+    "status": "PASS",
+    "result": "Resultado idéntico a reference/report.json; 381 episodios, 12 variables, cuatro grupos.",
+    "visualizations": "Se verificó referencia analítica; gráficos originales no se declaran nuevamente reproducidos por --check.",
+    "limitations": "Cuatro salas es restricción narrativa; inferencia limitada a etiquetas y archivo."
+  }
+]

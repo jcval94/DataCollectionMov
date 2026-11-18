@@ -1,0 +1,1388 @@
+{
+  "scope": "Snapshot medido; no universo declarado por productor.",
+  "rows": 403,
+  "column_count": 69,
+  "physical_bytes": 66315,
+  "raw_memory_bytes": 1398963,
+  "silver_memory_bytes": 301675,
+  "exact_duplicates": 0,
+  "business_key": [
+    "EPISODE"
+  ],
+  "business_key_repetitions": 0,
+  "key_interpretation": "La llave debe ser única.",
+  "columns": {
+    "EPISODE": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 403,
+      "frequent_values": {
+        "S01E01": 1,
+        "S01E02": 1,
+        "S01E03": 1,
+        "S01E04": 1,
+        "S01E05": 1
+      }
+    },
+    "TITLE": {
+      "raw_type": "string",
+      "silver_type": "object",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 401,
+      "frequent_values": {
+        "\"LAKESIDE CABIN\"": 2,
+        "\"MOUNTAIN WATERFALL\"": 2,
+        "\"COUNTRYSIDE OVAL\"": 1,
+        "\"AROUND THE BEND\"": 1,
+        "\"HINT OF SPRINGTIME\"": 1
+      }
+    },
+    "APPLE_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "AURORA_BOREALIS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 401,
+        "1": 2
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 2,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "BARN": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 386,
+        "1": 17
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 17,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "BEACH": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 376,
+        "1": 27
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 27,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "BOAT": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 401,
+        "1": 2
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 2,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "BRIDGE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 396,
+        "1": 7
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 7,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "BUILDING": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "BUSHES": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 283,
+        "1": 120
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CABIN": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 334,
+        "1": 69
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 69,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CACTUS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 399,
+        "1": 4
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 4,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CIRCLE_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 401,
+        "1": 2
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 2,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CIRRUS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 375,
+        "1": 28
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 28,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CLIFF": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 395,
+        "1": 8
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 8,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CLOUDS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 224,
+        "1": 179
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CONIFER": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "1": 212,
+        "0": 191
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "CUMULUS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 317,
+        "1": 86
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 86,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "DECIDUOUS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "1": 227,
+        "0": 176
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "DIANE_ANDRE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "DOCK": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "DOUBLE_OVAL_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "FARM": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "FENCE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 379,
+        "1": 24
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 24,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "FIRE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "FLORIDA_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "FLOWERS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 391,
+        "1": 12
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 12,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "FOG": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 380,
+        "1": 23
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 23,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "FRAMED": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 350,
+        "1": 53
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 53,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "GRASS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 261,
+        "1": 142
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "GUEST": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 381,
+        "1": 22
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 22,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "HALF_CIRCLE_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "HALF_OVAL_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "HILLS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 385,
+        "1": 18
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 18,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "LAKE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 260,
+        "1": 143
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "LAKES": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 1,
+      "frequent_values": {
+        "0": 403
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 0.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "LIGHTHOUSE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "MILL": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 401,
+        "1": 2
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 2,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "MOON": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 400,
+        "1": 3
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 3,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "MOUNTAIN": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 243,
+        "1": 160
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "MOUNTAINS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 304,
+        "1": 99
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 99,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "NIGHT": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 392,
+        "1": 11
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 11,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "OCEAN": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 367,
+        "1": 36
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 36,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "OVAL_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 365,
+        "1": 38
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 38,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "PALM_TREES": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 394,
+        "1": 9
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 9,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "PATH": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 354,
+        "1": 49
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 49,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "PERSON": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "PORTRAIT": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 400,
+        "1": 3
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 3,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "RECTANGLE_3D_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "RECTANGULAR_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "RIVER": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 277,
+        "1": 126
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "ROCKS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 326,
+        "1": 77
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 77,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "SEASHELL_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "SNOW": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 328,
+        "1": 75
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 75,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "SNOWY_MOUNTAIN": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 294,
+        "1": 109
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 0,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "SPLIT_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "STEVE_ROSS": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 392,
+        "1": 11
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 11,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "STRUCTURE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 318,
+        "1": 85
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 85,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "SUN": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 363,
+        "1": 40
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 40,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "TOMB_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "TREE": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "1": 361,
+        "0": 42
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 42,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "TREES": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "1": 337,
+        "0": 66
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 66,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "TRIPLE_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "WATERFALL": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 364,
+        "1": 39
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 39,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "WAVES": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 369,
+        "1": 34
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 34,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "WINDMILL": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "WINDOW_FRAME": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "WINTER": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 334,
+        "1": 69
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 69,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    },
+    "WOOD_FRAMED": {
+      "raw_type": "string",
+      "silver_type": "int64",
+      "missing_count": 0,
+      "missing_pct": 0.0,
+      "cardinality": 2,
+      "frequent_values": {
+        "0": 402,
+        "1": 1
+      },
+      "numeric_measured": {
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 1.0
+      },
+      "outside_1_5_IQR_count": 1,
+      "outlier_policy": "Señalar; no excluir por esta regla."
+    }
+  },
+  "temporal": {
+    "status": "No hay fechas observadas; EPISODE no es fecha de emisión."
+  },
+  "selection": "403 episodios completos de la copia original del repositorio; la ruta principal usa GUEST=0 y la sensibilidad reincorpora invitados. No se copian pinturas ni videos.",
+  "representativeness": "No se infiere representatividad ni causalidad desde este archivo."
+}

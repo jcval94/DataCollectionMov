@@ -1,0 +1,55 @@
+{
+  "checked_local_date": "2026-11-16",
+  "reviewer": "Codex assistant: observed PNG and Chromium screenshot inspection",
+  "rendered_inspection": true,
+  "reviewed_png_sha256": [
+    "1f64cb98438475b33e5b0b09b8972b734a5c138d81f3fa02a8c5b5ceb96b4abd",
+    "2bc897cddf8fad5e0585127921eb90c0c9498aef02e091a81bda11f0f30f3c2c",
+    "339f6bb53a5082ed906f715b2011eb2d9df4e8c7f10d8ae70e5f9d5331df5c75",
+    "34b85f2464942c0e817fd67f0dd26799d2eb875d9b8b5a2e0ff3b9e1f17dc370",
+    "370b71a58d60e9b123328b07815bfacba9d299fae098d32e9867614ac5328cc4",
+    "39831f1416b81d0e721866aef1ef6c3a49f7e82f88cf38f4f6c40d3c7019a98c",
+    "443658f6076f02ec48e810ff0ad7a13dfda7719cdd50de2036e8672d30fa427c",
+    "4b35e8a9d6558fa52e46bc84842999e26ec39b9f8415f4e6dcbba810bf61a917",
+    "50f6dbef7323187f4d6325ecff8f2718a069bdd4c47985d0aadf84ce2a90b082",
+    "598b45970198268367604e046ed04eea604deb8d0a6345d8f8fefd61f4ef60c2",
+    "73ae439fd0538ba70f0bb189040878fb8d517713490d2df49a691f32da83cb52",
+    "77434844bcaf6c606c49870d67ca24a0dcd468c009e4125fd250f5f621024c3a",
+    "790750b01476b914c77c97edd3ad3cbfe2041ba944ce77707a7f2dab0acaf883",
+    "7e68386e05b011bba795ad6e9d9467a29457eb9bc13e69d5e548daace73c13ed",
+    "8b216a37fd255e056f8532b0d893d86beca47f816b58646e377c2cbbea25c035",
+    "8e2779bee2893b96740191506f3610b8d124bc1d594e33a5c4f8fd183e5d843a",
+    "93a841674a2d6c24348dbc8c63039627cd2af12b0889894f6b6cdd11c5ee8153",
+    "aad89b48c86d6201fbba5022e2f3bcac55ae35db60ffdad55a6b8c50c37ab789",
+    "b3fa1419ff2f40146dcc54db254da0f5cd2d804e084ce568298b2cab33639cc5",
+    "c75d2c89067fa918e213028418434acdcd7c1abe8d2eaaf1080c2b8fbf2f9a6f",
+    "ce1762d8b57d37f92228287ba4216aff774ea60206b427a90ed61f1fc9b56442",
+    "d96ac8f77ddd833e24910aabc0b4366f0584e046cf60cd3457493f64598095c0",
+    "dfacb2566de601c841ec886b2aecf75d968fe97d000a41f8da9b31c3379621ab",
+    "ed060f228fb2a33294a6072001a2e98be4de17b689320a36ed4e7b84bdccbf02",
+    "ee220d2012836835f10b3924f9989650c0181dae0202813a514e9a58af323211",
+    "f4f1c9998974783c68ea83fd7c73f25c7d409f9a2212d12975665badd2c3e39a",
+    "f757ccdfdba3df0be7e8a71c57eec2d8b345c579cde8a4991026bcfadc72874b",
+    "fe0c21b4317be1f779d8ba33205fda22577c9649d331ccd8877915fd29ae9428"
+  ],
+  "viewports": [
+    "1440x1000",
+    "390x844"
+  ],
+  "checks": [
+    "source_and_denominator_visible",
+    "no_observed_clipping",
+    "mobile_variants_declared",
+    "matching_groups_and_tables",
+    "limits_and_uncertainty_notes",
+    "actual_rendered_figures_inspected"
+  ],
+  "fixed_findings": [
+    "Mobile heatmap colorbar text outside canvas",
+    "Variant-specific denominator incorrectly repeated outside projection figure",
+    "Global font setting initially depended on execution order"
+  ],
+  "independent_teacher_review": false,
+  "human_class_rehearsal": false,
+  "scope": "PNG layouts inspected individually and in contact sheets. SVG exported from same figure; not a separate browser SVG review."
+}

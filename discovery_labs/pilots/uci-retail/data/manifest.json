@@ -1,0 +1,25 @@
+{
+  "source_id": "uci-retail",
+  "source_url": "https://archive.ics.uci.edu/static/public/352/data.csv",
+  "source_sha256": "a2f79bbdd4463df6db8a3f5a50b9c980ae8f645a370bf5e2c0d6097f9e817b05",
+  "source_bytes": 45038760,
+  "source_captured_at_utc": "2026-11-17T00:55:09.629821+00:00",
+  "selection": "Noviembre 2011 completo como marco. Selección determinista de 300 facturas por menor SHA256 de InvoiceNo; conservar todas sus líneas. No es muestra representativa de clientes ni permite unir devolución con venta original. Campo customer_id_missing derivado antes de retirar CustomerID.",
+  "snapshot_sha256": "f3c895e068c4267a24aafb5ab097b03105a4376fab87028647841fe5eaeae8bc",
+  "snapshot_bytes": 414094,
+  "rows": 7293,
+  "columns": [
+    "InvoiceNo",
+    "StockCode",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "Country",
+    "customer_id_missing"
+  ],
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Chen, D. (2015), Online Retail, UCI, doi:10.24432/C5BW33",
+  "offline": true,
+  "personal_fields": "No CustomerID, nombre de cliente ni datos de alumnos. Equipo y jugador públicos no se perfilan individualmente."
+}

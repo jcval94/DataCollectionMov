@@ -1,0 +1,76 @@
+{
+  "question_ids": [
+    "D31-A",
+    "D31-E",
+    "D31-B"
+  ],
+  "routes": {
+    "A": "Ranking de neto firmado, no margen",
+    "E": "Comparar bruto/neto y duplicados",
+    "B": "Completitud: líneas frente a facturas sin identificador"
+  },
+  "input_rows": 7293,
+  "eligible_rows": 7229,
+  "excluded_rows": 64,
+  "invoices": 300,
+  "products": 1885,
+  "date_min": "2011-11-01 10:04:00",
+  "date_max": "2011-11-30 17:14:00",
+  "totals": {
+    "gross": "95755.66",
+    "credits": "4426.64",
+    "net": "91329.02"
+  },
+  "deduplicated_totals": {
+    "gross": "95262.73",
+    "credits": "4426.64",
+    "net": "90836.09"
+  },
+  "products_changing_position": 1875,
+  "rank_correlation": 0.9909611224908212,
+  "missing_customer_line_fraction": 0.30124777183600715,
+  "missing_customer_invoice_fraction": 0.12666666666666668,
+  "adversarial_result": "Se ejecutan bruto/neto, eliminación de duplicados y cambio de denominador líneas/facturas. Los créditos muestreados no están emparejados necesariamente con ventas muestreadas.",
+  "inference": "Descripción exacta del snapshot seleccionado por factura. Sin intervalo iid por línea; no es estimación del margen ni del mercado.",
+  "checks": [
+    "hash",
+    "schema",
+    "finite_integer_quantity",
+    "positive_price_policy",
+    "independent_net_computation",
+    "gross_minus_credit_equals_net",
+    "duplicate_sensitivity",
+    "denominator_sensitivity",
+    "customer_id_removed"
+  ],
+  "source_id": "uci-retail",
+  "snapshot_sha256": "f3c895e068c4267a24aafb5ab097b03105a4376fab87028647841fe5eaeae8bc",
+  "quality": {
+    "rows": 7293,
+    "columns": 7,
+    "blank_by_column": {
+      "InvoiceNo": 0,
+      "StockCode": 0,
+      "Quantity": 0,
+      "InvoiceDate": 0,
+      "UnitPrice": 0,
+      "Country": 0,
+      "customer_id_missing": 0
+    },
+    "exact_duplicate_rows": 118,
+    "schema": [
+      "InvoiceNo",
+      "StockCode",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "Country",
+      "customer_id_missing"
+    ]
+  },
+  "seed": 20261116,
+  "technical_status": "EXECUTED_OFFLINE",
+  "classroom_status": "PENDIENTE_ENSAYO_HUMANO_45_MIN",
+  "real_data": true,
+  "rights_reviewed": true
+}
