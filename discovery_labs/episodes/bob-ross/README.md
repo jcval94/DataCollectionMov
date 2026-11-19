@@ -1,29 +1,35 @@
-# AI Discovery Labs · Episodio 001 — Los árboles que faltaban
+# AI Discovery Labs · Episodio Bob Ross — investigación científica y Paquete de Entrada
 
-> **Un dataset. Seis preguntas. Una investigación elegida por la clase.**
->
-> **Estado:** prototipo técnico aislado y reproducible offline, **no** clase aprobada.
-> Faltan ejecutar/registrar tests del nuevo paquete en entorno canónico, revisión docente
-> independiente, ensayo humano de 45 minutos y evaluación de accesibilidad con alumnos.
+> **Estado de código:** infraestructura común y paquete integrados por PR #11 y PR #10 (pendiente de fusión al preparar esta versión). **Estado científico:** Fase 1 NO aprobada; Fases 2/3 bloqueadas. No se ha entrenado ningún modelo de las 14 preguntas.
 
-## Nuevo paso obligatorio: paquete de entrada antes del informe
+## Punto de entrada CANÓNICO (leer primero)
 
-**[Abrir Discovery Intake](intake/README.md)** — preguntas profundas y de varios órdenes, cinco prompts especializados de Deep Research, la historia documentable de Bob Ross, metadatos, muestra real, plan de experimentos, visualizaciones y skill portátil para generar mejores preguntas.
+- [START_HERE_NEW_CHAT.md](entry_pack/START_HERE_NEW_CHAT.md): inicio autocontenido para cualquier conversación nueva.
+- [Paquete de Entrada](entry_pack/README.md): fuentes, metadatos, muestra, Deep Research y planificación.
+- [QUESTIONS_MASTER.md](entry_pack/QUESTIONS_MASTER.md) + [questions_master.json](entry_pack/questions_master.json): **un solo banco editorial de 14 investigaciones**, cada una con O1→O2→O3, modelo + ejercicio estadístico propuestos, sin entrenar.
+- [Guía Científica HTML V3](research_guide.html): una única sección de preguntas, con investigación de cambios hacia el final de su vida y límites de causalidad; **pendiente de tu aprobación**.
+- [MODEL_FIT_BOB_ROSS.md](entry_pack/MODEL_FIT_BOB_ROSS.md): pertinencia específica de modelos para Bob Ross.
 
-- **Fase 0:** investigación y selección de preguntas, aún sin guion ni video.
-- **Fase 1:** `research_guide.html`, guía científica y técnica; requiere aprobación explícita del usuario.
-- **Fase 2:** storytelling audiovisual HTML solo después de aprobar Fase 1.
-- **Fase 3:** video final solo después de aprobar Fase 2.
+**Infraestructura reutilizable:** [Question Forge V2.1](../../shared/skills/question-forge/SKILL.md), [catálogo único de 24 modelos](../../shared/model_catalog/MODEL_SET.md), [plantilla de entrada](../../shared/templates/ENTRY_PACK_TEMPLATE.md) y [validador compartido](../../shared/validators/validate_entry_pack.py). Las skills, plantillas y el catálogo general **NO se duplican dentro del episodio**.
 
-**No basta con seis consultas o seis tarjetas**: los arcos de `intake/QUESTION_GRAPH.md` plantean preguntas de segundo y tercer orden. Son propuestas condicionadas a resultados y fuentes; **no** se han implementado ni aprobado todavía. No deducir causalidad médica o artística a partir de las temporadas.
+El antiguo `intake/`, `entry_pack/QUESTION_BANK.md`, `entry_pack/question_graph.json` y `questions.json` son materiales históricos/de compatibilidad; **no deben mostrarse como un segundo banco científico**. La interfaz `episode.html` conserva seis rutas didácticas originales para un prototipo anterior; su presencia no implica que estén aprobadas como temario definitivo.
 
-## Nuevo flujo: primero el paquete de entrada
+**Gates:** Paquete de Entrada → Guía Científica HTML (**aprobación humana explícita**) → Storytelling Audiovisual HTML (**aprobación explícita**) → Video. Una fusión GitHub no equivale a aprobación de resultados científicos.
 
-Antes de cerrar la guía científica, revisar **[entry_pack/README.md](entry_pack/README.md)**. Contiene una pequeña muestra real, metadatos, cuatro prompts Deep Research más una síntesis crítica, 12 preguntas profundas de primer/segundo/tercer orden, una skill reutilizable, plan de trabajo y brief de visualización. La fuente original y sus derechos permanecen intactos.
+## Comprobaciones de integración sin entrenamiento
 
-El archivo `questions.json` conserva las seis rutas iniciales compatibles con la interfaz; **no son necesariamente las preguntas científicas finales**. Las propuestas de mayor profundidad están en `entry_pack/question_graph.json`. Requieren ejecutar investigación y revisar datos externos antes de reemplazar titulares.
+```bash
+python discovery_labs/shared/validators/validate_entry_pack.py --entry-pack discovery_labs/episodes/bob-ross/entry_pack --guide discovery_labs/episodes/bob-ross/research_guide.html
+python discovery_labs/episodes/bob-ross/entry_pack/validate_pack.py
+python -m unittest discover -s discovery_labs/shared/validators/tests -v
+python -m unittest discover -s discovery_labs/episodes/bob-ross/tests -v
+```
 
-El proceso obligatorio es **paquete de entrada → `research_guide.html` (aprobación explícita) → storytelling audiovisual HTML (aprobación explícita) → video**. No iniciar fase audiovisual sin revisión.
+---
+
+## Referencia histórica: prototipo original de seis rutas
+
+Las secciones siguientes describen el prototipo anterior, que permanece disponible para trazabilidad y desarrollo. El **banco editorial canónico** es siempre `entry_pack/QUESTIONS_MASTER.md`.
 
 ## Abrir en un minuto
 
@@ -34,7 +40,7 @@ El proceso obligatorio es **paquete de entrada → `research_guide.html` (aproba
 
 La página contiene los 403 episodios en una representación autocontenida **derivada de los datos reales**, no un enlace externo ni un modelo generado por IA. El CSV original íntegro está en [data/elements-by-episode.csv](data/elements-by-episode.csv) y su procedencia en [data/manifest.json](data/manifest.json).
 
-## Las preguntas (la clase elige una)
+## Las seis preguntas del prototipo original (no el banco científico canónico)
 
 | Ruta | Perspectiva | Pregunta |
 |---|---|---|
