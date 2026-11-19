@@ -68,7 +68,7 @@ class EntryPackTests(unittest.TestCase):
             [f"BR-{i:02d}" for i in range(1, 15)],
         )
         models = set(re.findall(
-            r"^\\|\\s*(M\\d{2})\\s*\\|",
+            r"^[|] *(M[0-9]{2}) *[|]",
             (PACK / "MODEL_SET.md").read_text(encoding="utf-8"),
             re.M,
         ))
