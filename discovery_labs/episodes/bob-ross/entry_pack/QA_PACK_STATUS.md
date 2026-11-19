@@ -1,5 +1,14 @@
 # QA del Paquete de Entrada y Question Forge v2
 
+## Integración y ejecución verificadas · 18 nov 2026
+
+- Los PR [#11](https://github.com/jcval94/DataCollectionMov/pull/11), [#5](https://github.com/jcval94/DataCollectionMov/pull/5) y [#10](https://github.com/jcval94/DataCollectionMov/pull/10) quedaron **MERGED** en `main`.
+- El workflow [AI Discovery Labs QA · run #44427475768](https://github.com/jcval94/DataCollectionMov/actions/runs/44427475768) concluyó **SUCCESS**, incluidos compilación de Python, unit tests compartidos, unit tests Bob Ross, `run.py --check`, contrato general y validador particular de 14 investigaciones.
+- El workflow general del repositorio también concluyó **SUCCESS** sobre el mismo PR de cierre.
+- **No se entrenaron modelos de investigación**, no se ejecutaron los Deep Research, no se aprobaron conclusiones clínicas, guion audiovisual ni video.
+- Pendiente de forma deliberada: QA de navegador real de HTML V3, derechos de imágenes, segundo episodio real y aprobación humana de la guía. Estos no son requisitos para declarar completada la **integración de código**.
+
+
 **Fecha:** 2026-11-18. **Contexto:** inspección estática contra la rama `feat/bob-ross-entry-pack-question-forge` y archivos recuperados desde GitHub. **No se entrenó ningún modelo ni se ejecutó Deep Research completo.**
 
 ## Comprobaciones verificadas en la rama
@@ -21,11 +30,11 @@
 
 ## Qué NO está validado todavía
 
-- Ejecución en el entorno local de `python entry_pack/validate_pack.py`.
+- La ejecución **local independiente** no se realizó; sí pasó el validador correspondiente en GitHub Actions.
 - Render real en Chromium y revisión responsive, teclado/foco, contraste y gráficos de la guía V3 (la versión V2 anterior tuvo revisiones de navegador, pero **no** cuenta como QA de V3).
 - Investigación histórica en profundidad, especialmente fechas de diagnóstico/grabación/emisión.
 - Derechos de cada imagen original, licencias para miniaturas, políticas de hotlinking.
-- Entrenamiento, contrastes estadísticos nuevos, ajuste con Optuna, análisis fuera de muestra o causalidad.
+- Entrenamiento, contrastes estadísticos nuevos, ajuste con Optuna, análisis fuera de muestra o causalidad (fuera del alcance de CI/Paquete de Entrada).
 - Resultados de preguntas O2/O3, ya que dependen de O1 y pruebas adversariales.
 - Ensayo pedagógico cronometrado de 45 minutos.
 
@@ -55,7 +64,7 @@ Se detectó que el esquema original `questions_master.json` validaba la presenci
 
 **Advertencia de sincronización:** `research_guide.html` V3 es una instantánea estática de las tarjetas, NO una plantilla dinámica que lee `questions_master.json`. La correspondencia semántica completa y la automatización de su regeneración siguen pendientes de la Fase 1 autorizada. Esta reparación no modifica la guía HTML, ni inicia modelos ni investigaciones audiovisuales.
 
-**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La divergencia del PR #10 con su rama base (#5) permanece pendiente de conciliación segura; no fusionar automáticamente.
+**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La divergencia entre ramas se resolvió y PR #10 fue fusionado a `main` tras preservar contratos legacy y comprobar que el diff quedaba exclusivamente en Bob Ross. La ejecución automática de tests y QA visual se registra por separado.
 
 ## Integración compartida
-PR #11 (núcleo) y PR #5 (base Bob Ross) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.
+PR #11 (núcleo), PR #5 (base Bob Ross) y PR #10 (Paquete de Entrada) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.

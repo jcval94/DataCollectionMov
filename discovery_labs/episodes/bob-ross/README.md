@@ -1,6 +1,6 @@
 # AI Discovery Labs · Episodio Bob Ross — investigación científica y Paquete de Entrada
 
-> **Estado de código:** infraestructura común y paquete integrados por PR #11 y PR #10 (pendiente de fusión al preparar esta versión). **Estado científico:** Fase 1 NO aprobada; Fases 2/3 bloqueadas. No se ha entrenado ningún modelo de las 14 preguntas.
+> **Estado de código:** infraestructura común, episodio base y Paquete de Entrada fusionados en `main` mediante PR #11, PR #5 y PR #10. **Estado científico:** Fase 1 NO aprobada; Fases 2/3 bloqueadas. No se ha entrenado ningún modelo de las 14 preguntas.
 
 ## Punto de entrada CANÓNICO (leer primero)
 
