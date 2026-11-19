@@ -86,7 +86,7 @@ La tabla conserva los 22 hitos E01–E22 y el estatus comunicado. «VERIFIED» s
 | Two Inch Brush (secundario) | https://blog.twoinchbrush.com/article/the-death-of-bob-ross-time-and-cause-of-death/ | Especulación no soportada |
 | Litigios | https://www.criscarterlaw.com/2021/10/01/bob-ross-estate-plan-not-so-happy-accident/ | Contexto societario |
 
-**Problemas de integridad en el texto recibido:** algunos URLs del CSV original tenían artefactos de exportación como \`[span_88](start_span)\`; reconstruir URL consultando al proveedor, no copiar marcadores como si fueran parte del enlace. Una afirmación VERIFIED citada desde un blog no queda verificada automáticamente.
+**Problemas de integridad en el texto recibido:** algunos URLs del CSV original tenían artefactos de exportación como `[span_88](start_span)`; reconstruir URL consultando al proveedor, no copiar marcadores como si fueran parte del enlace. Una afirmación VERIFIED citada desde un blog no queda verificada automáticamente.
 
 ## 4. Afirmaciones y conflictos principales recogidos
 
@@ -116,7 +116,7 @@ La tabla conserva los 22 hitos E01–E22 y el estatus comunicado. «VERIFIED» s
 4. ¿Qué elementos componen módulos robustos de coocurrencia y cuáles son periféricos?
 5. ¿Difieren las versiones tv y book del mismo cuadro en detalles y color? Falta corpus emparejado con derechos adecuados.
 6. ¿Hay anomalías en títulos repetidos y las tres pinturas que otras viñetas califican como incompletas?
-7. ¿Evoluciona \`num_colors\` a lo largo de temporadas según datos de paletas verificados?
+7. ¿Evoluciona `num_colors` a lo largo de temporadas según datos de paletas verificados?
 8. ¿Difieren S1 WNVC vs S2–4 WIPB en composición y marco de producción?
 9. ¿Cómo se sitúan composiciones póstumas de T32 en el espacio de las últimas temporadas originales? No mezclar las poblaciones.
 10. ¿Existe vínculo comprobable entre escenas con agua/sin estructuras y métricas de audiencia digital? Requiere datos de plataformas, controles y términos legales.
