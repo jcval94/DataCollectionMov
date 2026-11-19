@@ -9,6 +9,16 @@
 
 **Carpeta ÚNICA autorizada:** `discovery_labs/episodes/bob-ross/`. Trabaja sobre la rama más actual del episodio, preservando cambios locales y PRs concurrentes. No tocar `mvp-ds-course`, workflows globales ni otros proyectos.
 
+## Contrato de descubrimiento y evolución incremental
+
+**Objetivo principal:** descubrir insights innovadores, sorprendentes por su evidencia y relevantes sobre Bob Ross. No inventar resultados para fabricar novedad.
+
+Todo análisis, pregunta y hallazgo contesta **CÓMO** (fuentes, pasos, modelo, prueba independiente y reproducibilidad), **POR QUÉ** (relevancia, hipótesis rivales, pertinencia del método) y **PARA QUÉ** (nueva comprensión, decisión, utilidad científica o experimento siguiente).
+
+**HTML científico vivo:** abrir con un **párrafo de contexto general** y una estructura estable. Mostrar al inicio **solo O1**. Mantener O2/O3 como candidatos internos condicionales; agregar las O2 al HTML después de responder O1 y cotejar Deep Research, y las O3 solo después de ejecutar O2 y revisar una hipótesis rival. La guía V3 actual es un borrador estático que todavía no implementa esta revelación progresiva.
+
+**Orden de Deep Research:** DR-01 historia, DR-02 arqueología de datos y DR-03 antecedentes (temprano y focalizado) → medir O1 → DR-05a síntesis y selección de O2 → ejecutar O2 y valorar O3 → DR-04 especializado en visualización y derechos de los insights seleccionados → DR-05b cierre. Revisar licencias desde el principio, aunque DR-04 completo se posponga.
+
 ## Resultado que quiero
 **Un único artefacto de Fase 1:** `research_guide.html` (y su pipeline/evidencias locales) que narre la **historia de Bob Ross** y la investigación técnica **mediante gráficos memorables, hallazgos reales, preguntas de varios órdenes y análisis adversariales**.
 
@@ -24,7 +34,7 @@ La siguiente versión de `research_guide.html` debe mostrar **una única secció
 
 **Por cada pregunta principal:** proponer al menos **un modelo** y **un ejercicio estadístico formal distinto** con qué/por qué/dónde/datos/baseline/supuestos/validación y figura. Consultar `discovery_labs/shared/model_catalog/MODEL_SET.md`, que contiene 24 familias. No elegir LSTM, RL, riesgos colectivos, Optuna o modelos causales si las observaciones, targets, calendario, reward y controles no los justifican. Diseñar **sin entrenar** cuando el encargo sea solo Paquete de Entrada: modelos y ejercicios en `PLAN_ONLY`.
 
-Estructura obligatoria de cada tarjeta: historia/hook, pregunta madre, O1, O2 condicional al resultado O1, O3 condicional a O2, modelo y propósito, ejercicio estadístico, ruta de datos, visualización, fuentes externas, límites y estado. Las antiguas seis preguntas son subexperimentos, no preguntas editoriales adicionales.
+La ficha INTERNA planifica O1/O2/O3 con triggers, contexto, modelo, ejercicio estadístico y evidencia. La tarjeta del HTML INICIAL revela solo O1, hipótesis y método; O2 y O3 no se muestran como preguntas activas hasta que estén sustentadas por resultados y Deep Research. Las antiguas seis preguntas son subexperimentos, no preguntas editoriales adicionales.
 
 **Primera prioridad de esta conversación:** revisar skill `discovery_labs/shared/skills/question-forge/SKILL.md`, `discovery_labs/shared/templates/ENTRY_PACK_TEMPLATE.md`, `discovery_labs/shared/model_catalog/MODEL_SET.md`, `QUESTIONS_MASTER.*`, `CONTEXT_CLAIMS.md`, `START_HERE_NEW_CHAT.md`. No crear video, guion, intro ni storyboard antes de aprobación humana de la guía.
 
@@ -35,14 +45,16 @@ Estructura obligatoria de cada tarjeta: historia/hook, pregunta madre, O1, O2 co
 4. Inspecciona la guía HTML preliminar si está disponible. **No la apruebes por su apariencia**.
 5. Establece una matriz de errores/faltantes y dependencias.
 
-## 1. Deep Research (cuatro ejes + síntesis)
+## 1. Deep Research escalonado: tres frentes tempranos, uno diferido y síntesis iterativa
 Sigue `entry_pack/DEEP_RESEARCH_PROMPTS.md`:
 
-- DR-01: biografía, historia de la serie, fechas, acontecimientos documentados.
-- DR-02: arqueología del dataset, cronología grabación/emisión y metadatos externos de colores/pinturas.
-- DR-03: mitos REALES, antecedentes y mecanismos alternativos.
-- DR-04: imágenes, derechos, visualizaciones, explorador de clusters con hover/focus.
-- DR-05: reconciliar hechos, cuestionar hipótesis, priorizar preguntas.
+- **DR-01 temprano:** biografía, historia, fechas y salud; incertidumbres documentadas.
+- **DR-02 temprano:** arqueología del dataset, fechas grabación/emisión, límites y enriquecimientos posibles.
+- **DR-03 temprano y selectivo:** mitos REALES y antecedentes de las 3–5 rutas prioritarias.
+- **Medición O1:** reproducir métodos sobre el dataset completo y registrar hipótesis refutadas/inconclusas.
+- **DR-05a checkpoint:** reconciliar 01/02/03 con O1 medida, seleccionar y activar O2 que tengan triggers reales.
+- **DR-04 diferido:** profundizar derechos, diseño, visuales e interacción solo para insights con respaldo; triage de licencias desde el inicio.
+- **DR-05b final:** tras ejecutar O2 y abrir O3 cuando proceda, cerrar interpretación adversarial y actualización de HTML.
 
 Cita URLs y fecha de acceso en un registro. Establece `VERIFIED`, `DISPUTED`, `PENDING` o `NOT_SUPPORTED`; **nunca marques como ejecutada una investigación que sólo fue sugerida**.
 
@@ -84,6 +96,10 @@ Implanta las visualizaciones justificadas de `VISUAL_DESIGN.md` como argumentos 
 Inspecciona los gráficos realmente renderizados, en laptop y teléfono. Accesibilidad keyboard-only, contraste, texto alternativo y salidas en SVG/PNG.
 
 ## 5. Documento guía científico
+
+**HTML inicial:** debe abrir con un párrafo de contexto histórico general (Bob Ross, serie 1983–1994, fuente de 403 episodios, alcance de las etiquetas y qué se quiere descubrir). No anticipar patrones, diagnósticos ni efectos causales. Mantener secciones estables: contexto → propósito CÓMO/POR QUÉ/PARA QUÉ → datos/limitaciones → índice **único de O1** → métodos y resultados (incluido PENDIENTE) → pruebas adversariales → utilidad → reproducibilidad/versiones/gate.
+
+**HTML incremental:** cuando O1 esté respondida y se haya hecho DR-05a tras DR-01/02/03, agregar O2 justificadas **en el mismo bloque editorial**, con ID padre, gatillo observado, evidencia y fecha/commit. Agregar O3 solo después de ejecutar O2 y definir una prueba rival. No añadir una sección «02B» ni mostrar desde el inicio las rutas condicionales como activas. Consultar `RESEARCH_PLAN.md` para el proceso de aprobación y los estados de evidencia.
 La guía debe sentirse como **un ensayo ilustrado riguroso sobre la vida televisiva de Bob Ross**, no como un reporte corporativo ni una colección de widgets.
 
 Narración sugerida, adaptable a resultados:

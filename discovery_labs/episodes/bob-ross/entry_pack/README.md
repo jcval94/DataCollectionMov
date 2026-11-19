@@ -9,6 +9,20 @@
 
 **Lee primero [START_HERE_NEW_CHAT.md](START_HERE_NEW_CHAT.md).** Contiene el contexto autocontenido, ramas, PR, instrucciones de no modificar fuera del episodio, estado exacto y un prompt literal. Para generalizar a nuevos episodios: [Plantilla general](../../../shared/templates/ENTRY_PACK_TEMPLATE.md).
 
+## Objetivo y nuevo protocolo editorial
+
+**AI Discovery Labs existe para descubrir insights increíbles e innovadores de cada dataset, siempre demostrables, reproducibles y útiles para pensar mejor.** Un resultado sorprendente solo cuenta si resiste comparaciones, pruebas adversariales y explicaciones alternativas; también es un descubrimiento demostrar que un supuesto era falso.
+
+Para cada pregunta, experimento y hallazgo explicar tres dimensiones explícitas:
+
+- **CÓMO** se investiga y reproduce: fuente, grano, limpieza, modelo, prueba estadística, contraste, incertidumbre.
+- **POR QUÉ** importa y es verosímil: contexto, método, hipótesis rival y limitaciones.
+- **PARA QUÉ** sirve: cambio en nuestra comprensión, decisión informada o experimento siguiente.
+
+**El HTML inicial tiene un párrafo de contexto general al comienzo y una estructura estable** (contexto → misión → datos/límites → índice único O1 → evidencia → interpretación/utilidad → reproducibilidad/aprobación). Debe **actualizarse a medida que se investiga**: primero O1; solo después de medir O1 y revisar DR-01/02/03 más DR-05a se agregan O2 justificadas, y solo después de ejecutar O2 se incorporan O3 respaldadas. El banco JSON/MD conserva O2/O3 como **diseños internos condicionales**, no como preguntas activas desde el día uno. La V3 actual es preliminar y no cumple todavía esta visualización progresiva.
+
+**Deep Research no todo a la vez:** DR-01 historia, DR-02 datos y DR-03 antecedentes son tempranos; DR-04 visual/derechos se profundiza **al seleccionar insights** (triage de licencias desde el principio); DR-05 es un checkpoint de síntesis tras O1 y un cierre final, no cinco búsquedas obligatoriamente paralelas. Ver [`DEEP_RESEARCH_PROMPTS.md`](DEEP_RESEARCH_PROMPTS.md) y [`RESEARCH_PLAN.md`](RESEARCH_PLAN.md).
+
 ## Contenido canónico
 
 | Recurso | Función |

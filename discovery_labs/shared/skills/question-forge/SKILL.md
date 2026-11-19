@@ -5,6 +5,19 @@ version: 2.1.0
 ---
 # Question Forge — habilidad reusable de preguntas científicas y narrativas
 
+## Misión: descubrir insights extraordinarios, nuevos y verificables
+
+**Objetivo central de AI Discovery Labs:** descubrir en **cada dataset** insights sorprendentes, útiles e innovadores que una lectura superficial no revelaría. Innovar significa formular una hipótesis no obvia, contrastarla y explicar sus implicaciones; **no** exagerar, prometer un hallazgo espectacular o inventar patrones cuando los datos no lo sostienen. También son descubrimientos valiosos refutar una intuición popular, reconocer un sesgo, demostrar ausencia de evidencia o encontrar una variable/fuente que cambie la interpretación.
+
+**Contrato CÓMO · POR QUÉ · PARA QUÉ, obligatorio en el episodio, cada investigación y cada hallazgo publicado:**
+
+- **CÓMO:** de dónde salen los datos, qué transformación/segmentación se hace, qué modelo y **ejercicio estadístico independiente** se usan, supuestos, denominador, baseline, validación, incertidumbre y cómo reproducirlo.
+- **POR QUÉ:** qué tensión, mecanismo, excepción o hipótesis rival hace importante la pregunta; por qué el método es apropiado y por qué el patrón observado merece atención. Diferenciar explicación sustentada de simple correlación.
+- **PARA QUÉ:** qué cambia en nuestra comprensión, qué decisión o siguiente experimento permite, qué límite revela y para quién resulta útil. Si no hay aplicación directa, explicitar su valor científico o pedagógico, sin inventar impacto práctico.
+
+No confundir **por qué elegimos el método** con **por qué ocurrió el fenómeno**: lo segundo puede permanecer desconocido. Una pregunta solo se promociona a hallazgo cuando tiene evidencia reproducible y una interpretación calibrada.
+
+
 ## CONTRATO CANÓNICO — obligatorio en TODO episodio
 
 1. **Un único bloque editorial:** no presentar «seis preguntas básicas» más «preguntas nuevas» aparte; no usar «2B». Leer preguntas heredadas como insumos, no como contenido inmovible. **Fusionar, descartar o elevar** las consultas simples a evidencia o ejercicios de las preguntas profundas. Entregar **un solo banco canónico** `QUESTIONS_MASTER.md` + `questions_master.json`. El HTML muestra UNA sola sección de preguntas con tarjetas de todos los casos y facetas de exploración. No debe mostrar dos listas paralelas.
@@ -12,7 +25,7 @@ version: 2.1.0
 3. **Sin entrenar nada durante el paquete:** no ejecutar modelos, tuning con Optuna, simulaciones, scraping o pruebas estadísticas nuevas cuando la solicitud sea solo de planeación. Registrar `PLAN_ONLY` o `BLOCKED`; los conteos previamente verificados son evidencia de contexto, no nuevos experimentos.
 4. **Relevancia antes de sofisticación:** no imponer LSTM, Transformers, RL, riesgo colectivo o Optuna en un dataset que no tenga secuencia suficiente, reward, pérdida, target o validación. Mencionar alternativas factibles con criterios; no ofrecer 24 modelos por pregunta.
 5. **Pregunta histórica/bio y causa:** un hecho fuera del dataset es un insumo legítimo para hipótesis potentes. Antes de afirmar una relación, investigar cronología, periodos de medición, tiempo de emisión vs creación, explicaciones rivales y evidencia de imposibilidad. Si contexto clave es sensible (p. ej. enfermedad de un sujeto histórico), usar fuentes verificadas y no especular sobre estados mentales, estado clínico por un gráfico ni mecanismo causal sin identificación válida.
-6. **O2 y O3 se activan por evidencia:** cada O2 requiere condición `trigger_from_O1`; cada O3 requiere `trigger_from_O2` + prueba rival independiente. Antes de tener el valor de activación, conservar como **CONDICIONAL**, no como descubrimiento.
+6. **O2 y O3 se activan y publican por evidencia:** cada O2 requiere condición `trigger_from_O1` **y resultados O1 comprobados más Deep Research contextual pertinente**; cada O3 requiere `trigger_from_O2` ejecutado y una prueba rival independiente. En el paquete canónico se **diseñan** O2/O3 como candidatos **CONDICIONALES**, pero el **HTML inicial muestra únicamente O1**; O2 y O3 se incorporan progresivamente como nuevas preguntas visibles, nunca se anuncian como hallazgos anticipados.
 7. **Visualización científica obligatoria:** proponer por pregunta una figura que cambia la comprensión, una adversarial y un inspector detallado (hover, focus, tap; ID, método, fuente y derechos); imágenes ajenas solo con autorización. Vincular cada escena a cálculo y denominador.
 8. **Paquete de entrada antes de guía:** `START_HERE_NEW_CHAT.md`, `DEEP_RESEARCH_PROMPTS.md`, `metadata.json`, `sample_raw.csv`, `sample_features.csv`, `RESEARCH_PLAN.md`, `MODEL_SET.md`, `QUESTIONS_MASTER.md`, `questions_master.json`, `VISUAL_DESIGN.md`, y `sources/claims` (cuando se ejecuta Deep Research). El paquete incluye un checklist de faltantes y decisiones, y un prompt portable para una conversación nueva.
 9. **Fases bloqueadas:** Entrada → guía científica HTML → aprobación humana explícita de una versión → storytelling audiovisual → aprobación → video. La skill nunca crea guion/video de oficio.
@@ -53,6 +66,31 @@ status: PLANNED
 - Comparar el banco heredado y documentar dónde quedó integrado (tabla de trazabilidad), sin mantenerlo como segunda sección visible.
 - El primer HTML sólo tiene **una sección principal de preguntas** con todas las rutas y un filtro/índice opcional; la biografía no se esconde como apéndice.
 - La skill **no** ejecuta entrenamiento ni crea guion/video.
+
+## HTML científico vivo: estructura y revelación de preguntas por evidencia
+
+El HTML de Fase 1 es una **bitácora científica versionada**, no una diapositiva que presupone su final. Su primera versión se puede construir como esqueleto editorial sin resultados nuevos; cada iteración conserva el contexto y **agrega o corrige** apartados conforme progresa la investigación. No reescribir silenciosamente conclusiones anteriores.
+
+**Orden obligatorio del HTML inicial:**
+
+1. **Párrafo de contexto general al inicio del contenido principal:** quién/qué representa el fenómeno, origen y periodo del dataset, problema humano o científico y por qué vale la pena investigarlo; no adelantar resultados ni atribuir causalidad.
+2. **Objetivo explícito:** qué insight no obvio buscamos y **CÓMO, POR QUÉ y PARA QUÉ** lo investigaremos.
+3. **Datos, cobertura y límites:** unidad de observación, denominadores, procedencia, licencias, sesgos, periodos y fuentes externas pendientes.
+4. **Único índice/bloque de preguntas:** preguntas de **primer orden O1** visibles, con hipótesis, diseño del modelo y del ejercicio estadístico, estado y prerequisitos; sin un segundo bloque de «preguntas avanzadas».
+5. **Evidencia y resultados:** espacios con estados honestos `PENDIENTE`, `EN_ESTUDIO`, `VERIFICADO`, `REFUTADO` o `INCONCLUSO`; figuras sólo tras cálculo y QA.
+6. **Interpretación adversarial, utilidad, reproducibilidad y próximos pasos:** fuentes, alternativas, incertidumbre, decisiones, preguntas aún bloqueadas, changelog de versión y gate humano.
+
+**Activación progresiva (distinguir documentación interna de publicación):**
+
+- **Diseño/HTML v0:** el JSON y Markdown pueden prever O2/O3 con `trigger`, pero el HTML **no muestra esas preguntas como tareas activas ni las responde**. El lector ve O1, sus hipótesis y lo que aún falta. No bastan títulos de O2 escritos de antemano.
+- **DR temprano + O1:** verificar contexto/datos/antecedentes (DR-A/B/C, con foco según el caso), **responder O1 con cálculos reproducibles** y ejecutar una síntesis crítica provisional (**DR-E provisional**, checkpoint de activación). Solo entonces activar en HTML **las O2 justificadas por esos resultados y fuentes**; registrar `parent_id`, evidencia que activa, fecha/versión y estado. Si O1 es nula, las O2 se reformulan hacia explicación del nulo, sesgo o límite.
+- **O2 → O3:** ejecutar O2; solo después agregar O3 que contraste su explicación y registre una hipótesis rival o fuente independiente. Una rama sin soporte permanece interna o `BLOQUEADA`.
+- **Visualización especializada (DR-D):** investigación visual y de derechos **después** de identificar qué insight merece mostrarse; hacer **triage temprano de licencias** antes de insertar cualquier imagen. Cerrar la síntesis final **DR-E** después de O2/O3 y DR-D, con QA.
+- **Actualización de cada hito:** mantener ID estable, versión/commit, `observed_at`, estado, artefacto de cálculo, fuente, método, incertidumbre, correcciones y siguiente decisión. Distinguir evidencia observada de hipótesis planificada; enlazar datos→pregunta→resultado→figura.
+
+**Ritmo de las cinco investigaciones:** conservar los cinco *frentes* (DR-A historia; B datos; C antecedentes; D visual/derechos; E síntesis adversarial), pero **NO exigir cinco Deep Research exhaustivos y paralelos**. A/B/C son preparación contextual; D se amplía cuando hay resultados; E es un **gate de síntesis**, inicialmente provisional tras DR temprano + O1 y definitivo tras la iteración científica. El esfuerzo profundo se asigna según incertidumbre y valor, no por cuotas.
+
+El HTML inicial, su actualización o una ejecución técnica **no sustituyen** la aprobación explícita de Fase 1 antes de pasar al audiovisual.
 
 ## Activación
 Usar ANTES de escribir el reporte científico HTML de cualquier episodio; nunca fabricar una historia cerrada antes de analizar los datos. Acepta el paquete de entrada (dataset, perfilado, fuentes externas, antecedentes, licencias, metadata y preguntas heredadas). Produce un **grafo investigable de preguntas**, no una lista decorativa.

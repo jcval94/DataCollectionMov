@@ -1,8 +1,24 @@
-# Deep Research — cuatro investigaciones paralelas + síntesis
+# Deep Research — cinco frentes por evidencias (no todos al inicio)
 
 **Caso:** Bob Ross · `bob-ross-elementos` · `The Joy of Painting` · 31 temporadas etiquetadas · 403 episodios (381 anfitrión, 22 invitados).
 
 Estas son instrucciones para una **IA con navegación y acceso a fuentes**. No sustituyen los resultados de una investigación efectivamente realizada. Los hechos externos se marcarán `VERIFIED`, `DISPUTED`, `CONTEXT_ONLY`, `PENDING` o `NOT_SUPPORTED`.
+
+## Estrategia por etapas · 3 temprano, 1 diferido y 1 síntesis iterativa
+
+**Misión de este episodio:** descubrir insights innovadores, inesperados y científicamente verificables sobre el repertorio pictórico televisivo de Bob Ross y sus excepciones; nunca inventar un hallazgo para que resulte impactante. Cada pregunta y resultado debe aclarar **CÓMO** se obtuvo, **POR QUÉ** es relevante (con hipótesis rivales) y **PARA QUÉ** sirve (comprensión, enseñanza o siguiente experimento).
+
+| Trabajo | Momento | Condición |
+|---|---|---|
+| **DR-01: historia/biografía** | Inicial | Cronología y fuentes con discrepancias registradas |
+| **DR-02: arqueología/fechas/datos** | Inicial | Saber qué se puede medir antes de inferir |
+| **DR-03: mitos y antecedentes** | Inicial, acotado a 3–5 preguntas prioritarias | Mitos documentados y explicaciones alternativas, no especulación |
+| **DR-04: visualizaciones y permisos** | **Diferido: tras resultados O1 y selección de insights** | Hacer desde el inicio solo revisión preliminar de licencias para no usar pinturas sin autorización |
+| **DR-05: síntesis adversarial** | **Checkpoint después de DR-01/02/03 y O1 respondida; cierre tras DR-04 y O2/O3** | No ejecutar síntesis de resultados sin resultados |
+
+**HTML v0:** comenzar con un **párrafo general de contexto histórico/dataset**, propósito y estructura fija; mostrar solo preguntas O1, hipótesis y estado pendiente. Las O2/O3 de las 14 fichas existen como **planes internos condicionales** en el banco, **no se publican inicialmente como preguntas activas**. Responder O1 con evidencia y contrastar DR-01/02/03 antes de agregar O2 al HTML. Responder O2 y revisar adversarialmente antes de agregar O3. Cada actualización conserva ID, fuente, resultado, razón de activación y versión.
+
+Esta pauta **sustituye** cualquier indicación antigua de ejecutar DR-01…DR-04 simultáneamente o hacer DR-05 antes de medir O1. Cinco frentes no significan cinco Deep Research de coste completo. No se afirma que ya hayan sido ejecutados.
 
 ## DR-01 — Biografía, trayectoria y contexto histórico
 
@@ -46,7 +62,7 @@ Estas son instrucciones para una **IA con navegación y acceso a fuentes**. No s
 
 **Fuentes iniciales:** [NPR/KPBS](https://www.kpbs.org/news/2016/08/28/the-real-bob-ross-meet-the-meticulous-artist), [FiveThirtyEight/Data](https://fivethirtyeight.datasettes.com/fivethirtyeight/bob-ross~2Felements-by-episode), [Wiley poster sobre visualización](https://doi.org/10.1002/meet.2014.14505101084).
 
-## DR-04 — Investigación visual, imágenes, diseño y licencias
+## DR-04 — Investigación visual, imágenes, diseño y licencias (profundizar tras O1)
 
 > Eres investigador en cultura visual, diseñador de visualizaciones y especialista en derechos. Diseña una colección de **visualizaciones que hagan visibles relaciones reales**, no que decoren cifras. Propón: línea temporal por temporada con incertidumbre; heatmap de motivos por temporada; contribución de huéspedes; coocurrencias frente a baseline; outliers por episodio/temporada; cambios de composición; cluster explorer con representantes reales; tarjetas de evidencias; vistas de sensibilidad (Jaccard vs Euclídea; K-means vs k-medoids cuando proceda).
 >
@@ -56,14 +72,14 @@ Estas son instrucciones para una **IA con navegación y acceso a fuentes**. No s
 >
 > Entrega `visuals_spec.md`, `preview_rights.csv`, `charts_evidence.json`, una maqueta técnica de explorador (sin inventar imágenes) y criterios QA de escritorio/móvil/teclado.
 
-## DR-05 — Síntesis, triangulación y preguntas de orden superior (ejecutar DESPUÉS de DR-01 a DR-04)
+## DR-05 — Síntesis, triangulación y preguntas de orden superior (checkpoint y cierre)
 
 **Nueva regla editorial V2:** Produce **un solo banco** `QUESTIONS_MASTER.md` y `questions_master.json`; las preguntas viejas A/B/C/D1/D2/E son subejercicios integrados, no sección aparte. Cada pregunta principal debe **proponer** (no entrenar) un modelo tomado de `MODEL_SET.md` y un ejercicio estadístico formal, declarando qué/por qué/dónde/condiciones y validación. Debe haber O1→O2→O3, con O2/O3 condicionales. La hipótesis de enfermedad ha de estar en el núcleo y su cronología es DISPUTADA: cotejar Outside, Washington Post, NPR y fuentes primarias antes de situar un evento en la línea temporal o sugerir causalidad.
 
 
-> Actúa como editor científico adversarial. Lee las cuatro investigaciones, clasifica afirmaciones en `VERIFIED`/`DISPUTED`/`PENDING`, concilia fechas y poblaciones, elimina leyendas sin respaldo, detecta información que **no está** en el CSV y exige evidencia externa antes de convertirla en un hallazgo.
+> Actúa como editor científico adversarial. **Primera pasada:** lee DR-01/02/03 realmente ejecutados y las respuestas medibles de O1; activa O2 solo si hay evidencia. **Segunda pasada:** incorpora DR-04 y resultados O2, contrasta O3 cuando proceda y cierra. Si falta una fuente, registra PENDIENTE; no simules la investigación faltante. Clasifica afirmaciones en `VERIFIED`/`DISPUTED`/`PENDING`, concilia fechas y poblaciones, elimina leyendas sin respaldo, detecta información que **no está** en el CSV y exige evidencia externa antes de convertirla en un hallazgo.
 >
-> Ejecuta la skill `question-forge`. Genera al menos doce preguntas raíz, con rutas O1→O2 y **al menos cuatro arcos que culminen en O3**, sin fingir resultados: cada O2/O3 indica el resultado previo que podría activarla. Selecciona de tres a cinco arcos prioritarios por potencial científico, visual, histórico y factibilidad.
+> Ejecuta la skill `question-forge` para **revisar y priorizar el banco canónico existente de 14 investigaciones**, no crear un segundo banco. Cada O2/O3 está diseñada como condición hasta que se mida su predecesora. Selecciona tres a cinco arcos prioritarios por valor de insight, evidencia, novedad científica, potencia visual y factibilidad; **publica solo O2/O3 activadas y contrastadas**, no sus resultados imaginados.
 >
 > Construye un **mapa narrativo científico, no un guion audiovisual**: historia de Bob Ross en primer plano, eventos históricos como contexto, datos como prueba y tensiones derivadas de hallazgos observados. Entrega hipótesis rivales, DAG causal si resulta útil, matriz de triangulación entre fuentes, registro de creencias, diseños de análisis y planes de reproducción.
 >
@@ -71,7 +87,7 @@ Estas son instrucciones para una **IA con navegación y acceso a fuentes**. No s
 >
 > Entrega `synthesis.md`, `question_graph.json`, `research_plan.md`, `source_claim_matrix.csv`, y criterios para construir `research_guide.html`. **DETENTE al llegar al límite de Fase 1: no escribir el guion de video ni producir video.**
 
-## Regla transversal de las cinco investigaciones
+## Regla transversal de los cinco frentes
 Cada afirmación no trivial exige fuente, fecha o periodo, tipo de evidencia, nivel de confianza y uso previsto. Un reporte `VERIFIED` debe guardar URL estable, evidencia breve, fecha de consulta y posibilidad de refutación. Investigaciones inconclusas son resultados legítimos. Prioriza fuentes primarias y prensa de calidad; documenta desacuerdos sin forzar consenso.
 
 <!-- Legacy QA aliases only: DR-1 -> DR-01, DR-2 -> DR-02, DR-3 -> DR-03, DR-4 -> DR-04, DR-5 -> DR-05. -->

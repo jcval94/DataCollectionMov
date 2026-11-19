@@ -59,6 +59,22 @@ No crear video, intro, Remotion, voz o storyboard antes de aprobación.
 - **No ejecutar ni entrenar** aún esos modelos: en Fase 0 solo se diseñan. LSTM, RL, Optuna o riesgo colectivo no se fuerzan en un dataset insuficiente.
 - O2/O3 se escriben como hipótesis condicionales hasta que haya evidencia de O1/O2.
 
+## 5 bis) Nuevas reglas permanentes para todos los episodios
+
+**Misión:** perseguir insights **increíbles, originales e innovadores** de cada dataset, solo cuando los sustenten fuentes, contrastes y análisis reproducibles. No fabricar una «sorpresa» ni un impacto no medible.
+
+**Tres preguntas explícitas que deben responder la investigación y el documento científico:**
+
+- **CÓMO:** dataset, variables, grano, pipeline, modelo y prueba estadística independiente, sensibilidad y reproducción.
+- **POR QUÉ:** relevancia histórica/científica, elección de método, hipótesis rivales, límites de explicación.
+- **PARA QUÉ:** qué cambia en la comprensión, qué decisión posibilita o qué experimento sigue.
+
+**HTML inicial y evolución:** comenzar con un párrafo de contexto general y estructura: contexto → misión → fuente/límites → un único índice de **O1** → métodos/espacios de evidencia → análisis crítico → utilidad → reproducción/versiones. O2/O3 permanecen **diseños condicionales en JSON y Markdown**, sin presentarlas de entrada como preguntas activas del HTML. Medir O1 + contrastar DR temprano + checkpoint DR-05a antes de publicar O2; medir O2 + comprobar hipótesis rival antes de publicar O3. Mantener historial de versión, ID padre, triggers, evidencias y resultados nulos. **No reescribir retroactivamente un resultado sin bitácora**. El HTML V3 existente es una instantánea de preguntas que aún debe adaptarse a esta presentación progresiva.
+
+**Cinco frentes, no cinco Deep Research simultáneos:** primero **DR-01/02/03**, profundizar **DR-04** después de resultados O1 e insights seleccionados (triage temprano de licencias), usar **DR-05** como síntesis provisional tras O1 y cierre al final. La pauta está fijada en `discovery_labs/shared/skills/question-forge/SKILL.md`, `discovery_labs/shared/templates/ENTRY_PACK_TEMPLATE.md`, `entry_pack/DEEP_RESEARCH_PROMPTS.md` y `entry_pack/RESEARCH_PLAN.md`.
+
+**Gobernanza:** estos son requisitos escritos para la **siguiente versión** del HTML. No equiparar su documentación con la ejecución de Deep Research, la aprobación científica ni la autorización del storyboard/video.
+
 ## 6) Qué hacer en la próxima conversación
 **Si la petición es continuar Fase 0:** revisar y terminar skill/entrada, QA de JSON y enlaces, confirmar el PR y estado, sin crear nuevos modelos entrenados.
 
@@ -74,7 +90,7 @@ node discovery_labs/episodes/bob-ross/qa_static.cjs # opcional si Node
 
 ## 7) Prompt literal para copiar en conversación nueva
 
-> Continúa AI Discovery Labs / Bob Ross desde el Paquete de Entrada de la rama `main` del repositorio `jcval94/DataCollectionMov` (PRs #5, #10 y #11 fusionados). Antes de ejecutar nada, lee `discovery_labs/episodes/bob-ross/entry_pack/START_HERE_NEW_CHAT.md`, `README.md`, `discovery_labs/shared/skills/question-forge/SKILL.md`, `QUESTIONS_MASTER.md`, `discovery_labs/shared/model_catalog/MODEL_SET.md`, `DEEP_RESEARCH_PROMPTS.md`, `CONTEXT_CLAIMS.md`, `RESEARCH_PLAN.md`, `VISUAL_DESIGN.md` y las muestras/metadatos. La regla editorial es una única lista integrada de preguntas profundas, con O1/O2/O3 y al menos un modelo + un ejercicio estadístico diseñado por pregunta. No entrenes modelos ni hagas video si estoy pidiendo solo paquete/planeación. Incluye enfermedad como hipótesis histórica con fechas disputadas, sin causalidad inventada. Trabaja únicamente en la carpeta del episodio, preserva cambios concurrentes y reporta pruebas y pendientes. Las Fases 2 y 3 requieren mis aprobaciones explícitas.
+> Continúa AI Discovery Labs / Bob Ross desde el Paquete de Entrada de la rama `main` del repositorio `jcval94/DataCollectionMov` (PRs #5, #10 y #11 fusionados). Antes de ejecutar nada, lee `discovery_labs/episodes/bob-ross/entry_pack/START_HERE_NEW_CHAT.md`, `README.md`, `discovery_labs/shared/skills/question-forge/SKILL.md`, `QUESTIONS_MASTER.md`, `discovery_labs/shared/model_catalog/MODEL_SET.md`, `DEEP_RESEARCH_PROMPTS.md`, `CONTEXT_CLAIMS.md`, `RESEARCH_PLAN.md`, `VISUAL_DESIGN.md` y las muestras/metadatos. La regla editorial es una única lista integrada de preguntas profundas, con O1/O2/O3 y al menos un modelo + un ejercicio estadístico diseñado por pregunta. La misión es descubrir insights innovadores verificables y explicar siempre CÓMO, POR QUÉ y PARA QUÉ. El HTML inicial debe abrir con un párrafo de contexto y mostrar solo O1; O2 se incorporan después de responder O1 y ejecutar DR-01/02/03 con DR-05a, y O3 tras obtener evidencia O2. Diferir DR-04 profundo hasta seleccionar insights y cerrar DR-05b al final. No entrenes modelos ni hagas video si estoy pidiendo solo paquete/planeación. Incluye enfermedad como hipótesis histórica con fechas disputadas, sin causalidad inventada. Trabaja únicamente en la carpeta del episodio, preserva cambios concurrentes y reporta pruebas y pendientes. Las Fases 2 y 3 requieren mis aprobaciones explícitas.
 
 ## 8) Definición de terminado de esta etapa
 Paquete autocontenido, skill transferible, 14 preguntas integradas, modelo + estadística por pregunta, 24 modelos catalogados, fuente y contradicciones registradas, plan visual potente, metadatos/muestra genuinos, archivos accesibles y PR listo para revisión. **NO afirmar que Deep Research completo, modelos o guía definitiva ya se ejecutaron.**
