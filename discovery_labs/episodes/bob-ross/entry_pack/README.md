@@ -1,59 +1,78 @@
-# Paquete de entrada · AI Discovery Labs / Bob Ross
+# AI Discovery Labs — Paquete de Entrada 001 (Bob Ross)
 
-> **Antes de producir la guía científica:** comprender el mundo, las fuentes, las posibles historias y qué no puede medirse. Este paquete es el estándar portable de AI Discovery Labs. No autoriza video ni guion audiovisual.
+> **Infraestructura compartida (PR #11):** usar [Question Forge v2.1](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/skills/question-forge/SKILL.md), [catálogo único de modelos](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/model_catalog/MODEL_SET.md) y [plantilla general](https://github.com/jcval94/DataCollectionMov/blob/feat/discovery-labs-shared-research-core/discovery_labs/shared/templates/ENTRY_PACK_TEMPLATE.md). Las copias locales anteriores se mantienen **solo por compatibilidad** mientras shared no esté integrado. Consulta [MODEL_FIT_BOB_ROSS.md](MODEL_FIT_BOB_ROSS.md) para las limitaciones propias de este caso. No abrir un segundo catálogo.
 
-**Estado:** `PHASE_0_DRAFT`. La investigación externa tiene prompts y un registro inicial de enlaces; los cuatro Deep Research especializados **NO** están ejecutados ni aprobados por este paquete.
 
-## Abrir en orden
+> **Objetivo:** conocer el caso *antes* de preparar el informe científico, construir preguntas profundas y descubrir qué evidencia externa falta. **No es el guion de video.**
 
-| Archivo | Pregunta que resuelve |
+## INICIO en nueva conversación
+
+**Lee primero [START_HERE_NEW_CHAT.md](START_HERE_NEW_CHAT.md).** Contiene el contexto autocontenido, ramas, PR, instrucciones de no modificar fuera del episodio, estado exacto y un prompt literal. Para generalizar a nuevos episodios: [EPISODE_TEMPLATE.md](EPISODE_TEMPLATE.md).
+
+## Contenido canónico
+
+| Recurso | Función |
 |---|---|
-| [metadata.json](metadata.json) | ¿Qué es el dataset, qué volumen tiene y qué falta? |
-| [data_sample.csv](data_sample.csv) | ¿Cómo se ven sus registros reales? Pequeña muestra **intencional**, no aleatoria |
-| [sources.json](sources.json) | ¿Qué fuentes y permisos investigar y cómo verificar las afirmaciones? |
-| [DEEP_RESEARCH_PROMPTS.md](DEEP_RESEARCH_PROMPTS.md) | ¿Qué investigaciones contextuales lanzar y cómo sintetizarlas? DR-1 a DR-5 |
-| [DEEP_RESEARCH_GENERAL_TEMPLATE.md](DEEP_RESEARCH_GENERAL_TEMPLATE.md) | Plantilla transferible a los demás datasets, con historia, fuentes, preguntas multinivel y QA |
-| [QUESTION_BANK.md](QUESTION_BANK.md) | ¿Cuáles son las 12 investigaciones profundas propuestas con 1.º → 2.º → 3.er orden? |
-| [question_graph.json](question_graph.json) | Contrato estructurado para que un agente recorra preguntas y pruebas |
-| [skills/research-question-architect/SKILL.md](skills/research-question-architect/SKILL.md) | Skill reusable para diseñar preguntas no triviales en futuros datasets |
-| [VISUAL_EVIDENCE.md](VISUAL_EVIDENCE.md) | Cómo hacer gráficos visualmente poderosos sin perder ética ni exactitud |
-| [PLANNING.md](PLANNING.md) | Plan por bloques y puertas de aprobación |
-| [PHASE1_GUIDE_PROMPT.md](PHASE1_GUIDE_PROMPT.md) | Prompt para construir la primera guía HTML científica cuando el paquete se revise |
+| [START_HERE_NEW_CHAT.md](START_HERE_NEW_CHAT.md) | **Handoff** a otra conversación sin contexto |
+| [EPISODE_TEMPLATE.md](EPISODE_TEMPLATE.md) | **Plantilla general** para los otros 85 casos y futuros |
+| [skills/question-forge/SKILL.md](skills/question-forge/SKILL.md) | **Skill reutilizable v2**: preguntas de 3 órdenes, un modelo y un ejercicio estadístico por pregunta |
+| [QUESTIONS_MASTER.md](QUESTIONS_MASTER.md) | **Único bloque editorial de 14 investigaciones**; incluye enfermedad y trazabilidad de las seis rutas antiguas |
+| [questions_master.json](questions_master.json) | Única fuente estructurada de preguntas; **deberá** alimentar la guía HTML integrada cuando se automatice la Fase 1 (V3 es snapshot estático) |
+| [MODEL_SET.md](MODEL_SET.md) | 24 modelos/familias con adecuación, ejercicios estadísticos, validación, restricciones y ubicación |
+| [DEEP_RESEARCH_PROMPTS.md](DEEP_RESEARCH_PROMPTS.md) | DR-01…DR-04 y DR-05 de síntesis |
+| [CONTEXT_CLAIMS.md](CONTEXT_CLAIMS.md) | Evidencia externa y fechas contradictorias sobre enfermedad: NO atribución causal |
+| [RESEARCH_PLAN.md](RESEARCH_PLAN.md) | Lotes y aprobación Fase 1 |
+| [VISUAL_DESIGN.md](VISUAL_DESIGN.md) | Visualizaciones, cluster hover/focus, derechos y QA |
+| [metadata.json](metadata.json) | Metadatos verificables y faltantes |
+| [sample_raw.csv](sample_raw.csv) | 13 registros originales con 69 columnas |
+| [sample_features.csv](sample_features.csv) | Las mismas 13 filas derivadas con 12 familias |
+| [PROMPT_FASE1_V2.md](PROMPT_FASE1_V2.md) | Encargo local de guía científica y gates |
+| [validate_pack.py](validate_pack.py) | Comprobaciones sin entrenar modelos de una sola lista y 14 contratos modelo/estadística |
+| [QA_PACK_STATUS.md](QA_PACK_STATUS.md) | Validaciones estáticas realizadas y pruebas todavía pendientes |
+| [../research_guide.html](../research_guide.html) | Primera guía HTML V3, con las 14 preguntas en **una sola sección**; **pendiente de aprobación** |
 
-## Qué cambia frente al episodio inicial
+**Trazabilidad histórica, NO segundo banco:** [QUESTION_ARCS.md](QUESTION_ARCS.md) y [question_graph.json](question_graph.json) conservan 12 líneas previas y 33 nodos; se sustituyen editorialmente por `QUESTIONS_MASTER.*`. Las seis preguntas antiguas del `../questions.json` sirven a la interfaz actual, no se deben duplicar en la nueva guía.
 
-La pregunta «¿cuántos cuadros tienen árboles?» sigue siendo una **medición útil**, no el desenlace. Nuevas posibles protagonistas: evolución y novedad a lo largo de 31 temporadas; anomalías que desaparecen con agregación; cambios temporales en relación con historia y biografía; distancia entre motivos y estilo real; clusters que cambian al cambiar método; creencias que requieren fuentes externas.
+**Regla central:** la guía HTML debe tener un **solo bloque principal de preguntas**. Ni seis simples por un lado y nuevas en «2B», ni enfermedad relegada al final. Cada una de las 14 preguntas incluye un modelo y una prueba estadística planificados. **NO se han entrenado ni ejecutado.**
 
-### Investigación de tercer orden
-Ejemplo conceptual, aún por ejecutar:
-- **1.º:** parece que un motivo se vuelve más frecuente en las últimas temporadas.
-- **2.º:** ¿se debe a un cambio abrupto o a una tendencia antigua? ¿Se mantiene sin invitados?
-- **3.º:** ¿un marcador biográfico explica realmente el patrón o es una coincidencia al elegir un punto de corte retrospectivamente? ¿Persistiría en ventanas alternativas?
-Si el orden 1 **no** muestra cambio, el orden 2 debe indagar por qué parecía que lo había y el orden 3 contrastar sesgos/agrupación.
+## Qué cambió
+El primer inventario de Bob Ross contenía preguntas que podían resolverse mediante consultas sencillas. **Ahora las consultas son piezas de evidencia, no la investigación entera.**
 
-## Contexto biográfico sin ficción
+- El episodio tiene que contar **la historia documentada de Bob Ross** y su trabajo a lo largo de la serie.
+- La **salud** es un contexto biográfico investigable; no se permite atribuirle cambios estilísticos sin pruebas sólidas.
+- El tiempo requiere distinguir **orden de temporada, emisión y grabación**; el CSV no tiene fechas exactas.
+- Las preguntas de segundo orden nacen de resultados O1 comprobados y las de tercer orden refutan, explican o comparan O2: ninguna debe presentarse como hallazgo anticipado.
+- Los outliers se estudian a **tres escalas**: episodio, temporada y era/cohorte; las supuestas anomalías necesitan explicación rival y pruebas de sensibilidad.
+- Las «creencias populares» requieren una fuente que documente efectivamente la creencia; de lo contrario son provocaciones.
+- Las pinturas en tooltips requieren **derechos comprobados**; cuando falten, usar tarjetas de atributos y enlaces a sus páginas originales, con interacción para mouse, teclado y móvil.
 
-La historia de Bob Ross merece investigación independiente: formación y Alaska, wet-on-wet y televisión educativa, temporadas, invitados, empresa, salud y legado. El CSV NO contiene fecha exacta por registro, diagnóstico, imágenes ni valoración estética.
+## Qué sí sabemos de la fuente original
+- FiveThirtyEight / Walt Hickey, 403 episodios codificados.
+- CSV de 66,315 bytes, 69 columnas: EPISODE, TITLE y 67 etiquetas binarias.
+- 381 episodios sin GUEST y 22 con GUEST.
+- Entre los 381: 345 tienen TREE/TREES, 36 no; entre 150 con montaña, 48 no tienen nieve codificada.
+- Temporadas ordenadas S01–S31; **no** usar ese código como fecha histórica exacta.
+- Datos bajo CC BY 4.0, **no** las reproducciones ni los videos.
 
-En particular, la pregunta «¿su enfermedad cambió su estilo?» **no tiene respuesta causal directa con estos datos**. Es legítimo diseñar una investigación histórica y una comparación descriptiva con eventos bien fechados y controles, siempre que no se lea salud a partir de una imagen.
+## Cómo utilizarlo con otra IA
+1. Carga este paquete y la carpeta padre del episodio (CSV íntegro, scripts y figuras).
+2. Ejecuta DR-01, DR-02, DR-03 y DR-04 con referencias rastreables.
+3. Ejecuta DR-05 después de reconciliar hechos y completar la matriz de afirmaciones.
+4. Aplica `question-forge`: utiliza solo `QUESTIONS_MASTER.*`, prioriza 3–5 y diseña un modelo + ejercicio estadístico por ruta. No ejecutar entrenamientos en Fase 0.
+5. Actualiza `research_guide.html` **con evidencia verificada, gráficos vinculados al snapshot y nivel técnico**, no solo texto narrativo.
+6. Detente con estado `PENDIENTE_APROBACION_CIENTIFICA`. No crear storytelling de video ni producción audiovisual.
 
-## Métodos para añadir otro dataset
+## Verificación de integridad
+Los CSV del paquete se extrajeron de la copia inmutable del episodio (`../data/elements-by-episode.csv`). La muestra incluye diferentes temporadas y dos invitados para ilustrar la diferencia de grupos. **Nunca calcular porcentajes de población sobre las 13 filas**. Para resultados usar siempre las 403 filas originales y aplicar denominadores explícitos.
 
-1. Copiar la skill fuera de este episodio solo en un cambio autorizado.
-2. Sustituir metadata y muestra reales, nunca sintéticas.
-3. Lanzar DR por contexto humano, literatura/datos externos, preguntas y activos/derechos.
-4. Redactar al menos un árbol de 1er/2.º/3er orden por investigación protagonista.
-5. Completar la Fase 1 HTML, obtener aprobación, después Fase 2 audiovisual, obtener segunda aprobación y por último video.
+## Ejemplos de fuentes contextuales para iniciar Deep Research
+- [NPR/KPBS (2016)](https://www.kpbs.org/news/2016/08/28/the-real-bob-ross-meet-the-meticulous-artist): producción, biografía y preparación de obras.
+- [Outside / Walt Hickey](https://www.outsideonline.com/podcast/bob-ross-strategies-survival/): investigación estadística y la vida privada.
+- [AP (2024)](https://apnews.com/article/bob-ross-painting-unfinished-season-nichola-hankins-cd50203eb6b3cf4f1893364cfae472be): siete pinturas para una temporada 32 inconclusa.
+- [jwilber/Bob_Ross_Paintings](https://github.com/jwilber/Bob_Ross_Paintings): metadatos de pinturas, temporada, episodio, paletas; verificar derechos.
+- [Wiley (2014)](https://doi.org/10.1002/meet.2014.14505101084): trabajo previo de visualización sobre datos de Bob Ross.
 
-## Derechos
+## Estado
+**PAQUETE DE ENTRADA = PREPARADO PARA REVISIÓN** (skill V2, 14 preguntas profundas, 24 modelos y planes estadísticos; no hay nuevos modelos entrenados ni investigación Deep Research completa). **Guía científica V3 = pendiente de consolidación, investigación, reproducción y aprobación**. **Storytelling audiovisual = BLOQUEADO**. **Video = BLOQUEADO**.
 
-Datos de etiquetas FiveThirtyEight CC BY 4.0, la obra pictórica y las imágenes/video/audio tienen titulares distintos. Puede usarse un enlace externo a una galería y una ficha sin imagen; previsualizar cuadros en tooltip depende de una licencia o autorización específica. El método debe ofrecer teclado/tap, no solo hover.
-
-## Fases autorizadas ahora
-
-- **Fase 0:** editar paquete, investigar, validar.
-- **Fase 1:** construir la guía científica HTML solo cuando los datos y fuentes estén preparados.
-- **Fase 2:** **BLOQUEADA** hasta la aprobación explícita de una versión concreta de la guía.
-- **Fase 3:** **BLOQUEADA** hasta la aprobación explícita de una versión concreta del storytelling audiovisual.
-
-Mantener modificaciones en `discovery_labs/episodes/bob-ross/`. Material de este paquete no debe confundirse con resultados ya computados, ni sustituye los tests de `run.py`.
+Ninguna fuente externa, pregunta condicional, agrupamiento o visualización de derechos dudosos debe transformarse en conclusión «verificada» por mera presencia en este paquete.
