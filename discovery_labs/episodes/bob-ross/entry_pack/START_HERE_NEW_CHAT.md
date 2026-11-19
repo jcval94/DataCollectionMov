@@ -19,6 +19,9 @@ El caso piloto es Bob Ross / *The Joy of Painting*. La investigación debe conta
 No crear video, intro, Remotion, voz o storyboard antes de aprobación.
 
 ## 2) Estado actual del repositorio
+
+**Actualización de integración (18 nov 2026):** los documentos de Question Forge V2 se reconciliaron sobre el PR #5 en la rama `integrate/bob-ross-pr10-on-pr5-20261118` con una copia recuperable de la rama previa en `backup/bob-ross-pr10-before-restack-20261118`. La prueba `tests/test_entry_pack.py` fue adaptada al esquema de 14 investigaciones. Tras integrar el resultado al PR #10, verificar su SHA actual y ejecutabilidad. El corpus antiguo `intake/`, `entry_pack/QUESTION_BANK.md` y las seis rutas de `questions.json` son históricos y NO bancos de preguntas adicionales.
+
 - PR base del episodio: [#5 — Bob Ross aislado](https://github.com/jcval94/DataCollectionMov/pull/5), rama `feat/bob-ross-discovery-episode-only`, contiene CSV, `run.py`, clustering, HTML interactivo, QA y materiales de clase.
 - PR del Paquete de Entrada y skill: [#10 — entrada/Question Forge](https://github.com/jcval94/DataCollectionMov/pull/10), rama `feat/bob-ross-entry-pack-question-forge`, **base de PR #10 es la rama del PR #5 (stacked)**. Sigue en borrador; inspeccionar estado y conflictos antes de continuar o fusionar.
 - Carpeta única autorizada para modificaciones de Bob Ross: `discovery_labs/episodes/bob-ross/`. Nunca tocar otras carpetas, otros casos, `.github/workflows`, `mvp-ds-course` ni cambios locales ajenos sin permiso.
