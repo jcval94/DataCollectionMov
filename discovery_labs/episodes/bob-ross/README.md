@@ -6,6 +6,25 @@
 > Faltan ejecutar/registrar tests del nuevo paquete en entorno canónico, revisión docente
 > independiente, ensayo humano de 45 minutos y evaluación de accesibilidad con alumnos.
 
+## Nuevo paso obligatorio: paquete de entrada antes del informe
+
+**[Abrir Discovery Intake](intake/README.md)** — preguntas profundas y de varios órdenes, cinco prompts especializados de Deep Research, la historia documentable de Bob Ross, metadatos, muestra real, plan de experimentos, visualizaciones y skill portátil para generar mejores preguntas.
+
+- **Fase 0:** investigación y selección de preguntas, aún sin guion ni video.
+- **Fase 1:** `research_guide.html`, guía científica y técnica; requiere aprobación explícita del usuario.
+- **Fase 2:** storytelling audiovisual HTML solo después de aprobar Fase 1.
+- **Fase 3:** video final solo después de aprobar Fase 2.
+
+**No basta con seis consultas o seis tarjetas**: los arcos de `intake/QUESTION_GRAPH.md` plantean preguntas de segundo y tercer orden. Son propuestas condicionadas a resultados y fuentes; **no** se han implementado ni aprobado todavía. No deducir causalidad médica o artística a partir de las temporadas.
+
+## Nuevo flujo: primero el paquete de entrada
+
+Antes de cerrar la guía científica, revisar **[entry_pack/README.md](entry_pack/README.md)**. Contiene una pequeña muestra real, metadatos, cuatro prompts Deep Research más una síntesis crítica, 12 preguntas profundas de primer/segundo/tercer orden, una skill reutilizable, plan de trabajo y brief de visualización. La fuente original y sus derechos permanecen intactos.
+
+El archivo `questions.json` conserva las seis rutas iniciales compatibles con la interfaz; **no son necesariamente las preguntas científicas finales**. Las propuestas de mayor profundidad están en `entry_pack/question_graph.json`. Requieren ejecutar investigación y revisar datos externos antes de reemplazar titulares.
+
+El proceso obligatorio es **paquete de entrada → `research_guide.html` (aprobación explícita) → storytelling audiovisual HTML (aprobación explícita) → video**. No iniciar fase audiovisual sin revisión.
+
 ## Abrir en un minuto
 
 1. Descarga **solamente esta carpeta**.

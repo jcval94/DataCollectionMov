@@ -1,5 +1,15 @@
 # Auditoría de alcance y estado de validación
 
+## Nuevo paquete de entrada (18 de noviembre de 2026)
+
+Se agregó `entry_pack/` como Fase 0 anterior a la guía científica: metadata/13 filas reales de muestra, 12 árboles de preguntas de 1.º→2.º→3.er orden, 24 ramificaciones condicionales, cinco prompts DR (cuatro especializados + síntesis), 12 URLs de investigación con estados de derechos, skill reusable, plan, brief visual y prompt de Fase 1.
+
+**Comprobado mediante inspección del conector:** IDs de las 13 filas presentes en el CSV de 403 filas (sin duplicados), mismo blob Git del archivo original ya verificado, estructura de 12 árboles con dos ramas cada uno, cinco prompts y puertas de Fases 2–3 bloqueadas. **No se ejecutaron todavía los Deep Research externos ni los tests Python nuevos en GitHub Actions.** La lista de fuentes es un inicio a investigar, no 12 referencias con todas las afirmaciones corroboradas.
+
+La vista de pintura al seleccionar un cluster es un **requisito para la guía HTML científica**, no una funcionalidad actualmente aprobada: depende de derechos de imágenes y de revisión de accesibilidad (hover + teclado + tap). Los antiguos números 36/48 siguen siendo resultados de etiquetas; no se ha probado cambio de estilo por enfermedad.
+
+
+
 **Corte:** 17 de noviembre de 2026. **Ámbito exclusivo:** `discovery_labs/episodes/bob-ross/`.
 
 ## Comprobaciones realizadas y observadas

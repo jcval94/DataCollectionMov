@@ -1,0 +1,518 @@
+{
+  "schema_version": "2026-11-18",
+  "episode": "bob-ross",
+  "status": "PROPUESTAS_NO_APROBADAS",
+  "relationship_to_legacy": "12 arcos de investigación EXPANDEN, no sustituyen aún las seis rutas A/B/C/D1/D2/E del episode.html",
+  "arcs": [
+    {
+      "id": "BR-Q01",
+      "category": "EVOLUCION_TEMPORAL",
+      "priority": 1,
+      "title": "¿Pintaba el mismo mundo al final de su vida que al principio?",
+      "hook": "Dos cuadros separados por once años pueden parecer hermanos. ¿Lo son?",
+      "q1": "¿Cómo evoluciona la combinación de motivos en las 31 temporadas y qué diferencias persisten más allá de una línea de tendencia?",
+      "q2": [
+        "¿Cambian el número de motivos por episodio y sus coocurrencias o solo cambia la frecuencia de árboles?",
+        "¿Sobreviven los cambios al excluir episodios con invitados y usar ventanas móviles/prevalencias por temporada?"
+      ],
+      "q3": "Si existe un punto de cambio, ¿se mantiene en períodos alternativos, distintas definiciones de motivos y al comparar contra la variación natural entre temporadas?",
+      "data": [
+        "EPISODE",
+        "TITLE",
+        "GUEST",
+        "67 etiquetas binarias",
+        "temporada derivada del ID"
+      ],
+      "external": [
+        "cronología de producción/emisión validada",
+        "contexto de cambios en el programa"
+      ],
+      "method": "Tasas por temporada, composición multivariante, cambio de punto con corrección por selección, bootstrap por temporada y sensibilidad a ventanas",
+      "visual": "Río de motivos por temporada + heatmap de 31×12 + tira de episodios representativos con imágenes solo autorizadas",
+      "adversary": "Cambiar agregación temporada/era/episodio; controlar múltiples comparaciones; la fecha de emisión NO es fecha de creación",
+      "generalizable": "Evolución, adaptación y cambios de régimen",
+      "status": "CANDIDATA_NO_EJECUTADA",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si aparece una deriva temporal sostenida",
+          "question_to_investigate": "¿Cambian el número de motivos por episodio y sus coocurrencias o solo cambia la frecuencia de árboles?",
+          "why_after_q1": "Si aparece una deriva temporal sostenida, probar si es un cambio de prevalencia de motivos específicos o de combinaciones.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si la serie parece estable",
+          "question_to_investigate": "¿Sobreviven los cambios al excluir episodios con invitados y usar ventanas móviles/prevalencias por temporada?",
+          "why_after_q1": "Si la serie parece estable, buscar giros dentro de cada temporada/era que se cancelan al promediar.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q02",
+      "category": "VIDA_Y_EVENTOS",
+      "priority": 1,
+      "title": "¿Dejó su salud una huella en su obra?",
+      "hook": "La vida de quien crea una obra no está dentro de una tabla de etiquetas. ¿Podemos encontrar su rastro?",
+      "q1": "¿Existen cambios descriptivos en los motivos hacia el final de la serie?",
+      "q2": [
+        "¿Qué fechas biográficas y de grabación están documentadas, frente a fechas de transmisión o simples rumores?",
+        "¿Se observan cambios comparables en temporadas anteriores sin un evento biográfico conocido?"
+      ],
+      "q3": "¿Es identificable un efecto de enfermedad con la secuencia temporal y la disponibilidad de obras posdiagnóstico o debemos clasificar la causalidad como no demostrable?",
+      "data": [
+        "EPISODE",
+        "GUEST",
+        "motivos por temporada"
+      ],
+      "external": [
+        "fechas documentadas de diagnóstico, contexto de vida y muerte",
+        "fechas reales de grabación, no solo emisión",
+        "cuadros posteriores a la serie y su procedencia"
+      ],
+      "method": "Mapa de evidencia temporal → análisis descriptivo → evaluación de identificación causal/negativa, sin pruebas clínicas ni inferencia psicológica",
+      "visual": "Timeline de tres carriles: vida verificada / grabación / emisión / intervalos de incertidumbre y cobertura del CSV",
+      "adversary": "El diagnóstico se sitúa cerca del final de la serie; riesgo de cero pos-evento comparable, confundidores y sesgo de supervivencia",
+      "generalizable": "Impacto de eventos de vida en procesos creativos/productivos con guardas causales",
+      "status": "NO_IDENTIFICABLE_HASTA_DEEP_RESEARCH",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si se detecta una ruptura tardía",
+          "question_to_investigate": "¿Qué fechas biográficas y de grabación están documentadas, frente a fechas de transmisión o simples rumores?",
+          "why_after_q1": "Si se detecta una ruptura tardía, localizar fecha real de grabación frente a fecha biográfica documentada y controles temporales negativos.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si no hay ruptura clara",
+          "question_to_investigate": "¿Se observan cambios comparables en temporadas anteriores sin un evento biográfico conocido?",
+          "why_after_q1": "Si no hay ruptura clara, investigar si falta resolución de etiquetas o muestra posdiagnóstico y tratar la ausencia de evidencia con cautela.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q03",
+      "category": "OUTLIERS_MULTINIVEL",
+      "priority": 1,
+      "title": "¿Cuál fue la temporada más extraña de Bob Ross?",
+      "hook": "¿Y si la temporada menos reconocible explica más que la más popular?",
+      "q1": "¿Qué episodios y temporadas son atípicos por frecuencia y combinación de motivos?",
+      "q2": [
+        "¿La temporada rara sigue si agregamos motivos por familias o usamos las 67 etiquetas originales?",
+        "¿El supuesto outlier es una obra genuinamente diferente, un grupo de invitados, un error de etiqueta o una consecuencia de n=13?"
+      ],
+      "q3": "¿Sigue siendo excepcional cuando se compara contra nulos permutados que preservan frecuencias y se ajusta por buscar máximos entre 31 temporadas?",
+      "data": [
+        "67 etiquetas",
+        "temporada",
+        "GUEST",
+        "EPISODE"
+      ],
+      "external": [
+        "evidencia visual autorizada para verificar un subconjunto de casos extremos"
+      ],
+      "method": "Rareza multivariante, scores robustos, permutaciones con estratos, niveles episodio/temporada/era y revisión de registros",
+      "visual": "Mapa de calor de anomalías por temporada + ranking de 10 episodios raros + inspector de hover con miniatura autorizada",
+      "adversary": "Vigilar falsos positivos por 31 búsquedas, motivos casi constantes y duplicación de etiquetas",
+      "generalizable": "Anomalías multiescala y explicación de extremos",
+      "status": "CANDIDATA_NO_EJECUTADA",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si sobresale una temporada",
+          "question_to_investigate": "¿La temporada rara sigue si agregamos motivos por familias o usamos las 67 etiquetas originales?",
+          "why_after_q1": "Si sobresale una temporada, buscar los episodios/motivos que explican su anomalía y si incluyen invitados.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si ninguna temporada supera el modelo nulo",
+          "question_to_investigate": "¿El supuesto outlier es una obra genuinamente diferente, un grupo de invitados, un error de etiqueta o una consecuencia de n=13?",
+          "why_after_q1": "Si ninguna temporada supera el modelo nulo, inspeccionar anomalías de episodios que se diluyen al agregar.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q04",
+      "category": "MITO_Y_CAMBIO",
+      "priority": 2,
+      "title": "¿Era Bob Ross siempre el mismo artista?",
+      "hook": "Parecerse no es repetirse. ¿Podemos medir la originalidad sin juzgar belleza?",
+      "q1": "¿Con qué frecuencia se repiten exactamente perfiles de motivos y cómo cambia su novedad por temporada?",
+      "q2": [
+        "¿Se reutilizan combinaciones pero cambian los elementos raros o los invitados?",
+        "¿Qué parte de la repetición proviene de que las etiquetas comprimen cuadros visualmente distintos?"
+      ],
+      "q3": "Si incorporamos descriptores visuales legalmente disponibles, ¿se mantiene la aparente repetición o era una ilusión de la representación tabular?",
+      "data": [
+        "67 etiquetas",
+        "12 familias",
+        "temporada"
+      ],
+      "external": [
+        "imágenes licenciadas o permiso explícito; metadatos de 3 versiones de pinturas por episodio"
+      ],
+      "method": "Índice de novedad respecto de episodios anteriores, unicidad de perfiles, diversidad de Shannon y ablation etiquetas vs píxeles",
+      "visual": "Mosaico de perfiles repetidos con capas de novedad y miniaturas solo cuando estén autorizadas",
+      "adversary": "Un perfil binario idéntico no implica la misma pintura ni menor creatividad; concept drift del etiquetador",
+      "generalizable": "Originalidad, repetición y diversidad de productos/contenidos",
+      "status": "CANDIDATA_NO_EJECUTADA",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si se repiten perfiles binarios",
+          "question_to_investigate": "¿Se reutilizan combinaciones pero cambian los elementos raros o los invitados?",
+          "why_after_q1": "Si se repiten perfiles binarios, comprobar variaciones que las 67 etiquetas o imágenes autorizadas pudieran captar.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si los perfiles son novedosos",
+          "question_to_investigate": "¿Qué parte de la repetición proviene de que las etiquetas comprimen cuadros visualmente distintos?",
+          "why_after_q1": "Si los perfiles son novedosos, evaluar si la novedad se concentra en motivos raros/errores de codificación.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q05",
+      "category": "CREENCIAS_REFUTABLES",
+      "priority": 1,
+      "title": "¿De verdad su mundo estaba lleno de árboles?",
+      "hook": "Lo recordamos por los árboles. ¿Qué pintaba cuando no estaban?",
+      "q1": "¿Cuáles son los contraejemplos de la afirmación «siempre pinta árboles» dentro de las etiquetas?",
+      "q2": [
+        "¿Qué motivos reemplazan a los árboles en esos episodios y cómo se distribuyen por temporadas?",
+        "¿Los paisajes sin árboles forman comunidades coherentes o son anomalías dispersas?"
+      ],
+      "q3": "¿La asociación entre ausencia de árboles y agua/mar se mantiene al controlar por temporada e invitados, o se invierte dentro de segmentos?",
+      "data": [
+        "TREE",
+        "TREES",
+        "OCEAN",
+        "WATERFALL",
+        "otros motivos",
+        "GUEST",
+        "temporada"
+      ],
+      "external": [
+        "fuente verificable que demuestre la difusión de la creencia, si se presenta como popular"
+      ],
+      "method": "Condicionales, odds ratios descriptivos con intervalos apropiados, coocurrencia por subgrupo, control de mezcla/Simpson",
+      "visual": "403 episodios como puntos; filtrar árboles, revelar paisajes alternativos y revisar casos atípicos mediante inspector",
+      "adversary": "No igualar etiqueta faltante con ausencia física comprobada en una imagen",
+      "generalizable": "Revisión profunda de estereotipos/creencias mediante subpoblaciones",
+      "status": "BASE_DESCRIPTIVA_PREEXISTENTE; CAPAS_Q2_Q3_PENDIENTES",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si los episodios sin árboles se concentran en motivos de costa",
+          "question_to_investigate": "¿Qué motivos reemplazan a los árboles en esos episodios y cómo se distribuyen por temporadas?",
+          "why_after_q1": "Si los episodios sin árboles se concentran en motivos de costa, controlar temporada e invitados.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si están dispersos",
+          "question_to_investigate": "¿Los paisajes sin árboles forman comunidades coherentes o son anomalías dispersas?",
+          "why_after_q1": "Si están dispersos, buscar qué variable latente caracteriza las excepciones sin presuponer un estilo nuevo.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q06",
+      "category": "MITOS_CONTRAINTUITIVOS",
+      "priority": 2,
+      "title": "¿Sus montañas tenían que estar nevadas?",
+      "hook": "Nuestra imaginación dibuja nieve en la montaña. ¿Y los datos?",
+      "q1": "¿Qué proporción de episodios con montaña codificada no incluyen nieve?",
+      "q2": [
+        "¿Cambian las combinaciones montaña/nieve en temporadas y motivos circundantes?",
+        "¿En qué medida SNOWY_MOUNTAIN induce mecánicamente la asociación observada?"
+      ],
+      "q3": "Al redefinir ambas familias sin la etiqueta solapada, ¿cuánto de la relación permanece y qué implica sobre nuestra primera conclusión?",
+      "data": [
+        "SNOW",
+        "SNOWY_MOUNTAIN",
+        "MOUNTAIN",
+        "MOUNTAINS",
+        "temporada"
+      ],
+      "external": [
+        "imagen autorizada para comprobar casos extremos y errores de etiqueta"
+      ],
+      "method": "Tablas cruzadas, sensibilidad de diccionario, intervalos en subgrupos y recodificación adversarial",
+      "visual": "Dos mitades del mismo paisaje: matriz de categorías solapadas antes/después de separar variables",
+      "adversary": "La feature SNOWY_MOUNTAIN contribuye a numerador y denominador; medir dependencia por construcción",
+      "generalizable": "Dependencias artificiales debidas a ingeniería de variables",
+      "status": "BASE_DESCRIPTIVA_PREEXISTENTE; CAPAS_Q2_Q3_PENDIENTES",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si montaña y nieve coocurren mucho",
+          "question_to_investigate": "¿Cambian las combinaciones montaña/nieve en temporadas y motivos circundantes?",
+          "why_after_q1": "Si montaña y nieve coocurren mucho, descomponer cuánto aporta por construcción SNOWY_MOUNTAIN.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si hay numerosos casos de montaña sin nieve",
+          "question_to_investigate": "¿En qué medida SNOWY_MOUNTAIN induce mecánicamente la asociación observada?",
+          "why_after_q1": "Si hay numerosos casos de montaña sin nieve, investigar si forman épocas/temas coherentes o son etiquetas incompletas.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q07",
+      "category": "DESCUBRIMIENTO",
+      "priority": 1,
+      "title": "¿Cuántos Bob Ross viven dentro del mismo Bob Ross?",
+      "hook": "Cuatro salas de museo, cuatro versiones de la misma historia. ¿Hay una correcta?",
+      "q1": "¿Qué familias de paisajes aparecen si organizamos los 381 episodios por 12 motivos?",
+      "q2": [
+        "¿Cómo cambian representantes y tamaños al comparar Jaccard, Euclídea y sin árboles?",
+        "¿Qué episodios cambian de sala y cuáles son los puentes entre perfiles?"
+      ],
+      "q3": "Al confrontar las particiones con imágenes legalmente accesibles y con nuevas familias, ¿qué grupos siguen siendo interpretables por humanos sin convertir un score en verdad artística?",
+      "data": [
+        "12 familias",
+        "EPISODE",
+        "GUEST",
+        "asignaciones por método"
+      ],
+      "external": [
+        "vínculos episodio→obra y permisos de previsualización"
+      ],
+      "method": "k-medoids/k-means con métodos explícitos, ARI y estabilidad, prototipos y puntos frontera",
+      "visual": "Scatter/proyección prudente + grupos conectados y inspector hover/foco del episodio, título, motivos y posible pintura autorizada",
+      "adversary": "Evitar inferir estilos naturales; k=4 es restricción del museo; proyecciones 2D distorsionan",
+      "generalizable": "Segmentación de entidades con interpretación, sensibilidad y ejemplos",
+      "status": "BASE_CLUSTERING_PREEXISTENTE; QA_VISUAL_PENDIENTE",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si aparecen cuatro grupos bien definidos",
+          "question_to_investigate": "¿Cómo cambian representantes y tamaños al comparar Jaccard, Euclídea y sin árboles?",
+          "why_after_q1": "Si aparecen cuatro grupos bien definidos, contrastarlos con otra distancia y quitar la variable dominante.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si aparecen grupos muy desequilibrados",
+          "question_to_investigate": "¿Qué episodios cambian de sala y cuáles son los puentes entre perfiles?",
+          "why_after_q1": "Si aparecen grupos muy desequilibrados, inspeccionar perfiles raros, límites de método y utilidad de la restricción k=4.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q08",
+      "category": "PREGUNTA_DE_SEGUNDO_ORDEN",
+      "priority": 2,
+      "title": "¿Quién rompe las reglas: el artista o el editor?",
+      "hook": "Un invitado puede convertir una pauta aparentemente universal en excepción.",
+      "q1": "¿Qué motivos son más distintos entre episodios con invitado y sin invitado?",
+      "q2": [
+        "¿La diferencia viene de uno o dos invitados, de una temporada concreta o de los propios temas de emisión?",
+        "¿Qué cambia al comparar tasas, no números absolutos, y representar la incertidumbre de n=22?"
+      ],
+      "q3": "¿Podemos separar el efecto de ser invitado de la selección editorial y temporal, o faltan características del proceso de producción?",
+      "data": [
+        "GUEST",
+        "EPISODE",
+        "motivos",
+        "temporada"
+      ],
+      "external": [
+        "lista y nombres de invitados, producción y criterios editoriales documentados"
+      ],
+      "method": "Comparación de grupos no aleatorios, tasas por subgrupo, intervalos exploratorios y análisis de selección",
+      "visual": "Small multiples de motivos para anfitrión/invitados y timeline de apariciones, n siempre visible",
+      "adversary": "N pequeño, no inferencia sobre rasgos personales, causalidad o superioridad artística",
+      "generalizable": "Efecto de composición, selección y paneles desbalanceados",
+      "status": "BASE_DESCRIPTIVA_PREEXISTENTE; CAPAS_Q2_Q3_PENDIENTES",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si hay diferencias fuertes entre invitados y anfitrión",
+          "question_to_investigate": "¿La diferencia viene de uno o dos invitados, de una temporada concreta o de los propios temas de emisión?",
+          "why_after_q1": "Si hay diferencias fuertes entre invitados y anfitrión, comprobar si sobreviven al controlar temporadas y comparar denominadores.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si son pequeñas/inestables",
+          "question_to_investigate": "¿Qué cambia al comparar tasas, no números absolutos, y representar la incertidumbre de n=22?",
+          "why_after_q1": "Si son pequeñas/inestables, investigar si el bajo n y la selección explican la ausencia de señal.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q09",
+      "category": "TRIANGULACION_EXTERNA",
+      "priority": 2,
+      "title": "¿El programa enseñaba a pintar o enseñaba a mirar?",
+      "hook": "Dos cuadros iguales como motivos pueden contar historias distintas para sus espectadores.",
+      "q1": "¿Qué patrones de composición se priorizan como ejemplos didácticos a lo largo de la serie?",
+      "q2": [
+        "¿Los motivos frecuentes se relacionan con cambios documentados en técnicas/guiones del programa?",
+        "¿El patrón observado responde a restricciones pedagógicas, comerciales o artísticas?"
+      ],
+      "q3": "¿Qué predicciones diferencian la hipótesis «pedagógica» de «preferencia personal» y qué pruebas audiovisuales, guiones o manuales necesitaríamos?",
+      "data": [
+        "motivos",
+        "temporada",
+        "episodio"
+      ],
+      "external": [
+        "transcripciones subtituladas licenciadas",
+        "entrevistas",
+        "manuales y programación de PBS"
+      ],
+      "method": "Triangulación cualitativa, codificación de técnicas enseñadas y pruebas de hipótesis rivales, sin inferir motivaciones",
+      "visual": "Línea paralela motivos ↔ segmentos de instrucción verificados (sin reproducir videos protegidos)",
+      "adversary": "Una asociación entre dos corpus no prueba intención artística ni ventas",
+      "generalizable": "Comportamiento observado vs intención y contexto del sistema",
+      "status": "REQUIERE_NUEVAS_FUENTES",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si motivos se alinean con temas de enseñanza documentados",
+          "question_to_investigate": "¿Los motivos frecuentes se relacionan con cambios documentados en técnicas/guiones del programa?",
+          "why_after_q1": "Si motivos se alinean con temas de enseñanza documentados, comparar explicaciones editorial y preferencia personal.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si no hay alineación",
+          "question_to_investigate": "¿El patrón observado responde a restricciones pedagógicas, comerciales o artísticas?",
+          "why_after_q1": "Si no hay alineación, comprobar calidad de transcripciones, cobertura y definición de tema didáctico.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q10",
+      "category": "ESCALA_Y_AGREGACION",
+      "priority": 1,
+      "title": "¿Y si la tendencia es un espejismo de la escala?",
+      "hook": "A veces el dato cambia de historia cuando cambiamos la unidad de tiempo.",
+      "q1": "¿Cómo se describe la frecuencia de cada motivo por episodio, temporada y tercio de la serie?",
+      "q2": [
+        "¿Hay una inversión de tendencia entre niveles de agregación, aun con grupos de invitados definidos?",
+        "¿La concentración de episodios atípicos en ciertas temporadas domina los promedios?"
+      ],
+      "q3": "¿Resiste el hallazgo un análisis jerárquico que considere variación dentro y entre temporadas, incertidumbre y corrección por búsquedas exploratorias?",
+      "data": [
+        "EPISODE",
+        "GUEST",
+        "motivos"
+      ],
+      "external": [
+        "fechas de producción para no tratar emisión como creación"
+      ],
+      "method": "Estadística multinivel descriptiva, varianza por temporada, resúmenes ponderados y permutation controls",
+      "visual": "Zoom semántico episodio→temporada→era, mismos datos diferentes agregaciones, intervalos/denominadores visibles",
+      "adversary": "No tratar filas de episodios correlacionados como ensayos IID ni atribuir cambio de agregación a causalidad",
+      "generalizable": "Simpson, errores de agregación y estructura multinivel",
+      "status": "CANDIDATA_NO_EJECUTADA",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si se invierte una tendencia al agregar",
+          "question_to_investigate": "¿Hay una inversión de tendencia entre niveles de agregación, aun con grupos de invitados definidos?",
+          "why_after_q1": "Si se invierte una tendencia al agregar, descomponer numeradores y pesos de temporada/invitados.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si no se invierte",
+          "question_to_investigate": "¿La concentración de episodios atípicos en ciertas temporadas domina los promedios?",
+          "why_after_q1": "Si no se invierte, buscar cambios en dispersión o estructura de dependencia dentro de temporadas.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q11",
+      "category": "RAREZA_Y_COMBINATORIA",
+      "priority": 2,
+      "title": "¿Qué paisajes casi nunca se atreve a pintar?",
+      "hook": "Lo más revelador no siempre es lo frecuente, sino lo que casi nunca ocurre.",
+      "q1": "¿Qué pares o combinaciones de motivos son extraordinariamente raros frente a sus tasas individuales?",
+      "q2": [
+        "¿Estas rarezas cambian por temporada o se concentran en capítulos invitados?",
+        "¿Cuánto de la rareza proviene de etiquetas parecidas o ausentes?"
+      ],
+      "q3": "Tras preservar las frecuencias marginales en un modelo nulo, ¿qué combinaciones son realmente inesperadas y cuáles aparentaban serlo por baja frecuencia?",
+      "data": [
+        "67 etiquetas",
+        "12 familias",
+        "temporada",
+        "GUEST"
+      ],
+      "external": [
+        "revisión autorizada de cuadros para verificar etiquetas y casos excepcionales"
+      ],
+      "method": "Null models de permutación, coocurrencias robustas, ranking por sorpresa condicionado al marginal, control FDR",
+      "visual": "Red de combinaciones raras + revelación de episodios excepcionales y fichas con controles de calidad",
+      "adversary": "Evitar poner como descubrimiento una combinación rara solo porque uno de sus elementos casi nunca aparece",
+      "generalizable": "Sorprendencia condicionada, nichos y anomalías de combinaciones",
+      "status": "CANDIDATA_NO_EJECUTADA",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si aparece una combinación sorprendente",
+          "question_to_investigate": "¿Estas rarezas cambian por temporada o se concentran en capítulos invitados?",
+          "why_after_q1": "Si aparece una combinación sorprendente, comparar contra un modelo nulo que preserve frecuencias marginales.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si desaparecen sorpresas tras el control marginal",
+          "question_to_investigate": "¿Cuánto de la rareza proviene de etiquetas parecidas o ausentes?",
+          "why_after_q1": "Si desaparecen sorpresas tras el control marginal, examinar sesgo de selección de parejas y etiquetas raras.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    },
+    {
+      "id": "BR-Q12",
+      "category": "SISTEMA_Y_SESGO",
+      "priority": 2,
+      "title": "¿Cuánto de la obra de Bob Ross quedó fuera del dataset?",
+      "hook": "Un programa no es toda una vida creativa; y una etiqueta no es un cuadro.",
+      "q1": "¿Qué representa exactamente cada fila y qué obras/versiones quedan fuera?",
+      "q2": [
+        "¿Qué fuentes documentan las versiones previas/durante/después de grabar y obras sin episodio?",
+        "¿Cambian las conclusiones al ampliar el universo más allá de las 403 filas?"
+      ],
+      "q3": "¿Qué sesgo de selección introduce usar solo obras televisadas para hablar de la evolución de toda su producción artística y qué datos lo reducirían?",
+      "data": [
+        "403 episodios etiquetados",
+        "temporada",
+        "motivos"
+      ],
+      "external": [
+        "Smithsonian, obras originales, libros, pinturas inéditas, procedencia y derechos"
+      ],
+      "method": "Análisis de cobertura, tabla de universos, sample-selection audit, missing-not-at-random conceptual",
+      "visual": "Diagrama de universo: todas las obras→obras televisadas→403 etiquetas→12 motivos usados",
+      "adversary": "No usar estas 403 filas como censo de todas las obras de su vida",
+      "generalizable": "Sesgo de cobertura y lo invisible del dataset",
+      "status": "REQUIERE_NUEVAS_FUENTES",
+      "q2_branches": [
+        {
+          "trigger_condition": "Si aparecen obras adicionales bien documentadas",
+          "question_to_investigate": "¿Qué fuentes documentan las versiones previas/durante/después de grabar y obras sin episodio?",
+          "why_after_q1": "Si aparecen obras adicionales bien documentadas, determinar en qué difieren del universo televisado y si podrían incorporarse legalmente.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        },
+        {
+          "trigger_condition": "Si no hay corpus ampliable",
+          "question_to_investigate": "¿Cambian las conclusiones al ampliar el universo más allá de las 403 filas?",
+          "why_after_q1": "Si no hay corpus ampliable, cuantificar lo que falta y limitar el alcance a episodios etiquetados.",
+          "status": "CONDITIONAL_NOT_EXECUTED"
+        }
+      ],
+      "q3_dependency": "Se formula/ejecuta solo tras obtener evidencia Q1+Q2, y debe probar robustez, mecanismo o falsación"
+    }
+  ],
+  "note": "Cada pregunta Q2 tiene dos desencadenantes alternativos. Son ramas hipotéticas que solo se activan después de observar resultados Q1; Q3 no se declara investigada antes de Q2."
+}

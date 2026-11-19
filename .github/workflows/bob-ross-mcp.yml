@@ -1,0 +1,33 @@
+name: Test Bob Ross MCP service
+on:
+  pull_request:
+    paths:
+      - 'services/bob_ross_mcp/**'
+      - '.github/workflows/bob-ross-mcp.yml'
+      - 'render.yaml'
+      - 'examples/bob_ross_clustering/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: services/bob_ross_mcp/requirements.txt
+      - run: python -m pip install -r services/bob_ross_mcp/requirements.txt
+      - name: Validate original analytical reference
+        run: python examples/bob_ross_clustering/run.py --check
+      - name: Test offline MCP analysis
+        run: python -m unittest discover -s services/bob_ross_mcp/tests -v
+      - name: Validate Python syntax
+        run: python -m compileall -q services/bob_ross_mcp
