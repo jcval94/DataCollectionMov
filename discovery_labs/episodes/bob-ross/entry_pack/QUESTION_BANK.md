@@ -1,4 +1,6 @@
-# Banco de preguntas profundas — Bob Ross
+# Banco histórico de preguntas — Bob Ross (LEGACY)
+
+> **ARCHIVO HISTÓRICO; NO USAR COMO BANCO EDITORIAL VIGENTE.** Conservado del PR #5 para trazabilidad de las 12 candidatas iniciales. La única lista canónica de investigación es [`QUESTIONS_MASTER.md`](QUESTIONS_MASTER.md) + [`questions_master.json`](questions_master.json), con 14 preguntas O1/O2/O3 y modelo más estadística. Para toda guía nueva, utilizar Question Forge V2. No presentar el banco histórico como un segundo bloque.
 
 > **12 investigaciones candidatas, no 12 hallazgos confirmados.** Cada árbol contiene observación inicial → segunda pregunta → contraste de tercer orden. No hay compromiso de responderlas todas en una clase de 45 minutos. Seleccionar una protagonista y una rama razonable; las seis perspectivas iniciales se conservan como rutas de votación, pero deben evolucionar.
 
