@@ -55,7 +55,16 @@ Se detectó que el esquema original `questions_master.json` validaba la presenci
 
 **Advertencia de sincronización:** `research_guide.html` V3 es una instantánea estática de las tarjetas, NO una plantilla dinámica que lee `questions_master.json`. La correspondencia semántica completa y la automatización de su regeneración siguen pendientes de la Fase 1 autorizada. Esta reparación no modifica la guía HTML, ni inicia modelos ni investigaciones audiovisuales.
 
-**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La divergencia del PR #10 con su rama base (#5) permanece pendiente de conciliación segura; no fusionar automáticamente.
+**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. Los PR #5, #10 y #11 ya están fusionados en `main`. Esta sección registraba un estado transitorio; no implica que la guía científica esté aprobada.
 
 ## Integración compartida
 PR #11 (núcleo) y PR #5 (base Bob Ross) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.
+
+
+## QA posterior a la integración — alcance Bob Ross
+
+- El banco editorial canónico sigue siendo `QUESTIONS_MASTER.md` + `questions_master.json` con **14 investigaciones**; `QUESTION_BANK.md` mantiene doce antecedentes solo como archivo histórico.
+- `tests/test_entry_pack.py` se migró para verificar los 14 IDs, disparadores O2/O3 explícitamente condicionales, planes con baseline/modelo/estadística, 24 familias de modelos **en el catálogo compartido**, integridad de muestras y la única sección HTML de preguntas.
+- Se recalculó el SHA-256 sobre el contenido original obtenido de GitHub: `42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf` (403×69; 66,315 bytes), y la muestra cruda de 13 filas coincide con observaciones reales. Esto corresponde a validación estructural vía JavaScript, **no** ejecución Python.
+- Pendiente en un checkout real: `python discovery_labs/episodes/bob-ross/entry_pack/validate_pack.py`, `python -m unittest discover -s discovery_labs/episodes/bob-ross/tests -v`, `node discovery_labs/episodes/bob-ross/intake/qa_intake.cjs` y QA visual en navegador de V3.
+- Estado: **Fase 0 lista para revisión; Fase 1 HTML no aprobada; Fases 2/3 bloqueadas**. No se han entrenado modelos, ejecutado análisis estadístico ni creado contenido audiovisual.
