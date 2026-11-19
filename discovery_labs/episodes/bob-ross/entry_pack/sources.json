@@ -1,0 +1,119 @@
+{
+  "schema": "deep-research-source-leads-v1",
+  "as_of": "2026-11-18",
+  "notice": "URLs encontradas o ya presentes en repositorios. No constituyen un DR completo ni aprueban cada afirmación.",
+  "sources": [
+    {
+      "id": "SRC_001",
+      "type": "primary_dataset",
+      "title": "FiveThirtyEight Bob Ross dataset — frozen CSV",
+      "url": "https://github.com/fivethirtyeight/data/tree/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross",
+      "scope": "403 episodios y 67 etiquetas binarias",
+      "rights": "CC BY 4.0 tabla",
+      "status": "REPO_SOURCE_ALREADY_VERIFIED"
+    },
+    {
+      "id": "SRC_002",
+      "type": "public_biography",
+      "title": "Bob Ross Inc. — About Bob Ross",
+      "url": "https://www.bobross.com/about-bob-ross/",
+      "scope": "Historia y trayectoria oficial; relato de una parte interesada",
+      "rights": "texto con derechos propios",
+      "status": "EXTERNALLY_LOCATED_VERIFY_CLAIMS"
+    },
+    {
+      "id": "SRC_003",
+      "type": "public_biography",
+      "title": "Florida Department of State — Bob Ross",
+      "url": "https://dos.fl.gov/cultural/programs/florida-artists-hall-of-fame/bob-ross/",
+      "scope": "Biografía, Florida Artists Hall of Fame",
+      "rights": "ver términos",
+      "status": "EXTERNALLY_LOCATED_VERIFY_CLAIMS"
+    },
+    {
+      "id": "SRC_004",
+      "type": "journalism",
+      "title": "Associated Press — Unfinished Season, 2024",
+      "url": "https://apnews.com/article/cd50203eb6b3cf4f1893364cfae472be",
+      "scope": "Contexto de pinturas preparadas para una temporada posterior, fuera del CSV original",
+      "rights": "periodismo con derechos reservados",
+      "status": "EXTERNALLY_LOCATED_VERIFY_CLAIMS"
+    },
+    {
+      "id": "SRC_005",
+      "type": "journalism",
+      "title": "People — Bob Ross death and lymphoma",
+      "url": "https://people.com/bob-ross-death-what-to-know-7558507",
+      "scope": "Narrativa de enfermedad y fechas; corroborar con fuentes independientes",
+      "rights": "periodismo con derechos reservados",
+      "status": "EXTERNALLY_LOCATED_CONFLICT_CHECK_REQUIRED"
+    },
+    {
+      "id": "SRC_006",
+      "type": "journalism",
+      "title": "Washington Post — documentary analysis",
+      "url": "https://www.washingtonpost.com/arts-entertainment/2021/08/27/bob-ross-netflix-documentary/",
+      "scope": "Testimonios sobre última etapa; evidencias de segunda mano",
+      "rights": "periodismo con derechos reservados",
+      "status": "EXTERNALLY_LOCATED_CONFLICT_CHECK_REQUIRED"
+    },
+    {
+      "id": "SRC_007",
+      "type": "secondary_dataset",
+      "title": "jwilber/Bob_Ross_Paintings",
+      "url": "https://github.com/jwilber/Bob_Ross_Paintings",
+      "scope": "Pinturas, paletas, temporada, episodio, enlaces de imágenes y YouTube",
+      "rights": "Verificar datos y obras por separado",
+      "status": "EXTERNALLY_LOCATED_JOIN_PENDING"
+    },
+    {
+      "id": "SRC_008",
+      "type": "scholarly",
+      "title": "Viewing art through information visualization: a case study of Bob Ross's The Joy of Painting",
+      "url": "https://asistdl.onlinelibrary.wiley.com/doi/10.1002/meet.2014.14505101084",
+      "scope": "Investigación previa sobre patrones visuales y temporadas",
+      "rights": "publicación académica con derechos",
+      "status": "EXTERNALLY_DOCUMENTED_REVIEW_FULL_TEXT"
+    },
+    {
+      "id": "SRC_009",
+      "type": "derived_analysis",
+      "title": "FiveThirtyEightData — Bob Ross vignette",
+      "url": "https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bob_ross.html",
+      "scope": "Análisis derivado en R, verificar reproducibilidad y metodología",
+      "rights": "ver licencia",
+      "status": "EXTERNALLY_DOCUMENTED_REPRODUCE_PENDING"
+    },
+    {
+      "id": "SRC_010",
+      "type": "gallery",
+      "title": "Two Inch Brush — episode gallery",
+      "url": "https://www.twoinchbrush.com/",
+      "scope": "Imagen por episodio; uso para hover sujeto a verificación de permiso",
+      "rights": "imagen: SIN LICENCIA ABIERTA CONFIRMADA",
+      "status": "IMAGE_RIGHTS_NOT_VERIFIED"
+    },
+    {
+      "id": "SRC_011",
+      "type": "evidence",
+      "title": "Repo prior Bob Ross gallery manifest",
+      "url": "https://github.com/jcval94/DataCollectionMov/blob/main/examples/bob_ross_clustering/reference/gallery.json",
+      "scope": "Cuatro cruces y URL remotas probadas; disponibilidad técnica",
+      "rights": "NO autoriza rehosting",
+      "status": "PRIOR_TECHNICAL_EVIDENCE"
+    },
+    {
+      "id": "SRC_012",
+      "type": "accessibility",
+      "title": "EU data visualization guide — interactive HTML",
+      "url": "https://data.europa.eu/apps/data-visualisation-guide/accessible-interactive-data-visualisation",
+      "scope": "Interacciones hover/tap/accesibilidad, validar recomendaciones",
+      "rights": "ver términos",
+      "status": "REFERENCE_LOCATED"
+    }
+  ],
+  "claim_register": [],
+  "timeline_status": "PENDING_RECONCILIATION",
+  "image_rights": "PENDING",
+  "publication_approval": "PENDING"
+}

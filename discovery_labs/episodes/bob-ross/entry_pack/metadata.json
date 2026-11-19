@@ -1,0 +1,64 @@
+{
+  "schema": "ai-discovery-intake-metadata-v1",
+  "dataset_id": "bob-ross-elementos",
+  "record_grain": "etiquetas codificadas por episodio",
+  "source": "FiveThirtyEight / Walt Hickey",
+  "original_data_file": "../data/elements-by-episode.csv",
+  "original_source_url": "https://raw.githubusercontent.com/fivethirtyeight/data/4c1ff5e3aef1816ae04af63218015066e186c147/bob-ross/elements-by-episode.csv",
+  "commit": "4c1ff5e3aef1816ae04af63218015066e186c147",
+  "sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "bytes": 66315,
+  "records": 403,
+  "columns": 69,
+  "binary_columns": 67,
+  "main_series_episodes": 381,
+  "guest_episodes": 22,
+  "seasons": 31,
+  "season_date_mapping": "PENDIENTE: no hay fecha de rodaje/emisión en el CSV",
+  "film_content": "Etiquetas humanas, no fotografía/píxeles",
+  "source_license": "CC BY 4.0 para tabla, no obras/imagen/audio",
+  "sample_file": "data_sample.csv",
+  "sample_rows": 13,
+  "sample_method": "Muestra curada intencional: diversidad temporal + contraejemplos + invitado. NO aleatoria ni representativa",
+  "selected_episode_ids": [
+    "S01E01",
+    "S01E09",
+    "S03E08",
+    "S06E10",
+    "S09E02",
+    "S09E10",
+    "S15E10",
+    "S20E06",
+    "S25E11",
+    "S30E07",
+    "S31E12",
+    "S31E13",
+    "S03E13"
+  ],
+  "primary_quality": [
+    "hash verificado previamente",
+    "sin etiquetas no binarias según validadores existentes",
+    "IDs de episodio únicos según material previo"
+  ],
+  "external_data_requirements": [
+    "Fechas de emisión por SxxExx y si se puede fechas de grabación",
+    "Cronología biográfica con referencias y distinción hechos/afirmaciones",
+    "Imágenes con licencia/autorización o enlaces remotos de estado desconocido",
+    "Paletas/colorimetría a partir de dataset secundario validado",
+    "Cronología de eventos culturales validada si se usan periodos históricos"
+  ],
+  "risks": [
+    "enfermedad no está en el CSV; ningún resultado causal",
+    "GUEST 22/403; el actor de una pintura de invitado no es Bob Ross",
+    "año de emisión no es fecha de ejecución de obra",
+    "múltiples representaciones binarias no miden estilo, colorimetría ni intención",
+    "imágenes Bob Ross pueden tener derechos reservados"
+  ],
+  "access_checked_at": "2026-11-18",
+  "approval": {
+    "phase0": "DRAFT",
+    "phase1": "NOT_APPROVED",
+    "phase2": "BLOCKED",
+    "phase3": "BLOCKED"
+  }
+}

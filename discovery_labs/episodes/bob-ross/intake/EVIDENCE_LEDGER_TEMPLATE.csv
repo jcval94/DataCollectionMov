@@ -1,0 +1,2 @@
+claim_id,claim_text,kind,source_title,source_url,author,published_date,event_date_or_interval,is_primary,accessed_at,quote_or_section,independent_confirmation_url,evidence_strength,conflicting_evidence_url,status,allowed_in_html,notes
+BR-EXAMPLE-NO-PUBLISH,Example: each episode has exact painting date,EXTERNAL,NOT_VERIFIED,,,,,false,,,,,UNKNOWN,,PENDING,false,Placeholder only. Remove before publishing.
