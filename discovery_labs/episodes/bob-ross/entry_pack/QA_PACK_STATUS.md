@@ -68,3 +68,12 @@ Se detectó que el esquema original `questions_master.json` validaba la presenci
 
 ## Integración compartida
 PR #11 (núcleo), PR #5 (base Bob Ross) y PR #10 (Paquete de Entrada) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.
+
+
+## PR #12 — conciliación de QA posterior al merge
+
+- Se preserva el registro de CI exitoso anterior y la información más reciente de `main`; ese resultado **no equivale** a que ya se haya ejecutado la suite del PR #12.
+- `tests/test_entry_pack.py` comprueba el banco canónico de **14 investigaciones**, sus disparadores condicionales O2/O3 y la distinción entre modelo y ejercicio estadístico.
+- Los recursos compartidos se resuelven en `discovery_labs/shared/model_catalog/MODEL_SET.md` y `discovery_labs/shared/skills/question-forge/SKILL.md`, evitando rutas locales eliminadas.
+- `entry_pack/QUESTION_BANK.md` permanece como antecedente histórico; `questions_master.json` es el único banco científico vigente.
+- La guía HTML científica continúa pendiente de aprobación humana. No se autoriza guion ni video.
