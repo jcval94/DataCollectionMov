@@ -8,11 +8,11 @@
 |---|---|
 | Banco único `questions_master.json` | **PASS:** 14 preguntas, 14 IDs únicos |
 | Preguntas O1 + O2 + O3 | **PASS:** 14/14 contienen las tres propuestas (O2/O3 condicionales, NO ejecutadas) |
-| Modelos seleccionados | **PASS:** 14/14 señalan un `model_primary_id` de los 24 del `MODEL_SET.md` |
+| Modelos seleccionados | **PASS:** 14/14 señalan un `model_primary_id` de los 24 del `discovery_labs/shared/model_catalog/MODEL_SET.md` |
 | Ejercicios estadísticos independientes | **PASS:** 14/14 incluyen propuesta formal de prueba/intervalo/remuestreo |
 | MD vs JSON | **PASS:** los 14 IDs figuran en `QUESTIONS_MASTER.md` y JSON |
 | Muestra | **PASS estructural:** 13 registros originales y 13 derivados, metadatos `403×69` |
-| Skill reusable | **PASS:** `skills/question-forge/SKILL.md` versión 2.0.0 |
+| Skill reusable | **PASS:** skill compartida `discovery_labs/shared/skills/question-forge/SKILL.md` versión 2.1.0 |
 | Guía científica HTML V3 en repo | **PASS estructural:** una sección `id="preguntas"`, 14 tarjetas, cero `id="investigaciones"`/«02B» |
 | HTML duplicación de IDs DOM | **PASS:** ninguno detectado |
 | JavaScript HTML | **PASS sintaxis**: código embebido se compiló sintácticamente; no se ejecutó una prueba visual de navegador |
@@ -56,3 +56,6 @@ Se detectó que el esquema original `questions_master.json` validaba la presenci
 **Advertencia de sincronización:** `research_guide.html` V3 es una instantánea estática de las tarjetas, NO una plantilla dinámica que lee `questions_master.json`. La correspondencia semántica completa y la automatización de su regeneración siguen pendientes de la Fase 1 autorizada. Esta reparación no modifica la guía HTML, ni inicia modelos ni investigaciones audiovisuales.
 
 **Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La divergencia del PR #10 con su rama base (#5) permanece pendiente de conciliación segura; no fusionar automáticamente.
+
+## Integración compartida
+PR #11 (núcleo) y PR #5 (base Bob Ross) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.
