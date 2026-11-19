@@ -23,7 +23,8 @@
     "unique_ids": true,
     "ids_order": true,
     "only_bob_ross": true,
-    "no_empty": true
+    "no_empty": true,
+    "no_escaped_markdown_backticks": true
   },
   "files": [
     {
@@ -32,8 +33,8 @@
       "kind": "report",
       "expected_records": 1,
       "observed_records": 1,
-      "blob_sha": "60eaf163b99be4ef819fa0561ea12f0396013527",
-      "characters": 16255,
+      "blob_sha": "1dba334af01d94c77bdb9b213fb1f7cfdb110004",
+      "characters": 16251,
       "ok": true
     },
     {
@@ -52,8 +53,8 @@
       "kind": "report",
       "expected_records": 1,
       "observed_records": 1,
-      "blob_sha": "8ca32bbc988c5abf4dac9841321013593f8786a7",
-      "characters": 15845,
+      "blob_sha": "a51e250c2f181867db3da8b37be183491bd0a9fa",
+      "characters": 15775,
       "ok": true
     },
     {
@@ -72,8 +73,8 @@
       "kind": "report",
       "expected_records": 1,
       "observed_records": 1,
-      "blob_sha": "d357b2df9c116c3e6e25b5ce7b2d48c9dc9f263f",
-      "characters": 11891,
+      "blob_sha": "c47732a62ed1752f154de4fe1e9da44824855907",
+      "characters": 11871,
       "ok": true
     },
     {
@@ -112,8 +113,8 @@
       "kind": "rivals",
       "expected_records": 5,
       "observed_records": 5,
-      "blob_sha": "e311ffdc926c6f850a32a3880ef9b9e92d7622ea",
-      "characters": 4041,
+      "blob_sha": "fbbb1367f59520756e2c7d7ad59086ce2c3b05dc",
+      "characters": 4031,
       "ok": true
     },
     {
@@ -122,9 +123,13 @@
       "kind": "index",
       "expected_records": 1,
       "observed_records": 1,
-      "blob_sha": "3b2338ca547dae3b44fd5b2f359a1f5f32752454",
-      "characters": 4958,
+      "blob_sha": "98aed0f6a71a3e097b55dcbea84777ca49b14b6a",
+      "characters": 5372,
       "ok": true
     }
+  ],
+  "last_revalidated_at": "2026-11-19",
+  "notes": [
+    "After PR #15 merge, five archived Markdown files received formatting-only cleanup; README gained handoff links. Git blob SHAs and lengths were recalculated; original user reports still preserved only as normalized structured archives."
   ]
 }
