@@ -51,7 +51,7 @@ discovery_labs/
 - [x] HTML con una sección de preguntas y 14 tarjetas; enfermedad y límites causales explícitos.
 - [x] Compatibilidad con pruebas legacy de Fase 0 preservada al integrar metadatos y grafo histórico.
 - [x] PRs #5, #10 y #11 fusionados.
-- [ ] Validación **ejecutada** por GitHub Actions, no solo revisión estática. Workflow propuesto `.github/workflows/ai-discovery-labs-qa.yml` en el PR de cierre; completar cuando haya resultados verificables.
+- [x] Validación **ejecutada por GitHub Actions**, no solo estática. [AI Discovery Labs QA, run #44427475768](https://github.com/jcval94/DataCollectionMov/actions/runs/44427475768) (**SUCCESS**): sintaxis, tests compartidos sintéticos, tests legado Bob Ross, dataset, validador común y 14 preguntas. El workflow general `Validar código y catálogo` también concluyó **SUCCESS** en el mismo PR.
 - [ ] Validar un **segundo episodio real** con el motor compartido. Los tests con episodio sintético validan el contrato, pero no demuestran una segunda migración real.
 - [ ] QA de navegador de `research_guide.html` V3, permisos de imágenes, Deep Research completo y ensayo docente.
 
