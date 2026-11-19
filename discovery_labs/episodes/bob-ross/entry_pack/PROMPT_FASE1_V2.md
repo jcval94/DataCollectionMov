@@ -48,11 +48,13 @@ La ficha INTERNA planifica O1/O2/O3 con triggers, contexto, modelo, ejercicio es
 ## 1. Deep Research escalonado: tres frentes tempranos, uno diferido y síntesis iterativa
 Sigue `entry_pack/DEEP_RESEARCH_PROMPTS.md`:
 
-- DR-01: biografía, historia de la serie, fechas, acontecimientos documentados.
-- DR-02: arqueología del dataset, cronología grabación/emisión y metadatos externos de colores/pinturas.
-- DR-03: mitos REALES, antecedentes y mecanismos alternativos.
-- DR-04: imágenes, derechos, visualizaciones, explorador de clusters con hover/focus.
-- DR-05: reconciliar hechos, cuestionar hipótesis, priorizar preguntas.
+- **DR-01 temprano:** biografía, historia, fechas y salud; incertidumbres documentadas.
+- **DR-02 temprano:** arqueología del dataset, fechas grabación/emisión, límites y enriquecimientos posibles.
+- **DR-03 temprano y selectivo:** mitos REALES y antecedentes de las 3–5 rutas prioritarias.
+- **Medición O1:** reproducir métodos sobre el dataset completo y registrar hipótesis refutadas/inconclusas.
+- **DR-05a checkpoint:** reconciliar 01/02/03 con O1 medida, seleccionar y activar O2 que tengan triggers reales.
+- **DR-04 diferido:** profundizar derechos, diseño, visuales e interacción solo para insights con respaldo; triage de licencias desde el inicio.
+- **DR-05b final:** tras ejecutar O2 y abrir O3 cuando proceda, cerrar interpretación adversarial y actualización de HTML.
 
 Cita URLs y fecha de acceso en un registro. Establece `VERIFIED`, `DISPUTED`, `PENDING` o `NOT_SUPPORTED`; **nunca marques como ejecutada una investigación que sólo fue sugerida**.
 
@@ -94,6 +96,10 @@ Implanta las visualizaciones justificadas de `VISUAL_DESIGN.md` como argumentos 
 Inspecciona los gráficos realmente renderizados, en laptop y teléfono. Accesibilidad keyboard-only, contraste, texto alternativo y salidas en SVG/PNG.
 
 ## 5. Documento guía científico
+
+**HTML inicial:** debe abrir con un párrafo de contexto histórico general (Bob Ross, serie 1983–1994, fuente de 403 episodios, alcance de las etiquetas y qué se quiere descubrir). No anticipar patrones, diagnósticos ni efectos causales. Mantener secciones estables: contexto → propósito CÓMO/POR QUÉ/PARA QUÉ → datos/limitaciones → índice **único de O1** → métodos y resultados (incluido PENDIENTE) → pruebas adversariales → utilidad → reproducibilidad/versiones/gate.
+
+**HTML incremental:** cuando O1 esté respondida y se haya hecho DR-05a tras DR-01/02/03, agregar O2 justificadas **en el mismo bloque editorial**, con ID padre, gatillo observado, evidencia y fecha/commit. Agregar O3 solo después de ejecutar O2 y definir una prueba rival. No añadir una sección «02B» ni mostrar desde el inicio las rutas condicionales como activas. Consultar `RESEARCH_PLAN.md` para el proceso de aprobación y los estados de evidencia.
 La guía debe sentirse como **un ensayo ilustrado riguroso sobre la vida televisiva de Bob Ross**, no como un reporte corporativo ni una colección de widgets.
 
 Narración sugerida, adaptable a resultados:
