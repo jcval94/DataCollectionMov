@@ -3,19 +3,19 @@
 > **Recepción:** investigación compartida por el usuario el 19-11-2026, tercera de DR-01/02/03.  
 > **Tipo:** archivo editorial estructurado del informe y sus anexos, **no transcripción literal íntegra del texto del chat**.  
 > **Verificación:** hallazgos de prensa, cifras, links, estatus y calificaciones **provienen del estudio recibido**, sin nueva auditoría ni pruebas inferenciales en esta operación.  
-> **Gobernanza:** archivo de entrada; NO modificar \`QUESTIONS_MASTER.*\`, NO presentar O2/O3 como preguntas activas del HTML, NO entrenar modelos, NO crear video.
+> **Gobernanza:** archivo de entrada; NO modificar `QUESTIONS_MASTER.*`, NO presentar O2/O3 como preguntas activas del HTML, NO entrenar modelos, NO crear video.
 
 ## Propósito y caveats del estudio
 
 El reporte se presenta como insumo para el único banco canónico de Bob Ross (403 episodios, 31 temporadas, 1983–1994). Su equipo no pudo abrir el repositorio DataCollectionMov ni el artículo web original de FiveThirtyEight; recurrió a copia del análisis Hickey, documentación de FiveThirtyEight/R, TidyTuesday, TwoInchBrush y trabajos citados. **No se ejecutaron modelos ni pruebas inferenciales sobre los CSV crudos.**
 
-Promete siete productos: (1) 13 mitos/afirmaciones en \`myths_claims.csv\`, (2) 8 antecedentes en \`antecedents.csv\`, (3) explicaciones rivales, (4) 10 hipótesis H1–H10 con O1 y O2/O3 condicionales, (5) top 5, (6) contradicciones verificables, (7) necesidades de datos externos.
+Promete siete productos: (1) 13 mitos/afirmaciones en `myths_claims.csv`, (2) 8 antecedentes en `antecedents.csv`, (3) explicaciones rivales, (4) 10 hipótesis H1–H10 con O1 y O2/O3 condicionales, (5) top 5, (6) contradicciones verificables, (7) necesidades de datos externos.
 
 Los archivos **recibidos** se conservan aquí en una normalización estructurada:
-- \`DR-03_myths_claims.csv\`: MC01–MC13.
-- \`DR-03_antecedents.csv\`: ANT01–ANT08.
-- \`DR-03_rival_explanations.md\`: R1–R5.
-- \`DR-03_questions_to_test.json\`: H1–H10; su estado es PLAN_ONLY/CONDICIONAL, no inferencia ejecutada.
+- `DR-03_myths_claims.csv`: MC01–MC13.
+- `DR-03_antecedents.csv`: ANT01–ANT08.
+- `DR-03_rival_explanations.md`: R1–R5.
+- `DR-03_questions_to_test.json`: H1–H10; su estado es PLAN_ONLY/CONDICIONAL, no inferencia ejecutada.
 
 ## 1. Afirmaciones y mitos documentados en el informe (por comprobar)
 
@@ -79,19 +79,19 @@ Los archivos **recibidos** se conservan aquí en una normalización estructurada
 - **R4 invitados curados editorialmente:** selección de géneros y artistas condiciona diferencias; estratificar por tema/temporada.
 - **R5 física wet-on-wet y perspectiva:** composiciones pueden reflejar técnicas y geometría, no preferencias independientes.
 
-Consultar \`DR-03_rival_explanations.md\` para controles sugeridos.
+Consultar `DR-03_rival_explanations.md` para controles sugeridos.
 
 ## 5. Diez hipótesis recibidas, todas planificadas
 
 | ID | Tema | O1 / prueba de interés | Datos y bloqueos principales |
 |---|---|---|---|
-| H1 | Ruptura de color Burnt Umber vs Dark Sienna | Segmentar tasas de uso y \`num_colors\`; Fisher/permutaciones | Paletas externas, temporalidad de productos |
+| H1 | Ruptura de color Burnt Umber vs Dark Sienna | Segmentar tasas de uso y `num_colors`; Fisher/permutaciones | Paletas externas, temporalidad de productos |
 | H2 | Duelo/enfermedad y temporadas tardías | Diferencias descriptivas entre S10–25 y S26–31, NO inferencia clínica | Fecha de grabación, color real legal, cronología clínica disputada |
 | H3 | Límite 26 min y estructuras vs naturaleza | Quasi-Poisson natural_element_count, Welch/permutación | Estructura y motivos del CSV |
 | H4 | Firma anfitrión vs invitados | Jaccard/PERMANOVA, Fisher para LAKE | n=22, créditos de invitado, género y color |
 | H5 | Concordancia etiquetado 2014 vs nuevas anotaciones | Kappa/McNemar y latentes | Imágenes autorizadas, libro de códigos; PERSON/CHIMNEY no deben inventarse |
 | H6 | Robustez clústeres binarios + paletas | KMeans/PAM/Bernoulli, ARI/Silhouette/Mantel | Calidad de paleta y ontología, no imponer k=10 |
-| H7 | Paleta declarada vs color en píxel | CIELAB, Spearman y modelos mixtos | Imágenes/licencias y calibración; \`num_colors\` ≠ diversidad visual |
+| H7 | Paleta declarada vs color en píxel | CIELAB, Spearman y modelos mixtos | Imágenes/licencias y calibración; `num_colors` ≠ diversidad visual |
 | H8 | Inhibición de repetición intra-temporada | Markov y 10,000 permutaciones por temporada | Puede hacerse solo con etiquetas e IDs |
 | H9 | Humanidad implícita: cabañas y nieve | OR exactas/logit para estructuras vs clima | Figuras humanas no observadas en esquema original; interpretación simbólica no identificada |
 | H10 | Rasgos de episodio vs atención digital | Binomial negativa y devianza incremental | YouTube API, recreaciones y fecha de publicación, derechos/consentimiento |

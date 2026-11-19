@@ -1,5 +1,7 @@
 # AI Discovery Labs — Paquete de Entrada 001 (Bob Ross)
 
+> **CONTINUIDAD (19-11-2026):** la ruta vigente para retomar Bob Ross es [HANDOFF_2026-11-19.md](HANDOFF_2026-11-19.md) y el [prompt para un nuevo chat](PROMPT_NEXT_CHAT_2026-11-19.md). Las tres investigaciones DR-01/02/03 ya se archivaron bajo [research_received/](research_received/README.md) en PR #15 (fusionado). PR #12 y #14 también se fusionaron; sus entregas son QA y metodología, **no resultados científicos aprobados**.
+
 > **Infraestructura compartida integrada en `main` (PR #11):** usar [Question Forge v2.1](../../../shared/skills/question-forge/SKILL.md), [catálogo único de 24 modelos](../../../shared/model_catalog/MODEL_SET.md) y [plantilla general](../../../shared/templates/ENTRY_PACK_TEMPLATE.md). Este episodio conserva solo preguntas, datos y criterios específicos. [MODEL_FIT_BOB_ROSS.md](MODEL_FIT_BOB_ROSS.md) documenta sus límites. **No existen copias locales de la skill ni del catálogo.**
 
 

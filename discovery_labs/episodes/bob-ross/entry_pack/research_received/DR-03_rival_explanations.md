@@ -12,7 +12,7 @@
 
 ## R2 · Comercialización, insumos y estandarización
 
-**Afirmación recibida:** Bob Ross Inc. comercializó pigmentos, herramientas y \`Liquid White\`. Una sustitución de \`Burnt Umber\` por \`Dark Sienna\` podría coincidir con cambios de catálogo, patrocinio o disponibilidad, no necesariamente con evolución pictórica personal.
+**Afirmación recibida:** Bob Ross Inc. comercializó pigmentos, herramientas y `Liquid White`. Una sustitución de `Burnt Umber` por `Dark Sienna` podría coincidir con cambios de catálogo, patrocinio o disponibilidad, no necesariamente con evolución pictórica personal.
 
 **Hipótesis relacionadas:** H1 (ruptura cromática) y otras preguntas de paleta.
 
@@ -44,6 +44,6 @@
 
 ## Aplicación adversarial
 
-Cada pregunta O1 debe adjuntar al menos una rival y una manera concreta de discriminarla, con dataset, figura, estimando y estado. O2 permanece **CONDICIONAL** hasta obtener O1 medida + DR-05a, y O3 hasta medir O2 y disponer de contraste rival. La falta de una fuente suficiente se registra como \`BLOCKED\` o \`INCONCLUSIVE\`, no como descubrimiento.
+Cada pregunta O1 debe adjuntar al menos una rival y una manera concreta de discriminarla, con dataset, figura, estimando y estado. O2 permanece **CONDICIONAL** hasta obtener O1 medida + DR-05a, y O3 hasta medir O2 y disponer de contraste rival. La falta de una fuente suficiente se registra como `BLOCKED` o `INCONCLUSIVE`, no como descubrimiento.
 
 **CÓMO:** experimentos reproducibles y controles definidos. **POR QUÉ:** la asociación admite varias explicaciones. **PARA QUÉ:** revelar fronteras de inferencia y nuevas preguntas que no confundan historia/producción con mecanismos clínicos.

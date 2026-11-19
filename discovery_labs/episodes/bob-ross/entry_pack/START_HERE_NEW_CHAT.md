@@ -1,5 +1,7 @@
 # START HERE — AI Discovery Labs · Bob Ross · Paquete de Entrada y Question Forge
 
+> **ACTUALIZACIÓN 19-11-2026:** este archivo conserva contexto de etapas anteriores. **Para el estado ACTUAL y los próximos pasos usa primero [HANDOFF_2026-11-19.md](HANDOFF_2026-11-19.md) y copia [PROMPT_NEXT_CHAT_2026-11-19.md](PROMPT_NEXT_CHAT_2026-11-19.md).** PR #12, #14 y #15 ya fusionados en `main`; DR-01/02/03 recibidos y archivados como normalizaciones estructuradas, no hallazgos validados ni textos literales. Las secciones inferiores sobre «próxima conversación» deben leerse como contexto histórico, no como estado actual.
+
 **Leer este archivo primero en una conversación nueva. Es autocontenido.**
 
 **ARQUITECTURA INTEGRADA:** PR #11 (núcleo compartido) y PR #5 (episodio base) se fusionaron en `main` el 18 de noviembre de 2026. El PR #10 **también está fusionado en `main`** e incorpora este Paquete de Entrada y la guía V3. La skill canónica está en `discovery_labs/shared/skills/question-forge/SKILL.md`, los 24 modelos en `discovery_labs/shared/model_catalog/MODEL_SET.md` y los validadores en `discovery_labs/shared/validators/`. No mantener copias de la skill, catálogo o plantillas por episodio. El documento `entry_pack/MODEL_FIT_BOB_ROSS.md` conserva solo criterios de Bob Ross. Revisar la versión actual de `main` antes de trabajar: la guía científica requiere aprobación humana, independientemente del merge de código.

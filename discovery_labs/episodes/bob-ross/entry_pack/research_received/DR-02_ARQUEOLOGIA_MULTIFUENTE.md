@@ -7,7 +7,7 @@
 
 ## 0. Resumen de tesis y alertas metodológicas
 
-El informe ubica el origen de \`elements-by-episode.csv\` en FiveThirtyEight/Walt Hickey (artículo de 14 abril 2014), derivado de inspección manual de fotografías comerciales de Bob Ross Inc., **no de mediciones continuas sobre video, imágenes físicas o fotogramas originales**. La tabla fuente contiene 403 episodios y 69 columnas (EPISODE, TITLE y 67 etiquetas binarias), según documentación.
+El informe ubica el origen de `elements-by-episode.csv` en FiveThirtyEight/Walt Hickey (artículo de 14 abril 2014), derivado de inspección manual de fotografías comerciales de Bob Ross Inc., **no de mediciones continuas sobre video, imágenes físicas o fotogramas originales**. La tabla fuente contiene 403 episodios y 69 columnas (EPISODE, TITLE y 67 etiquetas binarias), según documentación.
 
 Se proponen cuatro limitaciones que cualquier análisis debe reconocer:
 
@@ -16,7 +16,7 @@ Se proponen cuatro limitaciones que cualquier análisis debe reconocer:
 3. **Ausencia de cronología de grabación:** temporadas y fechas de emisión no son fechas de creación pictórica.
 4. **Etiquetado binario incompleto:** no mide cantidad de árboles, área, tono, textura, jerarquía espacial ni ausencia deliberada. Ciertos atributos son de encuadre, no paisaje, y otros representan autoría.
 
-El equipo DR-02 no pudo inspeccionar remotamente la copia del repositorio DataCollectionMov y dejó SHA local como pendiente. Esta afirmación corresponde **al entorno del informe**, no al acceso que pueda tener otro agente al GitHub conectado. Archivo/hash comunicados por el proyecto: 403×69, 66,315 bytes, SHA-256 \`42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf\`. El archivado no recalcula ese hash.
+El equipo DR-02 no pudo inspeccionar remotamente la copia del repositorio DataCollectionMov y dejó SHA local como pendiente. Esta afirmación corresponde **al entorno del informe**, no al acceso que pueda tener otro agente al GitHub conectado. Archivo/hash comunicados por el proyecto: 403×69, 66,315 bytes, SHA-256 `42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf`. El archivado no recalcula ese hash.
 
 **Discrepancia importante para contrastar:** artículo de Hickey cita **3,224 etiquetas positivas**; proporciones de análisis secundarios sugerirían **3,221**; otro documento académico citado por DR-03 menciona **3,324**. No decidir por autoridad textual: calcular suma exacta sobre la matriz del snapshot versionado y reconstruir qué filas/etiquetas incluye cada autor.
 
@@ -26,8 +26,8 @@ El equipo DR-02 no pudo inspeccionar remotamente la copia del repositorio DataCo
 - Variables binarias sobre paisaje (TREE/TREES, CLOUDS/CUMULUS/CIRRUS, SNOWY_MOUNTAIN...), clima, estructuras, tipos de marcos y artistas invitados. Ninguna densidad cromática real o rasgo físico continuo.
 - Ejemplos de dependencias por construcción: CLOUDS / CIRRUS / CUMULUS; FRAMED y subtipos de marco, etiquetas de montaña/nieve. **No interpretar coocurrencia jerárquica como mecanismo artístico descubierto.**
 - Ceros de ausencia no distinguen «no visible», «no prominente», «no codificado» o «no buscado» salvo definición explícita del libro de códigos.
-- Duplicado exacto de título \`LAKESIDE CABIN\`; la viñeta R renombraría S08E02 \`LAKESIDE CABIN 2\`. Usar \`EPISODE\` como llave; jamás el título.
-- Tres filas excluidas en la viñeta R derivada como cuadros incompletos: \`PURPLE MOUNTAIN RANGE\`, \`COUNTRY CHARM\`, \`PEACEFUL REFLECTIONS\`. **No excluirlas silenciosamente del CSV original**; conservar bandera de análisis y rastro del filtro.
+- Duplicado exacto de título `LAKESIDE CABIN`; la viñeta R renombraría S08E02 `LAKESIDE CABIN 2`. Usar `EPISODE` como llave; jamás el título.
+- Tres filas excluidas en la viñeta R derivada como cuadros incompletos: `PURPLE MOUNTAIN RANGE`, `COUNTRY CHARM`, `PEACEFUL REFLECTIONS`. **No excluirlas silenciosamente del CSV original**; conservar bandera de análisis y rastro del filtro.
 - Autoría reportada en la tabla: n=381 anfitrión, n=22 invitados; listas externas mencionan 20 apariciones o nombres diferentes. Conciliar por código de episodio y créditos, no por nombres parcialmente observados.
 - El supuesto de que un valor 0 representa ausencia pictórica real debe probarse contra libro de codificación y calidad de las imágenes.
 
@@ -53,11 +53,11 @@ Riesgo de leakage: ajuste de PCA, estandarización, imputaciones, centroides, va
 
 | Fuente y URL | Unidad y llaves | Campos/valor potencial | Licencia y acceso reportado | Reserva |
 |---|---|---|---|---|
-| FiveThirtyEight https://github.com/fivethirtyeight/data | episodio \`SxxEyy\` | 67 etiquetas binarias, TITLE | CC BY 4.0 para datos, MIT para código (según reporte) | Obtener snapshot, validar total de tags |
-| jwilber/Bob_Ross_Paintings https://github.com/jwilber/Bob_Ross_Paintings | \`(season, episode)\` | colores, colores hex, \`num_colors\`, tags, links | CSV PARTIAL, imágenes BLOCKED; sin licencia explícita afirmada | CSV ≠ permiso para imágenes; fuente TwoInchBrush |
+| FiveThirtyEight https://github.com/fivethirtyeight/data | episodio `SxxEyy` | 67 etiquetas binarias, TITLE | CC BY 4.0 para datos, MIT para código (según reporte) | Obtener snapshot, validar total de tags |
+| jwilber/Bob_Ross_Paintings https://github.com/jwilber/Bob_Ross_Paintings | `(season, episode)` | colores, colores hex, `num_colors`, tags, links | CSV PARTIAL, imágenes BLOCKED; sin licencia explícita afirmada | CSV ≠ permiso para imágenes; fuente TwoInchBrush |
 | Wikipedia https://en.wikipedia.org/wiki/List_of_The_Joy_of_Painting_episodes | temporada/episodio | fechas de emisión, reparto, sedes por época | CC BY-SA 4.0, AVAILABLE en bloques | Tabla completa por episodio aún no confirmada |
 | frankiethull/BobRossColors https://github.com/frankiethull/BobRossColors | pintura/episodio a revisar | paletas 403; códigos/llaves por verificar | MIT según informe; PARTIAL esquema | Mapeo episodeID no auditado |
-| fivethirtyeightdata https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bob_ross.html | \`episode\` | R dataframe derivado 403×71, \`guest\`, filtros | Datos CC BY 4.0 | No confundir derivación con original |
+| fivethirtyeightdata https://fivethirtyeightdata.github.io/fivethirtyeightdata/articles/bob_ross.html | `episode` | R dataframe derivado 403×71, `guest`, filtros | Datos CC BY 4.0 | No confundir derivación con original |
 | OpenBrush Landscapes https://huggingface.co/datasets/jaddai/openbrush-landscapes | obra externa | color/comparación externa | CC0 según informe | Corpus de otro dominio; verificar procedencia |
 | WikiArtVectors https://www.mdpi.com/1099-4300/24/9/1175 | artista/obra/década | embeddings/color, baseline | licencia dataset no verificada | Distribución no comparable sin control |
 | TwoInchBrush https://twoinchbrush.com/ | pintura/episodio | color/material/galería | propietario, scraping BLOCKED | No extraer imágenes/scrapear en masa |
@@ -69,7 +69,7 @@ Riesgo de leakage: ajuste de PCA, estandarización, imputaciones, centroides, va
 
 ## 4. Llaves, cardinalidad y capas Bronze/Silver/Gold
 
-**Llave canónica:** \`(season, episode)\` derivada de \`EPISODE = SxxEyy\`. Garantizar unicidad y no multiplicación de filas. Los títulos se conservan como datos, no como llave.
+**Llave canónica:** `(season, episode)` derivada de `EPISODE = SxxEyy`. Garantizar unicidad y no multiplicación de filas. Los títulos se conservan como datos, no como llave.
 
 **Tabla de uniones esperadas:**
 - fivethirtyeight ↔ variante R: ~403/403 1:1, con variantes de títulos y filtrado documentado.
@@ -79,11 +79,11 @@ Riesgo de leakage: ajuste de PCA, estandarización, imputaciones, centroides, va
 - Invitados: conciliar 22 de Hickey con 20 reportados en foro y cobertura parcial de Wikipedia. Mantener discrepancias.
 - Paisajes externos: **sin llave directa**, solo comparación de distribuciones y sesgos de dominio.
 
-**Bronze inmutable:** \`raw_elements_by_episode\`, \`raw_jwilber_paintings_csv\`, \`raw_bobrosscolors\`, \`raw_wikipedia_episodes_html\` (cuando licencias lo permitan) + manifiesto hash/licencia/fecha. **Excluir físicamente** pinturas protegidas.
+**Bronze inmutable:** `raw_elements_by_episode`, `raw_jwilber_paintings_csv`, `raw_bobrosscolors`, `raw_wikipedia_episodes_html` (cuando licencias lo permitan) + manifiesto hash/licencia/fecha. **Excluir físicamente** pinturas protegidas.
 
-**Silver reconciliado:** \`dim_episode\`, \`dim_season_context\`, \`bridge_episode_tag\`, \`bridge_episode_color\`, \`dim_author_reconciliation\`, \`is_duplicate_title\`, \`is_vignette_incomplete\`, \`air_date_precision\` (fecha exacta vs aproximación), ontología de 67 columnas, origen y criterio de cada transformación.
+**Silver reconciliado:** `dim_episode`, `dim_season_context`, `bridge_episode_tag`, `bridge_episode_color`, `dim_author_reconciliation`, `is_duplicate_title`, `is_vignette_incomplete`, `air_date_precision` (fecha exacta vs aproximación), ontología de 67 columnas, origen y criterio de cada transformación.
 
-**Gold analítico:** \`mart_bob_ross_clean\`, \`mart_chronology_descriptive\` (evitar etiqueta «causal» salvo identificación), \`mart_palette_perceptual_features\` donde proceda, \`mart_motif_topology\`, \`mart_external_landscape_baseline\`. Separar n=381 del conjunto n=403 y presentar calidad de fuentes/joins.
+**Gold analítico:** `mart_bob_ross_clean`, `mart_chronology_descriptive` (evitar etiqueta «causal» salvo identificación), `mart_palette_perceptual_features` donde proceda, `mart_motif_topology`, `mart_external_landscape_baseline`. Separar n=381 del conjunto n=403 y presentar calidad de fuentes/joins.
 
 ## 5. Diez oportunidades científicas recibidas (diseños, no resultados)
 
@@ -92,9 +92,9 @@ Riesgo de leakage: ajuste de PCA, estandarización, imputaciones, centroides, va
 | 01. Tiempo calendario vs temporada | Reindexar motivos/paletas por emisión y evaluar cambio segmentado | Ritmo irregular de temporadas puede distorsionar | Separar cronología de emisión de deriva visual observada | No fechas de rodaje; OOS temporal |
 | 02. Regímenes de producción y patrocinios | Comparar T1 WNVC, WIPB casa y WIPB campus + periodos de marcas | Método/insumos/estudio pueden covariar | Evitar atribución a biografía sin control | Precisión del traslado y patrocinio |
 | 03. Gramática y anomalías de composición | PMI/redes sobre motivo natural vs arquitectura, baja frecuencia | Combinaciones marginales ocultan relaciones raras | Crear índice de outliers y robustez | Dependencias jerárquicas y rareza espuria |
-| 04. Complejidad temática vs economía de paleta | Cruzar conteos/entropía de motivos y \`num_colors\` | Paleta restringida quizá produzca escenas ricas | Evaluar eficiencia expresiva sin efectos causales | Validez del campo \`num_colors\` |
+| 04. Complejidad temática vs economía de paleta | Cruzar conteos/entropía de motivos y `num_colors` | Paleta restringida quizá produzca escenas ricas | Evaluar eficiencia expresiva sin efectos causales | Validez del campo `num_colors` |
 | 05. Ceros estructurales | Probar ausencia de figuras/chimeneas con modelos de cero/permutaciones | Puede haber reglas narrativas explícitas | Enseñar sesgo de medición y restricciones latentes | No hay columna de chimenea/persona en original confirmado |
-| 06. Color declarado vs semántica | \`colors_hex\`→CIELAB y predictibilidad de WINTER/BEACH/FOG | Lista de materiales difiere del aspecto final | Frontera de interpretabilidad de paletas | No usar píxeles sin derechos |
+| 06. Color declarado vs semántica | `colors_hex`→CIELAB y predictibilidad de WINTER/BEACH/FOG | Lista de materiales difiere del aspecto final | Frontera de interpretabilidad de paletas | No usar píxeles sin derechos |
 | 07. Clustering por ontología/distancia | Comparar KMeans, PAM-Jaccard, bootstrap, ARI, silhouette | Clústeres pueden ser artefactos de métrica | Buenas prácticas para datos binarios | No imponer k=4 o k=10 |
 | 08. Autoría invitados vs Bob | Control de temporada/género, probabilidades condicionales | Invitados no son muestra aleatoria | Medir sensibilidad de estadísticas agregadas | n=22, controles y coincidencias |
 | 09. Forense de fuentes | Reconciliar 22 vs 20 invitados, 3224 vs 3221 vs 3324 tags, 3 incompletas y ontologías | Errores heredados cambian denominadores | Master confiable para el laboratorio | Necesita acceso a snapshots |
