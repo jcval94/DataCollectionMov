@@ -406,5 +406,440 @@
       "visual": "diagrama verificado de tres versiones de la obra y ciclo de producción",
       "status": "IDEA_CONDITIONAL"
     }
-  ]
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "axis": "CAMBIO_DE_RÉGIMEN",
+      "headline": "¿Sus últimos paisajes cuentan una historia diferente?",
+      "category": "salud/contexto",
+      "first_order": {
+        "question": "¿Cambian la diversidad y frecuencia de motivos durante las 31 temporadas, especialmente en los últimos episodios?",
+        "metric": "Entropía de combinaciones, 67 tags por episodio, prevalencias por temporada; excluir invitados"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si hay cambio, ¿se concentra en una ruptura temporal o ya existía la tendencia mucho antes?",
+        "test": "Ajuste de tendencia segmentada con intervalos y cortes placebo; fechas reales externas",
+        "branches": [
+          {
+            "when": "Si el análisis de periodos detecta un cambio compatible con una ruptura",
+            "action": "Si hay cambio, ¿se concentra en una ruptura temporal o ya existía la tendencia mucho antes?",
+            "check": "Ajuste de tendencia segmentada con intervalos y cortes placebo; fechas reales externas"
+          },
+          {
+            "when": "Si no aparece ruptura o la dirección cambia con la ventana",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Ajuste de tendencia segmentada con intervalos y cortes placebo; fechas reales externas"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Seguiría existiendo el cambio si no supiéramos nada de su enfermedad o si usáramos otra métrica de estilo?",
+        "rival_explanation": "Orden de emisión ≠ producción; cambios de producción, etiquetado o elección de motivos; biografía ≠ prueba causal",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Timeline con banda de fechas biográficas inciertas, distribuciones por periodos y robustez por cortes placebo",
+      "external_data": "Fechas verificadas por episodio + enfermedad con precisión y fuentes; colores/estilo visual si se pretende hablar de estilo",
+      "evidence_status": "HYPOTHESIS_NEEDS_EXTERNAL_DATA"
+    },
+    {
+      "id": "Q02",
+      "axis": "NOVEDAD_Y_REPETICIÓN",
+      "headline": "¿Bob Ross se repetía o experimentaba más de lo que recordamos?",
+      "category": "creencia compleja",
+      "first_order": {
+        "question": "¿Cuánto se parecen los patrones de motivos entre temporadas y episodios próximos?",
+        "metric": "Jaccard entre episodios, novedad relativa vs episodios anteriores, tasa de combinaciones no vistas"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si algunas temporadas parecen repetitivas, ¿se debe a pocos motivos dominantes o a una reutilización estructurada de composiciones?",
+        "test": "Comparar pares condicionados por número de elementos y mezcla de motivos",
+        "branches": [
+          {
+            "when": "Si hay menos novedad de combinaciones en episodios posteriores",
+            "action": "Si algunas temporadas parecen repetitivas, ¿se debe a pocos motivos dominantes o a una reutilización estructurada de composiciones?",
+            "check": "Comparar pares condicionados por número de elementos y mezcla de motivos"
+          },
+          {
+            "when": "Si hay novedad sostenida o la tendencia depende del tamaño de la muestra",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Comparar pares condicionados por número de elementos y mezcla de motivos"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿La misma impresión persiste cuando cambiamos etiquetas por paletas de color e imágenes autorizadas?",
+        "rival_explanation": "Las etiquetas binarias no miden técnica, composición, luminosidad ni estilo",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Mosaico de temporadas con novedades y pequeñas múltiples de pares aparentemente iguales",
+      "external_data": "Paletas jwilber y revisión de imágenes con permisos/atribución",
+      "evidence_status": "TESTABLE_IN_LABELS_EXTERNAL_FOR_STYLE"
+    },
+    {
+      "id": "Q03",
+      "axis": "OUTLIERS_MULTIESCALA",
+      "headline": "La temporada atípica: ¿existe una verdadera excepción?",
+      "category": "anomalías",
+      "first_order": {
+        "question": "¿Qué episodio o temporada es más atípico según frecuencia de motivos y combinaciones?",
+        "metric": "Distancias Jaccard por episodio; desviación multivariante por temporada y tamaño de n"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si una temporada parece excepcional, ¿se concentra el desvío en dos episodios raros o afecta al conjunto?",
+        "test": "Leave-one-out y análisis de influencia por episodio; por temporada y bloques históricos",
+        "branches": [
+          {
+            "when": "Si aparece una temporada claramente atípica en análisis multivariante",
+            "action": "Si una temporada parece excepcional, ¿se concentra el desvío en dos episodios raros o afecta al conjunto?",
+            "check": "Leave-one-out y análisis de influencia por episodio; por temporada y bloques históricos"
+          },
+          {
+            "when": "Si la anomalía solo existe a nivel episodio o desaparece tras normalizar",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Leave-one-out y análisis de influencia por episodio; por temporada y bloques históricos"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿La anomalía sobrevive al excluir invitados, motivos raros y cambiar de distancia o escala de agregación?",
+        "rival_explanation": "Anomalía estadística puede deberse al codificador o a agregaciones artificiales",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Mapa de calor 31 temporadas + gráfico de puntos de episodios con lupa al pasar el cursor",
+      "external_data": "CSV original; posible enriquecimiento de imágenes para casos atípicos",
+      "evidence_status": "TESTABLE"
+    },
+    {
+      "id": "Q04",
+      "axis": "PARADOJAS_MEZCLA",
+      "headline": "¿Los árboles dominaron siempre, o el promedio esconde una historia?",
+      "category": "creencia popular avanzada",
+      "first_order": {
+        "question": "¿Cómo cambia la presencia de árboles por temporada y tipo de episodio?",
+        "metric": "TREE OR TREES / n por temporada, anfitrión frente a invitados"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si el promedio es estable, ¿hay segmentos donde cambia fuertemente o se invierte una comparación?",
+        "test": "Estratificar por invitados, temporada y motivo dominante, con n visibles; cuidado selección de subgrupos",
+        "branches": [
+          {
+            "when": "Si el promedio global esconde heterogeneidad entre temporadas/invitados",
+            "action": "Si el promedio es estable, ¿hay segmentos donde cambia fuertemente o se invierte una comparación?",
+            "check": "Estratificar por invitados, temporada y motivo dominante, con n visibles; cuidado selección de subgrupos"
+          },
+          {
+            "when": "Si la prevalencia es homogénea y no hay paradoja observable",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Estratificar por invitados, temporada y motivo dominante, con n visibles; cuidado selección de subgrupos"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Cuáles resultados desaparecen tras ajustar por composición o cambiar denominador?",
+        "rival_explanation": "Simpson no se presupone; buscarlo sin seleccionarlo post hoc",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Small multiples por temporada con promedio global y bandas de tamaños",
+      "external_data": "CSV fuente",
+      "evidence_status": "TESTABLE"
+    },
+    {
+      "id": "Q05",
+      "axis": "BIOGRAFÍA_PAISAJE",
+      "headline": "¿Cuánto de Alaska persistió en una carrera pintada en Florida?",
+      "category": "memoria cultural e historia",
+      "first_order": {
+        "question": "¿Qué peso tienen montañas, nieve y bosques a lo largo de las temporadas?",
+        "metric": "Prevalencias de familias de motivos; n por temporada y periodo"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si son frecuentes, ¿se trata de un sello único o de motivos comunes a la pintura televisiva del periodo?",
+        "test": "Contrastar con corpus externo comparable y reportar diferencias de codificación",
+        "branches": [
+          {
+            "when": "Si se observan motivos de montañas/nieve recurrentes",
+            "action": "Si son frecuentes, ¿se trata de un sello único o de motivos comunes a la pintura televisiva del periodo?",
+            "check": "Contrastar con corpus externo comparable y reportar diferencias de codificación"
+          },
+          {
+            "when": "Si predominan otros motivos o la frecuencia se debe al origen de las etiquetas",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Contrastar con corpus externo comparable y reportar diferencias de codificación"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Las referencias biográficas explican la elección de motivos o sólo ofrecen una historia que suena plausible?",
+        "rival_explanation": "Estilo e inspiración son constructos, no columnas del CSV; una correlación no prueba influencia personal",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Mapa biográfico con línea temporal y pictogramas cuantificados por periodo",
+      "external_data": "Biografía primaria + corpus comparable externo si existe",
+      "evidence_status": "EXTERNAL_DATA_NEEDED"
+    },
+    {
+      "id": "Q06",
+      "axis": "CLUSTERS_Y_MECANISMOS",
+      "headline": "¿Descubrimos cuatro estilos o fabricamos cuatro salas?",
+      "category": "detective/metodología",
+      "first_order": {
+        "question": "¿Qué episodios quedan juntos bajo Jaccard, Euclídea y reglas curatorias?",
+        "metric": "ARI, silhouette en cada espacio, perfiles por sala y medoids"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si los grupos difieren, ¿qué etiquetas o pesos cambian más la asignación de casos frontera?",
+        "test": "Ablation por familia y distancias; episodios que migran entre grupos",
+        "branches": [
+          {
+            "when": "Si Jaccard y Euclídea producen particiones discordantes",
+            "action": "Si los grupos difieren, ¿qué etiquetas o pesos cambian más la asignación de casos frontera?",
+            "check": "Ablation por familia y distancias; episodios que migran entre grupos"
+          },
+          {
+            "when": "Si la partición resulta estable a distintas métricas",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Ablation por familia y distancias; episodios que migran entre grupos"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Un historiador del arte —sin conocer la asignación— reconocería esos estilos, o solo motivos de composición?",
+        "rival_explanation": "Cuatro salas son restricción del museo; métricas y clústeres no miden calidad estética",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Matriz de transiciones entre clusters + tarjetas de episodio con vista previa condicionada a derechos",
+      "external_data": "CSV + acceso legítimo a imágenes o enlaces",
+      "evidence_status": "PARTLY_EXECUTED_REQUIRES_VALIDATION"
+    },
+    {
+      "id": "Q07",
+      "axis": "INVITADOS_Y_SELECCIÓN",
+      "headline": "¿Una serie distinta aparece cuando Bob no está frente al lienzo?",
+      "category": "social/representación",
+      "first_order": {
+        "question": "¿En qué motivos difieren episodios GUEST=1 y GUEST=0?",
+        "metric": "Prevalencias con n=22 vs n=381 e incertidumbre descriptiva"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si difieren, ¿se debe a qué invitados aparecen en determinadas temporadas?",
+        "test": "Estratificación temporal, revisar identidad y producción solo si existe fuente válida",
+        "branches": [
+          {
+            "when": "Si las distribuciones de invitados y anfitrión son diferentes",
+            "action": "Si difieren, ¿se debe a qué invitados aparecen en determinadas temporadas?",
+            "check": "Estratificación temporal, revisar identidad y producción solo si existe fuente válida"
+          },
+          {
+            "when": "Si el contraste es pequeño o ambiguo dada la n de invitados",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Estratificación temporal, revisar identidad y producción solo si existe fuente válida"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Qué conclusión queda si emparejamos temporadas y dejamos fuera episodios influyentes?",
+        "rival_explanation": "No generalizar a artistas, género, intención ni discriminación; muestra no aleatoria",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Dumbbell de proporciones con n y matriz de episodios invitados",
+      "external_data": "Anotaciones GUEST, metadatos externos de episodios y quién realizó cada pintura",
+      "evidence_status": "TESTABLE_DESCRIPTIVE"
+    },
+    {
+      "id": "Q08",
+      "axis": "VISUAL_VS_ETIQUETA",
+      "headline": "Dos cuadros con los mismos árboles, ¿pueden contar historias opuestas?",
+      "category": "imágenes y medición",
+      "first_order": {
+        "question": "¿Qué pares de episodios comparten etiquetas idénticas o muy similares?",
+        "metric": "Duplicados de patrones de 12 o 67 etiquetas, distancia Jaccard"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Entre pares muy similares, ¿qué tan diferentes son sus colores o composiciones observables?",
+        "test": "Unir por temporada/episodio con paletas y ejemplos de imágenes cuya licencia permita visualización",
+        "branches": [
+          {
+            "when": "Si existen numerosos pares con las mismas etiquetas",
+            "action": "Entre pares muy similares, ¿qué tan diferentes son sus colores o composiciones observables?",
+            "check": "Unir por temporada/episodio con paletas y ejemplos de imágenes cuya licencia permita visualización"
+          },
+          {
+            "when": "Si los pares idénticos son poco frecuentes por diseño de features",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Unir por temporada/episodio con paletas y ejemplos de imágenes cuya licencia permita visualización"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Los clusters de etiquetas pierden estabilidad cuando incluimos paletas o embeddings de imágenes autorizadas?",
+        "rival_explanation": "No presentar similitud de etiqueta como semejanza estética completa",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Comparador de pares (lado a lado) con imagen opcional o marcador y paletas",
+      "external_data": "jwilber paletas/colores; imágenes con permisos",
+      "evidence_status": "EXTERNAL_JOIN_REQUIRED"
+    },
+    {
+      "id": "Q09",
+      "axis": "CULTURA_HISTORIA",
+      "headline": "¿El mundo cambiaba mientras los paisajes permanecían iguales?",
+      "category": "contexto histórico",
+      "first_order": {
+        "question": "¿Hay cambios descriptivos importantes en motivos entre periodos 1983–1994?",
+        "metric": "Descomposición temporal por temporadas asociadas a fechas de emisión verificadas"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si una ruptura coincide con un evento cultural, ¿aparece también en periodos vecinos o series comparables?",
+        "test": "Cortes alternativos y control por tendencias, no asumir causalidad",
+        "branches": [
+          {
+            "when": "Si aparece ruptura en serie de motivos con fecha comprobada",
+            "action": "Si una ruptura coincide con un evento cultural, ¿aparece también en periodos vecinos o series comparables?",
+            "check": "Cortes alternativos y control por tendencias, no asumir causalidad"
+          },
+          {
+            "when": "Si no existe ruptura o aparece en varios puntos de corte arbitrarios",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Cortes alternativos y control por tendencias, no asumir causalidad"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Cuántas coincidencias similares aparecerían al probar eventos falsos o cortar la serie al azar?",
+        "rival_explanation": "Múltiples pruebas, sesgo retrospectivo y elección arbitraria de evento",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Timeline con incidentes biográficos/culturales anotados con certeza y test de placebo",
+      "external_data": "Fechas reales y fuente histórica, comparación externa",
+      "evidence_status": "HYPOTHESIS_EXTERNAL_TIMELINE"
+    },
+    {
+      "id": "Q10",
+      "axis": "LEYENDA_Y_RECUERDO",
+      "headline": "¿Por qué recordamos los árboles, si el dato también cuenta otras historias?",
+      "category": "memoria colectiva",
+      "first_order": {
+        "question": "¿Qué proporción de episodios tienen y no tienen árboles, y qué otros motivos aparecen?",
+        "metric": "Prevalencia de familias, combinaciones frecuentes, contraejemplos"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "¿Son los árboles especialmente dominantes en portadas, títulos, imágenes promocionales y frases repetidas?",
+        "test": "Codificación externa de recursos promocionales de distintas épocas, evitando selección sesgada",
+        "branches": [
+          {
+            "when": "Si árboles predominan en datos y también promociones",
+            "action": "¿Son los árboles especialmente dominantes en portadas, títulos, imágenes promocionales y frases repetidas?",
+            "check": "Codificación externa de recursos promocionales de distintas épocas, evitando selección sesgada"
+          },
+          {
+            "when": "Si hay distancia entre motivos observados y su representación pública",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Codificación externa de recursos promocionales de distintas épocas, evitando selección sesgada"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Coincide lo que la audiencia recuerda con lo que la serie mostró? ¿Qué método de encuesta sería válido?",
+        "rival_explanation": "Fama popular y memoria no están medidas en el dataset",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Contraste entre etiquetas observadas y, si se obtiene, muestra de material promocional con base",
+      "external_data": "Fuentes promocionales y encuestas/estudios válidos",
+      "evidence_status": "EXTERNAL_RECEPTION_DATA_NEEDED"
+    },
+    {
+      "id": "Q11",
+      "axis": "COMPLEJIDAD_Y_ESTILO",
+      "headline": "¿Un cuadro más cargado es necesariamente más complejo?",
+      "category": "medición y visualización",
+      "first_order": {
+        "question": "¿Cuántas etiquetas de motivos aparecen por episodio y cómo evoluciona su distribución?",
+        "metric": "Número de etiquetas activas, familia agregada, densidad de motivos"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "¿Episodios con el mismo conteo pueden ser visualmente muy diferentes?",
+        "test": "Parejas emparejadas por número de etiquetas y examen de paletas/composición",
+        "branches": [
+          {
+            "when": "Si el número de etiquetas muestra aumento/descenso temporal",
+            "action": "¿Episodios con el mismo conteo pueden ser visualmente muy diferentes?",
+            "check": "Parejas emparejadas por número de etiquetas y examen de paletas/composición"
+          },
+          {
+            "when": "Si la distribución de conteos es estable",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Parejas emparejadas por número de etiquetas y examen de paletas/composición"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Qué dimensiones independientes de complejidad necesitaríamos para sostener una narrativa sobre evolución artística?",
+        "rival_explanation": "Más etiquetas no significa más destreza, esfuerzo, detalle ni mérito",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Scatter/densidad por episodio y panel de dos casos con mismo conteo, imágenes si se autoriza",
+      "external_data": "Contenido visual/paletas con derechos e indicadores validados",
+      "evidence_status": "TESTABLE_PROXY_EXTERNAL_FOR_STYLE"
+    },
+    {
+      "id": "Q12",
+      "axis": "FALSABILIDAD",
+      "headline": "¿Los ‘happy accidents’ eran errores o parte de un método?",
+      "category": "contraste de mito",
+      "first_order": {
+        "question": "¿El CSV contiene alguna medida de error, accidente o improvisación?",
+        "metric": "Inventario de variables y fuentes posibles de transcripciones/episodios"
+      },
+      "second_order": {
+        "trigger": "Seleccionar una rama después de ejecutar orden 1; no adelantar conclusión.",
+        "question": "Si no existe, ¿qué protocolo observable permitiría codificar cambios no planeados sin leer mentes?",
+        "test": "Muestra anotada de videos con definición operacional de desviación y consentimiento/uso permitido",
+        "branches": [
+          {
+            "when": "Si no existe columna sobre improvisaciones o accidentes",
+            "action": "Si no existe, ¿qué protocolo observable permitiría codificar cambios no planeados sin leer mentes?",
+            "check": "Muestra anotada de videos con definición operacional de desviación y consentimiento/uso permitido"
+          },
+          {
+            "when": "Si alguna fuente externa ofrece anotación observacional sobre errores",
+            "action": "Investigar resultado nulo, sensibilidad a grano/definición, límites del proxy y razones de una intuición inicial incorrecta; no fabricar diferencia",
+            "check": "Muestra anotada de videos con definición operacional de desviación y consentimiento/uso permitido"
+          }
+        ]
+      },
+      "third_order": {
+        "depends_on": "Pregunta activada del orden 2 y sus resultados verificados",
+        "question": "¿Los resultados diferirían entre codificadores independientes y entre guion, edición y pintura terminada?",
+        "rival_explanation": "El slogan cultural no basta para atribuir intención psicológica",
+        "if_not_testable": "Registrar incertidumbre y datos faltantes como hallazgo metodológico, sin atribución causal"
+      },
+      "visual": "Tabla de lo que miden las fuentes y árbol de hipótesis en vez de cifras inventadas",
+      "external_data": "Videos/transcripciones derechos/permisos y protocolo cualitativo",
+      "evidence_status": "BLOCKED_WITHOUT_NEW_SOURCE"
+    }
+  ],
+  "legacy_compatibility": "questions is an archived 12-tree planning snapshot retained for backward compatibility; questions_master.json is the only canonical editorial question bank."
 }
