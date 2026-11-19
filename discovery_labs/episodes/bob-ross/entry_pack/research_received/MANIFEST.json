@@ -1,0 +1,130 @@
+{
+  "archive_id": "bob-ross-dr01-dr03-2026-11-19",
+  "received_at": "2026-11-19",
+  "source": "three user-provided reports in conversation",
+  "archive_type": "structured_nonverbatim_reconstruction",
+  "original_full_text": "retained in the three conversation messages, not copied byte-for-byte to GitHub",
+  "scientific_review": "NOT_REVIEWED",
+  "execution": "NO_NEW_DEEP_RESEARCH_OR_MODELING",
+  "scope": "discovery_labs/episodes/bob-ross/entry_pack/research_received/",
+  "status": "READY_FOR_REVIEW",
+  "expected": {
+    "reports": 3,
+    "DR01_timeline_events": 22,
+    "DR02_sources": 11,
+    "DR03_myth_claims": 13,
+    "DR03_antecedents": 8,
+    "DR03_hypotheses": 10,
+    "DR03_rival_explanations": 5
+  },
+  "checks": {
+    "all_files": true,
+    "all_counts": true,
+    "unique_ids": true,
+    "ids_order": true,
+    "only_bob_ross": true,
+    "no_empty": true
+  },
+  "files": [
+    {
+      "name": "DR-01_BIOGRAFIA_HISTORIA.md",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-01_BIOGRAFIA_HISTORIA.md",
+      "kind": "report",
+      "expected_records": 1,
+      "observed_records": 1,
+      "blob_sha": "60eaf163b99be4ef819fa0561ea12f0396013527",
+      "characters": 16255,
+      "ok": true
+    },
+    {
+      "name": "DR-01_timeline_events.csv",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-01_timeline_events.csv",
+      "kind": "csv_events",
+      "expected_records": 22,
+      "observed_records": 22,
+      "blob_sha": "db1bea36ec268e27bc4a49cbd9a5cd87093db81e",
+      "characters": 4934,
+      "ok": true
+    },
+    {
+      "name": "DR-02_ARQUEOLOGIA_MULTIFUENTE.md",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-02_ARQUEOLOGIA_MULTIFUENTE.md",
+      "kind": "report",
+      "expected_records": 1,
+      "observed_records": 1,
+      "blob_sha": "8ca32bbc988c5abf4dac9841321013593f8786a7",
+      "characters": 15845,
+      "ok": true
+    },
+    {
+      "name": "DR-02_source_inventory.csv",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-02_source_inventory.csv",
+      "kind": "csv_sources",
+      "expected_records": 11,
+      "observed_records": 11,
+      "blob_sha": "a5785292b9623ba1848f23a8b368aac293992f97",
+      "characters": 2781,
+      "ok": true
+    },
+    {
+      "name": "DR-03_MITOS_ANTECEDENTES_HIPOTESIS.md",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-03_MITOS_ANTECEDENTES_HIPOTESIS.md",
+      "kind": "report",
+      "expected_records": 1,
+      "observed_records": 1,
+      "blob_sha": "d357b2df9c116c3e6e25b5ce7b2d48c9dc9f263f",
+      "characters": 11891,
+      "ok": true
+    },
+    {
+      "name": "DR-03_antecedents.csv",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-03_antecedents.csv",
+      "kind": "csv_antecedents",
+      "expected_records": 8,
+      "observed_records": 8,
+      "blob_sha": "e7b0b841f4070e0cf867d1f21c0d6692b454ed91",
+      "characters": 3466,
+      "ok": true
+    },
+    {
+      "name": "DR-03_myths_claims.csv",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-03_myths_claims.csv",
+      "kind": "csv_myths",
+      "expected_records": 13,
+      "observed_records": 13,
+      "blob_sha": "d0dd9ec54d66e99ddbfbff2ed13257f9a0b83d38",
+      "characters": 3989,
+      "ok": true
+    },
+    {
+      "name": "DR-03_questions_to_test.json",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-03_questions_to_test.json",
+      "kind": "json_hypotheses",
+      "expected_records": 10,
+      "observed_records": 10,
+      "blob_sha": "51beac5be8c170cf385ae673908fe027fbd77a1b",
+      "characters": 18214,
+      "ok": true
+    },
+    {
+      "name": "DR-03_rival_explanations.md",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/DR-03_rival_explanations.md",
+      "kind": "rivals",
+      "expected_records": 5,
+      "observed_records": 5,
+      "blob_sha": "e311ffdc926c6f850a32a3880ef9b9e92d7622ea",
+      "characters": 4041,
+      "ok": true
+    },
+    {
+      "name": "README.md",
+      "path": "discovery_labs/episodes/bob-ross/entry_pack/research_received/README.md",
+      "kind": "index",
+      "expected_records": 1,
+      "observed_records": 1,
+      "blob_sha": "3b2338ca547dae3b44fd5b2f359a1f5f32752454",
+      "characters": 4958,
+      "ok": true
+    }
+  ]
+}
