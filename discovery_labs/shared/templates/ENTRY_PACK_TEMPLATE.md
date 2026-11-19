@@ -8,6 +8,16 @@
 - Definición clara de unidad de observación, cobertura y periodo.
 - Personas/organizaciones y derechos de imagen: no inferir hechos personales sensibles a partir de datos indirectos.
 
+## 0 bis. Misión y triada obligatoria
+
+**Objetivo de cada dataset:** descubrir insights increíbles por su **originalidad, evidencia e implicaciones**, no por su espectacularidad retórica. Registrar tanto sorpresas respaldadas como refutaciones, hallazgos nulos, sesgos y fronteras del dato.
+
+Toda investigación, toda síntesis de resultado y el HTML deben responder por separado:
+
+- **CÓMO:** datos, grano, pasos, modelo, ejercicio estadístico, baseline, incertidumbre y reproducción.
+- **POR QUÉ:** relevancia de la pregunta, plausibilidad, hipótesis rivales y justificación del método; no inventar mecanismos.
+- **PARA QUÉ:** implicación científica, práctica o educativa y siguiente acción/experimento; si no hay utilidad demostrable, decirlo.
+
 ## 1. Carpeta mínima
 ```text
 episode_slug/
@@ -27,18 +37,19 @@ episode_slug/
   research_guide.html              # ÚNICA guía de Fase 1, tras investigar
 ```
 
-## 2. Los cinco Deep Research mínimos
-**DR-A Historia y dominio:** qué pasó antes/durante/después, contexto político/económico/cultural/biográfico relevante, fechas corroboradas, fuentes primarias y secundarias, sesgos de la literatura.
+## 2. Cinco frentes de Deep Research, ejecutados en etapas
 
-**DR-B Datos y accesos:** origen, cobertura, formatos, tamaño, licencias, perfiles, problemas de muestreo, frecuencia, cambios de esquema, joins, calidad y fechas de observación.
+**No lanzar cinco investigaciones exhaustivas en paralelo.** Los cinco frentes son herramientas, no una cuota; ejecutar únicamente lo que aporte evidencia a la siguiente decisión. Toda fuente lleva `claim_id`, URL, fecha, estado y pregunta relacionada.
 
-**DR-C Mitos y antecedentes:** afirmaciones documentadas, quién las dijo, contraejemplos, análisis similares, patrones aceptados o discutidos. No inventar una creencia.
+| Frente | Momento recomendado | Producto / decisión |
+|---|---|---|
+| **DR-A Historia y dominio** | **Temprano**, antes de interpretar O1 | Cronología de hechos relevantes, fuentes, incertidumbre y eventos externos |
+| **DR-B Datos y accesos** | **Temprano**, antes de medir O1 | Procedencia, cobertura, licencias, grano, calidad, joins y límites |
+| **DR-C Mitos y antecedentes** | **Temprano y focalizado**, antes de convertir intuiciones en hallazgos | Revisión de afirmaciones verificables, estudios previos, mecanismos y contraejemplos |
+| **DR-D Visualización especializada y derechos** | **Profundizar después de O1 y selección de insights** | Figuras que prueban/contradicen el resultado, auditoría de imágenes y accesibilidad; **triage de licencias al inicio** |
+| **DR-E Síntesis adversarial** | **Punto de control tras A/B/C + respuesta medida de O1**, y cierre tras D + O2/O3 | Activación justificada de O2, contradicciones, priorización y síntesis final |
 
-**DR-D Visualización, imágenes y derechos:** qué gráfica revelar, qué hallazgo sustenta, interacciones accesibles, fuentes que permitan imágenes o enlaces alternativos, QA.
-
-**DR-E Síntesis adversarial:** conciliar fuentes, disputas, lagunas, generar preguntas O1→O2→O3, diseñar modelo/estadística, filtrar factibilidad y priorizar arcos.
-
-Cada afirmación externa se almacena como registro trazable: `claim_id`, `text`, `source_url`, `primary_or_secondary`, `evidence_date`, `accessed_at`, `supports`, `contradicts`, `confidence`, `used_in_question_ids`.
+**Secuencia:** contexto temprano DR-A/B/C → HTML v0 con O1 y sin adelantar O2/O3 → ejecutar y responder O1 → DR-E provisional → activar O2 justificadas → ejecutar O2 → abrir O3 si procede → DR-D específico y DR-E final → QA + aprobación humana. Reordenar DR-D si una visualización o licencia es requisito temprano de factibilidad. La existencia de un prompt **no significa que su investigación esté ejecutada**.
 
 ## 3. Datos y muestra
 - `sample_raw.csv`: 10–20 registros verdaderos **no solo primeras filas**; cubrir distintos periodos/grupos, extremos, nulos y casos problemáticos cuando existan.
@@ -57,11 +68,24 @@ Cada afirmación externa se almacena como registro trazable: `claim_id`, `text`,
 ## 5. Prioridad de modelos
 Selección conforme a tarea, escala, tamaño y target. Preferir GLM, beta-binomial, modelos mixtos, clustering binario, detección de anomalías, Fisher, bootstrap y permutaciones cuando correspondan. Para casos distintos pueden aportar LSTM/transformers, riesgos colectivos, Optuna y RL **solo con serie suficiente, outcome/reward, splits y evaluación**. Consultar `discovery_labs/shared/model_catalog/MODEL_SET.md`; jamás inventar utilidades de un modelo.
 
+## 5 bis. Contrato del HTML inicial y sus actualizaciones
+
+El archivo `research_guide.html` debe ser **un documento científico vivo, bien estructurado y versionado**:
+
+1. **Párrafo de contexto general al principio** del contenido principal: historia o fenómeno, dataset, periodo, pregunta que importa, sin resultados ficticios.
+2. Misión de descubrimiento y triada **CÓMO / POR QUÉ / PARA QUÉ**.
+3. Fuente, unidad, cobertura, sesgos, licencias y preguntas no medibles.
+4. **Único bloque visible de O1** y sus métodos, hipótesis, denominadores y estados; O2/O3 planeadas solo en los contratos internos hasta verificar resultados.
+5. Evidencia y resultados con estados; hipótesis rivales y límites; utilidad real o pregunta abierta.
+6. Reproducibilidad, fuentes, bitácora de cambios por versión/commit y gate de aprobación.
+
+**Evolución comprobable:** registrar `version`, `question_id`, `parent_id`, `trigger`, `source_claim_ids`, `result_artifact`, `status` y fecha al publicar cada nueva pregunta. **O2** aparece únicamente tras O1 respondida y Deep Research temprano pertinente + síntesis provisional. **O3** aparece únicamente tras ejecutar O2 y evaluar hipótesis rivales. Un resultado nulo también puede abrir una nueva O2. Mantener intactos los IDs existentes y nunca sustituir una versión sin trazabilidad. La guía HTML V0 no equivale a una guía científica terminada ni autoriza video.
+
 ## 6. Gate de calidad del Paquete de Entrada
 - Inventario y hash correctos, contexto externo con conflictos señalados.
 - Muestra genuina con criterio de selección documentado.
 - Una sola sección editorial integrada de preguntas; no «2B».
-- 100% de preguntas con modelo, prueba estadística, razones, dónde, supuestos y estado; 100% con O1/O2/O3.
+- 100% de preguntas canónicas con un modelo y ejercicio estadístico planificados, CÓMO/POR QUÉ/PARA QUÉ, razones, dónde, supuestos y estado; 100% con O1 y diseños O2/O3 **condicionales internos**. El HTML inicial solo publica O1.
 - Cero inferencias sobre salud/personas/causalidad sin evidencia.
 - Visualizaciones con denominadores, derechos, fuente, incertidumbre y fallback.
 - Lotes y límites de 45 minutos incluidos; no vender una clase como completada antes del ensayo.
