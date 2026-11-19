@@ -2,8 +2,7 @@
 
 **Leer este archivo primero en una conversación nueva. Es autocontenido.**
 
-**ACTUALIZACIÓN DE ARQUITECTURA:** el motor compartido de todos los episodios está propuesto en [PR #11](https://github.com/jcval94/DataCollectionMov/pull/11), rama `feat/discovery-labs-shared-research-core`. Su skill y modelo son las fuentes canónicas propuestas: `discovery_labs/shared/skills/question-forge/SKILL.md` y `discovery_labs/shared/model_catalog/MODEL_SET.md`. Antes de que PR #11 se integre, usar copias locales de este paquete **solo como respaldo**. El validador de Bob Ross detecta ambos casos. Los detalles de factibilidad del episodio ahora viven en `entry_pack/MODEL_FIT_BOB_ROSS.md`. **Orden seguro:** PR #11 revisado e integrado primero; luego se eliminan duplicados del PR #10 tras actualizar referencias y pruebas. No prometer que shared ya está en main.
-
+**ARQUITECTURA INTEGRADA:** PR #11 (núcleo compartido) y PR #5 (episodio base) se fusionaron en `main` el 18 de noviembre de 2026. El PR #10 incorpora este Paquete de Entrada y su guía V3. La skill canónica está en `discovery_labs/shared/skills/question-forge/SKILL.md`, los 24 modelos en `discovery_labs/shared/model_catalog/MODEL_SET.md` y los validadores en `discovery_labs/shared/validators/`. No mantener copias de la skill, catálogo o plantillas por episodio. El documento `entry_pack/MODEL_FIT_BOB_ROSS.md` conserva solo criterios de Bob Ross. Revisar el estado de PR #10 antes de trabajar: la guía científica requiere aprobación humana, independientemente del merge de código.
 
 ## 1) Qué es y qué se quiere
 Proyecto educativo **AI Discovery Labs**, dentro del repositorio público [jcval94/DataCollectionMov](https://github.com/jcval94/DataCollectionMov). Se busca convertir 86 fuentes en investigaciones científicas memorables, reproducibles y aptas para clases de ~45 minutos, con una futura adaptación audiovisual.
@@ -28,10 +27,10 @@ No crear video, intro, Remotion, voz o storyboard antes de aprobación.
 
 1. **`entry_pack/START_HERE_NEW_CHAT.md`** — este handoff, decisiones y acciones.
 2. **`entry_pack/README.md`** — índice del Paquete de Entrada y estados.
-3. **`entry_pack/skills/question-forge/SKILL.md`** — **habilidad GENERALIZABLE V2**. Obligatoria cuando se crean o revisan preguntas.
-4. **`entry_pack/EPISODE_TEMPLATE.md`** — plantilla para los otros 85 datasets y futuros episodios.
+3. **`discovery_labs/shared/skills/question-forge/SKILL.md`** — **habilidad GENERALIZABLE V2**. Obligatoria cuando se crean o revisan preguntas.
+4. **`discovery_labs/shared/templates/ENTRY_PACK_TEMPLATE.md`** — plantilla para los otros 85 datasets y futuros episodios.
 5. **`entry_pack/QUESTIONS_MASTER.md`** — **único bloque editorial** de 14 investigaciones de Bob Ross. Preguntas O1/O2/O3, modelo y ejercicio estadístico por cada una. Versión máquina: `questions_master.json`.
-6. **`entry_pack/MODEL_SET.md`** — catálogo de **24 modelos/familias** con idoneidad, límites y pruebas estadísticas. NO entrenar en Fase 0.
+6. **`discovery_labs/shared/model_catalog/MODEL_SET.md`** — catálogo de **24 modelos/familias** con idoneidad, límites y pruebas estadísticas. NO entrenar en Fase 0.
 7. **`entry_pack/DEEP_RESEARCH_PROMPTS.md`** — DR-01…DR-04 con síntesis DR-05 (historia y salud, datos/cronología, mitos, visualización/derechos).
 8. **`entry_pack/CONTEXT_CLAIMS.md`** — registro externo y cronología **DISPUTADA** del diagnóstico de linfoma.
 9. **`entry_pack/RESEARCH_PLAN.md`** — secuencia de investigación de Fase 1, metodología y gates.
@@ -75,7 +74,7 @@ node discovery_labs/episodes/bob-ross/qa_static.cjs # opcional si Node
 
 ## 7) Prompt literal para copiar en conversación nueva
 
-> Continúa AI Discovery Labs / Bob Ross desde el Paquete de Entrada de la rama `feat/bob-ross-entry-pack-question-forge` del repositorio `jcval94/DataCollectionMov` (PR #10 sobre PR #5). Antes de ejecutar nada, lee `discovery_labs/episodes/bob-ross/entry_pack/START_HERE_NEW_CHAT.md`, `README.md`, `skills/question-forge/SKILL.md`, `QUESTIONS_MASTER.md`, `MODEL_SET.md`, `DEEP_RESEARCH_PROMPTS.md`, `CONTEXT_CLAIMS.md`, `RESEARCH_PLAN.md`, `VISUAL_DESIGN.md` y las muestras/metadatos. La regla editorial es una única lista integrada de preguntas profundas, con O1/O2/O3 y al menos un modelo + un ejercicio estadístico diseñado por pregunta. No entrenes modelos ni hagas video si estoy pidiendo solo paquete/planeación. Incluye enfermedad como hipótesis histórica con fechas disputadas, sin causalidad inventada. Trabaja únicamente en la carpeta del episodio, preserva cambios concurrentes y reporta pruebas y pendientes. Las Fases 2 y 3 requieren mis aprobaciones explícitas.
+> Continúa AI Discovery Labs / Bob Ross desde el Paquete de Entrada de la rama `feat/bob-ross-entry-pack-question-forge` del repositorio `jcval94/DataCollectionMov` (PR #10 integrado sobre `main` (PRs #5 y #11 previamente fusionados)). Antes de ejecutar nada, lee `discovery_labs/episodes/bob-ross/entry_pack/START_HERE_NEW_CHAT.md`, `README.md`, `discovery_labs/shared/skills/question-forge/SKILL.md`, `QUESTIONS_MASTER.md`, `discovery_labs/shared/model_catalog/MODEL_SET.md`, `DEEP_RESEARCH_PROMPTS.md`, `CONTEXT_CLAIMS.md`, `RESEARCH_PLAN.md`, `VISUAL_DESIGN.md` y las muestras/metadatos. La regla editorial es una única lista integrada de preguntas profundas, con O1/O2/O3 y al menos un modelo + un ejercicio estadístico diseñado por pregunta. No entrenes modelos ni hagas video si estoy pidiendo solo paquete/planeación. Incluye enfermedad como hipótesis histórica con fechas disputadas, sin causalidad inventada. Trabaja únicamente en la carpeta del episodio, preserva cambios concurrentes y reporta pruebas y pendientes. Las Fases 2 y 3 requieren mis aprobaciones explícitas.
 
 ## 8) Definición de terminado de esta etapa
 Paquete autocontenido, skill transferible, 14 preguntas integradas, modelo + estadística por pregunta, 24 modelos catalogados, fuente y contradicciones registradas, plan visual potente, metadatos/muestra genuinos, archivos accesibles y PR listo para revisión. **NO afirmar que Deep Research completo, modelos o guía definitiva ya se ejecutaron.**
