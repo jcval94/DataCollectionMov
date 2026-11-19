@@ -1,5 +1,8 @@
 # AI Discovery Labs · Episodio 001 — Los árboles que faltaban
 
+> **Paquete editorial canónico de Bob Ross:** [`entry_pack/START_HERE_NEW_CHAT.md`](entry_pack/START_HERE_NEW_CHAT.md) → [`entry_pack/QUESTIONS_MASTER.md`](entry_pack/QUESTIONS_MASTER.md) y [`entry_pack/questions_master.json`](entry_pack/questions_master.json). Sus **14 investigaciones** sustituyen las doce candidatas antiguas y subordinan las seis preguntas existentes de `episode.html`/`questions.json` a la interfaz heredada. Las carpetas `intake/` y los documentos `QUESTION_BANK.md` son antecedentes, no otro banco. Fase 0 en revisión; guía HTML V3 sin aprobación; audiovisual/video bloqueados.
+
+
 > **Un dataset. Seis preguntas. Una investigación elegida por la clase.**
 >
 > **Estado:** prototipo técnico aislado y reproducible offline, **no** clase aprobada.
