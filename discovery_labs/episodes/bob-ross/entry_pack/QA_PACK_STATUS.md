@@ -1,5 +1,14 @@
 # QA del Paquete de Entrada y Question Forge v2
 
+## Integración y ejecución verificadas · 18 nov 2026
+
+- Los PR [#11](https://github.com/jcval94/DataCollectionMov/pull/11), [#5](https://github.com/jcval94/DataCollectionMov/pull/5) y [#10](https://github.com/jcval94/DataCollectionMov/pull/10) quedaron **MERGED** en `main`.
+- El workflow [AI Discovery Labs QA · run #44427475768](https://github.com/jcval94/DataCollectionMov/actions/runs/44427475768) concluyó **SUCCESS**, incluidos compilación de Python, unit tests compartidos, unit tests Bob Ross, `run.py --check`, contrato general y validador particular de 14 investigaciones.
+- El workflow general del repositorio también concluyó **SUCCESS** sobre el mismo PR de cierre.
+- **No se entrenaron modelos de investigación**, no se ejecutaron los Deep Research, no se aprobaron conclusiones clínicas, guion audiovisual ni video.
+- Pendiente de forma deliberada: QA de navegador real de HTML V3, derechos de imágenes, segundo episodio real y aprobación humana de la guía. Estos no son requisitos para declarar completada la **integración de código**.
+
+
 **Fecha:** 2026-11-18. **Contexto:** inspección estática contra la rama `feat/bob-ross-entry-pack-question-forge` y archivos recuperados desde GitHub. **No se entrenó ningún modelo ni se ejecutó Deep Research completo.**
 
 ## Comprobaciones verificadas en la rama
@@ -21,11 +30,11 @@
 
 ## Qué NO está validado todavía
 
-- Ejecución en el entorno local de `python entry_pack/validate_pack.py`.
+- La ejecución **local independiente** no se realizó; sí pasó el validador correspondiente en GitHub Actions.
 - Render real en Chromium y revisión responsive, teclado/foco, contraste y gráficos de la guía V3 (la versión V2 anterior tuvo revisiones de navegador, pero **no** cuenta como QA de V3).
 - Investigación histórica en profundidad, especialmente fechas de diagnóstico/grabación/emisión.
 - Derechos de cada imagen original, licencias para miniaturas, políticas de hotlinking.
-- Entrenamiento, contrastes estadísticos nuevos, ajuste con Optuna, análisis fuera de muestra o causalidad.
+- Entrenamiento, contrastes estadísticos nuevos, ajuste con Optuna, análisis fuera de muestra o causalidad (fuera del alcance de CI/Paquete de Entrada).
 - Resultados de preguntas O2/O3, ya que dependen de O1 y pruebas adversariales.
 - Ensayo pedagógico cronometrado de 45 minutos.
 
@@ -55,16 +64,16 @@ Se detectó que el esquema original `questions_master.json` validaba la presenci
 
 **Advertencia de sincronización:** `research_guide.html` V3 es una instantánea estática de las tarjetas, NO una plantilla dinámica que lee `questions_master.json`. La correspondencia semántica completa y la automatización de su regeneración siguen pendientes de la Fase 1 autorizada. Esta reparación no modifica la guía HTML, ni inicia modelos ni investigaciones audiovisuales.
 
-**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. Los PR #5, #10 y #11 ya están fusionados en `main`. Esta sección registraba un estado transitorio; no implica que la guía científica esté aprobada.
+**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La divergencia entre ramas se resolvió y PR #10 fue fusionado a `main` tras preservar contratos legacy y comprobar que el diff quedaba exclusivamente en Bob Ross. La ejecución automática de tests y QA visual se registra por separado.
 
 ## Integración compartida
-PR #11 (núcleo) y PR #5 (base Bob Ross) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.
+PR #11 (núcleo), PR #5 (base Bob Ross) y PR #10 (Paquete de Entrada) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.
 
 
-## QA posterior a la integración — alcance Bob Ross
+## PR #12 — conciliación de QA posterior al merge
 
-- El banco editorial canónico sigue siendo `QUESTIONS_MASTER.md` + `questions_master.json` con **14 investigaciones**; `QUESTION_BANK.md` mantiene doce antecedentes solo como archivo histórico.
-- `tests/test_entry_pack.py` se migró para verificar los 14 IDs, disparadores O2/O3 explícitamente condicionales, planes con baseline/modelo/estadística, 24 familias de modelos **en el catálogo compartido**, integridad de muestras y la única sección HTML de preguntas.
-- Se recalculó el SHA-256 sobre el contenido original obtenido de GitHub: `42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf` (403×69; 66,315 bytes), y la muestra cruda de 13 filas coincide con observaciones reales. Esto corresponde a validación estructural vía JavaScript, **no** ejecución Python.
-- Pendiente en un checkout real: `python discovery_labs/episodes/bob-ross/entry_pack/validate_pack.py`, `python -m unittest discover -s discovery_labs/episodes/bob-ross/tests -v`, `node discovery_labs/episodes/bob-ross/intake/qa_intake.cjs` y QA visual en navegador de V3.
-- Estado: **Fase 0 lista para revisión; Fase 1 HTML no aprobada; Fases 2/3 bloqueadas**. No se han entrenado modelos, ejecutado análisis estadístico ni creado contenido audiovisual.
+- Se preserva el registro de CI exitoso anterior y la información más reciente de `main`; ese resultado **no equivale** a que ya se haya ejecutado la suite del PR #12.
+- `tests/test_entry_pack.py` comprueba el banco canónico de **14 investigaciones**, sus disparadores condicionales O2/O3 y la distinción entre modelo y ejercicio estadístico.
+- Los recursos compartidos se resuelven en `discovery_labs/shared/model_catalog/MODEL_SET.md` y `discovery_labs/shared/skills/question-forge/SKILL.md`, evitando rutas locales eliminadas.
+- `entry_pack/QUESTION_BANK.md` permanece como antecedente histórico; `questions_master.json` es el único banco científico vigente.
+- La guía HTML científica continúa pendiente de aprobación humana. No se autoriza guion ni video.

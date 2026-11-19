@@ -1,0 +1,47 @@
+name: AI Discovery Labs — shared and Bob Ross contracts
+
+on:
+  pull_request:
+    paths:
+      - 'discovery_labs/shared/**'
+      - 'discovery_labs/episodes/bob-ross/**'
+      - '.github/workflows/ai-discovery-labs-qa.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'discovery_labs/shared/**'
+      - 'discovery_labs/episodes/bob-ross/**'
+      - '.github/workflows/ai-discovery-labs-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-discovery-labs-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  research-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Python syntax (no data processing)
+        run: python -m compileall -q discovery_labs/shared discovery_labs/episodes/bob-ross
+      - name: Reusable validator unit tests (synthetic episodes)
+        run: python -m unittest discover -s discovery_labs/shared/validators/tests -v
+      - name: Bob Ross data and legacy compatibility tests
+        run: python -m unittest discover -s discovery_labs/episodes/bob-ross/tests -v
+      - name: Frozen episode data integrity
+        run: python discovery_labs/episodes/bob-ross/run.py --check
+      - name: Shared canonical research-question contract
+        run: >-
+          python discovery_labs/shared/validators/validate_entry_pack.py
+          --entry-pack discovery_labs/episodes/bob-ross/entry_pack
+          --guide discovery_labs/episodes/bob-ross/research_guide.html
+      - name: Bob Ross specific 14-question quality gate
+        run: python discovery_labs/episodes/bob-ross/entry_pack/validate_pack.py

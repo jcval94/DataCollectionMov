@@ -13,6 +13,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK = ROOT / "entry_pack"
+SHARED = ROOT.parents[1] / "shared"
+MODEL_CATALOG = SHARED / "model_catalog" / "MODEL_SET.md"
+QUESTION_FORGE = SHARED / "skills" / "question-forge" / "SKILL.md"
 DATA = ROOT / "data" / "elements-by-episode.csv"
 SHA256 = "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf"
 
@@ -69,7 +72,7 @@ class EntryPackTests(unittest.TestCase):
         )
         models = set(re.findall(
             r"^[|] *(M[0-9]{2}) *[|]",
-            (PACK / "MODEL_SET.md").read_text(encoding="utf-8"),
+            MODEL_CATALOG.read_text(encoding="utf-8"),
             re.M,
         ))
         self.assertEqual(len(models), 24)
@@ -106,7 +109,8 @@ class EntryPackTests(unittest.TestCase):
         self.assertTrue((PACK / "QUESTION_BANK.md").exists())
         self.assertTrue((ROOT / "intake" / "qa_intake.cjs").exists())
         self.assertTrue((PACK / "skills" / "research-question-architect" / "SKILL.md").exists())
-        self.assertTrue((PACK / "skills" / "question-forge" / "SKILL.md").exists())
+        self.assertTrue(QUESTION_FORGE.exists())
+        self.assertTrue((SHARED / "validators" / "validate_entry_pack.py").exists())
 
 
 if __name__ == "__main__":
