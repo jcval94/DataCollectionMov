@@ -55,7 +55,17 @@ Se detectó que el esquema original `questions_master.json` validaba la presenci
 
 **Advertencia de sincronización:** `research_guide.html` V3 es una instantánea estática de las tarjetas, NO una plantilla dinámica que lee `questions_master.json`. La correspondencia semántica completa y la automatización de su regeneración siguen pendientes de la Fase 1 autorizada. Esta reparación no modifica la guía HTML, ni inicia modelos ni investigaciones audiovisuales.
 
-**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La divergencia del PR #10 con su rama base (#5) permanece pendiente de conciliación segura; no fusionar automáticamente.
+**Pruebas de este cambio:** comprobaciones de estructura del contenido y coincidencia de 14 IDs antes del commit. Pendiente ejecutar el script Python en entorno canónico, tests del episodio y navegador real. La rama de integración fue reconstruida sobre `main` después de fusionarse los PR #5 y #11; el PR #10 sigue en revisión. No fusionar el PR ni aprobar la guía sin QA Python/visual y aprobación humana.
 
 ## Integración compartida
 PR #11 (núcleo) y PR #5 (base Bob Ross) integrados en `main`. La skill, catálogo y plantilla viven solamente en `discovery_labs/shared/`. El wrapper `entry_pack/validate_pack.py` delega al validador compartido y añade invariantes de Bob Ross. La fusión de PR #10 **no autoriza** aprobar la Guía Científica, el guion o el video.
+
+
+## Verificación de integración sobre main (18 noviembre 2026)
+
+- **Base:** `main` con PR #5 y PR #11 ya integrados; los archivos editados en la rama candidata permanecen exclusivamente bajo `discovery_labs/episodes/bob-ross/`.
+- **Banco canónico:** 14 investigaciones O1→O2→O3 con condiciones y contrato modelo + estadística; 24 familias en el catálogo compartido.
+- **Dato primario:** 403×69, 66,315 bytes, SHA-256 `42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf` recalculado con una verificación estructural de JavaScript sobre contenido recuperado de GitHub; muestra genuina de 13 filas.
+- **Migración de test:** `tests/test_entry_pack.py` utiliza las 14 preguntas canónicas y no las 12 antiguas. `entry_pack/QUESTION_BANK.md` está señalado como histórico.
+- **Pendientes explícitos:** ejecutar en un checkout de `main` + PR #10 el validador Python compartido, toda la suite del episodio, `intake/qa_intake.cjs`, la revisión de navegador/responsive y el Deep Research. No se han entrenado modelos ni ejecutado contrastes nuevos.
+- **Gobernanza:** Fase 0 revisable; guía científica V3 sin aprobación; fases 2 y 3 bloqueadas.
