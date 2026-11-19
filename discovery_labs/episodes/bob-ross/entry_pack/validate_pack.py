@@ -1,99 +1,72 @@
 #!/usr/bin/env python3
-"""Validate the portable Question Forge entry pack, with no model execution.
+"""Validate Bob Ross against the canonical shared Question Forge contract.
 
+No model fitting, statistical tests, network requests, or data transformations.
 Usage: python discovery_labs/episodes/bob-ross/entry_pack/validate_pack.py
-Reads the shared catalog/skill if available, otherwise uses legacy local snapshots.
-No network, pip or generated outputs.
 """
-import csv
+from __future__ import annotations
+
+import importlib.util
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 EPISODE = ROOT.parent
 SHARED = ROOT.parents[2] / "shared"
-SHARED_CATALOG = SHARED / "model_catalog" / "MODEL_SET.md"
-SHARED_SKILL = SHARED / "skills" / "question-forge" / "SKILL.md"
-REQUIRED = [
-    "START_HERE_NEW_CHAT.md", "README.md", "EPISODE_TEMPLATE.md",
-    "skills/question-forge/SKILL.md", "QUESTIONS_MASTER.md",
-    "questions_master.json", "MODEL_SET.md", "DEEP_RESEARCH_PROMPTS.md",
-    "CONTEXT_CLAIMS.md", "RESEARCH_PLAN.md", "VISUAL_DESIGN.md",
-    "PROMPT_FASE1_V2.md", "metadata.json", "sample_raw.csv", "sample_features.csv",
-]
-def main():
-    for name in REQUIRED:
-        assert (ROOT / name).is_file(), f"Missing entry file: {name}"
+VALIDATOR = SHARED / "validators" / "validate_entry_pack.py"
+CATALOG = SHARED / "model_catalog" / "MODEL_SET.md"
+SKILL = SHARED / "skills" / "question-forge" / "SKILL.md"
 
-    bank = json.loads((ROOT / "questions_master.json").read_text(encoding="utf-8"))
-    questions = bank["questions"]
-    ids = [q["id"] for q in questions]
-    assert len(questions) >= 12 and len(set(ids)) == len(ids)
-    assert ids[0] == "BR-01" and ids[-1] == "BR-14"
-    assert all(re.fullmatch(r"BR-\d{2}", qid) for qid in ids)
 
-    text = (ROOT / "QUESTIONS_MASTER.md").read_text(encoding="utf-8")
-    catalog_path = SHARED_CATALOG if SHARED_CATALOG.is_file() else ROOT / "MODEL_SET.md"
-    model_text = catalog_path.read_text(encoding="utf-8")
-    models = set(re.findall(r"^\|\s*(M\d{2})\s*\|", model_text, re.M))
-    assert len(models) >= 20, "Model catalog unexpectedly small"
+def main() -> int:
+    if not (VALIDATOR.exists() and CATALOG.exists() and SKILL.exists()):
+        print("ERROR: shared core missing; integrate PR #11 before Bob Ross.", file=sys.stderr)
+        return 2
+    spec = importlib.util.spec_from_file_location("shared_entry_validation", VALIDATOR)
+    module = importlib.util.module_from_spec(spec)
+    assert spec and spec.loader
+    spec.loader.exec_module(module)
+    report, issues = module.validate(ROOT, CATALOG, EPISODE / "research_guide.html")
+    questions = json.loads((ROOT / "questions_master.json").read_text(encoding="utf-8"))["questions"]
+    qids = [q["id"] for q in questions]
+    if len(questions) != 14 or len(set(qids)) != 14:
+        issues.append("BOB_ROSS_EXPECTED_14_UNIQUE_QUESTIONS")
+    if "BR-01" not in qids:
+        issues.append("BOB_ROSS_MISSING_BIOGRAPHICAL_QUESTION")
     for q in questions:
-        for attr in ("title", "root", "o1", "o2", "o3", "model",
-                     "model_name", "model_why", "model_where", "stat",
-                     "data", "visual", "note", "status"):
-            assert isinstance(q.get(attr), str) and q[attr].strip(), f"{q['id']} lacks {attr}"
-        for attr in ("o2_trigger", "o3_trigger", "rival_hypothesis", "model_baseline",
-                     "model_validation", "stat_why", "stat_where"):
-            assert isinstance(q.get(attr), str) and len(q[attr].strip()) > 15, f"{q['id']} lacks methodological field {attr}"
-        assert q["design_status"] == "PLAN_ONLY", f"{q['id']} must remain unexecuted"
-        assert q["o2_trigger"].startswith("CONDICIONAL:") and q["o3_trigger"].startswith("CONDICIONAL:"), f"{q['id']} lacks explicit conditional activation"
-        estimand = q.get("estimand", {})
-        for attr in ("grain", "population", "measure", "denominator", "time_basis"):
-            assert isinstance(estimand.get(attr), str) and estimand[attr].strip(), f"{q['id']} lacks estimand.{attr}"
-        assert q["model_baseline"] != q["stat_why"]
-        assert q["model"] in models, f"{q['id']} references missing model"
-        assert f"### {q['id']}" in text, f"Question missing from canonical markdown: {q['id']}"
-    assert text.count("### BR-") == len(questions)
-    assert text.count("**Contrato metodológico adicional (sin ejecutar):**") == len(questions)
-    assert "LSTM" in model_text and "Optuna" in model_text and "refuerzo" in model_text.lower()
-
-    metadata = json.loads((ROOT / "metadata.json").read_text(encoding="utf-8"))
-    assert metadata["rows"] == 403 and metadata["columns"] == 69
-    with (ROOT / "sample_raw.csv").open(newline="", encoding="utf-8") as f:
-        raw = list(csv.DictReader(f))
-    with (ROOT / "sample_features.csv").open(newline="", encoding="utf-8") as f:
-        feat = list(csv.DictReader(f))
-    assert len(raw) == len(feat) == 13
-    assert set(x["EPISODE"] for x in raw) == set(x["EPISODE"] for x in feat)
-    assert len(raw[0]) == 69 and len(feat[0]) == 16
-    assert any(int(x["GUEST"]) for x in raw)
-
-    skill_path = SHARED_SKILL if SHARED_SKILL.is_file() else ROOT / "skills/question-forge/SKILL.md"
-    skill = skill_path.read_text(encoding="utf-8")
-    assert "version: 2.0.0" in skill or "version: 2.1.0" in skill
-    assert "único bloque" in skill.lower() or "un único bloque" in skill.lower()
-    assert "ejercicio estadístico" in skill
-    assert "NO" in (ROOT / "CONTEXT_CLAIMS.md").read_text(encoding="utf-8")
+        qid = str(q.get("id", "?"))
+        if not re.fullmatch(r"BR-\d{2}", qid):
+            issues.append(qid + ":INVALID_ID")
+        if q.get("design_status") != "PLAN_ONLY":
+            issues.append(qid + ":NOT_PLANNING_ONLY")
+        for name in ("o2_trigger", "o3_trigger"):
+            if not str(q.get(name, "")).startswith("CONDICIONAL:"):
+                issues.append(qid + ":MISSING_CONDITIONAL_" + name)
+        for name in ("rival_hypothesis", "model_baseline", "model_validation", "stat_why", "stat_where"):
+            if len(str(q.get(name, "")).strip()) < 16:
+                issues.append(qid + ":MISSING_" + name)
+        estimand = q.get("estimand") or {}
+        if not all(str(estimand.get(k, "")).strip() for k in ("grain", "population", "measure", "denominator", "time_basis")):
+            issues.append(qid + ":INCOMPLETE_ESTIMAND")
     guide = (EPISODE / "research_guide.html").read_text(encoding="utf-8")
-    assert guide.count('id="preguntas"') == 1
-    assert 'id="investigaciones"' not in guide
-    assert "02B /" not in guide
-    assert all(f'id="{qid.lower()}"' in guide for qid in ids)
-    assert guide.count('class="story-arc"') == len(questions)
-    assert "linfoma" in guide.lower()
-    assert "modelo propuesto" in guide.lower()
-    assert "estadístico" in guide.lower()
-    assert "PENDIENTE DE APROBACIÓN" in guide
-    print(json.dumps({
-        "status": "PASS", "questions": len(questions), "models": len(models),
-        "catalog_source": str(catalog_path), "skill_source": str(skill_path),
-        "shared_core_active": SHARED_CATALOG.is_file() and SHARED_SKILL.is_file(),
-        "statistical_exercises": len(questions), "sample_raw_rows": len(raw),
-        "one_html_question_section": True,
-        "research_guide_status": "PENDING_HUMAN_APPROVAL",
-        "note": "Static package validation only; no models/trials trained or external sources verified in this run."
-    }, ensure_ascii=False, indent=2))
+    if guide.count('class="story-arc"') != 14 or "linfoma" not in guide.lower():
+        issues.append("GUIDE_MISSING_14_QUESTIONS_OR_HEALTH_CONTEXT")
+    if len(re.findall(r'\bid="preguntas"', guide)) != 1:
+        issues.append("GUIDE_DUPLICATED_QUESTION_BLOCKS")
+    report.update({
+        "status": "PASS" if not issues else "FAIL",
+        "issues": issues,
+        "canonical_skill": str(SKILL),
+        "canonical_catalog": str(CATALOG),
+        "questions_with_model_and_statistical_plan": len(questions),
+        "research_approval": "PENDING",
+        "models_executed": 0,
+    })
+    print(json.dumps(report, ensure_ascii=False, indent=2))
+    return 1 if issues else 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
