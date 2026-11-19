@@ -1,0 +1,428 @@
+{
+  "schema_version": "1.0-archival",
+  "project": "AI Discovery Labs - Bob Ross DR-03",
+  "source": "user-provided research, 2026-11-19",
+  "archival_note": "Normalización fiel de 10 diseños recibidos, no transcripción literal del JSON original; no nuevos resultados ni modelos ejecutados",
+  "scientific_status": "PLANNED_UNVERIFIED",
+  "caveats": {
+    "repo_inaccessible_in_original_research": true,
+    "images_require_rights_review": true,
+    "source_claim_statuses_unchecked": true,
+    "canonical_questions_unchanged": true
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "title": "Ruptura cromática Burnt Umber vs Dark Sienna",
+      "o1_question": "¿Existe un punto de cambio estructural en el uso por temporada de Burnt Umber, Dark Sienna y num_colors?",
+      "observable_metric": "Proporción estacional de episodios con ambos pigmentos y media de num_colors",
+      "grain": "Bob Ross, n=381; episodios válidos por temporada",
+      "denominator": "Bob Ross, n=381; episodios válidos por temporada",
+      "h0": "Estacionariedad temporal de las proporciones y media de color",
+      "h1": "Punto de cambio con caída Burnt Umber y ascenso Dark Sienna",
+      "rival_explanation": "R2: proveedores, estandarización de kits BRI",
+      "data_needed": [
+        "TidyTuesday 2023",
+        "invitado FiveThirtyEight"
+      ],
+      "candidate_model": "Regresión logística segmentada / punto de cambio binomial bayesiano",
+      "independent_statistical_exercise": "Fisher (S1–10 vs S11–31) y permutación de diferencias acumuladas",
+      "possible_figure": "Serie temporal dual con IC binomiales e hitos históricos",
+      "outcomes": {
+        "support": "Quiebre sincronizado >50 puntos porcentuales",
+        "refute": "Trayectoria estable o ruido",
+        "inconclusive": "Deriva lineal sin quiebre discreto"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Quiebre antes o después de lanzamiento BRI y reemplazo Magic White?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Cambió contraste lumínico tras el quiebre, descartando formulación/proveedores?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H2",
+      "title": "Diferencias compositivas tardías y eventos biográficos",
+      "o1_question": "¿Las temporadas 26–31 difieren de S10–25 en densidad, escenas oscuras/invernales o luminancia L*?",
+      "observable_metric": "Mediana de element_count; tasas BLACK_GESSO/NIGHT/WINTER; luminancia L*",
+      "grain": "Bob Ross n=381; comparación episodios S10–25 y S26–31",
+      "denominator": "Bob Ross n=381; comparación episodios S10–25 y S26–31",
+      "h0": "Distribuciones comparadas iguales",
+      "h1": "Desplazamiento tardío en al menos un indicador",
+      "rival_explanation": "R1: cambios de formato; R3: cambios de cámaras/iluminación",
+      "data_needed": [
+        "FiveThirtyEight",
+        "TidyTuesday paletas e imágenes solo con derechos"
+      ],
+      "candidate_model": "Regresión binomial negativa y cuantílica robusta con tendencia previa",
+      "independent_statistical_exercise": "Mann-Whitney U y Mann-Kendall",
+      "possible_figure": "Violines y medianas estacionales",
+      "outcomes": {
+        "support": "Desviación tardía concentrada con línea base previa estable",
+        "refute": "Distribuciones indistinguibles",
+        "inconclusive": "Tendencia iniciada mucho antes"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Desplazamientos coinciden con grabaciones posteriores a eventos históricos verificables?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Cambió el discurso verbal si hay transcripciones legales y controles de cámara?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H3",
+      "title": "Tiempo de 26 minutos, estructuras y motivos naturales",
+      "o1_question": "¿Episodios con CABIN/BARN/BRIDGE/marcos restrictivos tienen menos elementos naturales que otros?",
+      "observable_metric": "Conteo natural_element_count",
+      "grain": "Bob Ross n=381; episodios con estructura/marco vs sin",
+      "denominator": "Bob Ross n=381; episodios con estructura/marco vs sin",
+      "h0": "Media natural igual o mayor con estructuras",
+      "h1": "Media de elementos naturales menor con estructuras",
+      "rival_explanation": "R1/R5: espacio negativo y geometría del encuadre",
+      "data_needed": [
+        "FiveThirtyEight filtrado GUEST=0"
+      ],
+      "candidate_model": "Quasi-Poisson con efectos fijos de temporada",
+      "independent_statistical_exercise": "Welch y permutación estratificada por montaña",
+      "possible_figure": "Densidades y boxplots por tipo",
+      "outcomes": {
+        "support": "Reducción ≥1.5 natural elements consistente por estratos",
+        "refute": "Diferencia nula o positiva",
+        "inconclusive": "Efecto solo en óvalos"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Se dedica más tiempo a cabañas en videos medidos con permiso?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Versión book del mismo episodio añade elementos omitidos en tv?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H4",
+      "title": "Firma diferencial de Steve Ross y artistas invitados",
+      "o1_question": "¿Los invitados están más lejos compositiva/cromáticamente de Bob Ross que los propios episodios de Bob en igual temporada?",
+      "observable_metric": "Distancia Jaccard; tasa LAKE; num_colors",
+      "grain": "403 episodios; n=22 invitados vs Bob controles en temporadas comparables",
+      "denominator": "403 episodios; n=22 invitados vs Bob controles en temporadas comparables",
+      "h0": "Distancia invitado–Bob indistinguible de Bob–Bob",
+      "h1": "Distancia invitado–Bob mayor",
+      "rival_explanation": "R4: curaduría editorial de géneros",
+      "data_needed": [
+        "FiveThirtyEight",
+        "TidyTuesday",
+        "créditos verificados de invitados"
+      ],
+      "candidate_model": "PERMANOVA Jaccard estratificada por temporada",
+      "independent_statistical_exercise": "Fisher LAKE y permutación de autoría emparejada por temporada",
+      "possible_figure": "PCoA por autor y elipses",
+      "outcomes": {
+        "support": "PERMANOVA p<0.01 al excluir géneros únicos",
+        "refute": "Superposición tras controlar género",
+        "inconclusive": "Insuficiente poder por n bajo"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Diferencias de Steve persisten en paisajes lacustres/montañosos comparables?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Rasgos interpretables de pinceladas separan autores con imágenes HD autorizadas?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H5",
+      "title": "Concordancia entre etiquetas de FiveThirtyEight y nueva recodificación",
+      "o1_question": "¿Qué κ de Cohen y discordancia hay entre matriz 2014 y doble codificación ciega?",
+      "observable_metric": "κ y falsas discordancias por etiqueta",
+      "grain": "Celdas episodio-etiqueta, n de episodios auditados",
+      "denominator": "Celdas episodio-etiqueta, n de episodios auditados",
+      "h0": "κ≥0.85 en todas las etiquetas",
+      "h1": "κ<0.70 o discordancia >5% en etiquetas ambiguas",
+      "rival_explanation": "R3: umbral 'prominente' frente a 'visible' y resolución",
+      "data_needed": [
+        "FiveThirtyEight",
+        "imágenes con derechos",
+        "libro de códigos",
+        "comprobar que PERSON/CHIMNEY no son columnas originales"
+      ],
+      "candidate_model": "Clases latentes Dawid–Skene",
+      "independent_statistical_exercise": "Bootstrap de κ y McNemar",
+      "possible_figure": "Heatmap discordancias e IC de κ",
+      "outcomes": {
+        "support": "κ<0.70 en rasgos finos",
+        "refute": "κ≥0.85 uniforme",
+        "inconclusive": "Imágenes insuficientes para recodificar"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Se deben discrepancias a definición operativa o resolución de la foto?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Cambian probabilidades condicionales de Hickey tras nueva matriz validada?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H6",
+      "title": "Robustez de clústeres binarios y fusión de color",
+      "o1_question": "¿Cuál es ARI/Silhouette entre k-means k=10, PAM-Jaccard/Bernoulli y versiones híbridas con color?",
+      "observable_metric": "ARI entre particiones y Silhouette k=2..15",
+      "grain": "Episodio n=403; pares de particiones/episodios",
+      "denominator": "Episodio n=403; pares de particiones/episodios",
+      "h0": "ARI≥0.70 y k=10 óptimo estable",
+      "h1": "ARI<0.50 y óptimo distinto",
+      "rival_explanation": "Prevalencia TREE/TREES domina distancias; ontología",
+      "data_needed": [
+        "FiveThirtyEight 67 indicadores",
+        "TidyTuesday colores"
+      ],
+      "candidate_model": "Estabilidad bootstrap entre métodos y k",
+      "independent_statistical_exercise": "Mantel entre distancias de elementos y colores",
+      "possible_figure": "Curvas ARI/Silhouette y aluvial de cambios",
+      "outcomes": {
+        "support": "ARI<0.50 con grupos modificados por paleta",
+        "refute": "ARI≥0.70 y k=10 estable",
+        "inconclusive": "Silhouette bajo para todos"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿TF-IDF evita clusters dominados por TREE tras auditar etiquetado?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿La estructura es mejor un continuo de baja dimensión que clusters discretos?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H7",
+      "title": "Paleta declarada frente a color perceptual efectivo",
+      "o1_question": "¿num_colors predice colores efectivos (ΔE00>10) y entropía CIELAB real de píxeles?",
+      "observable_metric": "Spearman num_colors–k_eff/entropía",
+      "grain": "Episodio n=403; píxeles interiores autorizados",
+      "denominator": "Episodio n=403; píxeles interiores autorizados",
+      "h0": "ρ≥0.60",
+      "h1": "ρ<0.30",
+      "rival_explanation": "R3: balance de blancos, iluminación, compresión",
+      "data_needed": [
+        "TidyTuesday num_colors",
+        "PNGs solo con licencia/autorización"
+      ],
+      "candidate_model": "Lineal mixto por temporada",
+      "independent_statistical_exercise": "Spearman intra-temporada",
+      "possible_figure": "Scatter y marginales por BLACK_GESSO",
+      "outcomes": {
+        "support": "ρ<0.30 en mayor parte de temporadas",
+        "refute": "ρ≥0.60 intra-temporada",
+        "inconclusive": "Artefactos entre temporadas"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Qué pigmentos aportan gran cobertura frente a acentos?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Qué diferencia hay entre capturas televisivas y fotografías calibradas físicas?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H8",
+      "title": "Inhibición de repetición secuencial por temporada",
+      "o1_question": "¿OCEAN, OVAL_FRAME, WINTER y CABIN repiten menos en episodios adyacentes que en orden aleatorio?",
+      "observable_metric": "Proporción de pares adyacentes con motivo común y varianza de intervalos",
+      "grain": "31 temporadas; 12 transiciones contiguas por temporada para cada motivo",
+      "denominator": "31 temporadas; 12 transiciones contiguas por temporada para cada motivo",
+      "h0": "Orden intercambiable aleatorio intra-temporada",
+      "h1": "Menor repetición que permutación nula",
+      "rival_explanation": "R1 rodaje por lotes; estacionalidad emisión",
+      "data_needed": [
+        "IDs season/episode y etiquetas FiveThirtyEight"
+      ],
+      "candidate_model": "Cadena de Markov orden 1 con efectos de temporada",
+      "independent_statistical_exercise": "10,000 permutaciones intra-temporada conservando totales",
+      "possible_figure": "Tileplot temporada-episodio y nula de adyacencias",
+      "outcomes": {
+        "support": "p<0.05 y razón observada/esperada<0.7 para varios motivos",
+        "refute": "Dentro de banda nula",
+        "inconclusive": "Inhibición en algún motivo, rachas en otro"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Rachas WINTER/AUTUMN coinciden con meses de transmisión verificados?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Se decide espaciado al pintar o al programar emisión con logs de producción?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H9",
+      "title": "Humanidad implícita: huellas antrópicas sin personas",
+      "o1_question": "¿Se asocian CABIN/BARN/FENCE/BRIDGE con WINTER/SNOW y cómo varían por temporada?",
+      "observable_metric": "Prevalencia ANY_ANTHROPOGENIC y OR frente a WINTER/SNOW",
+      "grain": "Bob Ross n=381; episodios",
+      "denominator": "Bob Ross n=381; episodios",
+      "h0": "OR=1, estabilidad en el tiempo",
+      "h1": "Asociación positiva / tendencia temporal",
+      "rival_explanation": "R5: perspectiva y contraste técnico",
+      "data_needed": [
+        "FiveThirtyEight etiquetas de estructuras",
+        "figuras humanas requieren anotación externa"
+      ],
+      "candidate_model": "Logística ANY_ANTHROPOGENIC con WINTER/SNOW/MOUNTAIN/temporada",
+      "independent_statistical_exercise": "OR exactas estratificadas por CABIN/FENCE/BARN",
+      "possible_figure": "Forest plot de OR por estructura",
+      "outcomes": {
+        "support": "OR>1 exclusivo CABIN+SNOW",
+        "refute": "OR≈1",
+        "inconclusive": "Todas las estructuras se asocian igualmente con nieve"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Narraciones mencionan habitantes cuando aparecen cabañas nevadas?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Hay signos de habitación activa vs ruina en nuevas anotaciones autorizadas?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    },
+    {
+      "id": "H10",
+      "title": "Composición pictórica y recepción digital contemporánea",
+      "o1_question": "¿Rasgos de episodios predicen recreaciones y vistas después de controlar temporada/posición/título?",
+      "observable_metric": "Recreaciones comunidad y log vistas YouTube",
+      "grain": "Episodios con métricas externas verificadas, hasta n=403",
+      "denominator": "Episodios con métricas externas verificadas, hasta n=403",
+      "h0": "Composición no mejora predicción tras metadatos",
+      "h1": "Contribución incremental de rasgos pictóricos",
+      "rival_explanation": "Sesgo algorítmico, antigüedad de subida, dificultad, exposición",
+      "data_needed": [
+        "FiveThirtyEight",
+        "paletas",
+        "YouTube API",
+        "reproducciones comunidad con permiso"
+      ],
+      "candidate_model": "Regresión binomial negativa con spline y texto del título",
+      "independent_statistical_exercise": "Devianza incremental entre baselines y modelo completo",
+      "possible_figure": "Deviance explained y residuos por orden",
+      "outcomes": {
+        "support": "p<0.01 y robusto a excluir T1",
+        "refute": "Predicción casi toda por metadatos",
+        "inconclusive": "Desfase temporal carga/vistas impide inferir"
+      },
+      "o1_status": "PLAN_ONLY",
+      "o2_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿ASMR acústico vs baja complejidad explican consumo pasivo/activo?",
+        "requires": [
+          "O1_ANSWERED",
+          "DR-01/02/03 contextualized",
+          "DR-05a_REVIEWED"
+        ]
+      },
+      "o3_conditional": {
+        "status": "CONDICIONAL",
+        "question": "¿Comentarios distinguen relajación de aprendizaje de pintura?",
+        "requires": [
+          "O2_ANSWERED",
+          "RIVAL_CHECK_DEFINED"
+        ]
+      }
+    }
+  ]
+}
