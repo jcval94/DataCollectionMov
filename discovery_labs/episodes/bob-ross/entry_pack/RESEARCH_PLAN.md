@@ -1,5 +1,17 @@
 # Plan de investigación — Bob Ross como una historia, no como una tabla
 
+## Misión de descubrimiento y tres preguntas guía
+
+**Objetivo:** descubrir insights increíbles por su originalidad y solidez científica sobre cada dataset; aquí, detectar estructuras, excepciones, transiciones o límites insospechados de los episodios de Bob Ross, sin construir una sorpresa ficticia ni confundir correlación y causa.
+
+En cada experimento, pregunta, gráfico e insight documentar:
+
+- **CÓMO:** CSV y versiones, filtros y denominadores, transformación, modelo, prueba estadística independiente, evaluación, controles y código reproducible.
+- **POR QUÉ:** qué tensión científica o biográfica importa, por qué elegimos ese método y qué explicaciones rivales podrían producir el patrón.
+- **PARA QUÉ:** qué cambia en nuestra interpretación y qué aprendizaje, decisión o siguiente investigación permite. No vender utilidad causal o económica que no pueda medirse.
+
+Una ausencia de patrón, un hallazgo nulo o un sesgo de etiquetado pueden ser insights superiores a una visualización espectacular sin respaldo.
+
 ## Tesis editorial de trabajo (aún NO demostrada)
 Bob Ross construyó durante más de una década un lenguaje visual y pedagógico reconocible. El dataset permite medir una parte: **motivos etiquetados por episodio**. La investigación debe explorar cómo se construyó, si evolucionó, dónde están sus excepciones y qué **no podemos** inferir sin otras fuentes.
 
@@ -17,18 +29,25 @@ El sujeto es **la historia documentada de Bob Ross y de su obra televisiva**. La
 
 **Cada una de las 14 preguntas canónicas** de `QUESTIONS_MASTER.md` debe incluir **al menos un modelo** y **un ejercicio estadístico diferente**, con qué, por qué, dónde, fuente, baseline, validación, riesgos y figura. La selección debe proceder de `discovery_labs/shared/model_catalog/MODEL_SET.md` (24 familias). No se entrena ninguno en este Paquete de Entrada. El HTML de Fase 1 muestra un bloque único de preguntas; las seis anteriores son subejercicios, no una sección «2B».
 
-## Etapas de investigación dentro de Fase 1
-| Lote | Trabajo | Salidas | Gate |
-|---|---|---|---|
-| 0. Ingesta | Repetir hash, 403×69, nulos, GUEST, conflictos de etiquetas y copy sample | QA y datadictionary actualizados | DATACHECKED |
-| 1. Contexto | Ejecutar DR-01 y DR-03, conciliar biografía, temporización, mitos, antecedentes | timeline + claims registry | CONTEXT_REVIEWED |
-| 2. Enriquecimiento | DR-02: fecha grabación/emisión, metadata paletas, cruce episodios; registrar no coincidencias | tabla de joins con cobertura | ENRICHED_OR_BLOCKED |
-| 3. Diseño | Ejecutar Question Forge; puntuar 12 arcos; priorizar 3–5 y definir O1/O2/O3 condicionales | question_graph v2 + scoring | QUESTIONS_REVIEWED |
-| 4. EDA y métodos | Tendencias, cambios, outliers multiescala, combinaciones, sensibilidad, control de invitados y anotaciones | scripts, figuras, resultados y pruebas | RESEARCH_REPRODUCIBLE |
-| 5. Evidencia visual | DR-04, elegir 4–8 figuras y explorador de clusters con tarjetas hover/focus de episodios | capturas, QA mobile, derechos | VISUAL_REVIEWED |
-| 6. Documento | Actualizar **research_guide.html** como ensayo científico sobre la historia real, con modo narrativo/técnico | HTML autónomo aprobado por QA | HUMAN_APPROVAL_PENDING |
+## Etapas de investigación y HTML incremental (Fase 0 → Fase 1)
 
-**Stop:** no crear storyboard del video, guion de voz, intro, Remotion, MP4 ni material audiovisual hasta aprobación explícita de la guía científica.
+Las **14 investigaciones** se conservan como un único banco canónico; los diseños O2/O3 continúan en JSON/Markdown con `CONDICIONAL`, **no son preguntas activas ni resultados en el HTML inicial**. Concentrar ejecución profunda en 3–5 arcos seleccionados, sin forzar las 14.
+
+| Etapa | Trabajo y dependencia | Entrega/puerta |
+|---|---|---|
+| 0. Verificar origen | Hash y 403×69, nulos, invitados, etiquetas, unit of analysis | `DATACHECKED` |
+| 1. Contexto temprano | **DR-01** biografía y salud con controversias; **DR-02** cronología/grabación/datos; **DR-03** antecedentes/mitos priorizados | Registro de hechos e incertidumbres; `CONTEXT_REVIEWED` |
+| 2. HTML científico **v0** | Abrir `research_guide.html` con **un párrafo general contextual al principio**, propósito CÓMO/POR QUÉ/PARA QUÉ, estructura e índice único de **O1**; sin O2/O3 públicas ni hallazgos nuevos imaginados | `O1_PLAN_VISIBLE`; artefacto no aprobado |
+| 3. Medir O1 | EDA y métodos reproducibles sobre todo el dataset, denominadores, incertidumbre, hipótesis nulas, baselines y control de invitados | Evidencias, CSV/JSON/versiones, `O1_ANSWERED` por pregunta |
+| 4. Síntesis crítica intermedia | **DR-05a** contrasta DR-01/02/03 con **resultados O1 realmente medidos** y autoriza o bloquea ramas O2. No exige DR-04 aún | `O2_ACTIVATION_REVIEWED` y lista de gatillos observados |
+| 5. Investigación adaptativa | Publicar O2 válidas **solo después del paso 4**, ejecutarlas; a partir de su resultado, agregar O3 únicamente si existe hipótesis rival investigable; mostrar resultados nulos también | `O2_ANSWERED` / `O3_TRIGGERED` / `BLOCKED` por pregunta |
+| 6. Evidencia visual | **DR-04** se profundiza según insights efectivamente seleccionados, figuras adversariales, derechos, explorer y QA; **triage mínimo de licencias desde la etapa 1** | `VISUAL_REVIEWED` |
+| 7. Cierre adversarial | **DR-05b** reconcilia nuevas fuentes, O1/O2/O3, robustez, contradicciones y límites; actualiza guía y cambios versionados | `RESEARCH_REPRODUCIBLE` / `FINAL_SYNTHESIS_REVIEWED` |
+| 8. QA y versión | Revisión HTML móvil/teclado, sources→métricas→figuras, reproducibilidad, criterio docente; solicitar aprobación del commit específico | `HUMAN_APPROVAL_PENDING` |
+
+**Condición de publicación:** una O2 exige `DR_01_02_03_DONE + O1_ANSWERED + DR_05a_REVIEWED`, o una excepción justificada y explícita cuando el contexto de la pregunta no requiera uno de los frentes. Una O3 exige `O2_ANSWERED + RIVAL_CHECK_DEFINED`. Guardar ID padre, condición realmente observada, evidencia vinculada, estado y versión. **Los diseños O2/O3 no se borran** del paquete; simplemente permanecen internos y no se anticipan al lector.
+
+**Versión científica viva:** cada avance del HTML incluye `guide_version`, `question_id`, `order`, `parent_id`, `trigger_evidence`, `claim_refs`, `analysis_artifact`, `status`, `updated_at` y `change_reason`. Corregir resultados con historial y sin simular continuidad. El archivo HTML V3 existente es una **instantánea preliminar estática**: su siguiente revisión deberá ajustar la exposición progresiva de O2/O3 y la estructura. **No se modifica ni aprueba el HTML en esta fase de documentación.**
 
 ## Métodos por tema
 - **Trayectorias:** tasa de cada motivo por temporada, intervalos o bandas, small multiples, cambios observados con contraste contra modelo suave, sensibilidad a invitados y complejidad de etiquetas.
@@ -44,17 +63,24 @@ El sujeto es **la historia documentada de Bob Ross y de su obra televisiva**. La
 
 Una buena pregunta queda **bloqueada honestamente** si no alcanza evidencia; eso es una lección, no un fracaso.
 
-## Cómo debe verse el documento Fase 1
-1. **Prólogo histórico documentado**: ¿quién era Bob Ross y por qué sus paisajes se volvieron reconocibles?
-2. **El archivo y su frontera**: 403 episodios etiquetados; tres versiones de cuadros por episodio y obras de una temporada inconclusa como contexto.
-3. **La primera impresión**: iconografía y representaciones frecuentes.
-4. **Cuando avanzan los años**: evolución de motivos, sin inventar fechas.
-5. **Las excepciones hablan**: análisis de outliers de tres niveles.
-6. **La gran complicación**: invitaciones, codificación, paletas y clustering; qué cambia con otra definición.
-7. **Capa biográfica**: qué eventos se conocen y qué hipótesis no podemos probar.
-8. **Una respuesta más difícil**: hallazgos robustos, fronteras, nuevas preguntas O2/O3.
-9. **Reproducibilidad total**: cifras, parámetros, enlaces, hashes, incidencias y scripts.
-10. **Aprobación**: lista de puertas y versión del reporte; NO APROBADO hasta autorización.
+## Cómo debe verse el documento HTML de Fase 1
+
+**Párrafo inicial orientativo (contexto, no resultado):**
+
+> Entre 1983 y 1994, *The Joy of Painting* convirtió la pintura de paisajes en una experiencia televisiva accesible. El archivo de FiveThirtyEight reúne etiquetas de motivos para 403 episodios, pero no fotografías, fechas precisas de grabación ni información clínica. Este laboratorio investiga qué patrones y excepciones podemos encontrar en esas etiquetas, si cambian entre temporadas y qué historias sobre Bob Ross requieren fuentes externas. Partimos de preguntas abiertas, distinguimos lo que podemos medir de lo que no y permitimos que cada resultado determine la siguiente investigación.
+
+**Estructura fija y ampliable del HTML**, sin convertir el documento en dos bancos de preguntas:
+
+1. **Contexto general**: párrafo de apertura, quién era Bob Ross, cronología documentada y precauciones.
+2. **Misión CÓMO / POR QUÉ / PARA QUÉ**: qué insight innovador perseguimos, por qué podría importar y cómo lo refutaríamos.
+3. **El dataset y su frontera**: 403 episodios, unidad, fuentes, derechos, huéspedes, eventos externos sin fecha fiable.
+4. **Índice único de investigaciones y O1**: 14 candidatas iniciales, priorización, hipótesis, modelos y tests planificados; O2/O3 permanecen internos hasta tener gatillos medidos.
+5. **Resultados acumulativos O1**: métodos, visualizaciones, incertidumbre, explicaciones rivales y estado de cada pregunta.
+6. **Nuevas O2 y O3 activadas**: se agrega esta parte dentro del **mismo bloque editorial** **después** de responder O1, cotejar Deep Research y obtener resultados O2; toda rama referencia su padre y evidencia.
+7. **Insights, contraargumentos y utilidad**: cada hallazgo responde Cómo/Por qué/Para qué con límites, nulos y alternativas, sin exagerar causalidad.
+8. **Reproducibilidad, bitácora y aprobación**: hashes, scripts, fuentes, versiones, dudas pendientes y aprobación humana explícita.
+
+El HTML **debe cambiar a medida que progrese la investigación**; no presentar desde v0 una conclusión final ni mostrar rutas condicionales como preguntas ya nacidas. Diferenciar `PLANNED`, `BLOCKED`, `VERIFIED`, `REFUTED`, `INCONCLUSIVE` y `APPROVED`.
 
 ## Definición de éxito visual
 Una figura debe cambiar cómo entendemos algo: mostrar antes/después o grupo/composición; comparar absoluto/porcentaje; mostrar incertidumbre; permitir inspección individual y regreso al agregado. Toda interacción debe ser accesible vía teclado y focus, funcionar con fallback offline y nunca ofrecer una pintura como imagen integrada sin derechos verificados.
