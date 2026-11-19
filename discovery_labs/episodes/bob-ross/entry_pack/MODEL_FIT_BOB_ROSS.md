@@ -1,6 +1,6 @@
 # Ajuste de modelos — exclusivamente Bob Ross
 
-Este documento contiene **solo criterios específicos de Bob Ross**, no el catálogo completo. La referencia genérica oficial será `discovery_labs/shared/model_catalog/MODEL_SET.md` en el **PR #11**. Mientras ese PR no esté integrado a la rama del episodio, `entry_pack/MODEL_SET.md` se conserva como copia de compatibilidad sin mantenimiento nuevo.
+Este documento conserva **solo criterios específicos de Bob Ross**. El catálogo canónico está integrado en `main` en `discovery_labs/shared/model_catalog/MODEL_SET.md` (PR #11 ya fusionado). No hay copia de 24 modelos en el episodio.
 
 **Población y variables:** 403 episodios, 381 sin GUEST y 22 con invitado, 31 temporadas ordinales, 67 etiquetas binarias originales y 12 familias OR; no existen en el CSV fecha exacta de grabación, enfermedad, audiencias, costes ni colores. No extraer causa clínica, estilo artístico verdadero o ingresos de estas variables.
 
