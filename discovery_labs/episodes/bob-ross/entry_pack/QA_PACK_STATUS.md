@@ -1,5 +1,14 @@
 # QA del Paquete de Entrada y Question Forge v2
 
+## Integración y ejecución verificadas · 18 nov 2026
+
+- Los PR [#11](https://github.com/jcval94/DataCollectionMov/pull/11), [#5](https://github.com/jcval94/DataCollectionMov/pull/5) y [#10](https://github.com/jcval94/DataCollectionMov/pull/10) quedaron **MERGED** en `main`.
+- El workflow [AI Discovery Labs QA · run #44427475768](https://github.com/jcval94/DataCollectionMov/actions/runs/44427475768) concluyó **SUCCESS**, incluidos compilación de Python, unit tests compartidos, unit tests Bob Ross, `run.py --check`, contrato general y validador particular de 14 investigaciones.
+- El workflow general del repositorio también concluyó **SUCCESS** sobre el mismo PR de cierre.
+- **No se entrenaron modelos de investigación**, no se ejecutaron los Deep Research, no se aprobaron conclusiones clínicas, guion audiovisual ni video.
+- Pendiente de forma deliberada: QA de navegador real de HTML V3, derechos de imágenes, segundo episodio real y aprobación humana de la guía. Estos no son requisitos para declarar completada la **integración de código**.
+
+
 **Fecha:** 2026-11-18. **Contexto:** inspección estática contra la rama `feat/bob-ross-entry-pack-question-forge` y archivos recuperados desde GitHub. **No se entrenó ningún modelo ni se ejecutó Deep Research completo.**
 
 ## Comprobaciones verificadas en la rama
@@ -21,11 +30,11 @@
 
 ## Qué NO está validado todavía
 
-- Ejecución en el entorno local de `python entry_pack/validate_pack.py`.
+- La ejecución **local independiente** no se realizó; sí pasó el validador correspondiente en GitHub Actions.
 - Render real en Chromium y revisión responsive, teclado/foco, contraste y gráficos de la guía V3 (la versión V2 anterior tuvo revisiones de navegador, pero **no** cuenta como QA de V3).
 - Investigación histórica en profundidad, especialmente fechas de diagnóstico/grabación/emisión.
 - Derechos de cada imagen original, licencias para miniaturas, políticas de hotlinking.
-- Entrenamiento, contrastes estadísticos nuevos, ajuste con Optuna, análisis fuera de muestra o causalidad.
+- Entrenamiento, contrastes estadísticos nuevos, ajuste con Optuna, análisis fuera de muestra o causalidad (fuera del alcance de CI/Paquete de Entrada).
 - Resultados de preguntas O2/O3, ya que dependen de O1 y pruebas adversariales.
 - Ensayo pedagógico cronometrado de 45 minutos.
 
