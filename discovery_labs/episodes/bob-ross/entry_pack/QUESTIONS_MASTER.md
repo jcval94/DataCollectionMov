@@ -364,7 +364,7 @@ Las nuevas preguntas sobre enfermedad (`BR-01`), historia (`BR-03`), atípicos m
 
 **Dependencias externas importantes:** BR-06, BR-10 y BR-11, además de la fecha clínica/producción de BR-01.
 
-**Modelo LSTM, RL, Optuna, riesgo colectivo:** consultar `MODEL_SET.md` para condiciones de elegibilidad. No forzarlos en Bob Ross sin datos/target/reward suficientes; figurar como opciones futuras en otros episodios.
+**Modelo LSTM, RL, Optuna, riesgo colectivo:** consultar `discovery_labs/shared/model_catalog/MODEL_SET.md` para condiciones de elegibilidad. No forzarlos en Bob Ross sin datos/target/reward suficientes; figurar como opciones futuras en otros episodios.
 
 ## Requisitos para el primer HTML
 El apartado **02 / Las preguntas de esta investigación** será UNA SOLA sección integrada que incluya las 14 opciones, filtros o tarjetas por tema y detalles expandidos de O1/O2/O3 + modelo + estadística + visualización + faltantes. El prólogo debe narrar primero quién fue Bob Ross. El tema de enfermedad no puede quedar escondido en un detalle O3: `BR-01` es una investigación protagonista con advertencia de causalidad. La guía científica puede resumir técnicas, pero el banco estructurado es siempre `questions_master.json`.
