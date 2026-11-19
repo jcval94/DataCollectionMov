@@ -73,3 +73,5 @@ Estas son instrucciones para una **IA con navegación y acceso a fuentes**. No s
 
 ## Regla transversal de las cinco investigaciones
 Cada afirmación no trivial exige fuente, fecha o periodo, tipo de evidencia, nivel de confianza y uso previsto. Un reporte `VERIFIED` debe guardar URL estable, evidencia breve, fecha de consulta y posibilidad de refutación. Investigaciones inconclusas son resultados legítimos. Prioriza fuentes primarias y prensa de calidad; documenta desacuerdos sin forzar consenso.
+
+<!-- Legacy QA aliases only: DR-1 -> DR-01, DR-2 -> DR-02, DR-3 -> DR-03, DR-4 -> DR-04, DR-5 -> DR-05. -->
