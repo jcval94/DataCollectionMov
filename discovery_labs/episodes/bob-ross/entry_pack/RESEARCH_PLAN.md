@@ -45,6 +45,20 @@ Las **14 investigaciones** se conservan como un único banco canónico; los dise
 | 7. Cierre adversarial | **DR-05b** reconcilia nuevas fuentes, O1/O2/O3, robustez, contradicciones y límites; actualiza guía y cambios versionados | `RESEARCH_REPRODUCIBLE` / `FINAL_SYNTHESIS_REVIEWED` |
 | 8. QA y versión | Revisión HTML móvil/teclado, sources→métricas→figuras, reproducibilidad, criterio docente; solicitar aprobación del commit específico | `HUMAN_APPROVAL_PENDING` |
 
+### Human Feedback — hitos de decisión con informes HTML
+
+El protocolo vigente está en [HUMAN_FEEDBACK_CHECKPOINTS.md](HUMAN_FEEDBACK_CHECKPOINTS.md), basado en las plantillas y schema compartidos de `discovery_labs/shared/templates/HUMAN_FEEDBACK_*`.
+
+| Hito del plan anterior | Feedback humano y artefacto | Límite |
+|---|---|---|
+| Tras etapas **0–1** de calidad, fuentes y priorización (antes de 2–3) | **HF-00** Brújula: calidad del dataset, matriz de fuentes, preguntas top y decisión de 3–5 O1 | Diagramas de cobertura, **no resultados ficticios** |
+| Tras etapa **3**, 1–2 O1 realmente ejecutadas | **HF-01** Descubrimientos: efectos nulos o sorpresa con baselines, permutación o sensibilidad | Mostrar evidencia y contradicción |
+| Tras etapa **4** (DR-05a) y antes de promover etapa 5 | **HF-02** Decisión O2: rutas activables con trigger, coste y rival | **Gate humano para prioridades O2** |
+| Tras etapa **5**, DR-04 etapa 6, antes de DR-05b | **HF-03** Robustez: sensibilidad de O2/O3 y visualizaciones basadas en hallazgos | No presentar hipótesis bloqueadas como completadas |
+| Tras etapas **7–8** antes de storytelling | **HF-04** Aprobación científica: guías y figures QA, decisiones y resultados finales | **`RESEARCH_APPROVED:<commit>` obligatorio** |
+
+Cada hito publica un `human_feedback/HF-XX/vNN/report.html` que inicia con **resumen ejecutivo** (qué aprendimos, cambio sobre checkpoint anterior, sorpresa sustentada, recomendación y bloqueo), seguido por 2–4 **buenas gráficas** si hay datos; comparaciones, incertidumbre, baseline, figura adversarial, fuentes, n, denominadores, código y derechos. Preguntar al usuario **máximo tres cosas** que afecten decisiones, mostrando opción recomendada y el coste de posponer. Guardar `feedback.md` y `checkpoint.json` y no inferir aprobación.
+
 **Condición de publicación:** una O2 exige `DR_01_02_03_DONE + O1_ANSWERED + DR_05a_REVIEWED`, o una excepción justificada y explícita cuando el contexto de la pregunta no requiera uno de los frentes. Una O3 exige `O2_ANSWERED + RIVAL_CHECK_DEFINED`. Guardar ID padre, condición realmente observada, evidencia vinculada, estado y versión. **Los diseños O2/O3 no se borran** del paquete; simplemente permanecen internos y no se anticipan al lector.
 
 **Versión científica viva:** cada avance del HTML incluye `guide_version`, `question_id`, `order`, `parent_id`, `trigger_evidence`, `claim_refs`, `analysis_artifact`, `status`, `updated_at` y `change_reason`. Corregir resultados con historial y sin simular continuidad. El archivo HTML V3 existente es una **instantánea preliminar estática**: su siguiente revisión deberá ajustar la exposición progresiva de O2/O3 y la estructura. **No se modifica ni aprueba el HTML en esta fase de documentación.**
