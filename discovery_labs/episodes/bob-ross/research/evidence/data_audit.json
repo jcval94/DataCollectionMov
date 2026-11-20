@@ -1,0 +1,252 @@
+{
+  "status": "PASS_FOR_TAG_ANALYSES",
+  "sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "git_blob_sha": "c22fdf42b2323a6197a580d3ed1b446e1b5b659e",
+  "bytes": 66315,
+  "rows": 403,
+  "columns": 69,
+  "binary_columns": 67,
+  "unique_ids": 403,
+  "seasons": 31,
+  "episodes_per_season": 13,
+  "missing_values": 0,
+  "invalid_binary_values": 0,
+  "positive_marks_all_67_columns": 3221,
+  "positive_marks_without_author_flags": 3187,
+  "count_discrepancies": {
+    "3224_minus_snapshot": 3,
+    "3324_minus_snapshot": 103,
+    "historical_cause": "UNRESOLVED; do not repair three values to match prose"
+  },
+  "host": 381,
+  "guest": 22,
+  "guest_name_flags": {
+    "STEVE_ROSS": 11,
+    "DIANE_ANDRE": 1
+  },
+  "guest_identity_coverage": "12/22 named by original flags; 10/22 unspecified, not independently credited",
+  "duplicate_title_groups": {
+    "MOUNTAIN WATERFALL": [
+      "S02E12",
+      "S05E01"
+    ],
+    "LAKESIDE CABIN": [
+      "S08E02",
+      "S10E13"
+    ]
+  },
+  "person": [
+    "S03E10"
+  ],
+  "chimney_column_exists": false,
+  "zero_positive_rows": [
+    "S09E10",
+    "S15E04",
+    "S26E10"
+  ],
+  "vignette_incomplete_ids": [
+    "S09E10",
+    "S15E04",
+    "S26E10"
+  ],
+  "host_excluding_vignette_incomplete": 378,
+  "column_totals": {
+    "APPLE_FRAME": 1,
+    "AURORA_BOREALIS": 2,
+    "BARN": 17,
+    "BEACH": 27,
+    "BOAT": 2,
+    "BRIDGE": 7,
+    "BUILDING": 1,
+    "BUSHES": 120,
+    "CABIN": 69,
+    "CACTUS": 4,
+    "CIRCLE_FRAME": 2,
+    "CIRRUS": 28,
+    "CLIFF": 8,
+    "CLOUDS": 179,
+    "CONIFER": 212,
+    "CUMULUS": 86,
+    "DECIDUOUS": 227,
+    "DIANE_ANDRE": 1,
+    "DOCK": 1,
+    "DOUBLE_OVAL_FRAME": 1,
+    "FARM": 1,
+    "FENCE": 24,
+    "FIRE": 1,
+    "FLORIDA_FRAME": 1,
+    "FLOWERS": 12,
+    "FOG": 23,
+    "FRAMED": 53,
+    "GRASS": 142,
+    "GUEST": 22,
+    "HALF_CIRCLE_FRAME": 1,
+    "HALF_OVAL_FRAME": 1,
+    "HILLS": 18,
+    "LAKE": 143,
+    "LAKES": 0,
+    "LIGHTHOUSE": 1,
+    "MILL": 2,
+    "MOON": 3,
+    "MOUNTAIN": 160,
+    "MOUNTAINS": 99,
+    "NIGHT": 11,
+    "OCEAN": 36,
+    "OVAL_FRAME": 38,
+    "PALM_TREES": 9,
+    "PATH": 49,
+    "PERSON": 1,
+    "PORTRAIT": 3,
+    "RECTANGLE_3D_FRAME": 1,
+    "RECTANGULAR_FRAME": 1,
+    "RIVER": 126,
+    "ROCKS": 77,
+    "SEASHELL_FRAME": 1,
+    "SNOW": 75,
+    "SNOWY_MOUNTAIN": 109,
+    "SPLIT_FRAME": 1,
+    "STEVE_ROSS": 11,
+    "STRUCTURE": 85,
+    "SUN": 40,
+    "TOMB_FRAME": 1,
+    "TREE": 361,
+    "TREES": 337,
+    "TRIPLE_FRAME": 1,
+    "WATERFALL": 39,
+    "WAVES": 34,
+    "WINDMILL": 1,
+    "WINDOW_FRAME": 1,
+    "WINTER": 69,
+    "WOOD_FRAMED": 1
+  },
+  "hierarchy_checks": [
+    {
+      "child": "TREES",
+      "parent": "TREE",
+      "exceptions": []
+    },
+    {
+      "child": "MOUNTAINS",
+      "parent": "MOUNTAIN",
+      "exceptions": [
+        "S29E02"
+      ]
+    },
+    {
+      "child": "SNOWY_MOUNTAIN",
+      "parent": "MOUNTAIN",
+      "exceptions": []
+    },
+    {
+      "child": "CIRRUS",
+      "parent": "CLOUDS",
+      "exceptions": [
+        "S02E09"
+      ]
+    },
+    {
+      "child": "CUMULUS",
+      "parent": "CLOUDS",
+      "exceptions": [
+        "S02E01",
+        "S02E09",
+        "S17E13"
+      ]
+    },
+    {
+      "child": "APPLE_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "CIRCLE_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "DOUBLE_OVAL_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "FLORIDA_FRAME",
+      "parent": "FRAMED",
+      "exceptions": [
+        "S21E13"
+      ]
+    },
+    {
+      "child": "HALF_CIRCLE_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "HALF_OVAL_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "OVAL_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "RECTANGLE_3D_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "RECTANGULAR_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "SEASHELL_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "SPLIT_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "TOMB_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "TRIPLE_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "WINDOW_FRAME",
+      "parent": "FRAMED",
+      "exceptions": []
+    },
+    {
+      "child": "WOOD_FRAMED",
+      "parent": "FRAMED",
+      "exceptions": []
+    }
+  ],
+  "received_archive_blob_checks": {
+    "DR-01_BIOGRAFIA_HISTORIA.md": true,
+    "DR-01_timeline_events.csv": true,
+    "DR-02_ARQUEOLOGIA_MULTIFUENTE.md": true,
+    "DR-02_source_inventory.csv": true,
+    "DR-03_MITOS_ANTECEDENTES_HIPOTESIS.md": true,
+    "DR-03_antecedents.csv": true,
+    "DR-03_myths_claims.csv": true,
+    "DR-03_questions_to_test.json": true,
+    "DR-03_rival_explanations.md": true,
+    "README.md": true
+  },
+  "limits": [
+    "PASS certifies schema, not visual truth or annotator agreement",
+    "GUEST=0 is a label-defined population, not independent authorship verification",
+    "Ordinal SxxExx is not a recording date",
+    "All-zero rows retained; exclusions must be named sensitivity analyses"
+  ]
+}
