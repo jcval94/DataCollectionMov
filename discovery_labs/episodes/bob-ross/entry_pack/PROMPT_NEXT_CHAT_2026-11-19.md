@@ -20,6 +20,12 @@ Trabaja DIRECTAMENTE en https://github.com/jcval94/DataCollectionMov, episodio `
 4. Lee el dataset REAL y los scripts/tests de Bob Ross. No confundas claims del DR con observaciones verificadas. Haz inventario de conflictos, de cosas ejecutadas, de cosas planificadas y de los permisos/derechos disponibles.
 5. Si no puedes entrar a algún recurso, declara exactamente el bloqueo y continúa con evidencias accesibles; **no suplas datos faltantes mediante imaginación**.
 
+### Antes de repetir experimentos: revisar el PR #18 en borrador
+
+Existe trabajo científico nuevo y aún **no fusionado**: [PR #18](https://github.com/jcval94/DataCollectionMov/pull/18), rama `research/bob-ross-o1-20261119`. Incluye investigación O1 reproducible, guía V4 e informes HF-00/HF-01/HF-02 en estado DRAFT/PENDING, además de `entry_pack/HANDOFF_2026-11-19_SCIENTIFIC_O1.md`.
+
+**Comprueba su estado actual**, lee `research/README.md`, `SOURCE_REVIEW.md`, `PROTOCOL.md`, `QA.md` y HF-02. El CI del commit `b4deda1b268149acdabd6fbb67608e9ca015cd94` era success, pero no existían certificación visual ni aprobación humana. **No repetir O1 sin verificar estos artefactos ni fusionar PR #18 saltando HF-02.** Si la situación cambió, documenta el cambio de estado con commits. Si permanece pendiente, concentra la siguiente conversación en revisar evidencias, preguntas HF-02 y accesibilidad visual para decidir si promover o no los hallazgos.
+
 ## 1. ANALIZAR PRIMERO, EDITAR DESPUÉS
 
 Entrega primero un diagnóstico y matriz de conciliación (con fuente/ruta y nivel de confianza). Inspecciona al menos:
