@@ -150,6 +150,10 @@ El ejemplo usa HF-00/v01 como **ruta futura**: esta carpeta todavía no contiene
 
 Un resultado `PASS` garantiza **integridad formal, no descubrimiento válido**. Validar fuera del script el cálculo, denominador, intervalos, derechos y la interpretación. Para `HF-04`, el informe nunca puede sustituir la respuesta explícita `RESEARCH_APPROVED:<commit>`.
 
+### Estado entre ramas
+
+El PR #18 incluye **borradores HF-00/HF-01/HF-02 con resultados empíricos y gráficos**, pero no estaba fusionado al actualizar esta metodología. Se debe auditar ese material y pasar el validador de instancias antes de publicarlo. Esto no cambia los criterios de revisión visual ni la decisión humana obligatoria en HF-02. La existencia de cálculos en una rama no convierte el protocolo de HF-03/HF-04 en cumplido.
+
 ## 5. Relación con otros archivos
 
 Este protocolo **complementa** [RESEARCH_PLAN.md](RESEARCH_PLAN.md) y el [HANDOFF_2026-11-19.md](HANDOFF_2026-11-19.md). No reemplaza `QUESTIONS_MASTER.md`/`questions_master.json` ni modifica el HTML V3 existente. La primera entrega real a crear será `human_feedback/HF-00/v01/report.html` **después** de ejecutar QA del dataset, no antes. La fecha de ese checkpoint será la de la ejecución y no la de este plan.
