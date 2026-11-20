@@ -82,6 +82,17 @@ Incluye CÓMO / POR QUÉ / PARA QUÉ, **máximo tres preguntas para mí** con op
 
 **HF-02 y HF-04 son gates humanos de decisión.** No tomar el silencio como aprobación, no promover O2 ni ir a storyboard por ausencia de respuesta. Si los hallazgos son inconclusos, el resumen debe comunicarlo honestamente; la ausencia de patrón también es aprendizaje.
 
+## 4 ter. PUERTA AUTOMÁTICA PARA INFORMES HUMANOS
+
+Antes de entregar **cada reporte real** HF-00…HF-04, ejecuta:
+
+```bash
+python discovery_labs/shared/validators/validate_human_feedback.py \
+  --checkpoint discovery_labs/episodes/bob-ross/human_feedback/HF-XX/vNN --ready
+```
+
+Debe pasar el contrato de `checkpoint.json` (incluido `report_starts_with_summary: true`), `feedback.md`, `report.html` sin placeholders sin sustituir, gráfica(s) realmente generadas con evidencias, validaciones visuales completas, máximo tres preguntas y aprobación explícita cuando corresponda. Si falla, **no** declares el checkpoint listo ni uses el reporte para activar O2 o pasar al audiovisual. **PASS estructural ≠ resultado científico verificado**: además contrasta resultados numéricos contra su fuente y prueba adversarial. Si todavía es borrador sin resultados, omite `--ready` y marca `DRAFT/BLOCKED`; nunca generes cifras de ejemplo como si fueran hallazgos.
+
 ## 5. CÓDIGO, GIT Y VALIDACIÓN
 
 - Mantener cambios dentro de `discovery_labs/episodes/bob-ross/` excepto mejoras realmente generalizables acordadas en `discovery_labs/shared/`, en PR separado.
