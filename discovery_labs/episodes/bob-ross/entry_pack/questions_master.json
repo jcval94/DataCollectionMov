@@ -322,9 +322,10 @@
       "execution": {
         "o1_status": "EXECUTED_PARTIAL",
         "artifact": "../research/results/o1_results.json#/BR-09",
-        "o2_status": "EXECUTED_EXPLORATORY",
+        "o2_status": "EXECUTED_BEFORE_HF_PROTOCOL_PENDING_REVIEW",
         "o3_status": "CONDITIONAL",
-        "approval": "PENDING"
+        "approval": "PENDING",
+        "o2_publication_status": "WITHHELD_PENDING_HF02"
       }
     },
     {

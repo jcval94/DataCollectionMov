@@ -3,7 +3,7 @@
 > **FUENTE CANÓNICA EDITORIAL.** Las seis preguntas antiguas de `../questions.json` son puertas de entrada/interfaz, **no constituyen otro bloque narrativo**. Las consultas anteriores pasan a ser pasos O1, pruebas o microejercicios dentro de las investigaciones que siguen. Aquí está toda la selección, en **un solo bloque**, con problemas de O1, O2 y O3, al menos un **modelo** y un **ejercicio estadístico separado** por investigación.
 
 ## Regla de honestidad
-Las fichas conservan los **diseños originales**. La ejecución progresiva está documentada en [research/execution_registry.json](../research/execution_registry.json): BR-07 y BR-09 tienen O1 parciales, BR-14 tiene O1 secuencial medida, y únicamente BR-09 tiene O2 activada y medida después de DR-05a. O3 y aprobación siguen pendientes. `design_status=PLAN_ONLY` conserva la propuesta original y no describe el estado de ejecución actual. Se indican qué, por qué y dónde; los resultados nuevos se atribuyen únicamente a los artefactos enlazados en cada ficha y al protocolo explícito. En preguntas con datos externos faltantes, la factibilidad es `BLOCKED` y su investigación permanece abierta. Datos de salud no están en el CSV; su fecha y su interpretación histórica deben reconciliarse antes de correlacionarla con episodios.
+Las fichas conservan los **diseños originales**. La ejecución progresiva está documentada en [research/execution_registry.json](../research/execution_registry.json): BR-07 y BR-09 tienen O1 parciales, BR-14 tiene O1 secuencial medida, y BR-09 conserva cálculos O2 realizados después de DR-05a y antes de integrarse PR #17; su promoción actual está retenida hasta HF-02. O3 y aprobación siguen pendientes. `design_status=PLAN_ONLY` conserva la propuesta original y no describe el estado de ejecución actual. Se indican qué, por qué y dónde; los resultados nuevos se atribuyen únicamente a los artefactos enlazados en cada ficha y al protocolo explícito. En preguntas con datos externos faltantes, la factibilidad es `BLOCKED` y su investigación permanece abierta. Datos de salud no están en el CSV; su fecha y su interpretación histórica deben reconciliarse antes de correlacionarla con episodios.
 
 ## Un solo bloque: 14 investigaciones con rutas O1→O2→O3
 
@@ -225,7 +225,7 @@ Las fichas conservan los **diseños originales**. La ejecución progresiva está
 
 **Estado:** `EXISTING_CLUSTERING_PARTIAL_MODEL_EXT_NOT_RUN`. **Advertencia:** k=4 es restricción didáctica; ARI no es calidad artística.
 
-**Ejecución del 19-11-2026:** [O1 y límites](../research/results/o1_results.json), [protocolo](../research/PROTOCOL.md), [síntesis DR-05a](../research/DR-05a.md). [O2 medida](../research/progressive_results/br09_o2.json); O3 condicional.
+**Ejecución del 19-11-2026:** [O1 y límites](../research/results/o1_results.json), [protocolo](../research/PROTOCOL.md), [síntesis DR-05a](../research/DR-05a.md). [Cálculos O2 preservados](../research/progressive_results/br09_o2.json), pendientes de revisión HF-02; O3 condicional.
 
 ### BR-10 · ¿Cambió de paleta aunque sus paisajes parecieran los mismos?
 

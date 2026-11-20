@@ -1,0 +1,133 @@
+{
+  "schema_version": "human-feedback-checkpoint-1.0",
+  "checkpoint_id": "HF-02",
+  "dataset_id": "bob-ross-elementos",
+  "version": 1,
+  "created_at": "2026-11-19",
+  "phase": "Fase 1; retrospective packet / current review",
+  "status": "DRAFT",
+  "source_commit": "2f2bf8ec3647582b48ff36168dc74c320ace4310",
+  "previous_checkpoint": "HF-01/v01",
+  "report_path": "report.html",
+  "report_starts_with_summary": true,
+  "executive_summary": {
+    "summary": "DR-05a encontró una razón medible para profundizar agrupamiento: filas vacías crean una sala aparente y las métricas discrepan. Los cálculos de sensibilidad se ejecutaron con el plan leído al iniciar la sesión, antes de integrarse PR #17. Se conservan como evidencia, sin registrarlos como una decisión humana: cambiar a Euclídea mueve 179 de 381 asignaciones, retirar árbol mueve 75 y omitir una temporada no mueve ninguna en 31 reajustes. La representación importa más que esa perturbación temporal específica. Frente a HF-01 añadimos controles, pero su promoción editorial sigue retenida hasta HF-02. Recomiendo priorizar validación de anotaciones y algoritmos antes de afirmar estilos. Faltan permisos para validación humana e imágenes y QA visual del informe.",
+    "delta": "HF-01/DR-05a → controles ya calculados, decisión humana actual pendiente.",
+    "surprise": "Hay desacuerdo entre métricas y estabilidad frente a las 31 omisiones de temporada.",
+    "recommendation": "Priorizar BR-09",
+    "limitation": "QA visual pendiente; anotación no validada."
+  },
+  "question_ids": [
+    "BR-09"
+  ],
+  "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "changes_since_prior": [
+    {
+      "description": "HF-01/DR-05a → controles ya calculados, decisión humana actual pendiente.",
+      "previous": "HF-01/v01",
+      "current": "Revisión actual de la profundización",
+      "impact": "Evidencia concreta para revisión, sin aprobación inferida",
+      "evidence_ref": "data/evidence.json"
+    }
+  ],
+  "insights": [
+    {
+      "id": "HF-02-I1",
+      "headline": "Hay desacuerdo entre métricas y estabilidad frente a las 31 omisiones de temporada.",
+      "status": "VERIFIED",
+      "how": "Auditoría del snapshot y protocolo exploratorio reproducible; ver datos y scripts.",
+      "why": "Separar evidencia de afirmaciones heredadas, prevalencias y decisiones de representación.",
+      "what_for": "Orientar el siguiente experimento sin promover estilos ni mecanismos causales.",
+      "limitations": "Anotaciones sin validación visual; fuentes históricas parciales; no novedad mundial demostrada.",
+      "evidence_refs": [
+        "data/evidence.json"
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "chart_id": "HF-02-cluster_sensitivity",
+      "title": "Silhouette con y sin tres filas vacías",
+      "question_id": "BR-09",
+      "type": "SVG from measured data",
+      "chart_path": "charts/cluster_sensitivity.svg",
+      "data_source": "Walt Hickey/FiveThirtyEight; derived results",
+      "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+      "evidence_ref": "data/evidence.json",
+      "code_ref": "../../../research/build_feedback.py",
+      "population": "Snapshot de etiquetas; 381 total; sensibilidad 378 tras excluir tres vacíos",
+      "n": 381,
+      "denominator": "381 total; sensibilidad 378 tras excluir tres vacíos",
+      "unit": "episodios, marcas o registros de evidencia según figura",
+      "baseline": "Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad",
+      "uncertainty": "Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral",
+      "alt_text": "Silhouette con y sin tres filas vacías",
+      "rights_status": "DATA_ONLY",
+      "mobile_checked": false,
+      "desktop_checked": false,
+      "adversarial": true
+    },
+    {
+      "chart_id": "HF-02-assignment_changes",
+      "title": "Sensibilidad de asignaciones con matching",
+      "question_id": "BR-09",
+      "type": "SVG from measured data",
+      "chart_path": "charts/assignment_changes.svg",
+      "data_source": "Walt Hickey/FiveThirtyEight; derived results",
+      "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+      "evidence_ref": "data/evidence.json",
+      "code_ref": "../../../research/build_feedback.py",
+      "population": "Snapshot de etiquetas; 381 episodios, matching exacto; 31 reajustes por temporada",
+      "n": 381,
+      "denominator": "381 episodios, matching exacto; 31 reajustes por temporada",
+      "unit": "episodios, marcas o registros de evidencia según figura",
+      "baseline": "Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad",
+      "uncertainty": "Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral",
+      "alt_text": "Sensibilidad de asignaciones con matching",
+      "rights_status": "DATA_ONLY",
+      "mobile_checked": false,
+      "desktop_checked": false,
+      "adversarial": true
+    }
+  ],
+  "user_questions": [
+    {
+      "id": "HF-02-Q1",
+      "question": "¿Priorizamos BR-09 para revisar anotaciones y comparar algoritmos antes de buscar estilos o color?",
+      "options": [
+        "Priorizar BR-09",
+        "Aplazar profundización",
+        "Reorientar a BR-07"
+      ],
+      "recommended_option": "Priorizar BR-09",
+      "reason": "Mayor evidencia disponible y coste de CPU bajo; no compra ni scraping.",
+      "impact_if_postponed": "Se conservan cálculos; no se promueve otra O2 ni se inicia audiovisual.",
+      "human_response": null,
+      "responded_at": null
+    }
+  ],
+  "recommendation": {
+    "proposed_action": "Priorizar BR-09",
+    "default_action": "Conservar resultados y esperar decisión; sin nueva promoción O2",
+    "next_action": "Revisión de evidencia y QA visual antes de ampliar",
+    "prerequisites": [
+      "Decisión HF-02 para promoción O2",
+      "Permisos para nuevas imágenes",
+      "QA visual"
+    ]
+  },
+  "human_gate": "O2_PRIORITY_DECISION",
+  "decision_status": "PENDING",
+  "human_approval_ref": null,
+  "qa": {
+    "summary_first": true,
+    "chart_provenance_checked": true,
+    "uncertainty_checked": true,
+    "mobile_checked": false,
+    "desktop_checked": false,
+    "keyboard_checked": false,
+    "references_resolve": true,
+    "has_adversarial_review": true,
+    "no_unverified_surprise": true
+  }
+}

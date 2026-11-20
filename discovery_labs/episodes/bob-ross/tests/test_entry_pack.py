@@ -113,5 +113,56 @@ class EntryPackTests(unittest.TestCase):
         self.assertTrue((SHARED / "validators" / "validate_entry_pack.py").exists())
 
 
+
+class HumanFeedbackProtocolTests(unittest.TestCase):
+    """The scientific feedback protocol is reusable and cannot imply approval."""
+
+    def test_human_feedback_files_and_schema(self):
+        templates = SHARED / "templates"
+        spec = templates / "HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md"
+        html = templates / "HUMAN_FEEDBACK_REPORT_TEMPLATE.html"
+        schema_path = templates / "HUMAN_FEEDBACK_CHECKPOINT_SCHEMA.json"
+        plan = PACK / "HUMAN_FEEDBACK_CHECKPOINTS.md"
+        index = ROOT / "human_feedback" / "README.md"
+        for p in (spec, html, schema_path, plan, index):
+            self.assertTrue(p.is_file(), str(p))
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        self.assertEqual(
+            schema["properties"]["checkpoint_id"]["enum"],
+            ["HF-00", "HF-01", "HF-02", "HF-03", "HF-04", "HF-05"],
+        )
+        self.assertIn("decision_status", schema["required"])
+        self.assertIn("executive_summary", schema["required"])
+        self.assertIn("charts", schema["required"])
+        self.assertIn("qa", schema["required"])
+        for checkpoint in ("HF-00", "HF-01", "HF-02", "HF-03", "HF-04"):
+            self.assertIn(checkpoint, plan.read_text(encoding="utf-8"))
+        self.assertIn("NO ejecutados", index.read_text(encoding="utf-8"))
+
+    def test_report_executive_summary_precedes_charts(self):
+        html = (SHARED / "templates" / "HUMAN_FEEDBACK_REPORT_TEMPLATE.html").read_text(
+            encoding="utf-8"
+        )
+        self.assertTrue(
+            0 < html.index('id="summary-title"') < html.index('id="charts-title"')
+        )
+        self.assertIn("Resumen ejecutivo", html)
+        self.assertIn("NUNCA", html.upper())
+        self.assertIn("FIGURA PRINCIPAL PENDIENTE DE EVIDENCIA", html)
+        self.assertIn("PRUEBA ADVERSARIAL PENDIENTE", html)
+        self.assertIn("max-width:760px", html)
+        self.assertEqual(html.count("<figure"), 3)
+
+    def test_next_chat_enforces_feedback_without_fake_approvals(self):
+        prompt = (PACK / "PROMPT_NEXT_CHAT_2026-11-19.md").read_text(encoding="utf-8")
+        handoff = (PACK / "HANDOFF_2026-11-19.md").read_text(encoding="utf-8")
+        self.assertIn("HUMAN_FEEDBACK_CHECKPOINTS.md", prompt)
+        self.assertIn("Resumen ejecutivo", prompt)
+        self.assertIn("HF-02", prompt)
+        self.assertIn("HF-04", prompt)
+        self.assertIn("HUMAN_FEEDBACK_CHECKPOINTS.md", handoff)
+        self.assertIn("NO ejecutados", handoff)
+
+
 if __name__ == "__main__":
     unittest.main()

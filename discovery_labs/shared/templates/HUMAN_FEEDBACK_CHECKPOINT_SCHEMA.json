@@ -1,0 +1,529 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jcval94/DataCollectionMov/blob/main/discovery_labs/shared/templates/HUMAN_FEEDBACK_CHECKPOINT_SCHEMA.json",
+  "title": "AI Discovery Labs Human Feedback checkpoint v1",
+  "description": "Reusable metadata and evidence contract for a versioned scientific human-feedback report; schema structure is not a guarantee of scientific veracity.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "checkpoint_id",
+    "dataset_id",
+    "version",
+    "created_at",
+    "phase",
+    "status",
+    "source_commit",
+    "previous_checkpoint",
+    "report_path",
+    "executive_summary",
+    "changes_since_prior",
+    "insights",
+    "charts",
+    "user_questions",
+    "recommendation",
+    "human_gate",
+    "decision_status",
+    "qa"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "human-feedback-checkpoint-1.0"
+    },
+    "checkpoint_id": {
+      "enum": [
+        "HF-00",
+        "HF-01",
+        "HF-02",
+        "HF-03",
+        "HF-04",
+        "HF-05"
+      ]
+    },
+    "dataset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "phase": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "READY_FOR_FEEDBACK",
+        "BLOCKED",
+        "REVISED",
+        "CLOSED"
+      ]
+    },
+    "source_commit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "previous_checkpoint": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "report_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "report_starts_with_summary": {
+      "const": true
+    },
+    "executive_summary": {
+      "type": "object",
+      "required": [
+        "summary",
+        "delta",
+        "surprise",
+        "recommendation",
+        "limitation"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delta": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surprise": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommendation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "limitation": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "question_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "dataset_hash": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "changes_since_prior": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "description",
+          "previous",
+          "current",
+          "impact",
+          "evidence_ref"
+        ],
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "previous": {
+            "type": "string",
+            "minLength": 1
+          },
+          "current": {
+            "type": "string",
+            "minLength": 1
+          },
+          "impact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ref": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "string",
+                "minLength": 1
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "insights": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "headline",
+          "status",
+          "how",
+          "why",
+          "what_for",
+          "limitations",
+          "evidence_refs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "headline": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "VERIFIED",
+              "REFUTED",
+              "INCONCLUSIVE",
+              "HYPOTHESIS",
+              "BLOCKED"
+            ]
+          },
+          "surprising": {
+            "type": "boolean"
+          },
+          "effect_size": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "uncertainty": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "how": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why": {
+            "type": "string",
+            "minLength": 1
+          },
+          "what_for": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitations": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "charts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "chart_id",
+          "title",
+          "question_id",
+          "type",
+          "chart_path",
+          "data_source",
+          "evidence_ref",
+          "code_ref",
+          "population",
+          "n",
+          "denominator",
+          "unit",
+          "baseline",
+          "uncertainty",
+          "alt_text",
+          "rights_status",
+          "mobile_checked",
+          "desktop_checked"
+        ],
+        "properties": {
+          "chart_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "chart_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "data_source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dataset_hash": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "code_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "population": {
+            "type": "string",
+            "minLength": 1
+          },
+          "n": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "denominator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "baseline": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uncertainty": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alt_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rights_status": {
+            "enum": [
+              "DATA_ONLY",
+              "AUTHORIZED_IMAGE",
+              "BLOCKED"
+            ]
+          },
+          "mobile_checked": {
+            "type": "boolean"
+          },
+          "desktop_checked": {
+            "type": "boolean"
+          },
+          "adversarial": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "user_questions": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "question",
+          "options",
+          "recommended_option",
+          "reason",
+          "impact_if_postponed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "options": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "recommended_option": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "impact_if_postponed": {
+            "type": "string",
+            "minLength": 1
+          },
+          "human_response": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "responded_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "required": [
+        "proposed_action",
+        "default_action",
+        "next_action",
+        "prerequisites"
+      ],
+      "properties": {
+        "proposed_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "default_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "next_action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "human_gate": {
+      "enum": [
+        "ORIENTATION",
+        "RESEARCH_FEEDBACK",
+        "O2_PRIORITY_DECISION",
+        "SCIENTIFIC_FEEDBACK",
+        "RESEARCH_APPROVAL",
+        "STORY_APPROVAL"
+      ]
+    },
+    "decision_status": {
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "CHANGES_REQUESTED",
+        "DEFERRED",
+        "REJECTED"
+      ]
+    },
+    "human_approval_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "summary_first",
+        "chart_provenance_checked",
+        "uncertainty_checked",
+        "mobile_checked",
+        "desktop_checked",
+        "keyboard_checked",
+        "references_resolve",
+        "has_adversarial_review",
+        "no_unverified_surprise"
+      ],
+      "properties": {
+        "summary_first": {
+          "type": "boolean"
+        },
+        "chart_provenance_checked": {
+          "type": "boolean"
+        },
+        "uncertainty_checked": {
+          "type": "boolean"
+        },
+        "mobile_checked": {
+          "type": "boolean"
+        },
+        "desktop_checked": {
+          "type": "boolean"
+        },
+        "keyboard_checked": {
+          "type": "boolean"
+        },
+        "references_resolve": {
+          "type": "boolean"
+        },
+        "has_adversarial_review": {
+          "type": "boolean"
+        },
+        "no_unverified_surprise": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

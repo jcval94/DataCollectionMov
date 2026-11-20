@@ -1,0 +1,133 @@
+{
+  "schema_version": "human-feedback-checkpoint-1.0",
+  "checkpoint_id": "HF-01",
+  "dataset_id": "bob-ross-elementos",
+  "version": 1,
+  "created_at": "2026-11-19",
+  "phase": "Fase 1; retrospective packet / current review",
+  "status": "DRAFT",
+  "source_commit": "2f2bf8ec3647582b48ff36168dc74c320ace4310",
+  "previous_checkpoint": "HF-00/v01",
+  "report_path": "report.html",
+  "report_starts_with_summary": true,
+  "executive_summary": {
+    "summary": "Las O1 ya tienen scripts y siete artefactos replicados byte a byte. Las cuatro pruebas de secuencia no respaldan inhibición tras Holm; ausencia de repeticiones no equivale a programación deliberada. Cabañas e invierno se asocian en 381 episodios y el control por temporada conserva la señal, sin identificar su causa. El resultado metodológico más claro es que tres filas vacías forman un grupo en todos los k probados de 2 a 6: un patrón de datos puede parecer un estilo. Frente a HF-00 pasamos de datos conciliados a resultados y nulos medidos. Recomiendo revisar primero ese artefacto. Este informe es retrospectivo, no una aprobación anterior; siguen pendientes validación visual y verificación independiente de anotaciones.",
+    "delta": "HF-00 sin experimentos → tres O1 exploratorias, dos de alcance parcial.",
+    "surprise": "Las tres filas vacías forman un grupo para todos los k=2…6 probados.",
+    "recommendation": "Artefacto de agrupamiento",
+    "limitation": "QA visual pendiente; anotación no validada."
+  },
+  "question_ids": [
+    "BR-09",
+    "BR-14"
+  ],
+  "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "changes_since_prior": [
+    {
+      "description": "HF-00 sin experimentos → tres O1 exploratorias, dos de alcance parcial.",
+      "previous": "HF-00/v01",
+      "current": "Primeros resultados O1",
+      "impact": "Evidencia concreta para revisión, sin aprobación inferida",
+      "evidence_ref": "data/evidence.json"
+    }
+  ],
+  "insights": [
+    {
+      "id": "HF-01-I1",
+      "headline": "Las tres filas vacías forman un grupo para todos los k=2…6 probados.",
+      "status": "VERIFIED",
+      "how": "Auditoría del snapshot y protocolo exploratorio reproducible; ver datos y scripts.",
+      "why": "Separar evidencia de afirmaciones heredadas, prevalencias y decisiones de representación.",
+      "what_for": "Orientar el siguiente experimento sin promover estilos ni mecanismos causales.",
+      "limitations": "Anotaciones sin validación visual; fuentes históricas parciales; no novedad mundial demostrada.",
+      "evidence_refs": [
+        "data/evidence.json"
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "chart_id": "HF-01-sequence_null",
+      "title": "Adyacencias frente al nulo condicionado",
+      "question_id": "BR-14",
+      "type": "SVG from measured data",
+      "chart_path": "charts/sequence_null.svg",
+      "data_source": "Walt Hickey/FiveThirtyEight; derived results",
+      "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+      "evidence_ref": "data/evidence.json",
+      "code_ref": "../../../research/build_feedback.py",
+      "population": "Snapshot de etiquetas; 403 episodios y 372 transiciones dentro de temporada",
+      "n": 403,
+      "denominator": "403 episodios y 372 transiciones dentro de temporada",
+      "unit": "episodios, marcas o registros de evidencia según figura",
+      "baseline": "Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad",
+      "uncertainty": "Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral",
+      "alt_text": "Adyacencias frente al nulo condicionado",
+      "rights_status": "DATA_ONLY",
+      "mobile_checked": false,
+      "desktop_checked": false,
+      "adversarial": true
+    },
+    {
+      "chart_id": "HF-01-empty_group",
+      "title": "k=4 incluye tres filas vacías",
+      "question_id": "BR-09",
+      "type": "SVG from measured data",
+      "chart_path": "charts/empty_group.svg",
+      "data_source": "Walt Hickey/FiveThirtyEight; derived results",
+      "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+      "evidence_ref": "data/evidence.json",
+      "code_ref": "../../../research/build_feedback.py",
+      "population": "Snapshot de etiquetas; 381 GUEST=0; tamaños 236/106/36/3",
+      "n": 381,
+      "denominator": "381 GUEST=0; tamaños 236/106/36/3",
+      "unit": "episodios, marcas o registros de evidencia según figura",
+      "baseline": "Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad",
+      "uncertainty": "Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral",
+      "alt_text": "k=4 incluye tres filas vacías",
+      "rights_status": "DATA_ONLY",
+      "mobile_checked": false,
+      "desktop_checked": false,
+      "adversarial": true
+    }
+  ],
+  "user_questions": [
+    {
+      "id": "HF-01-Q1",
+      "question": "¿Qué resultado tiene mayor valor para la siguiente revisión: artefacto de agrupamiento o composición cabañas–invierno?",
+      "options": [
+        "Artefacto de agrupamiento",
+        "Composición cabañas–invierno"
+      ],
+      "recommended_option": "Artefacto de agrupamiento",
+      "reason": "Mayor evidencia disponible y coste de CPU bajo; no compra ni scraping.",
+      "impact_if_postponed": "Se conservan cálculos; no se promueve otra O2 ni se inicia audiovisual.",
+      "human_response": null,
+      "responded_at": null
+    }
+  ],
+  "recommendation": {
+    "proposed_action": "Artefacto de agrupamiento",
+    "default_action": "Conservar resultados y esperar decisión; sin nueva promoción O2",
+    "next_action": "Revisión de evidencia y QA visual antes de ampliar",
+    "prerequisites": [
+      "Decisión HF-02 para promoción O2",
+      "Permisos para nuevas imágenes",
+      "QA visual"
+    ]
+  },
+  "human_gate": "RESEARCH_FEEDBACK",
+  "decision_status": "PENDING",
+  "human_approval_ref": null,
+  "qa": {
+    "summary_first": true,
+    "chart_provenance_checked": true,
+    "uncertainty_checked": true,
+    "mobile_checked": false,
+    "desktop_checked": false,
+    "keyboard_checked": false,
+    "references_resolve": true,
+    "has_adversarial_review": true,
+    "no_unverified_surprise": true
+  }
+}

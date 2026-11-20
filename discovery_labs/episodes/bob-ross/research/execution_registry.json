@@ -19,9 +19,10 @@
     "BR-09": {
       "o1_status": "EXECUTED_PARTIAL",
       "artifact": "../research/results/o1_results.json#/BR-09",
-      "o2_status": "EXECUTED_EXPLORATORY",
+      "o2_status": "EXECUTED_BEFORE_HF_PROTOCOL_PENDING_REVIEW",
       "o3_status": "CONDITIONAL",
-      "approval": "PENDING"
+      "approval": "PENDING",
+      "o2_publication_status": "WITHHELD_PENDING_HF02"
     },
     "BR-14": {
       "o1_status": "EXECUTED_EXPLORATORY",
@@ -30,5 +31,8 @@
       "o3_status": "CONDITIONAL",
       "approval": "PENDING"
     }
-  }
+  },
+  "human_feedback_protocol": "PR17 merged during session; no human checkpoint decision inferred",
+  "HF02": "PENDING",
+  "O2_future_activation": "BLOCKED_PENDING_HF02"
 }

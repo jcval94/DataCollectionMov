@@ -1,0 +1,133 @@
+{
+  "schema_version": "human-feedback-checkpoint-1.0",
+  "checkpoint_id": "HF-00",
+  "dataset_id": "bob-ross-elementos",
+  "version": 1,
+  "created_at": "2026-11-19",
+  "phase": "Fase 1; retrospective packet / current review",
+  "status": "DRAFT",
+  "source_commit": "2f2bf8ec3647582b48ff36168dc74c320ace4310",
+  "previous_checkpoint": null,
+  "report_path": "report.html",
+  "report_starts_with_summary": true,
+  "executive_summary": {
+    "summary": "El CSV auditado contiene 403 episodios, 67 indicadores y 3,221 marcas positivas. PERSON sí existe y hay dos títulos repetidos; tres filas tienen todas sus etiquetas en cero. Desde el paquete de entrada pasamos de afirmaciones recibidas a conteos, hashes y contradicciones documentadas. Aún no hay un insight sorprendente confirmado en este checkpoint de auditoría. Recomiendo priorizar secuencias, asociaciones y robustez de agrupamiento, conservando color como ruta bloqueada por permisos. Este paquete se preparó retrospectivamente al integrarse el nuevo protocolo HF: no acredita una decisión humana anterior a la ejecución. Las fuentes históricas siguen parcialmente pendientes y las etiquetas no validan por sí mismas el contenido de todas las versiones físicas.",
+    "delta": "Paquete de entrada → auditoría y conciliación de 14 BR/10 H.",
+    "surprise": "Aún no hay un insight sorprendente confirmado en este checkpoint de auditoría.",
+    "recommendation": "Mantener tres rutas de CSV",
+    "limitation": "QA visual pendiente; anotación no validada."
+  },
+  "question_ids": [
+    "BR-05",
+    "BR-11"
+  ],
+  "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "changes_since_prior": [
+    {
+      "description": "Paquete de entrada → auditoría y conciliación de 14 BR/10 H.",
+      "previous": "Entry Pack",
+      "current": "Brújula y auditoría retrospectiva",
+      "impact": "Evidencia concreta para revisión, sin aprobación inferida",
+      "evidence_ref": "data/evidence.json"
+    }
+  ],
+  "insights": [
+    {
+      "id": "HF-00-I1",
+      "headline": "Aún no hay un insight sorprendente confirmado en este checkpoint de auditoría.",
+      "status": "INCONCLUSIVE",
+      "how": "Auditoría del snapshot y protocolo exploratorio reproducible; ver datos y scripts.",
+      "why": "Separar evidencia de afirmaciones heredadas, prevalencias y decisiones de representación.",
+      "what_for": "Orientar el siguiente experimento sin promover estilos ni mecanismos causales.",
+      "limitations": "Anotaciones sin validación visual; fuentes históricas parciales; no novedad mundial demostrada.",
+      "evidence_refs": [
+        "data/evidence.json"
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "chart_id": "HF-00-top_tags",
+      "title": "Etiquetas frecuentes: anfitrión e invitados",
+      "question_id": "BR-05",
+      "type": "SVG from measured data",
+      "chart_path": "charts/top_tags.svg",
+      "data_source": "Walt Hickey/FiveThirtyEight; derived results",
+      "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+      "evidence_ref": "data/evidence.json",
+      "code_ref": "../../../research/build_feedback.py",
+      "population": "Snapshot de etiquetas; 403 episodios; 381 y 22 en barras distintas",
+      "n": 403,
+      "denominator": "403 episodios; 381 y 22 en barras distintas",
+      "unit": "episodios, marcas o registros de evidencia según figura",
+      "baseline": "Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad",
+      "uncertainty": "Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral",
+      "alt_text": "Etiquetas frecuentes: anfitrión e invitados",
+      "rights_status": "DATA_ONLY",
+      "mobile_checked": false,
+      "desktop_checked": false,
+      "adversarial": false
+    },
+    {
+      "chart_id": "HF-00-review_coverage",
+      "title": "Cobertura de revisión independiente",
+      "question_id": "BR-11",
+      "type": "SVG from measured data",
+      "chart_path": "charts/review_coverage.svg",
+      "data_source": "Walt Hickey/FiveThirtyEight; derived results",
+      "dataset_hash": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+      "evidence_ref": "data/evidence.json",
+      "code_ref": "../../../research/build_feedback.py",
+      "population": "Snapshot de etiquetas; 54 registros de evidencia, no fuentes independientes",
+      "n": 54,
+      "denominator": "54 registros de evidencia, no fuentes independientes",
+      "unit": "episodios, marcas o registros de evidencia según figura",
+      "baseline": "Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad",
+      "uncertainty": "Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral",
+      "alt_text": "Cobertura de revisión independiente",
+      "rights_status": "DATA_ONLY",
+      "mobile_checked": false,
+      "desktop_checked": false,
+      "adversarial": true
+    }
+  ],
+  "user_questions": [
+    {
+      "id": "HF-00-Q1",
+      "question": "¿Mantenemos como prioridad las tres rutas ejecutables de CSV y posponemos color hasta resolver permisos?",
+      "options": [
+        "Mantener tres rutas de CSV",
+        "Reorientar prioridades"
+      ],
+      "recommended_option": "Mantener tres rutas de CSV",
+      "reason": "Mayor evidencia disponible y coste de CPU bajo; no compra ni scraping.",
+      "impact_if_postponed": "Se conservan cálculos; no se promueve otra O2 ni se inicia audiovisual.",
+      "human_response": null,
+      "responded_at": null
+    }
+  ],
+  "recommendation": {
+    "proposed_action": "Mantener tres rutas de CSV",
+    "default_action": "Conservar resultados y esperar decisión; sin nueva promoción O2",
+    "next_action": "Revisión de evidencia y QA visual antes de ampliar",
+    "prerequisites": [
+      "Decisión HF-02 para promoción O2",
+      "Permisos para nuevas imágenes",
+      "QA visual"
+    ]
+  },
+  "human_gate": "ORIENTATION",
+  "decision_status": "PENDING",
+  "human_approval_ref": null,
+  "qa": {
+    "summary_first": true,
+    "chart_provenance_checked": true,
+    "uncertainty_checked": true,
+    "mobile_checked": false,
+    "desktop_checked": false,
+    "keyboard_checked": false,
+    "references_resolve": true,
+    "has_adversarial_review": true,
+    "no_unverified_surprise": true
+  }
+}

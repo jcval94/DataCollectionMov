@@ -1,6 +1,10 @@
 # Handoff científico · Bob Ross · continuación 19-11-2026
 
-Este documento sucede a HANDOFF_2026-11-19.md. La fuente de estado ejecutado es `../research/README.md`, los manifiestos de resultados y el PR de la rama `research/bob-ross-o1-20261119`. No tratar el handoff anterior ni los informes recibidos como resultados posteriores a esta ejecución.
+Este documento sucede a HANDOFF_2026-11-19.md. La fuente de estado ejecutado es `../research/README.md`, los manifiestos de resultados y [PR #18](https://github.com/jcval94/DataCollectionMov/pull/18), rama `research/bob-ross-o1-20261119`. No tratar el handoff anterior ni los informes recibidos como resultados posteriores a esta ejecución.
+
+## Estado vigente tras actualización simultánea de main
+
+PR #17 se fusionó durante esta sesión y se integró en PR #18. Ver `../research/PROTOCOL_TRANSITION.md`. HF-00/HF-01 retrospectivos y HF-02 actual se prepararon con resumen ejecutivo, dos figuras/datos y feedback PENDING. Todos son DRAFT: falta QA visual. Cálculos O2 anteriores preservados, pero promoción editorial `WITHHELD_PENDING_HF02`; ninguna decisión humana inferida. No se abre otra O2/O3. Guía con contexto inicial y resumen antes de gráficas.
 
 ## Qué se completó
 
@@ -12,7 +16,7 @@ Este documento sucede a HANDOFF_2026-11-19.md. La fuente de estado ejecutado es 
 - O1 de BR-14 (403 episodios, 372 transiciones): cuatro pruebas de inhibición no sobreviven Holm. Nulo inconcluso, no equivalencia.
 - O1 parcial BR-07: 66 pares con Fisher/BH; CABIN–WINTER 28 vs 11.96 esperados, lift 2.342, bootstrap temporadas 1.795–2.895; control estacional por permutación ≈.0001. No simbolismo ni causalidad; H3 sobre 26 minutos y tríos no ejecutados.
 - O1 parcial BR-09: vacíos forman grupo propio en k=2…6. DR-05a activó solo su O2; O2 ejecutada: máximo del grid cambia k2→k3 al retirar vacíos; Euclídea cambia 179/381 asignaciones y quitar árbol 75/381 con matching. LOSO 31 reajustes ARI=1; representación 12 familias/64 etiquetas ARI .308. Estabilidad frente a temporada y sensibilidad frente a métrica no se contradicen.
-- HTML V4 generado desde banco/resultados, 14 fichas en un índice, una O2 activada anidada en BR-09, ninguna O3 activa. No guion, storyboard ni video nuevos.
+- HTML V4 generado desde banco/resultados, 14 fichas en un índice, sensibilidad previa de BR-09 retenida hasta HF-02, ninguna O3 activa. No guion, storyboard ni video nuevos.
 
 ## Dónde leer y repetir
 
@@ -21,7 +25,7 @@ Este documento sucede a HANDOFF_2026-11-19.md. La fuente de estado ejecutado es 
 3. `../research/results/`: o1_results.json, 30,000 vectores nulos, 66 asociaciones, 381 asignaciones, run_manifest.json.
 4. `../research/progressive_results/`: br09_o2.json, 31 reajustes, manifest.json.
 5. `questions_master.json`: diseños originales conservados como PLAN_ONLY en design_status, con execution separado. `../research/execution_registry.json` registra estados de ejecución, no preguntas duplicadas.
-6. `../research/QA.md`: 42 tests locales PASS, validadores y replicación O1 bit a bit; QA visual pendiente por acceso al navegador. CI del PR se verifica aparte.
+6. `../research/QA.md`: 48 tests locales PASS, validadores y replicación O1 bit a bit; QA visual pendiente por acceso al navegador. CI del PR se verifica aparte.
 
 ```bash
 cd discovery_labs/episodes/bob-ross
@@ -39,7 +43,7 @@ El manifiesto O1 registra el banco original anterior a referencias de ejecución
 
 ## Qué sigue y qué permanece bloqueado
 
-1. Revisión visual real de V4 en desktop, móvil y teclado; el navegador remoto no pudo acceder al servidor local. No darla por aprobada por pasar tests estáticos.
+1. Revisar `../human_feedback/HF-02/v01/report.html` para decidir profundización; decisiones PENDING. Revisión visual real de V4 en desktop, móvil y teclado; el navegador remoto no pudo acceder al servidor local. No darla por aprobada por pasar tests estáticos.
 2. Revisar vacíos y excepciones del diccionario con activos autorizados, libro de códigos y doble anotación. No llenar tres valores para cuadrar 3,224.
 3. Ampliar BR-09 con inicializaciones/algoritmos; O3 humana requiere permisos/evaluadores. Otras O2 permanecen condicionales. No transformar el p de CABIN–WINTER en mecanismo ni el nulo H8 en prueba de ausencia.
 4. Resolver fuente/licencia de paletas para BR-10. Completar cronología/créditos solo para preguntas que los requieran. Salud/duelo no identificados desde CSV.

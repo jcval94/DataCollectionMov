@@ -92,6 +92,16 @@ El HTML de Fase 1 es una **bitácora científica versionada**, no una diapositiv
 
 El HTML inicial, su actualización o una ejecución técnica **no sustituyen** la aprobación explícita de Fase 1 antes de pasar al audiovisual.
 
+## Human Feedback científico — obligatorio en cada episodio
+
+La investigación tiene **cinco checkpoints humanos** `HF-00`…`HF-04`, más `HF-05` opcional para storytelling. Ver el contrato compartido [HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md](../../templates/HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md), el [schema](../../templates/HUMAN_FEEDBACK_CHECKPOINT_SCHEMA.json) y el [HTML reusable](../../templates/HUMAN_FEEDBACK_REPORT_TEMPLATE.html).
+
+- **HF-00** tras verificar datos/DR y priorizar O1; **HF-01** tras primeras O1 realmente ejecutadas; **HF-02** tras DR-05a para decidir activación O2; **HF-03** tras O2/O3 y DR-04 para robustez; **HF-04** tras QA y DR-05b para aprobación científica del commit. No exigir O3 si no se dispara.
+- Cada checkpoint guarda `human_feedback/HF-XX/vNN/report.html`, `feedback.md`, `checkpoint.json` y figuras/datos permitidos. **Su primera sección visible es un resumen ejecutivo**, antes de cualquier gráfica; incluir qué cambió respecto a versión previa, insight que sorprenda **solo si tiene evidencia**, recomendaciones y máximo tres preguntas que requieren respuesta.
+- **Buenas gráficas obligatorias cuando hay resultados**: figura central, comparativa de robustez y prueba adversarial, con fuente, n/denominador, baseline, tamaño de efecto, incertidumbre, código, derechos, SVG/alternativas accesibles y QA 360px/1280px. En HF-00 las visualizaciones son de calidad/cobertura/planes; no simular descubrimientos.
+- `PENDING` no significa aprobado. La persona puede orientar prioridades pero nunca transformar hipótesis en resultados. **No promover O2 cuando el gate humano HF-02 está pendiente**, ni iniciar storytelling sin `RESEARCH_APPROVED:<commit>`.
+- Si no hay sorpresa científica validada, escribir explícitamente «Aún no hay un insight sorprendente confirmado». Corregir/refutar también es un avance digno de primera página.
+
 ## Activación
 Usar ANTES de escribir el reporte científico HTML de cualquier episodio; nunca fabricar una historia cerrada antes de analizar los datos. Acepta el paquete de entrada (dataset, perfilado, fuentes externas, antecedentes, licencias, metadata y preguntas heredadas). Produce un **grafo investigable de preguntas**, no una lista decorativa.
 

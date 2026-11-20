@@ -1,12 +1,14 @@
 # Bob Ross · investigación científica ejecutable · 19-11-2026
 
-Se auditó el snapshot, se conciliaron los tres DR y sus diez H con las 14 BR existentes, se ejecutaron tres O1 exploratorias y se activó/respondió únicamente BR-09-O2 tras DR-05a. No se inició audiovisual ni se aprobó la investigación. La revisión de fuentes fue focalizada, no exhaustiva; cada pendiente conserva ese estado.
+Se auditó el snapshot, se conciliaron los tres DR y sus diez H con las 14 BR existentes, se ejecutaron tres O1 exploratorias y se activó/respondió únicamente BR-09-O2 tras DR-05a. No se inició audiovisual ni se aprobó la investigación.
+
+**Estado vigente tras integrar PR #17 durante la sesión:** los cálculos O2 previos se conservan y su promoción editorial queda `WITHHELD_PENDING_HF02`. HF-00/HF-01 retrospectivos y HF-02 actual están preparados en [human_feedback/README.md](../human_feedback/README.md), todos DRAFT/PENDING. [Transición y cronología](PROTOCOL_TRANSITION.md). No se infiere respuesta humana y no se abre otra O2/O3. La revisión de fuentes fue focalizada, no exhaustiva; cada pendiente conserva ese estado.
 
 ## Estado real y procedencia
 
 Base inspeccionada: `ce757809214fd6d38ffede9f4130d3c68feb2469`, main con commits automáticos de movilidad posteriores al merge Bob Ross. PR #12/#14/#15/#16 fusionados. CI específico de main tras #16: [run 44579116224](https://github.com/jcval94/DataCollectionMov/actions/runs/44579116224), success sobre `a8d157a384b6afebd85f8f796a0f5bdab5e1a580`; esto no certifica automáticamente todos los commits posteriores ni esta rama. PR abiertos #2/#4/#6/#7 ajenos a esta investigación permanecen fuera de alcance.
 
-Ya existían `run.py` (conteos), `clustering.py` (cuatro salas didácticas), `examples/bob_ross_clustering` y un servicio MCP. No se reetiquetan como experimentos nuevos ni se modificó Render/MCP. La guía V3 exponía O2/O3 de antemano; V4 pasa a publicación progresiva con 14 fichas y una sola O2 activada.
+Ya existían `run.py` (conteos), `clustering.py` (cuatro salas didácticas), `examples/bob_ross_clustering` y un servicio MCP. No se reetiquetan como experimentos nuevos ni se modificó Render/MCP. La guía V3 exponía O2/O3 de antemano; V4 pasa a 14 fichas y conserva la sensibilidad previa con promoción retenida hasta HF-02.
 
 Archivos originales: CSV de 66,315 bytes intacto, hash y blob coincidentes con upstream fijado; los diez blobs del archivo recibido coinciden con MANIFEST. Los tres informes literales no estaban en Git y no se reconstruyeron. El archivo recibido sigue intacto.
 
@@ -106,6 +108,8 @@ O1 guarda 30,000 vectores nulos, 66 parejas y 381 asignaciones; O2 guarda compar
 No se requiere scipy para reproducir. Como verificación independiente durante desarrollo, los 66 Fisher se compararon con scipy: máximo error absoluto 2.22e−16. [QA](QA.md) registra pruebas reales y límites visuales, sin confundir validadores de estructura con verificación científica.
 
 ## Prioridades siguientes
+
+Primero revisar el paquete HF-02 y completar QA visual. El protocolo nuevo no transforma los cálculos anteriores en aprobación humana.
 
 1. Revisión de las tres filas sin etiquetas y de las excepciones jerárquicas contra versiones autorizadas y un libro de códigos; no tratar cero como ausencia visual validada.
 2. Ampliar BR-09 con otras inicializaciones/algoritmos y consenso humano solo con derechos y protocolo ciego. DR-04 se especializa cuando se seleccionen las figuras para publicación; aún no se ejecutó como investigación profunda.

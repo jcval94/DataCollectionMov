@@ -3,6 +3,7 @@ import importlib.util
 import itertools
 import json
 import math
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -102,6 +103,40 @@ class AuditTests(unittest.TestCase):
         for key in ['inputs','outputs']:
             for filename,digest in m[key].items():
                 self.assertEqual(hashlib.sha256((ROOT/filename).read_bytes()).hexdigest(),digest)
+
+    def test_hf_reports_start_with_summary_and_no_human_approval(self):
+        for ident in ('HF-00','HF-01','HF-02'):
+            folder=ROOT/'human_feedback'/ident/'v01'
+            checkpoint=json.loads((folder/'checkpoint.json').read_text())
+            page=(folder/'report.html').read_text()
+            ids=re.findall(r'\bid="([^"]+)"',page)
+            self.assertEqual(len(ids),len(set(ids)))
+            self.assertLess(page.index('id="summary-title"'),page.index('<figure'))
+            self.assertEqual(checkpoint['decision_status'],'PENDING')
+            self.assertEqual(checkpoint['status'],'DRAFT')
+            self.assertIsNone(checkpoint['human_approval_ref'])
+            self.assertFalse(checkpoint['qa']['mobile_checked'])
+            self.assertTrue(all(q.get('human_response') is None for q in checkpoint['user_questions']))
+
+    def test_hf_evidence_and_local_links_resolve(self):
+        for ident in ('HF-00','HF-01','HF-02'):
+            folder=ROOT/'human_feedback'/ident/'v01'
+            page=(folder/'report.html').read_text()
+            checkpoint=json.loads((folder/'checkpoint.json').read_text())
+            for c in checkpoint['charts']:
+                for key in ('chart_path','code_ref','evidence_ref'):
+                    self.assertTrue((folder/c[key]).exists(),c[key])
+            for ref in re.findall(r'(?:href|src)="([^"]+)"',page):
+                if not ref.startswith(('#','https:','http:')):
+                    self.assertTrue((folder/ref).exists(),ref)
+
+    def test_no_o2_promotion_after_hf_protocol_integration(self):
+        registry=json.loads((ROOT/'research/execution_registry.json').read_text())
+        self.assertEqual(registry['HF02'],'PENDING')
+        self.assertEqual(registry['executions']['BR-09']['o2_publication_status'],'WITHHELD_PENDING_HF02')
+        page=(ROOT/'research_guide.html').read_text()
+        self.assertNotIn('O2 activada y medida',page)
+        self.assertLess(page.index('id="resumen"'),page.index('<img'))
 
 
 if __name__=='__main__':unittest.main()

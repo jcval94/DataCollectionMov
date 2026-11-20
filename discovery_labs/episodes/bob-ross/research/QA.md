@@ -4,7 +4,7 @@
 
 | Comprobación | Resultado |
 |---|---|
-| Suite Bob Ross, incluye nuevas invariantes científicas | 36 tests PASS |
+| Suite Bob Ross, incluye nuevas invariantes científicas | 42 tests PASS |
 | Suite del validador compartido | 6 tests PASS |
 | `run.py --check` | PASS; snapshot y conteos históricos |
 | `entry_pack/validate_pack.py` | PASS; 14 modelos y 14 contrastes de diseño; no ejecuta los modelos |
@@ -28,6 +28,10 @@ El primer `diff --check` señaló finales CRLF de los CSV de investigación. Se 
 El navegador remoto no pudo abrir el servidor local (`ERR_CONNECTION_REFUSED`); no se certifican render, responsive móvil, navegación de teclado, interacción real del selector, contraste ni accesibilidad integral. El intento de inspeccionar la pestaña de error fue rechazado por la política de URL del navegador. No se continuó por vías alternativas de navegador.
 
 Se comprobaron estructura y sintaxis; eso no reemplaza una prueba visual. La guía incorpora select nativo etiquetado, controles HTML details/summary, focus visible, alt de SVG, tabla textual y fallback noscript. Su comportamiento requiere verificación en navegador accesible antes de aprobación científica/editorial.
+
+## Integración de PR #17
+
+Se integró main `b12e577f36addce2e686d7768eeee7311aa0ac87` durante la revisión del PR #18. Se conservan sus templates, protocolo y tres tests. Total local final: 42 tests Bob Ross + 6 compartidos = 48 PASS. Tres paquetes HF validan contra JSON Schema draft 2020-12 (jsonschema como verificación de desarrollo); sus decisiones son PENDING y QA visual false. Tests stdlib comprueban resumen primero, IDs únicos, evidencia/rutas y ausencia de promoción O2 sin HF-02. No se simulan HF-03/HF-04 ni aprobación retrospectiva.
 
 ## CI de GitHub
 

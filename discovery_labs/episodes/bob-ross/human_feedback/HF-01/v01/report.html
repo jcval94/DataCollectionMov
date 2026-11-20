@@ -1,0 +1,525 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bob Ross · HF-01 v01</title><style>
+    :root { --ink:#17232d; --muted:#586b77; --faint:#8997a1; --line:#d9e1e6; --bg:#f6f8f9; --paper:#fff; --accent:#176a70; --accent-soft:#eff8f7; --warning:#7a4a16; --shadow:0 3px 16px rgba(15,30,42,.055);}
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    a { color:#0b5d63; text-underline-offset:.15em; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #1b8390;outline-offset:3px; }
+    .wrap { width:min(1120px,calc(100% - 32px)); margin:auto; }
+    .topline { background:var(--ink);color:#f8fbfc; padding:13px 0; }
+    .topline .wrap {display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:.83rem;letter-spacing:.03em;}
+    .topline strong {font-weight:800;}
+    .topline span {color:#d2dde3;text-align:right;}
+    header.hero {padding:44px 0 18px;}
+    .eyebrow {font-size:.78rem;text-transform:uppercase;letter-spacing:.095em;color:var(--accent);font-weight:800;}
+    h1 {font-size:clamp(1.7rem,4vw,3rem);line-height:1.13;letter-spacing:-.035em;margin:.4rem 0 .85rem;max-width:920px;}
+    .sub {font-size:.96rem;color:var(--muted);margin:0;max-width:850px;}
+    .statusbar {display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;font-size:.85rem;color:var(--muted);}
+    .statusbar span {border:1px solid var(--line);border-radius:5px;background:var(--paper);padding:4px 9px;}
+    .paper {background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px;margin:20px 0;}
+    .summary {border-top:5px solid var(--accent);margin-top:12px;}
+    .sectionhead {display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;}
+    .sectionhead h2 {margin:0;font-size:1.35rem;letter-spacing:-.02em;}
+    .sectionhead small {font-size:.78rem;color:var(--muted);}
+    h2 {font-size:1.35rem;line-height:1.25;margin:0 0 16px;letter-spacing:-.02em;}
+    h3 {font-size:1rem;margin:0 0 8px;}
+    .lead {font-size:1.07rem;max-width:900px;margin:0;line-height:1.7;}
+    .summary-grid {margin-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+    .summary-grid article {border-left:2px solid var(--line);padding:0 12px;}
+    .summary-grid p {margin:.15rem 0;color:var(--muted);font-size:.89rem;}
+    .summary-grid strong {display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+    .note {border-left:3px solid #ad7719;padding:8px 12px;margin-top:20px;color:var(--warning);background:#fdfaf5;font-size:.92rem;}
+    table {width:100%;border-collapse:collapse;font-size:.91rem;}
+    th {text-align:left;color:#3e525e;background:#f3f6f7;font-weight:700;}
+    th,td {border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top;}
+    .table-scroll {overflow-x:auto;}
+    .chart-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+    figure {margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+    figure.feature {grid-column:1 / -1;}
+    figure .fig-top {padding:18px 18px 8px;}
+    figure .fig-top p {margin:4px 0 0;color:var(--muted);font-size:.88rem;}
+    .chart-slot {min-height:210px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:repeating-linear-gradient(-45deg,#f7f9fa,#f7f9fa 14px,#f1f5f6 14px,#f1f5f6 28px);display:grid;place-items:center;padding:28px 18px;text-align:center;color:#627683;font-weight:650;}
+    figure.feature .chart-slot {min-height:310px;}
+    .chart-slot p {max-width:420px;font-size:.89rem;font-weight:400;margin:6px 0 0;}
+    figcaption {padding:12px 18px 16px;color:var(--muted);font-size:.84rem;}
+    .split {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;}
+    .split article {padding:17px;border:1px solid var(--line);border-radius:10px;}
+    .split p {font-size:.9rem;color:var(--muted);margin:0;}
+    ol {padding-left:1.4rem;}
+    li {margin-bottom:13px;}
+    .question {padding:14px 16px;border:1px solid var(--line);border-radius:9px;margin-bottom:12px;}
+    .question strong {display:block;margin-bottom:4px;}
+    .question p {margin:4px 0;color:var(--muted);font-size:.91rem;}
+    .question .choice {color:var(--ink);font-weight:650;}
+    footer {color:var(--muted);font-size:.82rem;padding:14px 0 48px;}
+    @media (max-width:760px) {
+      .paper{padding:18px;margin:15px 0}.hero{padding-top:24px!important}.chart-grid,.summary-grid,.split{grid-template-columns:1fr}
+      .summary-grid article{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}
+      figure.feature{grid-column:auto}figure.feature .chart-slot{min-height:240px}.topline span{display:none}
+      th,td{min-width:110px} .sectionhead{display:block}
+    }
+    @media print {body{background:#fff}.paper{break-inside:avoid;box-shadow:none}.chart-slot{background:#fff;border:1px solid #aaa}.topline{background:#fff;color:#000;border-bottom:1px solid #ccc}}
+    @media (prefers-reduced-motion:reduce) {*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  .chart-scroll{overflow-x:auto}figure img{width:100%;height:auto;min-width:640px}figure{margin:18px 0}.chart-table{overflow:auto}h1{font-size:clamp(1.5rem,4vw,2.4rem)}header.hero{padding-top:20px}.summary-grid{grid-template-columns:1fr}summary{cursor:pointer}</style></head><body><main class="wrap"><header class="hero"><div class="eyebrow">AI Discovery Labs · Bob Ross · HF-01</div><h1>Primeros resultados O1</h1><p>19-11-2026 · v01 · DRAFT · decisión PENDING</p></header>
+<section class="paper summary" aria-labelledby="summary-title"><h2 id="summary-title">Resumen ejecutivo</h2><p class="lead">Las O1 ya tienen scripts y siete artefactos replicados byte a byte. Las cuatro pruebas de secuencia no respaldan inhibición tras Holm; ausencia de repeticiones no equivale a programación deliberada. Cabañas e invierno se asocian en 381 episodios y el control por temporada conserva la señal, sin identificar su causa. El resultado metodológico más claro es que tres filas vacías forman un grupo en todos los k probados de 2 a 6: un patrón de datos puede parecer un estilo. Frente a HF-00 pasamos de datos conciliados a resultados y nulos medidos. Recomiendo revisar primero ese artefacto. Este informe es retrospectivo, no una aprobación anterior; siguen pendientes validación visual y verificación independiente de anotaciones.</p><p class="note"><strong>Recomendación:</strong> Artefacto de agrupamiento. No se registra aprobación humana.</p></section>
+<section class="paper"><h2>Qué cambió</h2><div class="table-scroll"><table><tr><th>Antes</th><th>Ahora</th><th>Impacto</th></tr><tr><td>HF-00/v01</td><td>HF-00 sin experimentos → tres O1 exploratorias, dos de alcance parcial.</td><td>Decisión PENDING; cálculos no equivalen a aprobación</td></tr></table></div></section>
+<section class="paper"><h2>Hallazgo y límite</h2><p>Las tres filas vacías forman un grupo para todos los k=2…6 probados.</p><p>Resultado descriptivo del snapshot/método; no inferir estilos, intención ni salud. <a href="data/evidence.json">Cifras y evidencia</a>.</p></section>
+<section class="paper"><h2 id="charts-title">Gráficas de evidencia y sensibilidad</h2><figure><div class="fig-top"><h3>Adyacencias frente al nulo condicionado</h3></div><div class="chart-scroll" tabindex="0" aria-label="Gráfica desplazable"><img src="charts/sequence_null.svg" alt="Adyacencias frente al nulo condicionado"></div><figcaption>403 episodios y 372 transiciones dentro de temporada. Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad. Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral. <a href="data/evidence.json">Datos y tabla numérica JSON</a>. DATA_ONLY; legibilidad móvil/desktop pendiente.</figcaption></figure><figure><div class="fig-top"><h3>k=4 incluye tres filas vacías</h3></div><div class="chart-scroll" tabindex="0" aria-label="Gráfica desplazable"><img src="charts/empty_group.svg" alt="k=4 incluye tres filas vacías"></div><figcaption>381 GUEST=0; tamaños 236/106/36/3. Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad. Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral. <a href="data/evidence.json">Datos y tabla numérica JSON</a>. DATA_ONLY; legibilidad móvil/desktop pendiente.</figcaption></figure><details><summary>Tabla alternativa y procedencia</summary><pre>{
+  &quot;sequence&quot;: {
+    &quot;results&quot;: [
+      {
+        &quot;motif&quot;: &quot;OCEAN&quot;,
+        &quot;population&quot;: &quot;all&quot;,
+        &quot;episodes&quot;: 403,
+        &quot;eligible_edges&quot;: 372,
+        &quot;observed_11&quot;: 0,
+        &quot;expected_11_exact&quot;: 1.3846153846153846,
+        &quot;ratio_observed_expected&quot;: 0.0,
+        &quot;null_interval_95&quot;: [
+          0.0,
+          4.0
+        ],
+        &quot;null_mean_mc&quot;: 1.385,
+        &quot;p_inhibition&quot;: 0.21097890210978903,
+        &quot;p_runs_exploratory&quot;: 1.0,
+        &quot;mc_se_inhibition&quot;: 0.004079830388120826,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          301,
+          36,
+          35,
+          0
+        ],
+        &quot;markov_p1_given1&quot;: 0.0,
+        &quot;markov_p1_given0&quot;: 0.10682492581602374,
+        &quot;p_inhibition_holm&quot;: 0.42195780421957807,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;OVAL_FRAME&quot;,
+        &quot;population&quot;: &quot;all&quot;,
+        &quot;episodes&quot;: 403,
+        &quot;eligible_edges&quot;: 372,
+        &quot;observed_11&quot;: 1,
+        &quot;expected_11_exact&quot;: 3.5384615384615388,
+        &quot;ratio_observed_expected&quot;: 0.2826086956521739,
+        &quot;null_interval_95&quot;: [
+          1.0,
+          7.0
+        ],
+        &quot;null_mean_mc&quot;: 3.5122,
+        &quot;p_inhibition&quot;: 0.0984901509849015,
+        &quot;p_runs_exploratory&quot;: 0.9832016798320168,
+        &quot;mc_se_inhibition&quot;: 0.002979613448881718,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          301,
+          35,
+          35,
+          1
+        ],
+        &quot;markov_p1_given1&quot;: 0.027777777777777776,
+        &quot;markov_p1_given0&quot;: 0.10416666666666667,
+        &quot;p_inhibition_holm&quot;: 0.38636136386361364,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;WINTER&quot;,
+        &quot;population&quot;: &quot;all&quot;,
+        &quot;episodes&quot;: 403,
+        &quot;eligible_edges&quot;: 372,
+        &quot;observed_11&quot;: 6,
+        &quot;expected_11_exact&quot;: 9.692307692307693,
+        &quot;ratio_observed_expected&quot;: 0.619047619047619,
+        &quot;null_interval_95&quot;: [
+          5.0,
+          15.0
+        ],
+        &quot;null_mean_mc&quot;: 9.6924,
+        &quot;p_inhibition&quot;: 0.09659034096590341,
+        &quot;p_runs_exploratory&quot;: 0.9574042595740426,
+        &quot;mc_se_inhibition&quot;: 0.0029538436283224837,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          252,
+          57,
+          57,
+          6
+        ],
+        &quot;markov_p1_given1&quot;: 0.09523809523809523,
+        &quot;markov_p1_given0&quot;: 0.18446601941747573,
+        &quot;p_inhibition_holm&quot;: 0.38636136386361364,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;CABIN&quot;,
+        &quot;population&quot;: &quot;all&quot;,
+        &quot;episodes&quot;: 403,
+        &quot;eligible_edges&quot;: 372,
+        &quot;observed_11&quot;: 9,
+        &quot;expected_11_exact&quot;: 10.000000000000002,
+        &quot;ratio_observed_expected&quot;: 0.8999999999999998,
+        &quot;null_interval_95&quot;: [
+          5.0,
+          15.0
+        ],
+        &quot;null_mean_mc&quot;: 9.9743,
+        &quot;p_inhibition&quot;: 0.43665633436656337,
+        &quot;p_runs_exploratory&quot;: 0.7132286771322868,
+        &quot;mc_se_inhibition&quot;: 0.004959465532955611,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          252,
+          55,
+          56,
+          9
+        ],
+        &quot;markov_p1_given1&quot;: 0.13846153846153847,
+        &quot;markov_p1_given0&quot;: 0.1791530944625407,
+        &quot;p_inhibition_holm&quot;: 0.43665633436656337,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;OCEAN&quot;,
+        &quot;population&quot;: &quot;host&quot;,
+        &quot;episodes&quot;: 381,
+        &quot;eligible_edges&quot;: 330,
+        &quot;observed_11&quot;: 0,
+        &quot;expected_11_exact&quot;: 1.2412587412587412,
+        &quot;ratio_observed_expected&quot;: 0.0,
+        &quot;null_interval_95&quot;: [
+          0.0,
+          3.0
+        ],
+        &quot;null_mean_mc&quot;: 1.2542,
+        &quot;p_inhibition&quot;: 0.24577542245775422,
+        &quot;p_runs_exploratory&quot;: 1.0,
+        &quot;mc_se_inhibition&quot;: 0.004305244813486948,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          270,
+          30,
+          30,
+          0
+        ],
+        &quot;markov_p1_given1&quot;: 0.0,
+        &quot;markov_p1_given0&quot;: 0.1,
+        &quot;p_inhibition_holm&quot;: 0.49155084491550843,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;OVAL_FRAME&quot;,
+        &quot;population&quot;: &quot;host&quot;,
+        &quot;episodes&quot;: 381,
+        &quot;eligible_edges&quot;: 330,
+        &quot;observed_11&quot;: 0,
+        &quot;expected_11_exact&quot;: 3.2135198135198135,
+        &quot;ratio_observed_expected&quot;: 0.0,
+        &quot;null_interval_95&quot;: [
+          0.0,
+          6.0
+        ],
+        &quot;null_mean_mc&quot;: 3.2043,
+        &quot;p_inhibition&quot;: 0.025797420257974202,
+        &quot;p_runs_exploratory&quot;: 1.0,
+        &quot;mc_se_inhibition&quot;: 0.0015852255494397342,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          266,
+          33,
+          31,
+          0
+        ],
+        &quot;markov_p1_given1&quot;: 0.0,
+        &quot;markov_p1_given0&quot;: 0.11036789297658862,
+        &quot;p_inhibition_holm&quot;: 0.10318968103189681,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;WINTER&quot;,
+        &quot;population&quot;: &quot;host&quot;,
+        &quot;episodes&quot;: 381,
+        &quot;eligible_edges&quot;: 330,
+        &quot;observed_11&quot;: 6,
+        &quot;expected_11_exact&quot;: 8.992074592074593,
+        &quot;ratio_observed_expected&quot;: 0.6672542513479883,
+        &quot;null_interval_95&quot;: [
+          4.975000000000023,
+          14.0
+        ],
+        &quot;null_mean_mc&quot;: 9.0441,
+        &quot;p_inhibition&quot;: 0.15178482151784822,
+        &quot;p_runs_exploratory&quot;: 0.9304069593040696,
+        &quot;mc_se_inhibition&quot;: 0.0035879425321906824,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          220,
+          50,
+          54,
+          6
+        ],
+        &quot;markov_p1_given1&quot;: 0.1,
+        &quot;markov_p1_given0&quot;: 0.18518518518518517,
+        &quot;p_inhibition_holm&quot;: 0.45535446455354467,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;CABIN&quot;,
+        &quot;population&quot;: &quot;host&quot;,
+        &quot;episodes&quot;: 381,
+        &quot;eligible_edges&quot;: 330,
+        &quot;observed_11&quot;: 9,
+        &quot;expected_11_exact&quot;: 9.63613053613054,
+        &quot;ratio_observed_expected&quot;: 0.9339848569147774,
+        &quot;null_interval_95&quot;: [
+          5.0,
+          15.0
+        ],
+        &quot;null_mean_mc&quot;: 9.6879,
+        &quot;p_inhibition&quot;: 0.48135186481351866,
+        &quot;p_runs_exploratory&quot;: 0.6751324867513249,
+        &quot;mc_se_inhibition&quot;: 0.004996271453050106,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          217,
+          51,
+          53,
+          9
+        ],
+        &quot;markov_p1_given1&quot;: 0.14516129032258066,
+        &quot;markov_p1_given0&quot;: 0.19029850746268656,
+        &quot;p_inhibition_holm&quot;: 0.49155084491550843,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;OCEAN&quot;,
+        &quot;population&quot;: &quot;host_complete&quot;,
+        &quot;episodes&quot;: 378,
+        &quot;eligible_edges&quot;: 324,
+        &quot;observed_11&quot;: 0,
+        &quot;expected_11_exact&quot;: 1.2342657342657342,
+        &quot;ratio_observed_expected&quot;: 0.0,
+        &quot;null_interval_95&quot;: [
+          0.0,
+          3.0
+        ],
+        &quot;null_mean_mc&quot;: 1.2441,
+        &quot;p_inhibition&quot;: 0.24687531246875313,
+        &quot;p_runs_exploratory&quot;: 1.0,
+        &quot;mc_se_inhibition&quot;: 0.004311720093327551,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          265,
+          29,
+          30,
+          0
+        ],
+        &quot;markov_p1_given1&quot;: 0.0,
+        &quot;markov_p1_given0&quot;: 0.09863945578231292,
+        &quot;p_inhibition_holm&quot;: 0.49375062493750627,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;OVAL_FRAME&quot;,
+        &quot;population&quot;: &quot;host_complete&quot;,
+        &quot;episodes&quot;: 378,
+        &quot;eligible_edges&quot;: 324,
+        &quot;observed_11&quot;: 0,
+        &quot;expected_11_exact&quot;: 3.211188811188811,
+        &quot;ratio_observed_expected&quot;: 0.0,
+        &quot;null_interval_95&quot;: [
+          1.0,
+          7.0
+        ],
+        &quot;null_mean_mc&quot;: 3.196,
+        &quot;p_inhibition&quot;: 0.024797520247975203,
+        &quot;p_runs_exploratory&quot;: 1.0,
+        &quot;mc_se_inhibition&quot;: 0.0015549979170083978,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          261,
+          32,
+          31,
+          0
+        ],
+        &quot;markov_p1_given1&quot;: 0.0,
+        &quot;markov_p1_given0&quot;: 0.10921501706484642,
+        &quot;p_inhibition_holm&quot;: 0.09919008099190081,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;WINTER&quot;,
+        &quot;population&quot;: &quot;host_complete&quot;,
+        &quot;episodes&quot;: 378,
+        &quot;eligible_edges&quot;: 324,
+        &quot;observed_11&quot;: 6,
+        &quot;expected_11_exact&quot;: 8.978088578088578,
+        &quot;ratio_observed_expected&quot;: 0.6682936961262852,
+        &quot;null_interval_95&quot;: [
+          4.0,
+          14.0
+        ],
+        &quot;null_mean_mc&quot;: 9.0007,
+        &quot;p_inhibition&quot;: 0.15198480151984803,
+        &quot;p_runs_exploratory&quot;: 0.930906909309069,
+        &quot;mc_se_inhibition&quot;: 0.003589882092400572,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          215,
+          49,
+          54,
+          6
+        ],
+        &quot;markov_p1_given1&quot;: 0.1,
+        &quot;markov_p1_given0&quot;: 0.1856060606060606,
+        &quot;p_inhibition_holm&quot;: 0.45595440455954406,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      },
+      {
+        &quot;motif&quot;: &quot;CABIN&quot;,
+        &quot;population&quot;: &quot;host_complete&quot;,
+        &quot;episodes&quot;: 378,
+        &quot;eligible_edges&quot;: 324,
+        &quot;observed_11&quot;: 9,
+        &quot;expected_11_exact&quot;: 9.61748251748252,
+        &quot;ratio_observed_expected&quot;: 0.9357958263651565,
+        &quot;null_interval_95&quot;: [
+          5.0,
+          15.0
+        ],
+        &quot;null_mean_mc&quot;: 9.5936,
+        &quot;p_inhibition&quot;: 0.49575042495750427,
+        &quot;p_runs_exploratory&quot;: 0.6587341265873413,
+        &quot;mc_se_inhibition&quot;: 0.004999569435635598,
+        &quot;transition_counts_00_01_10_11&quot;: [
+          212,
+          50,
+          53,
+          9
+        ],
+        &quot;markov_p1_given1&quot;: 0.14516129032258066,
+        &quot;markov_p1_given0&quot;: 0.19083969465648856,
+        &quot;p_inhibition_holm&quot;: 0.49575042495750427,
+        &quot;p_runs_holm_exploratory&quot;: 1.0,
+        &quot;supports_H8_inhibition&quot;: false
+      }
+    ],
+    &quot;status&quot;: &quot;EXECUTED_O1; prediction and recording chronology not identified&quot;
+  },
+  &quot;cabin_winter&quot;: {
+    &quot;n&quot;: 381,
+    &quot;n11&quot;: 28,
+    &quot;n10&quot;: 40,
+    &quot;n01&quot;: 39,
+    &quot;n00&quot;: 274,
+    &quot;expected_n11&quot;: 11.958005249343833,
+    &quot;lift&quot;: 2.341527655838455,
+    &quot;odds_ratio&quot;: 4.917948717948718,
+    &quot;or_boundary&quot;: false,
+    &quot;p_fisher_two_sided&quot;: 2.2693081993209826e-07,
+    &quot;expected_n11_within_season&quot;: 13.144522144522144,
+    &quot;p_season_permutation_two_sided&quot;: 9.999000099990002e-05,
+    &quot;lift_season_bootstrap_interval_95&quot;: [
+      1.7951878782641033,
+      2.895414320718223
+    ],
+    &quot;valid_bootstrap_replicates&quot;: 2000,
+    &quot;complete_case_sensitivity&quot;: {
+      &quot;n&quot;: 378,
+      &quot;n11&quot;: 28,
+      &quot;n10&quot;: 40,
+      &quot;n01&quot;: 39,
+      &quot;n00&quot;: 271,
+      &quot;expected_n11&quot;: 12.052910052910052,
+      &quot;lift&quot;: 2.3230904302019315,
+      &quot;odds_ratio&quot;: 4.864102564102564,
+      &quot;or_boundary&quot;: false,
+      &quot;p_fisher_two_sided&quot;: 2.7273858355547853e-07
+    }
+  },
+  &quot;cluster_k_grid&quot;: [
+    {
+      &quot;k&quot;: 2,
+      &quot;sizes&quot;: [
+        378,
+        3
+      ],
+      &quot;medoids&quot;: [
+        &quot;S01E04&quot;,
+        &quot;S09E10&quot;
+      ],
+      &quot;silhouette_same_jaccard_space&quot;: 0.3334267842956412
+    },
+    {
+      &quot;k&quot;: 3,
+      &quot;sizes&quot;: [
+        204,
+        174,
+        3
+      ],
+      &quot;medoids&quot;: [
+        &quot;S01E04&quot;,
+        &quot;S25E09&quot;,
+        &quot;S09E10&quot;
+      ],
+      &quot;silhouette_same_jaccard_space&quot;: 0.2220209265297543
+    },
+    {
+      &quot;k&quot;: 4,
+      &quot;sizes&quot;: [
+        236,
+        106,
+        36,
+        3
+      ],
+      &quot;medoids&quot;: [
+        &quot;S01E04&quot;,
+        &quot;S01E01&quot;,
+        &quot;S09E02&quot;,
+        &quot;S09E10&quot;
+      ],
+      &quot;silhouette_same_jaccard_space&quot;: 0.2768834778390344
+    },
+    {
+      &quot;k&quot;: 5,
+      &quot;sizes&quot;: [
+        236,
+        106,
+        22,
+        14,
+        3
+      ],
+      &quot;medoids&quot;: [
+        &quot;S01E04&quot;,
+        &quot;S01E01&quot;,
+        &quot;S09E02&quot;,
+        &quot;S01E09&quot;,
+        &quot;S09E10&quot;
+      ],
+      &quot;silhouette_same_jaccard_space&quot;: 0.26386267149499687
+    },
+    {
+      &quot;k&quot;: 6,
+      &quot;sizes&quot;: [
+        209,
+        79,
+        54,
+        22,
+        14,
+        3
+      ],
+      &quot;medoids&quot;: [
+        &quot;S01E04&quot;,
+        &quot;S01E01&quot;,
+        &quot;S15E10&quot;,
+        &quot;S09E02&quot;,
+        &quot;S01E09&quot;,
+        &quot;S09E10&quot;
+      ],
+      &quot;silhouette_same_jaccard_space&quot;: 0.2472748936570713
+    }
+  ]
+}
+</pre></details></section>
+<section class="paper"><h2>Cómo, por qué y para qué</h2><p><strong>CÓMO:</strong> CSV auditado y transformaciones declaradas, nulos condicionados, correcciones múltiples y controles; código en research/. <strong>POR QUÉ:</strong> los vacíos, prevalencias y representación producen patrones distintos. <strong>PARA QUÉ:</strong> escoger qué vale la pena comprobar y enseñar con incertidumbre.</p></section>
+<section class="paper"><h2>Una pregunta para JC</h2><p>¿Qué resultado tiene mayor valor para la siguiente revisión: artefacto de agrupamiento o composición cabañas–invierno?</p><p>Opciones: Artefacto de agrupamiento / Composición cabañas–invierno. Recomiendo Artefacto de agrupamiento. Coste de continuar: CPU local y revisión; no se autoriza descarga de imágenes. Si se aplaza, se conservan resultados sin nueva promoción O2.</p><p>Respuesta: PENDING. <a href="feedback.md">Registro de feedback</a>.</p></section>
+<section class="paper"><h2>Evidencia y siguiente decisión</h2><p>Continuar revisión de datos vacíos/algoritmos solo dentro del alcance autorizado. HF-02 sigue pendiente y el audiovisual bloqueado. Este paquete aún requiere QA visual a 360px/1280px y teclado.</p><p><a href="../../../research/PROTOCOL_TRANSITION.md">Transición de protocolo PR17</a> · <a href="../../../research/README.md">Informe científico</a> · <a href="../../../research/QA.md">QA y límites</a> · <a href="checkpoint.json">Metadatos del checkpoint</a> · <a href="../../../research/build_feedback.py">Generador</a>.</p><p>SHA-256 del dataset: <code>42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf</code>. Atribución: Walt Hickey/FiveThirtyEight, CC BY 4.0; gráficos propios derivados de etiquetas, sin pinturas ajenas. Versión v01: primera entrega de este hito, retrospectiva; no inventa versión aprobada previa.</p></section></main></body></html>
