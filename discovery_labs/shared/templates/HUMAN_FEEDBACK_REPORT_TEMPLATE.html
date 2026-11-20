@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>AI Discovery Labs · Human Feedback · {{CHECKPOINT_ID}}</title>
+  <meta name="description" content="Revisión científica y decisiones humanas con evidencia reproducible">
+  <style>
+    :root { --ink:#17232d; --muted:#586b77; --faint:#8997a1; --line:#d9e1e6; --bg:#f6f8f9; --paper:#fff; --accent:#176a70; --accent-soft:#eff8f7; --warning:#7a4a16; --shadow:0 3px 16px rgba(15,30,42,.055);}
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    a { color:#0b5d63; text-underline-offset:.15em; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #1b8390;outline-offset:3px; }
+    .wrap { width:min(1120px,calc(100% - 32px)); margin:auto; }
+    .topline { background:var(--ink);color:#f8fbfc; padding:13px 0; }
+    .topline .wrap {display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:.83rem;letter-spacing:.03em;}
+    .topline strong {font-weight:800;}
+    .topline span {color:#d2dde3;text-align:right;}
+    header.hero {padding:44px 0 18px;}
+    .eyebrow {font-size:.78rem;text-transform:uppercase;letter-spacing:.095em;color:var(--accent);font-weight:800;}
+    h1 {font-size:clamp(1.7rem,4vw,3rem);line-height:1.13;letter-spacing:-.035em;margin:.4rem 0 .85rem;max-width:920px;}
+    .sub {font-size:.96rem;color:var(--muted);margin:0;max-width:850px;}
+    .statusbar {display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;font-size:.85rem;color:var(--muted);}
+    .statusbar span {border:1px solid var(--line);border-radius:5px;background:var(--paper);padding:4px 9px;}
+    .paper {background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px;margin:20px 0;}
+    .summary {border-top:5px solid var(--accent);margin-top:12px;}
+    .sectionhead {display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;}
+    .sectionhead h2 {margin:0;font-size:1.35rem;letter-spacing:-.02em;}
+    .sectionhead small {font-size:.78rem;color:var(--muted);}
+    h2 {font-size:1.35rem;line-height:1.25;margin:0 0 16px;letter-spacing:-.02em;}
+    h3 {font-size:1rem;margin:0 0 8px;}
+    .lead {font-size:1.07rem;max-width:900px;margin:0;line-height:1.7;}
+    .summary-grid {margin-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+    .summary-grid article {border-left:2px solid var(--line);padding:0 12px;}
+    .summary-grid p {margin:.15rem 0;color:var(--muted);font-size:.89rem;}
+    .summary-grid strong {display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+    .note {border-left:3px solid #ad7719;padding:8px 12px;margin-top:20px;color:var(--warning);background:#fdfaf5;font-size:.92rem;}
+    table {width:100%;border-collapse:collapse;font-size:.91rem;}
+    th {text-align:left;color:#3e525e;background:#f3f6f7;font-weight:700;}
+    th,td {border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top;}
+    .table-scroll {overflow-x:auto;}
+    .chart-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+    figure {margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+    figure.feature {grid-column:1 / -1;}
+    figure .fig-top {padding:18px 18px 8px;}
+    figure .fig-top p {margin:4px 0 0;color:var(--muted);font-size:.88rem;}
+    .chart-slot {min-height:210px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:repeating-linear-gradient(-45deg,#f7f9fa,#f7f9fa 14px,#f1f5f6 14px,#f1f5f6 28px);display:grid;place-items:center;padding:28px 18px;text-align:center;color:#627683;font-weight:650;}
+    figure.feature .chart-slot {min-height:310px;}
+    .chart-slot p {max-width:420px;font-size:.89rem;font-weight:400;margin:6px 0 0;}
+    figcaption {padding:12px 18px 16px;color:var(--muted);font-size:.84rem;}
+    .split {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;}
+    .split article {padding:17px;border:1px solid var(--line);border-radius:10px;}
+    .split p {font-size:.9rem;color:var(--muted);margin:0;}
+    ol {padding-left:1.4rem;}
+    li {margin-bottom:13px;}
+    .question {padding:14px 16px;border:1px solid var(--line);border-radius:9px;margin-bottom:12px;}
+    .question strong {display:block;margin-bottom:4px;}
+    .question p {margin:4px 0;color:var(--muted);font-size:.91rem;}
+    .question .choice {color:var(--ink);font-weight:650;}
+    footer {color:var(--muted);font-size:.82rem;padding:14px 0 48px;}
+    @media (max-width:760px) {
+      .paper{padding:18px;margin:15px 0}.hero{padding-top:24px!important}.chart-grid,.summary-grid,.split{grid-template-columns:1fr}
+      .summary-grid article{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}
+      figure.feature{grid-column:auto}figure.feature .chart-slot{min-height:240px}.topline span{display:none}
+      th,td{min-width:110px} .sectionhead{display:block}
+    }
+    @media print {body{background:#fff}.paper{break-inside:avoid;box-shadow:none}.chart-slot{background:#fff;border:1px solid #aaa}.topline{background:#fff;color:#000;border-bottom:1px solid #ccc}}
+    @media (prefers-reduced-motion:reduce) {*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topline"><div class="wrap"><strong>AI DISCOVERY LABS</strong><span>Investigación científica · revisión humana basada en evidencia</span></div></div>
+  <main class="wrap">
+    <header class="hero">
+      <div class="eyebrow">{{DATASET_NAME}} · {{CHECKPOINT_ID}}</div>
+      <h1>{{REPORT_TITLE}}</h1>
+      <p class="sub">{{PERIOD_AND_SCOPE}}</p>
+      <div class="statusbar" aria-label="Estado y versión">
+        <span>Versión {{VERSION}}</span><span>{{DATE}}</span><span>Estado: {{EVIDENCE_STATUS}}</span><span>Decisión: {{DECISION_STATUS}}</span>
+      </div>
+    </header>
+
+    <!-- CONTRATO: PRIMERA SECCIÓN OBLIGATORIA, ANTES DE FIGURAS, KPIs, MÉTODOS Y NAVEGACIÓN -->
+    <section class="paper summary" aria-labelledby="summary-title">
+      <div class="sectionhead"><h2 id="summary-title">Resumen ejecutivo</h2><small>Lectura: menos de un minuto</small></div>
+      <p class="lead">{{EXECUTIVE_SUMMARY_100_TO_180_WORDS_OR_LESS}}</p>
+      <div class="summary-grid">
+        <article><strong>Qué cambió</strong><p>{{STRONGEST_MEASURED_DELTA_OR_BASELINE_NOTE}}</p></article>
+        <article><strong>Lo sorprendente</strong><p>{{SURPRISE_WITH_PROOF_OR_EXPLICIT_NO_CONFIRMED_INSIGHT}}</p></article>
+        <article><strong>Recomendación</strong><p>{{DECISION_WITH_RATIONALE}}</p></article>
+      </div>
+      <div class="note"><strong>Qué todavía no sabemos:</strong> {{MAIN_UNCERTAINTY_OR_BLOCKER}}</div>
+    </section>
+
+    <section class="paper" aria-labelledby="delta-title">
+      <h2 id="delta-title">Qué avanzó desde la versión anterior</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Antes</th><th>Ahora</th><th>Evidencia enlazada</th><th>Implicación</th></tr></thead>
+        <tbody><tr><td>{{PREVIOUS_STATE_OR_ENTRY_PACK}}</td><td>{{CURRENT_MEASURED_STATE}}</td><td>{{RELATIVE_LINK_TO_EVIDENCE}}</td><td>{{WHY_THIS_DELTA_MATTERS}}</td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section class="paper" aria-labelledby="surprise-title">
+      <h2 id="surprise-title">El hallazgo que merece nuestra atención</h2>
+      <p class="lead">{{MOST_SURPRISING_VALIDATED_RESULT_OR_NO_CONFIRMED_SURPRISE}}</p>
+      <p>{{EFFECT_SIZE_BASELINE_UNCERTAINTY_DENOMINATOR_AND_ALTERNATIVE}}</p>
+      <small>Estado: {{VERIFIED_REFUTED_INCONCLUSIVE_OR_BLOCKED}} · Evidencia: {{EVIDENCE_REF}}</small>
+    </section>
+
+    <section class="paper" aria-labelledby="charts-title">
+      <div class="sectionhead"><h2 id="charts-title">Gráficas que explican el descubrimiento</h2><small>2–4 si existen datos honestos; mostrar menos si es necesario</small></div>
+      <div class="chart-grid">
+        <figure class="feature">
+          <div class="fig-top"><h3>{{PRIMARY_CHART_MEANINGFUL_TITLE}}</h3><p>{{SCIENTIFIC_QUESTION_AND_BASELINE}}</p></div>
+          <div class="chart-slot" role="note">FIGURA PRINCIPAL PENDIENTE DE EVIDENCIA
+            <p>Reemplazar este espacio por SVG/PNG generado por código. Nunca completar con números ficticios.</p>
+          </div>
+          <figcaption>{{CHART_ID}} · {{N_DENOMINATOR_UNIT_CI_METHOD_SOURCE_CODE_LINKS_AND_ALT_TEXT}}</figcaption>
+        </figure>
+        <figure>
+          <div class="fig-top"><h3>{{ROBUSTNESS_CHART_TITLE}}</h3><p>{{SENSITIVITY_VS_BASELINE}}</p></div>
+          <div class="chart-slot" role="note">FIGURA DE ROBUSTEZ PENDIENTE
+            <p>Comparación entre métodos, segmentos o definiciones con escala compatible.</p>
+          </div>
+          <figcaption>{{ROBUSTNESS_CHART_PROVENANCE_AND_UNCERTAINTY}}</figcaption>
+        </figure>
+        <figure>
+          <div class="fig-top"><h3>{{ADVERSARIAL_CHART_TITLE}}</h3><p>{{RIVAL_EXPLANATION_OR_NULL}}</p></div>
+          <div class="chart-slot" role="note">PRUEBA ADVERSARIAL PENDIENTE
+            <p>Comparación con control negativo, permutación, hipótesis rival o sensibilidad.</p>
+          </div>
+          <figcaption>{{ADVERSARIAL_CHART_PROVENANCE_AND_UNCERTAINTY}}</figcaption>
+        </figure>
+      </div>
+      <p class="note">Esta plantilla no contiene resultados. Antes de publicar, sustituir las cajas de «pendiente» por figuras calculadas y verificar la legibilidad en móvil/desktop y acceso por teclado. Si no hay evidencia, conservar una nota honesta y no simular una gráfica.</p>
+    </section>
+
+    <section class="paper" aria-labelledby="meaning-title">
+      <h2 id="meaning-title">Cómo, por qué y para qué</h2>
+      <div class="split">
+        <article><h3>CÓMO</h3><p>{{DATA_METHOD_STATISTICAL_TEST_BASELINE_N_DENOMINATOR_REPRODUCTION}}</p></article>
+        <article><h3>POR QUÉ</h3><p>{{WHY_IT_MATTERS_AND_RIVAL_CAUSAL_INTERPRETATION_LIMIT}}</p></article>
+        <article><h3>PARA QUÉ</h3><p>{{ACTION_LEARNING_OR_NEXT_EXPERIMENT}}</p></article>
+      </div>
+    </section>
+
+    <section class="paper" aria-labelledby="human-title">
+      <h2 id="human-title">Tres preguntas o menos para ti</h2>
+      <div class="question">
+        <strong>{{HUMAN_QUESTION_1_WITH_CONSEQUENCE}}</strong>
+        <p class="choice">Opción recomendada: {{OPTION_A_OR_B_AND_DEFAULT}}</p>
+        <p>{{WHY_AND_WHAT_HAPPENS_IF_DEFERRED}}</p>
+      </div>
+      <p>{{OTHER_CRITICAL_QUESTIONS_IF_NEEDED_MAX_3_TOTAL}}</p>
+    </section>
+
+    <section class="paper" aria-labelledby="next-title">
+      <h2 id="next-title">Mi recomendación y siguiente paso</h2>
+      <p>{{NEXT_ACTION_ACCEPTANCE_CRITERION_BLOCKERS}}</p>
+      <details><summary>Métodos, referencias y reproducibilidad</summary>
+        <p>{{SOURCES_DATASET_SHA_CODE_COMMIT_QUESTIONS_VALIDATION_TESTS_LICENSES_AND_CHANGELOG}}</p>
+      </details>
+    </section>
+  </main>
+  <footer class="wrap">AI Discovery Labs · {{CHECKPOINT_ID}} · {{VERSION}} · Informe científico para feedback humano. El estado PENDING no equivale a aprobación.</footer>
+</body>
+</html>

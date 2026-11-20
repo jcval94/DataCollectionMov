@@ -64,6 +64,24 @@ El HTML científico debe abrir con un **párrafo de contexto general**, misión,
 
 **No crear guion, voz, storyboard, Remotion ni video.** El paso Fase 1→2 requiere aprobación explícita de la versión/commit científico, y Fase 2→3 otra aprobación. El hecho de fusionar un PR no equivale a aprobación científica.
 
+## 4 bis. HUMAN FEEDBACK OBLIGATORIO · INFORMES VISUALES
+
+Lee `entry_pack/HUMAN_FEEDBACK_CHECKPOINTS.md`, `discovery_labs/shared/templates/HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md`, su schema JSON y la plantilla `HUMAN_FEEDBACK_REPORT_TEMPLATE.html`.
+
+Además de las fases científicas, produce **informes humanos versionados** en `discovery_labs/episodes/bob-ross/human_feedback/HF-XX/vNN/`:
+
+- **HF-00:** después de auditar/conciliar el CSV y DR, antes de priorizar 3–5 arcos O1.
+- **HF-01:** después de los primeros O1 calculados y reproducidos.
+- **HF-02:** después de DR-05a, para decidir explícitamente qué O2 se investiga.
+- **HF-03:** después de O2/O3 y DR-04, para sensibilidad, rivales y seleccionar insights defendibles.
+- **HF-04:** después de DR-05b, QA y guía científica completa, para mi aprobación del commit exacto.
+
+**EL REQUISITO MÁS IMPORTANTE ES LA PRIMERA PANTALLA:** título y breve fecha, seguidos INMEDIATAMENTE por un **Resumen ejecutivo claro** con lo que aprendimos, qué avanzó vs la versión previa, un insight sorprendente **solo si es reproducible**, tu recomendación y una limitación principal. Después una sección «qué cambió», y **2–4 gráficas muy buenas si hay datos verificados**: figura central, contraste robusto, figura adversarial, e inspector por episodio si sirve. Cada gráfico debe tener n/denominador, baseline, incertidumbre, fuente, código, derechos, alt text y QA móvil/escritorio/teclado. No rellenar números ni dibujos fingiendo descubrimientos.
+
+Incluye CÓMO / POR QUÉ / PARA QUÉ, **máximo tres preguntas para mí** con opciones, recomendación y consecuencias de posponer, más próximos pasos. Guarda `report.html`, `feedback.md`, `checkpoint.json`, charts y datos derivados legalmente utilizables; una revisión v2 agrega versión, no sobrescribe la anterior.
+
+**HF-02 y HF-04 son gates humanos de decisión.** No tomar el silencio como aprobación, no promover O2 ni ir a storyboard por ausencia de respuesta. Si los hallazgos son inconclusos, el resumen debe comunicarlo honestamente; la ausencia de patrón también es aprendizaje.
+
 ## 5. CÓDIGO, GIT Y VALIDACIÓN
 
 - Mantener cambios dentro de `discovery_labs/episodes/bob-ross/` excepto mejoras realmente generalizables acordadas en `discovery_labs/shared/`, en PR separado.

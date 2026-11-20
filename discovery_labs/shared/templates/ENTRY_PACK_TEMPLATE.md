@@ -103,6 +103,14 @@ Sin autorización, detenerse. No confundir historia de investigación con guion 
 ## 8. Formato de handoff
 `START_HERE_NEW_CHAT.md` contendrá repositorio, ramas/PR, rutas, restricciones de escritura, contexto histórico resumido, conteos, gaps, ruta al catálogo compartido, preguntas priorizadas, comandos QA, definición de terminado, aprobaciones y prompt literal de siguiente turno. Una conversación nueva puede iniciar únicamente con este archivo.
 
+## Human Feedback e informes visuales por evidencia
+
+**Requerido en toda nueva entrada:** añadir al plan del episodio una ruta `human_feedback/` con índice y checkpoints `HF-00` (QA/prioridad), `HF-01` (primeros O1), `HF-02` (decisión O2 tras DR-E intermedio), `HF-03` (robustez con O2/O3 y DR-D) y `HF-04` (QA y aprobación formal de Fase 1). El checkpoint audiovisual `HF-05` queda fuera de la fase científica.
+
+La plantilla oficial está en [HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md](HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md), el HTML visual en [HUMAN_FEEDBACK_REPORT_TEMPLATE.html](HUMAN_FEEDBACK_REPORT_TEMPLATE.html) y el contrato estructurado en [HUMAN_FEEDBACK_CHECKPOINT_SCHEMA.json](HUMAN_FEEDBACK_CHECKPOINT_SCHEMA.json). Cada `report.html` empieza **con RESUMEN EJECUTIVO**, seguido por «qué cambió», sorpresa honesta y figuras científicas trazables; luego CÓMO/POR QUÉ/PARA QUÉ, máximo tres preguntas humanas, recomendación y evidencia.
+
+No rellenar gráficas con datos sintéticos para pasar QA; una revisión HF-00 solo puede usar distribuciones/cobertura realmente auditadas. Guardar `vNN`, `source_commit`, SHA de datos, decisiones explícitas y accesibilidad de las figuras. **Los informes son un mecanismo de feedback, no una aprobación implícita.**
+
 ## Infraestructura única (NO copiar dentro de cada episodio)
 
 - `discovery_labs/shared/skills/question-forge/SKILL.md`: metodología y rúbrica común.

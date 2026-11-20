@@ -11,6 +11,12 @@
 
 **Lee primero [START_HERE_NEW_CHAT.md](START_HERE_NEW_CHAT.md).** Contiene el contexto autocontenido, ramas, PR, instrucciones de no modificar fuera del episodio, estado exacto y un prompt literal. Para generalizar a nuevos episodios: [Plantilla general](../../../shared/templates/ENTRY_PACK_TEMPLATE.md).
 
+## Feedback científico en cada etapa
+
+**Nuevo punto de entrada:** [HUMAN_FEEDBACK_CHECKPOINTS.md](HUMAN_FEEDBACK_CHECKPOINTS.md) define HF-00…HF-04 con **reportes HTML que empiezan por un resumen ejecutivo** y muestran avances, insights con evidencia, gráficas de calidad, preguntas para la persona y sugerencias. El diseño reusable está en `discovery_labs/shared/templates/HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md`.
+
+Los cinco checkpoints están diseñados para la próxima ejecución, **no hay aún informes reales ni aprobaciones por este cambio de metodología**.
+
 ## Objetivo y nuevo protocolo editorial
 
 **AI Discovery Labs existe para descubrir insights increíbles e innovadores de cada dataset, siempre demostrables, reproducibles y útiles para pensar mejor.** Un resultado sorprendente solo cuenta si resiste comparaciones, pruebas adversariales y explicaciones alternativas; también es un descubrimiento demostrar que un supuesto era falso.
