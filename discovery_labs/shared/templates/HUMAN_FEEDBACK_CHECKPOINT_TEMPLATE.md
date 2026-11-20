@@ -95,6 +95,15 @@ Cada gráfica debe responder una **pregunta científica explícita**. Mínimos:
 - Si surge un insight contrario a hipótesis inicial, debe aparecer en el resumen y en el changelog, no esconderse como «pendiente».
 - Una negativa o falta de respuesta de HF-02 no invalida O1: solo impide promover la investigación de segundo orden en esa ruta.
 
+**Quality gate automático (para reportes reales, no plantillas):**
+
+```bash
+python discovery_labs/shared/validators/validate_human_feedback.py \
+  --checkpoint discovery_labs/episodes/<slug>/human_feedback/HF-XX/vNN --ready
+```
+
+El reporte debe llevar `report_starts_with_summary: true` en `checkpoint.json` y `qa` con todas las verificaciones reales en `true`; reportes `DRAFT` pueden verificarse sin `--ready` para revisar rutas/esquema mientras se completan. Los recursos de `charts[].chart_path` se resuelven desde la carpeta `HF-XX/vNN/`; solo declarar `mobile_checked`, `desktop_checked`, `keyboard_checked` cuando esas pruebas hayan ocurrido. El validador no verifica veracidad estadística ni derechos desde la web; esos checks requieren inspección humana/fuentes. Toda aprobación debe estar respaldada por una respuesta explícita y un commit.
+
 ## 7. Definition of Done y publicación
 
 **FAIL** si: falta resumen inicial; falta comparación con versión previa; se inventa una sorpresa; hay gráficas sin evidencia o muestra/denominador; falla la lectura móvil/teclado; no hay preguntas concretas; el estado de aprobación se asume; no existen enlaces a código/fuentes; los datos usados no corresponden a la versión declarada.

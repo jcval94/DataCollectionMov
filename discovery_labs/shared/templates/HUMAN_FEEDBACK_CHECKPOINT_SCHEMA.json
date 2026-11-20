@@ -23,7 +23,8 @@
     "recommendation",
     "human_gate",
     "decision_status",
-    "qa"
+    "qa",
+    "report_starts_with_summary"
   ],
   "properties": {
     "schema_version": {
@@ -525,5 +526,131 @@
       "additionalProperties": false
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "READY_FOR_FEEDBACK",
+              "CLOSED"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "charts": {
+            "minItems": 1
+          },
+          "qa": {
+            "properties": {
+              "summary_first": {
+                "const": true
+              },
+              "chart_provenance_checked": {
+                "const": true
+              },
+              "uncertainty_checked": {
+                "const": true
+              },
+              "mobile_checked": {
+                "const": true
+              },
+              "desktop_checked": {
+                "const": true
+              },
+              "keyboard_checked": {
+                "const": true
+              },
+              "references_resolve": {
+                "const": true
+              },
+              "has_adversarial_review": {
+                "const": true
+              },
+              "no_unverified_surprise": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "decision_status": {
+            "const": "APPROVED"
+          }
+        },
+        "required": [
+          "decision_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "human_approval_ref"
+        ],
+        "properties": {
+          "human_approval_ref": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "checkpoint_id": {
+            "const": "HF-04"
+          },
+          "decision_status": {
+            "const": "APPROVED"
+          }
+        },
+        "required": [
+          "checkpoint_id",
+          "decision_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "human_approval_ref": {
+            "type": "string",
+            "pattern": "^RESEARCH_APPROVED:"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "checkpoint_id": {
+            "const": "HF-05"
+          },
+          "decision_status": {
+            "const": "APPROVED"
+          }
+        },
+        "required": [
+          "checkpoint_id",
+          "decision_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "human_approval_ref": {
+            "type": "string",
+            "pattern": "^STORY_APPROVED:"
+          }
+        }
+      }
+    }
+  ]
 }

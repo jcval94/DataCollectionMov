@@ -102,6 +102,17 @@ La investigación tiene **cinco checkpoints humanos** `HF-00`…`HF-04`, más `H
 - `PENDING` no significa aprobado. La persona puede orientar prioridades pero nunca transformar hipótesis en resultados. **No promover O2 cuando el gate humano HF-02 está pendiente**, ni iniciar storytelling sin `RESEARCH_APPROVED:<commit>`.
 - Si no hay sorpresa científica validada, escribir explícitamente «Aún no hay un insight sorprendente confirmado». Corregir/refutar también es un avance digno de primera página.
 
+### Calidad de publicación de checkpoints reales
+
+La plantilla bonita **no es suficiente**: antes de presentar un reporte HF-XX/vNN como listo, ejecutar desde la raíz del repositorio:
+
+```bash
+python discovery_labs/shared/validators/validate_human_feedback.py \
+  --checkpoint discovery_labs/episodes/<slug>/human_feedback/HF-XX/vNN --ready
+```
+
+El validador offline exige `checkpoint.json`, `report.html`, `feedback.md`, **Resumen ejecutivo antes de tablas y figuras**, ausencia de variables `{{...}}` sin sustituir, metadatos y archivos de las gráficas, fuentes, QA visual/móvil/teclado y no atribuir `APPROVED` sin referencia humana. El esquema `HUMAN_FEEDBACK_CHECKPOINT_SCHEMA.json` también exige que la QA esté completa para estados publicables. **Superar validación estructural no implica que los hallazgos sean ciertos**: las evidencias numéricas requieren auditoría científica independiente. Si aún no existen resultados, conservar `DRAFT/BLOCKED` y no usar `--ready`.
+
 ## Activación
 Usar ANTES de escribir el reporte científico HTML de cualquier episodio; nunca fabricar una historia cerrada antes de analizar los datos. Acepta el paquete de entrada (dataset, perfilado, fuentes externas, antecedentes, licencias, metadata y preguntas heredadas). Produce un **grafo investigable de preguntas**, no una lista decorativa.
 

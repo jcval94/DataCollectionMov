@@ -111,6 +111,8 @@ La plantilla oficial está en [HUMAN_FEEDBACK_CHECKPOINT_TEMPLATE.md](HUMAN_FEED
 
 No rellenar gráficas con datos sintéticos para pasar QA; una revisión HF-00 solo puede usar distribuciones/cobertura realmente auditadas. Guardar `vNN`, `source_commit`, SHA de datos, decisiones explícitas y accesibilidad de las figuras. **Los informes son un mecanismo de feedback, no una aprobación implícita.**
 
+**Puerta de publicación verificable:** al llegar a cada HF con un informe ya rellenado, comprobar la instancia real con `python discovery_labs/shared/validators/validate_human_feedback.py --checkpoint discovery_labs/episodes/<slug>/human_feedback/HF-XX/vNN --ready`. Mantener la rama sin fusionar si el CI o el validador reportan errores de contenido, referencias o accesibilidad. No ejecutar esta comprobación sobre una plantilla sin datos.
+
 ## Infraestructura única (NO copiar dentro de cada episodio)
 
 - `discovery_labs/shared/skills/question-forge/SKILL.md`: metodología y rúbrica común.
