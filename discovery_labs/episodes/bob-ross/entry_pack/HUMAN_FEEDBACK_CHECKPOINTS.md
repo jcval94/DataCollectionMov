@@ -137,6 +137,19 @@ A continuación debe mostrar, en este orden:
 - [ ] CÓMO / POR QUÉ / PARA QUÉ, baselines, refutaciones, bloqueos y reproducibilidad.
 - [ ] HF-02 y HF-04 no se dan por aprobados sin respuesta explícita o autorización previa documentada del alcance.
 
+## 4 bis. Validación antes de publicar un informe
+
+El chequeo de la plantilla ya existe; para **cada reporte real** también hay un validador offline.
+
+```bash
+python discovery_labs/shared/validators/validate_human_feedback.py \
+  --checkpoint discovery_labs/episodes/bob-ross/human_feedback/HF-00/v01 --ready
+```
+
+El ejemplo usa HF-00/v01 como **ruta futura**: esta carpeta todavía no contiene un reporte ejecutado. El comando solo será aplicable después de completar su QA científico y generar `report.html`, `feedback.md`, `checkpoint.json` y por lo menos una gráfica real basada en datos con procedencia. Para una vista de trabajo no terminada, omitir `--ready`.
+
+Un resultado `PASS` garantiza **integridad formal, no descubrimiento válido**. Validar fuera del script el cálculo, denominador, intervalos, derechos y la interpretación. Para `HF-04`, el informe nunca puede sustituir la respuesta explícita `RESEARCH_APPROVED:<commit>`.
+
 ## 5. Relación con otros archivos
 
 Este protocolo **complementa** [RESEARCH_PLAN.md](RESEARCH_PLAN.md) y el [HANDOFF_2026-11-19.md](HANDOFF_2026-11-19.md). No reemplaza `QUESTIONS_MASTER.md`/`questions_master.json` ni modifica el HTML V3 existente. La primera entrega real a crear será `human_feedback/HF-00/v01/report.html` **después** de ejecutar QA del dataset, no antes. La fecha de ese checkpoint será la de la ejecución y no la de este plan.
