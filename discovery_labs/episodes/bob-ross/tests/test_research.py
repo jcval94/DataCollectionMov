@@ -1,0 +1,142 @@
+"""Scientific invariants and counterexamples, offline stdlib tests."""
+import importlib.util
+import itertools
+import json
+import math
+import re
+import sys
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'research'))
+import audit
+import experiments as ex
+from reconcile import MAPPING
+from progressive import aligned_changes
+
+
+class ExactTests(unittest.TestCase):
+    def test_fisher_reference_table(self):
+        # Published standard 2x2 example, independently checked against scipy.
+        self.assertAlmostEqual(ex.fisher(1,9,11,3),0.0027594561852200836,places=12)
+        self.assertAlmostEqual(ex.fisher(1,9,11,3),ex.fisher(3,11,9,1),places=12)
+        self.assertEqual(ex.fisher(0,0,0,10),1.)
+
+    def test_adjustments_known_values(self):
+        self.assertEqual(ex.adjust([.01,.04,.03]),[.03,.06,.06])
+        got=ex.adjust([.01,.04,.03],'bh')
+        for a,b in zip(got,[.03,.04,.04]): self.assertAlmostEqual(a,b)
+
+    def test_cluster_label_permutation_is_not_a_change(self):
+        changed,mapping=aligned_changes([0,0,1,1,2,3],[3,3,2,2,0,1])
+        self.assertEqual(changed,[])
+
+    def test_exact_adjacency_expectation_by_enumeration(self):
+        states=set(itertools.permutations([1,1,0,0]))
+        observed=[sum(a*b for a,b in zip(x,x[1:])) for x in states]
+        self.assertAlmostEqual(sum(observed)/len(states),2*(2-1)/4)
+
+    def test_filter_never_creates_adjacency(self):
+        def row(e,guest=0):return {'id':f'S01E{e:02d}','season':1,'guest':guest}
+        rr=[row(1),row(2,1),row(3),row(4)]
+        selected,edges=ex.sequence_blocks(rr,'host')[0]
+        self.assertEqual([r['id'] for r in selected],['S01E01','S01E03','S01E04'])
+        self.assertEqual(edges,[(1,2)])
+
+    def test_constant_sequence_has_no_inhibition(self):
+        rr=[{'id':f'S01E{e:02d}','season':1,'guest':0,'flags':dict.fromkeys(ex.MOTIFS,1)} for e in range(1,14)]
+        stats,_=ex.sequence(rr,'all',20)
+        self.assertTrue(all(r['expected_11_exact']==12 and r['p_inhibition']==1. for r in stats))
+        self.assertTrue(all(not r['supports_H8_inhibition'] for r in stats))
+
+
+class AuditTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):cls.report,cls.rows=audit.audit()
+
+    def test_actual_schema_overrules_received_prose(self):
+        self.assertEqual(self.report['positive_marks_all_67_columns'],3221)
+        self.assertEqual(self.report['person'],['S03E10'])
+        self.assertFalse(self.report['chimney_column_exists'])
+        self.assertEqual(len(self.report['duplicate_title_groups']),2)
+
+    def test_source_archive_stays_intact(self):
+        self.assertTrue(all(self.report['received_archive_blob_checks'].values()))
+
+    def test_no_silent_incomplete_exclusion(self):
+        self.assertEqual(set(self.report['zero_positive_rows']),set(audit.INCOMPLETE))
+        self.assertEqual(self.report['host_excluding_vignette_incomplete'],378)
+        self.assertEqual(len(self.rows),403)
+
+    def test_every_H_has_exactly_one_primary_canonical_parent(self):
+        bank=json.loads((ROOT/'entry_pack/questions_master.json').read_text())['questions']
+        self.assertEqual(set(MAPPING),{f'H{i}' for i in range(1,11)})
+        self.assertTrue(all(v[0] in {q['id'] for q in bank} for v in MAPPING.values()))
+
+    def test_sequence_denominators_do_not_bridge_gaps(self):
+        counts={p:sum(len(e) for _,e in ex.sequence_blocks(self.rows,p)) for p in ('all','host','host_complete')}
+        self.assertEqual(counts['all'],372)
+        self.assertLess(counts['host'],381-31)
+        self.assertLess(counts['host_complete'],counts['host'])
+
+    def test_progressive_publication_requires_measured_parent(self):
+        bank=json.loads((ROOT/'entry_pack/questions_master.json').read_text())['questions']
+        page=(ROOT/'research_guide.html').read_text()
+        self.assertEqual(page.count('class="story-arc"'),14)
+        for q in bank:
+            if q['id']!='BR-09':self.assertNotIn(q['o2'],page)
+            self.assertNotIn(q['o3'],page)
+        o2=json.loads((ROOT/'research/progressive_results/br09_o2.json').read_text())
+        self.assertEqual(o2['parent_id'],'BR-09-O1')
+        self.assertTrue((ROOT/'research'/o2['activation_checkpoint']).exists())
+
+    def test_recorded_output_hashes_and_guide_are_current(self):
+        import hashlib
+        for directory,key,name in [('results','output_sha256','run_manifest.json'),
+                                   ('progressive_results','outputs','manifest.json')]:
+            folder=ROOT/'research'/directory
+            m=json.loads((folder/name).read_text())
+            for filename,digest in m[key].items():
+                self.assertEqual(hashlib.sha256((folder/filename).read_bytes()).hexdigest(),digest)
+        m=json.loads((ROOT/'research/guide_build.json').read_text())
+        for key in ['inputs','outputs']:
+            for filename,digest in m[key].items():
+                self.assertEqual(hashlib.sha256((ROOT/filename).read_bytes()).hexdigest(),digest)
+
+    def test_hf_reports_start_with_summary_and_no_human_approval(self):
+        for ident in ('HF-00','HF-01','HF-02'):
+            folder=ROOT/'human_feedback'/ident/'v01'
+            checkpoint=json.loads((folder/'checkpoint.json').read_text())
+            page=(folder/'report.html').read_text()
+            ids=re.findall(r'\bid="([^"]+)"',page)
+            self.assertEqual(len(ids),len(set(ids)))
+            self.assertLess(page.index('id="summary-title"'),page.index('<figure'))
+            self.assertEqual(checkpoint['decision_status'],'PENDING')
+            self.assertEqual(checkpoint['status'],'DRAFT')
+            self.assertIsNone(checkpoint['human_approval_ref'])
+            self.assertFalse(checkpoint['qa']['mobile_checked'])
+            self.assertTrue(all(q.get('human_response') is None for q in checkpoint['user_questions']))
+
+    def test_hf_evidence_and_local_links_resolve(self):
+        for ident in ('HF-00','HF-01','HF-02'):
+            folder=ROOT/'human_feedback'/ident/'v01'
+            page=(folder/'report.html').read_text()
+            checkpoint=json.loads((folder/'checkpoint.json').read_text())
+            for c in checkpoint['charts']:
+                for key in ('chart_path','code_ref','evidence_ref'):
+                    self.assertTrue((folder/c[key]).exists(),c[key])
+            for ref in re.findall(r'(?:href|src)="([^"]+)"',page):
+                if not ref.startswith(('#','https:','http:')):
+                    self.assertTrue((folder/ref).exists(),ref)
+
+    def test_no_o2_promotion_after_hf_protocol_integration(self):
+        registry=json.loads((ROOT/'research/execution_registry.json').read_text())
+        self.assertEqual(registry['HF02'],'PENDING')
+        self.assertEqual(registry['executions']['BR-09']['o2_publication_status'],'WITHHELD_PENDING_HF02')
+        page=(ROOT/'research_guide.html').read_text()
+        self.assertNotIn('O2 activada y medida',page)
+        self.assertLess(page.index('id="resumen"'),page.index('<img'))
+
+
+if __name__=='__main__':unittest.main()

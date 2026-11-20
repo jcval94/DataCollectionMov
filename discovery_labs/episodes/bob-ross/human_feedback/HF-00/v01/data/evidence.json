@@ -1,0 +1,49 @@
+{
+  "columns": [
+    "TREE",
+    "TREES",
+    "DECIDUOUS",
+    "CONIFER",
+    "CLOUDS",
+    "MOUNTAIN",
+    "LAKE",
+    "GRASS",
+    "RIVER",
+    "BUSHES",
+    "SNOWY_MOUNTAIN",
+    "MOUNTAINS"
+  ],
+  "host_counts": [
+    345,
+    322,
+    215,
+    201,
+    167,
+    149,
+    131,
+    137,
+    124,
+    116,
+    98,
+    91
+  ],
+  "guest_counts": [
+    16,
+    15,
+    12,
+    11,
+    12,
+    11,
+    12,
+    5,
+    2,
+    4,
+    11,
+    8
+  ],
+  "review_coverage": {
+    "PENDIENTE": 36,
+    "REVISADA": 17,
+    "PARCIAL": 1
+  }
+}

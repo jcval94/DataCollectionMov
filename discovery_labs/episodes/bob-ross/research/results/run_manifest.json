@@ -1,0 +1,26 @@
+{
+  "executed_at_utc": "2026-11-20T03:33:08.000441+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "command": "python research/experiments.py --permutations 10000 --bootstrap 2000",
+  "input_code_sha256": {
+    "research/experiments.py": "66ffba7519a27ba1cd647454272d97a98fed7bad695c0d5243971b5177c53658",
+    "research/audit.py": "edff5fd59663704d85cdac4f91f63c49e91ea8cc69f50f0f374827ef9b779db6",
+    "research/reconcile.py": "496b7e598ee8a97600e32bae873526d459f554aec5fe08723048a3c1ede72b27",
+    "research/PROTOCOL.md": "0d1a75419f265a041e1210c004c6438b20b2dd161fbb18ebd20476479c268570",
+    "run.py": "8dadb05dafbc2fd4a2ebdcc47270af9d2cde2e94b3ab1d5d17ebed2a34cd174e",
+    "clustering.py": "a16c3cfec573f305646ed4c3c1a1884a76cf6057ca6ef18294e8d0ddf65aec21",
+    "entry_pack/questions_master.json": "09ee931cfb90c66634f9a2c4e6ff260a48e21bc0a31d7ed40218fa4eab59cded"
+  },
+  "output_sha256": {
+    "associations.csv": "85301a296801438790eff346aa2f52a29e7e48cc4135485a423559181a1cb2bb",
+    "cluster_assignments.csv": "68342e628b3748ef015a963b429077fc495e802eb5c0b3982d48828e78c5b180",
+    "o1_results.json": "a5ebf37ac6559c6eadc6a406a793b697f9fa687cc32b4597c13c71e26210a168",
+    "sequence.csv": "3b95dc5bec53c6f1c4d5a09c13f249c7a49ab25d1e5c25eed71ba09e19c6e47d",
+    "sequence_null_all.csv": "8dfe84dc2d38aa10fee2a46e434c7f342c8e605cba4c4862167c21560b9f824e",
+    "sequence_null_host.csv": "b7ad39403c2d80098e2251e7cdf12731edf1766356426dc13563e41ad2e17cb2",
+    "sequence_null_host_complete.csv": "7c79c1c8fe3154876e420a8bef9fe62723c19e510a7ac9c9c9588c03b965ad53"
+  },
+  "replication": "Offline stdlib, seed fixed; manifest clock/platform can differ; numeric artifacts deterministic in same Python version"
+}

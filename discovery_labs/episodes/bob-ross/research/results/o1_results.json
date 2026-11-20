@@ -1,0 +1,500 @@
+{
+  "protocol": "PROTOCOL.md",
+  "source_sha256": "42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf",
+  "status": "EXECUTED_EXPLORATORY_NOT_APPROVED",
+  "seed": 20261119,
+  "permutations": 10000,
+  "bootstrap_replicates": 2000,
+  "BR-14": {
+    "results": [
+      {
+        "motif": "OCEAN",
+        "population": "all",
+        "episodes": 403,
+        "eligible_edges": 372,
+        "observed_11": 0,
+        "expected_11_exact": 1.3846153846153846,
+        "ratio_observed_expected": 0.0,
+        "null_interval_95": [
+          0.0,
+          4.0
+        ],
+        "null_mean_mc": 1.385,
+        "p_inhibition": 0.21097890210978903,
+        "p_runs_exploratory": 1.0,
+        "mc_se_inhibition": 0.004079830388120826,
+        "transition_counts_00_01_10_11": [
+          301,
+          36,
+          35,
+          0
+        ],
+        "markov_p1_given1": 0.0,
+        "markov_p1_given0": 0.10682492581602374,
+        "p_inhibition_holm": 0.42195780421957807,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "OVAL_FRAME",
+        "population": "all",
+        "episodes": 403,
+        "eligible_edges": 372,
+        "observed_11": 1,
+        "expected_11_exact": 3.5384615384615388,
+        "ratio_observed_expected": 0.2826086956521739,
+        "null_interval_95": [
+          1.0,
+          7.0
+        ],
+        "null_mean_mc": 3.5122,
+        "p_inhibition": 0.0984901509849015,
+        "p_runs_exploratory": 0.9832016798320168,
+        "mc_se_inhibition": 0.002979613448881718,
+        "transition_counts_00_01_10_11": [
+          301,
+          35,
+          35,
+          1
+        ],
+        "markov_p1_given1": 0.027777777777777776,
+        "markov_p1_given0": 0.10416666666666667,
+        "p_inhibition_holm": 0.38636136386361364,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "WINTER",
+        "population": "all",
+        "episodes": 403,
+        "eligible_edges": 372,
+        "observed_11": 6,
+        "expected_11_exact": 9.692307692307693,
+        "ratio_observed_expected": 0.619047619047619,
+        "null_interval_95": [
+          5.0,
+          15.0
+        ],
+        "null_mean_mc": 9.6924,
+        "p_inhibition": 0.09659034096590341,
+        "p_runs_exploratory": 0.9574042595740426,
+        "mc_se_inhibition": 0.0029538436283224837,
+        "transition_counts_00_01_10_11": [
+          252,
+          57,
+          57,
+          6
+        ],
+        "markov_p1_given1": 0.09523809523809523,
+        "markov_p1_given0": 0.18446601941747573,
+        "p_inhibition_holm": 0.38636136386361364,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "CABIN",
+        "population": "all",
+        "episodes": 403,
+        "eligible_edges": 372,
+        "observed_11": 9,
+        "expected_11_exact": 10.000000000000002,
+        "ratio_observed_expected": 0.8999999999999998,
+        "null_interval_95": [
+          5.0,
+          15.0
+        ],
+        "null_mean_mc": 9.9743,
+        "p_inhibition": 0.43665633436656337,
+        "p_runs_exploratory": 0.7132286771322868,
+        "mc_se_inhibition": 0.004959465532955611,
+        "transition_counts_00_01_10_11": [
+          252,
+          55,
+          56,
+          9
+        ],
+        "markov_p1_given1": 0.13846153846153847,
+        "markov_p1_given0": 0.1791530944625407,
+        "p_inhibition_holm": 0.43665633436656337,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "OCEAN",
+        "population": "host",
+        "episodes": 381,
+        "eligible_edges": 330,
+        "observed_11": 0,
+        "expected_11_exact": 1.2412587412587412,
+        "ratio_observed_expected": 0.0,
+        "null_interval_95": [
+          0.0,
+          3.0
+        ],
+        "null_mean_mc": 1.2542,
+        "p_inhibition": 0.24577542245775422,
+        "p_runs_exploratory": 1.0,
+        "mc_se_inhibition": 0.004305244813486948,
+        "transition_counts_00_01_10_11": [
+          270,
+          30,
+          30,
+          0
+        ],
+        "markov_p1_given1": 0.0,
+        "markov_p1_given0": 0.1,
+        "p_inhibition_holm": 0.49155084491550843,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "OVAL_FRAME",
+        "population": "host",
+        "episodes": 381,
+        "eligible_edges": 330,
+        "observed_11": 0,
+        "expected_11_exact": 3.2135198135198135,
+        "ratio_observed_expected": 0.0,
+        "null_interval_95": [
+          0.0,
+          6.0
+        ],
+        "null_mean_mc": 3.2043,
+        "p_inhibition": 0.025797420257974202,
+        "p_runs_exploratory": 1.0,
+        "mc_se_inhibition": 0.0015852255494397342,
+        "transition_counts_00_01_10_11": [
+          266,
+          33,
+          31,
+          0
+        ],
+        "markov_p1_given1": 0.0,
+        "markov_p1_given0": 0.11036789297658862,
+        "p_inhibition_holm": 0.10318968103189681,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "WINTER",
+        "population": "host",
+        "episodes": 381,
+        "eligible_edges": 330,
+        "observed_11": 6,
+        "expected_11_exact": 8.992074592074593,
+        "ratio_observed_expected": 0.6672542513479883,
+        "null_interval_95": [
+          4.975000000000023,
+          14.0
+        ],
+        "null_mean_mc": 9.0441,
+        "p_inhibition": 0.15178482151784822,
+        "p_runs_exploratory": 0.9304069593040696,
+        "mc_se_inhibition": 0.0035879425321906824,
+        "transition_counts_00_01_10_11": [
+          220,
+          50,
+          54,
+          6
+        ],
+        "markov_p1_given1": 0.1,
+        "markov_p1_given0": 0.18518518518518517,
+        "p_inhibition_holm": 0.45535446455354467,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "CABIN",
+        "population": "host",
+        "episodes": 381,
+        "eligible_edges": 330,
+        "observed_11": 9,
+        "expected_11_exact": 9.63613053613054,
+        "ratio_observed_expected": 0.9339848569147774,
+        "null_interval_95": [
+          5.0,
+          15.0
+        ],
+        "null_mean_mc": 9.6879,
+        "p_inhibition": 0.48135186481351866,
+        "p_runs_exploratory": 0.6751324867513249,
+        "mc_se_inhibition": 0.004996271453050106,
+        "transition_counts_00_01_10_11": [
+          217,
+          51,
+          53,
+          9
+        ],
+        "markov_p1_given1": 0.14516129032258066,
+        "markov_p1_given0": 0.19029850746268656,
+        "p_inhibition_holm": 0.49155084491550843,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "OCEAN",
+        "population": "host_complete",
+        "episodes": 378,
+        "eligible_edges": 324,
+        "observed_11": 0,
+        "expected_11_exact": 1.2342657342657342,
+        "ratio_observed_expected": 0.0,
+        "null_interval_95": [
+          0.0,
+          3.0
+        ],
+        "null_mean_mc": 1.2441,
+        "p_inhibition": 0.24687531246875313,
+        "p_runs_exploratory": 1.0,
+        "mc_se_inhibition": 0.004311720093327551,
+        "transition_counts_00_01_10_11": [
+          265,
+          29,
+          30,
+          0
+        ],
+        "markov_p1_given1": 0.0,
+        "markov_p1_given0": 0.09863945578231292,
+        "p_inhibition_holm": 0.49375062493750627,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "OVAL_FRAME",
+        "population": "host_complete",
+        "episodes": 378,
+        "eligible_edges": 324,
+        "observed_11": 0,
+        "expected_11_exact": 3.211188811188811,
+        "ratio_observed_expected": 0.0,
+        "null_interval_95": [
+          1.0,
+          7.0
+        ],
+        "null_mean_mc": 3.196,
+        "p_inhibition": 0.024797520247975203,
+        "p_runs_exploratory": 1.0,
+        "mc_se_inhibition": 0.0015549979170083978,
+        "transition_counts_00_01_10_11": [
+          261,
+          32,
+          31,
+          0
+        ],
+        "markov_p1_given1": 0.0,
+        "markov_p1_given0": 0.10921501706484642,
+        "p_inhibition_holm": 0.09919008099190081,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "WINTER",
+        "population": "host_complete",
+        "episodes": 378,
+        "eligible_edges": 324,
+        "observed_11": 6,
+        "expected_11_exact": 8.978088578088578,
+        "ratio_observed_expected": 0.6682936961262852,
+        "null_interval_95": [
+          4.0,
+          14.0
+        ],
+        "null_mean_mc": 9.0007,
+        "p_inhibition": 0.15198480151984803,
+        "p_runs_exploratory": 0.930906909309069,
+        "mc_se_inhibition": 0.003589882092400572,
+        "transition_counts_00_01_10_11": [
+          215,
+          49,
+          54,
+          6
+        ],
+        "markov_p1_given1": 0.1,
+        "markov_p1_given0": 0.1856060606060606,
+        "p_inhibition_holm": 0.45595440455954406,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      },
+      {
+        "motif": "CABIN",
+        "population": "host_complete",
+        "episodes": 378,
+        "eligible_edges": 324,
+        "observed_11": 9,
+        "expected_11_exact": 9.61748251748252,
+        "ratio_observed_expected": 0.9357958263651565,
+        "null_interval_95": [
+          5.0,
+          15.0
+        ],
+        "null_mean_mc": 9.5936,
+        "p_inhibition": 0.49575042495750427,
+        "p_runs_exploratory": 0.6587341265873413,
+        "mc_se_inhibition": 0.004999569435635598,
+        "transition_counts_00_01_10_11": [
+          212,
+          50,
+          53,
+          9
+        ],
+        "markov_p1_given1": 0.14516129032258066,
+        "markov_p1_given0": 0.19083969465648856,
+        "p_inhibition_holm": 0.49575042495750427,
+        "p_runs_holm_exploratory": 1.0,
+        "supports_H8_inhibition": false
+      }
+    ],
+    "status": "EXECUTED_O1; prediction and recording chronology not identified"
+  },
+  "BR-07": {
+    "tested_pairs": 66,
+    "fdr_bh_below_05": 34,
+    "cabin_winter": {
+      "n": 381,
+      "n11": 28,
+      "n10": 40,
+      "n01": 39,
+      "n00": 274,
+      "expected_n11": 11.958005249343833,
+      "lift": 2.341527655838455,
+      "odds_ratio": 4.917948717948718,
+      "or_boundary": false,
+      "p_fisher_two_sided": 2.2693081993209826e-07,
+      "expected_n11_within_season": 13.144522144522144,
+      "p_season_permutation_two_sided": 9.999000099990002e-05,
+      "lift_season_bootstrap_interval_95": [
+        1.7951878782641033,
+        2.895414320718223
+      ],
+      "valid_bootstrap_replicates": 2000,
+      "complete_case_sensitivity": {
+        "n": 378,
+        "n11": 28,
+        "n10": 40,
+        "n01": 39,
+        "n00": 271,
+        "expected_n11": 12.052910052910052,
+        "lift": 2.3230904302019315,
+        "odds_ratio": 4.864102564102564,
+        "or_boundary": false,
+        "p_fisher_two_sided": 2.7273858355547853e-07
+      }
+    },
+    "status": "EXECUTED_O1_PAIRS; H3 timing and triples not executed"
+  },
+  "BR-09": {
+    "n": 381,
+    "feature_names": [
+      "arboles",
+      "montanas",
+      "lagos",
+      "rios",
+      "mar",
+      "nieve",
+      "cascadas",
+      "estructuras",
+      "nubes",
+      "rocas",
+      "sol",
+      "flores"
+    ],
+    "k_grid": [
+      {
+        "k": 2,
+        "sizes": [
+          378,
+          3
+        ],
+        "medoids": [
+          "S01E04",
+          "S09E10"
+        ],
+        "silhouette_same_jaccard_space": 0.3334267842956412
+      },
+      {
+        "k": 3,
+        "sizes": [
+          204,
+          174,
+          3
+        ],
+        "medoids": [
+          "S01E04",
+          "S25E09",
+          "S09E10"
+        ],
+        "silhouette_same_jaccard_space": 0.2220209265297543
+      },
+      {
+        "k": 4,
+        "sizes": [
+          236,
+          106,
+          36,
+          3
+        ],
+        "medoids": [
+          "S01E04",
+          "S01E01",
+          "S09E02",
+          "S09E10"
+        ],
+        "silhouette_same_jaccard_space": 0.2768834778390344
+      },
+      {
+        "k": 5,
+        "sizes": [
+          236,
+          106,
+          22,
+          14,
+          3
+        ],
+        "medoids": [
+          "S01E04",
+          "S01E01",
+          "S09E02",
+          "S01E09",
+          "S09E10"
+        ],
+        "silhouette_same_jaccard_space": 0.26386267149499687
+      },
+      {
+        "k": 6,
+        "sizes": [
+          209,
+          79,
+          54,
+          22,
+          14,
+          3
+        ],
+        "medoids": [
+          "S01E04",
+          "S01E01",
+          "S15E10",
+          "S09E02",
+          "S01E09",
+          "S09E10"
+        ],
+        "silhouette_same_jaccard_space": 0.2472748936570713
+      }
+    ],
+    "ari_jaccard_euclidean_k4": 0.10912138346241812,
+    "ari_without_tree_k4": 0.5752363034826563,
+    "ari_excluding_three_zero_rows_refit": 0.9913313980493301,
+    "complete_case_medoids": [
+      "S01E04",
+      "S01E01",
+      "S09E02",
+      "S01E09"
+    ],
+    "conditional_ari_bootstrap_interval_95": [
+      0.06911280537037491,
+      0.16348526540901598
+    ],
+    "bootstrap_caveat": "31 seasons resampled; fixed full-data partitions; NOT refit stability",
+    "status": "EXECUTED_PARTIAL_H6; no palettes/KMeans/Bernoulli or visual validation",
+    "negative_control": "No episode identifiers, season or author flags entered feature matrix"
+  }
+}

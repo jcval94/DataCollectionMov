@@ -1,0 +1,38 @@
+{
+  "version": "2026-11-19-scientific-v4",
+  "approval": "PENDING",
+  "canonical_bank": "../entry_pack/questions_master.json",
+  "research_summary": "README.md",
+  "DR05a": "DR-05a.md",
+  "O3": "CONDITIONAL_ALL",
+  "DR04": "DEFERRED",
+  "DR05b": "DEFERRED",
+  "audiovisual": "BLOCKED",
+  "executions": {
+    "BR-07": {
+      "o1_status": "EXECUTED_PARTIAL",
+      "artifact": "../research/results/o1_results.json#/BR-07",
+      "o2_status": "CONDITIONAL",
+      "o3_status": "CONDITIONAL",
+      "approval": "PENDING"
+    },
+    "BR-09": {
+      "o1_status": "EXECUTED_PARTIAL",
+      "artifact": "../research/results/o1_results.json#/BR-09",
+      "o2_status": "EXECUTED_BEFORE_HF_PROTOCOL_PENDING_REVIEW",
+      "o3_status": "CONDITIONAL",
+      "approval": "PENDING",
+      "o2_publication_status": "WITHHELD_PENDING_HF02"
+    },
+    "BR-14": {
+      "o1_status": "EXECUTED_EXPLORATORY",
+      "artifact": "../research/results/o1_results.json#/BR-14",
+      "o2_status": "CONDITIONAL",
+      "o3_status": "CONDITIONAL",
+      "approval": "PENDING"
+    }
+  },
+  "human_feedback_protocol": "PR17 merged during session; no human checkpoint decision inferred",
+  "HF02": "PENDING",
+  "O2_future_activation": "BLOCKED_PENDING_HF02"
+}

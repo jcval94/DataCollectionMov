@@ -1,0 +1,2 @@
+# Preserve exact scientific CSV bytes (csv.writer uses RFC 4180 CRLF).
+research/**/*.csv -text whitespace=cr-at-eol

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-labelledby="t d"><rect width="900" height="400" fill="#fffdf8"/>
+<title id="t">Silhouette con y sin tres filas vacías</title><desc id="d">Misma distancia Jaccard. 381 frente a 378 episodios. El máximo del grid cambia de k=2 a k=3; no valida estilos.</desc>
+<text x="35" y="38" font-family="sans-serif" font-size="21">Tres filas vacías cambian el máximo del grid</text>
+<line x1="90" x2="830" y1="320" y2="320" stroke="#e1e5df"/><text x="40" y="325" font-family="sans-serif" font-size="13">0.0</text>
+<line x1="90" x2="830" y1="260.0" y2="260.0" stroke="#e1e5df"/><text x="40" y="265.0" font-family="sans-serif" font-size="13">0.1</text>
+<line x1="90" x2="830" y1="200.0" y2="200.0" stroke="#e1e5df"/><text x="40" y="205.0" font-family="sans-serif" font-size="13">0.2</text>
+<line x1="90" x2="830" y1="140.0" y2="140.0" stroke="#e1e5df"/><text x="40" y="145.0" font-family="sans-serif" font-size="13">0.3</text>
+<line x1="90" x2="830" y1="80.0" y2="80.0" stroke="#e1e5df"/><text x="40" y="85.0" font-family="sans-serif" font-size="13">0.4</text>
+<rect x="118" y="119.94392942261527" width="28" height="200.05607057738473" fill="#225d69"/><text x="117" y="109.94392942261527" font-family="sans-serif" font-size="11">0.333</text>
+<rect x="273" y="186.78744408214743" width="28" height="133.21255591785257" fill="#225d69"/><text x="272" y="176.78744408214743" font-family="sans-serif" font-size="11">0.222</text>
+<rect x="428" y="153.86991329657937" width="28" height="166.13008670342063" fill="#225d69"/><text x="427" y="143.86991329657937" font-family="sans-serif" font-size="11">0.277</text>
+<rect x="583" y="161.68239710300188" width="28" height="158.31760289699812" fill="#225d69"/><text x="582" y="151.68239710300188" font-family="sans-serif" font-size="11">0.264</text>
+<rect x="738" y="171.63506380575723" width="28" height="148.36493619424277" fill="#225d69"/><text x="737" y="161.63506380575723" font-family="sans-serif" font-size="11">0.247</text>
+<rect x="154" y="190.49210633676762" width="28" height="129.50789366323238" fill="#a7482f"/><text x="153" y="180.49210633676762" font-family="sans-serif" font-size="11">0.216</text>
+<rect x="309" y="157.31332530686967" width="28" height="162.68667469313033" fill="#a7482f"/><text x="308" y="147.31332530686967" font-family="sans-serif" font-size="11">0.271</text>
+<rect x="464" y="165.1878129530257" width="28" height="154.8121870469743" fill="#a7482f"/><text x="463" y="155.1878129530257" font-family="sans-serif" font-size="11">0.258</text>
+<rect x="619" y="175.21946907405686" width="28" height="144.78053092594314" fill="#a7482f"/><text x="618" y="165.21946907405686" font-family="sans-serif" font-size="11">0.241</text>
+<rect x="774" y="169.65520012910216" width="28" height="150.34479987089784" fill="#a7482f"/><text x="773" y="159.65520012910216" font-family="sans-serif" font-size="11">0.251</text>
+<text x="140" y="347" font-family="sans-serif" font-size="14">k=2</text>
+<text x="295" y="347" font-family="sans-serif" font-size="14">k=3</text>
+<text x="450" y="347" font-family="sans-serif" font-size="14">k=4</text>
+<text x="605" y="347" font-family="sans-serif" font-size="14">k=5</text>
+<text x="760" y="347" font-family="sans-serif" font-size="14">k=6</text>
+<text x="95" y="385" font-family="sans-serif" font-size="14" fill="#225d69">Azul: 381 · incluye tres filas vacías</text><text x="520" y="385" font-family="sans-serif" font-size="14" fill="#a7482f">Rojo: 378 · sin esas filas</text></svg>

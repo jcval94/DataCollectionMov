@@ -1,0 +1,756 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bob Ross · HF-02 v01</title><style>
+    :root { --ink:#17232d; --muted:#586b77; --faint:#8997a1; --line:#d9e1e6; --bg:#f6f8f9; --paper:#fff; --accent:#176a70; --accent-soft:#eff8f7; --warning:#7a4a16; --shadow:0 3px 16px rgba(15,30,42,.055);}
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    a { color:#0b5d63; text-underline-offset:.15em; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #1b8390;outline-offset:3px; }
+    .wrap { width:min(1120px,calc(100% - 32px)); margin:auto; }
+    .topline { background:var(--ink);color:#f8fbfc; padding:13px 0; }
+    .topline .wrap {display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:.83rem;letter-spacing:.03em;}
+    .topline strong {font-weight:800;}
+    .topline span {color:#d2dde3;text-align:right;}
+    header.hero {padding:44px 0 18px;}
+    .eyebrow {font-size:.78rem;text-transform:uppercase;letter-spacing:.095em;color:var(--accent);font-weight:800;}
+    h1 {font-size:clamp(1.7rem,4vw,3rem);line-height:1.13;letter-spacing:-.035em;margin:.4rem 0 .85rem;max-width:920px;}
+    .sub {font-size:.96rem;color:var(--muted);margin:0;max-width:850px;}
+    .statusbar {display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;font-size:.85rem;color:var(--muted);}
+    .statusbar span {border:1px solid var(--line);border-radius:5px;background:var(--paper);padding:4px 9px;}
+    .paper {background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px;margin:20px 0;}
+    .summary {border-top:5px solid var(--accent);margin-top:12px;}
+    .sectionhead {display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;}
+    .sectionhead h2 {margin:0;font-size:1.35rem;letter-spacing:-.02em;}
+    .sectionhead small {font-size:.78rem;color:var(--muted);}
+    h2 {font-size:1.35rem;line-height:1.25;margin:0 0 16px;letter-spacing:-.02em;}
+    h3 {font-size:1rem;margin:0 0 8px;}
+    .lead {font-size:1.07rem;max-width:900px;margin:0;line-height:1.7;}
+    .summary-grid {margin-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+    .summary-grid article {border-left:2px solid var(--line);padding:0 12px;}
+    .summary-grid p {margin:.15rem 0;color:var(--muted);font-size:.89rem;}
+    .summary-grid strong {display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+    .note {border-left:3px solid #ad7719;padding:8px 12px;margin-top:20px;color:var(--warning);background:#fdfaf5;font-size:.92rem;}
+    table {width:100%;border-collapse:collapse;font-size:.91rem;}
+    th {text-align:left;color:#3e525e;background:#f3f6f7;font-weight:700;}
+    th,td {border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top;}
+    .table-scroll {overflow-x:auto;}
+    .chart-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+    figure {margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+    figure.feature {grid-column:1 / -1;}
+    figure .fig-top {padding:18px 18px 8px;}
+    figure .fig-top p {margin:4px 0 0;color:var(--muted);font-size:.88rem;}
+    .chart-slot {min-height:210px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:repeating-linear-gradient(-45deg,#f7f9fa,#f7f9fa 14px,#f1f5f6 14px,#f1f5f6 28px);display:grid;place-items:center;padding:28px 18px;text-align:center;color:#627683;font-weight:650;}
+    figure.feature .chart-slot {min-height:310px;}
+    .chart-slot p {max-width:420px;font-size:.89rem;font-weight:400;margin:6px 0 0;}
+    figcaption {padding:12px 18px 16px;color:var(--muted);font-size:.84rem;}
+    .split {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;}
+    .split article {padding:17px;border:1px solid var(--line);border-radius:10px;}
+    .split p {font-size:.9rem;color:var(--muted);margin:0;}
+    ol {padding-left:1.4rem;}
+    li {margin-bottom:13px;}
+    .question {padding:14px 16px;border:1px solid var(--line);border-radius:9px;margin-bottom:12px;}
+    .question strong {display:block;margin-bottom:4px;}
+    .question p {margin:4px 0;color:var(--muted);font-size:.91rem;}
+    .question .choice {color:var(--ink);font-weight:650;}
+    footer {color:var(--muted);font-size:.82rem;padding:14px 0 48px;}
+    @media (max-width:760px) {
+      .paper{padding:18px;margin:15px 0}.hero{padding-top:24px!important}.chart-grid,.summary-grid,.split{grid-template-columns:1fr}
+      .summary-grid article{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}
+      figure.feature{grid-column:auto}figure.feature .chart-slot{min-height:240px}.topline span{display:none}
+      th,td{min-width:110px} .sectionhead{display:block}
+    }
+    @media print {body{background:#fff}.paper{break-inside:avoid;box-shadow:none}.chart-slot{background:#fff;border:1px solid #aaa}.topline{background:#fff;color:#000;border-bottom:1px solid #ccc}}
+    @media (prefers-reduced-motion:reduce) {*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  .chart-scroll{overflow-x:auto}figure img{width:100%;height:auto;min-width:640px}figure{margin:18px 0}.chart-table{overflow:auto}h1{font-size:clamp(1.5rem,4vw,2.4rem)}header.hero{padding-top:20px}.summary-grid{grid-template-columns:1fr}summary{cursor:pointer}</style></head><body><main class="wrap"><header class="hero"><div class="eyebrow">AI Discovery Labs · Bob Ross · HF-02</div><h1>Revisión actual de la profundización</h1><p>19-11-2026 · v01 · DRAFT · decisión PENDING</p></header>
+<section class="paper summary" aria-labelledby="summary-title"><h2 id="summary-title">Resumen ejecutivo</h2><p class="lead">DR-05a encontró una razón medible para profundizar agrupamiento: filas vacías crean una sala aparente y las métricas discrepan. Los cálculos de sensibilidad se ejecutaron con el plan leído al iniciar la sesión, antes de integrarse PR #17. Se conservan como evidencia, sin registrarlos como una decisión humana: cambiar a Euclídea mueve 179 de 381 asignaciones, retirar árbol mueve 75 y omitir una temporada no mueve ninguna en 31 reajustes. La representación importa más que esa perturbación temporal específica. Frente a HF-01 añadimos controles, pero su promoción editorial sigue retenida hasta HF-02. Recomiendo priorizar validación de anotaciones y algoritmos antes de afirmar estilos. Faltan permisos para validación humana e imágenes y QA visual del informe.</p><p class="note"><strong>Recomendación:</strong> Priorizar BR-09. No se registra aprobación humana.</p></section>
+<section class="paper"><h2>Qué cambió</h2><div class="table-scroll"><table><tr><th>Antes</th><th>Ahora</th><th>Impacto</th></tr><tr><td>HF-01/v01</td><td>HF-01/DR-05a → controles ya calculados, decisión humana actual pendiente.</td><td>Decisión PENDING; cálculos no equivalen a aprobación</td></tr></table></div></section>
+<section class="paper"><h2>Hallazgo y límite</h2><p>Hay desacuerdo entre métricas y estabilidad frente a las 31 omisiones de temporada.</p><p>Resultado descriptivo del snapshot/método; no inferir estilos, intención ni salud. <a href="data/evidence.json">Cifras y evidencia</a>.</p></section>
+<section class="paper"><h2 id="charts-title">Gráficas de evidencia y sensibilidad</h2><figure><div class="fig-top"><h3>Silhouette con y sin tres filas vacías</h3></div><div class="chart-scroll" tabindex="0" aria-label="Gráfica desplazable"><img src="charts/cluster_sensitivity.svg" alt="Silhouette con y sin tres filas vacías"></div><figcaption>381 total; sensibilidad 378 tras excluir tres vacíos. Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad. Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral. <a href="data/evidence.json">Datos y tabla numérica JSON</a>. DATA_ONLY; legibilidad móvil/desktop pendiente.</figcaption></figure><figure><div class="fig-top"><h3>Sensibilidad de asignaciones con matching</h3></div><div class="chart-scroll" tabindex="0" aria-label="Gráfica desplazable"><img src="charts/assignment_changes.svg" alt="Sensibilidad de asignaciones con matching"></div><figcaption>381 episodios, matching exacto; 31 reajustes por temporada. Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad. Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral. <a href="data/evidence.json">Datos y tabla numérica JSON</a>. DATA_ONLY; legibilidad móvil/desktop pendiente.</figcaption></figure><details><summary>Tabla alternativa y procedencia</summary><pre>{
+  &quot;legacy_computed_o2&quot;: {
+    &quot;id&quot;: &quot;BR-09-O2&quot;,
+    &quot;parent_id&quot;: &quot;BR-09-O1&quot;,
+    &quot;status&quot;: &quot;EXECUTED_EXPLORATORY&quot;,
+    &quot;trigger_evidence&quot;: &quot;results/o1_results.json#/BR-09&quot;,
+    &quot;activation_checkpoint&quot;: &quot;DR-05a.md&quot;,
+    &quot;source_sha256&quot;: &quot;42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf&quot;,
+    &quot;aligned_changes_k4&quot;: {
+      &quot;euclidean&quot;: {
+        &quot;changed_n&quot;: 179,
+        &quot;n&quot;: 381,
+        &quot;mapping_to_primary&quot;: [
+          1,
+          0,
+          3,
+          2
+        ],
+        &quot;changed_ids&quot;: [
+          &quot;S01E02&quot;,
+          &quot;S01E03&quot;,
+          &quot;S01E08&quot;,
+          &quot;S01E10&quot;,
+          &quot;S01E11&quot;,
+          &quot;S01E13&quot;,
+          &quot;S02E02&quot;,
+          &quot;S02E03&quot;,
+          &quot;S02E05&quot;,
+          &quot;S02E09&quot;,
+          &quot;S03E01&quot;,
+          &quot;S03E02&quot;,
+          &quot;S03E04&quot;,
+          &quot;S03E07&quot;,
+          &quot;S03E10&quot;,
+          &quot;S03E11&quot;,
+          &quot;S03E12&quot;,
+          &quot;S04E01&quot;,
+          &quot;S04E03&quot;,
+          &quot;S04E06&quot;,
+          &quot;S04E08&quot;,
+          &quot;S04E12&quot;,
+          &quot;S05E02&quot;,
+          &quot;S05E04&quot;,
+          &quot;S05E05&quot;,
+          &quot;S05E10&quot;,
+          &quot;S06E02&quot;,
+          &quot;S06E06&quot;,
+          &quot;S06E07&quot;,
+          &quot;S06E09&quot;,
+          &quot;S06E10&quot;,
+          &quot;S06E11&quot;,
+          &quot;S06E12&quot;,
+          &quot;S07E01&quot;,
+          &quot;S07E02&quot;,
+          &quot;S07E04&quot;,
+          &quot;S07E06&quot;,
+          &quot;S07E07&quot;,
+          &quot;S07E08&quot;,
+          &quot;S07E10&quot;,
+          &quot;S07E12&quot;,
+          &quot;S08E01&quot;,
+          &quot;S08E02&quot;,
+          &quot;S08E03&quot;,
+          &quot;S08E04&quot;,
+          &quot;S08E06&quot;,
+          &quot;S08E07&quot;,
+          &quot;S08E08&quot;,
+          &quot;S08E09&quot;,
+          &quot;S08E12&quot;,
+          &quot;S09E01&quot;,
+          &quot;S09E03&quot;,
+          &quot;S09E04&quot;,
+          &quot;S09E05&quot;,
+          &quot;S09E07&quot;,
+          &quot;S09E08&quot;,
+          &quot;S09E09&quot;,
+          &quot;S09E10&quot;,
+          &quot;S09E11&quot;,
+          &quot;S09E12&quot;,
+          &quot;S09E13&quot;,
+          &quot;S10E02&quot;,
+          &quot;S10E07&quot;,
+          &quot;S10E08&quot;,
+          &quot;S10E11&quot;,
+          &quot;S10E12&quot;,
+          &quot;S10E13&quot;,
+          &quot;S11E01&quot;,
+          &quot;S11E02&quot;,
+          &quot;S11E05&quot;,
+          &quot;S11E06&quot;,
+          &quot;S11E07&quot;,
+          &quot;S11E09&quot;,
+          &quot;S11E12&quot;,
+          &quot;S12E02&quot;,
+          &quot;S12E07&quot;,
+          &quot;S12E10&quot;,
+          &quot;S12E11&quot;,
+          &quot;S12E12&quot;,
+          &quot;S12E13&quot;,
+          &quot;S13E01&quot;,
+          &quot;S13E03&quot;,
+          &quot;S13E05&quot;,
+          &quot;S13E08&quot;,
+          &quot;S13E09&quot;,
+          &quot;S13E10&quot;,
+          &quot;S14E03&quot;,
+          &quot;S14E04&quot;,
+          &quot;S14E05&quot;,
+          &quot;S14E06&quot;,
+          &quot;S14E08&quot;,
+          &quot;S14E11&quot;,
+          &quot;S14E12&quot;,
+          &quot;S15E01&quot;,
+          &quot;S15E04&quot;,
+          &quot;S15E07&quot;,
+          &quot;S15E08&quot;,
+          &quot;S15E09&quot;,
+          &quot;S15E12&quot;,
+          &quot;S16E03&quot;,
+          &quot;S16E04&quot;,
+          &quot;S16E09&quot;,
+          &quot;S17E03&quot;,
+          &quot;S17E05&quot;,
+          &quot;S17E06&quot;,
+          &quot;S17E08&quot;,
+          &quot;S17E12&quot;,
+          &quot;S18E03&quot;,
+          &quot;S18E05&quot;,
+          &quot;S18E12&quot;,
+          &quot;S19E04&quot;,
+          &quot;S19E05&quot;,
+          &quot;S19E12&quot;,
+          &quot;S19E13&quot;,
+          &quot;S20E03&quot;,
+          &quot;S20E07&quot;,
+          &quot;S20E09&quot;,
+          &quot;S20E11&quot;,
+          &quot;S21E03&quot;,
+          &quot;S21E07&quot;,
+          &quot;S21E10&quot;,
+          &quot;S21E11&quot;,
+          &quot;S21E13&quot;,
+          &quot;S22E02&quot;,
+          &quot;S22E05&quot;,
+          &quot;S22E07&quot;,
+          &quot;S22E10&quot;,
+          &quot;S23E01&quot;,
+          &quot;S23E04&quot;,
+          &quot;S23E05&quot;,
+          &quot;S23E07&quot;,
+          &quot;S23E08&quot;,
+          &quot;S23E11&quot;,
+          &quot;S24E01&quot;,
+          &quot;S24E02&quot;,
+          &quot;S24E03&quot;,
+          &quot;S24E05&quot;,
+          &quot;S24E13&quot;,
+          &quot;S25E07&quot;,
+          &quot;S25E08&quot;,
+          &quot;S25E11&quot;,
+          &quot;S25E12&quot;,
+          &quot;S25E13&quot;,
+          &quot;S26E03&quot;,
+          &quot;S26E07&quot;,
+          &quot;S26E08&quot;,
+          &quot;S26E10&quot;,
+          &quot;S27E01&quot;,
+          &quot;S27E03&quot;,
+          &quot;S27E04&quot;,
+          &quot;S27E05&quot;,
+          &quot;S27E06&quot;,
+          &quot;S27E07&quot;,
+          &quot;S27E08&quot;,
+          &quot;S27E11&quot;,
+          &quot;S27E13&quot;,
+          &quot;S28E02&quot;,
+          &quot;S28E03&quot;,
+          &quot;S28E09&quot;,
+          &quot;S28E10&quot;,
+          &quot;S28E13&quot;,
+          &quot;S29E01&quot;,
+          &quot;S29E02&quot;,
+          &quot;S29E04&quot;,
+          &quot;S29E06&quot;,
+          &quot;S29E08&quot;,
+          &quot;S29E11&quot;,
+          &quot;S29E12&quot;,
+          &quot;S30E03&quot;,
+          &quot;S30E05&quot;,
+          &quot;S30E07&quot;,
+          &quot;S30E08&quot;,
+          &quot;S31E01&quot;,
+          &quot;S31E04&quot;,
+          &quot;S31E07&quot;,
+          &quot;S31E08&quot;,
+          &quot;S31E09&quot;,
+          &quot;S31E12&quot;,
+          &quot;S31E13&quot;
+        ],
+        &quot;ari&quot;: 0.10912138346241812
+      },
+      &quot;without_tree&quot;: {
+        &quot;changed_n&quot;: 75,
+        &quot;n&quot;: 381,
+        &quot;mapping_to_primary&quot;: [
+          0,
+          1,
+          2,
+          3
+        ],
+        &quot;changed_ids&quot;: [
+          &quot;S01E03&quot;,
+          &quot;S02E11&quot;,
+          &quot;S03E04&quot;,
+          &quot;S03E06&quot;,
+          &quot;S03E11&quot;,
+          &quot;S04E07&quot;,
+          &quot;S05E10&quot;,
+          &quot;S05E13&quot;,
+          &quot;S07E02&quot;,
+          &quot;S08E03&quot;,
+          &quot;S08E04&quot;,
+          &quot;S08E05&quot;,
+          &quot;S08E07&quot;,
+          &quot;S08E09&quot;,
+          &quot;S09E08&quot;,
+          &quot;S09E10&quot;,
+          &quot;S10E02&quot;,
+          &quot;S10E03&quot;,
+          &quot;S10E13&quot;,
+          &quot;S11E03&quot;,
+          &quot;S11E07&quot;,
+          &quot;S12E01&quot;,
+          &quot;S13E04&quot;,
+          &quot;S13E05&quot;,
+          &quot;S14E05&quot;,
+          &quot;S14E12&quot;,
+          &quot;S15E03&quot;,
+          &quot;S15E04&quot;,
+          &quot;S15E08&quot;,
+          &quot;S15E10&quot;,
+          &quot;S15E11&quot;,
+          &quot;S15E12&quot;,
+          &quot;S16E02&quot;,
+          &quot;S16E09&quot;,
+          &quot;S17E02&quot;,
+          &quot;S17E05&quot;,
+          &quot;S17E08&quot;,
+          &quot;S17E11&quot;,
+          &quot;S18E11&quot;,
+          &quot;S19E04&quot;,
+          &quot;S19E10&quot;,
+          &quot;S19E12&quot;,
+          &quot;S20E02&quot;,
+          &quot;S20E10&quot;,
+          &quot;S21E05&quot;,
+          &quot;S21E07&quot;,
+          &quot;S21E09&quot;,
+          &quot;S22E05&quot;,
+          &quot;S23E02&quot;,
+          &quot;S23E05&quot;,
+          &quot;S24E04&quot;,
+          &quot;S24E07&quot;,
+          &quot;S25E06&quot;,
+          &quot;S25E09&quot;,
+          &quot;S25E11&quot;,
+          &quot;S26E02&quot;,
+          &quot;S26E10&quot;,
+          &quot;S27E04&quot;,
+          &quot;S27E05&quot;,
+          &quot;S27E06&quot;,
+          &quot;S27E08&quot;,
+          &quot;S27E13&quot;,
+          &quot;S28E02&quot;,
+          &quot;S28E04&quot;,
+          &quot;S28E05&quot;,
+          &quot;S28E07&quot;,
+          &quot;S28E13&quot;,
+          &quot;S29E05&quot;,
+          &quot;S30E04&quot;,
+          &quot;S30E12&quot;,
+          &quot;S31E03&quot;,
+          &quot;S31E04&quot;,
+          &quot;S31E07&quot;,
+          &quot;S31E08&quot;,
+          &quot;S31E12&quot;
+        ],
+        &quot;ari&quot;: 0.5752363034826563
+      }
+    },
+    &quot;complete_case_grid&quot;: [
+      {
+        &quot;k&quot;: 2,
+        &quot;n&quot;: 378,
+        &quot;sizes&quot;: [
+          204,
+          174
+        ],
+        &quot;medoids&quot;: [
+          &quot;S01E04&quot;,
+          &quot;S25E09&quot;
+        ],
+        &quot;silhouette_same_jaccard_space&quot;: 0.21584648943872062,
+        &quot;ari_vs_full_k4_on_common_rows&quot;: 0.5706195151677635
+      },
+      {
+        &quot;k&quot;: 3,
+        &quot;n&quot;: 378,
+        &quot;sizes&quot;: [
+          236,
+          106,
+          36
+        ],
+        &quot;medoids&quot;: [
+          &quot;S01E04&quot;,
+          &quot;S01E01&quot;,
+          &quot;S09E02&quot;
+        ],
+        &quot;silhouette_same_jaccard_space&quot;: 0.2711444578218839,
+        &quot;ari_vs_full_k4_on_common_rows&quot;: 1.0
+      },
+      {
+        &quot;k&quot;: 4,
+        &quot;n&quot;: 378,
+        &quot;sizes&quot;: [
+          236,
+          106,
+          22,
+          14
+        ],
+        &quot;medoids&quot;: [
+          &quot;S01E04&quot;,
+          &quot;S01E01&quot;,
+          &quot;S09E02&quot;,
+          &quot;S01E09&quot;
+        ],
+        &quot;silhouette_same_jaccard_space&quot;: 0.25802031174495715,
+        &quot;ari_vs_full_k4_on_common_rows&quot;: 0.9913313980493301
+      },
+      {
+        &quot;k&quot;: 5,
+        &quot;n&quot;: 378,
+        &quot;sizes&quot;: [
+          209,
+          79,
+          54,
+          22,
+          14
+        ],
+        &quot;medoids&quot;: [
+          &quot;S01E04&quot;,
+          &quot;S01E01&quot;,
+          &quot;S15E10&quot;,
+          &quot;S09E02&quot;,
+          &quot;S01E09&quot;
+        ],
+        &quot;silhouette_same_jaccard_space&quot;: 0.2413008848765719,
+        &quot;ari_vs_full_k4_on_common_rows&quot;: 0.7495877635869854
+      },
+      {
+        &quot;k&quot;: 6,
+        &quot;n&quot;: 378,
+        &quot;sizes&quot;: [
+          174,
+          93,
+          46,
+          29,
+          22,
+          14
+        ],
+        &quot;medoids&quot;: [
+          &quot;S01E04&quot;,
+          &quot;S01E01&quot;,
+          &quot;S01E11&quot;,
+          &quot;S03E06&quot;,
+          &quot;S09E02&quot;,
+          &quot;S01E09&quot;
+        ],
+        &quot;silhouette_same_jaccard_space&quot;: 0.2505746664514964,
+        &quot;ari_vs_full_k4_on_common_rows&quot;: 0.6207239601013406
+      }
+    ],
+    &quot;representation_sensitivity&quot;: {
+      &quot;raw_columns&quot;: [
+        &quot;APPLE_FRAME&quot;,
+        &quot;AURORA_BOREALIS&quot;,
+        &quot;BARN&quot;,
+        &quot;BEACH&quot;,
+        &quot;BOAT&quot;,
+        &quot;BRIDGE&quot;,
+        &quot;BUILDING&quot;,
+        &quot;BUSHES&quot;,
+        &quot;CABIN&quot;,
+        &quot;CACTUS&quot;,
+        &quot;CIRCLE_FRAME&quot;,
+        &quot;CIRRUS&quot;,
+        &quot;CLIFF&quot;,
+        &quot;CLOUDS&quot;,
+        &quot;CONIFER&quot;,
+        &quot;CUMULUS&quot;,
+        &quot;DECIDUOUS&quot;,
+        &quot;DOCK&quot;,
+        &quot;DOUBLE_OVAL_FRAME&quot;,
+        &quot;FARM&quot;,
+        &quot;FENCE&quot;,
+        &quot;FIRE&quot;,
+        &quot;FLORIDA_FRAME&quot;,
+        &quot;FLOWERS&quot;,
+        &quot;FOG&quot;,
+        &quot;FRAMED&quot;,
+        &quot;GRASS&quot;,
+        &quot;HALF_CIRCLE_FRAME&quot;,
+        &quot;HALF_OVAL_FRAME&quot;,
+        &quot;HILLS&quot;,
+        &quot;LAKE&quot;,
+        &quot;LAKES&quot;,
+        &quot;LIGHTHOUSE&quot;,
+        &quot;MILL&quot;,
+        &quot;MOON&quot;,
+        &quot;MOUNTAIN&quot;,
+        &quot;MOUNTAINS&quot;,
+        &quot;NIGHT&quot;,
+        &quot;OCEAN&quot;,
+        &quot;OVAL_FRAME&quot;,
+        &quot;PALM_TREES&quot;,
+        &quot;PATH&quot;,
+        &quot;PERSON&quot;,
+        &quot;PORTRAIT&quot;,
+        &quot;RECTANGLE_3D_FRAME&quot;,
+        &quot;RECTANGULAR_FRAME&quot;,
+        &quot;RIVER&quot;,
+        &quot;ROCKS&quot;,
+        &quot;SEASHELL_FRAME&quot;,
+        &quot;SNOW&quot;,
+        &quot;SNOWY_MOUNTAIN&quot;,
+        &quot;SPLIT_FRAME&quot;,
+        &quot;STRUCTURE&quot;,
+        &quot;SUN&quot;,
+        &quot;TOMB_FRAME&quot;,
+        &quot;TREE&quot;,
+        &quot;TREES&quot;,
+        &quot;TRIPLE_FRAME&quot;,
+        &quot;WATERFALL&quot;,
+        &quot;WAVES&quot;,
+        &quot;WINDMILL&quot;,
+        &quot;WINDOW_FRAME&quot;,
+        &quot;WINTER&quot;,
+        &quot;WOOD_FRAMED&quot;
+      ],
+      &quot;n_features&quot;: 64,
+      &quot;ari_12_families_vs_64_non_author_labels&quot;: 0.3076048526537683,
+      &quot;medoids_64&quot;: [
+        &quot;S12E10&quot;,
+        &quot;S09E06&quot;,
+        &quot;S25E12&quot;,
+        &quot;S09E10&quot;
+      ]
+    },
+    &quot;leave_one_season_out&quot;: [
+      {
+        &quot;omitted_season&quot;: 1,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S02E08;S02E10;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 2,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 3,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 4,
+        &quot;train_n&quot;: 370,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 5,
+        &quot;train_n&quot;: 372,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 6,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 7,
+        &quot;train_n&quot;: 370,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 8,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 9,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S10E05;S15E04&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 10,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 11,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 12,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 13,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 14,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 15,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 16,
+        &quot;train_n&quot;: 370,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 17,
+        &quot;train_n&quot;: 370,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 18,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 19,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 20,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 21,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 22,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 23,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 24,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 25,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 26,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 27,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 28,
+        &quot;train_n&quot;: 368,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 29,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 30,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      },
+      {
+        &quot;omitted_season&quot;: 31,
+        &quot;train_n&quot;: 369,
+        &quot;ari_all_381&quot;: 1.0,
+        &quot;changed_n_all_381&quot;: 0,
+        &quot;medoids&quot;: &quot;S01E04;S01E01;S09E02;S09E10&quot;
+      }
+    ],
+    &quot;limits&quot;: [
+      &quot;LOSO compares learned labels to full-data labels, not independent artistic truth&quot;,
+      &quot;Deterministic heuristic is not proven global PAM optimum&quot;,
+      &quot;12-motif zero profiles may arise through aggregation; only 3 are raw-all-zero here&quot;,
+      &quot;BR-09-O3 remains CONDITIONAL; authorized images and human protocol missing&quot;
+    ]
+  },
+  &quot;publication_status&quot;: &quot;WITHHELD_PENDING_HF02&quot;,
+  &quot;human_response&quot;: null
+}
+</pre></details></section>
+<section class="paper"><h2>Cómo, por qué y para qué</h2><p><strong>CÓMO:</strong> CSV auditado y transformaciones declaradas, nulos condicionados, correcciones múltiples y controles; código en research/. <strong>POR QUÉ:</strong> los vacíos, prevalencias y representación producen patrones distintos. <strong>PARA QUÉ:</strong> escoger qué vale la pena comprobar y enseñar con incertidumbre.</p></section>
+<section class="paper"><h2>Una pregunta para JC</h2><p>¿Priorizamos BR-09 para revisar anotaciones y comparar algoritmos antes de buscar estilos o color?</p><p>Opciones: Priorizar BR-09 / Aplazar profundización / Reorientar a BR-07. Recomiendo Priorizar BR-09. Coste de continuar: CPU local y revisión; no se autoriza descarga de imágenes. Si se aplaza, se conservan resultados sin nueva promoción O2.</p><p>Respuesta: PENDING. <a href="feedback.md">Registro de feedback</a>.</p></section>
+<section class="paper"><h2>Evidencia y siguiente decisión</h2><p>Continuar revisión de datos vacíos/algoritmos solo dentro del alcance autorizado. HF-02 sigue pendiente y el audiovisual bloqueado. Este paquete aún requiere QA visual a 360px/1280px y teclado.</p><p><a href="../../../research/PROTOCOL_TRANSITION.md">Transición de protocolo PR17</a> · <a href="../../../research/README.md">Informe científico</a> · <a href="../../../research/QA.md">QA y límites</a> · <a href="checkpoint.json">Metadatos del checkpoint</a> · <a href="../../../research/build_feedback.py">Generador</a>.</p><p>SHA-256 del dataset: <code>42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf</code>. Atribución: Walt Hickey/FiveThirtyEight, CC BY 4.0; gráficos propios derivados de etiquetas, sin pinturas ajenas. Versión v01: primera entrega de este hito, retrospectiva; no inventa versión aprobada previa.</p></section></main></body></html>

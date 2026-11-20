@@ -1,6 +1,6 @@
 {
   "schema": "ai-discovery-question-bank-2.0",
-  "status": "DESIGNED_NOT_EXECUTED",
+  "status": "PARTIALLY_EXECUTED_EXPLORATORY",
   "dataset_id": "bob-ross-elementos",
   "canonical": true,
   "old_questions_note": "The original six interactive voting routes in ../questions.json are legacy UI entry points. They are not a second top-level block. They must map to questions of this single editorial bank.",
@@ -243,7 +243,14 @@
         "denominator": "381 episodios anfitrión; frecuencia marginal por motivo",
         "time_basis": "sin calendario requerido"
       },
-      "design_status": "PLAN_ONLY"
+      "design_status": "PLAN_ONLY",
+      "execution": {
+        "o1_status": "EXECUTED_PARTIAL",
+        "artifact": "../research/results/o1_results.json#/BR-07",
+        "o2_status": "CONDITIONAL",
+        "o3_status": "CONDITIONAL",
+        "approval": "PENDING"
+      }
     },
     {
       "id": "BR-08",
@@ -311,7 +318,15 @@
         "denominator": "381 observaciones; por cluster informar n",
         "time_basis": "temporada opcional, no target"
       },
-      "design_status": "PLAN_ONLY"
+      "design_status": "PLAN_ONLY",
+      "execution": {
+        "o1_status": "EXECUTED_PARTIAL",
+        "artifact": "../research/results/o1_results.json#/BR-09",
+        "o2_status": "EXECUTED_BEFORE_HF_PROTOCOL_PENDING_REVIEW",
+        "o3_status": "CONDITIONAL",
+        "approval": "PENDING",
+        "o2_publication_status": "WITHHELD_PENDING_HF02"
+      }
     },
     {
       "id": "BR-10",
@@ -481,7 +496,16 @@
         "denominator": "n transiciones válidas por temporada, no 403 independientes",
         "time_basis": "orden SxxExx hasta verificar calendario"
       },
-      "design_status": "PLAN_ONLY"
+      "design_status": "PLAN_ONLY",
+      "execution": {
+        "o1_status": "EXECUTED_EXPLORATORY",
+        "artifact": "../research/results/o1_results.json#/BR-14",
+        "o2_status": "CONDITIONAL",
+        "o3_status": "CONDITIONAL",
+        "approval": "PENDING"
+      }
     }
-  ]
+  ],
+  "execution_registry": "../research/execution_registry.json",
+  "design_status_semantics": "PLAN_ONLY preserves original proposed design; execution below is separate and may be partial."
 }

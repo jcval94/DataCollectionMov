@@ -1,0 +1,118 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bob Ross · HF-00 v01</title><style>
+    :root { --ink:#17232d; --muted:#586b77; --faint:#8997a1; --line:#d9e1e6; --bg:#f6f8f9; --paper:#fff; --accent:#176a70; --accent-soft:#eff8f7; --warning:#7a4a16; --shadow:0 3px 16px rgba(15,30,42,.055);}
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    a { color:#0b5d63; text-underline-offset:.15em; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #1b8390;outline-offset:3px; }
+    .wrap { width:min(1120px,calc(100% - 32px)); margin:auto; }
+    .topline { background:var(--ink);color:#f8fbfc; padding:13px 0; }
+    .topline .wrap {display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:.83rem;letter-spacing:.03em;}
+    .topline strong {font-weight:800;}
+    .topline span {color:#d2dde3;text-align:right;}
+    header.hero {padding:44px 0 18px;}
+    .eyebrow {font-size:.78rem;text-transform:uppercase;letter-spacing:.095em;color:var(--accent);font-weight:800;}
+    h1 {font-size:clamp(1.7rem,4vw,3rem);line-height:1.13;letter-spacing:-.035em;margin:.4rem 0 .85rem;max-width:920px;}
+    .sub {font-size:.96rem;color:var(--muted);margin:0;max-width:850px;}
+    .statusbar {display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;font-size:.85rem;color:var(--muted);}
+    .statusbar span {border:1px solid var(--line);border-radius:5px;background:var(--paper);padding:4px 9px;}
+    .paper {background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px;margin:20px 0;}
+    .summary {border-top:5px solid var(--accent);margin-top:12px;}
+    .sectionhead {display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;}
+    .sectionhead h2 {margin:0;font-size:1.35rem;letter-spacing:-.02em;}
+    .sectionhead small {font-size:.78rem;color:var(--muted);}
+    h2 {font-size:1.35rem;line-height:1.25;margin:0 0 16px;letter-spacing:-.02em;}
+    h3 {font-size:1rem;margin:0 0 8px;}
+    .lead {font-size:1.07rem;max-width:900px;margin:0;line-height:1.7;}
+    .summary-grid {margin-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+    .summary-grid article {border-left:2px solid var(--line);padding:0 12px;}
+    .summary-grid p {margin:.15rem 0;color:var(--muted);font-size:.89rem;}
+    .summary-grid strong {display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;}
+    .note {border-left:3px solid #ad7719;padding:8px 12px;margin-top:20px;color:var(--warning);background:#fdfaf5;font-size:.92rem;}
+    table {width:100%;border-collapse:collapse;font-size:.91rem;}
+    th {text-align:left;color:#3e525e;background:#f3f6f7;font-weight:700;}
+    th,td {border-bottom:1px solid var(--line);padding:12px 10px;vertical-align:top;}
+    .table-scroll {overflow-x:auto;}
+    .chart-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+    figure {margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+    figure.feature {grid-column:1 / -1;}
+    figure .fig-top {padding:18px 18px 8px;}
+    figure .fig-top p {margin:4px 0 0;color:var(--muted);font-size:.88rem;}
+    .chart-slot {min-height:210px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:repeating-linear-gradient(-45deg,#f7f9fa,#f7f9fa 14px,#f1f5f6 14px,#f1f5f6 28px);display:grid;place-items:center;padding:28px 18px;text-align:center;color:#627683;font-weight:650;}
+    figure.feature .chart-slot {min-height:310px;}
+    .chart-slot p {max-width:420px;font-size:.89rem;font-weight:400;margin:6px 0 0;}
+    figcaption {padding:12px 18px 16px;color:var(--muted);font-size:.84rem;}
+    .split {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;}
+    .split article {padding:17px;border:1px solid var(--line);border-radius:10px;}
+    .split p {font-size:.9rem;color:var(--muted);margin:0;}
+    ol {padding-left:1.4rem;}
+    li {margin-bottom:13px;}
+    .question {padding:14px 16px;border:1px solid var(--line);border-radius:9px;margin-bottom:12px;}
+    .question strong {display:block;margin-bottom:4px;}
+    .question p {margin:4px 0;color:var(--muted);font-size:.91rem;}
+    .question .choice {color:var(--ink);font-weight:650;}
+    footer {color:var(--muted);font-size:.82rem;padding:14px 0 48px;}
+    @media (max-width:760px) {
+      .paper{padding:18px;margin:15px 0}.hero{padding-top:24px!important}.chart-grid,.summary-grid,.split{grid-template-columns:1fr}
+      .summary-grid article{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}
+      figure.feature{grid-column:auto}figure.feature .chart-slot{min-height:240px}.topline span{display:none}
+      th,td{min-width:110px} .sectionhead{display:block}
+    }
+    @media print {body{background:#fff}.paper{break-inside:avoid;box-shadow:none}.chart-slot{background:#fff;border:1px solid #aaa}.topline{background:#fff;color:#000;border-bottom:1px solid #ccc}}
+    @media (prefers-reduced-motion:reduce) {*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  .chart-scroll{overflow-x:auto}figure img{width:100%;height:auto;min-width:640px}figure{margin:18px 0}.chart-table{overflow:auto}h1{font-size:clamp(1.5rem,4vw,2.4rem)}header.hero{padding-top:20px}.summary-grid{grid-template-columns:1fr}summary{cursor:pointer}</style></head><body><main class="wrap"><header class="hero"><div class="eyebrow">AI Discovery Labs · Bob Ross · HF-00</div><h1>Brújula y auditoría retrospectiva</h1><p>19-11-2026 · v01 · DRAFT · decisión PENDING</p></header>
+<section class="paper summary" aria-labelledby="summary-title"><h2 id="summary-title">Resumen ejecutivo</h2><p class="lead">El CSV auditado contiene 403 episodios, 67 indicadores y 3,221 marcas positivas. PERSON sí existe y hay dos títulos repetidos; tres filas tienen todas sus etiquetas en cero. Desde el paquete de entrada pasamos de afirmaciones recibidas a conteos, hashes y contradicciones documentadas. Aún no hay un insight sorprendente confirmado en este checkpoint de auditoría. Recomiendo priorizar secuencias, asociaciones y robustez de agrupamiento, conservando color como ruta bloqueada por permisos. Este paquete se preparó retrospectivamente al integrarse el nuevo protocolo HF: no acredita una decisión humana anterior a la ejecución. Las fuentes históricas siguen parcialmente pendientes y las etiquetas no validan por sí mismas el contenido de todas las versiones físicas.</p><p class="note"><strong>Recomendación:</strong> Mantener tres rutas de CSV. No se registra aprobación humana.</p></section>
+<section class="paper"><h2>Qué cambió</h2><div class="table-scroll"><table><tr><th>Antes</th><th>Ahora</th><th>Impacto</th></tr><tr><td>Paquete de entrada</td><td>Paquete de entrada → auditoría y conciliación de 14 BR/10 H.</td><td>Decisión PENDING; cálculos no equivalen a aprobación</td></tr></table></div></section>
+<section class="paper"><h2>Hallazgo y límite</h2><p>Aún no hay un insight sorprendente confirmado en este checkpoint de auditoría.</p><p>Resultado descriptivo del snapshot/método; no inferir estilos, intención ni salud. <a href="data/evidence.json">Cifras y evidencia</a>.</p></section>
+<section class="paper"><h2 id="charts-title">Gráficas de evidencia y sensibilidad</h2><figure><div class="fig-top"><h3>Etiquetas frecuentes: anfitrión e invitados</h3></div><div class="chart-scroll" tabindex="0" aria-label="Gráfica desplazable"><img src="charts/top_tags.svg" alt="Etiquetas frecuentes: anfitrión e invitados"></div><figcaption>403 episodios; 381 y 22 en barras distintas. Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad. Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral. <a href="data/evidence.json">Datos y tabla numérica JSON</a>. DATA_ONLY; legibilidad móvil/desktop pendiente.</figcaption></figure><figure><div class="fig-top"><h3>Cobertura de revisión independiente</h3></div><div class="chart-scroll" tabindex="0" aria-label="Gráfica desplazable"><img src="charts/review_coverage.svg" alt="Cobertura de revisión independiente"></div><figcaption>54 registros de evidencia, no fuentes independientes. Cero para barras; nulo intra-temporada para secuencia; Jaccard y n=381 para sensibilidad. Banda nula 95% en secuencia; k-grid y filtros como sensibilidad; conteos exactos del snapshot sin IC muestral. <a href="data/evidence.json">Datos y tabla numérica JSON</a>. DATA_ONLY; legibilidad móvil/desktop pendiente.</figcaption></figure><details><summary>Tabla alternativa y procedencia</summary><pre>{
+  &quot;columns&quot;: [
+    &quot;TREE&quot;,
+    &quot;TREES&quot;,
+    &quot;DECIDUOUS&quot;,
+    &quot;CONIFER&quot;,
+    &quot;CLOUDS&quot;,
+    &quot;MOUNTAIN&quot;,
+    &quot;LAKE&quot;,
+    &quot;GRASS&quot;,
+    &quot;RIVER&quot;,
+    &quot;BUSHES&quot;,
+    &quot;SNOWY_MOUNTAIN&quot;,
+    &quot;MOUNTAINS&quot;
+  ],
+  &quot;host_counts&quot;: [
+    345,
+    322,
+    215,
+    201,
+    167,
+    149,
+    131,
+    137,
+    124,
+    116,
+    98,
+    91
+  ],
+  &quot;guest_counts&quot;: [
+    16,
+    15,
+    12,
+    11,
+    12,
+    11,
+    12,
+    5,
+    2,
+    4,
+    11,
+    8
+  ],
+  &quot;review_coverage&quot;: {
+    &quot;PENDIENTE&quot;: 36,
+    &quot;REVISADA&quot;: 17,
+    &quot;PARCIAL&quot;: 1
+  }
+}
+</pre></details></section>
+<section class="paper"><h2>Cómo, por qué y para qué</h2><p><strong>CÓMO:</strong> CSV auditado y transformaciones declaradas, nulos condicionados, correcciones múltiples y controles; código en research/. <strong>POR QUÉ:</strong> los vacíos, prevalencias y representación producen patrones distintos. <strong>PARA QUÉ:</strong> escoger qué vale la pena comprobar y enseñar con incertidumbre.</p></section>
+<section class="paper"><h2>Una pregunta para JC</h2><p>¿Mantenemos como prioridad las tres rutas ejecutables de CSV y posponemos color hasta resolver permisos?</p><p>Opciones: Mantener tres rutas de CSV / Reorientar prioridades. Recomiendo Mantener tres rutas de CSV. Coste de continuar: CPU local y revisión; no se autoriza descarga de imágenes. Si se aplaza, se conservan resultados sin nueva promoción O2.</p><p>Respuesta: PENDING. <a href="feedback.md">Registro de feedback</a>.</p></section>
+<section class="paper"><h2>Evidencia y siguiente decisión</h2><p>Continuar revisión de datos vacíos/algoritmos solo dentro del alcance autorizado. HF-02 sigue pendiente y el audiovisual bloqueado. Este paquete aún requiere QA visual a 360px/1280px y teclado.</p><p><a href="../../../research/PROTOCOL_TRANSITION.md">Transición de protocolo PR17</a> · <a href="../../../research/README.md">Informe científico</a> · <a href="../../../research/QA.md">QA y límites</a> · <a href="checkpoint.json">Metadatos del checkpoint</a> · <a href="../../../research/build_feedback.py">Generador</a>.</p><p>SHA-256 del dataset: <code>42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf</code>. Atribución: Walt Hickey/FiveThirtyEight, CC BY 4.0; gráficos propios derivados de etiquetas, sin pinturas ajenas. Versión v01: primera entrega de este hito, retrospectiva; no inventa versión aprobada previa.</p></section></main></body></html>

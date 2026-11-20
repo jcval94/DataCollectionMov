@@ -1,0 +1,141 @@
+{
+  "rubric": "Question Forge 100 points; gates override score",
+  "weights": {
+    "curiosity": 15,
+    "historical_anchor": 10,
+    "falsifiability": 20,
+    "insight_potential": 15,
+    "progressive_research": 15,
+    "visual_value": 10,
+    "cost_teaching_45min": 10,
+    "rights_epistemic": 5
+  },
+  "selected": [
+    {
+      "canonical_id": "BR-14",
+      "dimensions_0_to_5": {
+        "curiosity": 5,
+        "historical_anchor": 3,
+        "falsifiability": 5,
+        "insight_potential": 4,
+        "progressive_research": 5,
+        "visual_value": 4,
+        "cost_teaching_45min": 5,
+        "rights_epistemic": 5
+      },
+      "score_100": 91.0,
+      "gate": "OPEN",
+      "reason": "Ordinal Markov + permutación intra-temporada; R1 producción rival",
+      "compute_cost": "CPU local; sin APIs de pago",
+      "novelty_status": "POTENTIAL_ONLY; revisión bibliográfica no exhaustiva"
+    },
+    {
+      "canonical_id": "BR-07",
+      "dimensions_0_to_5": {
+        "curiosity": 4,
+        "historical_anchor": 3,
+        "falsifiability": 5,
+        "insight_potential": 4,
+        "progressive_research": 4,
+        "visual_value": 4,
+        "cost_teaching_45min": 5,
+        "rights_epistemic": 5
+      },
+      "score_100": 85.0,
+      "gate": "OPEN",
+      "reason": "Lift/Fisher/BH + control temporada; R3 ontología y R5 técnica",
+      "compute_cost": "CPU local; sin APIs de pago",
+      "novelty_status": "POTENTIAL_ONLY; revisión bibliográfica no exhaustiva"
+    },
+    {
+      "canonical_id": "BR-09",
+      "dimensions_0_to_5": {
+        "curiosity": 4,
+        "historical_anchor": 2,
+        "falsifiability": 5,
+        "insight_potential": 4,
+        "progressive_research": 4,
+        "visual_value": 5,
+        "cost_teaching_45min": 4,
+        "rights_epistemic": 5
+      },
+      "score_100": 83.0,
+      "gate": "OPEN_PARTIAL",
+      "reason": "Jaccard/Euclídea + bootstrap acuerdo; R3 representación",
+      "compute_cost": "CPU local; sin APIs de pago",
+      "novelty_status": "POTENTIAL_ONLY; revisión bibliográfica no exhaustiva"
+    },
+    {
+      "canonical_id": "BR-10",
+      "dimensions_0_to_5": {
+        "curiosity": 5,
+        "historical_anchor": 4,
+        "falsifiability": 4,
+        "insight_potential": 5,
+        "progressive_research": 5,
+        "visual_value": 5,
+        "cost_teaching_45min": 2,
+        "rights_epistemic": 2
+      },
+      "score_100": 85.0,
+      "gate": "BLOCKED_RIGHTS",
+      "reason": "Join 403/403; falta resolver permiso de paletas e imágenes",
+      "compute_cost": "CPU local; sin APIs de pago",
+      "novelty_status": "POTENTIAL_ONLY; revisión bibliográfica no exhaustiva"
+    }
+  ],
+  "hypothesis_crosswalk": {
+    "H1": {
+      "canonical_id": "BR-10",
+      "scope": "Paleta declarada; acceso 1:1 probado, permiso pendiente"
+    },
+    "H2": {
+      "canonical_id": "BR-01",
+      "scope": "Descriptivo temporal posible; diagnóstico y rodaje no identificados"
+    },
+    "H3": {
+      "canonical_id": "BR-07",
+      "scope": "Subestudio estructuras/motivos; tiempo 26 min no medido"
+    },
+    "H4": {
+      "canonical_id": "BR-08",
+      "scope": "GUEST verificado; créditos y selección editorial pendientes"
+    },
+    "H5": {
+      "canonical_id": "BR-05",
+      "scope": "Auditoría de medición ligada a contraejemplos; nueva anotación bloqueada por derechos"
+    },
+    "H6": {
+      "canonical_id": "BR-09",
+      "scope": "O1 de motivos parcial; KMeans/Bernoulli y fusión cromática pendientes"
+    },
+    "H7": {
+      "canonical_id": "BR-10",
+      "scope": "Calibración pigmentos/píxeles como extensión, bloqueada por imágenes"
+    },
+    "H8": {
+      "canonical_id": "BR-14",
+      "scope": "Secuencia ordinal medible; no cronología de grabación"
+    },
+    "H9": {
+      "canonical_id": "BR-07",
+      "scope": "Asociación de estructuras; PERSON existe, chimeneas/semántica humana no medidas"
+    },
+    "H10": {
+      "canonical_id": "BR-13",
+      "scope": "Extensión a recepción; target nuevo externo, no reemplaza target canónico"
+    }
+  },
+  "not_selected": {
+    "BR-01": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-02": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-03": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-04": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-05": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-06": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-08": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-11": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-12": "Menor factibilidad inmediata o redundancia; diseño conservado",
+    "BR-13": "Menor factibilidad inmediata o redundancia; diseño conservado"
+  }
+}
