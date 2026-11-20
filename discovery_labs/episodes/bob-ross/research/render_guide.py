@@ -143,4 +143,3 @@ choose.addEventListener('change',inspect);inspect();
     print('V4: 14 cards, 3 measured O1, legacy sensitivity pending HF02, no active O3')
 
 if __name__=='__main__':main()
-

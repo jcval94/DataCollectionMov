@@ -144,4 +144,3 @@ def main():
     print('No HF-03/HF-04 fabricated; no human response inferred.')
 
 if __name__=='__main__':main()
-

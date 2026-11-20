@@ -1,6 +1,6 @@
 {
   "version": "V4",
-  "renderer_sha256": "1066f9dc9825e22a9d1dd9c098f870f526564ee59cf0bfb98bf2a8989ee8e5e8",
+  "renderer_sha256": "f36548f076dc79d13ec4756ebf824e47305bf2395221b2ac335b965b8a13fec7",
   "inputs": {
     "entry_pack/questions_master.json": "04b433731776e49970d16ff045fbdf5e291732ddef7f6210ec6efbf7ab4173f5",
     "research/results/o1_results.json": "a5ebf37ac6559c6eadc6a406a793b697f9fa687cc32b4597c13c71e26210a168",
