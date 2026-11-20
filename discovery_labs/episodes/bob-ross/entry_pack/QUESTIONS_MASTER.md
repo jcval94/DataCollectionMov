@@ -3,7 +3,7 @@
 > **FUENTE CANÓNICA EDITORIAL.** Las seis preguntas antiguas de `../questions.json` son puertas de entrada/interfaz, **no constituyen otro bloque narrativo**. Las consultas anteriores pasan a ser pasos O1, pruebas o microejercicios dentro de las investigaciones que siguen. Aquí está toda la selección, en **un solo bloque**, con problemas de O1, O2 y O3, al menos un **modelo** y un **ejercicio estadístico separado** por investigación.
 
 ## Regla de honestidad
-Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**. Se indican qué, por qué y dónde; no se han entrenado modelos ni se atribuyen resultados. En preguntas con datos externos faltantes, la factibilidad es `BLOCKED` y su investigación permanece abierta. Datos de salud no están en el CSV; su fecha y su interpretación histórica deben reconciliarse antes de correlacionarla con episodios.
+Las fichas conservan los **diseños originales**. La ejecución progresiva está documentada en [research/execution_registry.json](../research/execution_registry.json): BR-07 y BR-09 tienen O1 parciales, BR-14 tiene O1 secuencial medida, y únicamente BR-09 tiene O2 activada y medida después de DR-05a. O3 y aprobación siguen pendientes. `design_status=PLAN_ONLY` conserva la propuesta original y no describe el estado de ejecución actual. Se indican qué, por qué y dónde; los resultados nuevos se atribuyen únicamente a los artefactos enlazados en cada ficha y al protocolo explícito. En preguntas con datos externos faltantes, la factibilidad es `BLOCKED` y su investigación permanece abierta. Datos de salud no están en el CSV; su fecha y su interpretación histórica deben reconciliarse antes de correlacionarla con episodios.
 
 ## Un solo bloque: 14 investigaciones con rutas O1→O2→O3
 
@@ -175,6 +175,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 
 **Estado:** `PLANNED_DATA_FEASIBLE`. **Advertencia:** No atribuir intención artística a coocurrencia.
 
+**Ejecución del 19-11-2026:** [O1 y límites](../research/results/o1_results.json), [protocolo](../research/PROTOCOL.md), [síntesis DR-05a](../research/DR-05a.md). O2/O3 permanecen condicionales.
+
 ### BR-08 · ¿Qué sucede con el paisaje cuando Bob cede el pincel?
 
 *No todos los 403 episodios fueron pintados por la misma persona.*
@@ -222,6 +224,8 @@ Los modelos y ejercicios estadísticos siguientes son **planes, no ejecuciones**
 **Visualización que cuenta la evidencia:** Alluvial de cambios de sala + medoids/episodios interactivos con preview sujeto a licencia.
 
 **Estado:** `EXISTING_CLUSTERING_PARTIAL_MODEL_EXT_NOT_RUN`. **Advertencia:** k=4 es restricción didáctica; ARI no es calidad artística.
+
+**Ejecución del 19-11-2026:** [O1 y límites](../research/results/o1_results.json), [protocolo](../research/PROTOCOL.md), [síntesis DR-05a](../research/DR-05a.md). [O2 medida](../research/progressive_results/br09_o2.json); O3 condicional.
 
 ### BR-10 · ¿Cambió de paleta aunque sus paisajes parecieran los mismos?
 
@@ -370,3 +374,5 @@ Las nuevas preguntas sobre enfermedad (`BR-01`), historia (`BR-03`), atípicos m
 El apartado **02 / Las preguntas de esta investigación** será UNA SOLA sección integrada que incluya las 14 opciones, filtros o tarjetas por tema y detalles expandidos de O1/O2/O3 + modelo + estadística + visualización + faltantes. El prólogo debe narrar primero quién fue Bob Ross. El tema de enfermedad no puede quedar escondido en un detalle O3: `BR-01` es una investigación protagonista con advertencia de causalidad. La guía científica puede resumir técnicas, pero el banco estructurado es siempre `questions_master.json`.
 
 **Gate:** Paquete de Entrada listo para revisión de preguntas; no guion/video hasta la aprobación explícita de `research_guide.html`.
+
+**Ejecución del 19-11-2026:** [O1 y límites](../research/results/o1_results.json), [protocolo](../research/PROTOCOL.md), [síntesis DR-05a](../research/DR-05a.md). O2/O3 permanecen condicionales.

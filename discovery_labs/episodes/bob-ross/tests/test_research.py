@@ -12,6 +12,7 @@ sys.path.insert(0,str(ROOT/'research'))
 import audit
 import experiments as ex
 from reconcile import MAPPING
+from progressive import aligned_changes
 
 
 class ExactTests(unittest.TestCase):
@@ -25,6 +26,10 @@ class ExactTests(unittest.TestCase):
         self.assertEqual(ex.adjust([.01,.04,.03]),[.03,.06,.06])
         got=ex.adjust([.01,.04,.03],'bh')
         for a,b in zip(got,[.03,.04,.04]): self.assertAlmostEqual(a,b)
+
+    def test_cluster_label_permutation_is_not_a_change(self):
+        changed,mapping=aligned_changes([0,0,1,1,2,3],[3,3,2,2,0,1])
+        self.assertEqual(changed,[])
 
     def test_exact_adjacency_expectation_by_enumeration(self):
         states=set(itertools.permutations([1,1,0,0]))
@@ -73,6 +78,30 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(counts['all'],372)
         self.assertLess(counts['host'],381-31)
         self.assertLess(counts['host_complete'],counts['host'])
+
+    def test_progressive_publication_requires_measured_parent(self):
+        bank=json.loads((ROOT/'entry_pack/questions_master.json').read_text())['questions']
+        page=(ROOT/'research_guide.html').read_text()
+        self.assertEqual(page.count('class="story-arc"'),14)
+        for q in bank:
+            if q['id']!='BR-09':self.assertNotIn(q['o2'],page)
+            self.assertNotIn(q['o3'],page)
+        o2=json.loads((ROOT/'research/progressive_results/br09_o2.json').read_text())
+        self.assertEqual(o2['parent_id'],'BR-09-O1')
+        self.assertTrue((ROOT/'research'/o2['activation_checkpoint']).exists())
+
+    def test_recorded_output_hashes_and_guide_are_current(self):
+        import hashlib
+        for directory,key,name in [('results','output_sha256','run_manifest.json'),
+                                   ('progressive_results','outputs','manifest.json')]:
+            folder=ROOT/'research'/directory
+            m=json.loads((folder/name).read_text())
+            for filename,digest in m[key].items():
+                self.assertEqual(hashlib.sha256((folder/filename).read_bytes()).hexdigest(),digest)
+        m=json.loads((ROOT/'research/guide_build.json').read_text())
+        for key in ['inputs','outputs']:
+            for filename,digest in m[key].items():
+                self.assertEqual(hashlib.sha256((ROOT/filename).read_bytes()).hexdigest(),digest)
 
 
 if __name__=='__main__':unittest.main()

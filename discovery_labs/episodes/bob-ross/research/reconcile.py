@@ -36,21 +36,29 @@ def write_csv(path, rows):
 
 def main():
     bank = json.loads((ROOT/'entry_pack/questions_master.json').read_text())['questions']
+    incoming=json.loads((ROOT/'entry_pack/research_received/DR-03_questions_to_test.json').read_text())
+    hypotheses={q['id']:q for q in incoming['hypotheses']}
     crosswalk = []
     for q in bank:
         matches = [h for h,v in MAPPING.items() if v[0] == q['id']]
         crosswalk.append({
             'canonical_id': q['id'], 'source_DR': 'DR-01;DR-02;DR-03',
             'hypothesis_ids': ';'.join(matches),
+            'hypotheses': ' | '.join(f"{h}: H0={hypotheses[h]['h0']}; H1={hypotheses[h]['h1']}" for h in matches) or 'Sin H equivalente; conservar diseño canónico',
             'claim_ids': ';'.join(sorted({MAPPING[h][1] for h in matches})),
             'O1': q['o1'], 'dataset_version': '42045c8b8aaa8296095d6b294927fb9d0f73a57259f59b560c375844c0fe01cf',
             **q['estimand'], 'candidate_model': q['model_name'],
             'separate_statistical_test': q['stat'], 'rivals': q['rival_hypothesis'],
             'integration_scope': ' | '.join(MAPPING[h][2] for h in matches) or 'Sin H equivalente; preservar arco canónico',
             'evidence_status': 'DATA_FEASIBLE' if q['id'] in ('BR-07','BR-09','BR-14') else q['status'],
+            'execution_status': q.get('execution',{}).get('o1_status','PLAN_ONLY'),
             'required_rights': 'CC BY 4.0 tags; externos según gates de ficha',
             'prerequisites': q['data'],
-            'next_action': 'Ejecutar protocolo O1 parcial' if q['id'] in ('BR-07','BR-09','BR-14') else 'Mantener diseño; resolver fuentes/datos antes de ejecutar',
+            'feasibility': SCORES[q['id']][1] if q['id'] in SCORES else q['status'],
+            'novelty': 'POTENTIAL_ONLY; no prioridad bibliográfica demostrada',
+            'surprise': 'Evaluar después del cálculo; no maximizar selección de significancia',
+            'pedagogical_value': 'Diseño de nulos, medición y límites; clase ~45 minutos',
+            'next_action': 'Revisar resultados y límites; siguiente gate en DR-05a' if q['id'] in ('BR-07','BR-09','BR-14') else 'Mantener diseño; resolver fuentes/datos antes de ejecutar',
         })
     write_csv(HERE/'evidence/reconciliation.csv', crosswalk)
     received = ROOT/'entry_pack/research_received'

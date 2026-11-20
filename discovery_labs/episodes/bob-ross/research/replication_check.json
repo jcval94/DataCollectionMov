@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "same_python_same_seed": true,
+  "bitwise_equal_artifacts": {
+    "sequence_null_host.csv": true,
+    "sequence_null_all.csv": true,
+    "cluster_assignments.csv": true,
+    "sequence.csv": true,
+    "o1_results.json": true,
+    "sequence_null_host_complete.csv": true,
+    "associations.csv": true
+  },
+  "manifest_exclusion": "execution clock, platform and original-design-bank hash are provenance, not numeric outputs",
+  "independent_fisher_check": {
+    "implementation": "scipy.stats.fisher_exact",
+    "tables": 66,
+    "max_absolute_error": 2.220446049250313e-16
+  }
+}

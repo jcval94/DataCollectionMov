@@ -1,3 +1,5 @@
+> **Continuación científica:** [handoff O1/O2 del 19-11-2026](HANDOFF_2026-11-19_SCIENTIFIC_O1.md). Revisar antes de utilizar instrucciones históricas.
+
 # AI Discovery Labs — Paquete de Entrada 001 (Bob Ross)
 
 > **CONTINUIDAD (19-11-2026):** la ruta vigente para retomar Bob Ross es [HANDOFF_2026-11-19.md](HANDOFF_2026-11-19.md) y el [prompt para un nuevo chat](PROMPT_NEXT_CHAT_2026-11-19.md). Las tres investigaciones DR-01/02/03 ya se archivaron bajo [research_received/](research_received/README.md) en PR #15 (fusionado). PR #12 y #14 también se fusionaron; sus entregas son QA y metodología, **no resultados científicos aprobados**.

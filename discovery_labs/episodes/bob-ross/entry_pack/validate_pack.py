@@ -62,7 +62,9 @@ def main() -> int:
         "canonical_catalog": str(CATALOG),
         "questions_with_model_and_statistical_plan": len(questions),
         "research_approval": "PENDING",
-        "models_executed": 0,
+        "models_executed_by_this_static_validator": 0,
+        "execution_registry": "../research/execution_registry.json",
+        "o1_executions_recorded": sum(bool(q.get("execution")) for q in questions),
     })
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 1 if issues else 0

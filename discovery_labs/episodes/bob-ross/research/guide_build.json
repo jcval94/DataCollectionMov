@@ -1,0 +1,15 @@
+{
+  "version": "V4",
+  "renderer_sha256": "4641999bc34a418e6a1e54ed2cfd5b513c4cba9806b611a65e5f0c7e9e4f36a7",
+  "inputs": {
+    "entry_pack/questions_master.json": "a7b885474d8d207b7dac91baa8b69ee542d12819cd164eec669f5fea163279ed",
+    "research/results/o1_results.json": "a5ebf37ac6559c6eadc6a406a793b697f9fa687cc32b4597c13c71e26210a168",
+    "research/progressive_results/br09_o2.json": "700344d030928e258b29c7673adf21cb1544185f7d1fc92792040ac95bbaf5da",
+    "research/execution_registry.json": "4ecdd675680109015d2d4f2a1e11d5a30aab29870f729aec65541d49effd1a02"
+  },
+  "outputs": {
+    "research_guide.html": "73bf5f951d71e08090f3f7a5d502f4466126741511e6e9b922254e289fa80eb6",
+    "research/figures/cluster_sensitivity.svg": "9288831101518dea46c973f1b48a2d7a302cddda67211a2b774a3bc7c7126533",
+    "research/figures/sequence_null.svg": "eb73d85a41f025f49b3831be22940c2a7f07fc5a0d52cc286c1b10676da19bc1"
+  }
+}

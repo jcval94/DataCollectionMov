@@ -1,3 +1,5 @@
+> **Continuación científica:** [handoff O1/O2 del 19-11-2026](HANDOFF_2026-11-19_SCIENTIFIC_O1.md). Revisar antes de utilizar instrucciones históricas.
+
 # START HERE — AI Discovery Labs · Bob Ross · Paquete de Entrada y Question Forge
 
 > **ACTUALIZACIÓN 19-11-2026:** este archivo conserva contexto de etapas anteriores. **Para el estado ACTUAL y los próximos pasos usa primero [HANDOFF_2026-11-19.md](HANDOFF_2026-11-19.md) y copia [PROMPT_NEXT_CHAT_2026-11-19.md](PROMPT_NEXT_CHAT_2026-11-19.md).** PR #12, #14 y #15 ya fusionados en `main`; DR-01/02/03 recibidos y archivados como normalizaciones estructuradas, no hallazgos validados ni textos literales. Las secciones inferiores sobre «próxima conversación» deben leerse como contexto histórico, no como estado actual.

@@ -1,0 +1,9 @@
+{
+  "activation_checkpoint_sha256": "584b1f43d22506b65ef9de0a3e9c650ddac97060bbbc5119d57f0e59d8865aaf",
+  "o1_results_sha256": "a5ebf37ac6559c6eadc6a406a793b697f9fa687cc32b4597c13c71e26210a168",
+  "script_sha256": "91796a38cc813f1cb65e28c5d0f19050fc278d7d5d6cde2163350e119e42bea3",
+  "outputs": {
+    "leave_one_season_out.csv": "f7f6c05580a21d5c36f29d708aa6a10d270ebf6b4cc4f4ae0b35fdaf972ac499",
+    "br09_o2.json": "700344d030928e258b29c7673adf21cb1544185f7d1fc92792040ac95bbaf5da"
+  }
+}
