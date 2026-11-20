@@ -12,6 +12,8 @@
 | **HF-03 — Robustez** | O2/O3 pertinentes + DR-04 con controles adversariales | Aún no existe | `NOT_STARTED` |
 | **HF-04 — Aprobación F1** | DR-05b, HTML científico + pruebas y QA | Aún no existe | `NOT_STARTED` |
 
+**Quality gate obligatorio para publicación:** `python discovery_labs/shared/validators/validate_human_feedback.py --checkpoint discovery_labs/episodes/bob-ross/human_feedback/HF-XX/vNN --ready`. Solo aplicable **cuando exista un informe real**. La validación estructural complementa —no reemplaza— la revisión de métodos, resultados y derechos. El primer reporte HF-00 sigue pendiente de auditar el dataset.
+
 ### Qué debe ocurrir con cada publicación
 
 Crear carpeta **nueva** `HF-XX/v01/` (o `v02` para una revisión), con:
