@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-11-21T07:24:53Z",
+  "source": "tomtom",
+  "snapshot_id": "20261121T072450Z",
+  "snapshot_date": "2026-11-21",
+  "tables": [
+    {
+      "table": "tomtom_cdmx_flow",
+      "source": "tomtom",
+      "snapshot_id": "20261121T072450Z",
+      "snapshot_date": "2026-11-21",
+      "rows": 12,
+      "columns": 26,
+      "hash_sha256": "d21286441431a17235072155753000903f5bf0d1ef55dc35cbeffb504fc074c4",
+      "cadence": "every_2_hours_weekdays",
+      "current_path": "data/current/tomtom_cdmx_flow.csv",
+      "snapshot_path": "data/history/tomtom_cdmx_flow/20261121T072450Z.csv"
+    },
+    {
+      "table": "tomtom_cdmx_incidents",
+      "source": "tomtom",
+      "snapshot_id": "20261121T072450Z",
+      "snapshot_date": "2026-11-21",
+      "rows": 612,
+      "columns": 29,
+      "hash_sha256": "f9b363b36ab2068da2e8a26c7fdf0533f4c206a1a2feedcedcd3711aa1848430",
+      "cadence": "every_2_hours_weekdays",
+      "current_path": "data/current/tomtom_cdmx_incidents.csv",
+      "snapshot_path": "data/history/tomtom_cdmx_incidents/20261121T072450Z.csv"
+    }
+  ]
+}
