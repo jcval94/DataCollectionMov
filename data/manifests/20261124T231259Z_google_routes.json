@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-11-24T23:13:03Z",
+  "source": "google_routes",
+  "snapshot_id": "20261124T231259Z",
+  "snapshot_date": "2026-11-24",
+  "tables": [
+    {
+      "table": "routes_api_comparacion_modos",
+      "source": "google_routes",
+      "snapshot_id": "20261124T231259Z",
+      "snapshot_date": "2026-11-24",
+      "rows": 4,
+      "columns": 21,
+      "hash_sha256": "7e02f2d0be8a3181e59283a67c47463048ba56f70bfea906e076a17065093068",
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_comparacion_modos.csv",
+      "snapshot_path": "data/history/routes_api_comparacion_modos/20261124T231259Z.csv"
+    },
+    {
+      "table": "routes_api_drive_pairs",
+      "source": "google_routes",
+      "snapshot_id": "20261124T231259Z",
+      "snapshot_date": "2026-11-24",
+      "rows": 8,
+      "columns": 21,
+      "hash_sha256": "8f1e4e4510f3935d2cc7fbaf1380dde7fc84b1cc8850ab2668d8c71de42484dd",
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_drive_pairs.csv",
+      "snapshot_path": "data/history/routes_api_drive_pairs/20261124T231259Z.csv"
+    },
+    {
+      "table": "routes_api_ejemplo_ruta",
+      "source": "google_routes",
+      "snapshot_id": "20261124T231259Z",
+      "snapshot_date": "2026-11-24",
+      "rows": 1,
+      "columns": 21,
+      "hash_sha256": "751032356a3c5088eb7cc6db6e49c0b1d0bfb5f07ff4a8dd76c9412b0d8e7954",
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_ejemplo_ruta.csv",
+      "snapshot_path": "data/history/routes_api_ejemplo_ruta/20261124T231259Z.csv"
+    },
+    {
+      "table": "routes_api_matriz",
+      "source": "google_routes",
+      "snapshot_id": "20261124T231259Z",
+      "snapshot_date": "2026-11-24",
+      "rows": 18,
+      "columns": 21,
+      "hash_sha256": "17635fd344004cbdaf697304bfb13f32e854629467b16575f06c5c1bec409646",
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_matriz.csv",
+      "snapshot_path": "data/history/routes_api_matriz/20261124T231259Z.csv"
+    },
+    {
+      "table": "routes_api_score",
+      "source": "google_routes",
+      "snapshot_id": "20261124T231259Z",
+      "snapshot_date": "2026-11-24",
+      "rows": 18,
+      "columns": 26,
+      "hash_sha256": "cd1eaab233f32d4de268c927768f31d905d16ed1fa591db70ccec6d861c64473",
+      "cadence": "daily_weekdays",
+      "current_path": "data/current/routes_api_score.csv",
+      "snapshot_path": "data/history/routes_api_score/20261124T231259Z.csv"
+    }
+  ]
+}
