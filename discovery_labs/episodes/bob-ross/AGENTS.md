@@ -4,6 +4,9 @@ Preferencias explícitas de JC, registradas el 25 de noviembre de 2026. Aplican 
 
 ## Contexto antes de resultados
 
+- Empezar siempre por contexto humano e histórico y detalles interesantes verificados del tema, antes de métricas, métodos o estados del proyecto. En el primer entregable de la primera etapa, darles una sección propia si hace falta; conservarla y actualizarla en las siguientes versiones. Un resumen técnico no sustituye esta introducción.
+- En Bob Ross incluir trayectoria militar y Alaska, aprendizaje y técnica, duración y formato del programa, invitados, enfermedad con sus límites documentales, versiones físicas de las pinturas, legado y derechos. Vincular cada detalle con la curiosidad científica que abre; buscar también hechos relevantes que JC quizá no conozca.
+- Verificar especialmente afirmaciones actuales: distinguir propiedad de cuadros, derechos de reproducción y marca; colección museística frente a exposición; litigios históricos frente a procesos vigentes. No repetir ejemplos del usuario como hechos sin contrastarlos.
 - Asumir que JC no ha leído la investigación ni recuerda siglas, etapas o archivos. Cada entrega debe entenderse por sí sola.
 - Abrir con un resumen en lenguaje claro: qué estamos investigando, con qué datos, qué aprendimos y por qué importa. La brevedad no debe eliminar el contexto necesario.
 - Desarrollar cada hallazgo en este orden: pregunta concreta → cómo se comprobó en términos comprensibles → resultado con cifras y población → significado → límites → siguiente acción y motivo.
@@ -22,4 +25,5 @@ Preferencias explícitas de JC, registradas el 25 de noviembre de 2026. Aplican 
 
 ## Alcance del feedback
 
-Esta corrección solicita claridad y persistencia de estas preferencias. No constituye aprobación científica de un checkpoint, selección de una nueva investigación ni autorización de producción audiovisual. Conservar el protocolo y los estados humanos existentes.
+El feedback del 25 de noviembre también orienta prioridades: cerrar la repetición consecutiva como línea principal con la evidencia actual; generalizar asociaciones de motivos; ampliar la comparación de agrupamientos; integrar Alaska, emoción y escenarios geográficos en las rutas existentes. Consultar research/REFOCUS_2026-11-25.md para alcance y condiciones. Esta orientación no convierte hipótesis en resultados ni equivale a aprobar la guía científica o autorizar producción audiovisual. Registrar las decisiones humanas de forma específica, sin inferir aprobaciones generales.
+

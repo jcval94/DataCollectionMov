@@ -1,5 +1,7 @@
 # Bob Ross · investigación científica ejecutable · 19-11-2026
 
+> **Orientación editorial del 25-11-2026:** [contexto histórico de apertura y fuentes](CONTEXT_BRIEF.md) · [decisiones de cierre, profundización y pregunta geográfica](REFOCUS_2026-11-25.md). La guía incorpora la nueva apertura; los resultados de este informe se conservan como evidencia de la ejecución del 19-11, sin atribuirles nuevas pruebas ni aprobaciones.
+
 Se auditó el snapshot, se conciliaron los tres DR y sus diez H con las 14 BR existentes, se ejecutaron tres O1 exploratorias y se activó/respondió únicamente BR-09-O2 tras DR-05a. No se inició audiovisual ni se aprobó la investigación.
 
 **Estado vigente tras integrar PR #17 durante la sesión:** los cálculos O2 previos se conservan y su promoción editorial queda `WITHHELD_PENDING_HF02`. HF-00/HF-01 retrospectivos y HF-02 actual están preparados en [human_feedback/README.md](../human_feedback/README.md), todos DRAFT/PENDING. [Transición y cronología](PROTOCOL_TRANSITION.md). No se infiere respuesta humana y no se abre otra O2/O3. La revisión de fuentes fue focalizada, no exhaustiva; cada pendiente conserva ese estado.

@@ -1,14 +1,15 @@
 {
   "version": "V4",
-  "renderer_sha256": "f36548f076dc79d13ec4756ebf824e47305bf2395221b2ac335b965b8a13fec7",
+  "renderer_sha256": "a04a825d0a1f9e4e0179c54978de6407a3c033729d879c8487274f431e2ac221",
   "inputs": {
     "entry_pack/questions_master.json": "04b433731776e49970d16ff045fbdf5e291732ddef7f6210ec6efbf7ab4173f5",
     "research/results/o1_results.json": "a5ebf37ac6559c6eadc6a406a793b697f9fa687cc32b4597c13c71e26210a168",
     "research/progressive_results/br09_o2.json": "700344d030928e258b29c7673adf21cb1544185f7d1fc92792040ac95bbaf5da",
-    "research/execution_registry.json": "d0bfbee7267d1f3e384bd87ccf4dde7b33e4bfa9f85327a5a8d91231a2bf5615"
+    "research/execution_registry.json": "d0bfbee7267d1f3e384bd87ccf4dde7b33e4bfa9f85327a5a8d91231a2bf5615",
+    "research/context_intro.html": "ef0870f8c7fd987cf62de87a93698fd21a551db7ac9c06811bf38362cc5a438c"
   },
   "outputs": {
-    "research_guide.html": "7d96e1265cdbf0f8a0f97bd871bfe6bf65dbcce2ae1e0afa5c9f6cd9556013e8",
+    "research_guide.html": "c8d24f24b4e8baadc1baaa6f3a0a7eec2368d730a879aed7efb30cea682b41ce",
     "research/figures/cluster_sensitivity.svg": "9288831101518dea46c973f1b48a2d7a302cddda67211a2b774a3bc7c7126533",
     "research/figures/sequence_null.svg": "eb73d85a41f025f49b3831be22940c2a7f07fc5a0d52cc286c1b10676da19bc1"
   }
