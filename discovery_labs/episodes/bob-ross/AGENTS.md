@@ -14,6 +14,12 @@ Preferencias explícitas de JC, registradas el 25 de noviembre de 2026. Aplican 
 - No sustituir explicaciones con frases como «no respalda inhibición tras Holm», «todos los k» o «revisar ese artefacto». Nombrar exactamente el fenómeno, la comparación y el archivo o resultado al que se alude.
 - Al comparar versiones, explicar qué se sabía antes, qué se sabe ahora y qué cambia para JC, además del identificador de versión.
 
+## Entrega visual de HTML
+
+- Entregar los informes mediante un enlace web que renderice la página. Un enlace al código en GitHub, al archivo HTML local o a una descarga no satisface esta entrega.
+- Reutilizar el lector de informes https://bob-ross-laboratorio-jc.jcval94.chatgpt.site y sincronizar la versión antes de enlazarla. La apertura predeterminada debe mostrar el contexto y la guía actuales. Comprobar que los gráficos y recursos se cargan.
+- Conservar el archivo fuente para reproducibilidad; ofrecerlo solo como complemento de la vista visual. Esta preferencia se confirmó de nuevo el 25 de noviembre de 2026 tras una entrega que abrió código.
+
 ## Evidencia que se pueda interpretar
 
 - Separar resultados científicos, avances de reproducibilidad y estados de revisión/aprobación. Repetir archivos idénticos comprueba reproducibilidad; no valida por sí solo etiquetas, supuestos ni conclusiones.
