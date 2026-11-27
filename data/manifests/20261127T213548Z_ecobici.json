@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-11-27T21:35:48Z",
+  "source": "ecobici",
+  "snapshot_id": "20261127T213548Z",
+  "snapshot_date": "2026-11-27",
+  "tables": [
+    {
+      "table": "ecobici_gbfs_station_status",
+      "source": "ecobici",
+      "snapshot_id": "20261127T213548Z",
+      "snapshot_date": "2026-11-27",
+      "rows": 677,
+      "columns": 17,
+      "hash_sha256": "09b7fed691d97e9376c2ec190fb2db9698ce78e646f4d4713f4a843c1a290135",
+      "cadence": "every_2_hours_weekdays",
+      "current_path": "data/current/ecobici_gbfs_station_status.csv",
+      "snapshot_path": "data/history/ecobici_gbfs_station_status/20261127T213548Z.csv"
+    },
+    {
+      "table": "ecobici_realtime_stations",
+      "source": "ecobici",
+      "snapshot_id": "20261127T213548Z",
+      "snapshot_date": "2026-11-27",
+      "rows": 677,
+      "columns": 30,
+      "hash_sha256": "ea31786f53154d49c87d63c047a55677d09b9368e28b66899d180a229b699370",
+      "cadence": "every_2_hours_weekdays",
+      "current_path": "data/current/ecobici_realtime_stations.csv",
+      "snapshot_path": "data/history/ecobici_realtime_stations/20261127T213548Z.csv"
+    }
+  ]
+}
